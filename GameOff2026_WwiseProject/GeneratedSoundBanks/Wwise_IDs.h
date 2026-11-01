@@ -16,6 +16,12 @@ namespace AK
         static const AkUniqueID PLR_FOOTSTEPS = 7310889U;
     } // namespace EVENTS
 
+    namespace BANKS
+    {
+        static const AkUniqueID INIT = 1355168291U;
+        static const AkUniqueID MAIN = 3161908922U;
+    } // namespace BANKS
+
     namespace BUSSES
     {
         static const AkUniqueID MAIN_AUDIO_BUS = 2246998526U;

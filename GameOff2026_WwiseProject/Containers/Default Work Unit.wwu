@@ -1,6 +1,75 @@
 <?xml version="1.0" encoding="utf-8"?>
 <WwiseDocument Type="WorkUnit" ID="{AF633A36-6CC5-470E-AD72-3F76D6F661BF}" SchemaVersion="133">
 	<Containers>
-		<WorkUnit Name="Default Work Unit" ID="{AF633A36-6CC5-470E-AD72-3F76D6F661BF}" PersistMode="Standalone"/>
+		<WorkUnit Name="Default Work Unit" ID="{AF633A36-6CC5-470E-AD72-3F76D6F661BF}" PersistMode="Standalone">
+			<ChildrenList>
+				<Sound Name="SFX_Footstep01" ID="{F50A3FAF-4950-4F54-B92E-1A303A1DEC03}" ShortID="712284434">
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{4ADFD3A0-A42B-432C-8502-1433439D5054}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{F8A65CB3-3EA6-47C9-8C5A-27068DB4C3FF}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<AudioFileSource Name="SFX_Footstep01" ID="{52394007-DA20-4868-82C3-9635D39E553F}">
+							<Language>SFX</Language>
+							<AudioFile>SFX_Footstep01.wav</AudioFile>
+							<MediaIDList>
+								<MediaID ID="728003638"/>
+							</MediaIDList>
+						</AudioFileSource>
+					</ChildrenList>
+					<ActiveSourceList>
+						<ActiveSource Name="SFX_Footstep01" ID="{52394007-DA20-4868-82C3-9635D39E553F}" Platform="Linked"/>
+					</ActiveSourceList>
+				</Sound>
+				<Sound Name="SFX_Footstep02" ID="{D08ABC58-B790-40F1-8DCA-DAA7B5E9915B}" ShortID="906803169">
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{4ADFD3A0-A42B-432C-8502-1433439D5054}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{F8A65CB3-3EA6-47C9-8C5A-27068DB4C3FF}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<AudioFileSource Name="SFX_Footstep02" ID="{D3B31DAE-9326-4628-90B7-223BEA7F606B}">
+							<Language>SFX</Language>
+							<AudioFile>SFX_Footstep02.wav</AudioFile>
+							<MediaIDList>
+								<MediaID ID="175081538"/>
+							</MediaIDList>
+						</AudioFileSource>
+					</ChildrenList>
+					<ActiveSourceList>
+						<ActiveSource Name="SFX_Footstep02" ID="{D3B31DAE-9326-4628-90B7-223BEA7F606B}" Platform="Linked"/>
+					</ActiveSourceList>
+				</Sound>
+				<Sound Name="SFX_Footstep03" ID="{791A7A73-56CC-4305-93FC-27E86F2E6B94}" ShortID="386383069">
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{4ADFD3A0-A42B-432C-8502-1433439D5054}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{F8A65CB3-3EA6-47C9-8C5A-27068DB4C3FF}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<AudioFileSource Name="SFX_Footstep03" ID="{3DAA4E84-5A1D-4F6E-815A-43BADB98691C}">
+							<Language>SFX</Language>
+							<AudioFile>SFX_Footstep03.wav</AudioFile>
+							<MediaIDList>
+								<MediaID ID="414997927"/>
+							</MediaIDList>
+						</AudioFileSource>
+					</ChildrenList>
+					<ActiveSourceList>
+						<ActiveSource Name="SFX_Footstep03" ID="{3DAA4E84-5A1D-4F6E-815A-43BADB98691C}" Platform="Linked"/>
+					</ActiveSourceList>
+				</Sound>
+			</ChildrenList>
+		</WorkUnit>
 	</Containers>
 </WwiseDocument>

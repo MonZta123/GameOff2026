@@ -1,6 +1,44 @@
 <?xml version="1.0" encoding="utf-8"?>
 <WwiseDocument Type="WorkUnit" ID="{2B12C590-A22E-47AF-9697-251FEA2DB802}" SchemaVersion="133">
 	<Events>
-		<WorkUnit Name="Default Work Unit" ID="{2B12C590-A22E-47AF-9697-251FEA2DB802}" PersistMode="Standalone"/>
+		<WorkUnit Name="Default Work Unit" ID="{2B12C590-A22E-47AF-9697-251FEA2DB802}" PersistMode="Standalone">
+			<ChildrenList>
+				<Event Name="Plr_Footsteps_1" ID="{F78BA6F0-894A-46A5-8E8C-6A6A90DB710F}">
+					<ChildrenList>
+						<Action Name="" ID="{E8AE2F26-C391-4490-9D46-63DE5BB3AAD9}" ShortID="566025156">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="41"/>
+							</PropertyList>
+							<ReferenceList/>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Plr_Footsteps" ID="{76CCE283-0B61-485F-84F2-96637B943C4D}">
+					<ChildrenList>
+						<Action Name="" ID="{310EC23F-D82D-48DA-A5A3-4818B37E624D}" ShortID="41229440">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="SFX_Footstep01" ID="{F50A3FAF-4950-4F54-B92E-1A303A1DEC03}" WorkUnitID="{AF633A36-6CC5-470E-AD72-3F76D6F661BF}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+						<Action Name="" ID="{5A7F6A75-A7CC-4909-BB51-6DD50AF45210}" ShortID="621584614">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="SFX_Footstep02" ID="{D08ABC58-B790-40F1-8DCA-DAA7B5E9915B}" WorkUnitID="{AF633A36-6CC5-470E-AD72-3F76D6F661BF}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+						<Action Name="" ID="{FEE20F86-F59A-4A54-AB4E-2223C7CA4356}" ShortID="1029597687">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="SFX_Footstep03" ID="{791A7A73-56CC-4305-93FC-27E86F2E6B94}" WorkUnitID="{AF633A36-6CC5-470E-AD72-3F76D6F661BF}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+			</ChildrenList>
+		</WorkUnit>
 	</Events>
 </WwiseDocument>

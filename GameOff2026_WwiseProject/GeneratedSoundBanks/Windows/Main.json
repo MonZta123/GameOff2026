@@ -1,0 +1,69 @@
+{
+ "SoundBanksInfo": {
+  "Platform": "Windows",
+  "BasePlatform": "Windows",
+  "SchemaVersion": "16",
+  "SoundBankVersion": "172",
+  "SoundBanks": [
+   {
+    "Id": "3161908922",
+    "Type": "User",
+    "GUID": "{3059A6CE-8152-4CD2-BEA9-69E98BB60D65}",
+    "Language": "SFX",
+    "Hash": "{346640C7-946A-D261-A659-95FFDA1AF752}",
+    "ObjectPath": "\\SoundBanks\\Default Work Unit\\Main",
+    "ShortName": "Main",
+    "Path": "Main.bnk",
+    "Media": [
+     {
+      "Id": "175081538",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "SFX_Footstep02.wav",
+      "CachePath": "4F/{4FDDF041-5BED-B3EC-E8DD-C027E62ECC26}.wem"
+     },
+     {
+      "Id": "414997927",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "SFX_Footstep03.wav",
+      "CachePath": "73/{73190758-EF00-AEA8-F69C-884330906444}.wem"
+     },
+     {
+      "Id": "728003638",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "SFX_Footstep01.wav",
+      "CachePath": "5E/{5E1FDBA3-5865-D4DE-C5E5-D1520FA87FA3}.wem"
+     }
+    ],
+    "Events": [
+     {
+      "Id": "7310889",
+      "Name": "Plr_Footsteps",
+      "ObjectPath": "\\Events\\Default Work Unit\\Plr_Footsteps",
+      "GUID": "{76CCE283-0B61-485F-84F2-96637B943C4D}",
+      "DurationType": "OneShot",
+      "DurationMin": "0.3440136",
+      "DurationMax": "0.3440136",
+      "MediaRefs": [
+       {
+        "Id": "175081538"
+       },
+       {
+        "Id": "414997927"
+       },
+       {
+        "Id": "728003638"
+       }
+      ]
+     }
+    ]
+   }
+  ],
+  "FileHash": "{FFFBCD42-E3CE-E8E7-AEEF-E4DB94F6F526}"
+ }
+}

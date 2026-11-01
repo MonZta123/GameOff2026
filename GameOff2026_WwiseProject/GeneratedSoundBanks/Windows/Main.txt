@@ -1,0 +1,8 @@
+Event	ID	Name			Wwise Object Path	Notes
+	7310889	Plr_Footsteps			\Default Work Unit\Plr_Footsteps	
+
+In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
+	175081538	SFX_Footstep02	.cache\4F\{4FDDF041-5BED-B3EC-E8DD-C027E62ECC26}.wem		\Containers\Default Work Unit\SFX_Footstep02		60780
+	414997927	SFX_Footstep03	.cache\73\{73190758-EF00-AEA8-F69C-884330906444}.wem		\Containers\Default Work Unit\SFX_Footstep03		51328
+	728003638	SFX_Footstep01	.cache\5E\{5E1FDBA3-5865-D4DE-C5E5-D1520FA87FA3}.wem		\Containers\Default Work Unit\SFX_Footstep01		52200
+
