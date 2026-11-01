@@ -11,9 +11,15 @@
 
 namespace AK
 {
+    namespace EVENTS
+    {
+        static const AkUniqueID PLR_FOOTSTEPS = 7310889U;
+    } // namespace EVENTS
+
     namespace BUSSES
     {
         static const AkUniqueID MAIN_AUDIO_BUS = 2246998526U;
+        static const AkUniqueID PLR_BUS = 3126724591U;
     } // namespace BUSSES
 
     namespace AUDIO_DEVICES

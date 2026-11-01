@@ -1,0 +1,33 @@
+{
+ "SoundBanksInfo": {
+  "Platform": "Mac",
+  "BasePlatform": "Mac",
+  "SchemaVersion": "16",
+  "SoundBankVersion": "172",
+  "SoundBanks": [
+   {
+    "Id": "7310889",
+    "Type": "Event",
+    "GUID": "{F78BA6F0-894A-46A5-8E8C-6A6A90DB710F}",
+    "Language": "SFX",
+    "Hash": "{D7C467B9-411A-DBDF-E97A-78E5D31D8422}",
+    "ObjectPath": "Plr_Footsteps",
+    "ShortName": "Plr_Footsteps",
+    "Path": "Event/Plr_Footsteps.bnk",
+    "Events": [
+     {
+      "Id": "7310889",
+      "Name": "Plr_Footsteps",
+      "ObjectPath": "\\Events\\Default Work Unit\\Plr_Footsteps",
+      "GUID": "{F78BA6F0-894A-46A5-8E8C-6A6A90DB710F}",
+      "MaxAttenuation": "0",
+      "DurationType": "OneShot",
+      "DurationMin": "0",
+      "DurationMax": "0"
+     }
+    ]
+   }
+  ],
+  "FileHash": "{4BD5BA00-3669-2F38-6324-409C56722E63}"
+ }
+}
