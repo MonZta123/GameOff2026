@@ -1,0 +1,99 @@
+
+# ==========================================
+# Unity
+# ==========================================
+
+[Ll]ibrary/
+[Tt]emp/
+[Oo]bj/
+/[Bb]uild/
+/[Bb]uilds/
+[Ll]ogs/
+[Uu]ser[Ss]ettings/
+
+# Memory captures
+[Mm]emoryCaptures/
+
+# Asset Store Tools
+[Aa]ssets/AssetStoreTools*
+
+# Unity generated files
+*.pidb
+*.booproj
+*.svclog
+*.pdb
+*.mdb
+*.opendb
+*.VC.db
+*.tmp
+*.temp
+*.stackdump
+
+# Unity crash reports
+sysinfo.txt
+
+# ==========================================
+# JetBrains Rider / IntelliJ
+# ==========================================
+
+.idea/
+
+# Rider
+*.sln.iml
+*.DotSettings.user
+
+# JetBrains user-specific files
+.idea/**/workspace.xml
+.idea/**/tasks.xml
+.idea/**/usage.statistics.xml
+.idea/**/dictionaries
+.idea/**/shelf
+
+# ==========================================
+# Wwise
+# ==========================================
+
+# Wwise Integration (Installation siehe README)
+/Assets/Wwise/**
+!/Assets/Wwise/**/
+!/Assets/Wwise/**/*.meta
+!/Assets/Wwise/ScriptableObjects/**
+!/Assets/Wwise/Resources/**
+logRunSetup.txt
+
+# Kopierte SoundBanks
+/Assets/StreamingAssets/Audio/
+/Assets/StreamingAssets/Audio.meta
+
+WwiseUnityIntegration_*.zip
+*.log
+
+# ==========================================
+# Visual Studio
+# ==========================================
+
+.vs/
+*.suo
+*.user
+*.userprefs
+*.sln.docstates
+
+# ==========================================
+# Operating System
+# ==========================================
+
+.DS_Store
+Thumbs.db
+Desktop.ini
+
+# ==========================================
+# Build / Misc
+# ==========================================
+
+*.bak
+*.orig
+*.swp
+*.swo
+*.old
+*.csproj
+*.sln
