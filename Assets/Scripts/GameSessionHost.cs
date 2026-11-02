@@ -1,158 +1,151 @@
-﻿using ECS;
+﻿using System;
+using Domain;
+using ECS;
 using UnityEngine;
 
-namespace DefaultNamespace
+public class GameSessionHost : MonoBehaviour
 {
-    public class GameSessionHost : MonoBehaviour
+    [SerializeField]
+    private int stepsPerSecond;
+
+    [SerializeField]
+    private int maxSeconds;
+
+    [SerializeField]
+    private SnapshotRenderer snapshotRenderer;
+
+    [SerializeField]
+    private GameObjectPool pool;
+
+    private TickDriver _tickDriver;
+    private World _world;
+
+    private Snapshot[] _snapshots;
+    private Intent[] _intents;
+
+    private void Awake()
     {
-        [SerializeField]
-        private int stepsPerSecond;
+        var ticksTotal = maxSeconds * stepsPerSecond;
 
-        [SerializeField]
-        private int maxSeconds;
+        // Show Loadingscreen here
 
-        [SerializeField]
-        private SnapshotRenderer snapshotRenderer;
+        _world = new World();
+        _intents = new Intent[ticksTotal * Constants.PlayerCount];
 
-        [SerializeField]
-        private GameObjectPool pool;
-        
-        public TickDriver _tickDriver;
-        public World _world;
+        _snapshots = new Snapshot[ticksTotal];
+        _tickDriver = new TickDriver(stepsPerSecond);
 
-        public Snapshot[] _snapshots;
-        public Intent[] _intents;
+        _tickDriver._onTick += OnTick;
+        _tickDriver._onPostTick += OnPostTick;
 
-        private void Awake()
+        pool.Prewarm();
+
+        for (var i = 0; i < ticksTotal; i++)
         {
-            var ticksTotal = maxSeconds * stepsPerSecond;
+            var snapshot = new Snapshot();
+            snapshot.Initialize();
+            _snapshots[i] = snapshot;
 
-            // Show Loadingscreen here
-
-            _world = new World();
-            _intents = new Intent[ticksTotal];
-            _snapshots = new Snapshot[ticksTotal];
-            _tickDriver = new TickDriver(stepsPerSecond);
-
-            _tickDriver._onTick += OnTick;
-            _tickDriver._onPostTick += OnPostTick;
-            
-            pool.Prewarm();
-
-            for (var i = 0; i < ticksTotal; i++)
-            {
-                var snapshot = new Snapshot();
-                snapshot.Initialize();
-                _snapshots[i] = snapshot;
-
-                var intent = new Intent();
-                _intents[i] = intent;
-            }
-            
-            snapshotRenderer.SetSnapshot(_snapshots[0]);
-
-            // Hide Loadingscreen here
+            var intent = new Intent();
+            _intents[i] = intent;
         }
 
-        private long _lastSnapshotTick;
+        _world.BuildScenario(ref _snapshots[0]);
 
-        private void OnDestroy()
+        snapshotRenderer.SetSnapshot(_snapshots[0]);
+
+        // Hide Loadingscreen here
+    }
+
+    private long _lastSnapshotTick;
+
+    private void OnDestroy()
+    {
+        _tickDriver.StopSim();
+        _tickDriver._onTick -= OnTick;
+        _tickDriver._onPostTick -= OnPostTick;
+        _tickDriver = null;
+    }
+
+    public void Start()
+    {
+        _tickDriver.StartSim();
+    }
+
+    private void Update()
+    {
+        WriteInput();
+        _tickDriver.Update(Time.deltaTime);
+    }
+
+    private void WriteInput()
+    {
+        // Keep this for a possible rising edge
+        if (Input.GetKeyDown(KeyCode.R))
+        {
+            DoTimeShift(0);
+        }
+    }
+
+    private bool _timeShift;
+
+    public Intent BuildIntent()
+    {
+        var xAxis = Input.GetAxis("Horizontal");
+        var yAxis = Input.GetAxis("Vertical");
+
+        var intent = new Intent() { movement = Vector2.ClampMagnitude(new Vector2(xAxis, yAxis), 1) };
+
+        return intent;
+    }
+
+    private void DoTimeShift(int tick)
+    {
+        _tickDriver.SetToTick(tick);
+
+        ref var snapshot = ref _snapshots[tick];
+
+        _world.SetNextPlayer(ref snapshot);
+
+        snapshotRenderer.SetSnapshot(_snapshots[tick]);
+
+        _activePlayer++;
+        _activePlayer %= Constants.PlayerCount;
+    }
+
+    private int _activePlayer = 0;
+
+    private void OnTick(int tick, float deltaTime)
+    {
+        if (tick + 1 >= _snapshots.Length)
         {
             _tickDriver.StopSim();
-            _tickDriver._onTick -= OnTick;
-            _tickDriver._onPostTick -= OnPostTick;
-            _tickDriver = null;
+            // Time Over
+            return;
         }
 
-        public void Start()
-        {
-            _tickDriver.StartSim();
-        }
+        _intents[tick * Constants.PlayerCount + _activePlayer] = BuildIntent();
 
-        private void Update()
-        {
-            WriteInput();
-            _tickDriver.Update(Time.deltaTime);
-        }
+        var span = _intents.AsSpan(tick * Constants.PlayerCount, Constants.PlayerCount);
 
-        private void WriteInput()
-        {
-            if (Input.GetKeyDown(KeyCode.Space))
-                _spawnDown = true;
+        _world.SetState(_snapshots[tick]);
+        _world.DoStep(span, tick, deltaTime);
 
-            if (Input.GetKeyDown(KeyCode.Q))
-                _despawn1Down = true;
+        _snapshots[tick + 1].BuildFrom(_world.GetSnapshot());
+    }
 
-            if (Input.GetKeyDown(KeyCode.W))
-                _despawn2Down = true;
+    private void OnPostTick(int tick, float deltaTime)
+    {
+        snapshotRenderer.SetSnapshot(_snapshots[tick + 1]);
+    }
 
-            if (Input.GetKeyDown(KeyCode.E))
-                _despawn3Down = true;
+    private void OnGUI()
+    {
+        GUILayout.Label($"Tick: {_tickDriver.CurrentTick}");
+    }
 
-            if (Input.GetKeyDown(KeyCode.R))
-                _despawn4Down = true;
-        }
-
-        public Intent BuildIntent()
-        {
-            var intent = new Intent
-            {
-                spawnPlayer = _spawnDown,
-                despawnPlayer1 = _despawn1Down,
-                despawnPlayer2 = _despawn2Down,
-                despawnPlayer3 = _despawn3Down,
-                despawnPlayer4 = _despawn4Down
-            };
-            
-            _spawnDown = false;
-            _despawn1Down = false;
-            _despawn2Down = false;
-            _despawn3Down = false;
-            _despawn4Down = false;
-
-            return intent;
-        }
-
-        private bool _spawnDown;
-        private bool _despawn1Down;
-        private bool _despawn2Down;
-        private bool _despawn3Down;
-        private bool _despawn4Down;
-
-        private void OnTick(long tick, float deltaTime)
-        {
-            if (tick == _snapshots.Length)
-                return;
-
-            var buildIntent = BuildIntent();
-
-            _world.SetState(_snapshots[tick]);
-            _world.DoStep(buildIntent, tick, deltaTime);
-
-            _intents[tick] = buildIntent;
-            
-            _snapshots[tick + 1].BuildFrom(_world.GetSnapshot());
-        }
-
-        private void OnPostTick(long tick, float deltaTime)
-        {
-            snapshotRenderer.SetSnapshot(_snapshots[_tickDriver.CurrentTick + 1]);
-
-            if (tick == _snapshots.Length - 1)
-            {
-                _tickDriver.StopSim();
-            }
-        }
-
-        private void OnGUI()
-        {
-            GUILayout.Label($"Tick: {_tickDriver.CurrentTick}");
-            GUILayout.Label($"Space: {_spawnDown}");
-        }
-
-        public void Rewind()
-        {
-            _tickDriver.SetToTick(20);
-        }
+    public void Rewind()
+    {
+        _tickDriver.SetToTick(20);
     }
 }

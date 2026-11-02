@@ -1,4 +1,6 @@
-﻿using ECS.Entities;
+﻿using System.Reflection.Metadata;
+using Domain;
+using ECS.Entities;
 
 namespace ECS
 {
@@ -38,17 +40,17 @@ namespace ECS
 
         public void Initialize()
         {
-            playerIdMap = new short[4];
-            players = new Player[4];
-            freePlayerIds = new short[4];
+            playerIdMap = new short[Constants.PlayerCount];
+            players = new Player[Constants.PlayerCount];
+            freePlayerIds = new short[Constants.PlayerCount];
 
-            enemyIdMap = new short[100];
-            enemies = new Enemy[100];
-            freeEnemyIds = new short[100];
+            enemyIdMap = new short[Constants.EnemyCount];
+            enemies = new Enemy[Constants.EnemyCount];
+            freeEnemyIds = new short[Constants.EnemyCount];
 
-            projectileIdMap = new short[500];
-            projectiles = new Projectile[500];
-            freeProjectileIds = new short[500];
+            projectileIdMap = new short[Constants.ProjectileCount];
+            projectiles = new Projectile[Constants.ProjectileCount];
+            freeProjectileIds = new short[Constants.ProjectileCount];
 
             for (var i = 0; i < freePlayerIds.Length; i++)
             {

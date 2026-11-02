@@ -155,7 +155,7 @@ MonoBehaviour:
   enemy: {fileID: -1690383949577661822, guid: cf592050b90db5e418e8411f83e0e798, type: 3}
   maxEnemies: 100
   projectile: {fileID: 6085684898756830371, guid: 2fb07515fc822d544b16e1a85678f742, type: 3}
-  maxProjectiles: 500
+  maxProjectiles: 200
 --- !u!4 &13633224
 Transform:
   m_ObjectHideFlags: 0
@@ -183,8 +183,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 603de678bc874f04ab66d7c7320424be, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DefaultNamespace.GameSessionHost
-  stepsPerSecond: 64
-  maxSeconds: 1200
+  stepsPerSecond: 30
+  maxSeconds: 180
   snapshotRenderer: {fileID: 13633226}
   pool: {fileID: 13633223}
 --- !u!114 &13633226

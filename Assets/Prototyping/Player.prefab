@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 3500439058203164475}
   - component: {fileID: 2043120991904392592}
   - component: {fileID: 821953230209826730}
+  - component: {fileID: 9017685984530300201}
   m_Layer: 0
   m_Name: VisualObject
   m_TagString: Untagged
@@ -90,6 +91,20 @@ MeshRenderer:
   m_SortingOrder: 0
   m_MaskInteraction: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &9017685984530300201
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2794638952549822098}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1239d370544d447f9a73c67e834d2f02, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PositionSmoother
+  positionSmoothSpeed: 15
+  teleportThreshold: 5
 --- !u!1 &4966694149308037225
 GameObject:
   m_ObjectHideFlags: 0
@@ -135,3 +150,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8588da7f1d9a4c9abdbaa1f4ee67803a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Actors.Player
+  positionSmoother: {fileID: 9017685984530300201}

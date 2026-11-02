@@ -4,7 +4,7 @@ namespace ECS
 {
     public class TickDriver
     {
-        public long CurrentTick { get; private set; }
+        public int CurrentTick { get; private set; }
 
         public int TickRate { get; private set; }
 
@@ -12,8 +12,8 @@ namespace ECS
 
         private float _timeSinceTick;
 
-        public Action<long, float> _onTick;
-        public Action<long, float> _onPostTick;
+        public Action<int, float> _onTick;
+        public Action<int, float> _onPostTick;
 
         public TickDriver(int tickRate)
         {
@@ -49,9 +49,10 @@ namespace ECS
             }
         }
 
-        public void SetToTick(uint i)
+        public void SetToTick(int i)
         {
             CurrentTick = i;
+            _timeSinceTick = 0;
         }
     }
 }

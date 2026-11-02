@@ -1,8 +1,5 @@
 ﻿using UnityEngine;
 
-namespace DefaultNamespace
+public class MapRenderer : MonoBehaviour
 {
-    public class MapRenderer : MonoBehaviour
-    {
-    }
 }

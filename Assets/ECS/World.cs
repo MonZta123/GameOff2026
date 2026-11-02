@@ -1,4 +1,5 @@
-﻿using ECS.Entities;
+﻿using System;
+using ECS.Entities;
 using ECS.Events;
 using ECS.Systems;
 
@@ -8,20 +9,32 @@ namespace ECS
     {
         private Snapshot _snapshot;
 
-        public MoveEvent _moveEvent;
+        public MoveEvent[] _moveEvents;
 
-        private InputSystem _inputSystem;
-        private DebugSpawnSystem _debugSpawnSystem;
-        private DebugDespawnSystem _debugDespawnSystem;
+        private InputSystem _moveSystem;
 
         public World()
         {
             _snapshot = new Snapshot();
             _snapshot.Initialize();
+            
+            _moveEvents = new MoveEvent[_snapshot.players.Length];
 
-            _inputSystem = new InputSystem();
-            _debugSpawnSystem = new DebugSpawnSystem();
-            _debugDespawnSystem = new DebugDespawnSystem();
+            _moveSystem = new InputSystem();
+        }
+
+        public void BuildScenario(ref Snapshot snapshot)
+        {
+            // build world
+
+            var playerId = FetchPlayerId(ref snapshot);
+
+            var player = new Player(playerId);
+            // add position
+
+            SpawnPlayer(player, ref snapshot);
+
+            // Spawn Enemies and stuff
         }
 
         public void SetState(Snapshot snapshot)
@@ -29,10 +42,10 @@ namespace ECS
             _snapshot.BuildFrom(snapshot);
         }
 
-        public void DoStep(Intent intent, long tick, float deltaTime)
+        public void DoStep(ReadOnlySpan<Intent> intents, long tick, float deltaTime)
         {
             BuildSensors();
-            System(intent, tick, deltaTime);
+            System(intents, tick, deltaTime);
             Simulate(deltaTime);
 
             ResetEventLists();
@@ -40,28 +53,48 @@ namespace ECS
 
         private void ResetEventLists()
         {
-            _moveEvent = new MoveEvent();
+            for (var i = 0; i < _snapshot.players.Length; i++)
+            {
+                _moveEvents[i] = new MoveEvent();
+            }
         }
 
         public void BuildSensors()
         {
         }
 
-        public void System(Intent intent, long tick, float deltaTime)
+        public void System(ReadOnlySpan<Intent> intents, long tick, float deltaTime)
         {
-            _inputSystem.Execute(this, intent);
+            _moveSystem.Execute(this, intents);
 
-            _debugSpawnSystem.Execute(this, intent);
-            _debugDespawnSystem.Execute(this, intent);
+            // _debugSpawnSystem.Execute(this, intent);
+            // _debugDespawnSystem.Execute(this, intent);
         }
 
         public void Simulate(float deltaTime)
         {
+            if (_snapshot.numPlayers > 0)
+            {
+                for (var i = 0; i < _snapshot.numPlayers; i++)
+                {
+                    ref var player = ref _snapshot.players[i];
+                    
+                    player.position += _moveEvents[i].movement * (deltaTime * 2.5f);
+                    player.yaw = _moveEvents[i].yaw;
+                }
+            }
         }
 
         public Snapshot GetSnapshot()
         {
             return _snapshot;
+        }
+
+        public void SpawnPlayer(Player player, ref Snapshot snapshot)
+        {
+            snapshot.players[snapshot.numPlayers] = player;
+            snapshot.playerIdMap[player._id - 1] = snapshot.numPlayers;
+            snapshot.numPlayers++;
         }
 
         public void SpawnPlayer(Player player)
@@ -70,12 +103,12 @@ namespace ECS
             _snapshot.playerIdMap[player._id - 1] = _snapshot.numPlayers;
             _snapshot.numPlayers++;
         }
-        
+
         public void DespawnPlayer(short playerId)
         {
             if (_snapshot.playerIdMap[playerId - 1] == -1)
                 return;
-            
+
             var index = _snapshot.playerIdMap[playerId - 1];
             if (index != _snapshot.numPlayers - 1)
             {
@@ -90,6 +123,17 @@ namespace ECS
             _snapshot.numPlayers--;
         }
 
+        public short FetchPlayerId(ref Snapshot snapshot)
+        {
+            if (snapshot.numPlayers == snapshot.players.Length)
+                return 0;
+
+            var id = snapshot.freePlayerIds[^(snapshot.numPlayers + 1)];
+            snapshot.freePlayerIds[^(snapshot.numPlayers + 1)] = 0;
+
+            return id;
+        }
+
         public short FetchPlayerId()
         {
             if (_snapshot.numPlayers == _snapshot.players.Length)
@@ -97,13 +141,23 @@ namespace ECS
 
             var id = _snapshot.freePlayerIds[^(_snapshot.numPlayers + 1)];
             _snapshot.freePlayerIds[^(_snapshot.numPlayers + 1)] = 0;
-            
+
             return id;
         }
 
         public void ReturnPlayerId(short id)
         {
             _snapshot.freePlayerIds[^(_snapshot.numPlayers + 1)] = id;
+        }
+
+        public void SetNextPlayer(ref Snapshot snapshot)
+        {
+            if (snapshot.numPlayers < snapshot.players.Length)
+            {
+                var id = FetchPlayerId(ref snapshot);
+                var player = new Player(id);
+                SpawnPlayer(player, ref snapshot);
+            }
         }
     }
 }
