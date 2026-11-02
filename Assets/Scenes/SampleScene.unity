@@ -183,7 +183,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 603de678bc874f04ab66d7c7320424be, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DefaultNamespace.GameSessionHost
-  stepsPerSecond: 1
+  stepsPerSecond: 64
   maxSeconds: 1200
   snapshotRenderer: {fileID: 13633226}
   pool: {fileID: 13633223}
