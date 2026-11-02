@@ -10,7 +10,7 @@
     "Type": "User",
     "GUID": "{701ECBBD-9C7B-4030-8CDB-749EE5D1C7B9}",
     "Language": "SFX",
-    "Hash": "{08D4AA66-860F-BAF2-9FF4-E14CCE59499B}",
+    "Hash": "{19B43418-7087-AC55-C14B-BFFE7355A80B}",
     "ObjectPath": "Init",
     "ShortName": "Init",
     "Path": "Init.bnk",
@@ -36,20 +36,38 @@
     },
     "Busses": [
      {
+      "Id": "85412153",
+      "Name": "AMBIENCE",
+      "ObjectPath": "\\Busses\\Default Work Unit\\Main Audio Bus\\AMBIENCE",
+      "GUID": "{0D3F0E73-E6DF-4226-8BD9-1CC7EEEBAE76}"
+     },
+     {
+      "Id": "393239870",
+      "Name": "SFX",
+      "ObjectPath": "\\Busses\\Default Work Unit\\Main Audio Bus\\SFX",
+      "GUID": "{282B1519-D877-4EF3-9048-C765F53AAF2A}"
+     },
+     {
+      "Id": "1534528548",
+      "Name": "VO",
+      "ObjectPath": "\\Busses\\Default Work Unit\\Main Audio Bus\\VO",
+      "GUID": "{832227F3-45D1-422A-8529-93517E731F5A}"
+     },
+     {
       "Id": "2246998526",
       "Name": "Main Audio Bus",
       "ObjectPath": "\\Busses\\Default Work Unit\\Main Audio Bus",
       "GUID": "{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}"
      },
      {
-      "Id": "3126724591",
-      "Name": "Plr Bus",
-      "ObjectPath": "\\Busses\\Default Work Unit\\Plr Bus",
-      "GUID": "{52EDD006-C2CA-457D-B130-E3EEE99F0795}"
+      "Id": "3991942870",
+      "Name": "MUSIC",
+      "ObjectPath": "\\Busses\\Default Work Unit\\Main Audio Bus\\MUSIC",
+      "GUID": "{F759BC7F-4007-4D33-8F58-64648B34CD3D}"
      }
     ]
    }
   ],
-  "FileHash": "{0FFA63FC-863E-ECF2-2330-BE7C419E0ED7}"
+  "FileHash": "{C79BA7B0-3907-F82E-596B-2EBF4E079B0A}"
  }
 }

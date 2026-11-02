@@ -9,13 +9,12 @@
 							<ObjectRef Name="System" ID="{76C616A5-44E8-4DF8-85A7-020E8510008C}" WorkUnitID="{DE5C5AC0-8ACA-496D-970C-63D0F28BFA90}"/>
 						</Reference>
 					</ReferenceList>
-				</Bus>
-				<Bus Name="Plr Bus" ID="{52EDD006-C2CA-457D-B130-E3EEE99F0795}">
-					<ReferenceList>
-						<Reference Name="AudioDevice" PluginName="System" CompanyID="0" PluginID="174" PluginType="7">
-							<ObjectRef Name="System" ID="{76C616A5-44E8-4DF8-85A7-020E8510008C}" WorkUnitID="{DE5C5AC0-8ACA-496D-970C-63D0F28BFA90}"/>
-						</Reference>
-					</ReferenceList>
+					<ChildrenList>
+						<Bus Name="SFX" ID="{282B1519-D877-4EF3-9048-C765F53AAF2A}"/>
+						<Bus Name="MUSIC" ID="{F759BC7F-4007-4D33-8F58-64648B34CD3D}"/>
+						<Bus Name="VO" ID="{832227F3-45D1-422A-8529-93517E731F5A}"/>
+						<Bus Name="AMBIENCE" ID="{0D3F0E73-E6DF-4226-8BD9-1CC7EEEBAE76}"/>
+					</ChildrenList>
 				</Bus>
 			</ChildrenList>
 		</WorkUnit>

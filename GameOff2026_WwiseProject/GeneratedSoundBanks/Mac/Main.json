@@ -10,7 +10,7 @@
     "Type": "User",
     "GUID": "{3059A6CE-8152-4CD2-BEA9-69E98BB60D65}",
     "Language": "SFX",
-    "Hash": "{E1C7C2FC-00A9-33E9-4D00-9DE0AB5C8C40}",
+    "Hash": "{8455EAD9-CFF0-1DB2-A5E1-84BFB2003118}",
     "ObjectPath": "\\SoundBanks\\Default Work Unit\\Main",
     "ShortName": "Main",
     "Path": "Main.bnk",
@@ -47,8 +47,8 @@
       "ObjectPath": "\\Events\\Default Work Unit\\Plr_Footsteps",
       "GUID": "{76CCE283-0B61-485F-84F2-96637B943C4D}",
       "DurationType": "OneShot",
-      "DurationMin": "0.2741302",
-      "DurationMax": "0.36446974",
+      "DurationMin": "0.1629988",
+      "DurationMax": "0.61296254",
       "MediaRefs": [
        {
         "Id": "175081538"
@@ -64,6 +64,6 @@
     ]
    }
   ],
-  "FileHash": "{F736E6FA-5A8E-58D3-29C3-47C3103EAD45}"
+  "FileHash": "{E220A074-4A72-2EC3-8646-4E9172CA9557}"
  }
 }

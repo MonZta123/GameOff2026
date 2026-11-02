@@ -1,6 +1,9 @@
 Audio Bus	ID	Name			Wwise Object Path	Notes
+	85412153	AMBIENCE			\Default Work Unit\Main Audio Bus\AMBIENCE	
+	393239870	SFX			\Default Work Unit\Main Audio Bus\SFX	
+	1534528548	VO			\Default Work Unit\Main Audio Bus\VO	
 	2246998526	Main Audio Bus			\Default Work Unit\Main Audio Bus	
-	3126724591	Plr Bus			\Default Work Unit\Plr Bus	
+	3991942870	MUSIC			\Default Work Unit\Main Audio Bus\MUSIC	
 
 Audio Devices	ID	Name	Type				Notes
 	2317455096	No_Output	No Output			
