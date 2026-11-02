@@ -8,6 +8,12 @@ namespace Actors
         [SerializeField]
         private PositionSmoother positionSmoother;
         
+        [SerializeField]
+        private SpriteRenderer characterRenderer;
+        
+        [SerializeField]
+        private SpriteRenderer gunRenderer;
+        
         public short Id { get; private set; }
 
         public void Init(ECS.Entities.Player entity)
@@ -18,7 +24,7 @@ namespace Actors
 
         public void SetState(ECS.Entities.Player entity)
         {
-            transform.position = new Vector3(entity.position.x, 0, entity.position.y);
+            transform.position = entity.position;
         }
 
         public void Release()

@@ -22,6 +22,7 @@ public class GameSessionHost : MonoBehaviour
 
     private Snapshot[] _snapshots;
     private Intent[] _intents;
+    private int _activePlayer;
 
     private void Awake()
     {
@@ -56,8 +57,6 @@ public class GameSessionHost : MonoBehaviour
 
         // Hide Loadingscreen here
     }
-
-    private long _lastSnapshotTick;
 
     private void OnDestroy()
     {
@@ -113,8 +112,6 @@ public class GameSessionHost : MonoBehaviour
         _activePlayer %= Constants.PlayerCount;
     }
 
-    private int _activePlayer = 0;
-
     private void OnTick(int tick, float deltaTime)
     {
         if (tick + 1 >= _snapshots.Length)
@@ -139,10 +136,12 @@ public class GameSessionHost : MonoBehaviour
         snapshotRenderer.SetSnapshot(_snapshots[tick + 1]);
     }
 
+#if UNITY_EDITOR
     private void OnGUI()
     {
         GUILayout.Label($"Tick: {_tickDriver.CurrentTick}");
     }
+#endif
 
     public void Rewind()
     {

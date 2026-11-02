@@ -6,6 +6,5 @@ namespace ECS
     {
         public Vector2 movement;
         public float yaw;
-        public bool timeShift { get; set; }
     }
 }
