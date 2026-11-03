@@ -7,19 +7,21 @@ namespace ECS.Entities
         public Player(short id)
         {
             _id = id;
-            position = Vector2.zero;
-            angle = 0;
-            health = 100;
-            type = PlayerType.Heavy;
-            lastAttackTick = 0;
+            _position = Vector2.zero;
+            _angle = 0;
+            _health = 100;
+            _type = PlayerType.Heavy;
+            _lastAttackTick = 0;
+            _colliderRadius = 1.0f;
         }
         
-        public Vector2 position;
-        public float angle;
-        public float health;
-        public PlayerType type;
-        public int lastAttackTick;
+        public Vector2 _position;
+        public float _angle;
+        public float _health;
+        public PlayerType _type;
+        public int _lastAttackTick;
         
         public short _id;
+        public float _colliderRadius;
     }
 }

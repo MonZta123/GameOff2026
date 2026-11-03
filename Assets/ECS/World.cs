@@ -16,6 +16,7 @@ namespace ECS
         private MoveSystem _moveSystem;
         private AttackSystem _attackSystem;
         private ProjectileSystem _projectileSystem;
+        private DamageSystem _damageSystem;
         private EnemySystem _enemySystem;
 
         private SoundEvent[] _soundEvents;
@@ -41,6 +42,7 @@ namespace ECS
             _moveSystem = new MoveSystem();
             _attackSystem = new AttackSystem(tickRate);
             _projectileSystem = new ProjectileSystem();
+            _damageSystem = new DamageSystem();
             _enemySystem = new EnemySystem();
         }
 
@@ -48,12 +50,10 @@ namespace ECS
         {
             // build world
 
-            var playerId = FetchPlayerId(ref snapshot);
-
-            var player = new Player(playerId);
+            _currentPlayer = GetCharacter(PlayerType.Heavy);
             // add position
 
-            SpawnPlayer(player, ref snapshot);
+            SpawnPlayer(_currentPlayer, ref snapshot);
 
             // DEBUG
 #if UNITY_EDITOR
@@ -112,7 +112,9 @@ namespace ECS
 
             _projectileSystem.Execute(this, intents, tick);
 
-            _enemySystem.Execute(this, intents);
+            _damageSystem.Execute(this, intents);
+
+            _enemySystem.Execute(this, intents, tick);
 
             // _debugSpawnSystem.Execute(this, intent);
             // _debugDespawnSystem.Execute(this, intent);
@@ -123,7 +125,7 @@ namespace ECS
             return type switch
             {
                 PlayerType.Heavy => Constants.HeavyMoveSpeed,
-                PlayerType.Hacker => 2.0f,
+                PlayerType.Hacker => Constants.HackerMoveSpeed,
                 PlayerType.Demolition => 1.5f,
                 PlayerType.Stealth => 1.0f,
                 _ => 0.0f
@@ -145,8 +147,8 @@ namespace ECS
             {
                 ref var player = ref _snapshot.players[i];
 
-                player.position += _moveEvents[i]._movement * (deltaTime * GetMoveSpeed(player.type));
-                player.angle = _moveEvents[i]._angle;
+                player._position += _moveEvents[i]._movement * (deltaTime * GetMoveSpeed(player._type));
+                player._angle = _moveEvents[i]._angle;
             }
 
             for (var i = 0; i < _snapshot.numProjectiles; i++)
@@ -225,17 +227,6 @@ namespace ECS
             _snapshot.numPlayers--;
         }
 
-        public short FetchPlayerId(ref Snapshot snapshot)
-        {
-            if (snapshot.numPlayers == snapshot.players.Length)
-                return 0;
-
-            var id = snapshot.freePlayerIds[^(snapshot.numPlayers + 1)];
-            snapshot.freePlayerIds[^(snapshot.numPlayers + 1)] = 0;
-
-            return id;
-        }
-
         public short FetchEnemyId(ref Snapshot snapshot)
         {
             if (snapshot.numEnemies == snapshot.enemies.Length)
@@ -247,29 +238,48 @@ namespace ECS
             return id;
         }
 
-        public short FetchPlayerId()
+        private Player GetCharacter(PlayerType type)
         {
-            if (_snapshot.numPlayers == _snapshot.players.Length)
-                return 0;
+            var id = ((int)type) + 1;
+            var player = new Player((short)id);
 
-            var id = _snapshot.freePlayerIds[^(_snapshot.numPlayers + 1)];
-            _snapshot.freePlayerIds[^(_snapshot.numPlayers + 1)] = 0;
+            switch (type)
+            {
+                case PlayerType.Heavy:
+                    player._type = PlayerType.Heavy;
+                    break;
+                case PlayerType.Hacker:
+                    player._type = PlayerType.Hacker;
+                    break;
+                case PlayerType.Demolition:
+                    player._type = PlayerType.Demolition;
+                    break;
+                case PlayerType.Stealth:
+                    player._type = PlayerType.Stealth;
+                    break;
+            }
 
-            return id;
+            return player;
         }
 
-        public void ReturnPlayerId(short id)
-        {
-            _snapshot.freePlayerIds[^(_snapshot.numPlayers + 1)] = id;
-        }
+        private Player _currentPlayer;
 
         public void SetNextPlayer(ref Snapshot snapshot)
         {
             if (snapshot.numPlayers < snapshot.players.Length)
             {
-                var id = FetchPlayerId(ref snapshot);
-                var player = new Player(id);
-                SpawnPlayer(player, ref snapshot);
+                var currentPlayer = ((int)_currentPlayer._type) + 1;
+                currentPlayer++;
+                if (currentPlayer == Constants.PlayerCount + 1)
+                    currentPlayer = 1;
+
+                if (snapshot.playerIdMap[currentPlayer - 1] == -1)
+                {
+                    _currentPlayer = GetCharacter((PlayerType)(currentPlayer - 1));
+                    SpawnPlayer(_currentPlayer, ref snapshot);
+                }
+
+                _currentPlayer = snapshot.players[currentPlayer - 1];
             }
         }
 

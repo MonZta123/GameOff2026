@@ -14,6 +14,9 @@ namespace Actors
         [SerializeField]
         private SpriteRenderer gunRenderer;
 
+        [SerializeField]
+        private Sprite[] characterSprites;
+        
         public short Id { get; private set; }
 
         private bool _activePlayer;
@@ -21,12 +24,15 @@ namespace Actors
         public void Init(ECS.Entities.Player entity)
         {
             Id = entity._id;
-            positionSmoother.SetSmoothPosition(true);
+            transform.position = entity._position;
+            characterRenderer.sprite = characterSprites[(int)entity._type];
         }
 
         public void SetActivePlayer(bool value)
         {
             _activePlayer = value;
+            if (!positionSmoother.IsSmoothingPosition)
+                positionSmoother.SetSmoothPosition(true);
         }
 
         public void SetAngle(float angle)
@@ -36,10 +42,10 @@ namespace Actors
 
         public void SetState(ECS.Entities.Player entity)
         {
-            transform.position = entity.position;
+            transform.position = entity._position;
 
             if (!_activePlayer)
-                gunRenderer.transform.rotation = Quaternion.Euler(0, 0, entity.angle);
+                gunRenderer.transform.rotation = Quaternion.Euler(0, 0, entity._angle);
         }
 
         public void Release()

@@ -13,6 +13,13 @@
         public const float HeavyColliderRadius = 1.0f;
         public const float HeavyDamage = 10f;
 
+        public const float HackerCooldown = 0.25f;
+        public const float HackerProjectileTtl = 1f;
+        public const float HackerProjectileSpeed = 5f;
+        public const float HackerMoveSpeed = 7.5f;
+        public const float HackerColliderRadius = 1.0f;
+        public const float HackerDamage = 10f;
+        
         public const float GunManCooldown = 1.0f;
         public const float GunManProjectileTtl = 1.0f;
         public const float GunManProjectileSpeed = 1.0f;

@@ -8,6 +8,8 @@ namespace ECS.Entities
         Hacker,
         Demolition,
         Stealth,
+        
+        GunMan
     }
     
     public struct Projectile

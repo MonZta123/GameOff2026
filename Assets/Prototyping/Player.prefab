@@ -188,6 +188,11 @@ MonoBehaviour:
   positionSmoother: {fileID: 9017685984530300201}
   characterRenderer: {fileID: 317469124572263587}
   gunRenderer: {fileID: 5863871626178532634}
+  characterSprites:
+  - {fileID: 21300000, guid: 8c5c064370e63e74d94b6e81166363a7, type: 3}
+  - {fileID: 21300000, guid: 2ee068e88f059b84b92edb15c232942c, type: 3}
+  - {fileID: 21300000, guid: 7ced0692c4a5efa4188c9b95020ea6f4, type: 3}
+  - {fileID: 21300000, guid: 99909a8cf562e664988e81c536974cc6, type: 3}
 --- !u!1 &6854297273591894774
 GameObject:
   m_ObjectHideFlags: 0
