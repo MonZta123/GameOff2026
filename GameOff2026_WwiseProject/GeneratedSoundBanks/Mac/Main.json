@@ -10,11 +10,19 @@
     "Type": "User",
     "GUID": "{3059A6CE-8152-4CD2-BEA9-69E98BB60D65}",
     "Language": "SFX",
-    "Hash": "{3EEFC47C-9B87-E250-6136-5C8F8A82EA31}",
+    "Hash": "{14BFA46C-0B75-BD70-1FF7-396BF797289D}",
     "ObjectPath": "\\SoundBanks\\Default Work Unit\\Main",
     "ShortName": "Main",
     "Path": "Main.bnk",
     "Media": [
+     {
+      "Id": "3566932",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "Shift_02.wav",
+      "CachePath": "45/{45A22595-5997-E214-AD62-7EA438F7AF57}.wem"
+     },
      {
       "Id": "112815051",
       "Language": "SFX",
@@ -24,20 +32,20 @@
       "CachePath": "48/{480EAE8E-234F-00E2-17CE-1DC03ED84B34}.wem"
      },
      {
-      "Id": "175081538",
-      "Language": "SFX",
-      "Streaming": "false",
-      "Location": "Memory",
-      "ShortName": "SFX_Footstep02.wav",
-      "CachePath": "4F/{4FDDF041-5BED-B3EC-E8DD-C027E62ECC26}.wem"
-     },
-     {
       "Id": "188115908",
       "Language": "SFX",
       "Streaming": "false",
       "Location": "Memory",
       "ShortName": "VO_D_Select06.wav",
       "CachePath": "0B/{0BAE5827-37AC-5066-255D-8DAD8D42D552}.wem"
+     },
+     {
+      "Id": "190951719",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "FootstepA_02.wav",
+      "CachePath": "7F/{7F1470C6-D0D3-4288-9A5D-D70509A34A0C}.wem"
      },
      {
       "Id": "219413807",
@@ -72,20 +80,20 @@
       "CachePath": "E2/{E2066ABA-3CFE-FEEF-5C2E-80C9736FC211}.wem"
      },
      {
-      "Id": "414997927",
-      "Language": "SFX",
-      "Streaming": "false",
-      "Location": "Memory",
-      "ShortName": "SFX_Footstep03.wav",
-      "CachePath": "73/{73190758-EF00-AEA8-F69C-884330906444}.wem"
-     },
-     {
       "Id": "448234325",
       "Language": "SFX",
       "Streaming": "false",
       "Location": "Memory",
       "ShortName": "VO_D_Order05.wav",
       "CachePath": "E0/{E09D305C-8D06-A9E1-D362-7E4137A0E058}.wem"
+     },
+     {
+      "Id": "456280109",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "FootstepA_03.wav",
+      "CachePath": "73/{73E5C2BA-0F44-4EEB-F630-79FF04EB192B}.wem"
      },
      {
       "Id": "486494743",
@@ -112,6 +120,14 @@
       "CachePath": "07/{075362E3-61A6-3040-7C29-324536D6CCE9}.wem"
      },
      {
+      "Id": "593952616",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "FootstepC_02.wav",
+      "CachePath": "14/{1418EB5E-07D9-33C7-84A9-CDF884EA9EC3}.wem"
+     },
+     {
       "Id": "675216016",
       "Language": "SFX",
       "Streaming": "false",
@@ -120,20 +136,20 @@
       "CachePath": "23/{233937BE-233A-BB76-F0C1-E5B75F82900B}.wem"
      },
      {
-      "Id": "728003638",
-      "Language": "SFX",
-      "Streaming": "false",
-      "Location": "Memory",
-      "ShortName": "SFX_Footstep01.wav",
-      "CachePath": "5E/{5E1FDBA3-5865-D4DE-C5E5-D1520FA87FA3}.wem"
-     },
-     {
       "Id": "735998697",
       "Language": "SFX",
       "Streaming": "false",
       "Location": "Memory",
       "ShortName": "VO_D_Order03.wav",
       "CachePath": "68/{682B233C-BDC2-0C4E-24AD-BD29936307E0}.wem"
+     },
+     {
+      "Id": "789563096",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "Shift_03.wav",
+      "CachePath": "5F/{5F3653ED-FBA7-D15D-E160-76457BC0A719}.wem"
      },
      {
       "Id": "911343175",
@@ -152,6 +168,30 @@
       "CachePath": "6F/{6FB63E66-BE34-46D0-31B5-03F4A0525076}.wem"
      },
      {
+      "Id": "935062006",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "FootstepC_01.wav",
+      "CachePath": "C6/{C61CA925-091D-8086-4C12-E97210CF6BA9}.wem"
+     },
+     {
+      "Id": "936072716",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "Shift_01.wav",
+      "CachePath": "7A/{7AD91EBF-3E4A-793C-77AE-13E2AF6DC02E}.wem"
+     },
+     {
+      "Id": "959829082",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "FootstepC_03.wav",
+      "CachePath": "80/{80E3CDEC-761D-B4DB-AEC1-52828FC8DC59}.wem"
+     },
+     {
       "Id": "960548762",
       "Language": "SFX",
       "Streaming": "false",
@@ -166,6 +206,14 @@
       "Location": "Memory",
       "ShortName": "AmbienceBar_Intro.wav",
       "CachePath": "2D/{2DB2AED9-9CD0-8985-0AC1-1B2EFA66D0F4}.wem"
+     },
+     {
+      "Id": "1053093362",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "FootstepA_01.wav",
+      "CachePath": "B2/{B2EFC18B-499B-4D7D-A405-7F3827C1A556}.wem"
      }
     ],
     "Events": [
@@ -200,22 +248,62 @@
       ]
      },
      {
-      "Id": "1905415017",
-      "Name": "Play_SFX_C_Footsteps",
-      "ObjectPath": "\\Events\\Default Work Unit\\SFX\\Play_SFX_C_Footsteps",
-      "GUID": "{76CCE283-0B61-485F-84F2-96637B943C4D}",
+      "Id": "2635421491",
+      "Name": "Play_SFX_A_Footsteps",
+      "ObjectPath": "\\Events\\Default Work Unit\\SFX\\Movement\\Play_SFX_A_Footsteps",
+      "GUID": "{3ED77479-A148-44F9-817A-A296ABFBE50F}",
       "DurationType": "OneShot",
-      "DurationMin": "0.1629988",
-      "DurationMax": "0.61296254",
+      "DurationMin": "0.1395569",
+      "DurationMax": "0.5593066",
       "MediaRefs": [
        {
-        "Id": "175081538"
+        "Id": "190951719"
        },
        {
-        "Id": "414997927"
+        "Id": "456280109"
        },
        {
-        "Id": "728003638"
+        "Id": "1053093362"
+       }
+      ]
+     },
+     {
+      "Id": "1905415017",
+      "Name": "Play_SFX_C_Footsteps",
+      "ObjectPath": "\\Events\\Default Work Unit\\SFX\\Movement\\Play_SFX_C_Footsteps",
+      "GUID": "{76CCE283-0B61-485F-84F2-96637B943C4D}",
+      "DurationType": "OneShot",
+      "DurationMin": "0.27585587",
+      "DurationMax": "1.0031803",
+      "MediaRefs": [
+       {
+        "Id": "593952616"
+       },
+       {
+        "Id": "935062006"
+       },
+       {
+        "Id": "959829082"
+       }
+      ]
+     },
+     {
+      "Id": "2453180302",
+      "Name": "Play_SFX_Shift",
+      "ObjectPath": "\\Events\\Default Work Unit\\SFX\\Movement\\Play_SFX_Shift",
+      "GUID": "{FE2001B2-A82F-4B45-BBE4-31BBED8D8DED}",
+      "DurationType": "OneShot",
+      "DurationMin": "0.30204666",
+      "DurationMax": "1.0505333",
+      "MediaRefs": [
+       {
+        "Id": "3566932"
+       },
+       {
+        "Id": "789563096"
+       },
+       {
+        "Id": "936072716"
        }
       ]
      },
@@ -280,6 +368,6 @@
     ]
    }
   ],
-  "FileHash": "{159538AF-09FE-5B98-FB36-B05DFE6FDE4B}"
+  "FileHash": "{33BD62E9-BAFD-86B8-BCEC-D55E558FFB70}"
  }
 }
