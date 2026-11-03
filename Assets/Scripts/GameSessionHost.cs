@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using Actors;
 using Domain;
 using ECS;
@@ -21,6 +22,9 @@ public class GameSessionHost : MonoBehaviour
 
     [SerializeField]
     private CinemachinePositionComposer positionComposer;
+    
+    [SerializeField]
+    private AK.Wwise.Event scratchSound;
 
     [SerializeField]
     private Camera cam;
@@ -136,12 +140,12 @@ public class GameSessionHost : MonoBehaviour
 
     private void DoTimeShift(int tick)
     {
+        scratchSound.Post(gameObject);
+        _tickDriver.StopSim();
         _tickDriver.SetToTick(tick);
 
         ref var snapshot = ref _snapshots[tick];
-
         _world.SetNextPlayer(ref snapshot);
-
         snapshotRenderer.SetSnapshot(_snapshots[tick]);
 
         _activePlayerIndex++;
@@ -150,8 +154,28 @@ public class GameSessionHost : MonoBehaviour
         _activePlayerObject.SetActivePlayer(false);
         _activePlayerObject = snapshotRenderer.GetPlayerByIndex(_activePlayerIndex);
         _activePlayerObject.SetActivePlayer(true);
-
+        
         positionComposer.VirtualCamera.Follow = _activePlayerObject.transform;
+
+
+
+        StartCoroutine(WaitForStart());
+    }
+
+    private IEnumerator WaitForStart()
+    {
+        yield return null;
+
+        var elapsed = 0f;
+
+        while (elapsed < 0.5f)
+        {
+            elapsed += Time.deltaTime;
+
+            yield return null;
+        }
+        
+        _tickDriver.StartSim();
     }
 
     private void OnTick(int tick, float deltaTime)
