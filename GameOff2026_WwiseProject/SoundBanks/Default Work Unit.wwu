@@ -5,11 +5,13 @@
 			<ChildrenList>
 				<SoundBank Name="Main" ID="{3059A6CE-8152-4CD2-BEA9-69E98BB60D65}">
 					<ObjectInclusionList>
+						<ObjectRef Name="Play_SFX_A_Footsteps" ID="{3ED77479-A148-44F9-817A-A296ABFBE50F}" WorkUnitID="{2B12C590-A22E-47AF-9697-251FEA2DB802}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="Play_VO_D_Select" ID="{3152320D-DAC2-4517-A69B-FDF685707E8C}" WorkUnitID="{2B12C590-A22E-47AF-9697-251FEA2DB802}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="Play_MUS_MainMenu" ID="{5D3A0225-7ABD-4859-81CA-ADE23BFF2392}" WorkUnitID="{2B12C590-A22E-47AF-9697-251FEA2DB802}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="Play_SFX_C_Footsteps" ID="{76CCE283-0B61-485F-84F2-96637B943C4D}" WorkUnitID="{2B12C590-A22E-47AF-9697-251FEA2DB802}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="Play_VO_D_Order" ID="{381E0E30-E568-498C-9D9D-52B69D5F960D}" WorkUnitID="{2B12C590-A22E-47AF-9697-251FEA2DB802}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="Play_AMB_BarLoop" ID="{60AA718B-3A65-4ADA-83B9-49CEE4C11C7F}" WorkUnitID="{2B12C590-A22E-47AF-9697-251FEA2DB802}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="Play_SFX_Shift" ID="{FE2001B2-A82F-4B45-BBE4-31BBED8D8DED}" WorkUnitID="{2B12C590-A22E-47AF-9697-251FEA2DB802}" Origin="Manual" Filter="7"/>
 					</ObjectInclusionList>
 					<ObjectExclusionList/>
 					<GameSyncExclusionList/>

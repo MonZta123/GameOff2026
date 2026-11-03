@@ -20,17 +20,43 @@
 				</Folder>
 				<Folder Name="SFX" ID="{F60444EA-C359-4820-A24A-BB45EB6FDF94}" ShortID="373921432">
 					<ChildrenList>
-						<Event Name="Play_SFX_C_Footsteps" ID="{76CCE283-0B61-485F-84F2-96637B943C4D}">
+						<Folder Name="Movement" ID="{DFAF7B39-0F48-4C5C-81AE-BC7F5B15770B}" ShortID="757432099">
 							<ChildrenList>
-								<Action Name="" ID="{A0FABF8D-C5BF-4653-91E4-7B6D5DDE1009}" ShortID="622649859">
-									<ReferenceList>
-										<Reference Name="Target">
-											<ObjectRef Name="FootstepsA" ID="{6BE476AD-7250-4A7E-9A5A-E09199E4F13C}" WorkUnitID="{AF633A36-6CC5-470E-AD72-3F76D6F661BF}"/>
-										</Reference>
-									</ReferenceList>
-								</Action>
+								<Event Name="Play_SFX_Shift" ID="{FE2001B2-A82F-4B45-BBE4-31BBED8D8DED}">
+									<ChildrenList>
+										<Action Name="" ID="{55A77962-AB41-432A-B0EA-30213B5BF556}" ShortID="429865695">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="Shift" ID="{3FFE2DC5-E081-43EF-8FDF-006FE4C46B80}" WorkUnitID="{AF633A36-6CC5-470E-AD72-3F76D6F661BF}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+								<Event Name="Play_SFX_A_Footsteps" ID="{3ED77479-A148-44F9-817A-A296ABFBE50F}">
+									<ChildrenList>
+										<Action Name="" ID="{71F5CD69-D789-41AE-834A-C0B1D8EFB5C4}" ShortID="244251460">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="FootstepsA" ID="{C42603BE-D603-4B74-AE11-4A85F457BD96}" WorkUnitID="{AF633A36-6CC5-470E-AD72-3F76D6F661BF}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+								<Event Name="Play_SFX_C_Footsteps" ID="{76CCE283-0B61-485F-84F2-96637B943C4D}">
+									<ChildrenList>
+										<Action Name="" ID="{A0FABF8D-C5BF-4653-91E4-7B6D5DDE1009}" ShortID="622649859">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="FootstepsC" ID="{6BE476AD-7250-4A7E-9A5A-E09199E4F13C}" WorkUnitID="{AF633A36-6CC5-470E-AD72-3F76D6F661BF}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
 							</ChildrenList>
-						</Event>
+						</Folder>
 					</ChildrenList>
 				</Folder>
 				<Folder Name="AMBIENCE" ID="{A55CDA7E-9FA2-4DE0-A034-544AD10448E8}" ShortID="841075420">
