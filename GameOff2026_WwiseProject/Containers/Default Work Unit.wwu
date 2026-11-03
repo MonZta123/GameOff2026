@@ -221,7 +221,7 @@
 										</Reference>
 									</ReferenceList>
 									<ChildrenList>
-										<Sound Name="Shift_01" ID="{33B6F128-AEAF-4114-9A6B-27D6AE43C4E8}" ShortID="859981812">
+										<Sound Name="Shift_01" ID="{A1E495DB-8924-446F-88F9-0FC2A788CE2D}" ShortID="166261751">
 											<ReferenceList>
 												<Reference Name="Conversion">
 													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{4ADFD3A0-A42B-432C-8502-1433439D5054}"/>
@@ -231,7 +231,7 @@
 												</Reference>
 											</ReferenceList>
 											<ChildrenList>
-												<AudioFileSource Name="Shift_01" ID="{771E5DC4-4196-4741-906F-79431200EAFB}">
+												<AudioFileSource Name="Shift_01" ID="{0C85F317-C286-4B10-BD33-F3B82D3BD9EE}">
 													<Language>SFX</Language>
 													<AudioFile>Shift_01.wav</AudioFile>
 													<MediaIDList>
@@ -240,10 +240,10 @@
 												</AudioFileSource>
 											</ChildrenList>
 											<ActiveSourceList>
-												<ActiveSource Name="Shift_01" ID="{771E5DC4-4196-4741-906F-79431200EAFB}" Platform="Linked"/>
+												<ActiveSource Name="Shift_01" ID="{0C85F317-C286-4B10-BD33-F3B82D3BD9EE}" Platform="Linked"/>
 											</ActiveSourceList>
 										</Sound>
-										<Sound Name="Shift_02" ID="{FEE9B13D-5A46-4AEC-A827-EA6927804A02}" ShortID="1024499140">
+										<Sound Name="Shift_02" ID="{5DD22EF4-204C-4DD9-AE90-243C7ED3546F}" ShortID="199786234">
 											<ReferenceList>
 												<Reference Name="Conversion">
 													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{4ADFD3A0-A42B-432C-8502-1433439D5054}"/>
@@ -253,7 +253,7 @@
 												</Reference>
 											</ReferenceList>
 											<ChildrenList>
-												<AudioFileSource Name="Shift_02" ID="{A806B041-F3B5-405C-9142-BA7E3B721AFC}">
+												<AudioFileSource Name="Shift_02" ID="{89879660-0E1E-45CA-8F33-A7D93EA14002}">
 													<Language>SFX</Language>
 													<AudioFile>Shift_02.wav</AudioFile>
 													<MediaIDList>
@@ -262,10 +262,10 @@
 												</AudioFileSource>
 											</ChildrenList>
 											<ActiveSourceList>
-												<ActiveSource Name="Shift_02" ID="{A806B041-F3B5-405C-9142-BA7E3B721AFC}" Platform="Linked"/>
+												<ActiveSource Name="Shift_02" ID="{89879660-0E1E-45CA-8F33-A7D93EA14002}" Platform="Linked"/>
 											</ActiveSourceList>
 										</Sound>
-										<Sound Name="Shift_03" ID="{3EDE02FC-8E54-4C7B-A440-A0805D9F194B}" ShortID="882700153">
+										<Sound Name="Shift_03" ID="{5C219280-F6C9-4A46-B0E2-28F664AF3CD9}" ShortID="520657424">
 											<ReferenceList>
 												<Reference Name="Conversion">
 													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{4ADFD3A0-A42B-432C-8502-1433439D5054}"/>
@@ -275,7 +275,7 @@
 												</Reference>
 											</ReferenceList>
 											<ChildrenList>
-												<AudioFileSource Name="Shift_03" ID="{9E1A0BDE-B43E-4AA5-802A-E2C5EFAA6CEC}">
+												<AudioFileSource Name="Shift_03" ID="{A5D8DF4D-3CC6-4CD5-9FE0-70F62705F4B7}">
 													<Language>SFX</Language>
 													<AudioFile>Shift_03.wav</AudioFile>
 													<MediaIDList>
@@ -284,7 +284,7 @@
 												</AudioFileSource>
 											</ChildrenList>
 											<ActiveSourceList>
-												<ActiveSource Name="Shift_03" ID="{9E1A0BDE-B43E-4AA5-802A-E2C5EFAA6CEC}" Platform="Linked"/>
+												<ActiveSource Name="Shift_03" ID="{A5D8DF4D-3CC6-4CD5-9FE0-70F62705F4B7}" Platform="Linked"/>
 											</ActiveSourceList>
 										</Sound>
 									</ChildrenList>
