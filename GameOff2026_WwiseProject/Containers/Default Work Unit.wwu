@@ -295,7 +295,76 @@
 						<Folder Name="Actions" ID="{52CEB8B5-65E7-4A45-AD9A-E666279B1A75}" ShortID="920632017"/>
 						<Folder Name="Enemies" ID="{197638BF-2027-4220-9FDD-133F0A51E8E2}" ShortID="231438307"/>
 						<Folder Name="Impacts" ID="{A450A846-FBBE-48E6-875B-DA9E45AF37A5}" ShortID="1039910399"/>
-						<Folder Name="UI" ID="{A9BAE507-EAE7-465D-A98B-323C87264D57}" ShortID="600692418"/>
+						<Folder Name="UI" ID="{A9BAE507-EAE7-465D-A98B-323C87264D57}" ShortID="600692418">
+							<ChildrenList>
+								<Sound Name="UI_Back" ID="{26C19CB6-50DC-49C1-A5F0-E7AC93E1472C}" ShortID="276190712">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{4ADFD3A0-A42B-432C-8502-1433439D5054}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{F8A65CB3-3EA6-47C9-8C5A-27068DB4C3FF}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="UI_Back" ID="{E16759EF-37FC-419A-902F-7C5C24A130E4}">
+											<Language>SFX</Language>
+											<AudioFile>UI_Back.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="8819262"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="UI_Back" ID="{E16759EF-37FC-419A-902F-7C5C24A130E4}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="UI_Hover" ID="{B69E88EC-1091-4476-87DB-7428D3C3B64B}" ShortID="8795846">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{4ADFD3A0-A42B-432C-8502-1433439D5054}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{F8A65CB3-3EA6-47C9-8C5A-27068DB4C3FF}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="UI_Hover" ID="{898764A8-9505-4023-8FF7-5ED584FCD334}">
+											<Language>SFX</Language>
+											<AudioFile>UI_Hover.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="180084580"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="UI_Hover" ID="{898764A8-9505-4023-8FF7-5ED584FCD334}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="UI_Select" ID="{6E3CCD4A-D88D-47DF-9F9D-2D6F7C445737}" ShortID="391631357">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{4ADFD3A0-A42B-432C-8502-1433439D5054}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{F8A65CB3-3EA6-47C9-8C5A-27068DB4C3FF}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="UI_Select" ID="{E4E2CD3A-607E-415C-8C02-937164623620}">
+											<Language>SFX</Language>
+											<AudioFile>UI_Select.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="437476328"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="UI_Select" ID="{E4E2CD3A-607E-415C-8C02-937164623620}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+							</ChildrenList>
+						</Folder>
 					</ChildrenList>
 				</Folder>
 				<Folder Name="MUSIC" ID="{C50B91E2-80D9-4497-B23C-16E47A28313F}" ShortID="631737434">

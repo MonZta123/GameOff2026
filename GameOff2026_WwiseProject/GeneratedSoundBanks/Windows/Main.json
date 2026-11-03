@@ -10,7 +10,7 @@
     "Type": "User",
     "GUID": "{3059A6CE-8152-4CD2-BEA9-69E98BB60D65}",
     "Language": "SFX",
-    "Hash": "{14BFA46C-0B75-BD70-1FF7-396BF797289D}",
+    "Hash": "{EB54FE4F-03C1-F882-0CF7-38B9E9E6BC0E}",
     "ObjectPath": "\\SoundBanks\\Default Work Unit\\Main",
     "ShortName": "Main",
     "Path": "Main.bnk",
@@ -24,12 +24,28 @@
       "CachePath": "45/{45A22595-5997-E214-AD62-7EA438F7AF57}.wem"
      },
      {
+      "Id": "8819262",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "UI_Back.wav",
+      "CachePath": "26/{262379AA-3B22-A775-BF7E-654908FE6B2C}.wem"
+     },
+     {
       "Id": "112815051",
       "Language": "SFX",
       "Streaming": "false",
       "Location": "Memory",
       "ShortName": "VO_D_Select04.wav",
       "CachePath": "48/{480EAE8E-234F-00E2-17CE-1DC03ED84B34}.wem"
+     },
+     {
+      "Id": "180084580",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "UI_Hover.wav",
+      "CachePath": "71/{71F2C685-1F05-614E-3C2E-30529C71D559}.wem"
      },
      {
       "Id": "188115908",
@@ -78,6 +94,14 @@
       "Location": "Memory",
       "ShortName": "VO_D_Select03.wav",
       "CachePath": "E2/{E2066ABA-3CFE-FEEF-5C2E-80C9736FC211}.wem"
+     },
+     {
+      "Id": "437476328",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "UI_Select.wav",
+      "CachePath": "5F/{5F861DA6-2A47-CD19-E618-D2E7F139E740}.wem"
      },
      {
       "Id": "448234325",
@@ -308,6 +332,48 @@
       ]
      },
      {
+      "Id": "1117141914",
+      "Name": "Play_SFX_UI_Back",
+      "ObjectPath": "\\Events\\Default Work Unit\\SFX\\UI\\Play_SFX_UI_Back",
+      "GUID": "{24407F4D-86FB-45EA-BCE9-724A6801CF46}",
+      "DurationType": "OneShot",
+      "DurationMin": "0.6226757",
+      "DurationMax": "0.6226757",
+      "MediaRefs": [
+       {
+        "Id": "8819262"
+       }
+      ]
+     },
+     {
+      "Id": "708671363",
+      "Name": "Play_SFX_UI_Hover",
+      "ObjectPath": "\\Events\\Default Work Unit\\SFX\\UI\\Play_SFX_UI_Hover",
+      "GUID": "{775AAA7A-5AD7-4404-96B6-EE23F9948E6A}",
+      "DurationType": "OneShot",
+      "DurationMin": "0.08131519",
+      "DurationMax": "0.08131519",
+      "MediaRefs": [
+       {
+        "Id": "180084580"
+       }
+      ]
+     },
+     {
+      "Id": "2484137795",
+      "Name": "Play_SFX_UI_Select",
+      "ObjectPath": "\\Events\\Default Work Unit\\SFX\\UI\\Play_SFX_UI_Select",
+      "GUID": "{B523CDC4-6928-410D-87A9-2A88A3221FD8}",
+      "DurationType": "OneShot",
+      "DurationMin": "0.19049887",
+      "DurationMax": "0.19049887",
+      "MediaRefs": [
+       {
+        "Id": "437476328"
+       }
+      ]
+     },
+     {
       "Id": "1789269391",
       "Name": "Play_VO_D_Order",
       "ObjectPath": "\\Events\\Default Work Unit\\VO\\Play_VO_D_Order",
@@ -368,6 +434,6 @@
     ]
    }
   ],
-  "FileHash": "{4A358641-B939-B6BB-FBB6-4F102B969D7D}"
+  "FileHash": "{AC82C310-F939-B78B-22F6-5C3FDB4FB936}"
  }
 }
