@@ -4,8 +4,17 @@ namespace ECS.Entities
 {
     public struct Projectile
     {
-        public short id;
-        public Vector2 position;
-        public Vector2 linearVelocity;
+        public Projectile(short id)
+        {
+            _id = id;
+            _position = Vector2.zero;
+            _angle = 0f;
+            _ttl = 0f;
+        }
+        
+        public short _id;
+        public Vector2 _position;
+        public float _angle;
+        public float _ttl;
     }
 }

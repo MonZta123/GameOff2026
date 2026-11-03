@@ -8,15 +8,17 @@ namespace ECS.Entities
         {
             _id = id;
             position = Vector2.zero;
-            yaw = 0;
+            angle = 0;
             health = 100;
             type = PlayerType.Heavy;
+            lastAttackTick = 0;
         }
         
         public Vector2 position;
-        public float yaw;
+        public float angle;
         public float health;
         public PlayerType type;
+        public int lastAttackTick;
         
         public short _id;
     }

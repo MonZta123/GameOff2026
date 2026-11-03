@@ -7,14 +7,16 @@ namespace Actors
     {
         [SerializeField]
         private PositionSmoother positionSmoother;
-        
+
         [SerializeField]
         private SpriteRenderer characterRenderer;
-        
+
         [SerializeField]
         private SpriteRenderer gunRenderer;
-        
+
         public short Id { get; private set; }
+
+        private bool _activePlayer;
 
         public void Init(ECS.Entities.Player entity)
         {
@@ -22,9 +24,22 @@ namespace Actors
             positionSmoother.SetSmoothPosition(true);
         }
 
+        public void SetActivePlayer(bool value)
+        {
+            _activePlayer = value;
+        }
+
+        public void SetAngle(float angle)
+        {
+            gunRenderer.transform.rotation = Quaternion.Euler(0, 0, angle);
+        }
+
         public void SetState(ECS.Entities.Player entity)
         {
             transform.position = entity.position;
+
+            if (!_activePlayer)
+                gunRenderer.transform.rotation = Quaternion.Euler(0, 0, entity.angle);
         }
 
         public void Release()

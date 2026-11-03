@@ -8,12 +8,12 @@ namespace Actors
         
         public void Init(ECS.Entities.Projectile entity)
         {
-            Id = entity.id;
+            Id = entity._id;
         }
 
         public void SetState(ECS.Entities.Projectile entity)
         {
-            
+            transform.position = entity._position;
         }
         
         public void Release()

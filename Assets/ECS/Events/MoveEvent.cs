@@ -4,7 +4,7 @@ namespace ECS.Events
 {
     public struct MoveEvent
     {
-        public Vector2 movement;
-        public float yaw;
+        public Vector2 _movement;
+        public float _angle;
     }
 }

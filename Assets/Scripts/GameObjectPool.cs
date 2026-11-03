@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Linq;
 using Actors;
 using UnityEngine;
 
@@ -64,7 +65,7 @@ public class GameObjectPool : MonoBehaviour
         obj.gameObject.SetActive(false);
         _playerPool.Push(obj);
     }
-        
+    
     public void ReturnEnemy(Enemy obj)
     {
         obj.Release();
@@ -72,10 +73,23 @@ public class GameObjectPool : MonoBehaviour
         _enemyPool.Push(obj);
     }
         
+    public Projectile GetProjectile(ECS.Entities.Projectile entity)
+    {
+        var obj = _projectilePool.Pop();
+        obj.Init(entity);
+        obj.gameObject.SetActive(true);
+        return obj;
+    }
+    
     public void ReturnProjectile(Projectile obj)
     {
         obj.Release();
         obj.gameObject.SetActive(false);
         _projectilePool.Push(obj);
+    }
+
+    public Transform GetPlayerByIndex(int activePlayer)
+    {
+        return _playerPool.ElementAt(activePlayer).transform;
     }
 }

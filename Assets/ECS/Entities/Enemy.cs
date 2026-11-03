@@ -6,7 +6,7 @@ namespace ECS.Entities
     {
         public short id;
         public Vector3 position;
-        public float yaw;
+        public float angle;
         public float lastAttackAt;
         public EnemyType type;
         public int health;

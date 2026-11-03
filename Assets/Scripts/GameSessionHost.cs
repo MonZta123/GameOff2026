@@ -1,6 +1,8 @@
 ﻿using System;
+using Actors;
 using Domain;
 using ECS;
+using Unity.Cinemachine;
 using UnityEngine;
 
 public class GameSessionHost : MonoBehaviour
@@ -17,12 +19,18 @@ public class GameSessionHost : MonoBehaviour
     [SerializeField]
     private GameObjectPool pool;
 
+    [SerializeField]
+    private CinemachinePositionComposer positionComposer;
+
+    [SerializeField]
+    private Camera cam;
+
     private TickDriver _tickDriver;
     private World _world;
 
     private Snapshot[] _snapshots;
     private Intent[] _intents;
-    private int _activePlayer;
+    private int _activePlayerIndex;
 
     private void Awake()
     {
@@ -30,7 +38,7 @@ public class GameSessionHost : MonoBehaviour
 
         // Show Loadingscreen here
 
-        _world = new World();
+        _world = new World(stepsPerSecond);
         _intents = new Intent[ticksTotal * Constants.PlayerCount];
 
         _snapshots = new Snapshot[ticksTotal];
@@ -55,6 +63,10 @@ public class GameSessionHost : MonoBehaviour
 
         snapshotRenderer.SetSnapshot(_snapshots[0]);
 
+        _activePlayerObject = snapshotRenderer.GetPlayerByIndex(_activePlayerIndex);
+        _activePlayerObject.SetActivePlayer(true);
+        positionComposer.VirtualCamera.Follow = _activePlayerObject.transform;
+
         // Hide Loadingscreen here
     }
 
@@ -74,8 +86,21 @@ public class GameSessionHost : MonoBehaviour
     private void Update()
     {
         WriteInput();
+
+        var mousePosition = cam.ScreenToWorldPoint(Input.mousePosition);
+
+        Vector2 direction = mousePosition - _activePlayerObject.transform.position;
+
+        _angle = Mathf.Atan2(
+            direction.y,
+            direction.x
+        ) * Mathf.Rad2Deg;
+
+        _activePlayerObject.SetAngle(_angle);
         _tickDriver.Update(Time.deltaTime);
     }
+
+    private float _angle;
 
     private void WriteInput()
     {
@@ -93,10 +118,17 @@ public class GameSessionHost : MonoBehaviour
         var xAxis = Input.GetAxis("Horizontal");
         var yAxis = Input.GetAxis("Vertical");
 
-        var intent = new Intent() { movement = Vector2.ClampMagnitude(new Vector2(xAxis, yAxis), 1) };
+        var intent = new Intent()
+        {
+            movement = Vector2.ClampMagnitude(new Vector2(xAxis, yAxis), 1),
+            isShooting = Input.GetMouseButton(0),
+            angle = _angle
+        };
 
         return intent;
     }
+
+    private Player _activePlayerObject;
 
     private void DoTimeShift(int tick)
     {
@@ -108,8 +140,14 @@ public class GameSessionHost : MonoBehaviour
 
         snapshotRenderer.SetSnapshot(_snapshots[tick]);
 
-        _activePlayer++;
-        _activePlayer %= Constants.PlayerCount;
+        _activePlayerIndex++;
+        _activePlayerIndex %= Constants.PlayerCount;
+
+        _activePlayerObject.SetActivePlayer(false);
+        _activePlayerObject = snapshotRenderer.GetPlayerByIndex(_activePlayerIndex);
+        _activePlayerObject.SetActivePlayer(true);
+
+        positionComposer.VirtualCamera.Follow = _activePlayerObject.transform;
     }
 
     private void OnTick(int tick, float deltaTime)
@@ -121,7 +159,7 @@ public class GameSessionHost : MonoBehaviour
             return;
         }
 
-        _intents[tick * Constants.PlayerCount + _activePlayer] = BuildIntent();
+        _intents[tick * Constants.PlayerCount + _activePlayerIndex] = BuildIntent();
 
         var span = _intents.AsSpan(tick * Constants.PlayerCount, Constants.PlayerCount);
 
@@ -142,9 +180,4 @@ public class GameSessionHost : MonoBehaviour
         GUILayout.Label($"Tick: {_tickDriver.CurrentTick}");
     }
 #endif
-
-    public void Rewind()
-    {
-        _tickDriver.SetToTick(20);
-    }
 }

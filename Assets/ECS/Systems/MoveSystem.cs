@@ -2,7 +2,7 @@
 
 namespace ECS.Systems
 {
-    public class InputSystem
+    public class MoveSystem
     {
         public void Execute(World world, ReadOnlySpan<Intent> intents)
         {
@@ -10,8 +10,8 @@ namespace ECS.Systems
             {
                 ref var moveEvent = ref world._moveEvents[i];
                 
-                moveEvent.movement = intents[i].movement;
-                moveEvent.yaw = intents[i].yaw;
+                moveEvent._movement = intents[i].movement;
+                moveEvent._angle = intents[i].angle;
             }
         }
     }

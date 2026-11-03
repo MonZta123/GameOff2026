@@ -1,7 +1,9 @@
 ﻿using System;
+using Domain;
 using ECS.Entities;
 using ECS.Events;
 using ECS.Systems;
+using UnityEngine;
 
 namespace ECS
 {
@@ -11,16 +13,20 @@ namespace ECS
 
         public MoveEvent[] _moveEvents;
 
-        private InputSystem _moveSystem;
+        private MoveSystem _moveSystem;
+        private AttackSystem _attackSystem;
+        private ProjectileSystem _projectileSystem;
 
-        public World()
+        public World(int tickRate)
         {
             _snapshot = new Snapshot();
             _snapshot.Initialize();
-            
+
             _moveEvents = new MoveEvent[_snapshot.players.Length];
 
-            _moveSystem = new InputSystem();
+            _moveSystem = new MoveSystem();
+            _attackSystem = new AttackSystem(tickRate);
+            _projectileSystem = new ProjectileSystem(tickRate);
         }
 
         public void BuildScenario(ref Snapshot snapshot)
@@ -42,7 +48,7 @@ namespace ECS
             _snapshot.BuildFrom(snapshot);
         }
 
-        public void DoStep(ReadOnlySpan<Intent> intents, long tick, float deltaTime)
+        public void DoStep(ReadOnlySpan<Intent> intents, int tick, float deltaTime)
         {
             BuildSensors();
             System(intents, tick, deltaTime);
@@ -63,25 +69,54 @@ namespace ECS
         {
         }
 
-        public void System(ReadOnlySpan<Intent> intents, long tick, float deltaTime)
+        public void System(ReadOnlySpan<Intent> intents, int tick, float deltaTime)
         {
             _moveSystem.Execute(this, intents);
 
+            _attackSystem.Execute(this, intents, tick);
+            
+            _projectileSystem.Execute(this, intents, tick);
+            
             // _debugSpawnSystem.Execute(this, intent);
             // _debugDespawnSystem.Execute(this, intent);
         }
 
+        private float GetMoveSpeed(PlayerType type)
+        {
+            return type switch
+            {
+                PlayerType.Heavy => Constants.HeavyMoveSpeed,
+                PlayerType.Hacker => 2.0f,
+                PlayerType.Demolition => 1.5f,
+                PlayerType.Stealth => 1.0f,
+                _ => 0.0f
+            };
+        }
+
         public void Simulate(float deltaTime)
         {
-            if (_snapshot.numPlayers > 0)
+            for (var i = 0; i < _snapshot.numPlayers; i++)
             {
-                for (var i = 0; i < _snapshot.numPlayers; i++)
-                {
-                    ref var player = ref _snapshot.players[i];
-                    
-                    player.position += _moveEvents[i].movement * (deltaTime * 2.5f);
-                    player.yaw = _moveEvents[i].yaw;
-                }
+                ref var player = ref _snapshot.players[i];
+
+                player.position += _moveEvents[i]._movement * (deltaTime * GetMoveSpeed(player.type));
+                player.angle = _moveEvents[i]._angle;
+            }
+
+            for (var i = 0; i < _snapshot.numProjectiles; i++)
+            {
+                ref var projectile = ref _snapshot.projectiles[i];
+
+                var radians = projectile._angle * Mathf.Deg2Rad;
+
+                var direction = new Vector2(
+                    Mathf.Cos(radians),
+                    Mathf.Sin(radians)
+                );
+                
+                var movement = direction * (Constants.HeavyProjectileSpeed * deltaTime);
+
+                projectile._position += movement;
             }
         }
 
@@ -158,6 +193,43 @@ namespace ECS
                 var player = new Player(id);
                 SpawnPlayer(player, ref snapshot);
             }
+        }
+
+        public short FetchProjectileId()
+        {
+            if (_snapshot.numProjectiles == _snapshot.projectiles.Length)
+                return 0;
+
+            var id = _snapshot.freeProjectileIds[^(_snapshot.numProjectiles + 1)];
+            _snapshot.freeProjectileIds[^(_snapshot.numProjectiles + 1)] = 0;
+
+            return id;
+        }
+        
+        public void SpawnProjectile(Projectile projectile)
+        {
+            _snapshot.projectiles[_snapshot.numProjectiles] = projectile;
+            _snapshot.projectileIdMap[projectile._id - 1] = _snapshot.numProjectiles;
+            _snapshot.numProjectiles++;
+        }
+        
+        public void DespawnProjectile(short projectileId)
+        {
+            if (_snapshot.projectileIdMap[projectileId - 1] == -1)
+                return;
+
+            var index = _snapshot.projectileIdMap[projectileId - 1];
+            if (index != _snapshot.numProjectiles - 1)
+            {
+                _snapshot.projectiles[index] = _snapshot.projectiles[_snapshot.numProjectiles - 1];
+                var movedPlayer = _snapshot.projectiles[index];
+                _snapshot.projectileIdMap[movedPlayer._id - 1] = index;
+            }
+
+            _snapshot.playerIdMap[projectileId - 1] = -1;
+            _snapshot.freeProjectileIds[^_snapshot.numProjectiles] = projectileId;
+            _snapshot.players[_snapshot.numProjectiles - 1] = default;
+            _snapshot.numProjectiles--;
         }
     }
 }
