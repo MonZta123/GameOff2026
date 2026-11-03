@@ -18,6 +18,9 @@ namespace AK
         static const AkUniqueID PLAY_SFX_A_FOOTSTEPS = 2635421491U;
         static const AkUniqueID PLAY_SFX_C_FOOTSTEPS = 1905415017U;
         static const AkUniqueID PLAY_SFX_SHIFT = 2453180302U;
+        static const AkUniqueID PLAY_SFX_UI_BACK = 1117141914U;
+        static const AkUniqueID PLAY_SFX_UI_HOVER = 708671363U;
+        static const AkUniqueID PLAY_SFX_UI_SELECT = 2484137795U;
         static const AkUniqueID PLAY_VO_D_ORDER = 1789269391U;
         static const AkUniqueID PLAY_VO_D_SELECT = 2625069657U;
     } // namespace EVENTS
