@@ -3,17 +3,77 @@
 	<Events>
 		<WorkUnit Name="Default Work Unit" ID="{2B12C590-A22E-47AF-9697-251FEA2DB802}" PersistMode="Standalone">
 			<ChildrenList>
-				<Event Name="Plr_Footsteps" ID="{76CCE283-0B61-485F-84F2-96637B943C4D}">
+				<Folder Name="MUSIC" ID="{B4AF5C61-D3BC-493D-B0B7-83A017EA7D87}" ShortID="602490722">
 					<ChildrenList>
-						<Action Name="" ID="{A0FABF8D-C5BF-4653-91E4-7B6D5DDE1009}" ShortID="622649859">
-							<ReferenceList>
-								<Reference Name="Target">
-									<ObjectRef Name="FootstepsA" ID="{6BE476AD-7250-4A7E-9A5A-E09199E4F13C}" WorkUnitID="{AF633A36-6CC5-470E-AD72-3F76D6F661BF}"/>
-								</Reference>
-							</ReferenceList>
-						</Action>
+						<Event Name="Play_MUS_MainMenu" ID="{5D3A0225-7ABD-4859-81CA-ADE23BFF2392}">
+							<ChildrenList>
+								<Action Name="" ID="{D323F51B-6C0C-47E1-ABAA-3E07B03B986B}" ShortID="193138012">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="MusicMainMenu" ID="{7FA8DFCC-DAD2-4048-A721-C2F749FF0BD6}" WorkUnitID="{AF633A36-6CC5-470E-AD72-3F76D6F661BF}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
 					</ChildrenList>
-				</Event>
+				</Folder>
+				<Folder Name="SFX" ID="{F60444EA-C359-4820-A24A-BB45EB6FDF94}" ShortID="373921432">
+					<ChildrenList>
+						<Event Name="Play_SFX_C_Footsteps" ID="{76CCE283-0B61-485F-84F2-96637B943C4D}">
+							<ChildrenList>
+								<Action Name="" ID="{A0FABF8D-C5BF-4653-91E4-7B6D5DDE1009}" ShortID="622649859">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="FootstepsA" ID="{6BE476AD-7250-4A7E-9A5A-E09199E4F13C}" WorkUnitID="{AF633A36-6CC5-470E-AD72-3F76D6F661BF}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+					</ChildrenList>
+				</Folder>
+				<Folder Name="AMBIENCE" ID="{A55CDA7E-9FA2-4DE0-A034-544AD10448E8}" ShortID="841075420">
+					<ChildrenList>
+						<Event Name="Play_AMB_BarLoop" ID="{60AA718B-3A65-4ADA-83B9-49CEE4C11C7F}">
+							<ChildrenList>
+								<Action Name="" ID="{3917A1AB-FEEA-4F88-AC31-397B14EB3F5D}" ShortID="986795723">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="AmbienceBar" ID="{21DB8EFA-3F8E-41DD-944A-83F27536481D}" WorkUnitID="{AF633A36-6CC5-470E-AD72-3F76D6F661BF}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+					</ChildrenList>
+				</Folder>
+				<Folder Name="VO" ID="{004C5950-A892-4A42-BD07-480ACF7DC8A4}" ShortID="664471403">
+					<ChildrenList>
+						<Event Name="Play_VO_D_Select" ID="{3152320D-DAC2-4517-A69B-FDF685707E8C}">
+							<ChildrenList>
+								<Action Name="" ID="{2DBED73B-5EEB-4FF1-B3CA-9A1098908747}" ShortID="121418295">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="VO_D_Select" ID="{35F54DF0-15FA-476B-A002-38E7238B28F9}" WorkUnitID="{AF633A36-6CC5-470E-AD72-3F76D6F661BF}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+						<Event Name="Play_VO_D_Order" ID="{381E0E30-E568-498C-9D9D-52B69D5F960D}">
+							<ChildrenList>
+								<Action Name="" ID="{8A0C4893-CC88-47F6-B70A-61C62569FA12}" ShortID="950401109">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="VO_D_Order" ID="{D88F5C28-00EF-49F7-85CD-AFAA29446CBA}" WorkUnitID="{AF633A36-6CC5-470E-AD72-3F76D6F661BF}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+					</ChildrenList>
+				</Folder>
 			</ChildrenList>
 		</WorkUnit>
 	</Events>

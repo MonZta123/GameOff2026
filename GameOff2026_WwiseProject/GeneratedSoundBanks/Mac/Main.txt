@@ -1,8 +1,28 @@
 Event	ID	Name			Wwise Object Path	Notes
-	7310889	Plr_Footsteps			\Default Work Unit\Plr_Footsteps	
+	1043591872	Play_MUS_MainMenu			\Default Work Unit\MUSIC\Play_MUS_MainMenu	
+	1789269391	Play_VO_D_Order			\Default Work Unit\VO\Play_VO_D_Order	
+	1905415017	Play_SFX_C_Footsteps			\Default Work Unit\SFX\Play_SFX_C_Footsteps	
+	2625069657	Play_VO_D_Select			\Default Work Unit\VO\Play_VO_D_Select	
+	2856109558	Play_AMB_BarLoop			\Default Work Unit\AMBIENCE\Play_AMB_BarLoop	
 
 In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
+	112815051	VO_D_Select04	.cache\48\{480EAE8E-234F-00E2-17CE-1DC03ED84B34}.wem		\Containers\Default Work Unit\VO\CharacterD\VO_D_Select\VO_D_Select04		73626
 	175081538	SFX_Footstep02	.cache\4F\{4FDDF041-5BED-B3EC-E8DD-C027E62ECC26}.wem		\Containers\Default Work Unit\SFX\Movement\FootstepsA\SFX_Footstep02		60780
+	188115908	VO_D_Select06	.cache\0B\{0BAE5827-37AC-5066-255D-8DAD8D42D552}.wem		\Containers\Default Work Unit\VO\CharacterD\VO_D_Select\VO_D_Select06		77612
+	219413807	VO_D_Select02	.cache\44\{44789CAB-B315-F585-503B-07F709FB19A8}.wem		\Containers\Default Work Unit\VO\CharacterD\VO_D_Select\VO_D_Select02		68060
+	241590002	AMB_Bar_Loop	.cache\C6\{C6CA0AE9-8E6B-EC31-A169-5169D50FD976}.wem		\Containers\Default Work Unit\AMBIENCE\AmbienceBar\AMB_Bar_Loop		3144860
+	253443902	MUS_Act2_Intro	.cache\AF\{AF9C5DD1-2EDA-EE7C-2D3E-E1B52ED09D3F}.wem		\Containers\Default Work Unit\MUSIC\MusicMainMenu\MUS_Act2_Intro\MUS_Act2_Intro		1292580
+	312342835	VO_D_Select03	.cache\E2\{E2066ABA-3CFE-FEEF-5C2E-80C9736FC211}.wem		\Containers\Default Work Unit\VO\CharacterD\VO_D_Select\VO_D_Select03		75082
 	414997927	SFX_Footstep03	.cache\73\{73190758-EF00-AEA8-F69C-884330906444}.wem		\Containers\Default Work Unit\SFX\Movement\FootstepsA\SFX_Footstep03		51328
+	448234325	VO_D_Order05	.cache\E0\{E09D305C-8D06-A9E1-D362-7E4137A0E058}.wem		\Containers\Default Work Unit\VO\CharacterD\VO_D_Order\VO_D_Order05		95706
+	486494743	VO_D_Select05	.cache\84\{84E4293C-BFEE-E871-85E3-864B9D6074AD}.wem		\Containers\Default Work Unit\VO\CharacterD\VO_D_Select\VO_D_Select05		69296
+	567681165	VO_D_Select01	.cache\58\{5834B29F-309B-A156-FE9B-B51927F34B69}.wem		\Containers\Default Work Unit\VO\CharacterD\VO_D_Select\VO_D_Select01		95958
+	584489473	VO_D_Order04	.cache\07\{075362E3-61A6-3040-7C29-324536D6CCE9}.wem		\Containers\Default Work Unit\VO\CharacterD\VO_D_Order\VO_D_Order04		99636
+	675216016	MUS_Act2_Loop	.cache\23\{233937BE-233A-BB76-F0C1-E5B75F82900B}.wem		\Containers\Default Work Unit\MUSIC\MusicMainMenu\MUS_Act2_Loop\MUS_Act2_Loop		35078496
 	728003638	SFX_Footstep01	.cache\5E\{5E1FDBA3-5865-D4DE-C5E5-D1520FA87FA3}.wem		\Containers\Default Work Unit\SFX\Movement\FootstepsA\SFX_Footstep01		52200
+	735998697	VO_D_Order03	.cache\68\{682B233C-BDC2-0C4E-24AD-BD29936307E0}.wem		\Containers\Default Work Unit\VO\CharacterD\VO_D_Order\VO_D_Order03		85598
+	911343175	VO_D_Order06	.cache\5E\{5EAB5D53-22B8-5CE6-CF2A-C93E4A7AE10B}.wem		\Containers\Default Work Unit\VO\CharacterD\VO_D_Order\VO_D_Order06		78980
+	923670354	VO_D_Order07	.cache\6F\{6FB63E66-BE34-46D0-31B5-03F4A0525076}.wem		\Containers\Default Work Unit\VO\CharacterD\VO_D_Order\VO_D_Order07		81722
+	960548762	VO_D_Order02	.cache\B0\{B0C22CFD-ECCD-DEF8-05C6-CE73B541B6B0}.wem		\Containers\Default Work Unit\VO\CharacterD\VO_D_Order\VO_D_Order02		66940
+	1008863024	AMB_Bar_Intro	.cache\2D\{2DB2AED9-9CD0-8985-0AC1-1B2EFA66D0F4}.wem		\Containers\Default Work Unit\AMBIENCE\AmbienceBar\AMB_Bar_Intro		1693536
 
