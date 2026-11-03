@@ -59,15 +59,19 @@ public class GameSessionHost : MonoBehaviour
             _intents[i] = intent;
         }
 
-        _world.BuildScenario(ref _snapshots[0]);
-
-        snapshotRenderer.SetSnapshot(_snapshots[0]);
+        InitGame();
 
         _activePlayerObject = snapshotRenderer.GetPlayerByIndex(_activePlayerIndex);
         _activePlayerObject.SetActivePlayer(true);
         positionComposer.VirtualCamera.Follow = _activePlayerObject.transform;
 
         // Hide Loadingscreen here
+    }
+
+    private void InitGame()
+    {
+        _world.BuildScenario(ref _snapshots[0]);
+        snapshotRenderer.SetSnapshot(_snapshots[0]);
     }
 
     private void OnDestroy()

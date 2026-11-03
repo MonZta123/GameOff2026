@@ -10,21 +10,25 @@ namespace ECS.Systems
         public AttackSystem(int tickRate)
         {
             _heavyCooldown = Mathf.CeilToInt(Constants.HeavyCooldown * tickRate);
+
+            _heavyTtl = Mathf.CeilToInt(Constants.HeavyProjectileTtl * tickRate);
         }
 
-        private readonly float _heavyCooldown; 
+        private readonly float _heavyCooldown;
+
+        private readonly float _heavyTtl;
 
         public void Execute(World world, ReadOnlySpan<Intent> intents, int currentTick)
         {
-            var snapshot = world.GetSnapshot();
+            ref var snapshot = ref world.GetSnapshot();
 
             for (var i = 0; i < snapshot.numPlayers; i++)
             {
                 var intent = intents[i];
                 if (!intent.isShooting)
                     continue;
-                
-                ref var player =ref snapshot.players[i];
+
+                ref var player = ref snapshot.players[i];
 
                 switch (player.type)
                 {
@@ -43,22 +47,20 @@ namespace ECS.Systems
             }
         }
 
-        private void HandleHeavy(World world, Intent intent,  int currentTick, ref Player player)
+        private void HandleHeavy(World world, Intent intent, int currentTick, ref Player player)
         {
             if (currentTick < player.lastAttackTick + _heavyCooldown)
                 return;
-            
+
             var projectileId = world.FetchProjectileId();
-            
+
             var projectile = new Projectile(projectileId)
             {
-                _position = player.position,
-                _angle = player.angle,
-                _ttl = 1000
+                _position = player.position, _angle = player.angle, _spawnTick = currentTick, _ttl = _heavyTtl
             };
-            
+
             world.SpawnProjectile(projectile);
-            
+
             player.lastAttackTick = currentTick;
         }
     }

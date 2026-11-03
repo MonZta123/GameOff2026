@@ -16,6 +16,19 @@ namespace ECS
         private MoveSystem _moveSystem;
         private AttackSystem _attackSystem;
         private ProjectileSystem _projectileSystem;
+        private EnemySystem _enemySystem;
+
+        private SoundEvent[] _soundEvents;
+        private int _numSoundEvents;
+
+        public void AddSoundEvent(SoundEvent soundEvent)
+        {
+            if (_numSoundEvents == _soundEvents.Length)
+                return;
+
+            _soundEvents[_numSoundEvents] = soundEvent;
+            _numSoundEvents++;
+        }
 
         public World(int tickRate)
         {
@@ -23,10 +36,12 @@ namespace ECS
             _snapshot.Initialize();
 
             _moveEvents = new MoveEvent[_snapshot.players.Length];
+            _soundEvents = new SoundEvent[64];
 
             _moveSystem = new MoveSystem();
             _attackSystem = new AttackSystem(tickRate);
-            _projectileSystem = new ProjectileSystem(tickRate);
+            _projectileSystem = new ProjectileSystem();
+            _enemySystem = new EnemySystem();
         }
 
         public void BuildScenario(ref Snapshot snapshot)
@@ -39,6 +54,19 @@ namespace ECS
             // add position
 
             SpawnPlayer(player, ref snapshot);
+
+            // DEBUG
+#if UNITY_EDITOR
+
+            var enemyId = FetchEnemyId(ref snapshot);
+
+            var enemy = new Enemy(enemyId)
+            {
+                _health = 100, _angle = 0, _position = new Vector2(3, 0), _type = EnemyType.Gunman
+            };
+
+            SpawnEnemy(enemy, ref snapshot);
+#endif
 
             // Spawn Enemies and stuff
         }
@@ -61,8 +89,15 @@ namespace ECS
         {
             for (var i = 0; i < _snapshot.players.Length; i++)
             {
-                _moveEvents[i] = new MoveEvent();
+                _moveEvents[i] = default;
             }
+
+            for (var i = 0; i < _numSoundEvents; i++)
+            {
+                _soundEvents[i] = default;
+            }
+
+            _numSoundEvents = 0;
         }
 
         public void BuildSensors()
@@ -74,9 +109,11 @@ namespace ECS
             _moveSystem.Execute(this, intents);
 
             _attackSystem.Execute(this, intents, tick);
-            
+
             _projectileSystem.Execute(this, intents, tick);
-            
+
+            _enemySystem.Execute(this, intents);
+
             // _debugSpawnSystem.Execute(this, intent);
             // _debugDespawnSystem.Execute(this, intent);
         }
@@ -89,6 +126,15 @@ namespace ECS
                 PlayerType.Hacker => 2.0f,
                 PlayerType.Demolition => 1.5f,
                 PlayerType.Stealth => 1.0f,
+                _ => 0.0f
+            };
+        }
+
+        private float GetMoveSpeed(EnemyType type)
+        {
+            return type switch
+            {
+                EnemyType.Gunman => Constants.GunmanMoveSpeed,
                 _ => 0.0f
             };
         }
@@ -113,16 +159,23 @@ namespace ECS
                     Mathf.Cos(radians),
                     Mathf.Sin(radians)
                 );
-                
+
                 var movement = direction * (Constants.HeavyProjectileSpeed * deltaTime);
 
                 projectile._position += movement;
             }
+
+            for (var i = 0; i < _snapshot.numEnemies; i++)
+            {
+                ref var enemy = ref _snapshot.enemies[i];
+
+                enemy._position += enemy._linearVelocity * (GetMoveSpeed(enemy._type) * deltaTime);
+            }
         }
 
-        public Snapshot GetSnapshot()
+        public ref Snapshot GetSnapshot()
         {
-            return _snapshot;
+            return ref _snapshot;
         }
 
         public void SpawnPlayer(Player player, ref Snapshot snapshot)
@@ -130,6 +183,20 @@ namespace ECS
             snapshot.players[snapshot.numPlayers] = player;
             snapshot.playerIdMap[player._id - 1] = snapshot.numPlayers;
             snapshot.numPlayers++;
+        }
+
+        public void SpawnEnemy(Enemy enemy, ref Snapshot snapshot)
+        {
+            snapshot.enemies[snapshot.numEnemies] = enemy;
+            snapshot.enemyIdMap[enemy._id - 1] = snapshot.numEnemies;
+            snapshot.numEnemies++;
+        }
+
+        public void SpawnEnemy(Enemy enemy)
+        {
+            _snapshot.enemies[_snapshot.numEnemies] = enemy;
+            _snapshot.enemyIdMap[enemy._id - 1] = _snapshot.numEnemies;
+            _snapshot.numEnemies++;
         }
 
         public void SpawnPlayer(Player player)
@@ -165,6 +232,17 @@ namespace ECS
 
             var id = snapshot.freePlayerIds[^(snapshot.numPlayers + 1)];
             snapshot.freePlayerIds[^(snapshot.numPlayers + 1)] = 0;
+
+            return id;
+        }
+
+        public short FetchEnemyId(ref Snapshot snapshot)
+        {
+            if (snapshot.numEnemies == snapshot.enemies.Length)
+                return 0;
+
+            var id = snapshot.freeEnemyIds[^(snapshot.numEnemies + 1)];
+            snapshot.freeEnemyIds[^(snapshot.numEnemies + 1)] = 0;
 
             return id;
         }
@@ -205,14 +283,14 @@ namespace ECS
 
             return id;
         }
-        
+
         public void SpawnProjectile(Projectile projectile)
         {
             _snapshot.projectiles[_snapshot.numProjectiles] = projectile;
             _snapshot.projectileIdMap[projectile._id - 1] = _snapshot.numProjectiles;
             _snapshot.numProjectiles++;
         }
-        
+
         public void DespawnProjectile(short projectileId)
         {
             if (_snapshot.projectileIdMap[projectileId - 1] == -1)
@@ -222,14 +300,33 @@ namespace ECS
             if (index != _snapshot.numProjectiles - 1)
             {
                 _snapshot.projectiles[index] = _snapshot.projectiles[_snapshot.numProjectiles - 1];
-                var movedPlayer = _snapshot.projectiles[index];
-                _snapshot.projectileIdMap[movedPlayer._id - 1] = index;
+                var movedProjectile = _snapshot.projectiles[index];
+                _snapshot.projectileIdMap[movedProjectile._id - 1] = index;
             }
 
-            _snapshot.playerIdMap[projectileId - 1] = -1;
+            _snapshot.projectileIdMap[projectileId - 1] = -1;
             _snapshot.freeProjectileIds[^_snapshot.numProjectiles] = projectileId;
-            _snapshot.players[_snapshot.numProjectiles - 1] = default;
+            _snapshot.projectiles[_snapshot.numProjectiles - 1] = default;
             _snapshot.numProjectiles--;
+        }
+
+        public void DespawnEnemy(short enemyId)
+        {
+            if (_snapshot.enemyIdMap[enemyId - 1] == -1)
+                return;
+
+            var index = _snapshot.enemyIdMap[enemyId - 1];
+            if (index != _snapshot.numEnemies - 1)
+            {
+                _snapshot.enemies[index] = _snapshot.enemies[_snapshot.numEnemies - 1];
+                var movedEnemy = _snapshot.enemies[index];
+                _snapshot.enemyIdMap[movedEnemy._id - 1] = index;
+            }
+
+            _snapshot.enemyIdMap[enemyId - 1] = -1;
+            _snapshot.freeEnemyIds[^_snapshot.numEnemies] = enemyId;
+            _snapshot.enemies[_snapshot.numEnemies - 1] = default;
+            _snapshot.numEnemies--;
         }
     }
 }

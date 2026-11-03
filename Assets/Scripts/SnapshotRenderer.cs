@@ -1,4 +1,5 @@
 ﻿using Actors;
+using Domain;
 using ECS;
 using UnityEngine;
 
@@ -7,9 +8,9 @@ public class SnapshotRenderer : MonoBehaviour
     [SerializeField]
     private GameObjectPool pool;
 
-    private readonly Player[] _playerMap = new Player[4];
-    private readonly Enemy[] _enemyMap = new Enemy[100];
-    private readonly Projectile[] _projectileMap = new Projectile[500];
+    private readonly Player[] _playerMap = new Player[Constants.PlayerCount];
+    private readonly Enemy[] _enemyMap = new Enemy[Constants.EnemyCount];
+    private readonly Projectile[] _projectileMap = new Projectile[Constants.ProjectileCount];
 
     public Player GetPlayerByIndex(int index)
     {
@@ -20,6 +21,7 @@ public class SnapshotRenderer : MonoBehaviour
     {
         UpdatePlayers(snapshot);
         UpdateProjectiles(snapshot);
+        UpdateEnemies(snapshot);
     }
 
     private void UpdatePlayers(Snapshot snapshot)
@@ -76,6 +78,35 @@ public class SnapshotRenderer : MonoBehaviour
             {
                 pool.ReturnProjectile(_projectileMap[i]);
                 _projectileMap[i] = null;
+            }
+        }
+    }
+    
+    private void UpdateEnemies(Snapshot snapshot)
+    {
+        for (var i = 0; i < snapshot.numEnemies; i++)
+        {
+            var currentEnemy = snapshot.enemies[i];
+
+            var obj = _enemyMap[currentEnemy._id - 1];
+            if (!obj)
+            {
+                obj = pool.GetEnemy(currentEnemy);
+                _enemyMap[currentEnemy._id - 1] = obj;
+            }
+
+            obj.SetState(currentEnemy);
+        }
+
+        for (var i = 0; i < _enemyMap.Length; i++)
+        {
+            if (!_enemyMap[i])
+                continue;
+
+            if (snapshot.enemyIdMap[i] == -1)
+            {
+                pool.ReturnEnemy(_enemyMap[i]);
+                _enemyMap[i] = null;
             }
         }
     }

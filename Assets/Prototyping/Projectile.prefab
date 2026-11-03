@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1154994617714349149}
   - component: {fileID: 5650322184529074149}
+  - component: {fileID: 8740715447242767918}
   m_Layer: 0
   m_Name: VisualObject
   m_TagString: Untagged
@@ -92,6 +93,20 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_SpriteSortPoint: 0
   m_BlendShapeWeights: []
+--- !u!114 &8740715447242767918
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 705296158785511904}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1239d370544d447f9a73c67e834d2f02, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PositionSmoother
+  positionSmoothSpeed: 15
+  teleportThreshold: 5
 --- !u!1 &7693198392291201200
 GameObject:
   m_ObjectHideFlags: 0
@@ -137,3 +152,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9339f98e284e41f39cfb6ccf775e09df, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Actors.Projectile
+  positionSmoother: {fileID: 8740715447242767918}

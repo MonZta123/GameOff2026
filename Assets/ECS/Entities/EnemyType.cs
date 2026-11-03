@@ -1,4 +1,7 @@
 ﻿namespace ECS.Entities
 {
-    public enum EnemyType {  }
+    public enum EnemyType
+    {
+        Gunman
+    }
 }

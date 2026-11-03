@@ -59,6 +59,14 @@ public class GameObjectPool : MonoBehaviour
         return obj;
     }
 
+    public Enemy GetEnemy(ECS.Entities.Enemy entity)
+    {
+        var obj = _enemyPool.Pop();
+        obj.Init(entity);
+        obj.gameObject.SetActive(true);
+        return obj;
+    }
+    
     public void ReturnPlayer(Player obj)
     {
         obj.Release();

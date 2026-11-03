@@ -1,21 +1,23 @@
 ﻿using System;
-using Domain;
-using UnityEngine;
 
 namespace ECS.Systems
 {
     public class ProjectileSystem
     {
-        public ProjectileSystem(int tickRate)
-        {
-            _heavyTtl = Mathf.CeilToInt(Constants.HeavyProjectileTtl * tickRate);
-        }
-        
-        private float _heavyTtl;
-
         public void Execute(World world, ReadOnlySpan<Intent> intents, int tick)
         {
-            
+            ref var snapshot = ref world.GetSnapshot();
+
+            for (var i = 0; i < snapshot.numProjectiles; i++)
+            {
+                ref var projectile = ref snapshot.projectiles[i];
+
+                if (projectile._spawnTick + projectile._ttl <= tick)
+                {
+                    world.DespawnProjectile(projectile._id);
+                    i--;
+                }
+            }
         }
     }
 }

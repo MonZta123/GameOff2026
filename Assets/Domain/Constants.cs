@@ -1,16 +1,23 @@
-﻿using UnityEngine;
-
-namespace Domain
+﻿namespace Domain
 {
     public static class Constants
     {
-        public static int PlayerCount = 4;
-        public static int EnemyCount = 100;
-        public static int ProjectileCount = 200;
+        public const int PlayerCount = 4;
+        public const int EnemyCount = 100;
+        public const int ProjectileCount = 200;
 
-        public static float HeavyCooldown = 0.25f;
-        public static float HeavyProjectileTtl = 1f;
-        public static float HeavyProjectileSpeed = 2f;
-        public static float HeavyMoveSpeed = 7.5f;
+        public const float HeavyCooldown = 0.25f;
+        public const float HeavyProjectileTtl = 1f;
+        public const float HeavyProjectileSpeed = 5f;
+        public const float HeavyMoveSpeed = 7.5f;
+        public const float HeavyColliderRadius = 1.0f;
+        public const float HeavyDamage = 10f;
+
+        public const float GunManCooldown = 1.0f;
+        public const float GunManProjectileTtl = 1.0f;
+        public const float GunManProjectileSpeed = 1.0f;
+        public const float GunManMoveSpeed = 1.0f;
+        public const float GunManColliderRadius = 1.0f;
+        public const float GunmanMoveSpeed = 2.0f;
     }
 }
