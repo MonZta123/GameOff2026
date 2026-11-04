@@ -22,6 +22,8 @@ namespace ECS
         private SoundEvent[] _soundEvents;
         private int _numSoundEvents;
 
+        private MapDefinition _map;
+        
         public void AddSoundEvent(SoundEvent soundEvent)
         {
             if (_numSoundEvents == _soundEvents.Length)
@@ -46,15 +48,17 @@ namespace ECS
             _enemySystem = new EnemySystem();
         }
 
-        public void BuildScenario(ref Snapshot snapshot)
+        public void BuildScenario(ref Snapshot snapshot, MapDefinition mapDefinition)
         {
             // build world
-
+            _map = mapDefinition;
+            
             _currentPlayer = GetCharacter(PlayerType.Heavy);
+            _currentPlayer._position = mapDefinition._spawnPoints[0];
             // add position
 
             SpawnPlayer(_currentPlayer, ref snapshot);
-
+            
             // DEBUG
 #if UNITY_EDITOR
 
@@ -276,6 +280,7 @@ namespace ECS
                 if (snapshot.playerIdMap[currentPlayer - 1] == -1)
                 {
                     _currentPlayer = GetCharacter((PlayerType)(currentPlayer - 1));
+                    _currentPlayer._position = _map._spawnPoints[currentPlayer - 1];
                     SpawnPlayer(_currentPlayer, ref snapshot);
                 }
 

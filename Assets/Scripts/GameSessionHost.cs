@@ -22,9 +22,9 @@ public class GameSessionHost : MonoBehaviour
 
     [SerializeField]
     private CinemachinePositionComposer positionComposer;
-    
+
     [SerializeField]
-    private AK.Wwise.Event scratchSound;
+    private MapRenderer mapRenderer;
 
     [SerializeField]
     private Camera cam;
@@ -36,13 +36,16 @@ public class GameSessionHost : MonoBehaviour
     private Intent[] _intents;
     private int _activePlayerIndex;
 
+    [SerializeField]
+    private Texture2D map;
+
     private void Awake()
     {
         var ticksTotal = maxSeconds * stepsPerSecond;
 
+        _world = new World(stepsPerSecond);
         // Show Loadingscreen here
 
-        _world = new World(stepsPerSecond);
         _intents = new Intent[ticksTotal * Constants.PlayerCount];
 
         _snapshots = new Snapshot[ticksTotal];
@@ -63,7 +66,8 @@ public class GameSessionHost : MonoBehaviour
             _intents[i] = intent;
         }
 
-        InitGame();
+        InitWorld();
+
 
         _activePlayerObject = snapshotRenderer.GetPlayerByIndex(_activePlayerIndex);
         _activePlayerObject.SetActivePlayer(true);
@@ -72,9 +76,13 @@ public class GameSessionHost : MonoBehaviour
         // Hide Loadingscreen here
     }
 
-    private void InitGame()
+    private void InitWorld()
     {
-        _world.BuildScenario(ref _snapshots[0]);
+        var mapDefinition = TextureMapBuilder.GetMap(map);
+
+        mapRenderer.GenerateMap(mapDefinition);
+
+        _world.BuildScenario(ref _snapshots[0], mapDefinition);
         snapshotRenderer.SetSnapshot(_snapshots[0]);
     }
 
@@ -123,8 +131,8 @@ public class GameSessionHost : MonoBehaviour
 
     public Intent BuildIntent()
     {
-        var xAxis = Input.GetAxis("Horizontal");
-        var yAxis = Input.GetAxis("Vertical");
+        var xAxis = Input.GetKey(KeyCode.D) ? 1 : Input.GetKey(KeyCode.A) ? -1 : 0;
+        var yAxis = Input.GetKey(KeyCode.W) ? 1 : Input.GetKey(KeyCode.S) ? -1 : 0;
 
         var intent = new Intent()
         {
@@ -140,7 +148,6 @@ public class GameSessionHost : MonoBehaviour
 
     private void DoTimeShift(int tick)
     {
-        scratchSound.Post(gameObject);
         _tickDriver.StopSim();
         _tickDriver.SetToTick(tick);
 
@@ -154,10 +161,8 @@ public class GameSessionHost : MonoBehaviour
         _activePlayerObject.SetActivePlayer(false);
         _activePlayerObject = snapshotRenderer.GetPlayerByIndex(_activePlayerIndex);
         _activePlayerObject.SetActivePlayer(true);
-        
+
         positionComposer.VirtualCamera.Follow = _activePlayerObject.transform;
-
-
 
         StartCoroutine(WaitForStart());
     }
@@ -174,7 +179,7 @@ public class GameSessionHost : MonoBehaviour
 
             yield return null;
         }
-        
+
         _tickDriver.StartSim();
     }
 
