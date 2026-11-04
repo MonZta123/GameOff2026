@@ -94,6 +94,85 @@
 								</Event>
 							</ChildrenList>
 						</Folder>
+						<Folder Name="Impacts" ID="{57DA2AE2-A214-41E3-82F5-5D3BD6E34B38}" ShortID="817725652">
+							<ChildrenList>
+								<Event Name="Play_SFX_BombExplosion" ID="{30F644E1-4A6B-491A-B312-78F56222651D}">
+									<ChildrenList>
+										<Action Name="" ID="{49002A2A-ED6E-412A-928B-33F757CFCBAC}" ShortID="238446411">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="BombExplosions" ID="{B538D9E6-2565-4B50-9D79-E71CF5074230}" WorkUnitID="{AF633A36-6CC5-470E-AD72-3F76D6F661BF}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+								<Event Name="Play_SFX_BigExplosion" ID="{E02E6D0C-F676-4241-B29F-FCEFD60C8FD3}">
+									<ChildrenList>
+										<Action Name="" ID="{2E76E6BC-A436-4B69-AB8A-F0A1B7CD90E8}" ShortID="784762622">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="BigExplosion" ID="{5A9F41C9-B84E-4C7B-9573-02B2FCB81F93}" WorkUnitID="{AF633A36-6CC5-470E-AD72-3F76D6F661BF}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+								<Event Name="Play_SFX_MineBeeps" ID="{0E5DE2F2-5313-45DA-8FA6-A3469A2C1DFD}">
+									<ChildrenList>
+										<Action Name="" ID="{7887F10C-3479-4B34-9B4C-51FAFE596E8A}" ShortID="615733899">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="Mine_Beeps" ID="{596943FB-D0F4-483B-A956-6F5AF1C471E4}" WorkUnitID="{AF633A36-6CC5-470E-AD72-3F76D6F661BF}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+								<Event Name="Play_SFX_MineCountdown" ID="{2E4350FE-4AE1-4D66-A4EF-72CE53E75CF4}">
+									<PropertyList>
+										<Property Name="Inclusion" Type="bool" Value="False"/>
+									</PropertyList>
+									<ChildrenList>
+										<Action Name="" ID="{1C64FF45-5D76-4923-99A1-9D7BFE5A1E5D}" ShortID="430081745">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="Mine Countdown" ID="{104F2C64-46A3-4D59-AC72-2AE5024AA509}" WorkUnitID="{AF633A36-6CC5-470E-AD72-3F76D6F661BF}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+								<Event Name="Play_SFX_MineCountdownExplode" ID="{2E3C0A98-F559-4F88-94EA-9353FFFA4DB9}">
+									<PropertyList>
+										<Property Name="InstanceLimit" Type="int16">
+											<ValueList>
+												<Value>1</Value>
+											</ValueList>
+										</Property>
+									</PropertyList>
+									<ChildrenList>
+										<Action Name="" ID="{3BC95559-FD46-42A6-BE43-64558B397F61}" ShortID="279420883">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="Mine Countdown" ID="{104F2C64-46A3-4D59-AC72-2AE5024AA509}" WorkUnitID="{AF633A36-6CC5-470E-AD72-3F76D6F661BF}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+										<Action Name="" ID="{B5368418-9306-4C1C-89E5-5928C1A8EA68}" ShortID="293322604">
+											<PropertyList>
+												<Property Name="Delay" Type="Real64" Value="2.3"/>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="BombExplosions" ID="{B538D9E6-2565-4B50-9D79-E71CF5074230}" WorkUnitID="{AF633A36-6CC5-470E-AD72-3F76D6F661BF}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+							</ChildrenList>
+						</Folder>
 					</ChildrenList>
 				</Folder>
 				<Folder Name="AMBIENCE" ID="{A55CDA7E-9FA2-4DE0-A034-544AD10448E8}" ShortID="841075420">

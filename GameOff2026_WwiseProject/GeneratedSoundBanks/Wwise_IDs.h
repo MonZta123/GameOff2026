@@ -16,7 +16,11 @@ namespace AK
         static const AkUniqueID PLAY_AMB_BARLOOP = 2856109558U;
         static const AkUniqueID PLAY_MUS_MAINMENU = 1043591872U;
         static const AkUniqueID PLAY_SFX_A_FOOTSTEPS = 2635421491U;
+        static const AkUniqueID PLAY_SFX_BIGEXPLOSION = 2310908281U;
+        static const AkUniqueID PLAY_SFX_BOMBEXPLOSION = 3401867411U;
         static const AkUniqueID PLAY_SFX_C_FOOTSTEPS = 1905415017U;
+        static const AkUniqueID PLAY_SFX_MINEBEEPS = 1150067858U;
+        static const AkUniqueID PLAY_SFX_MINECOUNTDOWNEXPLODE = 3330010075U;
         static const AkUniqueID PLAY_SFX_SHIFT = 2453180302U;
         static const AkUniqueID PLAY_SFX_UI_BACK = 1117141914U;
         static const AkUniqueID PLAY_SFX_UI_HOVER = 708671363U;
