@@ -10,7 +10,7 @@
     "Type": "User",
     "GUID": "{3059A6CE-8152-4CD2-BEA9-69E98BB60D65}",
     "Language": "SFX",
-    "Hash": "{634F8209-4D7C-E760-36DE-154373050738}",
+    "Hash": "{760E32CD-8ADB-08C1-FED2-F4991E355DC0}",
     "ObjectPath": "\\SoundBanks\\Default Work Unit\\Main",
     "ShortName": "Main",
     "Path": "Main.bnk",
@@ -30,6 +30,14 @@
       "Location": "Memory",
       "ShortName": "UI_Back.wav",
       "CachePath": "26/{262379AA-3B22-A775-BF7E-654908FE6B2C}.wem"
+     },
+     {
+      "Id": "64245047",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "FootstepB_02.wav",
+      "CachePath": "CC/{CC5956C3-FAB5-18AC-DFC3-958084226C9D}.wem"
      },
      {
       "Id": "105804198",
@@ -112,6 +120,14 @@
       "CachePath": "15/{15388B51-E6D8-FC7D-5EC9-CE7D42364A07}.wem"
      },
      {
+      "Id": "359600873",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "FootstepB_06.wav",
+      "CachePath": "F3/{F360B6EE-BC2F-04BB-5AA8-B401ADA246A0}.wem"
+     },
+     {
       "Id": "437476328",
       "Language": "SFX",
       "Streaming": "false",
@@ -142,6 +158,14 @@
       "Location": "Memory",
       "ShortName": "VO_D_Select05.wav",
       "CachePath": "84/{84E4293C-BFEE-E871-85E3-864B9D6074AD}.wem"
+     },
+     {
+      "Id": "499693909",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "FootstepB_05.wav",
+      "CachePath": "66/{6641B40D-51E3-4433-8C4E-1DE05396E31F}.wem"
      },
      {
       "Id": "547164501",
@@ -184,6 +208,14 @@
       "CachePath": "23/{233937BE-233A-BB76-F0C1-E5B75F82900B}.wem"
      },
      {
+      "Id": "686355128",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "FootstepB_01.wav",
+      "CachePath": "50/{50893AA7-0549-4041-9BA3-5848E8CF6595}.wem"
+     },
+     {
       "Id": "689588674",
       "Language": "SFX",
       "Streaming": "false",
@@ -224,6 +256,14 @@
       "CachePath": "6F/{6FB63E66-BE34-46D0-31B5-03F4A0525076}.wem"
      },
      {
+      "Id": "932986248",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "FootstepB_03.wav",
+      "CachePath": "CD/{CDE73AE3-B22A-7D2E-35B5-90F849683A90}.wem"
+     },
+     {
       "Id": "935062006",
       "Language": "SFX",
       "Streaming": "false",
@@ -246,6 +286,14 @@
       "Location": "Memory",
       "ShortName": "BombExplosion_03.wav",
       "CachePath": "86/{86563DFC-E0B3-56AC-ED25-3318C368358B}.wem"
+     },
+     {
+      "Id": "953017544",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "FootstepB_04.wav",
+      "CachePath": "47/{4775E14B-B78E-162C-02A1-9AE9F6EDBFC4}.wem"
      },
      {
       "Id": "959829082",
@@ -340,6 +388,35 @@
       ]
      },
      {
+      "Id": "1264204328",
+      "Name": "Play_SFX_B_Footsteps",
+      "ObjectPath": "\\Events\\Default Work Unit\\SFX\\Movement\\Play_SFX_B_Footsteps",
+      "GUID": "{CAED62F8-B6A5-4771-95C3-5C04452AB617}",
+      "DurationType": "OneShot",
+      "DurationMin": "0.25863713",
+      "DurationMax": "1.3195806",
+      "MediaRefs": [
+       {
+        "Id": "64245047"
+       },
+       {
+        "Id": "359600873"
+       },
+       {
+        "Id": "499693909"
+       },
+       {
+        "Id": "686355128"
+       },
+       {
+        "Id": "932986248"
+       },
+       {
+        "Id": "953017544"
+       }
+      ]
+     },
+     {
       "Id": "2310908281",
       "Name": "Play_SFX_BigExplosion",
       "ObjectPath": "\\Events\\Default Work Unit\\SFX\\Impacts\\Play_SFX_BigExplosion",
@@ -394,6 +471,15 @@
       ]
      },
      {
+      "Id": "3289535566",
+      "Name": "Play_SFX_D_Footsteps",
+      "ObjectPath": "\\Events\\Default Work Unit\\SFX\\Movement\\Play_SFX_D_Footsteps",
+      "GUID": "{9FDF8A70-9647-464A-8FEB-D2A548DE98DF}",
+      "DurationType": "OneShot",
+      "DurationMin": "0",
+      "DurationMax": "0"
+     },
+     {
       "Id": "1150067858",
       "Name": "Play_SFX_MineBeeps",
       "ObjectPath": "\\Events\\Default Work Unit\\SFX\\Impacts\\Play_SFX_MineBeeps",
@@ -408,19 +494,30 @@
       ]
      },
      {
-      "Id": "3330010075",
-      "Name": "Play_SFX_MineCountdownExplode",
-      "ObjectPath": "\\Events\\Default Work Unit\\SFX\\Impacts\\Play_SFX_MineCountdownExplode",
+      "Id": "2935530180",
+      "Name": "Play_SFX_MineCountdown",
+      "ObjectPath": "\\Events\\Default Work Unit\\SFX\\Impacts\\Play_SFX_MineCountdown",
+      "GUID": "{2E4350FE-4AE1-4D66-A4EF-72CE53E75CF4}",
+      "DurationType": "OneShot",
+      "DurationMin": "2.3805668",
+      "DurationMax": "2.3805668",
+      "MediaRefs": [
+       {
+        "Id": "547164501"
+       }
+      ]
+     },
+     {
+      "Id": "1561061870",
+      "Name": "Play_SFX_MineExplode",
+      "ObjectPath": "\\Events\\Default Work Unit\\SFX\\Impacts\\Play_SFX_MineExplode",
       "GUID": "{2E3C0A98-F559-4F88-94EA-9353FFFA4DB9}",
       "DurationType": "OneShot",
-      "DurationMin": "3.693418",
-      "DurationMax": "7.694604",
+      "DurationMin": "1.3934182",
+      "DurationMax": "5.3946037",
       "MediaRefs": [
        {
         "Id": "105804198"
-       },
-       {
-        "Id": "547164501"
        },
        {
         "Id": "940281172"
@@ -553,6 +650,6 @@
     ]
    }
   ],
-  "FileHash": "{86AB93F6-E690-01A6-0F75-079D07BB54BA}"
+  "FileHash": "{0B2B0937-0DB2-C502-C479-2B070937498F}"
  }
 }

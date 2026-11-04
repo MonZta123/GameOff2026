@@ -55,6 +55,28 @@
 										</Action>
 									</ChildrenList>
 								</Event>
+								<Event Name="Play_SFX_B_Footsteps" ID="{CAED62F8-B6A5-4771-95C3-5C04452AB617}">
+									<ChildrenList>
+										<Action Name="" ID="{A30BB2CA-C5C3-4ECE-85C5-BAD311AE36FA}" ShortID="809282300">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="FootstepsB" ID="{50D424FE-B133-4111-A355-BE5DE90B070A}" WorkUnitID="{AF633A36-6CC5-470E-AD72-3F76D6F661BF}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+								<Event Name="Play_SFX_D_Footsteps" ID="{9FDF8A70-9647-464A-8FEB-D2A548DE98DF}">
+									<ChildrenList>
+										<Action Name="" ID="{615287E0-4623-4B00-BAB5-03106286ACC4}" ShortID="196446542">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="FootstepsD" ID="{E8056663-A89C-4BB6-A0E0-EB7B8F6F2EF3}" WorkUnitID="{AF633A36-6CC5-470E-AD72-3F76D6F661BF}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
 							</ChildrenList>
 						</Folder>
 						<Folder Name="UI" ID="{9D9EFAD9-6188-4ECD-9A1F-B00C6DDA808F}" ShortID="202227406">
@@ -130,9 +152,6 @@
 									</ChildrenList>
 								</Event>
 								<Event Name="Play_SFX_MineCountdown" ID="{2E4350FE-4AE1-4D66-A4EF-72CE53E75CF4}">
-									<PropertyList>
-										<Property Name="Inclusion" Type="bool" Value="False"/>
-									</PropertyList>
 									<ChildrenList>
 										<Action Name="" ID="{1C64FF45-5D76-4923-99A1-9D7BFE5A1E5D}" ShortID="430081745">
 											<ReferenceList>
@@ -143,7 +162,7 @@
 										</Action>
 									</ChildrenList>
 								</Event>
-								<Event Name="Play_SFX_MineCountdownExplode" ID="{2E3C0A98-F559-4F88-94EA-9353FFFA4DB9}">
+								<Event Name="Play_SFX_MineExplode" ID="{2E3C0A98-F559-4F88-94EA-9353FFFA4DB9}">
 									<PropertyList>
 										<Property Name="InstanceLimit" Type="int16">
 											<ValueList>
@@ -152,17 +171,7 @@
 										</Property>
 									</PropertyList>
 									<ChildrenList>
-										<Action Name="" ID="{3BC95559-FD46-42A6-BE43-64558B397F61}" ShortID="279420883">
-											<ReferenceList>
-												<Reference Name="Target">
-													<ObjectRef Name="Mine Countdown" ID="{104F2C64-46A3-4D59-AC72-2AE5024AA509}" WorkUnitID="{AF633A36-6CC5-470E-AD72-3F76D6F661BF}"/>
-												</Reference>
-											</ReferenceList>
-										</Action>
 										<Action Name="" ID="{B5368418-9306-4C1C-89E5-5928C1A8EA68}" ShortID="293322604">
-											<PropertyList>
-												<Property Name="Delay" Type="Real64" Value="2.3"/>
-											</PropertyList>
 											<ReferenceList>
 												<Reference Name="Target">
 													<ObjectRef Name="BombExplosions" ID="{B538D9E6-2565-4B50-9D79-E71CF5074230}" WorkUnitID="{AF633A36-6CC5-470E-AD72-3F76D6F661BF}"/>
