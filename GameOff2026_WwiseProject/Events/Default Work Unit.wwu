@@ -55,6 +55,131 @@
 										</Action>
 									</ChildrenList>
 								</Event>
+								<Event Name="Play_SFX_B_Footsteps" ID="{CAED62F8-B6A5-4771-95C3-5C04452AB617}">
+									<ChildrenList>
+										<Action Name="" ID="{A30BB2CA-C5C3-4ECE-85C5-BAD311AE36FA}" ShortID="809282300">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="FootstepsB" ID="{50D424FE-B133-4111-A355-BE5DE90B070A}" WorkUnitID="{AF633A36-6CC5-470E-AD72-3F76D6F661BF}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+								<Event Name="Play_SFX_D_Footsteps" ID="{9FDF8A70-9647-464A-8FEB-D2A548DE98DF}">
+									<ChildrenList>
+										<Action Name="" ID="{615287E0-4623-4B00-BAB5-03106286ACC4}" ShortID="196446542">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="FootstepsD" ID="{E8056663-A89C-4BB6-A0E0-EB7B8F6F2EF3}" WorkUnitID="{AF633A36-6CC5-470E-AD72-3F76D6F661BF}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+							</ChildrenList>
+						</Folder>
+						<Folder Name="UI" ID="{9D9EFAD9-6188-4ECD-9A1F-B00C6DDA808F}" ShortID="202227406">
+							<ChildrenList>
+								<Event Name="Play_SFX_UI_Select" ID="{B523CDC4-6928-410D-87A9-2A88A3221FD8}">
+									<ChildrenList>
+										<Action Name="" ID="{762F5078-52B9-4F63-96B3-EEC21A8FE316}" ShortID="1009846387">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="UI_Select" ID="{6E3CCD4A-D88D-47DF-9F9D-2D6F7C445737}" WorkUnitID="{AF633A36-6CC5-470E-AD72-3F76D6F661BF}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+								<Event Name="Play_SFX_UI_Hover" ID="{775AAA7A-5AD7-4404-96B6-EE23F9948E6A}">
+									<ChildrenList>
+										<Action Name="" ID="{E2FDDCFE-85AB-49E5-BCAE-0C6E9716EDB3}" ShortID="974122980">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="UI_Hover" ID="{B69E88EC-1091-4476-87DB-7428D3C3B64B}" WorkUnitID="{AF633A36-6CC5-470E-AD72-3F76D6F661BF}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+								<Event Name="Play_SFX_UI_Back" ID="{24407F4D-86FB-45EA-BCE9-724A6801CF46}">
+									<ChildrenList>
+										<Action Name="" ID="{26336255-2C1C-45F3-8310-CA36A45B7BA2}" ShortID="179371993">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="UI_Back" ID="{26C19CB6-50DC-49C1-A5F0-E7AC93E1472C}" WorkUnitID="{AF633A36-6CC5-470E-AD72-3F76D6F661BF}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+							</ChildrenList>
+						</Folder>
+						<Folder Name="Impacts" ID="{57DA2AE2-A214-41E3-82F5-5D3BD6E34B38}" ShortID="817725652">
+							<ChildrenList>
+								<Event Name="Play_SFX_BombExplosion" ID="{30F644E1-4A6B-491A-B312-78F56222651D}">
+									<ChildrenList>
+										<Action Name="" ID="{49002A2A-ED6E-412A-928B-33F757CFCBAC}" ShortID="238446411">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="BombExplosions" ID="{B538D9E6-2565-4B50-9D79-E71CF5074230}" WorkUnitID="{AF633A36-6CC5-470E-AD72-3F76D6F661BF}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+								<Event Name="Play_SFX_BigExplosion" ID="{E02E6D0C-F676-4241-B29F-FCEFD60C8FD3}">
+									<ChildrenList>
+										<Action Name="" ID="{2E76E6BC-A436-4B69-AB8A-F0A1B7CD90E8}" ShortID="784762622">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="BigExplosion" ID="{5A9F41C9-B84E-4C7B-9573-02B2FCB81F93}" WorkUnitID="{AF633A36-6CC5-470E-AD72-3F76D6F661BF}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+								<Event Name="Play_SFX_MineBeeps" ID="{0E5DE2F2-5313-45DA-8FA6-A3469A2C1DFD}">
+									<ChildrenList>
+										<Action Name="" ID="{7887F10C-3479-4B34-9B4C-51FAFE596E8A}" ShortID="615733899">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="Mine_Beeps" ID="{596943FB-D0F4-483B-A956-6F5AF1C471E4}" WorkUnitID="{AF633A36-6CC5-470E-AD72-3F76D6F661BF}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+								<Event Name="Play_SFX_MineCountdown" ID="{2E4350FE-4AE1-4D66-A4EF-72CE53E75CF4}">
+									<ChildrenList>
+										<Action Name="" ID="{1C64FF45-5D76-4923-99A1-9D7BFE5A1E5D}" ShortID="430081745">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="Mine Countdown" ID="{104F2C64-46A3-4D59-AC72-2AE5024AA509}" WorkUnitID="{AF633A36-6CC5-470E-AD72-3F76D6F661BF}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+								<Event Name="Play_SFX_MineExplode" ID="{2E3C0A98-F559-4F88-94EA-9353FFFA4DB9}">
+									<PropertyList>
+										<Property Name="InstanceLimit" Type="int16">
+											<ValueList>
+												<Value>1</Value>
+											</ValueList>
+										</Property>
+									</PropertyList>
+									<ChildrenList>
+										<Action Name="" ID="{B5368418-9306-4C1C-89E5-5928C1A8EA68}" ShortID="293322604">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="BombExplosions" ID="{B538D9E6-2565-4B50-9D79-E71CF5074230}" WorkUnitID="{AF633A36-6CC5-470E-AD72-3F76D6F661BF}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
 							</ChildrenList>
 						</Folder>
 					</ChildrenList>
