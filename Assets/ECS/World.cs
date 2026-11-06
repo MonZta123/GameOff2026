@@ -20,7 +20,6 @@ namespace ECS
 
         public MoveEvent[] _moveEvents;
 
-        private MoveSystem _moveSystem;
         private AttackSystem _attackSystem;
         private ProjectileSystem _projectileSystem;
         private DamageSystem _damageSystem;
@@ -28,6 +27,8 @@ namespace ECS
         private DoorSystem _doorSystem;
         private HeavySystem _heavySystem;
         private HackerSystem _hackerSystem;
+        private DemolitionSystem _demolitionSystem;
+        private SniperSystem _sniperSystem;
 
         public BlastWaveEvent[] _blastWaveEvents;
         public int _numBlastWaveEvents;
@@ -91,13 +92,14 @@ namespace ECS
             _doorDestructionNotifications = new DoorDestructionNotification[64];
             _blastWaveEvents = new BlastWaveEvent[64];
 
-            _moveSystem = new MoveSystem();
             _attackSystem = new AttackSystem(tickRate);
             _projectileSystem = new ProjectileSystem(tickRate);
             _damageSystem = new DamageSystem();
             _enemySystem = new EnemySystem();
             _heavySystem = new HeavySystem(tickRate);
             _hackerSystem = new HackerSystem(tickRate);
+            _demolitionSystem = new DemolitionSystem(tickRate);
+            _sniperSystem = new SniperSystem(tickRate);
             _doorSystem = new DoorSystem();
         }
 
@@ -177,7 +179,7 @@ namespace ECS
 
                 snapshot._triggers.Spawn(evt);
             }
-            
+
             // DEBUG
 #if UNITY_EDITOR
 
@@ -350,26 +352,16 @@ namespace ECS
 
         public void System(int tick)
         {
-            // _moveSystem.Execute(this);
             _attackSystem.Execute(this, tick);
             _heavySystem.Execute(this, tick);
             _hackerSystem.Execute(this, tick);
+            _demolitionSystem.Execute(this, tick);
+            _sniperSystem.Execute(this, tick);
+
             _projectileSystem.Execute(this, tick);
             _damageSystem.Execute(this);
             _enemySystem.Execute(this);
             _doorSystem.Execute(this, tick);
-        }
-
-        private float GetMoveSpeed(PlayerType type)
-        {
-            return type switch
-            {
-                PlayerType.Heavy => Constants.HeavyMoveSpeed,
-                PlayerType.Hacker => Constants.HackerMoveSpeed,
-                PlayerType.Demolition => 1.5f,
-                PlayerType.Stealth => 1.0f,
-                _ => 0.0f
-            };
         }
 
         private float GetMoveSpeed(EnemyType type)
@@ -392,8 +384,7 @@ namespace ECS
                 player._angle = _moveEvents[i]._angle;
 
                 var pushout = player._velocity.normalized * Pushout;
-                var nextPos = player._position + (player._velocity * (_deltaTime * GetMoveSpeed(player._type))) +
-                              pushout;
+                var nextPos = player._position + player._velocity * _deltaTime + pushout;
 
                 var nextX = new Vector2(nextPos.x, player._position.y);
 

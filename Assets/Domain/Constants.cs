@@ -22,6 +22,20 @@
         public const float HackerColliderRadius = 1.0f;
         public const float HackerDamage = 10f;
         
+        public const float DemolitionCooldown = 0.25f;
+        public const float DemolitionProjectileTtl = 1f;
+        public const float DemolitionProjectileSpeed = 5f;
+        public const float DemolitionMoveSpeed = 7.5f;
+        public const float DemolitionColliderRadius = 1.0f;
+        public const float DemolitionDamage = 10f;
+        
+        public const float SniperCooldown = 0.25f;
+        public const float SniperProjectileTtl = 1f;
+        public const float SniperProjectileSpeed = 5f;
+        public const float SniperMoveSpeed = 7.5f;
+        public const float SniperColliderRadius = 1.0f;
+        public const float SniperDamage = 10f;
+        
         public const float GunManCooldown = 1.0f;
         public const float GunManProjectileTtl = 1.0f;
         public const float GunManProjectileSpeed = 1.0f;

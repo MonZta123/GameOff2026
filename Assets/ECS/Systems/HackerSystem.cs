@@ -1,4 +1,5 @@
 ﻿using System;
+using Domain;
 using ECS.Entities;
 using ECS.Events;
 using UnityEngine;
@@ -14,8 +15,12 @@ namespace ECS.Systems
             _shootCooldownTicks = (int)MathF.Floor(tickRate * _secondsPrimaryCooldown);
             _secondaryCooldownTicks = (int)MathF.Floor(tickRate * _secondsSecondaryCooldown);
             _secondaryActiveTicks = (int)MathF.Floor(tickRate * _secondaryDuration);
+            
+            _speed = Constants.HackerMoveSpeed;
         }
 
+        private float _speed;
+        
         private int _tickRate;
 
         private float _secondsPrimaryCooldown = 0.25f;
@@ -63,7 +68,7 @@ namespace ECS.Systems
                         Mathf.Sin(radians)
                     );
 
-                    player._velocity = direction * 2f;
+                    player._velocity = direction * (_speed * 2f);
 
                     return;
                 }
@@ -72,10 +77,6 @@ namespace ECS.Systems
             if (player._secondaryActivatedTo > currentTick)
             {
                 return;
-            }
-
-            if (player._secondaryActivatedTo == currentTick && player._secondaryActivatedTo > 0)
-            {
             }
 
             for (var i = snapshot._triggers.GetNumEntities(); i >= 0; i--)
@@ -101,7 +102,7 @@ namespace ECS.Systems
                 return;
             }
 
-            player._velocity = moveEvt._movement;
+            player._velocity = moveEvt._movement * _speed;
             player._angle = moveEvt._angle;
         }
     }

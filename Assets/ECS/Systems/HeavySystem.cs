@@ -1,4 +1,5 @@
 ﻿using System;
+using Domain;
 using ECS.Entities;
 using ECS.Events;
 using UnityEngine;
@@ -15,6 +16,8 @@ namespace ECS.Systems
             _secondaryCooldownTicks = (int)MathF.Floor(tickRate * _secondsSecondaryCooldown);
             _secondaryActiveTicks = (int)MathF.Floor(tickRate * _secondaryDuration);
             _blockedInputTicksAfterSecondary = (int)MathF.Floor(tickRate * _blockedInputDurationAfterSecondary);
+            
+            _speed = Constants.HeavyMoveSpeed;
         }
 
         private int _tickRate;
@@ -30,6 +33,8 @@ namespace ECS.Systems
 
         private float _blockedInputDurationAfterSecondary = 0.125f;
         private int _blockedInputTicksAfterSecondary;
+
+        private float _speed;
 
         public void Execute(World world, int currentTick)
         {
@@ -67,7 +72,7 @@ namespace ECS.Systems
                         Mathf.Sin(radians)
                     );
 
-                    player._velocity = direction * 2f;
+                    player._velocity = direction * (_speed * 2f);
 
                     return;
                 }
@@ -94,7 +99,7 @@ namespace ECS.Systems
                 return;
             }
 
-            player._velocity = moveEvt._movement;
+            player._velocity = moveEvt._movement * _speed;
             player._angle = moveEvt._angle;
         }
     }
