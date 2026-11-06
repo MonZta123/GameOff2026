@@ -13,6 +13,7 @@ public class SnapshotRenderer : MonoBehaviour
         UpdateView(snapshot._enemies, gameObjectPools._enemyPool);
         UpdateView(snapshot._projectiles, gameObjectPools._projectilePool);
         UpdateView(snapshot._doors, gameObjectPools._doorPool);
+        UpdateView(snapshot._triggers, gameObjectPools._triggerPool);
     }
 
     private void UpdateView<TView, TEntity>(EntityPool<TEntity> ecsPool, GameObjectPool<TView, TEntity> pool)

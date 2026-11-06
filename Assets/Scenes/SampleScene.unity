@@ -156,6 +156,7 @@ MonoBehaviour:
   enemy: {fileID: -1690383949577661822, guid: cf592050b90db5e418e8411f83e0e798, type: 3}
   projectile: {fileID: 6085684898756830371, guid: 2fb07515fc822d544b16e1a85678f742, type: 3}
   door: {fileID: 8443806336917652463, guid: d6e16b0941c49474c90013abac89f563, type: 3}
+  trigger: {fileID: 1809184742179863036, guid: 211595e0d07bbca45a1d4b1f6afe64bc, type: 3}
 --- !u!4 &13633224
 Transform:
   m_ObjectHideFlags: 0

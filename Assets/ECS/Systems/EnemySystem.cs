@@ -9,14 +9,14 @@ namespace ECS.Systems
         {
             ref var snapshot = ref world.GetSnapshot();
 
-            for (var i = snapshot._enemies.GetNumEntities() - 1; i >= 0; i++)
+            for (var i = snapshot._enemies.GetNumEntities() - 1; i >= 0; i--)
             {
                 ref var enemy = ref snapshot._enemies.GetEntityAt(i);
 
                 var closestId = -1;
                 var closestDistance = float.MaxValue;
                 var closestPosition = Vector2.zero;
-                for (var j =  snapshot._players.GetNumEntities() - 1; j >= 0; j++)
+                for (var j =  snapshot._players.GetNumEntities() - 1; j >= 0; j--)
                 {
                     ref var player = ref snapshot._players.GetEntityAt(j);
 

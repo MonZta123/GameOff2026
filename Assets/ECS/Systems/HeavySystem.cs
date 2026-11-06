@@ -14,6 +14,7 @@ namespace ECS.Systems
             _shootCooldownTicks = (int)MathF.Floor(tickRate * _secondsPrimaryCooldown);
             _secondaryCooldownTicks = (int)MathF.Floor(tickRate * _secondsSecondaryCooldown);
             _secondaryActiveTicks = (int)MathF.Floor(tickRate * _secondaryDuration);
+            _blockedInputTicksAfterSecondary = (int)MathF.Floor(tickRate * _blockedInputDurationAfterSecondary);
         }
 
         private int _tickRate;
@@ -26,6 +27,9 @@ namespace ECS.Systems
 
         private float _secondaryDuration = 0.5f;
         private int _secondaryActiveTicks;
+
+        private float _blockedInputDurationAfterSecondary = 0.125f;
+        private int _blockedInputTicksAfterSecondary;
 
         public void Execute(World world, int currentTick)
         {
@@ -54,7 +58,8 @@ namespace ECS.Systems
                 {
                     player._secondaryReadyAt = currentTick + _secondaryCooldownTicks;
                     player._secondaryActivatedTo = currentTick + _secondaryActiveTicks;
-
+                    player._isBlockedTo = currentTick + _secondaryActiveTicks + _blockedInputTicksAfterSecondary;
+                    
                     var radians = player._angle * Mathf.Deg2Rad;
 
                     var direction = new Vector2(
@@ -66,40 +71,31 @@ namespace ECS.Systems
 
                     return;
                 }
-            } 
+            }
 
-            if (player._secondaryActivatedTo >= currentTick)
+            if (player._secondaryActivatedTo > currentTick)
             {
+                return;
+            }
+
+            if (player._secondaryActivatedTo == currentTick && player._secondaryActivatedTo > 0)
+            {
+                world.AddBlastWaveEvent(new BlastWaveEvent()
+                {
+                    _position = player._position,
+                    _radius = 3f,
+                });
+            }
+            
+            if (player._isBlockedTo >= currentTick)
+            {
+                player._velocity = Vector2.zero;
+                player._angle = moveEvt._angle;
                 return;
             }
 
             player._velocity = moveEvt._movement;
             player._angle = moveEvt._angle;
-
-            // if (player._secondaryActive > 0)
-            // {
-            //     evt._movement = snapshot._players.GetEntityAt(0)._velocity;
-            //     evt._angle = snapshot._players.GetEntityAt(0)._angle;
-            //     return false;
-            // }
-
-            /*
-             * if (currentTick < player._cooldownPrimary + _heavyCooldown)
-                return;
-
-            var projectile = new Projectile()
-            {
-                _position = player._position,
-                _angle = player._angle,
-                _spawnTick = currentTick,
-                _ttl = _heavyTtl,
-                _type = ProjectileType.Heavy
-            };
-
-            world.GetSnapshot()._projectiles.Spawn(projectile);
-
-            player._cooldownPrimary = currentTick;
-             */
         }
     }
 }

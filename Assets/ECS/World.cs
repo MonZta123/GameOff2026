@@ -27,12 +27,12 @@ namespace ECS
         private EnemySystem _enemySystem;
         private DoorSystem _doorSystem;
         private HeavySystem _heavySystem;
+        private HackerSystem _hackerSystem;
 
         public BlastWaveEvent[] _blastWaveEvents;
         public int _numBlastWaveEvents;
 
-        private MapDefinition _map;
-
+        public MapDefinition _map;
 
         public ShootEvent[] _shootEvents;
         public int _numShootEvents;
@@ -88,6 +88,8 @@ namespace ECS
             _moveEvents = new MoveEvent[_snapshot._players.GetMaxLength()];
             _shootEvents = new ShootEvent[64];
             _soundEvents = new SoundNotification[64];
+            _doorDestructionNotifications = new DoorDestructionNotification[64];
+            _blastWaveEvents = new BlastWaveEvent[64];
 
             _moveSystem = new MoveSystem();
             _attackSystem = new AttackSystem(tickRate);
@@ -95,10 +97,31 @@ namespace ECS
             _damageSystem = new DamageSystem();
             _enemySystem = new EnemySystem();
             _heavySystem = new HeavySystem(tickRate);
+            _hackerSystem = new HackerSystem(tickRate);
             _doorSystem = new DoorSystem();
         }
 
         private float _deltaTime;
+
+        public bool IsBlocked(Vector2 position)
+        {
+            if (position.x < 0 || position.y < 0 || position.x >= _map._width || position.y >= _map._height)
+                return true;
+
+            if (_map._map[(int)position.y * _map._width + (int)position.x] == 0)
+                return true;
+
+            for (var i = 0; i < _snapshot._doors.GetNumEntities(); i++)
+            {
+                var door = _snapshot._doors.GetEntityAt(i);
+
+                if (position.x >= door._leftBottom.x && position.x < door._rightTop.x &&
+                    position.y >= door._leftBottom.y && position.y < door._rightTop.y)
+                    return true;
+            }
+
+            return false;
+        }
 
         public void BuildScenario(ref Snapshot snapshot, MapDefinition mapDefinition)
         {
@@ -120,15 +143,41 @@ namespace ECS
 
                 doorList.RemoveAll(head.Contains);
 
-                var door = new Door()
+                var door = new Door();
+
+                if (head[0].x == head[^1].x)
                 {
-                    _direction = head[0].x == head[^1].x ? Direction.Down : Direction.Right,
-                    _length = head.Count,
-                    _position = head[0]
-                };
+                    door._direction = Direction.Down;
+                    door._leftBottom = new Vector2(head[0].x, head[0].y);
+                    door._rightTop = new Vector2(head[0].x + 1, head[^1].y + 1);
+                }
+                else
+                {
+                    door._direction = Direction.Right;
+                    door._leftBottom = new Vector2(head[0].x, head[0].y);
+                    door._rightTop = new Vector2(head[^1].x + 1, head[0].y + 1);
+                }
 
                 snapshot._doors.Spawn(door);
             }
+
+            var triggerPositions = mapDefinition._hackerZone.ToList();
+
+            while (triggerPositions.Count > 0)
+            {
+                var head = LookupHackerTrigger(triggerPositions[0], triggerPositions);
+
+                var leftBottom = new Vector2(head.Min(n => n.x), head.Min(n => n.y));
+                var rightTop = new Vector2(head.Max(n => n.x) + 1, head.Max(n => n.y) + 1);
+
+                var evt = new Trigger()
+                {
+                    _leftBottom = leftBottom, _rightTop = rightTop, _triggerType = TriggerType.HackerZone
+                };
+
+                snapshot._triggers.Spawn(evt);
+            }
+            
             // DEBUG
 #if UNITY_EDITOR
 
@@ -150,6 +199,52 @@ namespace ECS
             var head = new List<Vector2Int> { start };
 
             return GetNext(start, doorPositions, head);
+        }
+
+        private List<Vector2Int> LookupHackerTrigger(Vector2Int start, List<Vector2Int> triggerPositions)
+        {
+            var head = new List<Vector2Int> { start };
+            triggerPositions.Remove(start);
+
+            return GetNextTriggerStep(start, triggerPositions, head);
+        }
+
+        private List<Vector2Int> GetNextTriggerStep(Vector2Int current, List<Vector2Int> triggerPositions,
+            List<Vector2Int> head)
+        {
+            var up = new Vector2Int(current.x, current.y + 1);
+            if (triggerPositions.Contains(up))
+            {
+                triggerPositions.Remove(up);
+                head.Add(up);
+                GetNextTriggerStep(up, triggerPositions, head);
+            }
+
+            var down = new Vector2Int(current.x, current.y - 1);
+            if (triggerPositions.Contains(down))
+            {
+                triggerPositions.Remove(down);
+                head.Add(down);
+                GetNextTriggerStep(down, triggerPositions, head);
+            }
+
+            var right = new Vector2Int(current.x + 1, current.y);
+            if (triggerPositions.Contains(right))
+            {
+                triggerPositions.Remove(right);
+                head.Add(right);
+                GetNextTriggerStep(right, triggerPositions, head);
+            }
+
+            var left = new Vector2Int(current.x - 1, current.y);
+            if (triggerPositions.Contains(left))
+            {
+                triggerPositions.Remove(left);
+                head.Add(left);
+                GetNextTriggerStep(left, triggerPositions, head);
+            }
+
+            return head;
         }
 
         private List<Vector2Int> GetNext(Vector2Int current, List<Vector2Int> doorPositions, List<Vector2Int> head)
@@ -199,22 +294,21 @@ namespace ECS
             {
                 ref var moveEvent = ref _moveEvents[i];
 
-                moveEvent._movement = intents[i].movement;
-                moveEvent._angle = intents[i].angle;
-                moveEvent._primary = intents[i].primary;
-                moveEvent._secondary = intents[i].secondary;
-                moveEvent._action = intents[i].action;
+                moveEvent._movement = intents[i]._movement;
+                moveEvent._angle = intents[i]._angle;
+                moveEvent._primary = intents[i]._primary;
+                moveEvent._secondary = intents[i]._secondary;
+                moveEvent._action = intents[i]._action;
             }
         }
 
         public void DoStep(ReadOnlySpan<Intent> intents, int tick)
         {
+            ResetEventLists();
             BuildSensors();
             Decide(intents);
             System(tick);
             Simulate();
-
-            ResetEventLists();
         }
 
         private void ResetEventLists()
@@ -239,6 +333,12 @@ namespace ECS
                 _shootEvents[i] = default;
             }
 
+            for (var i = 0; i < _numDoorDestructionNotifications; i++)
+            {
+                _doorDestructionNotifications[i] = default;
+            }
+
+            _numDoorDestructionNotifications = 0;
             _numShootEvents = 0;
             _numSoundEvents = 0;
             _numBlastWaveEvents = 0;
@@ -247,16 +347,17 @@ namespace ECS
         public void BuildSensors()
         {
         }
-        
+
         public void System(int tick)
         {
             // _moveSystem.Execute(this);
             _attackSystem.Execute(this, tick);
             _heavySystem.Execute(this, tick);
+            _hackerSystem.Execute(this, tick);
             _projectileSystem.Execute(this, tick);
             _damageSystem.Execute(this);
             _enemySystem.Execute(this);
-            _doorSystem.Execute(this);
+            _doorSystem.Execute(this, tick);
         }
 
         private float GetMoveSpeed(PlayerType type)
@@ -280,14 +381,41 @@ namespace ECS
             };
         }
 
+        private const float Pushout = 0.01f;
+
         public void Simulate()
         {
             for (var i = 0; i < _snapshot._players.GetNumEntities(); i++)
             {
                 ref var player = ref _snapshot._players.GetEntityAt(i);
 
-                player._position += (player._velocity * (_deltaTime * GetMoveSpeed(player._type)));
                 player._angle = _moveEvents[i]._angle;
+
+                var pushout = player._velocity.normalized * Pushout;
+                var nextPos = player._position + (player._velocity * (_deltaTime * GetMoveSpeed(player._type))) +
+                              pushout;
+
+                var nextX = new Vector2(nextPos.x, player._position.y);
+
+                if (IsBlocked(nextX))
+                {
+                    if (nextPos.x < player._position.x)
+                        nextPos.x = MathF.Ceiling(nextPos.x) + Pushout;
+                    else
+                        nextPos.x = MathF.Floor(nextPos.x) - Pushout;
+                }
+
+                var nextY = new Vector2(player._position.x, nextPos.y);
+
+                if (IsBlocked(nextY))
+                {
+                    if (nextPos.y < player._position.y)
+                        nextPos.y = MathF.Ceiling(nextPos.y) + Pushout;
+                    else
+                        nextPos.y = MathF.Floor(nextPos.y) - Pushout;
+                }
+
+                player._position = nextPos - pushout;
             }
 
             for (var i = 0; i < _snapshot._projectiles.GetNumEntities(); i++)

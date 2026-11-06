@@ -126,9 +126,22 @@ public class GameSessionHost : MonoBehaviour
         {
             DoTimeShift(0);
         }
+        
+        if (!_secondaryDown && Input.GetKeyDown(KeyCode.Space))
+        {
+            _secondaryDown = true;
+        }
+        
+        if (!_actionDown && Input.GetKey(KeyCode.E))
+        {
+            _actionDown = true;
+        }
     }
 
     private bool _timeShift;
+
+    private bool _secondaryDown;
+    private bool _actionDown;
 
     public Intent BuildIntent()
     {
@@ -137,12 +150,15 @@ public class GameSessionHost : MonoBehaviour
 
         var intent = new Intent()
         {
-            movement = Vector2.ClampMagnitude(new Vector2(xAxis, yAxis), 1),
-            primary = Input.GetMouseButton(0),
-            secondary = Input.GetKeyDown(KeyCode.Space),
-            action = Input.GetKeyDown(KeyCode.E),
-            angle = _angle
+            _movement = Vector2.ClampMagnitude(new Vector2(xAxis, yAxis), 1),
+            _primary = Input.GetMouseButton(0),
+            _secondary = _secondaryDown,
+            _action = _actionDown,
+            _angle = _angle
         };
+
+        _secondaryDown = false;
+        _actionDown = false;
 
         return intent;
     }
