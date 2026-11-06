@@ -2,16 +2,13 @@
 
 namespace Actors
 {
-    public class Projectile : MonoBehaviour, IPoolable<ECS.Entities.Projectile>
+    public class Projectile : MonoBehaviour, IEntityView<ECS.Entities.Projectile>
     {
         [SerializeField]
         private PositionSmoother positionSmoother;
 
-        public short Id { get; private set; }
-
         public void Init(ECS.Entities.Projectile entity)
         {
-            Id = entity._id;
         }
 
         public void SetState(ECS.Entities.Projectile entity)
@@ -25,7 +22,6 @@ namespace Actors
         public void Release()
         {
             positionSmoother.SetSmoothPosition(false);
-            Id = 0;
         }
     }
 }

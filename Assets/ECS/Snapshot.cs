@@ -1,74 +1,32 @@
-﻿using System.Reflection.Metadata;
-using Domain;
+﻿using Domain;
 using ECS.Entities;
 
 namespace ECS
 {
     public struct Snapshot
     {
-        public short[] playerIdMap;
-        public Player[] players;
-        public short numPlayers;
-        public short[] freePlayerIds;
-
-        public short[] enemyIdMap;
-        public Enemy[] enemies;
-        public short numEnemies;
-        public short[] freeEnemyIds;
-
-        public short[] projectileIdMap;
-        public Projectile[] projectiles;
-        public short numProjectiles;
-        public short[] freeProjectileIds;
+        public EntityPool<Player> _players;
+        public EntityPool<Enemy> _enemies;
+        public EntityPool<Projectile> _projectiles;
+        public EntityPool<Door> _doors;
+        public EntityPool<Trigger> _triggers;
 
         public void BuildFrom(Snapshot snapshot)
         {
-            snapshot.playerIdMap.CopyTo(playerIdMap, 0);
-            snapshot.players.CopyTo(players, 0);
-            snapshot.freePlayerIds.CopyTo(freePlayerIds, 0);
-            snapshot.enemyIdMap.CopyTo(enemyIdMap, 0);
-            snapshot.enemies.CopyTo(enemies, 0);
-            snapshot.freeEnemyIds.CopyTo(freeEnemyIds, 0);
-            snapshot.projectileIdMap.CopyTo(projectileIdMap, 0);
-            snapshot.projectiles.CopyTo(projectiles, 0);
-            snapshot.freeProjectileIds.CopyTo(freeProjectileIds, 0);
-
-            numPlayers = snapshot.numPlayers;
-            numEnemies = snapshot.numEnemies;
-            numProjectiles = snapshot.numProjectiles;
+            snapshot._players.CopyTo(ref _players);
+            snapshot._enemies.CopyTo(ref _enemies);
+            snapshot._projectiles.CopyTo(ref _projectiles);
+            snapshot._doors.CopyTo(ref _doors);
+            snapshot._triggers.CopyTo(ref _triggers);
         }
 
         public void Initialize()
         {
-            playerIdMap = new short[Constants.PlayerCount];
-            players = new Player[Constants.PlayerCount];
-            freePlayerIds = new short[Constants.PlayerCount];
-
-            enemyIdMap = new short[Constants.EnemyCount];
-            enemies = new Enemy[Constants.EnemyCount];
-            freeEnemyIds = new short[Constants.EnemyCount];
-
-            projectileIdMap = new short[Constants.ProjectileCount];
-            projectiles = new Projectile[Constants.ProjectileCount];
-            freeProjectileIds = new short[Constants.ProjectileCount];
-
-            for (var i = 0; i < freePlayerIds.Length; i++)
-            {
-                freePlayerIds[i] = (short)(freePlayerIds.Length - i);
-                playerIdMap[i] = -1;
-            }
-
-            for (var i = 0; i < freeEnemyIds.Length; i++)
-            {
-                freeEnemyIds[i] = (short)(freeEnemyIds.Length - i);
-                enemyIdMap[i] = -1;
-            }
-
-            for (var i = 0; i < freeProjectileIds.Length; i++)
-            {
-                freeProjectileIds[i] = (short)(freeProjectileIds.Length - i);
-                projectileIdMap[i] = -1;
-            }
+            _players = new EntityPool<Player>(Constants.PlayerCount);
+            _enemies = new EntityPool<Enemy>(Constants.EnemyCount);
+            _projectiles = new EntityPool<Projectile>(Constants.ProjectileCount);
+            _doors = new EntityPool<Door>(Constants.DoorCount);
+            _triggers = new EntityPool<Trigger>(Constants.TriggerCount);
         }
     }
 }

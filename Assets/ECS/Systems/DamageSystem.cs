@@ -1,5 +1,4 @@
-﻿using System;
-using Domain;
+﻿using Domain;
 using ECS.Entities;
 using UnityEngine;
 
@@ -38,17 +37,17 @@ namespace ECS.Systems
             };
         }
 
-        public void Execute(World world, ReadOnlySpan<Intent> intents)
+        public void Execute(World world)
         {
             ref var snapshot = ref world.GetSnapshot();
 
-            for (var i = 0; i < snapshot.numEnemies; i++)
+            for (var i = snapshot._enemies.GetNumEntities() -1; i >= 0; i--)
             {
-                ref var enemy = ref snapshot.enemies[i];
+                ref var enemy = ref snapshot._enemies.GetEntityAt(i);
 
-                for (var j = 0; j < snapshot.numProjectiles; j++)
+                for (var j = snapshot._projectiles.GetNumEntities() - 1; j >= 0; j--)
                 {
-                    ref var projectile = ref snapshot.projectiles[j];
+                    ref var projectile = ref snapshot._projectiles.GetEntityAt(j);
 
                     if (!DoesDamageToEnemy(projectile))
                         continue;
@@ -57,27 +56,25 @@ namespace ECS.Systems
                     {
                         enemy._health -= GetProjectileDamage(projectile);
 
-                        world.DespawnProjectile(projectile._id);
-                        j--;
+                        snapshot._projectiles.DespawnAt(j); 
 
                         if (enemy._health <= 0)
                         {
                             enemy._health = 0;
-                            world.DespawnEnemy(enemy._id);
-                            i--;
+                            snapshot._enemies.DespawnAt(i);
                             break;
                         }
                     }
                 }
             }
 
-            for (var i = 0; i < snapshot.numPlayers; i++)
+            for (var i = snapshot._players.GetNumEntities() - 1; i >= 0 ; i--)
             {
-                ref var player = ref snapshot.players[i];
+                ref var player = ref snapshot._players.GetEntityAt(i);
 
-                for (var j = 0; j < snapshot.numProjectiles; j++)
+                for (var j = snapshot._projectiles.GetNumEntities() - 1; j >= 0; j--)
                 {
-                    ref var projectile = ref snapshot.projectiles[j];
+                    ref var projectile = ref snapshot._projectiles.GetEntityAt(j);
 
                     if (!DoesDamageToPlayer(projectile, player._type))
                         continue;
@@ -86,14 +83,13 @@ namespace ECS.Systems
                     {
                         player._health -= GetProjectileDamage(projectile);
 
-                        world.DespawnProjectile(projectile._id);
-                        j--;
-
+                        snapshot._projectiles.DespawnAt(j);
+                        
                         if (player._health <= 0)
                         {
                             player._health = 0;
                             // world.DespawnPlayer(player._id);
-                            i--;
+                           
                             break;
                         }
                     }

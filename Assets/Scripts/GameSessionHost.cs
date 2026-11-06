@@ -18,7 +18,7 @@ public class GameSessionHost : MonoBehaviour
     private SnapshotRenderer snapshotRenderer;
 
     [SerializeField]
-    private GameObjectPool pool;
+    private GameObjectPools gameObjectPools;
 
     [SerializeField]
     private CinemachinePositionComposer positionComposer;
@@ -34,13 +34,17 @@ public class GameSessionHost : MonoBehaviour
 
     private Snapshot[] _snapshots;
     private Intent[] _intents;
+    
     private int _activePlayerIndex;
-
+    private int _activePlayerId;
+    
     [SerializeField]
     private Texture2D map;
 
     private void Awake()
     {
+        gameObjectPools.Initialize();
+
         var ticksTotal = maxSeconds * stepsPerSecond;
 
         _world = new World(stepsPerSecond);
@@ -54,8 +58,6 @@ public class GameSessionHost : MonoBehaviour
         _tickDriver._onTick += OnTick;
         _tickDriver._onPostTick += OnPostTick;
 
-        pool.Prewarm();
-
         for (var i = 0; i < ticksTotal; i++)
         {
             var snapshot = new Snapshot();
@@ -68,11 +70,10 @@ public class GameSessionHost : MonoBehaviour
 
         InitWorld();
 
-
         _activePlayerObject = snapshotRenderer.GetPlayerByIndex(_activePlayerIndex);
         _activePlayerObject.SetActivePlayer(true);
-        positionComposer.VirtualCamera.Follow = _activePlayerObject.transform;
 
+        positionComposer.VirtualCamera.Follow = _activePlayerObject.transform;
         // Hide Loadingscreen here
     }
 
@@ -137,7 +138,9 @@ public class GameSessionHost : MonoBehaviour
         var intent = new Intent()
         {
             movement = Vector2.ClampMagnitude(new Vector2(xAxis, yAxis), 1),
-            isShooting = Input.GetMouseButton(0),
+            primary = Input.GetMouseButton(0),
+            secondary = Input.GetKeyDown(KeyCode.Space),
+            action = Input.GetKeyDown(KeyCode.E),
             angle = _angle
         };
 
@@ -197,7 +200,7 @@ public class GameSessionHost : MonoBehaviour
         var span = _intents.AsSpan(tick * Constants.PlayerCount, Constants.PlayerCount);
 
         _world.SetState(_snapshots[tick]);
-        _world.DoStep(span, tick, deltaTime);
+        _world.DoStep(span, tick);
 
         _snapshots[tick + 1].BuildFrom(_world.GetSnapshot());
     }

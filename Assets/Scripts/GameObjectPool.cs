@@ -1,103 +1,36 @@
 ﻿using System.Collections.Generic;
-using System.Linq;
 using Actors;
 using UnityEngine;
 
-public class GameObjectPool : MonoBehaviour
+public class GameObjectPool<TView, TEntity> where TView : MonoBehaviour, IEntityView<TEntity>
 {
-    [SerializeField]
-    private Player player;
-
-    [SerializeField]
-    private int maxPlayers = 4;
-        
-    [SerializeField]
-    private Enemy enemy;
-
-    [SerializeField]
-    private int maxEnemies = 100;
-        
-    [SerializeField]
-    private Projectile projectile;
-        
-    [SerializeField]
-    private int maxProjectiles = 500;
-        
-    private readonly Stack<Player> _playerPool = new(); 
-    private readonly Stack<Enemy> _enemyPool = new();
-    private readonly Stack<Projectile> _projectilePool = new();
-        
-    public void Prewarm()
+    public GameObjectPool(int size)
     {
-        for (var i = 0; i < maxPlayers; i++)
-        {
-            var obj = Instantiate(player);
-            obj.gameObject.SetActive(false);
-            _playerPool.Push(obj);
-        }
-            
-        for (var i = 0; i < maxEnemies; i++)
-        {
-            var obj = Instantiate(enemy);
-            obj.gameObject.SetActive(false);
-            _enemyPool.Push(obj);
-        }
-            
-        for (var i = 0; i < maxProjectiles; i++)
-        {
-            var obj = Instantiate(projectile);
-            obj.gameObject.SetActive(false);
-            _projectilePool.Push(obj);
-        }
+        Active = new TView[size];
     }
+    
+    private readonly Stack<TView> _pool = new();
 
-    public Player GetPlayer(ECS.Entities.Player entity)
+    public TView[] Active { get; }
+
+    public TView Get(TEntity entity)
     {
-        var obj = _playerPool.Pop();
+        var obj = _pool.Pop();
         obj.Init(entity);
         obj.gameObject.SetActive(true);
         return obj;
     }
 
-    public Enemy GetEnemy(ECS.Entities.Enemy entity)
+    public void Add(TView obj)
     {
-        var obj = _enemyPool.Pop();
-        obj.Init(entity);
-        obj.gameObject.SetActive(true);
-        return obj;
+        obj.gameObject.SetActive(false);
+        _pool.Push(obj);
     }
     
-    public void ReturnPlayer(Player obj)
+    public void Return(TView obj)
     {
         obj.Release();
         obj.gameObject.SetActive(false);
-        _playerPool.Push(obj);
-    }
-    
-    public void ReturnEnemy(Enemy obj)
-    {
-        obj.Release();
-        obj.gameObject.SetActive(false);
-        _enemyPool.Push(obj);
-    }
-        
-    public Projectile GetProjectile(ECS.Entities.Projectile entity)
-    {
-        var obj = _projectilePool.Pop();
-        obj.Init(entity);
-        obj.gameObject.SetActive(true);
-        return obj;
-    }
-    
-    public void ReturnProjectile(Projectile obj)
-    {
-        obj.Release();
-        obj.gameObject.SetActive(false);
-        _projectilePool.Push(obj);
-    }
-
-    public Transform GetPlayerByIndex(int activePlayer)
-    {
-        return _playerPool.ElementAt(activePlayer).transform;
+        _pool.Push(obj);
     }
 }

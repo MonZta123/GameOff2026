@@ -19,13 +19,13 @@ namespace ECS
         public int _height;
 
         public ScenarioType _type;
-        public Vector2[] _spawnPoints;
-        public Vector2[] _hackerZone;
-        public Vector2[] _segmentDoor;
-        public Vector2[] _demolitionZone;
-        public Vector2[] _exit;
-        public Vector2[] _woodenDoors;
-        public Vector2[] _computerAsset;
+        public Vector2Int[] _spawnPoints;
+        public Vector2Int[] _hackerZone;
+        public Vector2Int[] _segmentDoor;
+        public Vector2Int[] _demolitionZone;
+        public Vector2Int[] _exit;
+        public Vector2Int[] _woodenDoors;
+        public Vector2Int[] _computerAsset;
 
         public int CoordToIndex(int x, int y)
         {
@@ -44,14 +44,14 @@ namespace ECS
             map._width = mapTexture.width;
             map._height = mapTexture.height;
 
-            map._spawnPoints = new Vector2[4];
+            map._spawnPoints = new Vector2Int[4];
 
-            var woodenDoors = new List<Vector2>();
-            var segmentDoor = new List<Vector2>();
-            var hackerZone = new List<Vector2>();
-            var computerAsset = new List<Vector2>();
-            var demolitionZone = new List<Vector2>();
-            var exit = new List<Vector2>();
+            var woodenDoors = new List<Vector2Int>();
+            var segmentDoor = new List<Vector2Int>();
+            var hackerZone = new List<Vector2Int>();
+            var computerAsset = new List<Vector2Int>();
+            var demolitionZone = new List<Vector2Int>();
+            var exit = new List<Vector2Int>();
 
             var pixelMap = mapTexture.GetPixels32();
 
@@ -72,31 +72,31 @@ namespace ECS
                     switch (tile)
                     {
                         case 2 or 3 or 4 or 5:
-                            map._spawnPoints[tile - 2] = new Vector2(j, i);
+                            map._spawnPoints[tile - 2] = new Vector2Int(j, i);
                             break;
 
                         case 6:
-                            woodenDoors.Add(new Vector2(j, i));
+                            woodenDoors.Add(new Vector2Int(j, i));
                             break;
 
                         case 7:
-                            segmentDoor.Add(new Vector2(j, i));
+                            segmentDoor.Add(new Vector2Int(j, i));
                             break;
 
                         case 8:
-                            hackerZone.Add(new Vector2(j, i));
+                            hackerZone.Add(new Vector2Int(j, i));
                             break;
 
                         case 9:
-                            computerAsset.Add(new Vector2(j, i));
+                            computerAsset.Add(new Vector2Int(j, i));
                             break;
 
                         case 10:
-                            demolitionZone.Add(new Vector2(j, i));
+                            demolitionZone.Add(new Vector2Int(j, i));
                             break;
 
                         case 11:
-                            exit.Add(new Vector2(j, i));
+                            exit.Add(new Vector2Int(j, i));
                             break;
                     }
                 }

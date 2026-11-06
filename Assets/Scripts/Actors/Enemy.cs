@@ -2,7 +2,7 @@
 
 namespace Actors
 {
-    public class Enemy : MonoBehaviour, IPoolable<ECS.Entities.Enemy>
+    public class Enemy : MonoBehaviour, IEntityView<ECS.Entities.Enemy>
     {
         [SerializeField]
         private SpriteRenderer characterRenderer;
@@ -10,11 +10,8 @@ namespace Actors
         [SerializeField]
         private SpriteRenderer gunRenderer;
 
-        public short Id { get; private set; }
-
         public void Init(ECS.Entities.Enemy entity)
-        {
-            Id = entity._id;
+        { 
         }
 
         public void SetState(ECS.Entities.Enemy entity)
@@ -34,8 +31,7 @@ namespace Actors
 
         public void Release()
         {
-            Debug.Log("Dead 💀");
-            Id = 0;
+            Debug.Log("Dead 💀"); 
         }
     }
 }

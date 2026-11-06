@@ -1,6 +1,6 @@
 ﻿namespace ECS.Events
 {
-    public struct SoundEvent
+    public struct SoundNotification
     {
         
     }

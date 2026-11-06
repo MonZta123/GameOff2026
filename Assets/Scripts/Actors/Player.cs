@@ -1,9 +1,8 @@
-﻿using UnityEditor;
-using UnityEngine;
+﻿using UnityEngine;
 
 namespace Actors
 {
-    public class Player : MonoBehaviour, IPoolable<ECS.Entities.Player>
+    public class Player : MonoBehaviour, IEntityView<ECS.Entities.Player>
     {
         [SerializeField]
         private PositionSmoother positionSmoother;
@@ -16,14 +15,11 @@ namespace Actors
 
         [SerializeField]
         private Sprite[] characterSprites;
-        
-        public short Id { get; private set; }
 
         private bool _activePlayer;
 
         public void Init(ECS.Entities.Player entity)
         {
-            Id = entity._id;
             transform.position = entity._position;
             characterRenderer.sprite = characterSprites[(int)entity._type];
         }
@@ -50,15 +46,7 @@ namespace Actors
 
         public void Release()
         {
-            Id = 0;
             positionSmoother.SetSmoothPosition(false);
         }
-
-#if UNITY_EDITOR
-        private void OnDrawGizmos()
-        {
-            Handles.Label(transform.position + Vector3.up * 2.5f, Id.ToString());
-        }
-#endif
     }
 }

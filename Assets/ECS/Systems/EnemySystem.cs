@@ -5,26 +5,26 @@ namespace ECS.Systems
 {
     public class EnemySystem
     {
-        public void Execute(World world, ReadOnlySpan<Intent> intents, int tick)
+        public void Execute(World world)
         {
             ref var snapshot = ref world.GetSnapshot();
 
-            for (var i = 0; i < snapshot.numEnemies; i++)
+            for (var i = snapshot._enemies.GetNumEntities() - 1; i >= 0; i++)
             {
-                ref var enemy = ref snapshot.enemies[i];
+                ref var enemy = ref snapshot._enemies.GetEntityAt(i);
 
                 var closestId = -1;
                 var closestDistance = float.MaxValue;
                 var closestPosition = Vector2.zero;
-                for (var j = 0; j < snapshot.numPlayers; j++)
+                for (var j =  snapshot._players.GetNumEntities() - 1; j >= 0; j++)
                 {
-                    ref var player = ref snapshot.players[j];
+                    ref var player = ref snapshot._players.GetEntityAt(j);
 
                     var distance = Vector2.Distance(player._position, enemy._position);
                     if (distance < closestDistance)
                     {
                         closestDistance = distance;
-                        closestId = player._id;
+                        closestId = snapshot._players.GetIdAt(j);
                         closestPosition = player._position;
                     }
                 }

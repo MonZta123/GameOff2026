@@ -6,6 +6,8 @@ namespace ECS
     {
         public Vector2 movement;
         public float angle;
-        public bool isShooting;
+        public bool primary;
+        public bool secondary;
+        public bool action;
     }
 }

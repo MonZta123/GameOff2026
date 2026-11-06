@@ -5,6 +5,8 @@
         public const int PlayerCount = 4;
         public const int EnemyCount = 100;
         public const int ProjectileCount = 200;
+        public const int DoorCount = 20;
+        public const int TriggerCount = 50;
 
         public const float HeavyCooldown = 0.25f;
         public const float HeavyProjectileTtl = 1f;

@@ -153,11 +153,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DefaultNamespace.GameObjectPool
   player: {fileID: -8676144183153262626, guid: d41d4b42c2a5eda47b8af5537f877e8c, type: 3}
-  maxPlayers: 4
   enemy: {fileID: -1690383949577661822, guid: cf592050b90db5e418e8411f83e0e798, type: 3}
-  maxEnemies: 100
   projectile: {fileID: 6085684898756830371, guid: 2fb07515fc822d544b16e1a85678f742, type: 3}
-  maxProjectiles: 200
+  door: {fileID: 8443806336917652463, guid: d6e16b0941c49474c90013abac89f563, type: 3}
 --- !u!4 &13633224
 Transform:
   m_ObjectHideFlags: 0
@@ -188,7 +186,7 @@ MonoBehaviour:
   stepsPerSecond: 64
   maxSeconds: 180
   snapshotRenderer: {fileID: 13633226}
-  pool: {fileID: 13633223}
+  gameObjectPools: {fileID: 13633223}
   positionComposer: {fileID: 1121035382}
   mapRenderer: {fileID: 13633228}
   cam: {fileID: 330585545}
@@ -205,7 +203,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9342ebb5d35c4a9a874f2a0314d5fb76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SnapshotRenderer
-  pool: {fileID: 13633223}
+  gameObjectPools: {fileID: 13633223}
 --- !u!114 &13633227
 MonoBehaviour:
   m_ObjectHideFlags: 0
