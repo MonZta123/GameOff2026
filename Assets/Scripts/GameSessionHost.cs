@@ -55,8 +55,7 @@ public class GameSessionHost : MonoBehaviour
         _snapshots = new Snapshot[ticksTotal];
         _tickDriver = new TickDriver(stepsPerSecond);
 
-        _tickDriver._onTick += OnTick;
-        _tickDriver._onPostTick += OnPostTick;
+        _tickDriver._onTick += OnTick; 
 
         for (var i = 0; i < ticksTotal; i++)
         {
@@ -91,7 +90,6 @@ public class GameSessionHost : MonoBehaviour
     {
         _tickDriver.StopSim();
         _tickDriver._onTick -= OnTick;
-        _tickDriver._onPostTick -= OnPostTick;
         _tickDriver = null;
     }
 
@@ -115,6 +113,12 @@ public class GameSessionHost : MonoBehaviour
 
         _activePlayerObject.SetAngle(_angle);
         _tickDriver.Update(Time.deltaTime);
+        
+        if (_tickDriver.CurrentTick != _lastSetTick && _tickDriver.CurrentTick < _snapshots.Length)
+        {
+            _lastSetTick = _tickDriver.CurrentTick;
+            snapshotRenderer.SetSnapshot(_snapshots[_tickDriver.CurrentTick]);
+        }
     }
 
     private float _angle;
@@ -207,6 +211,7 @@ public class GameSessionHost : MonoBehaviour
         if (tick + 1 >= _snapshots.Length)
         {
             _tickDriver.StopSim();
+            
             // Time Over
             return;
         }
@@ -221,11 +226,8 @@ public class GameSessionHost : MonoBehaviour
         _snapshots[tick + 1].BuildFrom(_world.GetSnapshot());
     }
 
-    private void OnPostTick(int tick, float deltaTime)
-    {
-        snapshotRenderer.SetSnapshot(_snapshots[tick + 1]);
-    }
-
+    private int _lastSetTick = -1;
+    
 #if UNITY_EDITOR
     private void OnGUI()
     {
