@@ -86,9 +86,9 @@ namespace ECS.Systems
                 if (trigger._triggerType == TriggerType.HackerZone &&
                     trigger.IsInBox(player._position, 1f, out var closestPoint) && moveEvt._action)
                 {
-                    snapshot._hackProcess++;
+                    snapshot._hackProcess--;
 
-                    if (snapshot._hackProcess == _tickRate * 5)
+                    if (snapshot._hackProcess == 0)
                     {
                         snapshot._triggers.DespawnAt(i);
                     }

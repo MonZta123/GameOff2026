@@ -185,7 +185,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DefaultNamespace.GameSessionHost
   stepsPerSecond: 64
-  maxSeconds: 180
+  maxSeconds: 5
   snapshotRenderer: {fileID: 13633226}
   gameObjectPools: {fileID: 13633223}
   positionComposer: {fileID: 1121035382}
@@ -446,7 +446,7 @@ Camera:
   far clip plane: 5000
   field of view: 40
   orthographic: 1
-  orthographic size: 6.78125
+  orthographic size: 6.34375
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2

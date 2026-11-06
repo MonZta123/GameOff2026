@@ -6,6 +6,7 @@ using ECS.Entities;
 using ECS.Events;
 using ECS.Systems;
 using UnityEngine;
+using Random = System.Random;
 
 namespace ECS
 {
@@ -132,9 +133,8 @@ namespace ECS
 
             // First Player
             _currentPlayer = GetCharacter(PlayerType.Heavy);
+            _currentPlayer._health = 100;
             _currentPlayer._position = mapDefinition._spawnPoints[0];
-
-            snapshot._players.Spawn(_currentPlayer);
 
             // Generate Doors
             var doorList = mapDefinition._woodenDoors.ToList();
@@ -194,6 +194,15 @@ namespace ECS
 #endif
 
             // Spawn Enemies and stuff
+        }
+
+        public void PlaceMines()
+        {
+            UnityEngine.Random.Range(0, _snapshot._enemies.GetMaxLength());
+
+            for (var i = 0; i < 8; i++)
+            {
+            }
         }
 
         private List<Vector2Int> LookupDoor(Vector2Int start, List<Vector2Int> doorPositions)
@@ -462,19 +471,12 @@ namespace ECS
 
         public void SetNextPlayer(ref Snapshot snapshot)
         {
-            if (snapshot._players.GetNumEntities() < snapshot._players.GetMaxLength())
-            {
-                var currentPlayer = (((int)_currentPlayer._type) + 1) % 4;
+            var currentPlayer = snapshot._players.GetNumEntities();
 
-                if (snapshot._players.IsAlive((short)currentPlayer))
-                {
-                    _currentPlayer = GetCharacter((PlayerType)(currentPlayer));
-                    _currentPlayer._position = _map._spawnPoints[currentPlayer];
-                    snapshot._players.Spawn(_currentPlayer);
-                }
-
-                _currentPlayer = snapshot._players.GetEntityAt(currentPlayer);
-            }
+            _currentPlayer = GetCharacter((PlayerType)(currentPlayer));
+            _currentPlayer._position = _map._spawnPoints[currentPlayer];
+            _currentPlayer._health = 100;
+            snapshot._players.Spawn(_currentPlayer);
         }
     }
 }

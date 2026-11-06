@@ -10,8 +10,10 @@ namespace ECS
         public EntityPool<Projectile> _projectiles;
         public EntityPool<Door> _doors;
         public EntityPool<Trigger> _triggers;
-        
+
+        public int _damageProcess;
         public int _hackProcess;
+        public int _bombsLeft;
 
         public void BuildFrom(Snapshot snapshot)
         {
@@ -21,7 +23,9 @@ namespace ECS
             snapshot._doors.CopyTo(ref _doors);
             snapshot._triggers.CopyTo(ref _triggers);
             
+            _damageProcess = snapshot._damageProcess;
             _hackProcess = snapshot._hackProcess;
+            _bombsLeft = snapshot._bombsLeft;
         }
 
         public void Initialize()

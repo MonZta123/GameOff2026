@@ -2,6 +2,8 @@
 {
     public static class Constants
     {
+        public const int Segments = 4;
+        
         public const int PlayerCount = 4;
         public const int EnemyCount = 100;
         public const int ProjectileCount = 200;
