@@ -84,7 +84,6 @@ namespace ECS.Systems
                         
                         if (dot > _minDot)
                         {
-                            Debug.Log("HIT ENEMY");
                             enemy._health -= 10;
                             if (enemy._health <= 0f)
                             {

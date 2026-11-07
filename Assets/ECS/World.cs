@@ -6,7 +6,6 @@ using ECS.Entities;
 using ECS.Events;
 using ECS.Systems;
 using UnityEngine;
-using Random = System.Random;
 
 namespace ECS
 {
@@ -41,17 +40,15 @@ namespace ECS
 
         public DoorDestructionNotification[] _doorDestructionNotifications;
         public int _numDoorDestructionNotifications;
-        
+
         public BlastWaveEvent _blastWaveEvent;
         public bool _hasBlastWaveEvent;
-        
+
         public HeavyDamageConeEvent _heavyDamageConeEvent;
         public bool _hasHeavyDamageCone;
 
         public void AddDoorDestructionNotification(DoorDestructionNotification doorDestructionNotification)
         {
-            Debug.Log("Door getting damage");
-            
             if (_numDoorDestructionNotifications == _doorDestructionNotifications.Length)
                 return;
 
@@ -82,7 +79,7 @@ namespace ECS
             _shootEvents[_numShootEvents] = shootEvent;
             _numShootEvents++;
         }
-        
+
         public World(int tickRate)
         {
             _deltaTime = 1f / tickRate;
@@ -184,7 +181,7 @@ namespace ECS
             }
 
             var spawnZone = mapDefinition._enemySpawnZone.ToList();
-            
+
             for (var i = 0; i < 30; i++)
             {
                 var index = UnityEngine.Random.Range(0, spawnZone.Count);
@@ -193,7 +190,7 @@ namespace ECS
                 {
                     _health = 100, _angle = 0, _position = spawnZone[index], _type = EnemyType.Gunman
                 };
-                
+
                 snapshot._enemies.Spawn(enemy);
             }
 
@@ -215,12 +212,39 @@ namespace ECS
             // Spawn Enemies and stuff
         }
 
-        public void PlaceMines()
+        public void PlaceMines(Vector2[] positions, ref Snapshot snapshot)
         {
-            UnityEngine.Random.Range(0, _snapshot._enemies.GetMaxLength());
-
-            for (var i = 0; i < 8; i++)
+            var list = positions.ToList();
+            
+            var minePos = new List<Vector2>();
+            
+            for (var i = 0; i < Math.Min(8, list.Count); i++)
             {
+                var position = UnityEngine.Random.Range(0, list.Count);
+
+                minePos.Add(list[position]);
+                
+                list.RemoveAt(position);
+            }
+
+            for (var i = 0; i < minePos.Count; i++)
+            {
+                var offsetX = UnityEngine.Random.Range(-2, 2);
+                var offsetY = UnityEngine.Random.Range(-2, 2);
+
+                var offset = new Vector2(offsetX, offsetY);
+
+                if (_map._map[((int)minePos[i].y + offsetY) * _map._width + ((int)minePos[i].x + offsetX)] == 0)
+                    offset = Vector2.zero;
+
+                var mine = new Trigger()
+                {
+                    _leftBottom = minePos[i] + offset,
+                    _rightTop = new Vector2(minePos[i].x + 1, minePos[i].y + 1) + offset,
+                    _triggerType = TriggerType.Mine
+                };
+                
+                snapshot._triggers.Spawn(mine);
             }
         }
 
@@ -365,12 +389,12 @@ namespace ECS
 
             _heavyDamageConeEvent = default;
             _blastWaveEvent = default;
-            
+
             _hasHeavyDamageCone = false;
             _hasBlastWaveEvent = false;
             _numDoorDestructionNotifications = 0;
             _numShootEvents = 0;
-            _numSoundEvents = 0; 
+            _numSoundEvents = 0;
         }
 
         public void BuildSensors()

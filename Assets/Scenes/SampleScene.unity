@@ -133,6 +133,7 @@ GameObject:
   - component: {fileID: 13633228}
   - component: {fileID: 13633225}
   - component: {fileID: 13633227}
+  - component: {fileID: 13633229}
   m_Layer: 0
   m_Name: Managers
   m_TagString: Untagged
@@ -191,6 +192,7 @@ MonoBehaviour:
   positionComposer: {fileID: 1121035382}
   mapRenderer: {fileID: 13633228}
   cam: {fileID: 330585545}
+  inputManager: {fileID: 0}
   map: {fileID: 2800000, guid: 81ba75a3bafc7354f8b736da654745dc, type: 3}
 --- !u!114 &13633226
 MonoBehaviour:
@@ -262,6 +264,19 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 3d991fd9c5c8c884ea8e58bb1baefb0d, type: 2}
   - {fileID: 11400000, guid: afa6d2d2855b5194e9143c8283547f6d, type: 2}
   floor: {fileID: 11400000, guid: d57fea67dff1c2b4bb7761a18eb88cce, type: 2}
+--- !u!114 &13633229
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 13633222}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ed233688c40c4dcf9148064b5f8698d7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::InputManager
+  cam: {fileID: 330585545}
 --- !u!1 &86234796
 GameObject:
   m_ObjectHideFlags: 0
@@ -446,7 +461,7 @@ Camera:
   far clip plane: 5000
   field of view: 40
   orthographic: 1
-  orthographic size: 6.78125
+  orthographic size: 6.875
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2

@@ -13,7 +13,6 @@ namespace ECS
         private float _timeSinceTick;
 
         public Action<int, float> _onTick;
-        public Action<int, float> _onPostTick;
 
         public TickDriver(int tickRate)
         {
@@ -45,7 +44,11 @@ namespace ECS
             while (_timeSinceTick >= TickTime && _runSim)
             {
                 _onTick?.Invoke(CurrentTick, TickTime);
-                _onPostTick?.Invoke(CurrentTick, TickTime);
+
+                if (!_runSim)
+                {
+                    break;
+                }
 
                 CurrentTick++;
                 _timeSinceTick -= TickTime;

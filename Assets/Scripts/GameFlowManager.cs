@@ -1,4 +1,5 @@
-﻿using ECS;
+﻿using System;
+using ECS;
 using UnityEngine;
 
 public class GameFlowManager
@@ -33,7 +34,7 @@ public class GameFlowManager
 
             if (currentPlayer == 1 && snapshot._hackProcess != 0)
             {
-                Debug.Log("Objective failed - hack left: " + snapshot._hackProcess + " seconds" );
+                Debug.Log("Objective failed - hack left: " + snapshot._hackProcess + " seconds");
                 return GameFlowResult.ObjectiveFailed;
             }
 
