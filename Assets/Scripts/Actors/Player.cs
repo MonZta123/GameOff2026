@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using UnityEditor;
+using UnityEngine;
 
 namespace Actors
 {
@@ -48,5 +49,12 @@ namespace Actors
         {
             positionSmoother.SetSmoothPosition(false);
         }
+        
+        #if UNITY_EDITOR
+        private void OnDrawGizmos()
+        {
+            Handles.Label(transform.position, transform.position.y + " " + transform.position.y);
+        }
+        #endif
     }
 }

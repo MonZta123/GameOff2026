@@ -9,10 +9,10 @@ using UnityEngine;
 public class GameSessionHost : MonoBehaviour
 {
     [SerializeField]
-    private int stepsPerSecond;
+    private int stepsPerSecond = 64;
 
     [SerializeField]
-    private int maxSeconds;
+    private int maxSeconds = 30;
 
     [SerializeField]
     private SnapshotRenderer snapshotRenderer;
@@ -34,46 +34,41 @@ public class GameSessionHost : MonoBehaviour
 
     private Snapshot[] _snapshots;
     private Intent[] _intents;
-    
-    private int _activePlayerIndex;
-    private int _activePlayerId;
-    
+
     [SerializeField]
     private Texture2D map;
+
+    private GameFlowManager _gameFlowManager;
+
+    private int _segmentTicks; 
 
     private void Awake()
     {
         gameObjectPools.Initialize();
-
-        var ticksTotal = maxSeconds * stepsPerSecond;
+        _segmentTicks = maxSeconds * stepsPerSecond;
+        
+        _gameFlowManager = new GameFlowManager(_segmentTicks);
 
         _world = new World(stepsPerSecond);
         // Show Loadingscreen here
 
-        _intents = new Intent[ticksTotal * Constants.PlayerCount];
+        _intents = new Intent[_segmentTicks * Constants.PlayerCount * Constants.Segments];
 
-        _snapshots = new Snapshot[ticksTotal];
+        _snapshots = new Snapshot[_segmentTicks + 1];
         _tickDriver = new TickDriver(stepsPerSecond);
 
         _tickDriver._onTick += OnTick;
-        _tickDriver._onPostTick += OnPostTick;
 
-        for (var i = 0; i < ticksTotal; i++)
+        for (var i = 0; i < _segmentTicks + 1; i++)
         {
             var snapshot = new Snapshot();
             snapshot.Initialize();
             _snapshots[i] = snapshot;
-
-            var intent = new Intent();
-            _intents[i] = intent;
         }
 
         InitWorld();
 
-        _activePlayerObject = snapshotRenderer.GetPlayerByIndex(_activePlayerIndex);
-        _activePlayerObject.SetActivePlayer(true);
-
-        positionComposer.VirtualCamera.Follow = _activePlayerObject.transform;
+        InitNextCharacter();
         // Hide Loadingscreen here
     }
 
@@ -82,16 +77,13 @@ public class GameSessionHost : MonoBehaviour
         var mapDefinition = TextureMapBuilder.GetMap(map);
 
         mapRenderer.GenerateMap(mapDefinition);
-
         _world.BuildScenario(ref _snapshots[0], mapDefinition);
-        snapshotRenderer.SetSnapshot(_snapshots[0]);
     }
 
     private void OnDestroy()
     {
         _tickDriver.StopSim();
         _tickDriver._onTick -= OnTick;
-        _tickDriver._onPostTick -= OnPostTick;
         _tickDriver = null;
     }
 
@@ -115,6 +107,41 @@ public class GameSessionHost : MonoBehaviour
 
         _activePlayerObject.SetAngle(_angle);
         _tickDriver.Update(Time.deltaTime);
+
+        if (_tickDriver.CurrentTick != _lastSetTick && _tickDriver.CurrentTick < _snapshots.Length)
+        {
+            _lastSetTick = _tickDriver.CurrentTick;
+            snapshotRenderer.SetSnapshot(_snapshots[_tickDriver.CurrentTick]);
+            var result =
+                _gameFlowManager.CheckForLoopBreak(_tickDriver.CurrentTick, _snapshots[_tickDriver.CurrentTick]);
+
+            HandleResult(result);
+        }
+    }
+
+    private void HandleResult(GameFlowResult result)
+    {
+        switch (result)
+        {
+            case GameFlowResult.Play:
+                break;
+            case GameFlowResult.Success:
+                InitNextCharacter();
+                break;
+            case GameFlowResult.NextSegment:
+                NextSegment();
+                break;
+            case GameFlowResult.ObjectiveFailed:
+                Rewind();
+                break;
+            case GameFlowResult.PlayerDead:
+                PlayerDead();
+                break;
+            default:
+                throw new ArgumentOutOfRangeException(nameof(result), result, null);
+        }
+
+        // Ja ich weiß, das fehlt hier alles noch
     }
 
     private float _angle;
@@ -126,9 +153,22 @@ public class GameSessionHost : MonoBehaviour
         {
             DoTimeShift(0);
         }
+
+        if (!_secondaryDown && Input.GetKeyDown(KeyCode.Space))
+        {
+            _secondaryDown = true;
+        }
+
+        if (!_actionDown && Input.GetKey(KeyCode.E))
+        {
+            _actionDown = true;
+        }
     }
 
     private bool _timeShift;
+
+    private bool _secondaryDown;
+    private bool _actionDown;
 
     public Intent BuildIntent()
     {
@@ -137,35 +177,60 @@ public class GameSessionHost : MonoBehaviour
 
         var intent = new Intent()
         {
-            movement = Vector2.ClampMagnitude(new Vector2(xAxis, yAxis), 1),
-            primary = Input.GetMouseButton(0),
-            secondary = Input.GetKeyDown(KeyCode.Space),
-            action = Input.GetKeyDown(KeyCode.E),
-            angle = _angle
+            _movement = Vector2.ClampMagnitude(new Vector2(xAxis, yAxis), 1),
+            _primary = Input.GetMouseButton(0),
+            _secondary = _secondaryDown,
+            _action = _actionDown,
+            _angle = _angle
         };
+
+        _secondaryDown = false;
+        _actionDown = false;
 
         return intent;
     }
 
     private Player _activePlayerObject;
 
+    private void InitNextCharacter()
+    {
+        ref var snapshot = ref _snapshots[0];
+        _world.SetNextPlayer(ref snapshot);
+        
+        snapshotRenderer.SetSnapshot(snapshot);
+
+        _activePlayerObject?.SetActivePlayer(false);
+        _activePlayerObject = snapshotRenderer.GetPlayerByIndex(snapshot._players.GetNumEntities() - 1);
+        _activePlayerObject.SetActivePlayer(true);
+
+        positionComposer.VirtualCamera.Follow = _activePlayerObject.transform;
+
+        DoTimeShift(0);
+    }
+
+    private void NextSegment()
+    {
+        _currentSegment++;
+        _currentSegment %= Constants.Segments;
+
+        DoTimeShift(0);
+    }
+
+    private void PlayerDead()
+    {
+        DoTimeShift(0);
+    }
+
+    private void Rewind()
+    {
+        // Zusätzliche Funktion für visuellen Stuff
+        DoTimeShift(0);
+    }
+
     private void DoTimeShift(int tick)
     {
         _tickDriver.StopSim();
         _tickDriver.SetToTick(tick);
-
-        ref var snapshot = ref _snapshots[tick];
-        _world.SetNextPlayer(ref snapshot);
-        snapshotRenderer.SetSnapshot(_snapshots[tick]);
-
-        _activePlayerIndex++;
-        _activePlayerIndex %= Constants.PlayerCount;
-
-        _activePlayerObject.SetActivePlayer(false);
-        _activePlayerObject = snapshotRenderer.GetPlayerByIndex(_activePlayerIndex);
-        _activePlayerObject.SetActivePlayer(true);
-
-        positionComposer.VirtualCamera.Follow = _activePlayerObject.transform;
 
         StartCoroutine(WaitForStart());
     }
@@ -191,13 +256,21 @@ public class GameSessionHost : MonoBehaviour
         if (tick + 1 >= _snapshots.Length)
         {
             _tickDriver.StopSim();
+
             // Time Over
             return;
         }
 
-        _intents[tick * Constants.PlayerCount + _activePlayerIndex] = BuildIntent();
+        var activePlayerIndex = _snapshots[tick]._players.GetNumEntities() - 1;
+        
+        _intents[
+                (tick * Constants.PlayerCount + activePlayerIndex) +
+                _currentSegment * _segmentTicks * Constants.PlayerCount] =
+            BuildIntent();
 
-        var span = _intents.AsSpan(tick * Constants.PlayerCount, Constants.PlayerCount);
+        var span = _intents.AsSpan(
+            (tick * Constants.PlayerCount) + _currentSegment * _segmentTicks * Constants.PlayerCount,
+            Constants.PlayerCount);
 
         _world.SetState(_snapshots[tick]);
         _world.DoStep(span, tick);
@@ -205,10 +278,8 @@ public class GameSessionHost : MonoBehaviour
         _snapshots[tick + 1].BuildFrom(_world.GetSnapshot());
     }
 
-    private void OnPostTick(int tick, float deltaTime)
-    {
-        snapshotRenderer.SetSnapshot(_snapshots[tick + 1]);
-    }
+    private int _lastSetTick = -1;
+    private int _currentSegment = 0;
 
 #if UNITY_EDITOR
     private void OnGUI()

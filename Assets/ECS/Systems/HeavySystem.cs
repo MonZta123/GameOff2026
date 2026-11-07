@@ -1,4 +1,5 @@
 ﻿using System;
+using Domain;
 using ECS.Entities;
 using ECS.Events;
 using UnityEngine;
@@ -14,6 +15,9 @@ namespace ECS.Systems
             _shootCooldownTicks = (int)MathF.Floor(tickRate * _secondsPrimaryCooldown);
             _secondaryCooldownTicks = (int)MathF.Floor(tickRate * _secondsSecondaryCooldown);
             _secondaryActiveTicks = (int)MathF.Floor(tickRate * _secondaryDuration);
+            _blockedInputTicksAfterSecondary = (int)MathF.Floor(tickRate * _blockedInputDurationAfterSecondary);
+            
+            _speed = Constants.HeavyMoveSpeed;
         }
 
         private int _tickRate;
@@ -27,6 +31,11 @@ namespace ECS.Systems
         private float _secondaryDuration = 0.5f;
         private int _secondaryActiveTicks;
 
+        private float _blockedInputDurationAfterSecondary = 0.125f;
+        private int _blockedInputTicksAfterSecondary;
+
+        private float _speed;
+
         public void Execute(World world, int currentTick)
         {
             var moveEvt = world._moveEvents[0];
@@ -38,12 +47,10 @@ namespace ECS.Systems
                 {
                     player._primaryReadyAt = currentTick + _shootCooldownTicks;
 
-                    world.AddShootEvent(new ShootEvent
+                    world.AddHeavyDamageCone(new HeavyDamageConeEvent()
                     {
-                        _type = ProjectileType.Heavy,
                         _position = player._position,
                         _angle = player._angle,
-                        _ttl = _tickRate * 3
                     });
                 }
             }
@@ -54,7 +61,8 @@ namespace ECS.Systems
                 {
                     player._secondaryReadyAt = currentTick + _secondaryCooldownTicks;
                     player._secondaryActivatedTo = currentTick + _secondaryActiveTicks;
-
+                    player._isBlockedTo = currentTick + _secondaryActiveTicks + _blockedInputTicksAfterSecondary;
+                    
                     var radians = player._angle * Mathf.Deg2Rad;
 
                     var direction = new Vector2(
@@ -62,44 +70,35 @@ namespace ECS.Systems
                         Mathf.Sin(radians)
                     );
 
-                    player._velocity = direction * 2f;
+                    player._velocity = direction * (_speed * 2f);
 
                     return;
                 }
-            } 
+            }
 
-            if (player._secondaryActivatedTo >= currentTick)
+            if (player._secondaryActivatedTo > currentTick)
             {
                 return;
             }
 
-            player._velocity = moveEvt._movement;
-            player._angle = moveEvt._angle;
-
-            // if (player._secondaryActive > 0)
-            // {
-            //     evt._movement = snapshot._players.GetEntityAt(0)._velocity;
-            //     evt._angle = snapshot._players.GetEntityAt(0)._angle;
-            //     return false;
-            // }
-
-            /*
-             * if (currentTick < player._cooldownPrimary + _heavyCooldown)
-                return;
-
-            var projectile = new Projectile()
+            if (player._secondaryActivatedTo == currentTick && player._secondaryActivatedTo > 0)
             {
-                _position = player._position,
-                _angle = player._angle,
-                _spawnTick = currentTick,
-                _ttl = _heavyTtl,
-                _type = ProjectileType.Heavy
-            };
+                world.AddBlastWaveEvent(new BlastWaveEvent()
+                {
+                    _position = player._position,
+                    _radius = 3f,
+                });
+            }
+            
+            if (player._isBlockedTo >= currentTick)
+            {
+                player._velocity = Vector2.zero;
+                player._angle = moveEvt._angle;
+                return;
+            }
 
-            world.GetSnapshot()._projectiles.Spawn(projectile);
-
-            player._cooldownPrimary = currentTick;
-             */
+            player._velocity = moveEvt._movement * _speed;
+            player._angle = moveEvt._angle;
         }
     }
 }

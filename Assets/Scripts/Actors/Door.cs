@@ -22,11 +22,11 @@ namespace Actors
 
         public void Init(ECS.Entities.Door entity)
         {
-            transform.position = new Vector2(entity._position.x, entity._position.y);
+            transform.position = entity._leftBottom;
 
             if (entity._direction == Direction.Down)
             {
-                for (var i = 0; i < entity._length; i++)
+                for (var i = 0; i < entity._rightTop.y - entity._leftBottom.y; i++)
                 {
                     doorRenderer.SetTile(new Vector3Int(0, i, 0), verticalSprite);
                 }
@@ -34,7 +34,7 @@ namespace Actors
 
             if (entity._direction == Direction.Right)
             {
-                for (var i = 0; i < entity._length; i++)
+                for (var i = 0; i < entity._rightTop.x - entity._leftBottom.x; i++)
                 {
                     doorRenderer.SetTile(new Vector3Int(i, 0, 0), horizontalSprite);
                 }
@@ -47,6 +47,7 @@ namespace Actors
 
         public void Release()
         {
+            doorRenderer.ClearAllTiles();
         }
 
 #if UNITY_EDITOR

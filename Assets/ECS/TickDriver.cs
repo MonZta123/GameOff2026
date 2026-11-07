@@ -39,13 +39,16 @@ namespace ECS
 
             _timeSinceTick += deltaTime;
 
-            if (_timeSinceTick >= TickTime)
+            if (_timeSinceTick >= TickTime * 8f)
+                _timeSinceTick = TickTime * 8f;
+
+            while (_timeSinceTick >= TickTime && _runSim)
             {
                 _onTick?.Invoke(CurrentTick, TickTime);
                 _onPostTick?.Invoke(CurrentTick, TickTime);
-                
+
                 CurrentTick++;
-                _timeSinceTick = 0;
+                _timeSinceTick -= TickTime;
             }
         }
 

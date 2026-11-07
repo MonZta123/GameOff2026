@@ -1,82 +1,100 @@
-﻿using System;
-using UnityEngine;
+﻿using Domain;
 using ECS.Entities;
 using ECS.Events;
+using Unity.Mathematics;
+using UnityEngine;
 
 namespace ECS.Systems
 {
     public class DoorSystem
     {
-        public void Execute(World world)
+        private readonly float _minDot = math.cos(Constants.HeavyDamageConeAngle * Mathf.Deg2Rad);
+        
+        public void Execute(World world, int currentTick)
         {
             ref var snapshot = ref world.GetSnapshot();
 
-            for (var i = world._numBlastWaveEvents - 1; i >= 0; i--)
+            for (var i = 0; i < snapshot._players.GetNumEntities(); i++)
             {
-                ref var blastWaveEvent = ref world._blastWaveEvents[i];
-                for (var j = snapshot._doors.GetNumEntities() - 1; j >= 0; j--)
+                var player = snapshot._players.GetEntityAt(i);
+
+                if (player._type == PlayerType.Heavy)
                 {
-                    ref var door = ref snapshot._doors.GetEntityAt(j);
-
-                    if (door._direction == Direction.Down && 
-                        CheckShouldBlastDoorDown(door, world, blastWaveEvent))
+                    if (player._secondaryActivatedTo > currentTick)
                     {
-                        snapshot._doors.DespawnAt(j);
-                    }
+                        for (var j = snapshot._doors.GetNumEntities() - 1; j >= 0; j--)
+                        {
+                            ref var door = ref snapshot._doors.GetEntityAt(j);
 
-                    if (door._direction == Direction.Right && 
-                        CheckShouldBlastDoorRight(door, world, blastWaveEvent))
-                    {
-                        snapshot._doors.DespawnAt(j);
+                            if (door.IsInDoor(player._position, 0.5f, out var hitpoint))
+                            {
+                                world.AddDoorDestructionNotification(new DoorDestructionNotification()
+                                {
+                                    _door = door, _direction = (hitpoint - player._position).normalized
+                                });
+                                snapshot._doors.DespawnAt(j);
+                            }
+                        }
                     }
                 }
             }
-        }
 
-        private bool CheckShouldBlastDoorDown(Door door, World world, BlastWaveEvent blastWaveEvent)
-        {
-            for (var k = 0; k < door._length; k++)
+            if (world._hasBlastWaveEvent)
             {
-                var currentPos = new Vector2(door._position.x + k, door._position.y);
+                var blastWaveEvent = world._blastWaveEvent;
+                for (var j = snapshot._doors.GetNumEntities() - 1; j >= 0; j--)
+                {
+                    ref var door = ref snapshot._doors.GetEntityAt(j);
+                    
+                    if (door.IsInDoor(blastWaveEvent._position,  blastWaveEvent._radius, out var hitPoint))
+                    {
+                        door._health--;
+                        if (door._health <= 0)
+                        {
+                            world.AddDoorDestructionNotification(new DoorDestructionNotification()
+                            {
+                                _door = door, _direction = (hitPoint - blastWaveEvent._position).normalized
+                            });
+                            snapshot._doors.DespawnAt(j);
+                        }
+                    }
+                }
+            }
 
-                var breakDirection = blastWaveEvent._position - currentPos;
-                var distanceVectorSqr = (breakDirection).sqrMagnitude;
-
-                if (distanceVectorSqr >= blastWaveEvent._radius * blastWaveEvent._radius)
-                    continue;
+            if (world._hasHeavyDamageCone)
+            {
+                var cone = world._heavyDamageConeEvent;
                 
-                world.AddDoorDestructionNotification(new DoorDestructionNotification()
+                var radians = cone._angle * Mathf.Deg2Rad;
+
+                var hitDirection = new Vector2(
+                    Mathf.Cos(radians),
+                    Mathf.Sin(radians)
+                );
+                
+                for (var i = snapshot._doors.GetNumEntities() - 1; i >= 0; i--)
                 {
-                    _door = door, _direction = breakDirection
-                });
+                    ref var door = ref snapshot._doors.GetEntityAt(i);
 
-                return true;
+                    if (!door.IsInDoor(cone._position, Constants.HeavyDamageConeRadius, out var hitPoint))
+                        continue;
+
+                    var toTarget = (hitPoint - cone._position).normalized;
+                    
+                    if (toTarget == Vector2.zero || math.dot(toTarget, hitDirection) > _minDot)
+                    {
+                        door._health--;
+                        if (door._health <= 0)
+                        {
+                            world.AddDoorDestructionNotification(new DoorDestructionNotification()
+                            {
+                                _door = door, _direction = hitDirection
+                            });
+                            snapshot._doors.DespawnAt(i);
+                        }
+                    }
+                }
             }
-
-            return false;
-        }
-
-        private bool CheckShouldBlastDoorRight(Door door, World world, BlastWaveEvent blastWaveEvent)
-        {
-            for (var k = 0; k < door._length; k++)
-            {
-                var currentPos = new Vector2(door._position.x, door._position.y + k);
-
-                var breakDirection = blastWaveEvent._position - currentPos;
-                var distanceVectorSqr = (breakDirection).sqrMagnitude;
-
-                if (distanceVectorSqr >= blastWaveEvent._radius * blastWaveEvent._radius)
-                    continue;
-
-                world.AddDoorDestructionNotification(new DoorDestructionNotification()
-                {
-                    _door = door, _direction = breakDirection
-                });
-
-                return true;
-            }
-
-            return false;
         }
     }
 }
