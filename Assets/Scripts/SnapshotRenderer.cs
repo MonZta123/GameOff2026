@@ -7,16 +7,16 @@ public class SnapshotRenderer : MonoBehaviour
     [SerializeField]
     private GameObjectPools gameObjectPools;
 
-    public void SetSnapshot(Snapshot snapshot)
+    public void SetSnapshot(Snapshot snapshot, int tick)
     {
-        UpdateView(snapshot._players, gameObjectPools._playerPool);
-        UpdateView(snapshot._enemies, gameObjectPools._enemyPool);
-        UpdateView(snapshot._projectiles, gameObjectPools._projectilePool);
-        UpdateView(snapshot._doors, gameObjectPools._doorPool);
-        UpdateView(snapshot._triggers, gameObjectPools._triggerPool);
+        UpdateView(snapshot._players, gameObjectPools._playerPool, tick);
+        UpdateView(snapshot._enemies, gameObjectPools._enemyPool, tick);
+        UpdateView(snapshot._projectiles, gameObjectPools._projectilePool, tick);
+        UpdateView(snapshot._doors, gameObjectPools._doorPool, tick);
+        UpdateView(snapshot._triggers, gameObjectPools._triggerPool, tick);
     }
 
-    private void UpdateView<TView, TEntity>(EntityPool<TEntity> ecsPool, GameObjectPool<TView, TEntity> pool)
+    private void UpdateView<TView, TEntity>(EntityPool<TEntity> ecsPool, GameObjectPool<TView, TEntity> pool, int tick)
         where TView : MonoBehaviour, IEntityView<TEntity>
     {
         for (var i = 0; i < ecsPool.GetNumEntities(); i++)
@@ -31,7 +31,7 @@ public class SnapshotRenderer : MonoBehaviour
                 pool.Active[id - 1] = obj;
             }
 
-            obj.SetState(currentEntity);
+            obj.SetState(currentEntity, tick);
         }
 
         for (var i = 0; i < pool.Active.Length; i++)

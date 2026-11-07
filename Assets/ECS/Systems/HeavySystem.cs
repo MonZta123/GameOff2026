@@ -13,7 +13,7 @@ namespace ECS.Systems
             _secondaryCooldownTicks = (int)MathF.Floor(tickRate * _secondsSecondaryCooldown);
             _secondaryActiveTicks = (int)MathF.Floor(tickRate * _secondaryDuration);
             _blockedInputTicksAfterSecondary = (int)MathF.Floor(tickRate * _blockedInputDurationAfterSecondary);
-            
+
             _speed = Constants.HeavyMoveSpeed;
         }
 
@@ -26,7 +26,7 @@ namespace ECS.Systems
         private readonly float _secondaryDuration = 0.5f;
         private readonly int _secondaryActiveTicks;
 
-        private readonly float _blockedInputDurationAfterSecondary = 0.125f;
+        private readonly float _blockedInputDurationAfterSecondary = 0.5f;
         private readonly int _blockedInputTicksAfterSecondary;
 
         private readonly float _speed;
@@ -41,11 +41,11 @@ namespace ECS.Systems
                 if (moveEvt._primary)
                 {
                     player._primaryReadyAt = currentTick + _shootCooldownTicks;
+                    player._primaryBlockingMovementTo = currentTick + _shootCooldownTicks;
 
                     world.AddHeavyDamageCone(new HeavyDamageConeEvent()
                     {
-                        _position = player._position,
-                        _angle = player._angle,
+                        _position = player._position, _angle = player._angle,
                     });
                 }
             }
@@ -57,7 +57,7 @@ namespace ECS.Systems
                     player._secondaryReadyAt = currentTick + _secondaryCooldownTicks;
                     player._secondaryActivatedTo = currentTick + _secondaryActiveTicks;
                     player._isBlockedTo = currentTick + _secondaryActiveTicks + _blockedInputTicksAfterSecondary;
-                    
+
                     var radians = player._angle * Mathf.Deg2Rad;
 
                     var direction = new Vector2(
@@ -78,13 +78,9 @@ namespace ECS.Systems
 
             if (player._secondaryActivatedTo == currentTick && player._secondaryActivatedTo > 0)
             {
-                world.AddBlastWaveEvent(new BlastWaveEvent()
-                {
-                    _position = player._position,
-                    _radius = 3f,
-                });
+                world.AddBlastWaveEvent(new BlastWaveEvent() { _position = player._position, _radius = 3f, });
             }
-            
+
             if (player._isBlockedTo >= currentTick)
             {
                 player._velocity = Vector2.zero;
@@ -92,7 +88,15 @@ namespace ECS.Systems
                 return;
             }
 
-            player._velocity = moveEvt._movement * _speed;
+            if (player._primaryBlockingMovementTo < currentTick)
+            {
+                player._velocity = moveEvt._movement * _speed;
+            }
+            else
+            {
+                player._velocity = Vector2.zero;
+            }
+
             player._angle = moveEvt._angle;
         }
     }

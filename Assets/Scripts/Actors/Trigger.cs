@@ -40,7 +40,7 @@ namespace Actors
             }
         }
 
-        public void SetState(ECS.Entities.Trigger entity)
+        public void SetState(ECS.Entities.Trigger entity, int tick)
         {
         }
 

@@ -4,7 +4,7 @@
     {
         void Init(TEntity entity);
 
-        void SetState(TEntity entity);
+        void SetState(TEntity entity, int tick);
 
         void Release();
     }

@@ -37,6 +37,8 @@ namespace ECS.Systems
             var moveEvt = world._moveEvents[1];
             ref var snapshot = ref world.GetSnapshot();
             ref var player = ref snapshot._players.GetEntityAt(1);
+            
+            player._isActionActive = false;
 
             if (player._primaryReadyAt <= currentTick)
             {
@@ -78,7 +80,7 @@ namespace ECS.Systems
             {
                 return;
             }
-
+            
             for (var i = snapshot._triggers.GetNumEntities() - 1; i >= 0; i--)
             {
                 ref var trigger = ref snapshot._triggers.GetEntityAt(i);
@@ -88,6 +90,8 @@ namespace ECS.Systems
                 {
                     snapshot._hackProcess--;
 
+                    player._isActionActive = true;
+                    
                     if (snapshot._hackProcess == 0)
                     {
                         snapshot._triggers.DespawnAt(i);

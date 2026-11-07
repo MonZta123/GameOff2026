@@ -41,7 +41,7 @@ namespace Actors
             }
         }
 
-        public void SetState(ECS.Entities.Door entity)
+        public void SetState(ECS.Entities.Door entity, int tick)
         {
         }
 

@@ -15,8 +15,11 @@ namespace ECS.Entities
         public float _colliderRadius;
 
         public int _primaryReadyAt;
+        public int _primaryBlockingMovementTo;
         public int _secondaryReadyAt;
         public int _secondaryActivatedTo;
         public int _isBlockedTo;
+        
+        public bool _isActionActive;
     }
 }

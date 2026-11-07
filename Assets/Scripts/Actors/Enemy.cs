@@ -15,7 +15,7 @@ namespace Actors
         {
         }
 
-        public void SetState(ECS.Entities.Enemy entity)
+        public void SetState(ECS.Entities.Enemy entity, int tick)
         {
             transform.position = entity._position;
             gunRenderer.transform.rotation = Quaternion.Euler(0, 0, entity._angle);

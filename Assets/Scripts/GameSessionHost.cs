@@ -71,7 +71,7 @@ public class GameSessionHost : MonoBehaviour
 
         var snapshot = _timeline.GetSnapshot(0);
 
-        snapshotRenderer.SetSnapshot(snapshot);
+        snapshotRenderer.SetSnapshot(snapshot, 0);
         _activePlayerObject?.SetActivePlayer(false);
         _activePlayerObject = snapshotRenderer.GetPlayerByIndex(snapshot._players.GetNumEntities() - 1);
         _activePlayerObject.SetActivePlayer(true);
@@ -143,7 +143,7 @@ public class GameSessionHost : MonoBehaviour
         if (_tickDriver.CurrentTick != _lastSetTick && _tickDriver.CurrentTick < _timeline.SnapshotLength)
         {
             _lastSetTick = _tickDriver.CurrentTick;
-            snapshotRenderer.SetSnapshot(_timeline.GetSnapshot(_tickDriver.CurrentTick));
+            snapshotRenderer.SetSnapshot(_timeline.GetSnapshot(_tickDriver.CurrentTick), _tickDriver.CurrentTick);
 
             var result = _gameFlowManager.CheckForLoopBreak(_tickDriver.CurrentTick,
                 _timeline.GetSnapshot(_tickDriver.CurrentTick));

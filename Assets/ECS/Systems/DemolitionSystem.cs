@@ -41,7 +41,9 @@ namespace ECS.Systems
             var moveEvt = world._moveEvents[2];
             ref var snapshot = ref world.GetSnapshot();
             ref var player = ref snapshot._players.GetEntityAt(2);
-
+            
+            player._isActionActive = true;
+            
             if (player._primaryReadyAt <= currentTick)
             {
                 if (moveEvt._primary)
@@ -91,6 +93,8 @@ namespace ECS.Systems
                 if (trigger._triggerType == TriggerType.Mine &&
                     trigger.IsInCircle(player._position, 2f, 1f, out _) && moveEvt._action)
                 {
+                    player._isActionActive = true;
+                    
                     trigger._timer -= _deltaTime;
                     if (trigger._timer <= 0)
                         snapshot._triggers.DespawnAt(i);

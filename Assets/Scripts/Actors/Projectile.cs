@@ -11,7 +11,7 @@ namespace Actors
         {
         }
 
-        public void SetState(ECS.Entities.Projectile entity)
+        public void SetState(ECS.Entities.Projectile entity, int tick)
         {
             transform.position = entity._position;
 
