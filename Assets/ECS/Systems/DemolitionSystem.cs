@@ -15,12 +15,16 @@ namespace ECS.Systems
             _shootCooldownTicks = (int)MathF.Floor(tickRate * _secondsPrimaryCooldown);
             _secondaryCooldownTicks = (int)MathF.Floor(tickRate * _secondsSecondaryCooldown);
             _secondaryActiveTicks = (int)MathF.Floor(tickRate * _secondaryDuration);
-            
+
             _speed = Constants.DemolitionMoveSpeed;
+
+            _deltaTime = 1f / tickRate;
         }
 
+        private float _deltaTime;
+
         private float _speed;
-        
+
         private int _tickRate;
 
         private float _secondsPrimaryCooldown = 0.25f;
@@ -76,15 +80,20 @@ namespace ECS.Systems
             {
                 ref var trigger = ref snapshot._triggers.GetEntityAt(i);
 
-                if (trigger._triggerType == TriggerType.HackerZone &&
-                    trigger.IsInBox(player._position, 1f, out var closestPoint) && moveEvt._action)
+                if (trigger._triggerType == TriggerType.DemolitionZone &&
+                    trigger.IsInBox(player._position, 1f, out _) && moveEvt._action)
                 {
-                    snapshot._hackProcess++;
+                    trigger._timer = 0;
+                    snapshot._bombsLeft--;
+                    snapshot._triggers.DespawnAt(i);
+                }
 
-                    if (snapshot._hackProcess == _tickRate * 5)
-                    {
+                if (trigger._triggerType == TriggerType.Mine &&
+                    trigger.IsInCircle(player._position, 2f, 1f, out _) && moveEvt._action)
+                {
+                    trigger._timer -= _deltaTime;
+                    if (trigger._timer <= 0)
                         snapshot._triggers.DespawnAt(i);
-                    }
                 }
             }
 

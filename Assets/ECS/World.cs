@@ -29,6 +29,7 @@ namespace ECS
         private HackerSystem _hackerSystem;
         private DemolitionSystem _demolitionSystem;
         private SniperSystem _sniperSystem;
+        private MineSystem _mineSystem;
 
         public MapDefinition _map;
 
@@ -92,7 +93,7 @@ namespace ECS
             _doorDestructionNotifications = new DoorDestructionNotification[64];
 
             _attackSystem = new AttackSystem(tickRate);
-            _projectileSystem = new ProjectileSystem(tickRate);
+            _projectileSystem = new ProjectileSystem();
             _damageSystem = new DamageSystem();
             _enemySystem = new EnemySystem();
             _heavySystem = new HeavySystem(tickRate);
@@ -100,6 +101,7 @@ namespace ECS
             _demolitionSystem = new DemolitionSystem(tickRate);
             _sniperSystem = new SniperSystem(tickRate);
             _doorSystem = new DoorSystem();
+            _mineSystem = new MineSystem();
         }
 
         private float _deltaTime;
@@ -124,7 +126,7 @@ namespace ECS
             return false;
         }
 
-        public void BuildScenario(ref Snapshot snapshot, MapDefinition mapDefinition)
+        public void BuildWorld(ref Snapshot snapshot, MapDefinition mapDefinition)
         {
             // build world
             _map = mapDefinition;
@@ -163,11 +165,11 @@ namespace ECS
                 snapshot._doors.Spawn(door);
             }
 
-            var triggerPositions = mapDefinition._hackerZone.ToList();
+            var hackerZonePositions = mapDefinition._hackerZone.ToList();
 
-            while (triggerPositions.Count > 0)
+            while (hackerZonePositions.Count > 0)
             {
-                var head = LookupHackerTrigger(triggerPositions[0], triggerPositions);
+                var head = LookupHackerTrigger(hackerZonePositions[0], hackerZonePositions);
 
                 var leftBottom = new Vector2(head.Min(n => n.x), head.Min(n => n.y));
                 var rightTop = new Vector2(head.Max(n => n.x) + 1, head.Max(n => n.y) + 1);
@@ -179,8 +181,34 @@ namespace ECS
 
                 snapshot._triggers.Spawn(evt);
             }
+            
+            if (_map._demolitionZone.Length > 0)
+            {
+                var demolitionZonePositions = _map._demolitionZone.ToList();
 
-            var spawnZone = mapDefinition._enemySpawnZone.ToList();
+                while (demolitionZonePositions.Count > 0)
+                {
+                    var head = LookupHackerTrigger(demolitionZonePositions[0], demolitionZonePositions);
+
+                    var leftBottom = new Vector2(head.Min(n => n.x), head.Min(n => n.y));
+                    var rightTop = new Vector2(head.Max(n => n.x) + 1, head.Max(n => n.y) + 1);
+
+                    var evt = new Trigger()
+                    {
+                        _leftBottom = leftBottom, _rightTop = rightTop, _triggerType = TriggerType.DemolitionZone
+                    };
+
+                    snapshot._bombsLeft++;
+
+                    snapshot._triggers.Spawn(evt);
+                }
+            }
+        }
+
+
+        public void BuildHeavy(ref Snapshot snapshot)
+        {
+            var spawnZone = _map._enemySpawnZone.ToList();
 
             for (var i = 0; i < 30; i++)
             {
@@ -195,57 +223,36 @@ namespace ECS
             }
 
             snapshot._damageProcess = 3;
-
-            // DEBUG
-#if UNITY_EDITOR
-
-            // var enemyId = FetchEnemyId(ref snapshot);
-            //
-            // var enemy = new Enemy(enemyId)
-            // {
-            //     _health = 100, _angle = 0, _position = new Vector2(3, 0), _type = EnemyType.Gunman
-            // };
-            //
-            // SpawnEnemy(enemy, ref snapshot);
-#endif
-
-            // Spawn Enemies and stuff
         }
 
-        public void PlaceMines(Vector2[] positions, ref Snapshot snapshot)
+        public void BuildHacker(ref Snapshot snapshot)
         {
-            var list = positions.ToList();
-            
-            var minePos = new List<Vector2>();
-            
-            for (var i = 0; i < Math.Min(8, list.Count); i++)
+            // if (_map._hackerZone.Length > 0)
+            //     snapshot._hackProcess = (int)(5f / _deltaTime);
+        }
+
+        public void BuildDemolition(ref Snapshot snapshot)
+        {
+            var spawnZone = _map._enemySpawnZone.ToList();
+
+            for (var i = 0; i < 5; i++)
             {
-                var position = UnityEngine.Random.Range(0, list.Count);
+                var index = UnityEngine.Random.Range(0, spawnZone.Count);
 
-                minePos.Add(list[position]);
-                
-                list.RemoveAt(position);
-            }
-
-            for (var i = 0; i < minePos.Count; i++)
-            {
-                var offsetX = UnityEngine.Random.Range(-2, 2);
-                var offsetY = UnityEngine.Random.Range(-2, 2);
-
-                var offset = new Vector2(offsetX, offsetY);
-
-                if (_map._map[((int)minePos[i].y + offsetY) * _map._width + ((int)minePos[i].x + offsetX)] == 0)
-                    offset = Vector2.zero;
-
-                var mine = new Trigger()
+                var trigger = new Trigger()
                 {
-                    _leftBottom = minePos[i] + offset,
-                    _rightTop = new Vector2(minePos[i].x + 1, minePos[i].y + 1) + offset,
-                    _triggerType = TriggerType.Mine
+                    _leftBottom = spawnZone[index],
+                    _rightTop = new Vector2(spawnZone[index].x + 1, spawnZone[index].y + 1),
+                    _triggerType = TriggerType.Mine,
+                    _timer = 1.0f
                 };
-                
-                snapshot._triggers.Spawn(mine);
+
+                snapshot._triggers.Spawn(trigger);
             }
+        }
+
+        public void BuildSniper(ref Snapshot snapshot)
+        {
         }
 
         private List<Vector2Int> LookupDoor(Vector2Int start, List<Vector2Int> doorPositions)
@@ -413,6 +420,8 @@ namespace ECS
             _damageSystem.Execute(this);
             _enemySystem.Execute(this, tick);
             _doorSystem.Execute(this, tick);
+            
+            _mineSystem.Execute(this);
         }
 
         private float GetMoveSpeed(EnemyType type)
@@ -519,6 +528,22 @@ namespace ECS
             _currentPlayer._position = _map._spawnPoints[currentPlayer];
             _currentPlayer._health = 100;
             snapshot._players.Spawn(_currentPlayer);
+
+            switch (currentPlayer)
+            {
+                case 0:
+                    BuildHeavy(ref snapshot);
+                    break;
+                case 1:
+                    BuildHacker(ref snapshot);
+                    break;
+                case 2:
+                    BuildDemolition(ref snapshot);
+                    break;
+                case 3:
+                    BuildSniper(ref snapshot);
+                    break;
+            }
         }
 
         public void AddHeavyDamageCone(HeavyDamageConeEvent heavyDamageConeEvent)

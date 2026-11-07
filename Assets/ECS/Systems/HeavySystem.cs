@@ -1,6 +1,5 @@
 ﻿using System;
 using Domain;
-using ECS.Entities;
 using ECS.Events;
 using UnityEngine;
 
@@ -10,8 +9,6 @@ namespace ECS.Systems
     {
         public HeavySystem(int tickRate)
         {
-            _tickRate = tickRate;
-
             _shootCooldownTicks = (int)MathF.Floor(tickRate * _secondsPrimaryCooldown);
             _secondaryCooldownTicks = (int)MathF.Floor(tickRate * _secondsSecondaryCooldown);
             _secondaryActiveTicks = (int)MathF.Floor(tickRate * _secondaryDuration);
@@ -20,21 +17,19 @@ namespace ECS.Systems
             _speed = Constants.HeavyMoveSpeed;
         }
 
-        private int _tickRate;
+        private readonly float _secondsPrimaryCooldown = 0.25f;
+        private readonly int _shootCooldownTicks;
 
-        private float _secondsPrimaryCooldown = 0.25f;
-        private int _shootCooldownTicks;
+        private readonly float _secondsSecondaryCooldown = 2.0f;
+        private readonly int _secondaryCooldownTicks;
 
-        private float _secondsSecondaryCooldown = 2.0f;
-        private int _secondaryCooldownTicks;
+        private readonly float _secondaryDuration = 0.5f;
+        private readonly int _secondaryActiveTicks;
 
-        private float _secondaryDuration = 0.5f;
-        private int _secondaryActiveTicks;
+        private readonly float _blockedInputDurationAfterSecondary = 0.125f;
+        private readonly int _blockedInputTicksAfterSecondary;
 
-        private float _blockedInputDurationAfterSecondary = 0.125f;
-        private int _blockedInputTicksAfterSecondary;
-
-        private float _speed;
+        private readonly float _speed;
 
         public void Execute(World world, int currentTick)
         {

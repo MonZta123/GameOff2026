@@ -52,7 +52,7 @@ public class Timeline
 
         _snapshots[0].Initialize();
 
-        _world.BuildScenario(ref _snapshots[0], mapDefinition);
+        _world.BuildWorld(ref _snapshots[0], mapDefinition);
     }
 
     public Snapshot GetSnapshot(int tickDriverCurrentTick)

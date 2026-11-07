@@ -8,6 +8,8 @@ namespace ECS.Entities
         public Vector2 _rightTop;
         public TriggerType _triggerType;
 
+        public float _timer;
+
         public bool IsInBox(Vector2 position, float radius, out Vector2 closestPoint)
         {
             closestPoint = new Vector2(Mathf.Clamp(position.x, _leftBottom.x, _rightTop.x),

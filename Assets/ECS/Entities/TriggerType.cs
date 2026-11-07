@@ -4,7 +4,7 @@
     {
         Mine = 0,
         Computer = 1,
-        DemolitionDoor = 2,
+        DemolitionZone = 2,
         HackerZone = 3
     }
 }
