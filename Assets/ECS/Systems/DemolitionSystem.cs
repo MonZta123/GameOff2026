@@ -72,7 +72,7 @@ namespace ECS.Systems
                 return;
             }
 
-            for (var i = snapshot._triggers.GetNumEntities(); i >= 0; i--)
+            for (var i = snapshot._triggers.GetNumEntities() - 1; i >= 0; i--)
             {
                 ref var trigger = ref snapshot._triggers.GetEntityAt(i);
 

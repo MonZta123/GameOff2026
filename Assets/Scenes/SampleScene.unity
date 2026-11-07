@@ -185,7 +185,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DefaultNamespace.GameSessionHost
   stepsPerSecond: 64
-  maxSeconds: 5
+  maxSeconds: 15
   snapshotRenderer: {fileID: 13633226}
   gameObjectPools: {fileID: 13633223}
   positionComposer: {fileID: 1121035382}

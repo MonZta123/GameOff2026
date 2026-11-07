@@ -26,6 +26,7 @@ namespace ECS
         public Vector2Int[] _exit;
         public Vector2Int[] _woodenDoors;
         public Vector2Int[] _computerAsset;
+        public Vector2Int[] _enemySpawnZone;
 
         public int CoordToIndex(int x, int y)
         {
@@ -52,6 +53,7 @@ namespace ECS
             var computerAsset = new List<Vector2Int>();
             var demolitionZone = new List<Vector2Int>();
             var exit = new List<Vector2Int>();
+            var enemySpawnZone = new List<Vector2Int>();
 
             var pixelMap = mapTexture.GetPixels32();
 
@@ -98,12 +100,17 @@ namespace ECS
                         case 11:
                             exit.Add(new Vector2Int(j, i));
                             break;
+
+                        case 12:
+                            enemySpawnZone.Add(new Vector2Int(j, i));
+                            break;
                     }
                 }
             }
 
             map._woodenDoors = woodenDoors.ToArray();
             map._hackerZone = hackerZone.ToArray();
+            map._enemySpawnZone = enemySpawnZone.ToArray();
             map._demolitionZone = demolitionZone.ToArray();
             map._segmentDoor = segmentDoor.ToArray();
             map._computerAsset = computerAsset.ToArray();
@@ -149,6 +156,9 @@ namespace ECS
 
             if (color is { r: 181, g: 230, b: 29 }) // Segment 4 Exit
                 return 11;
+
+            if (color is { r: 195, g: 195, b: 195 }) // Enemy Spawn Zone
+                return 12;
 
             return -1;
         }

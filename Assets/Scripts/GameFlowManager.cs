@@ -25,10 +25,21 @@ public class GameFlowManager
         // Round end
         if (tick == _ticksPerRun)
         {
-            if (currentPlayer == 0 && snapshot._damageProcess != 0 ||
-                currentPlayer == 1 && snapshot._hackProcess != 0 ||
-                currentPlayer == 2 && snapshot._bombsLeft != 0)
+            if (currentPlayer == 0 && snapshot._damageProcess != 0)
             {
+                Debug.Log("Objective failed - damage left: " + snapshot._damageProcess + " enemies");
+                return GameFlowResult.ObjectiveFailed;
+            }
+
+            if (currentPlayer == 1 && snapshot._hackProcess != 0)
+            {
+                Debug.Log("Objective failed - hack left: " + snapshot._hackProcess + " seconds" );
+                return GameFlowResult.ObjectiveFailed;
+            }
+
+            if (currentPlayer == 2 && snapshot._bombsLeft != 0)
+            {
+                Debug.Log("Objective failed - bombs left: " + snapshot._bombsLeft);
                 return GameFlowResult.ObjectiveFailed;
             }
 
@@ -37,6 +48,7 @@ public class GameFlowManager
                 return GameFlowResult.NextSegment;
             }
 
+            Debug.Log("Success");
             return GameFlowResult.Success;
         }
 

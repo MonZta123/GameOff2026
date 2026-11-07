@@ -47,12 +47,10 @@ namespace ECS.Systems
                 {
                     player._primaryReadyAt = currentTick + _shootCooldownTicks;
 
-                    world.AddShootEvent(new ShootEvent
+                    world.AddHeavyDamageCone(new HeavyDamageConeEvent()
                     {
-                        _type = ProjectileType.Heavy,
                         _position = player._position,
                         _angle = player._angle,
-                        _ttl = _tickRate * 3
                     });
                 }
             }

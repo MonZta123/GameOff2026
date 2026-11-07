@@ -7,13 +7,14 @@ namespace ECS.Entities
         public Direction _direction;
         public Vector2 _leftBottom;
         public Vector2 _rightTop;
+        public int _health;
 
-        public bool IsInDoor(Vector2 position, float radius, out Vector2 direction)
+        public bool IsInDoor(Vector2 position, float radius, out Vector2 hitPoint)
         {
-            direction = new Vector2(Mathf.Clamp(position.x, _leftBottom.x, _rightTop.x),
+            hitPoint = new Vector2(Mathf.Clamp(position.x, _leftBottom.x, _rightTop.x),
                 Mathf.Clamp(position.y, _leftBottom.y, _rightTop.y));
 
-            var distanceSqr = (direction - position).sqrMagnitude;
+            var distanceSqr = (hitPoint - position).sqrMagnitude;
 
             return distanceSqr < radius * radius;
         }

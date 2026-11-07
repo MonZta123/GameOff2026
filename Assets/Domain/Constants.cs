@@ -9,6 +9,9 @@
         public const int ProjectileCount = 200;
         public const int DoorCount = 20;
         public const int TriggerCount = 50;
+        
+        public const float HeavyDamageConeAngle = 45.0f;
+        public const float HeavyDamageConeRadius = 3.0f;
 
         public const float HeavyCooldown = 0.25f;
         public const float HeavyProjectileTtl = 1f;

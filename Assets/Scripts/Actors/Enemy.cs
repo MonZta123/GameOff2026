@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using UnityEditor;
+using UnityEngine;
 
 namespace Actors
 {
@@ -18,7 +19,18 @@ namespace Actors
         {
             transform.position = entity._position;
             gunRenderer.transform.rotation = Quaternion.Euler(0, 0, entity._angle);
+
+            _health = entity._health;
         }
+
+        private float _health;
+
+#if UNITY_EDITOR
+        private void OnDrawGizmos()
+        {
+            Handles.Label(transform.position, "" + _health);
+        }
+#endif
 
         public void Release()
         {

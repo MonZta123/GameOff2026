@@ -1,25 +1,29 @@
-﻿using System;
+﻿using Domain;
+using Unity.Mathematics;
 using UnityEngine;
 
 namespace ECS.Systems
 {
     public class EnemySystem
     {
-        public void Execute(World world)
+        private readonly float _minDot = math.cos(Constants.HeavyDamageConeAngle * Mathf.Deg2Rad);
+        
+        public void Execute(World world, int tick)
         {
             ref var snapshot = ref world.GetSnapshot();
 
             for (var i = snapshot._enemies.GetNumEntities() - 1; i >= 0; i--)
             {
                 ref var enemy = ref snapshot._enemies.GetEntityAt(i);
-
+                
+                // closest anschauen
                 var closestId = -1;
                 var closestDistance = float.MaxValue;
                 var closestPosition = Vector2.zero;
-                for (var j =  snapshot._players.GetNumEntities() - 1; j >= 0; j--)
+                for (var j = snapshot._players.GetNumEntities() - 1; j >= 0; j--)
                 {
                     ref var player = ref snapshot._players.GetEntityAt(j);
-
+                    
                     var distance = Vector2.Distance(player._position, enemy._position);
                     if (distance < closestDistance)
                     {
@@ -37,6 +41,103 @@ namespace ECS.Systems
                         direction.y,
                         direction.x
                     ) * Mathf.Rad2Deg;
+                }
+            }
+            
+            if (world._hasHeavyDamageCone)
+            {
+                var radians = world._heavyDamageConeEvent._angle * Mathf.Deg2Rad;
+
+                var direction = new Vector2(
+                    Mathf.Cos(radians),
+                    Mathf.Sin(radians)
+                );
+                
+                for (var i = snapshot._enemies.GetNumEntities() - 1; i >= 0; i--)
+                {
+                    ref var enemy = ref snapshot._enemies.GetEntityAt(i);
+                    
+                    
+                    var directionToPlayer = enemy._position - world._heavyDamageConeEvent._position;
+                    
+                    var distance = directionToPlayer.magnitude;
+
+                    if (distance < 0.1f)
+                    {
+                        enemy._health -= 10;
+                        if (enemy._health <= 0f)
+                        {
+                            snapshot._damageProcess--;
+                            if (snapshot._damageProcess < 0)
+                                snapshot._damageProcess = 0;
+                            snapshot._enemies.DespawnAt(i);
+                        }
+
+                        continue;
+                    }
+                    
+                    if (distance < Constants.HeavyDamageConeRadius)
+                    {
+                        var dirNormalized = directionToPlayer.normalized;
+                        
+                        var dot = math.dot(direction, dirNormalized);
+                        
+                        if (dot > _minDot)
+                        {
+                            Debug.Log("HIT ENEMY");
+                            enemy._health -= 10;
+                            if (enemy._health <= 0f)
+                            {
+                                snapshot._damageProcess--;
+                                if (snapshot._damageProcess < 0)
+                                    snapshot._damageProcess = 0;
+                                snapshot._enemies.DespawnAt(i);
+                            }
+                        }
+                    }
+                }
+            }
+            
+            if (world._hasBlastWaveEvent)
+            {
+                var blastWaveEvent = world._blastWaveEvent;
+                
+                for (var i = snapshot._enemies.GetNumEntities() - 1; i >= 0; i--)
+                {
+                    ref var enemy = ref snapshot._enemies.GetEntityAt(i);
+                    
+                    var distance = Vector2.Distance(enemy._position, blastWaveEvent._position);
+                    if (distance < blastWaveEvent._radius)
+                    {
+                        enemy._health -= 100;
+                        if (enemy._health <= 0)
+                        {
+                            snapshot._damageProcess--;
+                            if (snapshot._damageProcess < 0)
+                                snapshot._damageProcess = 0;
+                            snapshot._enemies.DespawnAt(i);
+                        }
+                    }
+                }
+            }
+
+            var heavy = snapshot._players.GetEntityAt(0);
+            if (heavy._secondaryActivatedTo > tick)
+            {
+                for (var i = snapshot._enemies.GetNumEntities() - 1; i >= 0; i--)
+                {
+                    var enemy = snapshot._enemies.GetEntityAt(i);
+                    if (Vector2.Distance(heavy._position, enemy._position) < 1.0f)
+                    {
+                        enemy._health -= 100;
+                        if (enemy._health <= 0)
+                        {
+                            snapshot._damageProcess--;
+                            if (snapshot._damageProcess < 0)
+                                snapshot._damageProcess = 0;
+                            snapshot._enemies.DespawnAt(i);
+                        }
+                    }
                 }
             }
         }

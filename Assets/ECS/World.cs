@@ -31,9 +31,6 @@ namespace ECS
         private DemolitionSystem _demolitionSystem;
         private SniperSystem _sniperSystem;
 
-        public BlastWaveEvent[] _blastWaveEvents;
-        public int _numBlastWaveEvents;
-
         public MapDefinition _map;
 
         public ShootEvent[] _shootEvents;
@@ -44,9 +41,17 @@ namespace ECS
 
         public DoorDestructionNotification[] _doorDestructionNotifications;
         public int _numDoorDestructionNotifications;
+        
+        public BlastWaveEvent _blastWaveEvent;
+        public bool _hasBlastWaveEvent;
+        
+        public HeavyDamageConeEvent _heavyDamageConeEvent;
+        public bool _hasHeavyDamageCone;
 
         public void AddDoorDestructionNotification(DoorDestructionNotification doorDestructionNotification)
         {
+            Debug.Log("Door getting damage");
+            
             if (_numDoorDestructionNotifications == _doorDestructionNotifications.Length)
                 return;
 
@@ -65,11 +70,8 @@ namespace ECS
 
         public void AddBlastWaveEvent(BlastWaveEvent blastWaveEvent)
         {
-            if (_numBlastWaveEvents == _blastWaveEvents.Length)
-                return;
-
-            _blastWaveEvents[_numBlastWaveEvents] = blastWaveEvent;
-            _numBlastWaveEvents++;
+            _blastWaveEvent = blastWaveEvent;
+            _hasBlastWaveEvent = true;
         }
 
         public void AddShootEvent(ShootEvent shootEvent)
@@ -80,7 +82,7 @@ namespace ECS
             _shootEvents[_numShootEvents] = shootEvent;
             _numShootEvents++;
         }
-
+        
         public World(int tickRate)
         {
             _deltaTime = 1f / tickRate;
@@ -91,7 +93,6 @@ namespace ECS
             _shootEvents = new ShootEvent[64];
             _soundEvents = new SoundNotification[64];
             _doorDestructionNotifications = new DoorDestructionNotification[64];
-            _blastWaveEvents = new BlastWaveEvent[64];
 
             _attackSystem = new AttackSystem(tickRate);
             _projectileSystem = new ProjectileSystem(tickRate);
@@ -152,12 +153,14 @@ namespace ECS
                     door._direction = Direction.Down;
                     door._leftBottom = new Vector2(head[0].x, head[0].y);
                     door._rightTop = new Vector2(head[0].x + 1, head[^1].y + 1);
+                    door._health = 3;
                 }
                 else
                 {
                     door._direction = Direction.Right;
                     door._leftBottom = new Vector2(head[0].x, head[0].y);
                     door._rightTop = new Vector2(head[^1].x + 1, head[0].y + 1);
+                    door._health = 3;
                 }
 
                 snapshot._doors.Spawn(door);
@@ -179,6 +182,22 @@ namespace ECS
 
                 snapshot._triggers.Spawn(evt);
             }
+
+            var spawnZone = mapDefinition._enemySpawnZone.ToList();
+            
+            for (var i = 0; i < 30; i++)
+            {
+                var index = UnityEngine.Random.Range(0, spawnZone.Count);
+
+                var enemy = new Enemy()
+                {
+                    _health = 100, _angle = 0, _position = spawnZone[index], _type = EnemyType.Gunman
+                };
+                
+                snapshot._enemies.Spawn(enemy);
+            }
+
+            snapshot._damageProcess = 3;
 
             // DEBUG
 #if UNITY_EDITOR
@@ -334,11 +353,6 @@ namespace ECS
                 _soundEvents[i] = default;
             }
 
-            for (var i = 0; i < _numBlastWaveEvents; i++)
-            {
-                _blastWaveEvents[i] = default;
-            }
-
             for (var i = 0; i < _numShootEvents; i++)
             {
                 _shootEvents[i] = default;
@@ -349,10 +363,14 @@ namespace ECS
                 _doorDestructionNotifications[i] = default;
             }
 
+            _heavyDamageConeEvent = default;
+            _blastWaveEvent = default;
+            
+            _hasHeavyDamageCone = false;
+            _hasBlastWaveEvent = false;
             _numDoorDestructionNotifications = 0;
             _numShootEvents = 0;
-            _numSoundEvents = 0;
-            _numBlastWaveEvents = 0;
+            _numSoundEvents = 0; 
         }
 
         public void BuildSensors()
@@ -369,7 +387,7 @@ namespace ECS
 
             _projectileSystem.Execute(this, tick);
             _damageSystem.Execute(this);
-            _enemySystem.Execute(this);
+            _enemySystem.Execute(this, tick);
             _doorSystem.Execute(this, tick);
         }
 
@@ -477,6 +495,12 @@ namespace ECS
             _currentPlayer._position = _map._spawnPoints[currentPlayer];
             _currentPlayer._health = 100;
             snapshot._players.Spawn(_currentPlayer);
+        }
+
+        public void AddHeavyDamageCone(HeavyDamageConeEvent heavyDamageConeEvent)
+        {
+            _heavyDamageConeEvent = heavyDamageConeEvent;
+            _hasHeavyDamageCone = true;
         }
     }
 }

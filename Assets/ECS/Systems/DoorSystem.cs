@@ -1,11 +1,15 @@
-﻿using UnityEngine;
+﻿using Domain;
 using ECS.Entities;
 using ECS.Events;
+using Unity.Mathematics;
+using UnityEngine;
 
 namespace ECS.Systems
 {
     public class DoorSystem
     {
+        private readonly float _minDot = math.cos(Constants.HeavyDamageConeAngle * Mathf.Deg2Rad);
+        
         public void Execute(World world, int currentTick)
         {
             ref var snapshot = ref world.GetSnapshot();
@@ -22,8 +26,12 @@ namespace ECS.Systems
                         {
                             ref var door = ref snapshot._doors.GetEntityAt(j);
 
-                            if (ShouldBlastDoor(door, world, player._position, 0.5f))
+                            if (door.IsInDoor(player._position, 0.5f, out var hitpoint))
                             {
+                                world.AddDoorDestructionNotification(new DoorDestructionNotification()
+                                {
+                                    _door = door, _direction = (hitpoint - player._position).normalized
+                                });
                                 snapshot._doors.DespawnAt(j);
                             }
                         }
@@ -31,80 +39,62 @@ namespace ECS.Systems
                 }
             }
 
-            for (var i = world._numBlastWaveEvents - 1; i >= 0; i--)
+            if (world._hasBlastWaveEvent)
             {
-                ref var blastWaveEvent = ref world._blastWaveEvents[i];
+                var blastWaveEvent = world._blastWaveEvent;
                 for (var j = snapshot._doors.GetNumEntities() - 1; j >= 0; j--)
                 {
                     ref var door = ref snapshot._doors.GetEntityAt(j);
-
-                    if (ShouldBlastDoor(door, world, blastWaveEvent._position, blastWaveEvent._radius))
+                    
+                    if (door.IsInDoor(blastWaveEvent._position,  blastWaveEvent._radius, out var hitPoint))
                     {
-                        snapshot._doors.DespawnAt(j);
+                        door._health--;
+                        if (door._health <= 0)
+                        {
+                            world.AddDoorDestructionNotification(new DoorDestructionNotification()
+                            {
+                                _door = door, _direction = (hitPoint - blastWaveEvent._position).normalized
+                            });
+                            snapshot._doors.DespawnAt(j);
+                        }
+                    }
+                }
+            }
+
+            if (world._hasHeavyDamageCone)
+            {
+                var cone = world._heavyDamageConeEvent;
+                
+                var radians = cone._angle * Mathf.Deg2Rad;
+
+                var hitDirection = new Vector2(
+                    Mathf.Cos(radians),
+                    Mathf.Sin(radians)
+                );
+                
+                for (var i = snapshot._doors.GetNumEntities() - 1; i >= 0; i--)
+                {
+                    ref var door = ref snapshot._doors.GetEntityAt(i);
+
+                    if (!door.IsInDoor(cone._position, Constants.HeavyDamageConeRadius, out var hitPoint))
+                        continue;
+
+                    var toTarget = (hitPoint - cone._position).normalized;
+                    
+                    if (toTarget == Vector2.zero || math.dot(toTarget, hitDirection) > _minDot)
+                    {
+                        door._health--;
+                        if (door._health <= 0)
+                        {
+                            world.AddDoorDestructionNotification(new DoorDestructionNotification()
+                            {
+                                _door = door, _direction = hitDirection
+                            });
+                            snapshot._doors.DespawnAt(i);
+                        }
                     }
                 }
             }
         }
-
-        private bool ShouldBlastDoor(Door door, World world, Vector2 position, float radius)
-        {
-            if (door.IsInDoor(position, radius, out var direction))
-            {
-                world.AddDoorDestructionNotification(new DoorDestructionNotification()
-                {
-                    _door = door, _direction = direction
-                });
-
-                return true;
-            }
-
-            return false;
-        }
-
-        // private bool CheckShouldBlastDoorDown(Door door, World world, Vector2 position, float radius)
-        // {
-        //     for (var k = 0; k < door._length; k++)
-        //     {
-        //         var currentPos = new Vector2(door._position.x, door._position.y + k);
-        //
-        //         var breakDirection = position - currentPos;
-        //         var distanceVectorSqr = (breakDirection).sqrMagnitude;
-        //
-        //         if (distanceVectorSqr >= radius * radius)
-        //             continue;
-        //
-        //         world.AddDoorDestructionNotification(new DoorDestructionNotification()
-        //         {
-        //             _door = door, _direction = breakDirection
-        //         });
-        //
-        //         return true;
-        //     }
-        //
-        //     return false;
-        // }
-        //
-        // private bool CheckShouldBlastDoorRight(Door door, World world, Vector2 position, float radius)
-        // {
-        //     for (var k = 0; k < door._length; k++)
-        //     {
-        //         var currentPos = new Vector2(door._position.x + k, door._position.y);
-        //
-        //         var breakDirection = position - currentPos;
-        //         var distanceVectorSqr = (breakDirection).sqrMagnitude;
-        //
-        //         if (distanceVectorSqr >= radius * radius)
-        //             continue;
-        //
-        //         world.AddDoorDestructionNotification(new DoorDestructionNotification()
-        //         {
-        //             _door = door, _direction = breakDirection
-        //         });
-        //
-        //         return true;
-        //     }
-        //
-        //     return false;
-        // }
     }
 }
