@@ -227,8 +227,8 @@ namespace ECS
 
         public void BuildHacker(ref Snapshot snapshot)
         {
-            // if (_map._hackerZone.Length > 0)
-            //     snapshot._hackProcess = (int)(5f / _deltaTime);
+            if (_map._hackerZone.Length > 0)
+                snapshot._hackProcess = (int)(5f / _deltaTime);
         }
 
         public void BuildDemolition(ref Snapshot snapshot)

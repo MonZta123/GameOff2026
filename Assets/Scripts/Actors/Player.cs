@@ -20,6 +20,9 @@ namespace Actors
         private AnimatorOverrideController[] animatorOverrideController;
 
         [SerializeField]
+        private Sprite[] gunz;
+
+        [SerializeField]
         private Animator animator;
 
         private bool _activePlayer;
@@ -29,6 +32,8 @@ namespace Actors
             transform.position = entity._position;
 
             animator.runtimeAnimatorController = animatorOverrideController[(int)entity._type];
+
+            gunRenderer.sprite = gunz[(int)entity._type];
         }
 
         public void SetActivePlayer(bool value)
@@ -48,8 +53,8 @@ namespace Actors
         {
             var angle = gunRenderer.transform.rotation.eulerAngles.z;
 
-            var secondaryActive = _lastEntity._secondaryActivatedTo >= _tick;
-            var primaryActive = _lastEntity._primaryBlockingMovementTo >= _tick;
+            var secondaryActive = _lastEntity._secondaryActivatedTo > _tick;
+            var primaryActive = _lastEntity._primaryBlockingMovementTo > _tick;
             var isSlam = _lastEntity._isBlockedTo >= _tick && !secondaryActive;
             var actionActive = _lastEntity._isActionActive;
             var isDead = _lastEntity._health <= 0;
@@ -62,7 +67,6 @@ namespace Actors
 
             if (isSlam)
             {
-                Debug.Log("SLAM");
                 animator.Play("Slam");
                 return;
             }
@@ -82,7 +86,6 @@ namespace Actors
             }
             else if (secondaryActive)
             {
-                Debug.Log("SECONDARY");
                 prefix = "Secondary_";
             }
             else if (_lastEntity._velocity != Vector2.zero)
@@ -90,24 +93,28 @@ namespace Actors
                 prefix = "Walk_";
             }
 
-            if (angle is >= 315 or < 45)
+            if (!secondaryActive)
             {
-                postfix = "Side";
-                characterRenderer.flipX = true;
+                characterRenderer.flipX = angle is >= 315 or < 45;
             }
             else
-                characterRenderer.flipX = false;
+            {
+                characterRenderer.flipX = _lastEntity._velocity.x > 0;
+            }
 
             if (angle is >= 45 and < 135)
                 postfix = "Back";
 
-            if (angle is >= 135 and < 225)
+            if (angle is >= 135 and < 225 or >= 315 or < 45)
                 postfix = "Side";
 
             if (angle is >= 225 and < 315)
                 postfix = "Front";
 
             animator.Play(prefix + postfix);
+
+            gunRenderer.sortingOrder = angle is > 0 and < 180 ? 4 : 6;
+            gunRenderer.flipY = angle is > 90 and < 270;
         }
 
         public void SetState(ECS.Entities.Player entity, int tick)

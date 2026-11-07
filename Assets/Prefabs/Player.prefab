@@ -186,6 +186,11 @@ MonoBehaviour:
   - {fileID: 22100000, guid: a393a536ce9c5bf4c96f8e789a3fd69f, type: 2}
   - {fileID: 22100000, guid: c1dea7ece9448274aa663c28a3898e29, type: 2}
   - {fileID: 22100000, guid: 96af4afe097c5b54baa91f196dd0e41d, type: 2}
+  gunz:
+  - {fileID: 0}
+  - {fileID: 21300000, guid: a924580eb3318064295d5aa0448d6773, type: 3}
+  - {fileID: 21300000, guid: d677ca5baec12b4469558d7ecd524754, type: 3}
+  - {fileID: 21300000, guid: 11e67a04c939aad4eac5107d1c020e41, type: 3}
   animator: {fileID: 4312963925318771561}
 --- !u!95 &8297006746479347886
 Animator:
@@ -285,7 +290,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1483705971962735978
 Transform:
   m_ObjectHideFlags: 0
@@ -350,7 +355,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 10
   m_MaskInteraction: 0
-  m_Sprite: {fileID: 21300000, guid: a725f690fdc8baa4fa37adb120e88117, type: 3}
+  m_Sprite: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -358,6 +363,6 @@ SpriteRenderer:
   m_Size: {x: 0.24, y: 0.24}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_SpriteSortPoint: 0
   m_BlendShapeWeights: []
