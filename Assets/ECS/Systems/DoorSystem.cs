@@ -1,6 +1,7 @@
 ﻿using Domain;
 using ECS.Entities;
 using ECS.Events;
+using ECS.Notification;
 using Unity.Mathematics;
 using UnityEngine;
 
@@ -9,7 +10,7 @@ namespace ECS.Systems
     public class DoorSystem
     {
         private readonly float _minDot = math.cos(Constants.HeavyDamageConeAngle * Mathf.Deg2Rad);
-        
+
         public void Execute(World world, int currentTick)
         {
             ref var snapshot = ref world.GetSnapshot();
@@ -28,7 +29,7 @@ namespace ECS.Systems
 
                             if (door.IsInDoor(player._position, 0.5f, out var hitpoint))
                             {
-                                world.AddDoorDestructionNotification(new DoorDestructionNotification()
+                                snapshot._doorDestructionNotificationPool.Add(new DoorDestructionNotification()
                                 {
                                     _door = door, _direction = (hitpoint - player._position).normalized
                                 });
@@ -45,13 +46,13 @@ namespace ECS.Systems
                 for (var j = snapshot._doors.GetNumEntities() - 1; j >= 0; j--)
                 {
                     ref var door = ref snapshot._doors.GetEntityAt(j);
-                    
-                    if (door.IsInDoor(blastWaveEvent._position,  blastWaveEvent._radius, out var hitPoint))
+
+                    if (door.IsInDoor(blastWaveEvent._position, blastWaveEvent._radius, out var hitPoint))
                     {
                         door._health--;
                         if (door._health <= 0)
                         {
-                            world.AddDoorDestructionNotification(new DoorDestructionNotification()
+                            snapshot._doorDestructionNotificationPool.Add(new DoorDestructionNotification()
                             {
                                 _door = door, _direction = (hitPoint - blastWaveEvent._position).normalized
                             });
@@ -64,14 +65,14 @@ namespace ECS.Systems
             if (world._hasHeavyDamageCone)
             {
                 var cone = world._heavyDamageConeEvent;
-                
+
                 var radians = cone._angle * Mathf.Deg2Rad;
 
                 var hitDirection = new Vector2(
                     Mathf.Cos(radians),
                     Mathf.Sin(radians)
                 );
-                
+
                 for (var i = snapshot._doors.GetNumEntities() - 1; i >= 0; i--)
                 {
                     ref var door = ref snapshot._doors.GetEntityAt(i);
@@ -80,13 +81,13 @@ namespace ECS.Systems
                         continue;
 
                     var toTarget = (hitPoint - cone._position).normalized;
-                    
+
                     if (toTarget == Vector2.zero || math.dot(toTarget, hitDirection) > _minDot)
                     {
                         door._health--;
                         if (door._health <= 0)
                         {
-                            world.AddDoorDestructionNotification(new DoorDestructionNotification()
+                            snapshot._doorDestructionNotificationPool.Add(new DoorDestructionNotification()
                             {
                                 _door = door, _direction = hitDirection
                             });

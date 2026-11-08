@@ -4,6 +4,7 @@ using System.Linq;
 using Domain;
 using ECS.Entities;
 using ECS.Events;
+using ECS.Notification;
 using ECS.Systems;
 using UnityEngine;
 
@@ -35,35 +36,11 @@ namespace ECS
         public ShootEvent[] _shootEvents;
         public int _numShootEvents;
 
-        public SoundNotification[] _soundEvents;
-        public int _numSoundEvents;
-
-        public DoorDestructionNotification[] _doorDestructionNotifications;
-        public int _numDoorDestructionNotifications;
-
-        public BlastWaveEvent _blastWaveEvent;
-        public bool _hasBlastWaveEvent;
-
         public HeavyDamageConeEvent _heavyDamageConeEvent;
         public bool _hasHeavyDamageCone;
 
-        public void AddDoorDestructionNotification(DoorDestructionNotification doorDestructionNotification)
-        {
-            if (_numDoorDestructionNotifications == _doorDestructionNotifications.Length)
-                return;
-
-            _doorDestructionNotifications[_numDoorDestructionNotifications] = doorDestructionNotification;
-            _numDoorDestructionNotifications++;
-        }
-
-        public void AddSoundEvent(SoundNotification soundNotification)
-        {
-            if (_numSoundEvents == _soundEvents.Length)
-                return;
-
-            _soundEvents[_numSoundEvents] = soundNotification;
-            _numSoundEvents++;
-        }
+        public BlastWaveEvent _blastWaveEvent;
+        public bool _hasBlastWaveEvent;
 
         public void AddBlastWaveEvent(BlastWaveEvent blastWaveEvent)
         {

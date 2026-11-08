@@ -1,7 +1,7 @@
-﻿using UnityEngine;
-using ECS.Entities;
+﻿using ECS.Entities;
+using UnityEngine;
 
-namespace ECS.Events
+namespace ECS.Notification
 {
     public struct DoorDestructionNotification
     {

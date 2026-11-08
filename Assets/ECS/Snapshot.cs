@@ -1,5 +1,7 @@
 ﻿using Domain;
 using ECS.Entities;
+using ECS.Events;
+using ECS.Notification;
 
 namespace ECS
 {
@@ -10,11 +12,15 @@ namespace ECS
         public EntityPool<Projectile> _projectiles;
         public EntityPool<Door> _doors;
         public EntityPool<Trigger> _triggers;
-
+        
         public int _damageProcess;
         public int _hackProcess;
         public int _bombsLeft;
-
+        
+        public NotificationPool<DoorDestructionNotification> _doorDestructionNotificationPool;
+        public NotificationPool<SoundNotification> _soundNotificationPool;
+        public NotificationPool<EnemyDiedNotification> _enemyDiedNotificationPool;
+        
         public void BuildFrom(Snapshot snapshot)
         {
             snapshot._players.CopyTo(ref _players);
@@ -35,6 +41,10 @@ namespace ECS
             _projectiles = new EntityPool<Projectile>(Constants.ProjectileCount);
             _doors = new EntityPool<Door>(Constants.DoorCount);
             _triggers = new EntityPool<Trigger>(Constants.TriggerCount);
+            
+            _doorDestructionNotificationPool = new NotificationPool<DoorDestructionNotification>();
+            _soundNotificationPool = new NotificationPool<SoundNotification>();
+            _enemyDiedNotificationPool = new NotificationPool<EnemyDiedNotification>();
         }
     }
 }
