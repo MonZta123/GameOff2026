@@ -1,11 +1,10 @@
 ﻿using System.Collections;
-using ECS.Notification;
 using Unity.Mathematics;
 using UnityEngine;
 
 namespace Notifications
 {
-    public class DeadEnemyNotification : NotificationView<EnemyDiedNotification>
+    public class EnemyDiedNotification : NotificationView<ECS.Notification.EnemyDiedNotification>
     {
         [SerializeField]
         private Animator animator;
@@ -15,7 +14,7 @@ namespace Notifications
 
         private Coroutine _coroutine;
 
-        public override void Notify(EnemyDiedNotification notification)
+        public override void Notify(ECS.Notification.EnemyDiedNotification notification)
         {
             animator.runtimeAnimatorController = overrideControllers[(int)notification._enemyType];
             if (_coroutine != null)
@@ -34,7 +33,7 @@ namespace Notifications
             transform.position = notification._position;
         }
 
-        private IEnumerator PlayAnimation(EnemyDiedNotification notification)
+        private IEnumerator PlayAnimation(ECS.Notification.EnemyDiedNotification notification)
         {
             if (notification._isKnockback)
             {

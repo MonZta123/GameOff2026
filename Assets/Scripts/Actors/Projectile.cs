@@ -6,9 +6,17 @@ namespace Actors
     {
         [SerializeField]
         private PositionSmoother positionSmoother;
+        
+        [SerializeField]
+        private SpriteRenderer spriteRenderer;
+
+        [SerializeField]
+        private Sprite[] sprites;
 
         public void Init(ECS.Entities.Projectile entity)
         {
+            transform.position = entity._position;
+            spriteRenderer.sprite = sprites[(int)entity._type];
         }
 
         public void SetState(ECS.Entities.Projectile entity, int tick)

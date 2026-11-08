@@ -20,6 +20,7 @@ public class SnapshotRenderer : MonoBehaviour
     public void RunNotifications(Snapshot snapshot)
     {
         RunNotification(snapshot._enemyDiedNotificationPool, pools._enemyDiedNotificationPool);
+        RunNotification(snapshot._snipeShotNotificationPool, pools._snipeShotNotificationPool);
     }
 
     private void RunNotification<TView, TNotification>(

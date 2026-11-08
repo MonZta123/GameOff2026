@@ -1,6 +1,5 @@
 ﻿using Domain;
 using ECS.Entities;
-using ECS.Events;
 using ECS.Notification;
 
 namespace ECS
@@ -20,6 +19,7 @@ namespace ECS
         public NotificationPool<DoorDestructionNotification> _doorDestructionNotificationPool;
         public NotificationPool<SoundNotification> _soundNotificationPool;
         public NotificationPool<EnemyDiedNotification> _enemyDiedNotificationPool;
+        public NotificationPool<SnipeShotNotification> _snipeShotNotificationPool;
 
         public void BuildFrom(Snapshot snapshot)
         {
@@ -39,6 +39,7 @@ namespace ECS
             snapshot._doorDestructionNotificationPool.CopyTo(ref _doorDestructionNotificationPool);
             snapshot._soundNotificationPool.CopyTo(ref _soundNotificationPool);
             snapshot._enemyDiedNotificationPool.CopyTo(ref _enemyDiedNotificationPool);
+            snapshot._snipeShotNotificationPool.CopyTo(ref _snipeShotNotificationPool);
         }
 
         public void Initialize()
@@ -53,6 +54,8 @@ namespace ECS
             _soundNotificationPool = new NotificationPool<SoundNotification>(8);
             _enemyDiedNotificationPool =
                 new NotificationPool<EnemyDiedNotification>(Constants.EnemyDiedNotificationCount);
+            _snipeShotNotificationPool =
+                new NotificationPool<SnipeShotNotification>(Constants.SnipeShotNotificationCount);
         }
     }
 }

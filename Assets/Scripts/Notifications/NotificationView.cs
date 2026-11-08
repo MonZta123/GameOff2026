@@ -7,7 +7,7 @@ namespace Notifications
     {
         protected Action _returnToPool;
 
-        public void Init(Action returnAction)
+        public virtual void Init(Action returnAction)
         {
             _returnToPool = returnAction;
         }

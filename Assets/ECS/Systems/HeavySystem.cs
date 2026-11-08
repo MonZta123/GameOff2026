@@ -1,6 +1,7 @@
 ﻿using System;
 using Domain;
 using ECS.Events;
+using ECS.Notification;
 using UnityEngine;
 
 namespace ECS.Systems
@@ -35,6 +36,8 @@ namespace ECS.Systems
         {
             var moveEvt = world._moveEvents[0];
             ref var player = ref world.GetSnapshot()._players.GetEntityAt(0);
+            
+            ref var snapshot = ref world.GetSnapshot();
 
             if (player._primaryReadyAt <= currentTick)
             {
@@ -47,6 +50,13 @@ namespace ECS.Systems
                     {
                         _position = player._position, _angle = player._angle,
                     });
+                    
+                    
+                    // TESTING!!!
+                    // snapshot._snipeShotNotificationPool.Add(new SnipeShotNotification()
+                    // {
+                    //     _from = player._position, _to = player._position + Vector2.down * 5f,
+                    // });
                 }
             }
 

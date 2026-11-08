@@ -3,6 +3,7 @@ using Domain;
 using ECS.Notification;
 using Notifications;
 using UnityEngine;
+using EnemyDiedNotification = Notifications.EnemyDiedNotification;
 
 public class Pools : MonoBehaviour
 {
@@ -22,7 +23,10 @@ public class Pools : MonoBehaviour
     private Trigger trigger;
 
     [SerializeField]
-    private DeadEnemyNotification enemyDiedNotification;
+    private EnemyDiedNotification enemyDiedNotification;
+
+    [SerializeField]
+    private SnipeShotHitscan snipeShotHitscan;
 
     public GameObjectPool<Enemy, ECS.Entities.Enemy> _enemyPool;
     public GameObjectPool<Projectile, ECS.Entities.Projectile> _projectilePool;
@@ -30,13 +34,16 @@ public class Pools : MonoBehaviour
     public GameObjectPool<Door, ECS.Entities.Door> _doorPool;
     public GameObjectPool<Trigger, ECS.Entities.Trigger> _triggerPool;
 
-    public GameNotificationPool<DeadEnemyNotification, EnemyDiedNotification> _enemyDiedNotificationPool;
+    public GameNotificationPool<EnemyDiedNotification, ECS.Notification.EnemyDiedNotification>
+        _enemyDiedNotificationPool;
+
+    public GameNotificationPool<SnipeShotHitscan, SnipeShotNotification> _snipeShotNotificationPool;
 
     public void ClearAllNotificationPools()
     {
         _enemyDiedNotificationPool.ReturnAll();
     }
-    
+
     public void Initialize()
     {
         _enemyPool = new GameObjectPool<Enemy, ECS.Entities.Enemy>(Constants.EnemyCount);
@@ -44,9 +51,11 @@ public class Pools : MonoBehaviour
         _playerPool = new GameObjectPool<Player, ECS.Entities.Player>(Constants.PlayerCount);
         _doorPool = new GameObjectPool<Door, ECS.Entities.Door>(Constants.DoorCount);
         _triggerPool = new GameObjectPool<Trigger, ECS.Entities.Trigger>(Constants.TriggerCount);
+        _snipeShotNotificationPool =
+            new GameNotificationPool<SnipeShotHitscan, SnipeShotNotification>(Constants.SnipeShotNotificationCount);
 
         _enemyDiedNotificationPool =
-            new GameNotificationPool<DeadEnemyNotification, EnemyDiedNotification>(Constants
+            new GameNotificationPool<EnemyDiedNotification, ECS.Notification.EnemyDiedNotification>(Constants
                 .EnemyDiedNotificationCount);
 
         for (var i = 0; i < Constants.PlayerCount; i++)
@@ -66,5 +75,8 @@ public class Pools : MonoBehaviour
 
         for (var i = 0; i < Constants.EnemyDiedNotificationCount; i++)
             _enemyDiedNotificationPool.Add(Instantiate(enemyDiedNotification));
+
+        for (var i = 0; i < Constants.SnipeShotNotificationCount; i++)
+            _snipeShotNotificationPool.Add(Instantiate(snipeShotHitscan));
     }
 }

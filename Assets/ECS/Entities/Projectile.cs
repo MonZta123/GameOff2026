@@ -8,7 +8,8 @@ namespace ECS.Entities
         Hacker,
         Demolition,
         Stealth,
-        
+        Dude1,
+        Dude2,
         GunMan
     }
     

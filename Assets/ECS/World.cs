@@ -340,6 +340,7 @@ namespace ECS
             _workspace._doorDestructionNotificationPool.Clear();
             _workspace._soundNotificationPool.Clear();
             _workspace._enemyDiedNotificationPool.Clear();
+            _workspace._snipeShotNotificationPool.Clear();
         }
         
         public void DoStep(ReadOnlySpan<Intent> intents, int tick)
