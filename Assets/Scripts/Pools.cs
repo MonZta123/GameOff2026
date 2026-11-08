@@ -1,8 +1,10 @@
 ﻿using Actors;
 using Domain;
+using ECS.Notification;
+using Notifications;
 using UnityEngine;
 
-public class GameObjectPools : MonoBehaviour
+public class Pools : MonoBehaviour
 {
     [SerializeField]
     private Player player;
@@ -19,11 +21,21 @@ public class GameObjectPools : MonoBehaviour
     [SerializeField]
     private Trigger trigger;
 
+    [SerializeField]
+    private DeadEnemyNotification enemyDiedNotification;
+
     public GameObjectPool<Enemy, ECS.Entities.Enemy> _enemyPool;
     public GameObjectPool<Projectile, ECS.Entities.Projectile> _projectilePool;
     public GameObjectPool<Player, ECS.Entities.Player> _playerPool;
     public GameObjectPool<Door, ECS.Entities.Door> _doorPool;
     public GameObjectPool<Trigger, ECS.Entities.Trigger> _triggerPool;
+
+    public GameNotificationPool<DeadEnemyNotification, EnemyDiedNotification> _enemyDiedNotificationPool;
+
+    public void ClearAllNotificationPools()
+    {
+        _enemyDiedNotificationPool.ReturnAll();
+    }
     
     public void Initialize()
     {
@@ -32,6 +44,10 @@ public class GameObjectPools : MonoBehaviour
         _playerPool = new GameObjectPool<Player, ECS.Entities.Player>(Constants.PlayerCount);
         _doorPool = new GameObjectPool<Door, ECS.Entities.Door>(Constants.DoorCount);
         _triggerPool = new GameObjectPool<Trigger, ECS.Entities.Trigger>(Constants.TriggerCount);
+
+        _enemyDiedNotificationPool =
+            new GameNotificationPool<DeadEnemyNotification, EnemyDiedNotification>(Constants
+                .EnemyDiedNotificationCount);
 
         for (var i = 0; i < Constants.PlayerCount; i++)
             _playerPool.Add(Instantiate(player));
@@ -47,5 +63,8 @@ public class GameObjectPools : MonoBehaviour
 
         for (var i = 0; i < Constants.TriggerCount; i++)
             _triggerPool.Add(Instantiate(trigger));
+
+        for (var i = 0; i < Constants.EnemyDiedNotificationCount; i++)
+            _enemyDiedNotificationPool.Add(Instantiate(enemyDiedNotification));
     }
 }

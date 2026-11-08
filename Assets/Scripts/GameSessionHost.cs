@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections;
 using Actors;
-using Domain;
 using ECS;
 using Unity.Cinemachine;
 using UnityEngine;
@@ -18,7 +17,7 @@ public class GameSessionHost : MonoBehaviour
     private SnapshotRenderer snapshotRenderer;
 
     [SerializeField]
-    private GameObjectPools gameObjectPools;
+    private Pools pools;
 
     [SerializeField]
     private CinemachinePositionComposer positionComposer;
@@ -45,7 +44,7 @@ public class GameSessionHost : MonoBehaviour
     private void Awake()
     {
         // Show LoadingScreen here
-        gameObjectPools.Initialize();
+        pools.Initialize();
         _segmentTicks = maxSeconds * stepsPerSecond;
         var mapDefinition = TextureMapBuilder.GetMap(map);
 
@@ -63,7 +62,7 @@ public class GameSessionHost : MonoBehaviour
     private void InitNextCharacter(bool isFirst = false)
     {
         _timeline.SetNextPlayer();
-        
+
         if (!isFirst)
             Rewind();
         else
@@ -77,6 +76,8 @@ public class GameSessionHost : MonoBehaviour
         _activePlayerObject.SetActivePlayer(true);
         positionComposer.VirtualCamera.Follow = _activePlayerObject.transform;
     }
+
+    private int _lastProcessedTick;
 
     private void HandleResult(GameFlowResult result)
     {
@@ -115,6 +116,8 @@ public class GameSessionHost : MonoBehaviour
     {
         // mapDefinition fehlt hier noch
         // Ja hier sollte die nächste Map kommen:
+        pools.ClearAllNotificationPools();
+
         var mapDefinition = TextureMapBuilder.GetMap(map);
 
         _timeline.InitNextSegment(mapDefinition);
@@ -140,13 +143,22 @@ public class GameSessionHost : MonoBehaviour
         _activePlayerObject.SetAngle(inputManager.GetAngle(_activePlayerObject.transform));
         _tickDriver.Update(Time.deltaTime);
 
+        while (_lastProcessedTick + 1 < _tickDriver.CurrentTick)
+        {
+            snapshotRenderer.RunNotifications(_timeline.GetSnapshot(_lastProcessedTick + 1));
+            _lastProcessedTick++;
+        }
+
         if (_tickDriver.CurrentTick != _lastSetTick && _tickDriver.CurrentTick < _timeline.SnapshotLength)
         {
             _lastSetTick = _tickDriver.CurrentTick;
-            snapshotRenderer.SetSnapshot(_timeline.GetSnapshot(_tickDriver.CurrentTick), _tickDriver.CurrentTick);
 
-            var result = _gameFlowManager.CheckForLoopBreak(_tickDriver.CurrentTick,
-                _timeline.GetSnapshot(_tickDriver.CurrentTick));
+            var snapshot = _timeline.GetSnapshot(_tickDriver.CurrentTick);
+
+            snapshotRenderer.SetSnapshot(snapshot, _tickDriver.CurrentTick);
+            snapshotRenderer.RunNotifications(snapshot);
+
+            var result = _gameFlowManager.CheckForLoopBreak(_tickDriver.CurrentTick, snapshot);
 
             HandleResult(result);
         }
@@ -158,6 +170,7 @@ public class GameSessionHost : MonoBehaviour
     {
         _tickDriver.StopSim();
         _tickDriver.SetToTick(0);
+        _lastProcessedTick = 0;
 
         if (_currentCoroutine != null)
         {
@@ -165,6 +178,7 @@ public class GameSessionHost : MonoBehaviour
         }
 
         _currentCoroutine = StartCoroutine(WaitForStart());
+        pools.ClearAllNotificationPools();
     }
 
     private IEnumerator WaitForStart()

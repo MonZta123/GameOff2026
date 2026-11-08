@@ -21,6 +21,20 @@
             _numNotifications++;
         }
 
+        public void Clear()
+        {
+            for (var i = 0; i < _numNotifications; i++)
+                _notifications[i] = default;
+            
+            _numNotifications = 0;
+        }
+
+        public void CopyTo(ref NotificationPool<Type> notificationPool)
+        {
+            _notifications.CopyTo(notificationPool._notifications, 0);
+            notificationPool._numNotifications = _numNotifications;
+        }
+
         public int GetMaxLength() => _notifications.Length;
 
         public ref Type GetEntityAt(int index) => ref _notifications[index];

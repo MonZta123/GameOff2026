@@ -158,6 +158,7 @@ MonoBehaviour:
   projectile: {fileID: 6085684898756830371, guid: 2fb07515fc822d544b16e1a85678f742, type: 3}
   door: {fileID: 8443806336917652463, guid: d6e16b0941c49474c90013abac89f563, type: 3}
   trigger: {fileID: 1809184742179863036, guid: 211595e0d07bbca45a1d4b1f6afe64bc, type: 3}
+  enemyDiedNotification: {fileID: -3753237614961215173, guid: cce6eb6079cadcf418c1ffa5d8dd0936, type: 3}
 --- !u!4 &13633224
 Transform:
   m_ObjectHideFlags: 0
@@ -188,7 +189,7 @@ MonoBehaviour:
   stepsPerSecond: 64
   maxSeconds: 30
   snapshotRenderer: {fileID: 13633226}
-  gameObjectPools: {fileID: 13633223}
+  pools: {fileID: 13633223}
   positionComposer: {fileID: 1121035382}
   mapRenderer: {fileID: 13633228}
   cam: {fileID: 330585545}
@@ -206,7 +207,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9342ebb5d35c4a9a874f2a0314d5fb76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SnapshotRenderer
-  gameObjectPools: {fileID: 13633223}
+  pools: {fileID: 13633223}
 --- !u!114 &13633227
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -573,7 +574,7 @@ Camera:
   far clip plane: 5000
   field of view: 40
   orthographic: 1
-  orthographic size: 8.03125
+  orthographic size: 6.90625
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2

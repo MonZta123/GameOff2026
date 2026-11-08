@@ -12,15 +12,15 @@ namespace ECS
         public EntityPool<Projectile> _projectiles;
         public EntityPool<Door> _doors;
         public EntityPool<Trigger> _triggers;
-        
+
         public int _damageProcess;
         public int _hackProcess;
         public int _bombsLeft;
-        
+
         public NotificationPool<DoorDestructionNotification> _doorDestructionNotificationPool;
         public NotificationPool<SoundNotification> _soundNotificationPool;
         public NotificationPool<EnemyDiedNotification> _enemyDiedNotificationPool;
-        
+
         public void BuildFrom(Snapshot snapshot)
         {
             snapshot._players.CopyTo(ref _players);
@@ -28,10 +28,17 @@ namespace ECS
             snapshot._projectiles.CopyTo(ref _projectiles);
             snapshot._doors.CopyTo(ref _doors);
             snapshot._triggers.CopyTo(ref _triggers);
-            
+
             _damageProcess = snapshot._damageProcess;
             _hackProcess = snapshot._hackProcess;
             _bombsLeft = snapshot._bombsLeft;
+        }
+
+        public void CopyNotifications(Snapshot snapshot)
+        {
+            snapshot._doorDestructionNotificationPool.CopyTo(ref _doorDestructionNotificationPool);
+            snapshot._soundNotificationPool.CopyTo(ref _soundNotificationPool);
+            snapshot._enemyDiedNotificationPool.CopyTo(ref _enemyDiedNotificationPool);
         }
 
         public void Initialize()
@@ -41,10 +48,11 @@ namespace ECS
             _projectiles = new EntityPool<Projectile>(Constants.ProjectileCount);
             _doors = new EntityPool<Door>(Constants.DoorCount);
             _triggers = new EntityPool<Trigger>(Constants.TriggerCount);
-            
-            _doorDestructionNotificationPool = new NotificationPool<DoorDestructionNotification>();
-            _soundNotificationPool = new NotificationPool<SoundNotification>();
-            _enemyDiedNotificationPool = new NotificationPool<EnemyDiedNotification>();
+
+            _doorDestructionNotificationPool = new NotificationPool<DoorDestructionNotification>(8);
+            _soundNotificationPool = new NotificationPool<SoundNotification>(8);
+            _enemyDiedNotificationPool =
+                new NotificationPool<EnemyDiedNotification>(Constants.EnemyDiedNotificationCount);
         }
     }
 }

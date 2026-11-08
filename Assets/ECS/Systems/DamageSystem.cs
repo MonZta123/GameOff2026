@@ -1,5 +1,6 @@
 ﻿using Domain;
 using ECS.Entities;
+using ECS.Notification;
 using UnityEngine;
 
 namespace ECS.Systems
@@ -41,7 +42,7 @@ namespace ECS.Systems
         {
             ref var snapshot = ref world.GetSnapshot();
 
-            for (var i = snapshot._enemies.GetNumEntities() -1; i >= 0; i--)
+            for (var i = snapshot._enemies.GetNumEntities() - 1; i >= 0; i--)
             {
                 ref var enemy = ref snapshot._enemies.GetEntityAt(i);
 
@@ -56,11 +57,24 @@ namespace ECS.Systems
                     {
                         enemy._health -= GetProjectileDamage(projectile);
 
-                        snapshot._projectiles.DespawnAt(j); 
+                        var pos = projectile._position;
+
+                        snapshot._projectiles.DespawnAt(j);
 
                         if (enemy._health <= 0)
                         {
                             enemy._health = 0;
+
+                            var vector = (enemy._position - pos).normalized;
+
+                            snapshot._enemyDiedNotificationPool.Add(new EnemyDiedNotification()
+                            {
+                                _enemyType = enemy._type,
+                                _isKnockback = vector != Vector2.zero,
+                                _knockbackDirection = vector,
+                                _position = enemy._position
+                            });
+
                             snapshot._enemies.DespawnAt(i);
                             break;
                         }
@@ -68,7 +82,7 @@ namespace ECS.Systems
                 }
             }
 
-            for (var i = snapshot._players.GetNumEntities() - 1; i >= 0 ; i--)
+            for (var i = snapshot._players.GetNumEntities() - 1; i >= 0; i--)
             {
                 ref var player = ref snapshot._players.GetEntityAt(i);
 
@@ -84,11 +98,11 @@ namespace ECS.Systems
                         player._health -= GetProjectileDamage(projectile);
 
                         snapshot._projectiles.DespawnAt(j);
-                        
+
                         if (player._health <= 0)
                         {
                             player._health = 0;
-                           
+
                             break;
                         }
                     }

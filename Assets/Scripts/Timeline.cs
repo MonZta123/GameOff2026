@@ -43,6 +43,7 @@ public class Timeline
         _world.DoStep(span, tick);
 
         _snapshots[tick + 1].BuildFrom(_world.GetSnapshot());
+        _snapshots[tick + 1].CopyNotifications(_world.GetSnapshot());
     }
 
     public void InitNextSegment(MapDefinition mapDefinition)

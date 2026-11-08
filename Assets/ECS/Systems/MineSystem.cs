@@ -22,7 +22,6 @@ namespace ECS.Systems
                         {
                             snapshot._triggers.DespawnAt(j);
                             player._health -= 40;
-                            Debug.Log("boom");
                         }
                     }
                 }

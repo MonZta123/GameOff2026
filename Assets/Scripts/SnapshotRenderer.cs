@@ -1,19 +1,38 @@
 ﻿using Actors;
 using ECS;
+using Notifications;
 using UnityEngine;
 
 public class SnapshotRenderer : MonoBehaviour
 {
     [SerializeField]
-    private GameObjectPools gameObjectPools;
+    private Pools pools;
 
     public void SetSnapshot(Snapshot snapshot, int tick)
     {
-        UpdateView(snapshot._players, gameObjectPools._playerPool, tick);
-        UpdateView(snapshot._enemies, gameObjectPools._enemyPool, tick);
-        UpdateView(snapshot._projectiles, gameObjectPools._projectilePool, tick);
-        UpdateView(snapshot._doors, gameObjectPools._doorPool, tick);
-        UpdateView(snapshot._triggers, gameObjectPools._triggerPool, tick);
+        UpdateView(snapshot._players, pools._playerPool, tick);
+        UpdateView(snapshot._enemies, pools._enemyPool, tick);
+        UpdateView(snapshot._projectiles, pools._projectilePool, tick);
+        UpdateView(snapshot._doors, pools._doorPool, tick);
+        UpdateView(snapshot._triggers, pools._triggerPool, tick);
+    }
+
+    public void RunNotifications(Snapshot snapshot)
+    {
+        RunNotification(snapshot._enemyDiedNotificationPool, pools._enemyDiedNotificationPool);
+    }
+
+    private void RunNotification<TView, TNotification>(
+        NotificationPool<TNotification> ecsPool,
+        GameNotificationPool<TView, TNotification> pool)
+        where TView : NotificationView<TNotification>
+    {
+        for (var i = 0; i < ecsPool.GetNumNotifications(); i++)
+        {
+            var notification = ecsPool.GetEntityAt(i);
+
+            pool.Notify(notification);
+        }
     }
 
     private void UpdateView<TView, TEntity>(EntityPool<TEntity> ecsPool, GameObjectPool<TView, TEntity> pool, int tick)
@@ -49,6 +68,6 @@ public class SnapshotRenderer : MonoBehaviour
 
     public Player GetPlayerByIndex(int activePlayerIndex)
     {
-        return gameObjectPools._playerPool.Active[activePlayerIndex];
+        return pools._playerPool.Active[activePlayerIndex];
     }
 }

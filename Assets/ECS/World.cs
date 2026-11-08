@@ -4,7 +4,6 @@ using System.Linq;
 using Domain;
 using ECS.Entities;
 using ECS.Events;
-using ECS.Notification;
 using ECS.Systems;
 using UnityEngine;
 
@@ -17,7 +16,7 @@ namespace ECS
 
     public class World
     {
-        private Snapshot _snapshot;
+        private Snapshot _workspace;
 
         public MoveEvent[] _moveEvents;
 
@@ -60,13 +59,11 @@ namespace ECS
         public World(int tickRate)
         {
             _deltaTime = 1f / tickRate;
-            _snapshot = new Snapshot();
-            _snapshot.Initialize();
+            _workspace = new Snapshot();
+            _workspace.Initialize();
 
-            _moveEvents = new MoveEvent[_snapshot._players.GetMaxLength()];
+            _moveEvents = new MoveEvent[_workspace._players.GetMaxLength()];
             _shootEvents = new ShootEvent[64];
-            _soundEvents = new SoundNotification[64];
-            _doorDestructionNotifications = new DoorDestructionNotification[64];
 
             _projectileSystem = new ProjectileSystem();
             _damageSystem = new DamageSystem();
@@ -89,9 +86,9 @@ namespace ECS
             if (_map._map[(int)position.y * _map._width + (int)position.x] == 0)
                 return true;
 
-            for (var i = 0; i < _snapshot._doors.GetNumEntities(); i++)
+            for (var i = 0; i < _workspace._doors.GetNumEntities(); i++)
             {
-                var door = _snapshot._doors.GetEntityAt(i);
+                var door = _workspace._doors.GetEntityAt(i);
 
                 if (position.x >= door._leftBottom.x && position.x < door._rightTop.x &&
                     position.y >= door._leftBottom.y && position.y < door._rightTop.y)
@@ -321,7 +318,7 @@ namespace ECS
 
         public void SetState(Snapshot snapshot)
         {
-            _snapshot.BuildFrom(snapshot);
+            _workspace.BuildFrom(snapshot);
         }
 
         public void Decide(ReadOnlySpan<Intent> intents)
@@ -338,8 +335,16 @@ namespace ECS
             }
         }
 
+        private void ClearNotifications()
+        {
+            _workspace._doorDestructionNotificationPool.Clear();
+            _workspace._soundNotificationPool.Clear();
+            _workspace._enemyDiedNotificationPool.Clear();
+        }
+        
         public void DoStep(ReadOnlySpan<Intent> intents, int tick)
         {
+            ClearNotifications();
             ResetEventLists();
             BuildSensors();
             Decide(intents);
@@ -349,14 +354,9 @@ namespace ECS
 
         private void ResetEventLists()
         {
-            for (var i = 0; i < _snapshot._players.GetMaxLength(); i++)
+            for (var i = 0; i < _workspace._players.GetMaxLength(); i++)
             {
                 _moveEvents[i] = default;
-            }
-
-            for (var i = 0; i < _numSoundEvents; i++)
-            {
-                _soundEvents[i] = default;
             }
 
             for (var i = 0; i < _numShootEvents; i++)
@@ -364,19 +364,12 @@ namespace ECS
                 _shootEvents[i] = default;
             }
 
-            for (var i = 0; i < _numDoorDestructionNotifications; i++)
-            {
-                _doorDestructionNotifications[i] = default;
-            }
-
             _heavyDamageConeEvent = default;
             _blastWaveEvent = default;
 
             _hasHeavyDamageCone = false;
             _hasBlastWaveEvent = false;
-            _numDoorDestructionNotifications = 0;
             _numShootEvents = 0;
-            _numSoundEvents = 0;
         }
 
         public void BuildSensors()
@@ -411,9 +404,9 @@ namespace ECS
 
         public void Simulate()
         {
-            for (var i = 0; i < _snapshot._players.GetNumEntities(); i++)
+            for (var i = 0; i < _workspace._players.GetNumEntities(); i++)
             {
-                ref var player = ref _snapshot._players.GetEntityAt(i);
+                ref var player = ref _workspace._players.GetEntityAt(i);
 
                 player._angle = _moveEvents[i]._angle;
 
@@ -443,9 +436,9 @@ namespace ECS
                 player._position = nextPos - pushout;
             }
 
-            for (var i = 0; i < _snapshot._projectiles.GetNumEntities(); i++)
+            for (var i = 0; i < _workspace._projectiles.GetNumEntities(); i++)
             {
-                ref var projectile = ref _snapshot._projectiles.GetEntityAt(i);
+                ref var projectile = ref _workspace._projectiles.GetEntityAt(i);
 
                 var radians = projectile._angle * Mathf.Deg2Rad;
 
@@ -459,15 +452,15 @@ namespace ECS
                 projectile._position += movement;
             }
 
-            for (var i = 0; i < _snapshot._enemies.GetNumEntities(); i++)
+            for (var i = 0; i < _workspace._enemies.GetNumEntities(); i++)
             {
-                ref var enemy = ref _snapshot._enemies.GetEntityAt(i);
+                ref var enemy = ref _workspace._enemies.GetEntityAt(i);
 
                 enemy._position += enemy._linearVelocity * (GetMoveSpeed(enemy._type) * _deltaTime);
             }
         }
 
-        public ref Snapshot GetSnapshot() => ref _snapshot;
+        public ref Snapshot GetSnapshot() => ref _workspace;
 
         private Player GetCharacter(PlayerType type)
         {
