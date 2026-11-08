@@ -7,15 +7,15 @@ namespace ECS.Systems
     public class EnemySystem
     {
         private readonly float _minDot = math.cos(Constants.HeavyDamageConeAngle * Mathf.Deg2Rad);
-        
+
         public void Execute(World world, int tick)
         {
             ref var snapshot = ref world.GetSnapshot();
-
+            
             for (var i = snapshot._enemies.GetNumEntities() - 1; i >= 0; i--)
             {
                 ref var enemy = ref snapshot._enemies.GetEntityAt(i);
-                
+
                 // closest anschauen
                 var closestId = -1;
                 var closestDistance = float.MaxValue;

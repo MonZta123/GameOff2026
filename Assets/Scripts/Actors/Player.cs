@@ -2,6 +2,7 @@
 using UnityEditor;
 #endif
 using UnityEngine;
+using Visual;
 
 namespace Actors
 {
@@ -24,6 +25,9 @@ namespace Actors
 
         [SerializeField]
         private Animator animator;
+
+        [SerializeField]
+        private MoveBouncer moveBouncer;
 
         private bool _activePlayer;
 
@@ -59,6 +63,11 @@ namespace Actors
             var actionActive = _lastEntity._isActionActive;
             var isDead = _lastEntity._health <= 0;
 
+            var isBlockingMovementChanged = _lastPrimaryBlockingMovementTo != _lastEntity._primaryBlockingMovementTo;
+            _lastPrimaryBlockingMovementTo = _lastEntity._primaryBlockingMovementTo;
+
+            var time = 0f;
+
             if (isDead)
             {
                 animator.Play("Dead");
@@ -77,12 +86,28 @@ namespace Actors
                 return;
             }
 
+            var walk = false;
             var prefix = "Idle_";
-            var postfix = string.Empty;
+
+            var isPrimary = false;
 
             if (primaryActive)
             {
+                if (isBlockingMovementChanged)
+                {
+                    _isLeftHand = !_isLeftHand;
+                }
+                
+                isPrimary = true;
                 prefix = "Primary_";
+
+                var start = _lastEntity._primaryBlockingMovementTo - 16;
+                var end = _lastEntity._primaryBlockingMovementTo;
+
+                if (end == start)
+                    time = 0;
+                else
+                    time = Mathf.Clamp01((float)(_tick - start) / (float)(end - start));
             }
             else if (secondaryActive)
             {
@@ -91,6 +116,7 @@ namespace Actors
             else if (_lastEntity._velocity != Vector2.zero)
             {
                 prefix = "Walk_";
+                walk = true;
             }
 
             if (!secondaryActive)
@@ -102,20 +128,48 @@ namespace Actors
                 characterRenderer.flipX = _lastEntity._velocity.x > 0;
             }
 
-            if (angle is >= 45 and < 135)
-                postfix = "Back";
+            var postfix = angle switch
+            {
+                >= 45 and < 135 => "Back",
+                >= 135 and < 225 or >= 315 or < 45 => "Side",
+                _ => "Front"
+            };
 
-            if (angle is >= 135 and < 225 or >= 315 or < 45)
-                postfix = "Side";
-
-            if (angle is >= 225 and < 315)
-                postfix = "Front";
-
-            animator.Play(prefix + postfix);
+            if (isPrimary)
+            {
+                animator.Play(prefix + postfix + (_isLeftHand ? "L" : "R"), 0, time);
+            }
+            else
+            {
+                animator.Play(prefix + postfix);
+            }
 
             gunRenderer.sortingOrder = angle is > 0 and < 180 ? 4 : 6;
             gunRenderer.flipY = angle is > 90 and < 270;
+
+            if (walk)
+            {
+                if (_lastEntity._velocity != Vector2.zero)
+                {
+                    if (!moveBouncer.IsBouncing)
+                        moveBouncer.SetIsBouncing(true);
+                }
+                else
+                {
+                    if (moveBouncer.IsBouncing)
+                        moveBouncer.SetIsBouncing(false);
+                }
+            }
+            else
+            {
+                if (moveBouncer.IsBouncing)
+                    moveBouncer.SetIsBouncing(false);
+            }
         }
+        
+        private bool _isLeftHand = false;
+
+        private int _lastPrimaryBlockingMovementTo = 0;
 
         public void SetState(ECS.Entities.Player entity, int tick)
         {

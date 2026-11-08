@@ -22,11 +22,11 @@ AnimatorOverrideController:
   - m_OriginalClip: {fileID: 7400000, guid: fd6bb57d365c0f74e9c88877b35671b5, type: 2}
     m_OverrideClip: {fileID: 7400000, guid: d252ac21250a2db4e9d72b9b24b0ac03, type: 2}
   - m_OriginalClip: {fileID: 7400000, guid: 3b57c2d2e610ae046865f9e3685c7173, type: 2}
-    m_OverrideClip: {fileID: 7400000, guid: 048aa1edb6691ed49848b2d7b199c884, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: d8383d949baed5d4f84bbe4a11be5e7a, type: 2}
   - m_OriginalClip: {fileID: 7400000, guid: 9cd5467612887ef46acdb5a28fa340cf, type: 2}
-    m_OverrideClip: {fileID: 7400000, guid: 7f7d67fdea4b98b4dbf77a3744dcf667, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 4d59db016104593468526953fb3eec25, type: 2}
   - m_OriginalClip: {fileID: 7400000, guid: f9317a73d5619a942a3cef296097252f, type: 2}
-    m_OverrideClip: {fileID: 7400000, guid: f724244834aa0f24bbc0f96a2eba7a31, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 55397618577f40148b627d321aaa24d4, type: 2}
   - m_OriginalClip: {fileID: 7400000, guid: cf5f9084535c8744283efec1aaca50b8, type: 2}
     m_OverrideClip: {fileID: 7400000, guid: 8904d7fd2a46aab46bd5750591175d20, type: 2}
   - m_OriginalClip: {fileID: 7400000, guid: de08a58813657da40ac80f84bae1bb71, type: 2}
@@ -37,3 +37,9 @@ AnimatorOverrideController:
     m_OverrideClip: {fileID: 7400000, guid: 1fb94326d21b1efb2ad964076f7776d5, type: 2}
   - m_OriginalClip: {fileID: 7400000, guid: 4985e47024574374a8dbf391259c5f81, type: 2}
     m_OverrideClip: {fileID: 7400000, guid: 0304acb82e1efd5f3a6b81d50c396608, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: 26223ba6c8919644eb581872f5a4e7aa, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 7f7d67fdea4b98b4dbf77a3744dcf667, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: 1c8ba992ba547bd49bd253d857c05d31, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 048aa1edb6691ed49848b2d7b199c884, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: 7a2d68ad69879a3458fb7143b7c75d25, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: f724244834aa0f24bbc0f96a2eba7a31, type: 2}

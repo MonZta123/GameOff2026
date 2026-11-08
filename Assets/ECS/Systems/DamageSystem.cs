@@ -88,7 +88,6 @@ namespace ECS.Systems
                         if (player._health <= 0)
                         {
                             player._health = 0;
-                            // world.DespawnPlayer(player._id);
                            
                             break;
                         }

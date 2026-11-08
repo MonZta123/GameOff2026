@@ -20,7 +20,6 @@ namespace ECS
 
         public MoveEvent[] _moveEvents;
 
-        private AttackSystem _attackSystem;
         private ProjectileSystem _projectileSystem;
         private DamageSystem _damageSystem;
         private EnemySystem _enemySystem;
@@ -92,7 +91,6 @@ namespace ECS
             _soundEvents = new SoundNotification[64];
             _doorDestructionNotifications = new DoorDestructionNotification[64];
 
-            _attackSystem = new AttackSystem(tickRate);
             _projectileSystem = new ProjectileSystem();
             _damageSystem = new DamageSystem();
             _enemySystem = new EnemySystem();
@@ -104,7 +102,7 @@ namespace ECS
             _mineSystem = new MineSystem();
         }
 
-        private float _deltaTime;
+        private readonly float _deltaTime;
 
         public bool IsBlocked(Vector2 position)
         {
@@ -181,7 +179,7 @@ namespace ECS
 
                 snapshot._triggers.Spawn(evt);
             }
-            
+
             if (_map._demolitionZone.Length > 0)
             {
                 var demolitionZonePositions = _map._demolitionZone.ToList();
@@ -216,7 +214,7 @@ namespace ECS
 
                 var enemy = new Enemy()
                 {
-                    _health = 100, _angle = 0, _position = spawnZone[index], _type = EnemyType.Gunman
+                    _health = 100, _angle = 0, _position = spawnZone[index], _type = EnemyType.RonWeasly
                 };
 
                 snapshot._enemies.Spawn(enemy);
@@ -410,7 +408,6 @@ namespace ECS
 
         public void System(int tick)
         {
-            _attackSystem.Execute(this, tick);
             _heavySystem.Execute(this, tick);
             _hackerSystem.Execute(this, tick);
             _demolitionSystem.Execute(this, tick);
@@ -420,7 +417,7 @@ namespace ECS
             _damageSystem.Execute(this);
             _enemySystem.Execute(this, tick);
             _doorSystem.Execute(this, tick);
-            
+
             _mineSystem.Execute(this);
         }
 
@@ -428,7 +425,7 @@ namespace ECS
         {
             return type switch
             {
-                EnemyType.Gunman => Constants.GunmanMoveSpeed,
+                EnemyType.RonWeasly => Constants.GunmanMoveSpeed,
                 _ => 0.0f
             };
         }
