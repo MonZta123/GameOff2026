@@ -11,6 +11,7 @@
         public const int TriggerCount = 50;
         public const int EnemyDiedNotificationCount = 10;
         public const int SnipeShotNotificationCount = 5;
+        public const int DoorDestructionNotificationCount = 10;
         
         public const float HeavyDamageConeAngle = 45.0f;
         public const float HeavyDamageConeRadius = 3.0f;

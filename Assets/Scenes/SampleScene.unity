@@ -160,6 +160,7 @@ MonoBehaviour:
   trigger: {fileID: 1809184742179863036, guid: 211595e0d07bbca45a1d4b1f6afe64bc, type: 3}
   enemyDiedNotification: {fileID: -3753237614961215173, guid: cce6eb6079cadcf418c1ffa5d8dd0936, type: 3}
   snipeShotHitscan: {fileID: 5881695076861086506, guid: 4f9d4d50634fa604d92ccc98ab8c9ab9, type: 3}
+  doorDestructionNotification: {fileID: 8812971169499925501, guid: ff7c7d3e53ef17842881e9f38dd523ef, type: 3}
 --- !u!4 &13633224
 Transform:
   m_ObjectHideFlags: 0
@@ -248,36 +249,24 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::MapRenderer
   tilemap: {fileID: 86234799}
   border:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  outside: {fileID: 11400000, guid: 2b40c91131fe0824d85ab620d536890e, type: 2}
+  - {fileID: 11400000, guid: 89be90b4f5774854d85339bd0ab0c921, type: 2}
+  - {fileID: 11400000, guid: 60a720ef1fd875647b998a5b41197a95, type: 2}
+  - {fileID: 11400000, guid: 392c49ecf94c1444b95fe6423d1bcc07, type: 2}
+  - {fileID: 11400000, guid: d9d64a41415e4874b9e25722ec3ebc57, type: 2}
+  - {fileID: 11400000, guid: 5460df751279d514793b736ecfc919df, type: 2}
+  - {fileID: 11400000, guid: 86ebed28148c46544adf89b60b76284c, type: 2}
+  - {fileID: 11400000, guid: 08e5ca1130521a84aa8309817e5b3ca9, type: 2}
+  - {fileID: 11400000, guid: a785a7e353c24f84da582cf3699a1665, type: 2}
+  - {fileID: 11400000, guid: cd9f13d00745c904bbc2e64de7663453, type: 2}
+  - {fileID: 11400000, guid: f74110699aae59a45bdd1b3cccdd52aa, type: 2}
+  - {fileID: 11400000, guid: 08d754baf56dcaa4788e11b73f8e3c33, type: 2}
+  - {fileID: 11400000, guid: 9011fb44292b0494da2900b63c3a2aea, type: 2}
+  outside: {fileID: 11400000, guid: 03d08ec6c8cb3574897152e27bfa5118, type: 2}
   visualWall:
-  - {fileID: 11400000, guid: 918f5f48116358543a5d30602f03e16d, type: 2}
-  - {fileID: 11400000, guid: 3d991fd9c5c8c884ea8e58bb1baefb0d, type: 2}
-  - {fileID: 11400000, guid: afa6d2d2855b5194e9143c8283547f6d, type: 2}
-  floor: {fileID: 11400000, guid: d57fea67dff1c2b4bb7761a18eb88cce, type: 2}
+  - {fileID: 11400000, guid: a67d7b089a6370c4fb309fe770cd37fb, type: 2}
+  - {fileID: 11400000, guid: f18fed6895341124b9786691b361f37d, type: 2}
+  - {fileID: 11400000, guid: a2b4601915ed6414a8904460edf267e9, type: 2}
+  floor: {fileID: 11400000, guid: f745b1c47707bd04fb701a9ca6a8377d, type: 2}
 --- !u!114 &13633229
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -575,7 +564,7 @@ Camera:
   far clip plane: 5000
   field of view: 40
   orthographic: 1
-  orthographic size: 6.625
+  orthographic size: 6.34375
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2

@@ -3,6 +3,7 @@ using Domain;
 using ECS.Notification;
 using Notifications;
 using UnityEngine;
+using DoorDestructionNotification = Notifications.DoorDestructionNotification;
 using EnemyDiedNotification = Notifications.EnemyDiedNotification;
 
 public class Pools : MonoBehaviour
@@ -28,6 +29,9 @@ public class Pools : MonoBehaviour
     [SerializeField]
     private SnipeShotHitscan snipeShotHitscan;
 
+    [SerializeField]
+    private DoorDestructionNotification doorDestructionNotification;
+
     public GameObjectPool<Enemy, ECS.Entities.Enemy> _enemyPool;
     public GameObjectPool<Projectile, ECS.Entities.Projectile> _projectilePool;
     public GameObjectPool<Player, ECS.Entities.Player> _playerPool;
@@ -38,6 +42,9 @@ public class Pools : MonoBehaviour
         _enemyDiedNotificationPool;
 
     public GameNotificationPool<SnipeShotHitscan, SnipeShotNotification> _snipeShotNotificationPool;
+
+    public GameNotificationPool<DoorDestructionNotification, ECS.Notification.DoorDestructionNotification>
+        _doorDestructionNotificationPool;
 
     public void ClearAllNotificationPools()
     {
@@ -57,6 +64,10 @@ public class Pools : MonoBehaviour
         _enemyDiedNotificationPool =
             new GameNotificationPool<EnemyDiedNotification, ECS.Notification.EnemyDiedNotification>(Constants
                 .EnemyDiedNotificationCount);
+        
+        _doorDestructionNotificationPool =
+            new GameNotificationPool<DoorDestructionNotification, ECS.Notification.DoorDestructionNotification>(Constants
+                .DoorDestructionNotificationCount);
 
         for (var i = 0; i < Constants.PlayerCount; i++)
             _playerPool.Add(Instantiate(player));
@@ -78,5 +89,8 @@ public class Pools : MonoBehaviour
 
         for (var i = 0; i < Constants.SnipeShotNotificationCount; i++)
             _snipeShotNotificationPool.Add(Instantiate(snipeShotHitscan));
+
+        for (var i = 0; i < Constants.DoorDestructionNotificationCount; i++)
+            _doorDestructionNotificationPool.Add(Instantiate(doorDestructionNotification));
     }
 }

@@ -204,9 +204,9 @@ MonoBehaviour:
   - {fileID: 22100000, guid: 96af4afe097c5b54baa91f196dd0e41d, type: 2}
   gunz:
   - {fileID: 0}
-  - {fileID: 21300000, guid: a924580eb3318064295d5aa0448d6773, type: 3}
-  - {fileID: 21300000, guid: d677ca5baec12b4469558d7ecd524754, type: 3}
-  - {fileID: 21300000, guid: 11e67a04c939aad4eac5107d1c020e41, type: 3}
+  - {fileID: 21300000, guid: caf5bfacc931c27fba4086d12c1a2a29, type: 3}
+  - {fileID: 21300000, guid: 8c58e69e0ebffb2688109341f5178edb, type: 3}
+  - {fileID: 21300000, guid: a8ee22c542155811bb9e8cb750297952, type: 3}
   animator: {fileID: 4312963925318771561}
   moveBouncer: {fileID: 703506496700824585}
 --- !u!95 &8297006746479347886
@@ -318,8 +318,8 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 10, y: 10, z: 10}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 7527853348858930952}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -374,7 +374,7 @@ SpriteRenderer:
   m_MaskInteraction: 0
   m_Sprite: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_FlipX: 0
+  m_FlipX: 1
   m_FlipY: 0
   m_DrawMode: 0
   m_Size: {x: 0.24, y: 0.24}
