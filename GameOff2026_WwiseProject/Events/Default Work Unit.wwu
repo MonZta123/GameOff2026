@@ -186,12 +186,12 @@
 				</Folder>
 				<Folder Name="AMBIENCE" ID="{A55CDA7E-9FA2-4DE0-A034-544AD10448E8}" ShortID="841075420">
 					<ChildrenList>
-						<Event Name="Play_AMB_BarLoop" ID="{60AA718B-3A65-4ADA-83B9-49CEE4C11C7F}">
+						<Event Name="Play_AMB_OfficeLoop" ID="{60AA718B-3A65-4ADA-83B9-49CEE4C11C7F}">
 							<ChildrenList>
 								<Action Name="" ID="{3917A1AB-FEEA-4F88-AC31-397B14EB3F5D}" ShortID="986795723">
 									<ReferenceList>
 										<Reference Name="Target">
-											<ObjectRef Name="AmbienceBar" ID="{21DB8EFA-3F8E-41DD-944A-83F27536481D}" WorkUnitID="{AF633A36-6CC5-470E-AD72-3F76D6F661BF}"/>
+											<ObjectRef Name="AmbienceOffice" ID="{21DB8EFA-3F8E-41DD-944A-83F27536481D}" WorkUnitID="{AF633A36-6CC5-470E-AD72-3F76D6F661BF}"/>
 										</Reference>
 									</ReferenceList>
 								</Action>

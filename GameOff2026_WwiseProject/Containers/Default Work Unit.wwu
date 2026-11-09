@@ -221,7 +221,7 @@
 										</Reference>
 									</ReferenceList>
 									<ChildrenList>
-										<Sound Name="Shift_01" ID="{A1E495DB-8924-446F-88F9-0FC2A788CE2D}" ShortID="166261751">
+										<Sound Name="Shift_01" ID="{AA2CC589-E303-4220-B3D9-B68BD8AD5C55}" ShortID="291682904">
 											<ReferenceList>
 												<Reference Name="Conversion">
 													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{4ADFD3A0-A42B-432C-8502-1433439D5054}"/>
@@ -231,7 +231,7 @@
 												</Reference>
 											</ReferenceList>
 											<ChildrenList>
-												<AudioFileSource Name="Shift_01" ID="{0C85F317-C286-4B10-BD33-F3B82D3BD9EE}">
+												<AudioFileSource Name="Shift_01" ID="{261B77B5-3516-447C-B0BE-309AEA00A55F}">
 													<Language>SFX</Language>
 													<AudioFile>Shift_01.wav</AudioFile>
 													<MediaIDList>
@@ -240,10 +240,10 @@
 												</AudioFileSource>
 											</ChildrenList>
 											<ActiveSourceList>
-												<ActiveSource Name="Shift_01" ID="{0C85F317-C286-4B10-BD33-F3B82D3BD9EE}" Platform="Linked"/>
+												<ActiveSource Name="Shift_01" ID="{261B77B5-3516-447C-B0BE-309AEA00A55F}" Platform="Linked"/>
 											</ActiveSourceList>
 										</Sound>
-										<Sound Name="Shift_02" ID="{5DD22EF4-204C-4DD9-AE90-243C7ED3546F}" ShortID="199786234">
+										<Sound Name="Shift_02" ID="{50C3C8FD-5489-4E1B-B918-3E1B39830C89}" ShortID="908602017">
 											<ReferenceList>
 												<Reference Name="Conversion">
 													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{4ADFD3A0-A42B-432C-8502-1433439D5054}"/>
@@ -253,7 +253,7 @@
 												</Reference>
 											</ReferenceList>
 											<ChildrenList>
-												<AudioFileSource Name="Shift_02" ID="{89879660-0E1E-45CA-8F33-A7D93EA14002}">
+												<AudioFileSource Name="Shift_02" ID="{771F4DB1-0DCA-43FB-8706-24E85BDDF871}">
 													<Language>SFX</Language>
 													<AudioFile>Shift_02.wav</AudioFile>
 													<MediaIDList>
@@ -262,29 +262,7 @@
 												</AudioFileSource>
 											</ChildrenList>
 											<ActiveSourceList>
-												<ActiveSource Name="Shift_02" ID="{89879660-0E1E-45CA-8F33-A7D93EA14002}" Platform="Linked"/>
-											</ActiveSourceList>
-										</Sound>
-										<Sound Name="Shift_03" ID="{5C219280-F6C9-4A46-B0E2-28F664AF3CD9}" ShortID="520657424">
-											<ReferenceList>
-												<Reference Name="Conversion">
-													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{4ADFD3A0-A42B-432C-8502-1433439D5054}"/>
-												</Reference>
-												<Reference Name="OutputBus">
-													<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{F8A65CB3-3EA6-47C9-8C5A-27068DB4C3FF}"/>
-												</Reference>
-											</ReferenceList>
-											<ChildrenList>
-												<AudioFileSource Name="Shift_03" ID="{A5D8DF4D-3CC6-4CD5-9FE0-70F62705F4B7}">
-													<Language>SFX</Language>
-													<AudioFile>Shift_03.wav</AudioFile>
-													<MediaIDList>
-														<MediaID ID="789563096"/>
-													</MediaIDList>
-												</AudioFileSource>
-											</ChildrenList>
-											<ActiveSourceList>
-												<ActiveSource Name="Shift_03" ID="{A5D8DF4D-3CC6-4CD5-9FE0-70F62705F4B7}" Platform="Linked"/>
+												<ActiveSource Name="Shift_02" ID="{771F4DB1-0DCA-43FB-8706-24E85BDDF871}" Platform="Linked"/>
 											</ActiveSourceList>
 										</Sound>
 									</ChildrenList>
@@ -543,16 +521,7 @@
 										</Reference>
 									</ReferenceList>
 									<ChildrenList>
-										<Sound Name="BombExplosion_03" ID="{8DE19295-4B7C-4553-BAEC-064209DE7420}" ShortID="640127651">
-											<PropertyList>
-												<Property Name="Lowpass" Type="int16">
-													<ModifierList>
-														<ModifierInfo>
-															<Modifier Name="" ID="{3D71774F-213D-43EE-9180-E7C505A4CDE2}"/>
-														</ModifierInfo>
-													</ModifierList>
-												</Property>
-											</PropertyList>
+										<Sound Name="BombExplosion_01" ID="{B29DBDB3-6D73-41B9-8BEE-A2C8C382A242}" ShortID="772828038">
 											<ReferenceList>
 												<Reference Name="Conversion">
 													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{4ADFD3A0-A42B-432C-8502-1433439D5054}"/>
@@ -562,38 +531,7 @@
 												</Reference>
 											</ReferenceList>
 											<ChildrenList>
-												<AudioFileSource Name="BombExplosion_03" ID="{CB9EE179-1E84-4BE9-BD64-951737084701}">
-													<Language>SFX</Language>
-													<AudioFile>BombExplosion_03.wav</AudioFile>
-													<MediaIDList>
-														<MediaID ID="940281172"/>
-													</MediaIDList>
-												</AudioFileSource>
-											</ChildrenList>
-											<ActiveSourceList>
-												<ActiveSource Name="BombExplosion_03" ID="{CB9EE179-1E84-4BE9-BD64-951737084701}" Platform="Linked"/>
-											</ActiveSourceList>
-										</Sound>
-										<Sound Name="BombExplosion_01" ID="{64E10132-9C51-415F-89F3-9629CA1D76C1}" ShortID="101751372">
-											<PropertyList>
-												<Property Name="Lowpass" Type="int16">
-													<ModifierList>
-														<ModifierInfo>
-															<Modifier Name="" ID="{1EC81C23-D636-4EC1-86DC-8D7AFC65F0F5}"/>
-														</ModifierInfo>
-													</ModifierList>
-												</Property>
-											</PropertyList>
-											<ReferenceList>
-												<Reference Name="Conversion">
-													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{4ADFD3A0-A42B-432C-8502-1433439D5054}"/>
-												</Reference>
-												<Reference Name="OutputBus">
-													<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{F8A65CB3-3EA6-47C9-8C5A-27068DB4C3FF}"/>
-												</Reference>
-											</ReferenceList>
-											<ChildrenList>
-												<AudioFileSource Name="BombExplosion_01" ID="{CBA51737-5316-4C09-8AE7-F628BD8B0FF7}">
+												<AudioFileSource Name="BombExplosion_01" ID="{27F22299-F884-4BD7-A21C-E02EC0BFEC2F}">
 													<Language>SFX</Language>
 													<AudioFile>BombExplosion_01.wav</AudioFile>
 													<MediaIDList>
@@ -602,19 +540,10 @@
 												</AudioFileSource>
 											</ChildrenList>
 											<ActiveSourceList>
-												<ActiveSource Name="BombExplosion_01" ID="{CBA51737-5316-4C09-8AE7-F628BD8B0FF7}" Platform="Linked"/>
+												<ActiveSource Name="BombExplosion_01" ID="{27F22299-F884-4BD7-A21C-E02EC0BFEC2F}" Platform="Linked"/>
 											</ActiveSourceList>
 										</Sound>
-										<Sound Name="BombExplosion_02" ID="{7EF60D71-0A65-42F6-A109-7FE65BE40CC7}" ShortID="72839725">
-											<PropertyList>
-												<Property Name="Lowpass" Type="int16">
-													<ModifierList>
-														<ModifierInfo>
-															<Modifier Name="" ID="{CAB8F567-860E-402D-81FC-0C6952D8E487}"/>
-														</ModifierInfo>
-													</ModifierList>
-												</Property>
-											</PropertyList>
+										<Sound Name="BombExplosion_02" ID="{5A72CB33-B227-47A7-9F05-ADDDC4ADF5BA}" ShortID="394419213">
 											<ReferenceList>
 												<Reference Name="Conversion">
 													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{4ADFD3A0-A42B-432C-8502-1433439D5054}"/>
@@ -624,7 +553,7 @@
 												</Reference>
 											</ReferenceList>
 											<ChildrenList>
-												<AudioFileSource Name="BombExplosion_02" ID="{A1490CBC-76F7-4FC7-91B3-E9856A24F7E1}">
+												<AudioFileSource Name="BombExplosion_02" ID="{0509CD69-D165-48F6-BF92-6EF78455849B}">
 													<Language>SFX</Language>
 													<AudioFile>BombExplosion_02.wav</AudioFile>
 													<MediaIDList>
@@ -633,7 +562,29 @@
 												</AudioFileSource>
 											</ChildrenList>
 											<ActiveSourceList>
-												<ActiveSource Name="BombExplosion_02" ID="{A1490CBC-76F7-4FC7-91B3-E9856A24F7E1}" Platform="Linked"/>
+												<ActiveSource Name="BombExplosion_02" ID="{0509CD69-D165-48F6-BF92-6EF78455849B}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+										<Sound Name="BombExplosion_03" ID="{42D73F7F-3ED1-455C-B45C-3F3C455BF5D1}" ShortID="439355057">
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{4ADFD3A0-A42B-432C-8502-1433439D5054}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{F8A65CB3-3EA6-47C9-8C5A-27068DB4C3FF}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="BombExplosion_03" ID="{05AF0FEE-C1AF-4985-A76F-CAFD580D1AAD}">
+													<Language>SFX</Language>
+													<AudioFile>BombExplosion_03.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="940281172"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ActiveSourceList>
+												<ActiveSource Name="BombExplosion_03" ID="{05AF0FEE-C1AF-4985-A76F-CAFD580D1AAD}" Platform="Linked"/>
 											</ActiveSourceList>
 										</Sound>
 									</ChildrenList>
@@ -692,7 +643,7 @@
 											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{4ADFD3A0-A42B-432C-8502-1433439D5054}"/>
 										</Reference>
 										<Reference Name="OutputBus">
-											<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{F8A65CB3-3EA6-47C9-8C5A-27068DB4C3FF}"/>
+											<ObjectRef Name="SFX" ID="{282B1519-D877-4EF3-9048-C765F53AAF2A}" WorkUnitID="{F8A65CB3-3EA6-47C9-8C5A-27068DB4C3FF}"/>
 										</Reference>
 									</ReferenceList>
 									<ChildrenList>
@@ -714,7 +665,7 @@
 											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{4ADFD3A0-A42B-432C-8502-1433439D5054}"/>
 										</Reference>
 										<Reference Name="OutputBus">
-											<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{F8A65CB3-3EA6-47C9-8C5A-27068DB4C3FF}"/>
+											<ObjectRef Name="SFX" ID="{282B1519-D877-4EF3-9048-C765F53AAF2A}" WorkUnitID="{F8A65CB3-3EA6-47C9-8C5A-27068DB4C3FF}"/>
 										</Reference>
 									</ReferenceList>
 									<ChildrenList>
@@ -736,7 +687,7 @@
 											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{4ADFD3A0-A42B-432C-8502-1433439D5054}"/>
 										</Reference>
 										<Reference Name="OutputBus">
-											<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{F8A65CB3-3EA6-47C9-8C5A-27068DB4C3FF}"/>
+											<ObjectRef Name="SFX" ID="{282B1519-D877-4EF3-9048-C765F53AAF2A}" WorkUnitID="{F8A65CB3-3EA6-47C9-8C5A-27068DB4C3FF}"/>
 										</Reference>
 									</ReferenceList>
 									<ChildrenList>
@@ -1294,7 +1245,7 @@
 				</Folder>
 				<Folder Name="AMBIENCE" ID="{CD740D99-6C6C-4C35-8AF4-9972D3290E30}" ShortID="627092753">
 					<ChildrenList>
-						<RandomSequenceContainer Name="AmbienceBar" ID="{21DB8EFA-3F8E-41DD-944A-83F27536481D}" ShortID="231722023">
+						<RandomSequenceContainer Name="AmbienceOffice" ID="{21DB8EFA-3F8E-41DD-944A-83F27536481D}" ShortID="231722023">
 							<PropertyList>
 								<Property Name="PlayMechanismStepOrContinuous" Type="int16" Value="0"/>
 								<Property Name="RandomOrSequence" Type="int16" Value="0"/>

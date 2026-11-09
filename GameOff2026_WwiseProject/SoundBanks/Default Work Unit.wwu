@@ -18,7 +18,7 @@
 						<ObjectRef Name="Play_SFX_C_Footsteps" ID="{76CCE283-0B61-485F-84F2-96637B943C4D}" WorkUnitID="{2B12C590-A22E-47AF-9697-251FEA2DB802}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="Play_SFX_BombExplosion" ID="{30F644E1-4A6B-491A-B312-78F56222651D}" WorkUnitID="{2B12C590-A22E-47AF-9697-251FEA2DB802}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="Play_VO_D_Order" ID="{381E0E30-E568-498C-9D9D-52B69D5F960D}" WorkUnitID="{2B12C590-A22E-47AF-9697-251FEA2DB802}" Origin="Manual" Filter="7"/>
-						<ObjectRef Name="Play_AMB_BarLoop" ID="{60AA718B-3A65-4ADA-83B9-49CEE4C11C7F}" WorkUnitID="{2B12C590-A22E-47AF-9697-251FEA2DB802}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="Play_AMB_OfficeLoop" ID="{60AA718B-3A65-4ADA-83B9-49CEE4C11C7F}" WorkUnitID="{2B12C590-A22E-47AF-9697-251FEA2DB802}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="Play_SFX_Shift" ID="{FE2001B2-A82F-4B45-BBE4-31BBED8D8DED}" WorkUnitID="{2B12C590-A22E-47AF-9697-251FEA2DB802}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="Play_SFX_MineCountdown" ID="{2E4350FE-4AE1-4D66-A4EF-72CE53E75CF4}" WorkUnitID="{2B12C590-A22E-47AF-9697-251FEA2DB802}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="Play_SFX_MineExplode" ID="{2E3C0A98-F559-4F88-94EA-9353FFFA4DB9}" WorkUnitID="{2B12C590-A22E-47AF-9697-251FEA2DB802}" Origin="Manual" Filter="7"/>

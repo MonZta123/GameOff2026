@@ -10,7 +10,7 @@
     "Type": "User",
     "GUID": "{3059A6CE-8152-4CD2-BEA9-69E98BB60D65}",
     "Language": "SFX",
-    "Hash": "{760E32CD-8ADB-08C1-FED2-F4991E355DC0}",
+    "Hash": "{10B59B26-DDEC-5638-870B-0E117C337238}",
     "ObjectPath": "\\SoundBanks\\Default Work Unit\\Main",
     "ShortName": "Main",
     "Path": "Main.bnk",
@@ -21,7 +21,7 @@
       "Streaming": "false",
       "Location": "Memory",
       "ShortName": "Shift_02.wav",
-      "CachePath": "45/{45A22595-5997-E214-AD62-7EA438F7AF57}.wem"
+      "CachePath": "86/{86AFA59F-9209-BF46-4B5C-A5EE3E5B9CC6}.wem"
      },
      {
       "Id": "8819262",
@@ -45,7 +45,7 @@
       "Streaming": "false",
       "Location": "Memory",
       "ShortName": "BombExplosion_01.wav",
-      "CachePath": "41/{419C02AD-AF16-03F4-AFEA-A384614BF394}.wem"
+      "CachePath": "7E/{7E29FE7B-993E-A101-A8C8-291096057219}.wem"
      },
      {
       "Id": "112815051",
@@ -221,7 +221,7 @@
       "Streaming": "false",
       "Location": "Memory",
       "ShortName": "BigExplosion.wav",
-      "CachePath": "7D/{7DF81C78-B0F6-312F-244F-6026EDE6FD75}.wem"
+      "CachePath": "A0/{A0D95EF1-337B-CF75-3E03-27B9F1F210E2}.wem"
      },
      {
       "Id": "735998697",
@@ -230,14 +230,6 @@
       "Location": "Memory",
       "ShortName": "VO_D_Order03.wav",
       "CachePath": "68/{682B233C-BDC2-0C4E-24AD-BD29936307E0}.wem"
-     },
-     {
-      "Id": "789563096",
-      "Language": "SFX",
-      "Streaming": "false",
-      "Location": "Memory",
-      "ShortName": "Shift_03.wav",
-      "CachePath": "5F/{5F3653ED-FBA7-D15D-E160-76457BC0A719}.wem"
      },
      {
       "Id": "911343175",
@@ -277,7 +269,7 @@
       "Streaming": "false",
       "Location": "Memory",
       "ShortName": "Shift_01.wav",
-      "CachePath": "7A/{7AD91EBF-3E4A-793C-77AE-13E2AF6DC02E}.wem"
+      "CachePath": "13/{13CA776A-41A5-9260-0102-71CCB1944CAB}.wem"
      },
      {
       "Id": "940281172",
@@ -285,7 +277,7 @@
       "Streaming": "false",
       "Location": "Memory",
       "ShortName": "BombExplosion_03.wav",
-      "CachePath": "86/{86563DFC-E0B3-56AC-ED25-3318C368358B}.wem"
+      "CachePath": "B4/{B4CA8940-4505-37D3-6E8E-1B5E7A9F67C3}.wem"
      },
      {
       "Id": "953017544",
@@ -325,7 +317,7 @@
       "Streaming": "false",
       "Location": "Memory",
       "ShortName": "BombExplosion_02.wav",
-      "CachePath": "AD/{ADE1156C-AE23-C18C-63CE-B5C433F0BF83}.wem"
+      "CachePath": "E8/{E857D3C2-6FDC-9BF3-6EB1-22CE33341898}.wem"
      },
      {
       "Id": "1053093362",
@@ -338,9 +330,9 @@
     ],
     "Events": [
      {
-      "Id": "2856109558",
-      "Name": "Play_AMB_BarLoop",
-      "ObjectPath": "\\Events\\Default Work Unit\\AMBIENCE\\Play_AMB_BarLoop",
+      "Id": "910820175",
+      "Name": "Play_AMB_OfficeLoop",
+      "ObjectPath": "\\Events\\Default Work Unit\\AMBIENCE\\Play_AMB_OfficeLoop",
       "GUID": "{60AA718B-3A65-4ADA-83B9-49CEE4C11C7F}",
       "DurationType": "Infinite",
       "MediaRefs": [
@@ -436,8 +428,8 @@
       "ObjectPath": "\\Events\\Default Work Unit\\SFX\\Impacts\\Play_SFX_BombExplosion",
       "GUID": "{30F644E1-4A6B-491A-B312-78F56222651D}",
       "DurationType": "OneShot",
-      "DurationMin": "1.3934182",
-      "DurationMax": "5.3946037",
+      "DurationMin": "1.683693",
+      "DurationMax": "6.9634748",
       "MediaRefs": [
        {
         "Id": "105804198"
@@ -513,8 +505,8 @@
       "ObjectPath": "\\Events\\Default Work Unit\\SFX\\Impacts\\Play_SFX_MineExplode",
       "GUID": "{2E3C0A98-F559-4F88-94EA-9353FFFA4DB9}",
       "DurationType": "OneShot",
-      "DurationMin": "1.3934182",
-      "DurationMax": "5.3946037",
+      "DurationMin": "1.683693",
+      "DurationMax": "6.9634748",
       "MediaRefs": [
        {
         "Id": "105804198"
@@ -533,14 +525,11 @@
       "ObjectPath": "\\Events\\Default Work Unit\\SFX\\Movement\\Play_SFX_Shift",
       "GUID": "{FE2001B2-A82F-4B45-BBE4-31BBED8D8DED}",
       "DurationType": "OneShot",
-      "DurationMin": "0.30204666",
-      "DurationMax": "1.0505333",
+      "DurationMin": "1.3320011",
+      "DurationMax": "4.22884",
       "MediaRefs": [
        {
         "Id": "3566932"
-       },
-       {
-        "Id": "789563096"
        },
        {
         "Id": "936072716"
@@ -650,6 +639,6 @@
     ]
    }
   ],
-  "FileHash": "{F2E086FC-EB43-B51B-0335-A02340B156E7}"
+  "FileHash": "{68B76E3A-5FA0-970E-045A-1102E5B7B91A}"
  }
 }

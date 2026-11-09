@@ -13,7 +13,7 @@ namespace AK
 {
     namespace EVENTS
     {
-        static const AkUniqueID PLAY_AMB_BARLOOP = 2856109558U;
+        static const AkUniqueID PLAY_AMB_OFFICELOOP = 910820175U;
         static const AkUniqueID PLAY_MUS_MAINMENU = 1043591872U;
         static const AkUniqueID PLAY_SFX_A_FOOTSTEPS = 2635421491U;
         static const AkUniqueID PLAY_SFX_B_FOOTSTEPS = 1264204328U;
