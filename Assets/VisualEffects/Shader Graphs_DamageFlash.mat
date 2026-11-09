@@ -54,7 +54,7 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - _flashAmount: 0
+    - _flashAmount: 5.11
     m_Colors:
     - White: {r: 1, g: 1, b: 1, a: 1}
     - _flashColour: {r: 1, g: 1, b: 1, a: 1}

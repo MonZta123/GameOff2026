@@ -75,8 +75,8 @@ TextureImporter:
   - serializedVersion: 4
     buildTarget: DefaultTexturePlatform
     maxTextureSize: 2048
-    resizeAlgorithm: 1
-    textureFormat: 20
+    resizeAlgorithm: 0
+    textureFormat: 4
     textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
@@ -119,9 +119,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 160
-        width: 16
-        height: 16
+        y: 180
+        width: 18
+        height: 18
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -140,10 +140,10 @@ TextureImporter:
       name: spr_tnt_1
       rect:
         serializedVersion: 2
-        x: 16
-        y: 160
-        width: 16
-        height: 16
+        x: 18
+        y: 180
+        width: 18
+        height: 18
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -162,10 +162,10 @@ TextureImporter:
       name: spr_tnt_2
       rect:
         serializedVersion: 2
-        x: 32
-        y: 160
-        width: 16
-        height: 16
+        x: 36
+        y: 180
+        width: 18
+        height: 18
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -184,10 +184,10 @@ TextureImporter:
       name: spr_tnt_3
       rect:
         serializedVersion: 2
-        x: 48
-        y: 160
-        width: 16
-        height: 16
+        x: 54
+        y: 180
+        width: 18
+        height: 18
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -207,9 +207,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 144
-        width: 16
-        height: 16
+        y: 162
+        width: 18
+        height: 18
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -228,10 +228,10 @@ TextureImporter:
       name: spr_tnt_5
       rect:
         serializedVersion: 2
-        x: 16
-        y: 144
-        width: 16
-        height: 16
+        x: 18
+        y: 162
+        width: 18
+        height: 18
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -250,10 +250,10 @@ TextureImporter:
       name: spr_tnt_6
       rect:
         serializedVersion: 2
-        x: 32
-        y: 144
-        width: 16
-        height: 16
+        x: 36
+        y: 162
+        width: 18
+        height: 18
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -272,10 +272,10 @@ TextureImporter:
       name: spr_tnt_7
       rect:
         serializedVersion: 2
-        x: 48
-        y: 144
-        width: 16
-        height: 16
+        x: 54
+        y: 162
+        width: 18
+        height: 18
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -295,9 +295,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 128
-        width: 16
-        height: 16
+        y: 144
+        width: 18
+        height: 18
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -316,10 +316,10 @@ TextureImporter:
       name: spr_tnt_9
       rect:
         serializedVersion: 2
-        x: 16
-        y: 128
-        width: 16
-        height: 16
+        x: 18
+        y: 144
+        width: 18
+        height: 18
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -338,10 +338,10 @@ TextureImporter:
       name: spr_tnt_10
       rect:
         serializedVersion: 2
-        x: 32
-        y: 128
-        width: 16
-        height: 16
+        x: 36
+        y: 144
+        width: 18
+        height: 18
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -360,10 +360,10 @@ TextureImporter:
       name: spr_tnt_11
       rect:
         serializedVersion: 2
-        x: 48
-        y: 128
-        width: 16
-        height: 16
+        x: 54
+        y: 144
+        width: 18
+        height: 18
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -383,9 +383,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 112
-        width: 16
-        height: 16
+        y: 126
+        width: 18
+        height: 18
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -404,10 +404,10 @@ TextureImporter:
       name: spr_tnt_13
       rect:
         serializedVersion: 2
-        x: 16
-        y: 112
-        width: 16
-        height: 16
+        x: 18
+        y: 126
+        width: 18
+        height: 18
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -426,10 +426,10 @@ TextureImporter:
       name: spr_tnt_14
       rect:
         serializedVersion: 2
-        x: 32
-        y: 112
-        width: 16
-        height: 16
+        x: 36
+        y: 126
+        width: 18
+        height: 18
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -448,10 +448,10 @@ TextureImporter:
       name: spr_tnt_15
       rect:
         serializedVersion: 2
-        x: 48
-        y: 112
-        width: 16
-        height: 16
+        x: 54
+        y: 126
+        width: 18
+        height: 18
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -471,9 +471,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 96
-        width: 16
-        height: 16
+        y: 108
+        width: 18
+        height: 18
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -492,10 +492,10 @@ TextureImporter:
       name: spr_tnt_17
       rect:
         serializedVersion: 2
-        x: 16
-        y: 96
-        width: 16
-        height: 16
+        x: 18
+        y: 108
+        width: 18
+        height: 18
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -514,10 +514,10 @@ TextureImporter:
       name: spr_tnt_18
       rect:
         serializedVersion: 2
-        x: 32
-        y: 96
-        width: 16
-        height: 16
+        x: 36
+        y: 108
+        width: 18
+        height: 18
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -536,10 +536,10 @@ TextureImporter:
       name: spr_tnt_19
       rect:
         serializedVersion: 2
-        x: 48
-        y: 96
-        width: 16
-        height: 16
+        x: 54
+        y: 108
+        width: 18
+        height: 18
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -559,9 +559,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 80
-        width: 16
-        height: 16
+        y: 90
+        width: 18
+        height: 18
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -580,10 +580,10 @@ TextureImporter:
       name: spr_tnt_21
       rect:
         serializedVersion: 2
-        x: 16
-        y: 80
-        width: 16
-        height: 16
+        x: 18
+        y: 90
+        width: 18
+        height: 18
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -602,10 +602,10 @@ TextureImporter:
       name: spr_tnt_22
       rect:
         serializedVersion: 2
-        x: 32
-        y: 80
-        width: 16
-        height: 16
+        x: 36
+        y: 90
+        width: 18
+        height: 18
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -624,10 +624,10 @@ TextureImporter:
       name: spr_tnt_23
       rect:
         serializedVersion: 2
-        x: 48
-        y: 80
-        width: 16
-        height: 16
+        x: 54
+        y: 90
+        width: 18
+        height: 18
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -647,9 +647,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 64
-        width: 16
-        height: 16
+        y: 72
+        width: 18
+        height: 18
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -668,10 +668,10 @@ TextureImporter:
       name: spr_tnt_25
       rect:
         serializedVersion: 2
-        x: 16
-        y: 64
-        width: 16
-        height: 16
+        x: 18
+        y: 72
+        width: 18
+        height: 18
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -690,10 +690,10 @@ TextureImporter:
       name: spr_tnt_26
       rect:
         serializedVersion: 2
-        x: 32
-        y: 64
-        width: 16
-        height: 16
+        x: 36
+        y: 72
+        width: 18
+        height: 18
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -712,10 +712,10 @@ TextureImporter:
       name: spr_tnt_27
       rect:
         serializedVersion: 2
-        x: 48
-        y: 64
-        width: 16
-        height: 16
+        x: 54
+        y: 72
+        width: 18
+        height: 18
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -735,9 +735,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 48
-        width: 16
-        height: 16
+        y: 54
+        width: 18
+        height: 18
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -756,10 +756,10 @@ TextureImporter:
       name: spr_tnt_29
       rect:
         serializedVersion: 2
-        x: 16
-        y: 48
-        width: 16
-        height: 16
+        x: 18
+        y: 54
+        width: 18
+        height: 18
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -778,10 +778,10 @@ TextureImporter:
       name: spr_tnt_30
       rect:
         serializedVersion: 2
-        x: 32
-        y: 48
-        width: 16
-        height: 16
+        x: 36
+        y: 54
+        width: 18
+        height: 18
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -800,10 +800,10 @@ TextureImporter:
       name: spr_tnt_31
       rect:
         serializedVersion: 2
-        x: 48
-        y: 48
-        width: 16
-        height: 16
+        x: 54
+        y: 54
+        width: 18
+        height: 18
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -823,9 +823,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 32
-        width: 16
-        height: 16
+        y: 36
+        width: 18
+        height: 18
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -844,10 +844,10 @@ TextureImporter:
       name: spr_tnt_33
       rect:
         serializedVersion: 2
-        x: 16
-        y: 32
-        width: 16
-        height: 16
+        x: 18
+        y: 36
+        width: 18
+        height: 18
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -866,10 +866,10 @@ TextureImporter:
       name: spr_tnt_34
       rect:
         serializedVersion: 2
-        x: 32
-        y: 32
-        width: 16
-        height: 16
+        x: 36
+        y: 36
+        width: 18
+        height: 18
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -888,10 +888,10 @@ TextureImporter:
       name: spr_tnt_35
       rect:
         serializedVersion: 2
-        x: 48
-        y: 32
-        width: 16
-        height: 16
+        x: 54
+        y: 36
+        width: 18
+        height: 18
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -911,9 +911,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 16
-        width: 16
-        height: 16
+        y: 18
+        width: 18
+        height: 18
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -934,8 +934,8 @@ TextureImporter:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 16
-        height: 16
+        width: 18
+        height: 18
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -954,10 +954,10 @@ TextureImporter:
       name: spr_tnt_38
       rect:
         serializedVersion: 2
-        x: 16
+        x: 18
         y: 0
-        width: 16
-        height: 16
+        width: 18
+        height: 18
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -976,10 +976,10 @@ TextureImporter:
       name: spr_tnt_39
       rect:
         serializedVersion: 2
-        x: 32
+        x: 36
         y: 0
-        width: 16
-        height: 16
+        width: 18
+        height: 18
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -998,10 +998,10 @@ TextureImporter:
       name: spr_tnt_40
       rect:
         serializedVersion: 2
-        x: 48
+        x: 54
         y: 0
-        width: 16
-        height: 16
+        width: 18
+        height: 18
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1030,7 +1030,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries:
       - key: SpriteEditor.SliceSettings
-        value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":16.0,"y":16.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":1,"keepEmptyRects":false,"isAlternate":false}'
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":18.0,"y":18.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":1,"keepEmptyRects":false,"isAlternate":false}'
     nameFileIdTable:
       spr_tnt_0: -1564140297003816623
       spr_tnt_1: -11142555
