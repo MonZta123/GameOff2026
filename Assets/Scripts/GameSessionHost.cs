@@ -31,11 +31,14 @@ public class GameSessionHost : MonoBehaviour
     [SerializeField]
     private InputManager inputManager;
 
-    private TickDriver _tickDriver;
-    private Timeline _timeline;
-
     [SerializeField]
     private Texture2D map;
+
+    [SerializeField]
+    private Transform snipeTarget;
+
+    private TickDriver _tickDriver;
+    private Timeline _timeline;
 
     private GameFlowManager _gameFlowManager;
 
@@ -74,7 +77,22 @@ public class GameSessionHost : MonoBehaviour
         _activePlayerObject?.SetActivePlayer(false);
         _activePlayerObject = snapshotRenderer.GetPlayerByIndex(snapshot._players.GetNumEntities() - 1);
         _activePlayerObject.SetActivePlayer(true);
-        positionComposer.VirtualCamera.Follow = _activePlayerObject.transform;
+
+        if (snapshot._players.GetNumEntities() < 4)
+        {
+            positionComposer.VirtualCamera.Follow = _activePlayerObject.transform;
+            positionComposer.Damping = Vector3.one;
+        }
+        else
+        {
+            positionComposer.VirtualCamera.Follow = snipeTarget;
+            positionComposer.Damping = Vector3.one * 0.5f;
+        }
+
+        if (snapshot._players.GetNumEntities() > 1)
+            inputManager.SetCrossHair(snapshot._players.GetNumEntities() - 1);
+        else
+            inputManager.RemoveCrossHair();
     }
 
     private int _lastProcessedTick;
@@ -214,6 +232,16 @@ public class GameSessionHost : MonoBehaviour
         var intent = inputManager.BuildIntent(_activePlayerObject.transform);
 
         _timeline.AddIntent(intent, tick);
+    }
+
+    private void LateUpdate()
+    {
+        var screenPos = inputManager.SnipePosition();
+
+        screenPos.x *= (cam.orthographicSize * cam.aspect - 2);
+        screenPos.y *= cam.orthographicSize - 2;
+
+        snipeTarget.position = _activePlayerObject.transform.position + screenPos;
     }
 
     private int _lastSetTick = -1;

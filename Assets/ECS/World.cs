@@ -78,20 +78,29 @@ namespace ECS
 
         private readonly float _deltaTime;
 
-        public bool IsBlocked(Vector2 position)
+        public bool IsBlocked(Vector2 position, float radius = 0.0f)
         {
-            if (position.x < 0 || position.y < 0 || position.x >= _map._width || position.y >= _map._height)
+            if (position.x < 0 || position.y < 0 || position.x >= _map._width || position.y >= _map._height - 1)
                 return true;
 
-            if (_map._map[(int)position.y * _map._width + (int)position.x] == 0)
+            if (_map._map[(int)(position.y + radius) * _map._width + (int)position.x] == 0)
+                return true;
+
+            if (_map._map[((int)position.y) * _map._width + (int)(position.x - radius)] == 0)
+                return true;
+
+            if (_map._map[((int)position.y) * _map._width + (int)(position.x + radius)] == 0)
+                return true;
+
+            if (_map._map[(int)(position.y - radius) * _map._width + (int)position.x] == 0)
                 return true;
 
             for (var i = 0; i < _workspace._doors.GetNumEntities(); i++)
             {
                 var door = _workspace._doors.GetEntityAt(i);
 
-                if (position.x >= door._leftBottom.x && position.x < door._rightTop.x &&
-                    position.y >= door._leftBottom.y && position.y < door._rightTop.y)
+                if (position.x >= door._leftBottom.x - radius / 2f && position.x < door._rightTop.x + radius / 2f &&
+                    position.y >= door._leftBottom.y - radius / 2f && position.y < door._rightTop.y + radius / 2f)
                     return true;
             }
 
@@ -342,7 +351,7 @@ namespace ECS
             _workspace._enemyDiedNotificationPool.Clear();
             _workspace._snipeShotNotificationPool.Clear();
         }
-        
+
         public void DoStep(ReadOnlySpan<Intent> intents, int tick)
         {
             ClearNotifications();
@@ -401,8 +410,6 @@ namespace ECS
             };
         }
 
-        private const float Pushout = 0.01f;
-
         public void Simulate()
         {
             for (var i = 0; i < _workspace._players.GetNumEntities(); i++)
@@ -411,30 +418,25 @@ namespace ECS
 
                 player._angle = _moveEvents[i]._angle;
 
-                var pushout = player._velocity.normalized * Pushout;
-                var nextPos = player._position + player._velocity * _deltaTime + pushout;
+                var velocity = player._velocity;
+
+                var nextPos = player._position + player._velocity * _deltaTime;
 
                 var nextX = new Vector2(nextPos.x, player._position.y);
 
-                if (IsBlocked(nextX))
+                if (IsBlocked(nextX, player._size.x / 2f))
                 {
-                    if (nextPos.x < player._position.x)
-                        nextPos.x = MathF.Ceiling(nextPos.x) + Pushout;
-                    else
-                        nextPos.x = MathF.Floor(nextPos.x) - Pushout;
+                    velocity.x = 0;
                 }
 
                 var nextY = new Vector2(player._position.x, nextPos.y);
 
-                if (IsBlocked(nextY))
+                if (IsBlocked(nextY, player._size.y / 2f))
                 {
-                    if (nextPos.y < player._position.y)
-                        nextPos.y = MathF.Ceiling(nextPos.y) + Pushout;
-                    else
-                        nextPos.y = MathF.Floor(nextPos.y) - Pushout;
+                    velocity.y = 0;
                 }
 
-                player._position = nextPos - pushout;
+                player._position += velocity * _deltaTime;
             }
 
             for (var i = 0; i < _workspace._projectiles.GetNumEntities(); i++)
@@ -471,15 +473,19 @@ namespace ECS
             {
                 case PlayerType.Heavy:
                     player._type = PlayerType.Heavy;
+                    player._size = new Vector2(1.0f, 1.0f);
                     break;
                 case PlayerType.Hacker:
                     player._type = PlayerType.Hacker;
+                    player._size = new Vector2(0.5f, 1.0f);
                     break;
                 case PlayerType.Demolition:
                     player._type = PlayerType.Demolition;
+                    player._size = new Vector2(0.5f, 1.0f);
                     break;
                 case PlayerType.Stealth:
                     player._type = PlayerType.Stealth;
+                    player._size = new Vector2(0.5f, 1.0f);
                     break;
             }
 

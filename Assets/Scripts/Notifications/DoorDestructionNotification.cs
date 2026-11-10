@@ -11,8 +11,6 @@ namespace Notifications
         public override void Notify(ECS.Notification.DoorDestructionNotification notification)
         {
             var direction = notification._direction;
-
-            
             
             var angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
 
