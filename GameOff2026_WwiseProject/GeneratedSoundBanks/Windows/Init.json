@@ -65,9 +65,37 @@
       "ObjectPath": "\\Busses\\Default Work Unit\\Main Audio Bus\\MUSIC",
       "GUID": "{F759BC7F-4007-4D33-8F58-64648B34CD3D}"
      }
+    ],
+    "SwitchGroups": [
+     {
+      "Id": "4274333454",
+      "Name": "FloorMaterial",
+      "ObjectPath": "\\Switches\\Default Work Unit\\FloorMaterial",
+      "GUID": "{6515BE3D-FA5D-430E-843B-13353CF6B1A7}",
+      "Switches": [
+       {
+        "Id": "841620460",
+        "Name": "Concrete",
+        "ObjectPath": "\\Switches\\Default Work Unit\\FloorMaterial\\Concrete",
+        "GUID": "{851BB592-1957-4048-B336-69AF55E26BCF}"
+       },
+       {
+        "Id": "2412606308",
+        "Name": "Carpet",
+        "ObjectPath": "\\Switches\\Default Work Unit\\FloorMaterial\\Carpet",
+        "GUID": "{99160A53-9799-49CE-B8F4-986AC51B6391}"
+       },
+       {
+        "Id": "2637588553",
+        "Name": "Tile",
+        "ObjectPath": "\\Switches\\Default Work Unit\\FloorMaterial\\Tile",
+        "GUID": "{12732F6D-0116-4FAD-9028-7D2BA445288D}"
+       }
+      ]
+     }
     ]
    }
   ],
-  "FileHash": "{C79BA7B0-3907-F82E-596B-2EBF4E079B0A}"
+  "FileHash": "{1451C6CD-8051-33BC-E4CB-B9DEDD781F27}"
  }
 }
