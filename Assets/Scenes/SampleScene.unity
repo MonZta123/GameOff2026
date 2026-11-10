@@ -134,6 +134,7 @@ GameObject:
   - component: {fileID: 13633225}
   - component: {fileID: 13633227}
   - component: {fileID: 13633229}
+  - component: {fileID: 13633230}
   m_Layer: 0
   m_Name: Managers
   m_TagString: Untagged
@@ -197,6 +198,8 @@ MonoBehaviour:
   cam: {fileID: 330585545}
   inputManager: {fileID: 13633229}
   map: {fileID: 2800000, guid: 81ba75a3bafc7354f8b736da654745dc, type: 3}
+  snipeTarget: {fileID: 1672110092}
+  globalSoundManager: {fileID: 0}
 --- !u!114 &13633226
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -280,6 +283,39 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::InputManager
   cam: {fileID: 330585545}
+  crossHairs:
+  - {fileID: 2800000, guid: 25fa253d004e8a646a1e14a120d6b4dc, type: 3}
+  - {fileID: 2800000, guid: c5c1bd861951f3f4c8ee5f4a1516cb72, type: 3}
+  - {fileID: 2800000, guid: 47e3cf617cdfc8a4086f5e27e77a8211, type: 3}
+--- !u!114 &13633230
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 13633222}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7877fd225a0e407a948d0b758de509e2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::GlobalSoundManager
+  characterMusic:
+  - idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 0}
+  - idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 0}
+  - idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 0}
+  - idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 0}
+  scratchSound:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 0}
 --- !u!1 &86234796
 GameObject:
   m_ObjectHideFlags: 0
@@ -564,7 +600,7 @@ Camera:
   far clip plane: 5000
   field of view: 40
   orthographic: 1
-  orthographic size: 6.34375
+  orthographic size: 6.15625
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -1120,6 +1156,37 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1672110091
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1672110092}
+  m_Layer: 0
+  m_Name: SnipeTarget
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1672110092
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1672110091}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
@@ -1131,3 +1198,4 @@ SceneRoots:
   - {fileID: 13633224}
   - {fileID: 1121035381}
   - {fileID: 983158565}
+  - {fileID: 1672110092}

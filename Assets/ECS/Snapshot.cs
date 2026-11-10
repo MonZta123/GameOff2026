@@ -20,6 +20,7 @@ namespace ECS
         public NotificationPool<SoundNotification> _soundNotificationPool;
         public NotificationPool<EnemyDiedNotification> _enemyDiedNotificationPool;
         public NotificationPool<SnipeShotNotification> _snipeShotNotificationPool;
+        public NotificationPool<BombPlacedNotification> _bombPlacedNotificationPool;
 
         public void BuildFrom(Snapshot snapshot)
         {
@@ -40,6 +41,7 @@ namespace ECS
             snapshot._soundNotificationPool.CopyTo(ref _soundNotificationPool);
             snapshot._enemyDiedNotificationPool.CopyTo(ref _enemyDiedNotificationPool);
             snapshot._snipeShotNotificationPool.CopyTo(ref _snipeShotNotificationPool);
+            snapshot._bombPlacedNotificationPool.CopyTo(ref _bombPlacedNotificationPool);
         }
 
         public void Initialize()
@@ -56,6 +58,8 @@ namespace ECS
                 new NotificationPool<EnemyDiedNotification>(Constants.EnemyDiedNotificationCount);
             _snipeShotNotificationPool =
                 new NotificationPool<SnipeShotNotification>(Constants.SnipeShotNotificationCount);
+            _bombPlacedNotificationPool =
+                new NotificationPool<BombPlacedNotification>(Constants.BombPlacedNotificationCount);
         }
     }
 }

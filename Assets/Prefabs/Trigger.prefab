@@ -219,8 +219,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Actors.Trigger
   tilemap: {fileID: 8348499451452161621}
-  hackerZone: {fileID: 11400000, guid: 7c266cefd0270a04abe42436f4e4979d, type: 2}
-  demolitionZone: {fileID: 11400000, guid: 68c33a448010c3544ae59187b54a3451, type: 2}
+  hackerZone: {fileID: 11400000, guid: 30f129a2b310f2a4e8127a6f4def1a74, type: 2}
+  demolitionZone: {fileID: 11400000, guid: 26893556d40b37342bf5566988a069f3, type: 2}
   spriteRenderer: {fileID: 6313955774730173648}
   mine: {fileID: 21300000, guid: 4277718a9f5dc664c8dfa2e9e44b6f3b, type: 3}
 --- !u!212 &6313955774730173648

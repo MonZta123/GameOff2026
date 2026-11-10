@@ -21,5 +21,7 @@ namespace ECS.Entities
         public int _isBlockedTo;
         
         public bool _isActionActive;
+
+        public Vector2 _size;
     }
 }

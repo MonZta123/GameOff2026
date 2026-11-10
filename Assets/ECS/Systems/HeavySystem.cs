@@ -50,13 +50,6 @@ namespace ECS.Systems
                     {
                         _position = player._position, _angle = player._angle,
                     });
-                    
-                    
-                    // TESTING!!!
-                    // snapshot._snipeShotNotificationPool.Add(new SnipeShotNotification()
-                    // {
-                    //     _from = player._position, _to = player._position + Vector2.down * 5f,
-                    // });
                 }
             }
 

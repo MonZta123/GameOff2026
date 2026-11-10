@@ -5,6 +5,9 @@ public class InputManager : MonoBehaviour
 {
     [SerializeField]
     private Camera cam;
+    
+    [SerializeField]
+    private Texture2D[] crossHairs;
 
     private void Update()
     {
@@ -21,6 +24,27 @@ public class InputManager : MonoBehaviour
         _mousePosition = cam.ScreenToWorldPoint(Input.mousePosition);
     }
 
+    public void SetCrossHair(int index)
+    {
+        Cursor.SetCursor(crossHairs[index], Vector2.one * 0.5f, CursorMode.Auto);
+    }
+
+    public void RemoveCrossHair()
+    {
+        Cursor.SetCursor(null, Vector2.zero, CursorMode.Auto);
+    }
+    
+    public Vector3 SnipePosition()
+    {
+        var pos = (cam.ScreenToViewportPoint(Input.mousePosition) - new Vector3(0.5f, 0.5f, 0.5f)) * 2f;
+        
+        pos.x = Mathf.Clamp(pos.x, -1, 1);
+        pos.y = Mathf.Clamp(pos.y, -1, 1);
+        pos.z = 0;
+    
+        return pos;
+    }
+    
     public float GetAngle(Transform relativeTo)
     {
         Vector2 direction = _mousePosition - relativeTo.position;
