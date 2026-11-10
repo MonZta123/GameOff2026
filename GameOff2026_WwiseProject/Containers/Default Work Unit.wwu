@@ -1617,6 +1617,47 @@
 										</GroupingList>
 									</GroupingInfo>
 								</SwitchContainer>
+								<Sound Name="Dash" ID="{77593CA0-C4E7-4F94-954E-9546443125E6}" ShortID="898440911">
+									<PropertyList>
+										<Property Name="Pitch" Type="int32">
+											<ModifierList>
+												<ModifierInfo>
+													<Modifier Name="" ID="{540A7029-AD13-4CF6-B554-78E844E5F737}">
+														<PropertyList>
+															<Property Name="Enabled" Type="bool" Value="True"/>
+															<Property Name="Max" Type="Real64" Value="300"/>
+														</PropertyList>
+													</Modifier>
+												</ModifierInfo>
+											</ModifierList>
+										</Property>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{4ADFD3A0-A42B-432C-8502-1433439D5054}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{F8A65CB3-3EA6-47C9-8C5A-27068DB4C3FF}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="AttackHeavySlam_Carpet" ID="{A7DFA7C1-A3CE-4F87-B888-8A7AB98013D9}">
+											<PropertyList>
+												<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+												<Property Name="TrimBegin" Type="Real64" Value="0.11862"/>
+												<Property Name="TrimEnd" Type="Real64" Value="0.56628"/>
+											</PropertyList>
+											<Language>SFX</Language>
+											<AudioFile>AttackHeavySlam_Carpet.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="278186006"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="AttackHeavySlam_Carpet" ID="{A7DFA7C1-A3CE-4F87-B888-8A7AB98013D9}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
 							</ChildrenList>
 						</Folder>
 						<Folder Name="Attacks" ID="{1C6ACC8B-38AE-4335-8980-407C3C2E6E9F}" ShortID="28551400">
@@ -1782,6 +1823,10 @@
 															</ReferenceList>
 															<ChildrenList>
 																<AudioFileSource Name="AttackHeavySlam_Carpet" ID="{E04A8E87-5756-467A-A859-AF10BD300095}">
+																	<PropertyList>
+																		<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+																		<Property Name="TrimBegin" Type="Real64" Value="0.57033"/>
+																	</PropertyList>
 																	<Language>SFX</Language>
 																	<AudioFile>AttackHeavySlam_Carpet.wav</AudioFile>
 																	<MediaIDList>
@@ -1825,6 +1870,11 @@
 															</ReferenceList>
 															<ChildrenList>
 																<AudioFileSource Name="AttackHeavySlam_Concrete" ID="{BABA3A37-4A2D-43FC-A551-28E7C430DF49}">
+																	<PropertyList>
+																		<Property Name="LoopBegin" Type="Real64" Value="0.57194"/>
+																		<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+																		<Property Name="TrimBegin" Type="Real64" Value="0.57194"/>
+																	</PropertyList>
 																	<Language>SFX</Language>
 																	<AudioFile>AttackHeavySlam_Concrete.wav</AudioFile>
 																	<MediaIDList>
@@ -1868,6 +1918,11 @@
 															</ReferenceList>
 															<ChildrenList>
 																<AudioFileSource Name="AttackHeavySlam_Tile" ID="{92B217DF-1D72-4CA9-AE38-765607E0B472}">
+																	<PropertyList>
+																		<Property Name="LoopBegin" Type="Real64" Value="0.56858"/>
+																		<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+																		<Property Name="TrimBegin" Type="Real64" Value="0.56858"/>
+																	</PropertyList>
 																	<Language>SFX</Language>
 																	<AudioFile>AttackHeavySlam_Tile.wav</AudioFile>
 																	<MediaIDList>

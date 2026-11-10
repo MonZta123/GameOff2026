@@ -1,6 +1,7 @@
 Event	ID	Name			Wwise Object Path	Notes
 	41955962	Play_SFX_Attack_A_Slam			\Default Work Unit\SFX\Attacks\Play_SFX_Attack_A_Slam	
 	320932064	Play_AMB_SpaceBar			\Default Work Unit\AMBIENCE\Play_AMB_SpaceBar	
+	395039606	Play_SFX_Dash			\Default Work Unit\SFX\Movement\Play_SFX_Dash	
 	704212210	Play_SFX_DoorSmash			\Default Work Unit\SFX\Environment\Play_SFX_DoorSmash	
 	708671363	Play_SFX_UI_Hover			\Default Work Unit\SFX\UI\Play_SFX_UI_Hover	
 	1043591872	Play_MUS_MainMenu			\Default Work Unit\MUSIC\Play_MUS_MainMenu	
@@ -57,6 +58,7 @@ In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
 	231962521	FootstepB_01_Concrete	.cache\8F\{8FC05403-0C65-9064-43FF-80787C3B0FE5}.wem		\Containers\Default Work Unit\SFX\Movement\FootstepsB\Concrete\FootstepB_01_Concrete		130736
 	236178618	FootstepC_02_Tile	.cache\BC\{BC0E95B4-A232-0920-6B56-A6C2FE0C71D9}.wem		\Containers\Default Work Unit\SFX\Movement\FootstepsC\Tile\FootstepC_02_Tile		99412
 	253443902	MUS_Act2_Intro	.cache\AF\{AF9C5DD1-2EDA-EE7C-2D3E-E1B52ED09D3F}.wem		\Containers\Default Work Unit\MUSIC\MusicMainMenu\MUS_Act2_Intro\MUS_Act2_Intro		1292580
+	278186006	Dash	.cache\89\{8948EAFF-45BC-8C5C-31F5-D2DD09017A0F}.wem		\Containers\Default Work Unit\SFX\Movement\Dash		79064
 	302324581	FootstepD_03_Concrete	.cache\B8\{B8D62A5B-A971-350B-E502-973DD8A091AF}.wem		\Containers\Default Work Unit\SFX\Movement\FootstepsD\Concrete\FootstepD_03_Concrete		88020
 	312342835	VO_D_Select03	.cache\E2\{E2066ABA-3CFE-FEEF-5C2E-80C9736FC211}.wem		\Containers\Default Work Unit\VO\CharacterD\VO_D_Select\VO_D_Select03		75082
 	312967604	Mine_Beeps	.cache\15\{15388B51-E6D8-FC7D-5EC9-CE7D42364A07}.wem		\Containers\Default Work Unit\SFX\Weapons\Mine_Beeps		227104
@@ -96,8 +98,8 @@ In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
 	733891294	AttackHeavySwing_02	.cache\8F\{8F514BBB-D2C5-D979-7480-C53ABD3D52C0}.wem		\Containers\Default Work Unit\SFX\Attacks\Olga\AttackHeavySwing\AttackHeavySwing_02		104932
 	735998697	VO_D_Order03	.cache\68\{682B233C-BDC2-0C4E-24AD-BD29936307E0}.wem		\Containers\Default Work Unit\VO\CharacterD\VO_D_Order\VO_D_Order03		85598
 	764516396	FootstepA_03_Tile	.cache\AA\{AA1EBC44-D53B-6D88-0324-07B6F9F37B73}.wem		\Containers\Default Work Unit\SFX\Movement\FootstepsA\Tile\FootstepA_03_Tile		55468
-	770089755	AttackHeavySlam_Concrete	.cache\E3\{E3D018E0-5645-6E9A-6DE6-BF73B30C65CB}.wem		\Containers\Default Work Unit\SFX\Attacks\Olga\AttackHeavySlam\Concrete\AttackHeavySlam_Concrete		447204
-	774056064	AttackHeavySlam_Carpet	.cache\79\{7907FC60-A4C9-27D2-7982-874DA5A94A43}.wem		\Containers\Default Work Unit\SFX\Attacks\Olga\AttackHeavySlam\Carpet\AttackHeavySlam_Carpet		447448
+	770089755	AttackHeavySlam_Concrete	.cache\94\{94A60615-FF79-E705-2E6A-761A3B4707CB}.wem		\Containers\Default Work Unit\SFX\Attacks\Olga\AttackHeavySlam\Concrete\AttackHeavySlam_Concrete		346312
+	774056064	AttackHeavySlam_Carpet	.cache\CD\{CD0D026A-6DD6-122F-7623-531BC4043107}.wem		\Containers\Default Work Unit\SFX\Attacks\Olga\AttackHeavySlam\Carpet\AttackHeavySlam_Carpet		346840
 	793956858	FootstepB_02_Tile	.cache\27\{2763DB58-CC5C-46F1-F333-51B89A549796}.wem		\Containers\Default Work Unit\SFX\Movement\FootstepsB\Tile\FootstepB_02_Tile		110896
 	796238778	DoorSlideOpen	.cache\FF\{FFB772A2-EF1C-319F-5C39-2AE09A40E7C5}.wem		\Containers\Default Work Unit\SFX\Environment\DoorSlideOpen		188480
 	888812096	FootstepD_01_Tile	.cache\E2\{E283C7AD-A002-017F-B361-6BC84269C5FB}.wem		\Containers\Default Work Unit\SFX\Movement\FootstepsD\Tile\FootstepD_01_Tile		86800
@@ -115,7 +117,7 @@ In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
 	953017544	FootstepB_04	.cache\86\{86F13B58-AD69-0539-5E5C-225E3848A342}.wem		\Containers\Default Work Unit\SFX\Movement\FootstepsB\Carpet\FootstepB_04		120196
 	959829082	FootstepC_03	.cache\FB\{FB8B36DD-86E6-3CD6-837D-A0981F7457FF}.wem		\Containers\Default Work Unit\SFX\Movement\FootstepsC\Carpet\FootstepC_03		88020
 	960548762	VO_D_Order02	.cache\B0\{B0C22CFD-ECCD-DEF8-05C6-CE73B541B6B0}.wem		\Containers\Default Work Unit\VO\CharacterD\VO_D_Order\VO_D_Order02		66940
-	962310616	AttackHeavySlam_Tile	.cache\DD\{DD935DDF-ABFC-6911-2A50-6F5A9440AE21}.wem		\Containers\Default Work Unit\SFX\Attacks\Olga\AttackHeavySlam\Tile\AttackHeavySlam_Tile		446968
+	962310616	AttackHeavySlam_Tile	.cache\D3\{D3B30BB7-0643-7629-791A-A9805D022E39}.wem		\Containers\Default Work Unit\SFX\Attacks\Olga\AttackHeavySlam\Tile\AttackHeavySlam_Tile		346672
 	990748102	FootstepB_05_Concrete	.cache\03\{03C06CE9-9444-7748-1670-098690E14E42}.wem		\Containers\Default Work Unit\SFX\Movement\FootstepsB\Concrete\FootstepB_05_Concrete		108920
 	1021562170	BombExplosion_02	.cache\E8\{E857D3C2-6FDC-9BF3-6EB1-22CE33341898}.wem		\Containers\Default Work Unit\SFX\Weapons\BombExplosions\BombExplosion_02		612420
 	1030138113	AttackHeavySwing_03	.cache\6D\{6D373C80-A0D6-2099-98F4-D9459FFA9FE4}.wem		\Containers\Default Work Unit\SFX\Attacks\Olga\AttackHeavySwing\AttackHeavySwing_03		84896
