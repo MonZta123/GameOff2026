@@ -1587,7 +1587,7 @@
     "m_Title": "Sphere Shape",
     "m_Position": {
         "x": -2631.0,
-        "y": 65.99996948242188
+        "y": 65.99994659423828
     }
 }
 
@@ -4053,8 +4053,8 @@
     "m_ObjectId": "c55d0f57d8664a559d0c7ace4d79db16",
     "m_Title": "Sample Camera Sorting Layer Texture",
     "m_Position": {
-        "x": -89.99996185302734,
-        "y": -797.0
+        "x": -90.00004577636719,
+        "y": -797.0000610351563
     }
 }
 
