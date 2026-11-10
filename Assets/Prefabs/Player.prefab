@@ -194,6 +194,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8588da7f1d9a4c9abdbaa1f4ee67803a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Actors.Player
+  heavySlam:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: c3cac02ad45e07448901c760f8ca1b0d, type: 2}
   positionSmoother: {fileID: 9017685984530300201}
   characterRenderer: {fileID: 6336420142323767381}
   gunRenderer: {fileID: 5863871626178532634}

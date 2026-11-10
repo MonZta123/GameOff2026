@@ -1,4 +1,5 @@
 ﻿using Domain;
+using ECS.Events;
 using ECS.Notification;
 using Unity.Mathematics;
 using UnityEngine;
@@ -70,7 +71,7 @@ namespace ECS.Systems
                             snapshot._damageProcess--;
                             if (snapshot._damageProcess < 0)
                                 snapshot._damageProcess = 0;
-                            
+
                             snapshot._enemyDiedNotificationPool.Add(new EnemyDiedNotification()
                             {
                                 _enemyType = enemy._type,
@@ -78,7 +79,7 @@ namespace ECS.Systems
                                 _knockbackDirection = directionToEnemy.normalized,
                                 _position = enemy._position
                             });
-                            
+
                             snapshot._enemies.DespawnAt(i);
                         }
 
@@ -99,7 +100,7 @@ namespace ECS.Systems
                                 snapshot._damageProcess--;
                                 if (snapshot._damageProcess < 0)
                                     snapshot._damageProcess = 0;
-                                 
+
                                 snapshot._enemyDiedNotificationPool.Add(new EnemyDiedNotification()
                                 {
                                     _enemyType = enemy._type,
@@ -107,7 +108,7 @@ namespace ECS.Systems
                                     _knockbackDirection = dirNormalized.normalized,
                                     _position = enemy._position
                                 });
-                                
+
                                 snapshot._enemies.DespawnAt(i);
                             }
                         }
@@ -116,38 +117,10 @@ namespace ECS.Systems
             }
 
             if (world._hasBlastWaveEvent)
-            {
-                var blastWaveEvent = world._blastWaveEvent;
+                BlastWaveEvent(ref snapshot, world._blastWaveEvent);
 
-                for (var i = snapshot._enemies.GetNumEntities() - 1; i >= 0; i--)
-                {
-                    ref var enemy = ref snapshot._enemies.GetEntityAt(i);
-
-                    var distance = Vector2.Distance(enemy._position, blastWaveEvent._position);
-                    if (distance < blastWaveEvent._radius)
-                    {
-                        enemy._health -= 100;
-                        if (enemy._health <= 0)
-                        {
-                            snapshot._damageProcess--;
-                            if (snapshot._damageProcess < 0)
-                                snapshot._damageProcess = 0;
-                            
-                            var directionToPlayer = (enemy._position - blastWaveEvent._position).normalized;
-                            
-                            snapshot._enemyDiedNotificationPool.Add(new EnemyDiedNotification()
-                            {
-                                _enemyType = enemy._type,
-                                _isKnockback = true,
-                                _knockbackDirection = directionToPlayer.normalized,
-                                _position = enemy._position
-                            });
-                            
-                            snapshot._enemies.DespawnAt(i);
-                        }
-                    }
-                }
-            }
+            if (world._hasGranadeExplosionEvent)
+                BlastWaveEvent(ref snapshot, world._granadeExplosionEvent);
 
             var heavy = snapshot._players.GetEntityAt(0);
             if (heavy._secondaryActivatedTo > tick)
@@ -163,9 +136,9 @@ namespace ECS.Systems
                             snapshot._damageProcess--;
                             if (snapshot._damageProcess < 0)
                                 snapshot._damageProcess = 0;
-                            
+
                             var directionToPlayer = (enemy._position - heavy._position).normalized;
-                            
+
                             snapshot._enemyDiedNotificationPool.Add(new EnemyDiedNotification()
                             {
                                 _enemyType = enemy._type,
@@ -173,9 +146,41 @@ namespace ECS.Systems
                                 _knockbackDirection = directionToPlayer.normalized,
                                 _position = enemy._position
                             });
-                                    
+
                             snapshot._enemies.DespawnAt(i);
                         }
+                    }
+                }
+            }
+        }
+
+        private void BlastWaveEvent(ref Snapshot snapshot, BlastWaveEvent evt)
+        {
+            for (var i = snapshot._enemies.GetNumEntities() - 1; i >= 0; i--)
+            {
+                ref var enemy = ref snapshot._enemies.GetEntityAt(i);
+
+                var distance = Vector2.Distance(enemy._position, evt._position);
+                if (distance < evt._radius)
+                {
+                    enemy._health -= 100;
+                    if (enemy._health <= 0)
+                    {
+                        snapshot._damageProcess--;
+                        if (snapshot._damageProcess < 0)
+                            snapshot._damageProcess = 0;
+
+                        var directionToPlayer = (enemy._position - evt._position).normalized;
+
+                        snapshot._enemyDiedNotificationPool.Add(new EnemyDiedNotification()
+                        {
+                            _enemyType = enemy._type,
+                            _isKnockback = true,
+                            _knockbackDirection = directionToPlayer.normalized,
+                            _position = enemy._position
+                        });
+
+                        snapshot._enemies.DespawnAt(i);
                     }
                 }
             }

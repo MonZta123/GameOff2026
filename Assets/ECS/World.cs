@@ -41,10 +41,19 @@ namespace ECS
         public BlastWaveEvent _blastWaveEvent;
         public bool _hasBlastWaveEvent;
 
+        public BlastWaveEvent _granadeExplosionEvent;
+        public bool _hasGranadeExplosionEvent;
+
         public void AddBlastWaveEvent(BlastWaveEvent blastWaveEvent)
         {
             _blastWaveEvent = blastWaveEvent;
             _hasBlastWaveEvent = true;
+        }
+
+        public void AddGranadeExplosionEvent(BlastWaveEvent blastWaveEvent)
+        {
+            _granadeExplosionEvent = blastWaveEvent;
+            _hasGranadeExplosionEvent = true;
         }
 
         public void AddShootEvent(ShootEvent shootEvent)
@@ -187,7 +196,7 @@ namespace ECS
         }
 
 
-        public void BuildHeavy(ref Snapshot snapshot)
+        private void BuildHeavy(ref Snapshot snapshot)
         {
             var spawnZone = _map._enemySpawnZone.ToList();
 
@@ -203,16 +212,25 @@ namespace ECS
                 snapshot._enemies.Spawn(enemy);
             }
 
+
             snapshot._damageProcess = 3;
+#if UNITY_EDITOR
+            snapshot._damageProcess = 0;
+#endif
         }
 
-        public void BuildHacker(ref Snapshot snapshot)
+        private void BuildHacker(ref Snapshot snapshot)
         {
             if (_map._hackerZone.Length > 0)
                 snapshot._hackProcess = (int)(5f / _deltaTime);
+
+
+#if UNITY_EDITOR
+            snapshot._hackProcess = 0;
+#endif
         }
 
-        public void BuildDemolition(ref Snapshot snapshot)
+        private void BuildDemolition(ref Snapshot snapshot)
         {
             var spawnZone = _map._enemySpawnZone.ToList();
 
@@ -232,7 +250,7 @@ namespace ECS
             }
         }
 
-        public void BuildSniper(ref Snapshot snapshot)
+        private void BuildSniper(ref Snapshot snapshot)
         {
         }
 
@@ -376,9 +394,11 @@ namespace ECS
 
             _heavyDamageConeEvent = default;
             _blastWaveEvent = default;
+            _granadeExplosionEvent = default;
 
             _hasHeavyDamageCone = false;
             _hasBlastWaveEvent = false;
+            _hasGranadeExplosionEvent = false;
             _numShootEvents = 0;
         }
 

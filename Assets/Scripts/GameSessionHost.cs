@@ -36,9 +36,6 @@ public class GameSessionHost : MonoBehaviour
 
     [SerializeField]
     private Transform snipeTarget;
-
-    [SerializeField]
-    private GlobalSoundManager globalSoundManager;
     
     private TickDriver _tickDriver;
     private Timeline _timeline;
@@ -164,9 +161,12 @@ public class GameSessionHost : MonoBehaviour
         _activePlayerObject.SetAngle(inputManager.GetAngle(_activePlayerObject.transform));
         _tickDriver.Update(Time.deltaTime);
 
-        while (_lastProcessedTick + 1 < _tickDriver.CurrentTick)
+        while (_lastProcessedTick + 1 <= _tickDriver.CurrentTick)
         {
-            snapshotRenderer.RunNotifications(_timeline.GetSnapshot(_lastProcessedTick + 1));
+            var snapshot = _timeline.GetSnapshot(_lastProcessedTick + 1);
+            
+            snapshotRenderer.RunNotifications(snapshot);
+            snapshotRenderer.RunSounds(snapshot);
             _lastProcessedTick++;
         }
 
@@ -175,10 +175,8 @@ public class GameSessionHost : MonoBehaviour
             _lastSetTick = _tickDriver.CurrentTick;
 
             var snapshot = _timeline.GetSnapshot(_tickDriver.CurrentTick);
-
             snapshotRenderer.SetSnapshot(snapshot, _tickDriver.CurrentTick);
-            snapshotRenderer.RunNotifications(snapshot);
-
+            
             var result = _gameFlowManager.CheckForLoopBreak(_tickDriver.CurrentTick, snapshot);
 
             HandleResult(result);

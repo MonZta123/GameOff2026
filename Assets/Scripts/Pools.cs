@@ -49,6 +49,8 @@ public class Pools : MonoBehaviour
     public void ClearAllNotificationPools()
     {
         _enemyDiedNotificationPool.ReturnAll();
+        _snipeShotNotificationPool.ReturnAll();
+        _doorDestructionNotificationPool.ReturnAll();
     }
 
     public void Initialize()
@@ -64,10 +66,11 @@ public class Pools : MonoBehaviour
         _enemyDiedNotificationPool =
             new GameNotificationPool<EnemyDiedNotification, ECS.Notification.EnemyDiedNotification>(Constants
                 .EnemyDiedNotificationCount);
-        
+
         _doorDestructionNotificationPool =
-            new GameNotificationPool<DoorDestructionNotification, ECS.Notification.DoorDestructionNotification>(Constants
-                .DoorDestructionNotificationCount);
+            new GameNotificationPool<DoorDestructionNotification, ECS.Notification.DoorDestructionNotification>(
+                Constants
+                    .DoorDestructionNotificationCount);
 
         for (var i = 0; i < Constants.PlayerCount; i++)
             _playerPool.Add(Instantiate(player));

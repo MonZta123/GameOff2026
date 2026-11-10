@@ -8,6 +8,9 @@ public class SnapshotRenderer : MonoBehaviour
     [SerializeField]
     private Pools pools;
 
+    [SerializeField]
+    private SoundNotification soundNotification;
+
     public void SetSnapshot(Snapshot snapshot, int tick)
     {
         UpdateView(snapshot._players, pools._playerPool, tick);
@@ -22,6 +25,17 @@ public class SnapshotRenderer : MonoBehaviour
         RunNotification(snapshot._enemyDiedNotificationPool, pools._enemyDiedNotificationPool);
         RunNotification(snapshot._snipeShotNotificationPool, pools._snipeShotNotificationPool);
         RunNotification(snapshot._doorDestructionNotificationPool, pools._doorDestructionNotificationPool);
+    }
+
+    public void RunSounds(Snapshot snapshot)
+    {
+        for (var i = 0; i < snapshot._soundNotificationPool.GetNumNotifications(); i++)
+        {
+            var notification = snapshot._soundNotificationPool.GetEntityAt(i);
+
+            soundNotification.PlayEvent(notification._soundType, notification._switchGroup,
+               "");
+        }
     }
 
     private void RunNotification<TView, TNotification>(

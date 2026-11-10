@@ -48,7 +48,7 @@ namespace ECS.Systems
 
                     world.AddShootEvent(new ShootEvent
                     {
-                        _type = ProjectileType.Heavy,
+                        _type = ProjectileType.Hacker,
                         _position = player._position,
                         _angle = player._angle,
                         _ttl = _tickRate * 3

@@ -1,4 +1,5 @@
 ﻿using ECS.Entities;
+using ECS.Events;
 
 namespace ECS.Systems
 {
@@ -28,13 +29,54 @@ namespace ECS.Systems
 
                 if (projectile._spawnTick + projectile._ttl <= tick)
                 {
+                    if (projectile._type == ProjectileType.Demolition)
+                    {
+                        world.AddGranadeExplosionEvent(new BlastWaveEvent()
+                        {
+                            _position = projectile._position, _radius = 3
+                        });
+                    }
+
                     snapshot._projectiles.DespawnAt(i);
+                    continue;
                 }
+
+                var deleted = false;
+                for (var j = snapshot._doors.GetNumEntities() - 1; j >= 0; j--)
+                {
+                    ref var door = ref snapshot._doors.GetEntityAt(j);
+
+                    if (projectile._type == ProjectileType.Demolition &&
+                        projectile._position.x >= door._leftBottom.x && projectile._position.x <= door._rightTop.x &&
+                        projectile._position.y >= door._leftBottom.y && projectile._position.y <= door._rightTop.y)
+                    {
+                        world.AddGranadeExplosionEvent(new BlastWaveEvent()
+                        {
+                            _position = projectile._position, _radius = 3
+                        });
+                        
+                        snapshot._projectiles.DespawnAt(i);
+                        
+                        deleted = true;
+                        break;
+                    }
+                }
+
+                if (deleted)
+                    continue;
 
                 if (projectile._position.x < 0 || projectile._position.x > world._map._width - 1 ||
                     projectile._position.y < 0 || projectile._position.y > world._map._height - 1 ||
                     world._map._map[(int)projectile._position.y * world._map._width + (int)projectile._position.x] == 0)
                 {
+                    if (projectile._type == ProjectileType.Demolition)
+                    {
+                        world.AddGranadeExplosionEvent(new BlastWaveEvent()
+                        {
+                            _position = projectile._position, _radius = 3
+                        });
+                    }
+
                     snapshot._projectiles.DespawnAt(i);
                 }
             }

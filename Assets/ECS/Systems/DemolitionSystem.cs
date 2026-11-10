@@ -42,7 +42,7 @@ namespace ECS.Systems
             ref var snapshot = ref world.GetSnapshot();
             ref var player = ref snapshot._players.GetEntityAt(2);
 
-            player._isActionActive = true;
+            player._isActionActive = false;
 
             if (player._primaryReadyAt <= currentTick)
             {
@@ -52,10 +52,10 @@ namespace ECS.Systems
 
                     world.AddShootEvent(new ShootEvent
                     {
-                        _type = ProjectileType.Heavy,
+                        _type = ProjectileType.Demolition,
                         _position = player._position,
                         _angle = player._angle,
-                        _ttl = _tickRate * 3
+                        _ttl = _tickRate
                     });
                 }
             }
@@ -85,13 +85,13 @@ namespace ECS.Systems
                 if (trigger._triggerType == TriggerType.DemolitionZone &&
                     trigger.IsInBox(player._position, 1f, out _) && moveEvt._action)
                 {
+                    player._isActionActive = true;
                     trigger._timer = 0;
                     snapshot._bombsLeft--;
                     snapshot._triggers.DespawnAt(i);
                 }
-
-                if (trigger._triggerType == TriggerType.Mine &&
-                    trigger.IsInCircle(player._position, 2f, 1f, out _) && moveEvt._action)
+                else if (trigger._triggerType == TriggerType.Mine &&
+                         trigger.IsInCircle(player._position, 2f, 1f, out _) && moveEvt._action)
                 {
                     player._isActionActive = true;
 

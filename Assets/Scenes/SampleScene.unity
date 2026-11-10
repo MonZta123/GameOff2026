@@ -135,6 +135,7 @@ GameObject:
   - component: {fileID: 13633227}
   - component: {fileID: 13633229}
   - component: {fileID: 13633230}
+  - component: {fileID: 13633231}
   m_Layer: 0
   m_Name: Managers
   m_TagString: Untagged
@@ -190,7 +191,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DefaultNamespace.GameSessionHost
   stepsPerSecond: 64
-  maxSeconds: 30
+  maxSeconds: 10
   snapshotRenderer: {fileID: 13633226}
   pools: {fileID: 13633223}
   positionComposer: {fileID: 1121035382}
@@ -199,7 +200,6 @@ MonoBehaviour:
   inputManager: {fileID: 13633229}
   map: {fileID: 2800000, guid: 81ba75a3bafc7354f8b736da654745dc, type: 3}
   snipeTarget: {fileID: 1672110092}
-  globalSoundManager: {fileID: 0}
 --- !u!114 &13633226
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -213,6 +213,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SnapshotRenderer
   pools: {fileID: 13633223}
+  soundNotification: {fileID: 13633231}
 --- !u!114 &13633227
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -284,6 +285,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::InputManager
   cam: {fileID: 330585545}
   crossHairs:
+  - {fileID: 0}
   - {fileID: 2800000, guid: 25fa253d004e8a646a1e14a120d6b4dc, type: 3}
   - {fileID: 2800000, guid: c5c1bd861951f3f4c8ee5f4a1516cb72, type: 3}
   - {fileID: 2800000, guid: 47e3cf617cdfc8a4086f5e27e77a8211, type: 3}
@@ -315,7 +317,30 @@ MonoBehaviour:
   scratchSound:
     idInternal: 0
     valueGuidInternal: 
-    WwiseObjectReference: {fileID: 0}
+    WwiseObjectReference: {fileID: 11400000, guid: d92eb0d05d65d774abfcdbc4ae3daf36, type: 2}
+--- !u!114 &13633231
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 13633222}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8e367afaabdd47e8bac86f8b3acfaa61, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Notifications.SoundNotification
+  sounds:
+  - key: 0
+    value:
+      idInternal: 0
+      valueGuidInternal: 
+      WwiseObjectReference: {fileID: 11400000, guid: c3cac02ad45e07448901c760f8ca1b0d, type: 2}
+  - key: 1
+    value:
+      idInternal: 0
+      valueGuidInternal: 
+      WwiseObjectReference: {fileID: 11400000, guid: 13697fa7f24d92949a0439e898f4db32, type: 2}
 --- !u!1 &86234796
 GameObject:
   m_ObjectHideFlags: 0
@@ -600,7 +625,7 @@ Camera:
   far clip plane: 5000
   field of view: 40
   orthographic: 1
-  orthographic size: 6.15625
+  orthographic size: 7.5625
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2

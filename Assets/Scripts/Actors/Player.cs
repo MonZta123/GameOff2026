@@ -8,6 +8,10 @@ namespace Actors
 {
     public class Player : MonoBehaviour, IEntityView<ECS.Entities.Player>
     {
+        [Header("Sounds")]
+        [SerializeField]
+        private AK.Wwise.Event heavySlam;
+        
         [SerializeField]
         private PositionSmoother positionSmoother;
 
@@ -53,9 +57,14 @@ namespace Actors
             gunRenderer.transform.rotation = Quaternion.Euler(0, 0, angle);
         }
 
+        private bool _isSlamming;
+        private int _dashTick;
+        
         private void Update()
         {
             var angle = gunRenderer.transform.rotation.eulerAngles.z;
+
+            var time = 0f;
 
             var secondaryActive = _lastEntity._secondaryActivatedTo > _tick;
             var primaryActive = _lastEntity._primaryBlockingMovementTo > _tick;
@@ -65,9 +74,7 @@ namespace Actors
 
             var isBlockingMovementChanged = _lastPrimaryBlockingMovementTo != _lastEntity._primaryBlockingMovementTo;
             _lastPrimaryBlockingMovementTo = _lastEntity._primaryBlockingMovementTo;
-
-            var time = 0f;
-
+            
             if (isDead)
             {
                 animator.Play("Dead");
@@ -78,8 +85,8 @@ namespace Actors
             {
                 animator.Play("Slam");
                 return;
-            }
-
+            } 
+            
             if (actionActive)
             {
                 animator.Play("Action");

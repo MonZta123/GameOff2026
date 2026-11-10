@@ -33,6 +33,11 @@ namespace ECS.Systems
                                 {
                                     _door = door, _direction = (hitpoint - player._position).normalized
                                 });
+
+                                snapshot._soundNotificationPool.Add(new SoundNotification()
+                                {
+                                    _soundType = SoundType.DoorDestruction
+                                });
                                 snapshot._doors.DespawnAt(j);
                             }
                         }
@@ -41,26 +46,10 @@ namespace ECS.Systems
             }
 
             if (world._hasBlastWaveEvent)
-            {
-                var blastWaveEvent = world._blastWaveEvent;
-                for (var j = snapshot._doors.GetNumEntities() - 1; j >= 0; j--)
-                {
-                    ref var door = ref snapshot._doors.GetEntityAt(j);
+                HandleBlastWaveEvent(ref snapshot, world._blastWaveEvent);
 
-                    if (door.IsInDoor(blastWaveEvent._position, blastWaveEvent._radius, out var hitPoint))
-                    {
-                        door._health--;
-                        if (door._health <= 0)
-                        {
-                            snapshot._doorDestructionNotificationPool.Add(new DoorDestructionNotification()
-                            {
-                                _door = door, _direction = (hitPoint - blastWaveEvent._position).normalized
-                            });
-                            snapshot._doors.DespawnAt(j);
-                        }
-                    }
-                }
-            }
+            if (world._hasGranadeExplosionEvent)
+                HandleBlastWaveEvent(ref snapshot, world._granadeExplosionEvent);
 
             if (world._hasHeavyDamageCone)
             {
@@ -91,9 +80,35 @@ namespace ECS.Systems
                             {
                                 _door = door, _direction = hitDirection
                             });
+                            snapshot._soundNotificationPool.Add(new SoundNotification()
+                            {
+                                _soundType = SoundType.DoorDestruction
+                            });
                             snapshot._doors.DespawnAt(i);
                         }
                     }
+                }
+            }
+        }
+
+        private void HandleBlastWaveEvent(ref Snapshot snapshot, BlastWaveEvent evt)
+        {
+            for (var j = snapshot._doors.GetNumEntities() - 1; j >= 0; j--)
+            {
+                ref var door = ref snapshot._doors.GetEntityAt(j);
+
+                if (door.IsInDoor(evt._position, evt._radius, out var hitPoint))
+                {
+                    door._health = 0;
+                    snapshot._doorDestructionNotificationPool.Add(new DoorDestructionNotification()
+                    {
+                        _door = door, _direction = (hitPoint - evt._position).normalized
+                    });
+                    snapshot._soundNotificationPool.Add(new SoundNotification()
+                    {
+                        _soundType = SoundType.DoorDestruction
+                    });
+                    snapshot._doors.DespawnAt(j);
                 }
             }
         }

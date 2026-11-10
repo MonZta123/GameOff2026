@@ -36,7 +36,6 @@ namespace ECS.Systems
         {
             var moveEvt = world._moveEvents[0];
             ref var player = ref world.GetSnapshot()._players.GetEntityAt(0);
-            
             ref var snapshot = ref world.GetSnapshot();
 
             if (player._primaryReadyAt <= currentTick)
@@ -61,6 +60,13 @@ namespace ECS.Systems
                     player._secondaryActivatedTo = currentTick + _secondaryActiveTicks;
                     player._isBlockedTo = currentTick + _secondaryActiveTicks + _blockedInputTicksAfterSecondary;
 
+                    snapshot._soundNotificationPool.Add(new SoundNotification()
+                    {
+                        _soundType = SoundType.Dash,
+                        _switchGroup = "FloorMaterial",
+                        _position = player._position
+                    });
+
                     var radians = player._angle * Mathf.Deg2Rad;
 
                     var direction = new Vector2(
@@ -81,7 +87,14 @@ namespace ECS.Systems
 
             if (player._secondaryActivatedTo == currentTick && player._secondaryActivatedTo > 0)
             {
-                world.AddBlastWaveEvent(new BlastWaveEvent() { _position = player._position, _radius = 3f, });
+                snapshot._soundNotificationPool.Add(new SoundNotification()
+                {
+                    _soundType = SoundType.Slam,
+                    _switchGroup = "FloorMaterial",
+                    _position = player._position
+                });
+                
+                world.AddBlastWaveEvent(new BlastWaveEvent() { _position = player._position, _radius = 2f });
             }
 
             if (player._isBlockedTo >= currentTick)
