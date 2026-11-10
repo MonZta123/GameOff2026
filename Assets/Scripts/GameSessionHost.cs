@@ -37,6 +37,9 @@ public class GameSessionHost : MonoBehaviour
     [SerializeField]
     private Transform snipeTarget;
 
+    [SerializeField]
+    private GlobalSoundManager globalSoundManager;
+    
     private TickDriver _tickDriver;
     private Timeline _timeline;
 
