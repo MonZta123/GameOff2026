@@ -75,7 +75,6 @@ namespace ECS.Systems
                         i++;
                     } while (!world.IsBlocked(currentLazor) && i < 8000);
 
-                    // TESTING!!!
                     snapshot._snipeShotNotificationPool.Add(new SnipeShotNotification()
                     {
                         _from = player._position, _to = currentLazor,
