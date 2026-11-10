@@ -38,7 +38,7 @@
 										<Action Name="" ID="{71F5CD69-D789-41AE-834A-C0B1D8EFB5C4}" ShortID="244251460">
 											<ReferenceList>
 												<Reference Name="Target">
-													<ObjectRef Name="Carpet" ID="{C42603BE-D603-4B74-AE11-4A85F457BD96}" WorkUnitID="{AF633A36-6CC5-470E-AD72-3F76D6F661BF}"/>
+													<ObjectRef Name="FootstepsA" ID="{3DF3F331-DCA2-44D0-B03B-D35530B3A565}" WorkUnitID="{AF633A36-6CC5-470E-AD72-3F76D6F661BF}"/>
 												</Reference>
 											</ReferenceList>
 										</Action>
@@ -49,7 +49,7 @@
 										<Action Name="" ID="{A0FABF8D-C5BF-4653-91E4-7B6D5DDE1009}" ShortID="622649859">
 											<ReferenceList>
 												<Reference Name="Target">
-													<ObjectRef Name="Carpet" ID="{6BE476AD-7250-4A7E-9A5A-E09199E4F13C}" WorkUnitID="{AF633A36-6CC5-470E-AD72-3F76D6F661BF}"/>
+													<ObjectRef Name="FootstepsC" ID="{F60166AA-D70C-4F46-AA9B-D8C781E326C6}" WorkUnitID="{AF633A36-6CC5-470E-AD72-3F76D6F661BF}"/>
 												</Reference>
 											</ReferenceList>
 										</Action>
@@ -60,7 +60,7 @@
 										<Action Name="" ID="{A30BB2CA-C5C3-4ECE-85C5-BAD311AE36FA}" ShortID="809282300">
 											<ReferenceList>
 												<Reference Name="Target">
-													<ObjectRef Name="Carpet" ID="{50D424FE-B133-4111-A355-BE5DE90B070A}" WorkUnitID="{AF633A36-6CC5-470E-AD72-3F76D6F661BF}"/>
+													<ObjectRef Name="FootstepsB" ID="{B742847E-6F7B-4B54-B487-2006AD17CB20}" WorkUnitID="{AF633A36-6CC5-470E-AD72-3F76D6F661BF}"/>
 												</Reference>
 											</ReferenceList>
 										</Action>
@@ -71,7 +71,7 @@
 										<Action Name="" ID="{615287E0-4623-4B00-BAB5-03106286ACC4}" ShortID="196446542">
 											<ReferenceList>
 												<Reference Name="Target">
-													<ObjectRef Name="Carpet" ID="{E8056663-A89C-4BB6-A0E0-EB7B8F6F2EF3}" WorkUnitID="{AF633A36-6CC5-470E-AD72-3F76D6F661BF}"/>
+													<ObjectRef Name="FootstepsD" ID="{44B70534-CE5A-4DBA-88C5-DB89967F6BD0}" WorkUnitID="{AF633A36-6CC5-470E-AD72-3F76D6F661BF}"/>
 												</Reference>
 											</ReferenceList>
 										</Action>
