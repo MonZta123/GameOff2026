@@ -10,7 +10,7 @@
     "Type": "User",
     "GUID": "{3059A6CE-8152-4CD2-BEA9-69E98BB60D65}",
     "Language": "SFX",
-    "Hash": "{600E030D-B4B4-3C06-39A2-287969592682}",
+    "Hash": "{B9BCB309-F6AC-0653-A65E-971285FD5C50}",
     "ObjectPath": "\\SoundBanks\\Default Work Unit\\Main",
     "ShortName": "Main",
     "Path": "Main.bnk",
@@ -198,6 +198,14 @@
       "Location": "Memory",
       "ShortName": "MUS_Act2_Intro.wav",
       "CachePath": "AF/{AF9C5DD1-2EDA-EE7C-2D3E-E1B52ED09D3F}.wem"
+     },
+     {
+      "Id": "278186006",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "AttackHeavySlam_Carpet.wav",
+      "CachePath": "89/{8948EAFF-45BC-8C5C-31F5-D2DD09017A0F}.wem"
      },
      {
       "Id": "302324581",
@@ -517,7 +525,7 @@
       "Streaming": "false",
       "Location": "Memory",
       "ShortName": "AttackHeavySlam_Concrete.wav",
-      "CachePath": "E3/{E3D018E0-5645-6E9A-6DE6-BF73B30C65CB}.wem"
+      "CachePath": "94/{94A60615-FF79-E705-2E6A-761A3B4707CB}.wem"
      },
      {
       "Id": "774056064",
@@ -525,7 +533,7 @@
       "Streaming": "false",
       "Location": "Memory",
       "ShortName": "AttackHeavySlam_Carpet.wav",
-      "CachePath": "79/{7907FC60-A4C9-27D2-7982-874DA5A94A43}.wem"
+      "CachePath": "CD/{CD0D026A-6DD6-122F-7623-531BC4043107}.wem"
      },
      {
       "Id": "793956858",
@@ -669,7 +677,7 @@
       "Streaming": "false",
       "Location": "Memory",
       "ShortName": "AttackHeavySlam_Tile.wav",
-      "CachePath": "DD/{DD935DDF-ABFC-6911-2A50-6F5A9440AE21}.wem"
+      "CachePath": "D3/{D3B30BB7-0643-7629-791A-A9805D022E39}.wem"
      },
      {
       "Id": "990748102",
@@ -807,8 +815,8 @@
       "ObjectPath": "\\Events\\Default Work Unit\\SFX\\Attacks\\Play_SFX_Attack_A_Slam",
       "GUID": "{52A47EF3-BFA2-410A-A7F4-221BE57ABFC5}",
       "DurationType": "OneShot",
-      "DurationMin": "2.533288",
-      "DurationMax": "2.536009",
+      "DurationMin": "1.9626858",
+      "DurationMax": "1.965679",
       "SwitchContainers": [
        {
         "SwitchValue": {
@@ -903,6 +911,20 @@
        },
        {
         "Id": "1021562170"
+       }
+      ]
+     },
+     {
+      "Id": "395039606",
+      "Name": "Play_SFX_Dash",
+      "ObjectPath": "\\Events\\Default Work Unit\\SFX\\Movement\\Play_SFX_Dash",
+      "GUID": "{7E19B84C-C838-4A91-89DA-BB94F3FE01E9}",
+      "DurationType": "OneShot",
+      "DurationMin": "0.3764357",
+      "DurationMax": "0.44766",
+      "MediaRefs": [
+       {
+        "Id": "278186006"
        }
       ]
      },
@@ -1537,6 +1559,6 @@
     ]
    }
   ],
-  "FileHash": "{577DB7B5-4496-F28E-CA6D-0CD528C157BF}"
+  "FileHash": "{5779F38E-A25A-324D-E260-551BDEB0EF4B}"
  }
 }

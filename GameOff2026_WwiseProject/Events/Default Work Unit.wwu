@@ -77,6 +77,17 @@
 										</Action>
 									</ChildrenList>
 								</Event>
+								<Event Name="Play_SFX_Dash" ID="{7E19B84C-C838-4A91-89DA-BB94F3FE01E9}">
+									<ChildrenList>
+										<Action Name="" ID="{8B6916C8-67EC-4522-8E02-B3E7A02A3550}" ShortID="174023008">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="Dash" ID="{77593CA0-C4E7-4F94-954E-9546443125E6}" WorkUnitID="{AF633A36-6CC5-470E-AD72-3F76D6F661BF}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
 							</ChildrenList>
 						</Folder>
 						<Folder Name="UI" ID="{9D9EFAD9-6188-4ECD-9A1F-B00C6DDA808F}" ShortID="202227406">

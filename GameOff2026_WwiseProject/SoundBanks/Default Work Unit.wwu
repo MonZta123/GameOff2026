@@ -22,6 +22,7 @@
 						<ObjectRef Name="Play_SFX_BombExplosion" ID="{30F644E1-4A6B-491A-B312-78F56222651D}" WorkUnitID="{2B12C590-A22E-47AF-9697-251FEA2DB802}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="Play_AMB_BackOfHouse" ID="{91F1FB6C-729D-497C-A22E-730BB0B4496A}" WorkUnitID="{2B12C590-A22E-47AF-9697-251FEA2DB802}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="Play_VO_D_Order" ID="{381E0E30-E568-498C-9D9D-52B69D5F960D}" WorkUnitID="{2B12C590-A22E-47AF-9697-251FEA2DB802}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="Play_SFX_Dash" ID="{7E19B84C-C838-4A91-89DA-BB94F3FE01E9}" WorkUnitID="{2B12C590-A22E-47AF-9697-251FEA2DB802}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="Play_AMB_FrontOfHouse" ID="{60AA718B-3A65-4ADA-83B9-49CEE4C11C7F}" WorkUnitID="{2B12C590-A22E-47AF-9697-251FEA2DB802}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="Play_SFX_DoorSmash" ID="{666ACBC8-30A5-4B03-853D-52CF84ADE9CF}" WorkUnitID="{2B12C590-A22E-47AF-9697-251FEA2DB802}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="Play_SFX_Shift" ID="{FE2001B2-A82F-4B45-BBE4-31BBED8D8DED}" WorkUnitID="{2B12C590-A22E-47AF-9697-251FEA2DB802}" Origin="Manual" Filter="7"/>
