@@ -571,5 +571,15 @@ namespace ECS
             _heavyDamageConeEvent = heavyDamageConeEvent;
             _hasHeavyDamageCone = true;
         }
+
+        public void ResetCharacterTickStates(ref Player player)
+        {
+            player._primaryReadyAt = 0;
+            player._primaryBlockingMovementTo = 0;
+            player._secondaryReadyAt = 0;
+            player._secondaryActivatedTo = 0;
+            player._isBlockedTo = 0;
+            player._isActionActive = false;
+        }
     }
 }

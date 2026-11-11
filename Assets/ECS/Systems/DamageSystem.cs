@@ -101,6 +101,7 @@ namespace ECS.Systems
                         if (player._health <= 0)
                         {
                             player._health = 0;
+                            snapshot._players.DespawnAt(i);
 
                             break;
                         }

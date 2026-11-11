@@ -33,8 +33,6 @@ namespace Actors
         [SerializeField]
         private MoveBouncer moveBouncer;
 
-        private bool _activePlayer;
-
         public void Init(ECS.Entities.Player entity)
         {
             transform.position = entity._position;
@@ -56,9 +54,6 @@ namespace Actors
         {
             gunRenderer.transform.rotation = Quaternion.Euler(0, 0, angle);
         }
-
-        private bool _isSlamming;
-        private int _dashTick;
 
         private void Update()
         {
@@ -191,6 +186,7 @@ namespace Actors
         private int _tick;
         private bool _isLeftHand;
         private int _lastPrimaryBlockingMovementTo;
+        private bool _activePlayer;
 
         public void Release()
         {
@@ -199,6 +195,7 @@ namespace Actors
             _tick = 0;
             _isLeftHand = false;
             _lastPrimaryBlockingMovementTo = 0;
+            _activePlayer = false;
         }
 
 #if UNITY_EDITOR
