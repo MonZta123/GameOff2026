@@ -1,4 +1,6 @@
-﻿namespace Domain
+﻿using UnityEngine;
+
+namespace Domain
 {
     public static class Constants
     {
@@ -13,6 +15,8 @@
         public const int SnipeShotNotificationCount = 5;
         public const int DoorDestructionNotificationCount = 10;
         public const int BombPlacedNotificationCount = 10;
+
+        public const float EnemyMoveSpeed = 0.5f;
         
         public const float HeavyDamageConeAngle = 45.0f;
         public const float HeavyDamageConeRadius = 3.0f;
@@ -29,7 +33,7 @@
         public const float HackerProjectileSpeed = 5f;
         public const float HackerMoveSpeed = 7.5f;
         public const float HackerColliderRadius = 1.0f;
-        public const float HackerDamage = 10f;
+        public const float HackerDamage = 30f;
         
         public const float DemolitionCooldown = 0.25f;
         public const float DemolitionProjectileTtl = 1f;

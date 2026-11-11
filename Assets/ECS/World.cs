@@ -76,7 +76,7 @@ namespace ECS
 
             _projectileSystem = new ProjectileSystem();
             _damageSystem = new DamageSystem();
-            _enemySystem = new EnemySystem();
+            _enemySystem = new EnemySystem(tickRate);
             _heavySystem = new HeavySystem(tickRate);
             _hackerSystem = new HackerSystem(tickRate);
             _demolitionSystem = new DemolitionSystem(tickRate);
@@ -413,9 +413,9 @@ namespace ECS
             _demolitionSystem.Execute(this, tick);
             _sniperSystem.Execute(this, tick);
 
+            _enemySystem.Execute(this, tick);
             _projectileSystem.Execute(this, tick);
             _damageSystem.Execute(this);
-            _enemySystem.Execute(this, tick);
             _doorSystem.Execute(this, tick);
 
             _mineSystem.Execute(this);
@@ -479,7 +479,25 @@ namespace ECS
             {
                 ref var enemy = ref _workspace._enemies.GetEntityAt(i);
 
-                enemy._position += enemy._linearVelocity * (GetMoveSpeed(enemy._type) * _deltaTime);
+                var velocity = enemy._linearVelocity;
+                
+                var nextPos = enemy._position + velocity * (GetMoveSpeed(enemy._type) * _deltaTime);
+                
+                var nextX = new Vector2(nextPos.x, enemy._position.y);
+
+                if (IsBlocked(nextX, 0.5f))
+                {
+                    velocity.x = 0;
+                }
+
+                var nextY = new Vector2(enemy._position.x, nextPos.y);
+
+                if (IsBlocked(nextY, 0.5f))
+                {
+                    velocity.y = 0;
+                }
+                
+                enemy._position += velocity * (GetMoveSpeed(enemy._type) * _deltaTime);
             }
         }
 

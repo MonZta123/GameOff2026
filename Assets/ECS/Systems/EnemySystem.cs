@@ -1,4 +1,5 @@
 ﻿using Domain;
+using ECS.Entities;
 using ECS.Events;
 using ECS.Notification;
 using Unity.Mathematics;
@@ -10,65 +11,103 @@ namespace ECS.Systems
     {
         private readonly float _minDot = math.cos(Constants.HeavyDamageConeAngle * Mathf.Deg2Rad);
 
+        public EnemySystem(int tickRate)
+        {
+            _tickRate = tickRate;
+        }
+
+        private readonly int _tickRate;
+
         public void Execute(World world, int tick)
         {
             ref var snapshot = ref world.GetSnapshot();
+
+            var nextAngle = 0;
 
             for (var i = snapshot._enemies.GetNumEntities() - 1; i >= 0; i--)
             {
                 ref var enemy = ref snapshot._enemies.GetEntityAt(i);
 
-                // closest anschauen
-                var closestId = -1;
-                var closestDistance = float.MaxValue;
-                var closestPosition = Vector2.zero;
-                for (var j = snapshot._players.GetNumEntities() - 1; j >= 0; j--)
+                if (enemy._type == EnemyType.RonWeasly)
                 {
-                    ref var player = ref snapshot._players.GetEntityAt(j);
-
-                    var distance = Vector2.Distance(player._position, enemy._position);
-                    if (distance < closestDistance)
+                    if (enemy._toTickThisDirection <= tick && HasPlayerInView(snapshot, enemy))
                     {
-                        closestDistance = distance;
-                        closestId = snapshot._players.GetIdAt(j);
-                        closestPosition = player._position;
+                        enemy._toTickThisDirection = tick + _tickRate * 3;
+
+                        var rad = nextAngle * Mathf.Deg2Rad;
+
+                        var direction = new Vector2(Mathf.Cos(rad), Mathf.Sin(rad));
+
+                        enemy._linearVelocity = direction;
+
+                        nextAngle += 135;
                     }
-                }
 
-                if (closestId != -1)
-                {
-                    var direction = closestPosition - enemy._position;
-
-                    enemy._angle = Mathf.Atan2(
-                        direction.y,
-                        direction.x
-                    ) * Mathf.Rad2Deg;
-                }
-            }
-
-            for (var i = snapshot._projectiles.GetNumEntities() - 1; i >= 0; i--)
-            {
-                ref var projectile = ref snapshot._projectiles.GetEntityAt(i);
-                for (var j = snapshot._enemies.GetNumEntities() - 1; j >= 0; j--)
-                {
-                    ref var enemy = ref snapshot._enemies.GetEntityAt(j);
-
-                    var distance = projectile._position - enemy._position;
-
-                    if (distance.sqrMagnitude - Constants.GunManColliderRadius <= 1f)
+                    // closest anschauen
+                    var closestId = -1;
+                    var closestDistance = float.MaxValue;
+                    var closestPosition = Vector2.zero;
+                    for (var j = snapshot._players.GetNumEntities() - 1; j >= 0; j--)
                     {
-                        snapshot._projectiles.DespawnAt(i);
-                        enemy._health -= 30;
-                        if (enemy._health <= 0)
+                        ref var player = ref snapshot._players.GetEntityAt(j);
+
+                        var distance = Vector2.Distance(player._position, enemy._position);
+                        if (distance < closestDistance)
                         {
-                            enemy._health = 0;
-                            snapshot._enemies.DespawnAt(j);
+                            closestDistance = distance;
+                            closestId = snapshot._players.GetIdAt(j);
+                            closestPosition = player._position;
                         }
+                    }
 
-                        break;
+                    if (closestId != -1)
+                    {
+                        var direction = closestPosition - enemy._position;
+
+                        enemy._angle = Mathf.Atan2(
+                            direction.y,
+                            direction.x
+                        ) * Mathf.Rad2Deg;
+                    }
+
+                    if (enemy._toTickNoShoot <= tick)
+                    {
+                        enemy._toTickNoShoot = tick + _tickRate * 4;
+
+                        world.AddShootEvent(new ShootEvent()
+                        {
+                            _angle = enemy._angle,
+                            _position = enemy._position, 
+                            _type = ProjectileType.RonWeasly,
+                            _ttl = _tickRate * 5
+                        });
                     }
                 }
             }
+
+            // for (var i = snapshot._projectiles.GetNumEntities() - 1; i >= 0; i--)
+            // {
+            //     ref var projectile = ref snapshot._projectiles.GetEntityAt(i);
+            //     for (var j = snapshot._enemies.GetNumEntities() - 1; j >= 0; j--)
+            //     {
+            //         ref var enemy = ref snapshot._enemies.GetEntityAt(j);
+            //
+            //         var distance = projectile._position - enemy._position;
+            //
+            //         if (distance.sqrMagnitude - Constants.GunManColliderRadius <= 1f)
+            //         {
+            //             snapshot._projectiles.DespawnAt(i);
+            //             enemy._health -= 30;
+            //             if (enemy._health <= 0)
+            //             {
+            //                 enemy._health = 0;
+            //                 snapshot._enemies.DespawnAt(j);
+            //             }
+            //
+            //             break;
+            //         }
+            //     }
+            // }
 
             #region heavy
 
@@ -180,6 +219,27 @@ namespace ECS.Systems
             }
 
             #endregion
+        }
+
+        private bool HasPlayerInView(Snapshot snapshot, Enemy enemy)
+        {
+            var startPos = enemy._position;
+            var stepSize = 1f / 16f;
+            for (var i = 0; i < snapshot._players.GetNumEntities(); i++)
+            {
+                ref var player = ref snapshot._players.GetEntityAt(i);
+
+                var direction = (player._position - startPos).normalized;
+                for (var j = 0; j < 800; j++)
+                {
+                    var step = player._position - (startPos + j * stepSize * direction);
+
+                    if (step.sqrMagnitude < 1f * 1f)
+                        return true;
+                }
+            }
+
+            return false;
         }
 
         private void BlastWaveEvent(ref Snapshot snapshot, BlastWaveEvent evt)

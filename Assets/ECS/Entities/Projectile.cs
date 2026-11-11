@@ -10,14 +10,14 @@ namespace ECS.Entities
         Stealth,
         Dude1,
         Dude2,
-        GunMan
+        RonWeasly
     }
     
     public struct Projectile
     {
         public Vector2 _position;
         public float _angle;
-        public float _spawnTick;
+        public int _spawnTick;
         public ProjectileType _type;
         public float _ttl;
     }

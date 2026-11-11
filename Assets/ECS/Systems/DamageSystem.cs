@@ -13,6 +13,8 @@ namespace ECS.Systems
             {
                 case ProjectileType.Heavy:
                     return Constants.HeavyDamage;
+                case ProjectileType.Hacker:
+                    return Constants.HackerDamage;
                 default:
                     return 0;
             }
@@ -23,6 +25,7 @@ namespace ECS.Systems
             return projectile._type switch
             {
                 ProjectileType.Heavy => true,
+                ProjectileType.Hacker => true,
                 _ => false
             };
         }
@@ -31,8 +34,7 @@ namespace ECS.Systems
         {
             return projectile._type switch
             {
-                ProjectileType.GunMan => true,
-                ProjectileType.Heavy => type != PlayerType.Heavy,
+                ProjectileType.RonWeasly => true,
                 ProjectileType.Hacker => type != PlayerType.Hacker,
                 _ => false
             };
@@ -42,13 +44,13 @@ namespace ECS.Systems
         {
             ref var snapshot = ref world.GetSnapshot();
 
-            for (var i = snapshot._enemies.GetNumEntities() - 1; i >= 0; i--)
-            {
-                ref var enemy = ref snapshot._enemies.GetEntityAt(i);
 
-                for (var j = snapshot._projectiles.GetNumEntities() - 1; j >= 0; j--)
+            for (var j = snapshot._projectiles.GetNumEntities() - 1; j >= 0; j--)
+            {
+                ref var projectile = ref snapshot._projectiles.GetEntityAt(j);
+                for (var i = snapshot._enemies.GetNumEntities() - 1; i >= 0; i--)
                 {
-                    ref var projectile = ref snapshot._projectiles.GetEntityAt(j);
+                    ref var enemy = ref snapshot._enemies.GetEntityAt(i);
 
                     if (!DoesDamageToEnemy(projectile))
                         continue;
@@ -57,15 +59,13 @@ namespace ECS.Systems
                     {
                         enemy._health -= GetProjectileDamage(projectile);
 
-                        var pos = projectile._position;
-
                         snapshot._projectiles.DespawnAt(j);
 
                         if (enemy._health <= 0)
                         {
                             enemy._health = 0;
 
-                            var vector = (enemy._position - pos).normalized;
+                            var vector = (enemy._position - projectile._position).normalized;
 
                             snapshot._enemyDiedNotificationPool.Add(new EnemyDiedNotification()
                             {
