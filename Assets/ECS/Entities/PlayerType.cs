@@ -5,6 +5,6 @@
         Heavy,
         Hacker,
         Demolition,
-        Stealth
+        Sniper
     }
 }

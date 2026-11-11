@@ -206,7 +206,11 @@ namespace ECS
 
                 var enemy = new Enemy()
                 {
-                    _health = 100, _angle = 0, _position = spawnZone[index], _type = EnemyType.RonWeasly
+                    _health = 100,
+                    _angle = 0,
+                    _position = spawnZone[index],
+                    _type = EnemyType.RedHairGuy,
+                    _colliderRadius = Constants.RedHairGuyColliderRadius
                 };
 
                 snapshot._enemies.Spawn(enemy);
@@ -425,7 +429,7 @@ namespace ECS
         {
             return type switch
             {
-                EnemyType.RonWeasly => Constants.GunmanMoveSpeed,
+                EnemyType.RedHairGuy => Constants.RedHairGuyMoveSpeed,
                 _ => 0.0f
             };
         }
@@ -480,9 +484,9 @@ namespace ECS
                 ref var enemy = ref _workspace._enemies.GetEntityAt(i);
 
                 var velocity = enemy._linearVelocity;
-                
+
                 var nextPos = enemy._position + velocity * (GetMoveSpeed(enemy._type) * _deltaTime);
-                
+
                 var nextX = new Vector2(nextPos.x, enemy._position.y);
 
                 if (IsBlocked(nextX, 0.5f))
@@ -496,7 +500,7 @@ namespace ECS
                 {
                     velocity.y = 0;
                 }
-                
+
                 enemy._position += velocity * (GetMoveSpeed(enemy._type) * _deltaTime);
             }
         }
@@ -512,18 +516,22 @@ namespace ECS
                 case PlayerType.Heavy:
                     player._type = PlayerType.Heavy;
                     player._size = new Vector2(1.0f, 1.0f);
+                    player._colliderRadius = Constants.HeavyColliderRadius;
                     break;
                 case PlayerType.Hacker:
                     player._type = PlayerType.Hacker;
                     player._size = new Vector2(0.5f, 1.0f);
+                    player._colliderRadius = Constants.HackerColliderRadius;
                     break;
                 case PlayerType.Demolition:
                     player._type = PlayerType.Demolition;
                     player._size = new Vector2(0.5f, 1.0f);
+                    player._colliderRadius = Constants.DemolitionColliderRadius;
                     break;
-                case PlayerType.Stealth:
-                    player._type = PlayerType.Stealth;
+                case PlayerType.Sniper:
+                    player._type = PlayerType.Sniper;
                     player._size = new Vector2(0.5f, 1.0f);
+                    player._colliderRadius = Constants.SniperColliderRadius;
                     break;
             }
 

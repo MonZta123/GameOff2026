@@ -78,11 +78,9 @@ namespace Actors
 
             _health = entity._health;
             _incomingEntity = entity;
-            _tick = tick;
         }
 
         private ECS.Entities.Enemy _incomingEntity;
-        private int _tick;
 
         private Vector2 _lastPosition;
 

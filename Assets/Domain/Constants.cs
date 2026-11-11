@@ -25,7 +25,7 @@ namespace Domain
         public const float HeavyProjectileTtl = 1f;
         public const float HeavyProjectileSpeed = 5f;
         public const float HeavyMoveSpeed = 7.5f;
-        public const float HeavyColliderRadius = 1.0f;
+        public const float HeavyColliderRadius = 0.5f;
         public const float HeavyDamage = 10f;
 
         public const float HackerCooldown = 0.25f;
@@ -49,11 +49,11 @@ namespace Domain
         public const float SniperColliderRadius = 1.0f;
         public const float SniperDamage = 10f;
         
-        public const float GunManCooldown = 1.0f;
-        public const float GunManProjectileTtl = 1.0f;
-        public const float GunManProjectileSpeed = 1.0f;
-        public const float GunManMoveSpeed = 1.0f;
-        public const float GunManColliderRadius = 1.0f;
-        public const float GunmanMoveSpeed = 2.0f;
+        public const float RedHairGuyCooldown = 1.0f;
+        public const float RedHairGuyProjectileTtl = 1.0f;
+        public const float RedHairGuyProjectileSpeed = 1.0f;
+        public const float RedHairGuyColliderRadius = 1.0f;
+        public const float RedHairGuyMoveSpeed = 2.0f; 
+        public const float ReadHairGuyDamage = 20f;
     }
 }

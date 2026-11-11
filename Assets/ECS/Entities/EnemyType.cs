@@ -2,7 +2,7 @@
 {
     public enum EnemyType
     {
-        RonWeasly,
+        RedHairGuy,
         LegSpreadChick,
         WtfHair,
         Butler

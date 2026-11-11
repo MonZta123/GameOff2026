@@ -10,7 +10,7 @@ namespace ECS.Entities
         Stealth,
         Dude1,
         Dude2,
-        RonWeasly
+        RedHairGuy
     }
     
     public struct Projectile

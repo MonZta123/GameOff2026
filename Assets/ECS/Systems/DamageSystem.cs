@@ -15,6 +15,8 @@ namespace ECS.Systems
                     return Constants.HeavyDamage;
                 case ProjectileType.Hacker:
                     return Constants.HackerDamage;
+                case ProjectileType.RedHairGuy:
+                    return Constants.ReadHairGuyDamage;
                 default:
                     return 0;
             }
@@ -34,7 +36,7 @@ namespace ECS.Systems
         {
             return projectile._type switch
             {
-                ProjectileType.RonWeasly => true,
+                ProjectileType.RedHairGuy => true,
                 ProjectileType.Hacker => type != PlayerType.Hacker,
                 _ => false
             };
@@ -44,19 +46,20 @@ namespace ECS.Systems
         {
             ref var snapshot = ref world.GetSnapshot();
 
-
             for (var j = snapshot._projectiles.GetNumEntities() - 1; j >= 0; j--)
             {
                 ref var projectile = ref snapshot._projectiles.GetEntityAt(j);
                 for (var i = snapshot._enemies.GetNumEntities() - 1; i >= 0; i--)
                 {
                     ref var enemy = ref snapshot._enemies.GetEntityAt(i);
-
-                    if (!DoesDamageToEnemy(projectile))
-                        continue;
-
-                    if (Vector2.Distance(enemy._position, projectile._position) < Constants.GunManColliderRadius)
+                    
+                    var distance = (enemy._position - projectile._position).sqrMagnitude;
+                    
+                    if (distance < enemy._colliderRadius * enemy._colliderRadius)
                     {
+                        if (!DoesDamageToEnemy(projectile))
+                            continue;
+                        
                         enemy._health -= GetProjectileDamage(projectile);
 
                         snapshot._projectiles.DespawnAt(j);
@@ -80,21 +83,17 @@ namespace ECS.Systems
                         }
                     }
                 }
-            }
 
-            for (var i = snapshot._players.GetNumEntities() - 1; i >= 0; i--)
-            {
-                ref var player = ref snapshot._players.GetEntityAt(i);
-
-                for (var j = snapshot._projectiles.GetNumEntities() - 1; j >= 0; j--)
+                for (var i = snapshot._players.GetNumEntities() - 1; i >= 0; i--)
                 {
-                    ref var projectile = ref snapshot._projectiles.GetEntityAt(j);
+                    ref var player = ref snapshot._players.GetEntityAt(i);
 
-                    if (!DoesDamageToPlayer(projectile, player._type))
-                        continue;
-
-                    if (Vector2.Distance(player._position, projectile._position) < player._colliderRadius)
+                    if ((player._position - projectile._position).sqrMagnitude <
+                        player._colliderRadius * player._colliderRadius)
                     {
+                        if (!DoesDamageToPlayer(projectile, player._type))
+                            continue;
+                        
                         player._health -= GetProjectileDamage(projectile);
 
                         snapshot._projectiles.DespawnAt(j);

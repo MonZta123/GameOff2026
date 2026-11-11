@@ -12,5 +12,7 @@ namespace ECS.Entities
 
         public int _toTickThisDirection;
         public int _toTickNoShoot;
+        
+        public float _colliderRadius;
     }
 }

@@ -58,7 +58,7 @@ namespace ECS.Systems
                             var enmy = snapshot._enemies.GetEntityAt(j);
 
                             if ((enmy._position - currentLazor).sqrMagnitude <
-                                Constants.GunManColliderRadius * Constants.GunManColliderRadius)
+                                enmy._colliderRadius * enmy._colliderRadius)
                             {
                                 snapshot._enemyDiedNotificationPool.Add(new EnemyDiedNotification()
                                 {

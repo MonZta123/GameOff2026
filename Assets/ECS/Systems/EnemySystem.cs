@@ -28,7 +28,7 @@ namespace ECS.Systems
             {
                 ref var enemy = ref snapshot._enemies.GetEntityAt(i);
 
-                if (enemy._type == EnemyType.RonWeasly)
+                if (enemy._type == EnemyType.RedHairGuy)
                 {
                     if (enemy._toTickThisDirection <= tick && HasPlayerInView(snapshot, enemy))
                     {
@@ -78,7 +78,7 @@ namespace ECS.Systems
                         {
                             _angle = enemy._angle,
                             _position = enemy._position, 
-                            _type = ProjectileType.RonWeasly,
+                            _type = ProjectileType.RedHairGuy,
                             _ttl = _tickRate * 5
                         });
                     }
