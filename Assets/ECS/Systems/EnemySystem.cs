@@ -46,6 +46,32 @@ namespace ECS.Systems
                 }
             }
 
+            for (var i = snapshot._projectiles.GetNumEntities() - 1; i >= 0; i--)
+            {
+                ref var projectile = ref snapshot._projectiles.GetEntityAt(i);
+                for (var j = snapshot._enemies.GetNumEntities() - 1; j >= 0; j--)
+                {
+                    ref var enemy = ref snapshot._enemies.GetEntityAt(j);
+
+                    var distance = projectile._position - enemy._position;
+
+                    if (distance.sqrMagnitude - Constants.GunManColliderRadius <= 1f)
+                    {
+                        snapshot._projectiles.DespawnAt(i);
+                        enemy._health -= 30;
+                        if (enemy._health <= 0)
+                        {
+                            enemy._health = 0;
+                            snapshot._enemies.DespawnAt(j);
+                        }
+
+                        break;
+                    }
+                }
+            }
+
+            #region heavy
+
             if (world._hasHeavyDamageCone)
             {
                 var radians = world._heavyDamageConeEvent._angle * Mathf.Deg2Rad;
@@ -152,6 +178,8 @@ namespace ECS.Systems
                     }
                 }
             }
+
+            #endregion
         }
 
         private void BlastWaveEvent(ref Snapshot snapshot, BlastWaveEvent evt)
