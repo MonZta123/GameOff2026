@@ -10,7 +10,7 @@
     "Type": "User",
     "GUID": "{3059A6CE-8152-4CD2-BEA9-69E98BB60D65}",
     "Language": "SFX",
-    "Hash": "{4C0CC39E-CD60-9A36-7A79-9231E2694E7E}",
+    "Hash": "{31807E5A-B0AD-5DB6-B1E7-719E7E079D42}",
     "ObjectPath": "\\SoundBanks\\Default Work Unit\\Main",
     "ShortName": "Main",
     "Path": "Main.bnk",
@@ -828,7 +828,7 @@
       "ObjectPath": "\\Events\\Default Work Unit\\MUSIC\\Play_MUS_Character",
       "GUID": "{44E5D87C-C9EE-4925-8962-FA761B8D15F0}",
       "DurationType": "OneShot",
-      "DurationMin": "0",
+      "DurationMin": "31.578938",
       "DurationMax": "31.578938",
       "SwitchContainers": [
        {
@@ -849,16 +849,46 @@
           },
           "MediaRefs": [
            {
-            "Id": "13238655"
-           },
+            "Id": "206268581"
+           }
+          ]
+         },
+         {
+          "SwitchValue": {
+           "GroupType": "State",
+           "GroupId": "1413238543",
+           "Id": "1200082260",
+           "GUID": "{F4CD4D35-CE3B-41B2-9E0B-6E004347776F}"
+          },
+          "MediaRefs": [
            {
             "Id": "206268581"
-           },
+           }
+          ]
+         },
+         {
+          "SwitchValue": {
+           "GroupType": "State",
+           "GroupId": "1413238543",
+           "Id": "1200082258",
+           "GUID": "{F39FE53F-3AF9-431B-AE26-DBF3E7967E58}"
+          },
+          "MediaRefs": [
            {
-            "Id": "212543274"
-           },
+            "Id": "206268581"
+           }
+          ]
+         },
+         {
+          "SwitchValue": {
+           "GroupType": "State",
+           "GroupId": "1413238543",
+           "Id": "1200082261",
+           "GUID": "{368377C0-A9B4-4367-BFA6-2450D5E592E3}"
+          },
+          "MediaRefs": [
            {
-            "Id": "214935482"
+            "Id": "206268581"
            }
           ]
          }
@@ -869,7 +899,8 @@
          "GroupType": "Switch",
          "GroupId": "436743010",
          "Id": "1204435002",
-         "GUID": "{01396F22-9182-4E10-AAAE-FF089A804BC5}"
+         "GUID": "{01396F22-9182-4E10-AAAE-FF089A804BC5}",
+         "Default": "true"
         },
         "Children": [
          {
@@ -879,6 +910,45 @@
            "Id": "1200082263",
            "GUID": "{75FB4324-C21A-4D82-B0CF-3542C815D862}",
            "Default": "true"
+          },
+          "MediaRefs": [
+           {
+            "Id": "476922253"
+           }
+          ]
+         },
+         {
+          "SwitchValue": {
+           "GroupType": "State",
+           "GroupId": "1413238543",
+           "Id": "1200082260",
+           "GUID": "{F4CD4D35-CE3B-41B2-9E0B-6E004347776F}"
+          },
+          "MediaRefs": [
+           {
+            "Id": "476922253"
+           }
+          ]
+         },
+         {
+          "SwitchValue": {
+           "GroupType": "State",
+           "GroupId": "1413238543",
+           "Id": "1200082258",
+           "GUID": "{F39FE53F-3AF9-431B-AE26-DBF3E7967E58}"
+          },
+          "MediaRefs": [
+           {
+            "Id": "476922253"
+           }
+          ]
+         },
+         {
+          "SwitchValue": {
+           "GroupType": "State",
+           "GroupId": "1413238543",
+           "Id": "1200082261",
+           "GUID": "{368377C0-A9B4-4367-BFA6-2450D5E592E3}"
           },
           "MediaRefs": [
            {
@@ -895,7 +965,61 @@
          "Id": "1204435001",
          "GUID": "{F11D97A6-0011-495A-98D4-7CC9A6901DEC}"
         },
-        "Children": []
+        "Children": [
+         {
+          "SwitchValue": {
+           "GroupType": "State",
+           "GroupId": "1413238543",
+           "Id": "1200082263",
+           "GUID": "{75FB4324-C21A-4D82-B0CF-3542C815D862}",
+           "Default": "true"
+          },
+          "MediaRefs": [
+           {
+            "Id": "13238655"
+           }
+          ]
+         },
+         {
+          "SwitchValue": {
+           "GroupType": "State",
+           "GroupId": "1413238543",
+           "Id": "1200082260",
+           "GUID": "{F4CD4D35-CE3B-41B2-9E0B-6E004347776F}"
+          },
+          "MediaRefs": [
+           {
+            "Id": "13238655"
+           }
+          ]
+         },
+         {
+          "SwitchValue": {
+           "GroupType": "State",
+           "GroupId": "1413238543",
+           "Id": "1200082258",
+           "GUID": "{F39FE53F-3AF9-431B-AE26-DBF3E7967E58}"
+          },
+          "MediaRefs": [
+           {
+            "Id": "13238655"
+           }
+          ]
+         },
+         {
+          "SwitchValue": {
+           "GroupType": "State",
+           "GroupId": "1413238543",
+           "Id": "1200082261",
+           "GUID": "{368377C0-A9B4-4367-BFA6-2450D5E592E3}"
+          },
+          "MediaRefs": [
+           {
+            "Id": "13238655"
+           }
+          ]
+         }
+        ]
        },
        {
         "SwitchValue": {
@@ -904,7 +1028,61 @@
          "Id": "1204435000",
          "GUID": "{494D65CC-B3B8-48AC-B859-16C5936339B8}"
         },
-        "Children": []
+        "Children": [
+         {
+          "SwitchValue": {
+           "GroupType": "State",
+           "GroupId": "1413238543",
+           "Id": "1200082263",
+           "GUID": "{75FB4324-C21A-4D82-B0CF-3542C815D862}",
+           "Default": "true"
+          },
+          "MediaRefs": [
+           {
+            "Id": "212543274"
+           }
+          ]
+         },
+         {
+          "SwitchValue": {
+           "GroupType": "State",
+           "GroupId": "1413238543",
+           "Id": "1200082260",
+           "GUID": "{F4CD4D35-CE3B-41B2-9E0B-6E004347776F}"
+          },
+          "MediaRefs": [
+           {
+            "Id": "212543274"
+           }
+          ]
+         },
+         {
+          "SwitchValue": {
+           "GroupType": "State",
+           "GroupId": "1413238543",
+           "Id": "1200082258",
+           "GUID": "{F39FE53F-3AF9-431B-AE26-DBF3E7967E58}"
+          },
+          "MediaRefs": [
+           {
+            "Id": "212543274"
+           }
+          ]
+         },
+         {
+          "SwitchValue": {
+           "GroupType": "State",
+           "GroupId": "1413238543",
+           "Id": "1200082261",
+           "GUID": "{368377C0-A9B4-4367-BFA6-2450D5E592E3}"
+          },
+          "MediaRefs": [
+           {
+            "Id": "212543274"
+           }
+          ]
+         }
+        ]
        }
       ]
      },
@@ -1863,6 +2041,6 @@
     ]
    }
   ],
-  "FileHash": "{A1850911-515A-7925-5B4E-6019D51EF569}"
+  "FileHash": "{30CFF5CB-5D38-7159-A677-A91461AB5EC1}"
  }
 }

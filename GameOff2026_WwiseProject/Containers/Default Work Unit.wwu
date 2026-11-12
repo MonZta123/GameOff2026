@@ -2642,8 +2642,11 @@
 										<Reference Name="Conversion">
 											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{4ADFD3A0-A42B-432C-8502-1433439D5054}"/>
 										</Reference>
+										<Reference Name="DefaultSwitchOrState">
+											<ObjectRef Name="Character_A" ID="{01396F22-9182-4E10-AAAE-FF089A804BC5}" WorkUnitID="{D8E1DC27-9AD1-475D-9CD4-C63E49CC47B8}"/>
+										</Reference>
 										<Reference Name="OutputBus">
-											<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{F8A65CB3-3EA6-47C9-8C5A-27068DB4C3FF}"/>
+											<ObjectRef Name="MUSIC" ID="{F759BC7F-4007-4D33-8F58-64648B34CD3D}" WorkUnitID="{F8A65CB3-3EA6-47C9-8C5A-27068DB4C3FF}"/>
 										</Reference>
 										<Reference Name="SwitchGroupOrStateGroup">
 											<ObjectRef Name="Character" ID="{FC8A765D-1615-45B5-8855-91E373A25B5A}" WorkUnitID="{D8E1DC27-9AD1-475D-9CD4-C63E49CC47B8}"/>
@@ -2709,6 +2712,30 @@
 															<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{F8A65CB3-3EA6-47C9-8C5A-27068DB4C3FF}"/>
 														</Reference>
 													</ReferenceList>
+													<ChildrenList>
+														<Sound Name="MUS_Character_A" ID="{3725DA99-344A-4FD1-897B-DFE38374E312}" ShortID="784138008">
+															<ReferenceList>
+																<Reference Name="Conversion">
+																	<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{4ADFD3A0-A42B-432C-8502-1433439D5054}"/>
+																</Reference>
+																<Reference Name="OutputBus">
+																	<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{F8A65CB3-3EA6-47C9-8C5A-27068DB4C3FF}"/>
+																</Reference>
+															</ReferenceList>
+															<ChildrenList>
+																<AudioFileSource Name="MUS_Character_A" ID="{0561856C-49FB-47CC-83B8-0E139578AB51}">
+																	<Language>SFX</Language>
+																	<AudioFile>MUS_Character_A.wav</AudioFile>
+																	<MediaIDList>
+																		<MediaID ID="476922253"/>
+																	</MediaIDList>
+																</AudioFileSource>
+															</ChildrenList>
+															<ActiveSourceList>
+																<ActiveSource Name="MUS_Character_A" ID="{0561856C-49FB-47CC-83B8-0E139578AB51}" Platform="Linked"/>
+															</ActiveSourceList>
+														</Sound>
+													</ChildrenList>
 												</BlendContainer>
 												<BlendContainer Name="Round_3" ID="{C73E4F91-5284-43B3-818C-168A29DA1B0E}" ShortID="224185398">
 													<ReferenceList>
@@ -2719,6 +2746,30 @@
 															<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{F8A65CB3-3EA6-47C9-8C5A-27068DB4C3FF}"/>
 														</Reference>
 													</ReferenceList>
+													<ChildrenList>
+														<Sound Name="MUS_Character_A" ID="{393FF17F-FFAD-460D-9765-D542A8A8C3DA}" ShortID="777581027">
+															<ReferenceList>
+																<Reference Name="Conversion">
+																	<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{4ADFD3A0-A42B-432C-8502-1433439D5054}"/>
+																</Reference>
+																<Reference Name="OutputBus">
+																	<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{F8A65CB3-3EA6-47C9-8C5A-27068DB4C3FF}"/>
+																</Reference>
+															</ReferenceList>
+															<ChildrenList>
+																<AudioFileSource Name="MUS_Character_A" ID="{AF92972D-3B80-4485-A800-B9469996F0F4}">
+																	<Language>SFX</Language>
+																	<AudioFile>MUS_Character_A.wav</AudioFile>
+																	<MediaIDList>
+																		<MediaID ID="476922253"/>
+																	</MediaIDList>
+																</AudioFileSource>
+															</ChildrenList>
+															<ActiveSourceList>
+																<ActiveSource Name="MUS_Character_A" ID="{AF92972D-3B80-4485-A800-B9469996F0F4}" Platform="Linked"/>
+															</ActiveSourceList>
+														</Sound>
+													</ChildrenList>
 												</BlendContainer>
 												<BlendContainer Name="Round_4" ID="{BD7C15E9-4D18-4D7B-9893-7F72E0D71252}" ShortID="325688365">
 													<ReferenceList>
@@ -2729,6 +2780,30 @@
 															<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{F8A65CB3-3EA6-47C9-8C5A-27068DB4C3FF}"/>
 														</Reference>
 													</ReferenceList>
+													<ChildrenList>
+														<Sound Name="MUS_Character_A" ID="{71DCC116-398B-4BD5-98E4-BCDA39CB9C55}" ShortID="306758522">
+															<ReferenceList>
+																<Reference Name="Conversion">
+																	<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{4ADFD3A0-A42B-432C-8502-1433439D5054}"/>
+																</Reference>
+																<Reference Name="OutputBus">
+																	<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{F8A65CB3-3EA6-47C9-8C5A-27068DB4C3FF}"/>
+																</Reference>
+															</ReferenceList>
+															<ChildrenList>
+																<AudioFileSource Name="MUS_Character_A" ID="{67418275-2E64-4B1C-8FB7-4312D919BE81}">
+																	<Language>SFX</Language>
+																	<AudioFile>MUS_Character_A.wav</AudioFile>
+																	<MediaIDList>
+																		<MediaID ID="476922253"/>
+																	</MediaIDList>
+																</AudioFileSource>
+															</ChildrenList>
+															<ActiveSourceList>
+																<ActiveSource Name="MUS_Character_A" ID="{67418275-2E64-4B1C-8FB7-4312D919BE81}" Platform="Linked"/>
+															</ActiveSourceList>
+														</Sound>
+													</ChildrenList>
 												</BlendContainer>
 											</ChildrenList>
 											<GroupingInfo>
@@ -2799,6 +2874,30 @@
 															<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{F8A65CB3-3EA6-47C9-8C5A-27068DB4C3FF}"/>
 														</Reference>
 													</ReferenceList>
+													<ChildrenList>
+														<Sound Name="MUS_Character_B" ID="{B7A3F108-426F-4717-B2DC-444CF977450E}" ShortID="978945642">
+															<ReferenceList>
+																<Reference Name="Conversion">
+																	<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{4ADFD3A0-A42B-432C-8502-1433439D5054}"/>
+																</Reference>
+																<Reference Name="OutputBus">
+																	<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{F8A65CB3-3EA6-47C9-8C5A-27068DB4C3FF}"/>
+																</Reference>
+															</ReferenceList>
+															<ChildrenList>
+																<AudioFileSource Name="MUS_Character_B" ID="{53B815DA-0045-48FF-9792-B249486AD335}">
+																	<Language>SFX</Language>
+																	<AudioFile>MUS_Character_B.wav</AudioFile>
+																	<MediaIDList>
+																		<MediaID ID="13238655"/>
+																	</MediaIDList>
+																</AudioFileSource>
+															</ChildrenList>
+															<ActiveSourceList>
+																<ActiveSource Name="MUS_Character_B" ID="{53B815DA-0045-48FF-9792-B249486AD335}" Platform="Linked"/>
+															</ActiveSourceList>
+														</Sound>
+													</ChildrenList>
 												</BlendContainer>
 												<BlendContainer Name="Round_2" ID="{C09BB021-ED32-4540-A6A4-03F0B514124B}" ShortID="687101516">
 													<ReferenceList>
@@ -2809,6 +2908,30 @@
 															<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{F8A65CB3-3EA6-47C9-8C5A-27068DB4C3FF}"/>
 														</Reference>
 													</ReferenceList>
+													<ChildrenList>
+														<Sound Name="MUS_Character_B" ID="{B7B5AEED-EE15-494E-90BE-9B022F773B01}" ShortID="166364607">
+															<ReferenceList>
+																<Reference Name="Conversion">
+																	<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{4ADFD3A0-A42B-432C-8502-1433439D5054}"/>
+																</Reference>
+																<Reference Name="OutputBus">
+																	<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{F8A65CB3-3EA6-47C9-8C5A-27068DB4C3FF}"/>
+																</Reference>
+															</ReferenceList>
+															<ChildrenList>
+																<AudioFileSource Name="MUS_Character_B" ID="{C328723F-43C3-4573-9626-34735B87995C}">
+																	<Language>SFX</Language>
+																	<AudioFile>MUS_Character_B.wav</AudioFile>
+																	<MediaIDList>
+																		<MediaID ID="13238655"/>
+																	</MediaIDList>
+																</AudioFileSource>
+															</ChildrenList>
+															<ActiveSourceList>
+																<ActiveSource Name="MUS_Character_B" ID="{C328723F-43C3-4573-9626-34735B87995C}" Platform="Linked"/>
+															</ActiveSourceList>
+														</Sound>
+													</ChildrenList>
 												</BlendContainer>
 												<BlendContainer Name="Round_3" ID="{B673E2EE-7DDD-4200-B598-31F8E558302A}" ShortID="218344295">
 													<ReferenceList>
@@ -2819,6 +2942,30 @@
 															<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{F8A65CB3-3EA6-47C9-8C5A-27068DB4C3FF}"/>
 														</Reference>
 													</ReferenceList>
+													<ChildrenList>
+														<Sound Name="MUS_Character_B" ID="{B7EA4738-FFE2-4C45-99A9-CD89723D4A41}" ShortID="858158483">
+															<ReferenceList>
+																<Reference Name="Conversion">
+																	<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{4ADFD3A0-A42B-432C-8502-1433439D5054}"/>
+																</Reference>
+																<Reference Name="OutputBus">
+																	<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{F8A65CB3-3EA6-47C9-8C5A-27068DB4C3FF}"/>
+																</Reference>
+															</ReferenceList>
+															<ChildrenList>
+																<AudioFileSource Name="MUS_Character_B" ID="{2BFA24A1-F0A5-4021-A400-1B2BAC600A70}">
+																	<Language>SFX</Language>
+																	<AudioFile>MUS_Character_B.wav</AudioFile>
+																	<MediaIDList>
+																		<MediaID ID="13238655"/>
+																	</MediaIDList>
+																</AudioFileSource>
+															</ChildrenList>
+															<ActiveSourceList>
+																<ActiveSource Name="MUS_Character_B" ID="{2BFA24A1-F0A5-4021-A400-1B2BAC600A70}" Platform="Linked"/>
+															</ActiveSourceList>
+														</Sound>
+													</ChildrenList>
 												</BlendContainer>
 												<BlendContainer Name="Round_4" ID="{92F5BFAA-34F9-4C40-ABF8-60DF8243B14B}" ShortID="64847977">
 													<ReferenceList>
@@ -2829,6 +2976,30 @@
 															<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{F8A65CB3-3EA6-47C9-8C5A-27068DB4C3FF}"/>
 														</Reference>
 													</ReferenceList>
+													<ChildrenList>
+														<Sound Name="MUS_Character_B" ID="{47DD726E-5527-40D2-AC73-F5FD57A643C4}" ShortID="701500266">
+															<ReferenceList>
+																<Reference Name="Conversion">
+																	<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{4ADFD3A0-A42B-432C-8502-1433439D5054}"/>
+																</Reference>
+																<Reference Name="OutputBus">
+																	<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{F8A65CB3-3EA6-47C9-8C5A-27068DB4C3FF}"/>
+																</Reference>
+															</ReferenceList>
+															<ChildrenList>
+																<AudioFileSource Name="MUS_Character_B" ID="{D9E8693A-0F8A-403D-86C6-9114F4843D51}">
+																	<Language>SFX</Language>
+																	<AudioFile>MUS_Character_B.wav</AudioFile>
+																	<MediaIDList>
+																		<MediaID ID="13238655"/>
+																	</MediaIDList>
+																</AudioFileSource>
+															</ChildrenList>
+															<ActiveSourceList>
+																<ActiveSource Name="MUS_Character_B" ID="{D9E8693A-0F8A-403D-86C6-9114F4843D51}" Platform="Linked"/>
+															</ActiveSourceList>
+														</Sound>
+													</ChildrenList>
 												</BlendContainer>
 											</ChildrenList>
 											<GroupingInfo>
@@ -2899,6 +3070,30 @@
 															<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{F8A65CB3-3EA6-47C9-8C5A-27068DB4C3FF}"/>
 														</Reference>
 													</ReferenceList>
+													<ChildrenList>
+														<Sound Name="MUS_Character_C" ID="{182F0E77-E91B-40F3-BD01-C2C010E2CB7E}" ShortID="1047797886">
+															<ReferenceList>
+																<Reference Name="Conversion">
+																	<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{4ADFD3A0-A42B-432C-8502-1433439D5054}"/>
+																</Reference>
+																<Reference Name="OutputBus">
+																	<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{F8A65CB3-3EA6-47C9-8C5A-27068DB4C3FF}"/>
+																</Reference>
+															</ReferenceList>
+															<ChildrenList>
+																<AudioFileSource Name="MUS_Character_C" ID="{11AAF10B-7DE1-454F-A388-409DA9422A27}">
+																	<Language>SFX</Language>
+																	<AudioFile>MUS_Character_C.wav</AudioFile>
+																	<MediaIDList>
+																		<MediaID ID="212543274"/>
+																	</MediaIDList>
+																</AudioFileSource>
+															</ChildrenList>
+															<ActiveSourceList>
+																<ActiveSource Name="MUS_Character_C" ID="{11AAF10B-7DE1-454F-A388-409DA9422A27}" Platform="Linked"/>
+															</ActiveSourceList>
+														</Sound>
+													</ChildrenList>
 												</BlendContainer>
 												<BlendContainer Name="Round_2" ID="{F7B39E13-7507-48F3-9DB3-DD395FA9D802}" ShortID="734569587">
 													<ReferenceList>
@@ -2909,6 +3104,30 @@
 															<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{F8A65CB3-3EA6-47C9-8C5A-27068DB4C3FF}"/>
 														</Reference>
 													</ReferenceList>
+													<ChildrenList>
+														<Sound Name="MUS_Character_C" ID="{3E45FF19-9001-41AA-A726-614C9F46CF3A}" ShortID="423300332">
+															<ReferenceList>
+																<Reference Name="Conversion">
+																	<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{4ADFD3A0-A42B-432C-8502-1433439D5054}"/>
+																</Reference>
+																<Reference Name="OutputBus">
+																	<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{F8A65CB3-3EA6-47C9-8C5A-27068DB4C3FF}"/>
+																</Reference>
+															</ReferenceList>
+															<ChildrenList>
+																<AudioFileSource Name="MUS_Character_C" ID="{EEF29C57-7249-4745-B40E-F12EA5FC5FDB}">
+																	<Language>SFX</Language>
+																	<AudioFile>MUS_Character_C.wav</AudioFile>
+																	<MediaIDList>
+																		<MediaID ID="212543274"/>
+																	</MediaIDList>
+																</AudioFileSource>
+															</ChildrenList>
+															<ActiveSourceList>
+																<ActiveSource Name="MUS_Character_C" ID="{EEF29C57-7249-4745-B40E-F12EA5FC5FDB}" Platform="Linked"/>
+															</ActiveSourceList>
+														</Sound>
+													</ChildrenList>
 												</BlendContainer>
 												<BlendContainer Name="Round_3" ID="{B35777D0-1983-4E26-97FF-85680385FE01}" ShortID="971668310">
 													<ReferenceList>
@@ -2919,6 +3138,30 @@
 															<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{F8A65CB3-3EA6-47C9-8C5A-27068DB4C3FF}"/>
 														</Reference>
 													</ReferenceList>
+													<ChildrenList>
+														<Sound Name="MUS_Character_C" ID="{779BF34E-7E03-42B0-9EDB-B86AE7D124FF}" ShortID="602853820">
+															<ReferenceList>
+																<Reference Name="Conversion">
+																	<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{4ADFD3A0-A42B-432C-8502-1433439D5054}"/>
+																</Reference>
+																<Reference Name="OutputBus">
+																	<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{F8A65CB3-3EA6-47C9-8C5A-27068DB4C3FF}"/>
+																</Reference>
+															</ReferenceList>
+															<ChildrenList>
+																<AudioFileSource Name="MUS_Character_C" ID="{C4DD6654-6A5F-425C-A245-CDD08505B1A2}">
+																	<Language>SFX</Language>
+																	<AudioFile>MUS_Character_C.wav</AudioFile>
+																	<MediaIDList>
+																		<MediaID ID="212543274"/>
+																	</MediaIDList>
+																</AudioFileSource>
+															</ChildrenList>
+															<ActiveSourceList>
+																<ActiveSource Name="MUS_Character_C" ID="{C4DD6654-6A5F-425C-A245-CDD08505B1A2}" Platform="Linked"/>
+															</ActiveSourceList>
+														</Sound>
+													</ChildrenList>
 												</BlendContainer>
 												<BlendContainer Name="Round_4" ID="{498FD7E2-CEB9-44C8-8D95-5176499D7251}" ShortID="88873129">
 													<ReferenceList>
@@ -2929,6 +3172,30 @@
 															<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{F8A65CB3-3EA6-47C9-8C5A-27068DB4C3FF}"/>
 														</Reference>
 													</ReferenceList>
+													<ChildrenList>
+														<Sound Name="MUS_Character_C" ID="{26F1F4FE-72B6-4741-A6DB-C7CA270232B0}" ShortID="955485749">
+															<ReferenceList>
+																<Reference Name="Conversion">
+																	<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{4ADFD3A0-A42B-432C-8502-1433439D5054}"/>
+																</Reference>
+																<Reference Name="OutputBus">
+																	<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{F8A65CB3-3EA6-47C9-8C5A-27068DB4C3FF}"/>
+																</Reference>
+															</ReferenceList>
+															<ChildrenList>
+																<AudioFileSource Name="MUS_Character_C" ID="{2047E764-0178-4F19-BC1F-5F04E54DB9CA}">
+																	<Language>SFX</Language>
+																	<AudioFile>MUS_Character_C.wav</AudioFile>
+																	<MediaIDList>
+																		<MediaID ID="212543274"/>
+																	</MediaIDList>
+																</AudioFileSource>
+															</ChildrenList>
+															<ActiveSourceList>
+																<ActiveSource Name="MUS_Character_C" ID="{2047E764-0178-4F19-BC1F-5F04E54DB9CA}" Platform="Linked"/>
+															</ActiveSourceList>
+														</Sound>
+													</ChildrenList>
 												</BlendContainer>
 											</ChildrenList>
 											<GroupingInfo>
@@ -3000,72 +3267,6 @@
 														</Reference>
 													</ReferenceList>
 													<ChildrenList>
-														<Sound Name="MUS_MissionEnding" ID="{FE80FF28-669D-43DB-A997-D48DF0D531D4}" ShortID="644045609">
-															<ReferenceList>
-																<Reference Name="Conversion">
-																	<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{4ADFD3A0-A42B-432C-8502-1433439D5054}"/>
-																</Reference>
-																<Reference Name="OutputBus">
-																	<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{F8A65CB3-3EA6-47C9-8C5A-27068DB4C3FF}"/>
-																</Reference>
-															</ReferenceList>
-															<ChildrenList>
-																<AudioFileSource Name="MUS_MissionEnding" ID="{564F92D5-DE63-49CC-9455-3A29F12D0A11}">
-																	<Language>SFX</Language>
-																	<AudioFile>MUS_MissionEnding.wav</AudioFile>
-																	<MediaIDList>
-																		<MediaID ID="214935482"/>
-																	</MediaIDList>
-																</AudioFileSource>
-															</ChildrenList>
-															<ActiveSourceList>
-																<ActiveSource Name="MUS_MissionEnding" ID="{564F92D5-DE63-49CC-9455-3A29F12D0A11}" Platform="Linked"/>
-															</ActiveSourceList>
-														</Sound>
-														<Sound Name="MUS_Character_B" ID="{2B132E3A-09B8-449C-9658-DA02D89662B9}" ShortID="645586534">
-															<ReferenceList>
-																<Reference Name="Conversion">
-																	<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{4ADFD3A0-A42B-432C-8502-1433439D5054}"/>
-																</Reference>
-																<Reference Name="OutputBus">
-																	<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{F8A65CB3-3EA6-47C9-8C5A-27068DB4C3FF}"/>
-																</Reference>
-															</ReferenceList>
-															<ChildrenList>
-																<AudioFileSource Name="MUS_Character_B" ID="{B31F9D5A-E1C9-4879-8CE4-D7E15DABFAF5}">
-																	<Language>SFX</Language>
-																	<AudioFile>MUS_Character_B.wav</AudioFile>
-																	<MediaIDList>
-																		<MediaID ID="13238655"/>
-																	</MediaIDList>
-																</AudioFileSource>
-															</ChildrenList>
-															<ActiveSourceList>
-																<ActiveSource Name="MUS_Character_B" ID="{B31F9D5A-E1C9-4879-8CE4-D7E15DABFAF5}" Platform="Linked"/>
-															</ActiveSourceList>
-														</Sound>
-														<Sound Name="MUS_Character_C" ID="{EBF94B28-CE11-4E6F-9406-51F3A7949ECE}" ShortID="547816302">
-															<ReferenceList>
-																<Reference Name="Conversion">
-																	<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{4ADFD3A0-A42B-432C-8502-1433439D5054}"/>
-																</Reference>
-																<Reference Name="OutputBus">
-																	<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{F8A65CB3-3EA6-47C9-8C5A-27068DB4C3FF}"/>
-																</Reference>
-															</ReferenceList>
-															<ChildrenList>
-																<AudioFileSource Name="MUS_Character_C" ID="{5EFCC7F6-1BE2-444D-925B-CE8891CC8413}">
-																	<Language>SFX</Language>
-																	<AudioFile>MUS_Character_C.wav</AudioFile>
-																	<MediaIDList>
-																		<MediaID ID="212543274"/>
-																	</MediaIDList>
-																</AudioFileSource>
-															</ChildrenList>
-															<ActiveSourceList>
-																<ActiveSource Name="MUS_Character_C" ID="{5EFCC7F6-1BE2-444D-925B-CE8891CC8413}" Platform="Linked"/>
-															</ActiveSourceList>
-														</Sound>
 														<Sound Name="MUS_Character_D" ID="{6F28BA47-6DD2-4C8C-8FB5-8410165BD282}" ShortID="659708747">
 															<ReferenceList>
 																<Reference Name="Conversion">
@@ -3099,6 +3300,30 @@
 															<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{F8A65CB3-3EA6-47C9-8C5A-27068DB4C3FF}"/>
 														</Reference>
 													</ReferenceList>
+													<ChildrenList>
+														<Sound Name="MUS_Character_D" ID="{9FCE19C6-6A25-4063-82DB-3B099763D490}" ShortID="988950599">
+															<ReferenceList>
+																<Reference Name="Conversion">
+																	<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{4ADFD3A0-A42B-432C-8502-1433439D5054}"/>
+																</Reference>
+																<Reference Name="OutputBus">
+																	<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{F8A65CB3-3EA6-47C9-8C5A-27068DB4C3FF}"/>
+																</Reference>
+															</ReferenceList>
+															<ChildrenList>
+																<AudioFileSource Name="MUS_Character_D" ID="{8C00FBC9-9707-4866-962F-377CB8CF0A70}">
+																	<Language>SFX</Language>
+																	<AudioFile>MUS_Character_D.wav</AudioFile>
+																	<MediaIDList>
+																		<MediaID ID="206268581"/>
+																	</MediaIDList>
+																</AudioFileSource>
+															</ChildrenList>
+															<ActiveSourceList>
+																<ActiveSource Name="MUS_Character_D" ID="{8C00FBC9-9707-4866-962F-377CB8CF0A70}" Platform="Linked"/>
+															</ActiveSourceList>
+														</Sound>
+													</ChildrenList>
 												</BlendContainer>
 												<BlendContainer Name="Round_3" ID="{E07D1944-9A28-461E-B1B9-B1290540B9C7}" ShortID="338296555">
 													<ReferenceList>
@@ -3109,6 +3334,30 @@
 															<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{F8A65CB3-3EA6-47C9-8C5A-27068DB4C3FF}"/>
 														</Reference>
 													</ReferenceList>
+													<ChildrenList>
+														<Sound Name="MUS_Character_D" ID="{11E733AD-C216-4D95-9F84-73ABC727268B}" ShortID="606145440">
+															<ReferenceList>
+																<Reference Name="Conversion">
+																	<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{4ADFD3A0-A42B-432C-8502-1433439D5054}"/>
+																</Reference>
+																<Reference Name="OutputBus">
+																	<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{F8A65CB3-3EA6-47C9-8C5A-27068DB4C3FF}"/>
+																</Reference>
+															</ReferenceList>
+															<ChildrenList>
+																<AudioFileSource Name="MUS_Character_D" ID="{B9B7BF02-A528-4DA5-9D04-18042B9DB898}">
+																	<Language>SFX</Language>
+																	<AudioFile>MUS_Character_D.wav</AudioFile>
+																	<MediaIDList>
+																		<MediaID ID="206268581"/>
+																	</MediaIDList>
+																</AudioFileSource>
+															</ChildrenList>
+															<ActiveSourceList>
+																<ActiveSource Name="MUS_Character_D" ID="{B9B7BF02-A528-4DA5-9D04-18042B9DB898}" Platform="Linked"/>
+															</ActiveSourceList>
+														</Sound>
+													</ChildrenList>
 												</BlendContainer>
 												<BlendContainer Name="Round_4" ID="{CA4BCC93-0A65-4263-91F5-764E03A4D846}" ShortID="935693132">
 													<ReferenceList>
@@ -3119,6 +3368,30 @@
 															<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{F8A65CB3-3EA6-47C9-8C5A-27068DB4C3FF}"/>
 														</Reference>
 													</ReferenceList>
+													<ChildrenList>
+														<Sound Name="MUS_Character_D" ID="{635E33B8-3CF2-484A-9B19-220350CCE350}" ShortID="854250070">
+															<ReferenceList>
+																<Reference Name="Conversion">
+																	<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{4ADFD3A0-A42B-432C-8502-1433439D5054}"/>
+																</Reference>
+																<Reference Name="OutputBus">
+																	<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{F8A65CB3-3EA6-47C9-8C5A-27068DB4C3FF}"/>
+																</Reference>
+															</ReferenceList>
+															<ChildrenList>
+																<AudioFileSource Name="MUS_Character_D" ID="{264524D6-9E97-437D-8A36-2F1FA0F9E1D4}">
+																	<Language>SFX</Language>
+																	<AudioFile>MUS_Character_D.wav</AudioFile>
+																	<MediaIDList>
+																		<MediaID ID="206268581"/>
+																	</MediaIDList>
+																</AudioFileSource>
+															</ChildrenList>
+															<ActiveSourceList>
+																<ActiveSource Name="MUS_Character_D" ID="{264524D6-9E97-437D-8A36-2F1FA0F9E1D4}" Platform="Linked"/>
+															</ActiveSourceList>
+														</Sound>
+													</ChildrenList>
 												</BlendContainer>
 											</ChildrenList>
 											<GroupingInfo>
