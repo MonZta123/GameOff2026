@@ -65,8 +65,9 @@ namespace ECS
             _numShootEvents++;
         }
 
-        public World(int tickRate)
+        public World(int tickRate, int seed)
         {
+            _seed = seed;
             _deltaTime = 1f / tickRate;
             _workspace = new Snapshot();
             _workspace.Initialize();
@@ -84,9 +85,10 @@ namespace ECS
             _doorSystem = new DoorSystem();
             _mineSystem = new MineSystem();
         }
-
+        
         private readonly float _deltaTime;
-
+        private readonly int _seed;
+        
         public bool IsBlocked(Vector2 position, float radius = 0.0f)
         {
             if (position.x < 0 || position.y < 0 || position.x >= _map._width || position.y >= _map._height - 1)
@@ -200,9 +202,11 @@ namespace ECS
         {
             var spawnZone = _map._enemySpawnZone.ToList();
 
+            var random = Unity.Mathematics.Random.CreateFromIndex((uint)_seed);
+            
             for (var i = 0; i < 30; i++)
             {
-                var index = UnityEngine.Random.Range(0, spawnZone.Count);
+                var index = random.NextInt(0, spawnZone.Count);
 
                 var enemy = new Enemy()
                 {
@@ -216,7 +220,6 @@ namespace ECS
                 snapshot._enemies.Spawn(enemy);
             }
 
-
             snapshot._damageProcess = 3;
 #if UNITY_EDITOR
             snapshot._damageProcess = 0;
@@ -227,7 +230,6 @@ namespace ECS
         {
             if (_map._hackerZone.Length > 0)
                 snapshot._hackProcess = (int)(5f / _deltaTime);
-
 
 #if UNITY_EDITOR
             snapshot._hackProcess = 0;
@@ -246,7 +248,7 @@ namespace ECS
                 {
                     _leftBottom = spawnZone[index],
                     _rightTop = new Vector2(spawnZone[index].x + 1, spawnZone[index].y + 1),
-                    _triggerType = TriggerType.Mine,
+                    _triggerType = TriggerType.Mine, 
                     _timer = 1.0f
                 };
 
@@ -430,7 +432,20 @@ namespace ECS
             return type switch
             {
                 EnemyType.RedHairGuy => Constants.RedHairGuyMoveSpeed,
+                EnemyType.MeleeChick => Constants.ChickMoveSpeed,
+                EnemyType.WtfHair => Constants.WtfHairMoveSpeed,
+                EnemyType.Butler => Constants.ButlerMoveSpeed,
                 _ => 0.0f
+            };
+        }
+
+        private float GetProjectileSpeed(ProjectileType type)
+        {
+            return type switch
+            {
+                ProjectileType.Heavy => Constants.HeavyProjectileSpeed,
+                ProjectileType.Hacker => Constants.HackerProjectileSpeed,
+                _ => 5.0f
             };
         }
 
@@ -474,7 +489,7 @@ namespace ECS
                     Mathf.Sin(radians)
                 );
 
-                var movement = direction * (Constants.HeavyProjectileSpeed * _deltaTime);
+                var movement = direction * (GetProjectileSpeed(projectile._type) * _deltaTime);
 
                 projectile._position += movement;
             }
@@ -489,14 +504,14 @@ namespace ECS
 
                 var nextX = new Vector2(nextPos.x, enemy._position.y);
 
-                if (IsBlocked(nextX, 0.5f))
+                if (IsBlocked(nextX, enemy._colliderRadius))
                 {
                     velocity.x = 0;
                 }
 
                 var nextY = new Vector2(enemy._position.x, nextPos.y);
 
-                if (IsBlocked(nextY, 0.5f))
+                if (IsBlocked(nextY, enemy._colliderRadius))
                 {
                     velocity.y = 0;
                 }

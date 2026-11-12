@@ -16,7 +16,7 @@ namespace ECS.Systems
                 case ProjectileType.Hacker:
                     return Constants.HackerDamage;
                 case ProjectileType.RedHairGuy:
-                    return Constants.ReadHairGuyDamage;
+                    return Constants.RedHairGuyDamage;
                 default:
                     return 0;
             }

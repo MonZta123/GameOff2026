@@ -3,7 +3,7 @@
     public enum EnemyType
     {
         RedHairGuy,
-        LegSpreadChick,
+        MeleeChick,
         WtfHair,
         Butler
     }

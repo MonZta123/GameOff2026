@@ -4,6 +4,7 @@ using ECS.Events;
 using ECS.Notification;
 using Unity.Mathematics;
 using UnityEngine;
+using Random = Unity.Mathematics.Random;
 
 namespace ECS.Systems
 {
@@ -24,90 +25,67 @@ namespace ECS.Systems
 
             var nextAngle = 0;
 
+            var random = Random.CreateFromIndex((uint)tick);
+
             for (var i = snapshot._enemies.GetNumEntities() - 1; i >= 0; i--)
             {
                 ref var enemy = ref snapshot._enemies.GetEntityAt(i);
 
-                if (enemy._type == EnemyType.RedHairGuy)
+                switch (enemy._type)
                 {
-                    if (enemy._toTickThisDirection <= tick && HasPlayerInView(snapshot, enemy))
+                    case EnemyType.RedHairGuy:
+                        HandleRedHairGuy(ref enemy, ref snapshot, ref nextAngle, tick, world);
+                        break;
+                    case EnemyType.MeleeChick:
+                        if (snapshot._players.GetNumEntities() >= 1)
+                            HandleMeleeChick(ref enemy, ref snapshot, ref nextAngle, tick, world);
+                        break;
+                }
+            }
+
+            // Spawning melee chicks
+            if (tick % (_tickRate * 4) == 0 && tick != 0)
+            {
+                if (snapshot._enemies.GetNumEntities() < snapshot._enemies.GetMaxLength()
+                    // && snapshot._players.GetNumEntities() >= 2
+                   )
+                {
+                    var heavy2 = snapshot._players.GetEntityAt(0);
+
+                    for (var i = 0; i < 10; i++)
                     {
-                        enemy._toTickThisDirection = tick + _tickRate * 3;
+                        var val = random.NextFloat(0, 1) * 360f * Mathf.Deg2Rad;
 
-                        var rad = nextAngle * Mathf.Deg2Rad;
+                        var vec = new Vector2(Mathf.Cos(val), Mathf.Sin(val));
 
-                        var direction = new Vector2(Mathf.Cos(rad), Mathf.Sin(rad));
+                        var distanceVariance = random.NextFloat(-0.5f, 0.5f);
 
-                        enemy._linearVelocity = direction;
+                        var targetPos = heavy2._position +
+                                        vec * (distanceVariance + Constants.ChickSpawnDistanceAverage);
 
-                        nextAngle += 135;
-                    }
-
-                    // closest anschauen
-                    var closestId = -1;
-                    var closestDistance = float.MaxValue;
-                    var closestPosition = Vector2.zero;
-                    for (var j = snapshot._players.GetNumEntities() - 1; j >= 0; j--)
-                    {
-                        ref var player = ref snapshot._players.GetEntityAt(j);
-
-                        var distance = Vector2.Distance(player._position, enemy._position);
-                        if (distance < closestDistance)
+                        if (targetPos.x >= 0 &&
+                            targetPos.y >= 0 &&
+                            targetPos.x < world._map._width &&
+                            targetPos.y < world._map._height &&
+                            !world.IsBlocked(targetPos, Constants.ChickColliderRadius))
                         {
-                            closestDistance = distance;
-                            closestId = snapshot._players.GetIdAt(j);
-                            closestPosition = player._position;
+                            var enemy = new Enemy()
+                            {
+                                _angle = 0,
+                                _colliderRadius = Constants.ChickColliderRadius,
+                                _health = 3,
+                                _type = EnemyType.MeleeChick,
+                                _position = targetPos
+                            };
+
+                            snapshot._enemies.Spawn(enemy);
+
+                            break;
                         }
-                    }
-
-                    if (closestId != -1)
-                    {
-                        var direction = closestPosition - enemy._position;
-
-                        enemy._angle = Mathf.Atan2(
-                            direction.y,
-                            direction.x
-                        ) * Mathf.Rad2Deg;
-                    }
-
-                    if (enemy._toTickNoShoot <= tick)
-                    {
-                        enemy._toTickNoShoot = tick + _tickRate * 4;
-
-                        world.AddShootEvent(new ShootEvent()
-                        {
-                            _angle = enemy._angle,
-                            _position = enemy._position, 
-                            _type = ProjectileType.RedHairGuy,
-                            _ttl = _tickRate * 5
-                        });
                     }
                 }
             }
 
-            // for (var i = snapshot._projectiles.GetNumEntities() - 1; i >= 0; i--)
-            // {
-            //     ref var projectile = ref snapshot._projectiles.GetEntityAt(i);
-            //     for (var j = snapshot._enemies.GetNumEntities() - 1; j >= 0; j--)
-            //     {
-            //         ref var enemy = ref snapshot._enemies.GetEntityAt(j);
-            //
-            //         var distance = projectile._position - enemy._position;
-            //
-            //         if (distance.sqrMagnitude - Constants.GunManColliderRadius <= 1f)
-            //         {
-            //             snapshot._projectiles.DespawnAt(i);
-            //             enemy._health -= 30;
-            //             if (enemy._health <= 0)
-            //             {
-            //                 enemy._health = 0;
-            //                 snapshot._enemies.DespawnAt(j);
-            //             }
-            //
-            //             break;
-            //         }
-            //     }
-            // }
 
             #region heavy
 
@@ -240,6 +218,87 @@ namespace ECS.Systems
             }
 
             return false;
+        }
+
+        private void HandleMeleeChick(ref Enemy enemy, ref Snapshot snapshot, ref int nextAngle, int tick, World world)
+        {
+            ref var heavy = ref snapshot._players.GetEntityAt(0);
+
+            var direction = heavy._position - enemy._position;
+
+            var distanceToHeavy = direction.sqrMagnitude;
+
+            if (distanceToHeavy <= Constants.ChickRange * Constants.ChickRange)
+            {
+                if (enemy._toTickNoShoot <= tick)
+                {
+                    enemy._toTickNoShoot = tick + (int)(Constants.ChickCooldown * _tickRate);
+
+                    heavy._health -= Constants.ChickDamage;
+                }
+
+                enemy._linearVelocity = Vector2.zero;
+            }
+            else
+            {
+                enemy._linearVelocity = direction.normalized;
+            }
+        }
+
+        private void HandleRedHairGuy(ref Enemy enemy, ref Snapshot snapshot, ref int nextAngle, int tick, World world)
+        {
+            if (enemy._toTickThisDirection <= tick && HasPlayerInView(snapshot, enemy))
+            {
+                enemy._toTickThisDirection = tick + _tickRate * 1;
+
+                var rad = nextAngle * Mathf.Deg2Rad;
+
+                var direction = new Vector2(Mathf.Cos(rad), Mathf.Sin(rad));
+
+                enemy._linearVelocity = direction;
+
+                nextAngle += 135;
+            }
+
+            // closest anschauen
+            var closestId = -1;
+            var closestDistance = float.MaxValue;
+            var closestPosition = Vector2.zero;
+            for (var j = snapshot._players.GetNumEntities() - 1; j >= 0; j--)
+            {
+                ref var player = ref snapshot._players.GetEntityAt(j);
+
+                var distance = Vector2.Distance(player._position, enemy._position);
+                if (distance < closestDistance)
+                {
+                    closestDistance = distance;
+                    closestId = snapshot._players.GetIdAt(j);
+                    closestPosition = player._position;
+                }
+            }
+
+            if (closestId != -1)
+            {
+                var direction = closestPosition - enemy._position;
+
+                enemy._angle = Mathf.Atan2(
+                    direction.y,
+                    direction.x
+                ) * Mathf.Rad2Deg;
+            }
+
+            if (enemy._toTickNoShoot <= tick)
+            {
+                enemy._toTickNoShoot = tick + _tickRate * 4;
+
+                world.AddShootEvent(new ShootEvent()
+                {
+                    _angle = enemy._angle,
+                    _position = enemy._position,
+                    _type = ProjectileType.RedHairGuy,
+                    _ttl = _tickRate * 5
+                });
+            }
         }
 
         private void BlastWaveEvent(ref Snapshot snapshot, BlastWaveEvent evt)

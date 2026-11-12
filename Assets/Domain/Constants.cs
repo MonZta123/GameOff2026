@@ -54,6 +54,20 @@ namespace Domain
         public const float RedHairGuyProjectileSpeed = 1.0f;
         public const float RedHairGuyColliderRadius = 1.0f;
         public const float RedHairGuyMoveSpeed = 2.0f; 
-        public const float ReadHairGuyDamage = 20f;
+        public const float RedHairGuyDamage = 20f;
+        
+        public const float ChickCooldown = 1.0f;
+        public const float ChickProjectileTtl = 1.0f;
+        public const float ChickProjectileSpeed = 1.0f;
+        public const float ChickColliderRadius = 1.0f;
+        public const float ChickMoveSpeed = 2.0f; 
+        public const float ChickDamage = 20f;
+
+        public const float ChickRange = 1f;
+        public const float ChickSpawnDistanceAverage = 3f;
+
+
+        public const float WtfHairMoveSpeed = 2.0f;
+        public const float ButlerMoveSpeed = 0.0f;
     }
 }
