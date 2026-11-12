@@ -1,6 +1,49 @@
 <?xml version="1.0" encoding="utf-8"?>
 <WwiseDocument Type="WorkUnit" ID="{EBD27F6E-A0C4-4BA2-8FD1-99AEBAE00554}" SchemaVersion="133">
 	<SoundcasterSessions>
-		<WorkUnit Name="Default Work Unit" ID="{EBD27F6E-A0C4-4BA2-8FD1-99AEBAE00554}" PersistMode="Standalone"/>
+		<WorkUnit Name="Default Work Unit" ID="{EBD27F6E-A0C4-4BA2-8FD1-99AEBAE00554}" PersistMode="Standalone">
+			<ChildrenList>
+				<SoundcasterSession Name="Music fade out test" ID="{8330FF2F-B9D7-45C1-870A-95ABB9B1A9A8}">
+					<ModuleList>
+						<Module>
+							<ObjectRef Name="Play_MUS_MainMenu" ID="{5D3A0225-7ABD-4859-81CA-ADE23BFF2392}" WorkUnitID="{2B12C590-A22E-47AF-9697-251FEA2DB802}"/>
+							<Position X="0" Y="0"/>
+						</Module>
+						<Module>
+							<ObjectRef Name="Stop_MUS_MainMenu" ID="{CA4116AE-77C2-480F-9560-FFC095D35812}" WorkUnitID="{2B12C590-A22E-47AF-9697-251FEA2DB802}"/>
+							<Position X="1" Y="0"/>
+						</Module>
+					</ModuleList>
+				</SoundcasterSession>
+				<SoundcasterSession Name="Mission music selections" ID="{C9827C43-7731-49A7-937D-2ED06B4537CA}">
+					<ModuleList>
+						<Module>
+							<ObjectRef Name="Play_AMB_SpaceBar" ID="{0D969937-733A-4893-8CA6-04ABFCDC1782}" WorkUnitID="{2B12C590-A22E-47AF-9697-251FEA2DB802}"/>
+							<Position X="0" Y="0"/>
+						</Module>
+						<Module>
+							<ObjectRef Name="Play_MUS_MainMenu" ID="{5D3A0225-7ABD-4859-81CA-ADE23BFF2392}" WorkUnitID="{2B12C590-A22E-47AF-9697-251FEA2DB802}"/>
+							<Position X="0" Y="1"/>
+						</Module>
+						<Module>
+							<ObjectRef Name="Stop_AMB_SpaceBar" ID="{54044E00-E195-493B-8AA9-9AEDA7A82144}" WorkUnitID="{2B12C590-A22E-47AF-9697-251FEA2DB802}"/>
+							<Position X="1" Y="0"/>
+						</Module>
+						<Module>
+							<ObjectRef Name="Stop_MUS_MainMenu" ID="{CA4116AE-77C2-480F-9560-FFC095D35812}" WorkUnitID="{2B12C590-A22E-47AF-9697-251FEA2DB802}"/>
+							<Position X="1" Y="1"/>
+						</Module>
+						<Module>
+							<ObjectRef Name="Stop_AMB_All" ID="{EEAC5E1E-C457-45C6-A009-C9B36D62B1A5}" WorkUnitID="{2B12C590-A22E-47AF-9697-251FEA2DB802}"/>
+							<Position X="2" Y="0"/>
+						</Module>
+						<Module>
+							<ObjectRef Name="Stop_MUS_All" ID="{F664C197-2CFA-4703-BBB5-AD81AD6313A2}" WorkUnitID="{2B12C590-A22E-47AF-9697-251FEA2DB802}"/>
+							<Position X="2" Y="1"/>
+						</Module>
+					</ModuleList>
+				</SoundcasterSession>
+			</ChildrenList>
+		</WorkUnit>
 	</SoundcasterSessions>
 </WwiseDocument>

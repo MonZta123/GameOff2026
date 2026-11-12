@@ -16,7 +16,10 @@ namespace AK
         static const AkUniqueID PLAY_AMB_BACKOFHOUSE = 3319877457U;
         static const AkUniqueID PLAY_AMB_FRONTOFHOUSE = 4275398447U;
         static const AkUniqueID PLAY_AMB_SPACEBAR = 320932064U;
+        static const AkUniqueID PLAY_MUS_CHARACTER = 2232411947U;
         static const AkUniqueID PLAY_MUS_MAINMENU = 1043591872U;
+        static const AkUniqueID PLAY_MUS_MISSIONENDING = 3049103921U;
+        static const AkUniqueID PLAY_MUS_MISSIONINTRO = 2318470590U;
         static const AkUniqueID PLAY_SFX_ACTION_C_DEFUSE = 2770407763U;
         static const AkUniqueID PLAY_SFX_ATTACK_A_SLAM = 41955962U;
         static const AkUniqueID PLAY_SFX_ATTACK_A_SWING = 3272234049U;
@@ -39,10 +42,48 @@ namespace AK
         static const AkUniqueID PLAY_SFX_UI_SELECT = 2484137795U;
         static const AkUniqueID PLAY_VO_D_ORDER = 1789269391U;
         static const AkUniqueID PLAY_VO_D_SELECT = 2625069657U;
+        static const AkUniqueID STOP_AMB_ALL = 1051898308U;
+        static const AkUniqueID STOP_AMB_BACKOFHOUSE = 820384135U;
+        static const AkUniqueID STOP_AMB_FRONTOFHOUSE = 1408943389U;
+        static const AkUniqueID STOP_AMB_SPACEBAR = 2448774054U;
+        static const AkUniqueID STOP_MUS_ALL = 3649037401U;
+        static const AkUniqueID STOP_MUS_CHARACTER = 1523744589U;
+        static const AkUniqueID STOP_MUS_MAINMENU = 4243441902U;
     } // namespace EVENTS
+
+    namespace STATES
+    {
+        namespace ROUND
+        {
+            static const AkUniqueID GROUP = 1413238543U;
+
+            namespace STATE
+            {
+                static const AkUniqueID NONE = 748895195U;
+                static const AkUniqueID ROUND_1 = 1200082263U;
+                static const AkUniqueID ROUND_2 = 1200082260U;
+                static const AkUniqueID ROUND_3 = 1200082261U;
+                static const AkUniqueID ROUND_4 = 1200082258U;
+            } // namespace STATE
+        } // namespace ROUND
+
+    } // namespace STATES
 
     namespace SWITCHES
     {
+        namespace CHARACTER
+        {
+            static const AkUniqueID GROUP = 436743010U;
+
+            namespace SWITCH
+            {
+                static const AkUniqueID CHARACTER_A = 1204435002U;
+                static const AkUniqueID CHARACTER_B = 1204435001U;
+                static const AkUniqueID CHARACTER_C = 1204435000U;
+                static const AkUniqueID CHARACTER_D = 1204435007U;
+            } // namespace SWITCH
+        } // namespace CHARACTER
+
         namespace FLOORMATERIAL
         {
             static const AkUniqueID GROUP = 4274333454U;
