@@ -10,7 +10,87 @@
 								<Action Name="" ID="{D323F51B-6C0C-47E1-ABAA-3E07B03B986B}" ShortID="193138012">
 									<ReferenceList>
 										<Reference Name="Target">
-											<ObjectRef Name="MusicMainMenu" ID="{7FA8DFCC-DAD2-4048-A721-C2F749FF0BD6}" WorkUnitID="{AF633A36-6CC5-470E-AD72-3F76D6F661BF}"/>
+											<ObjectRef Name="MUS_MainMenu" ID="{7FA8DFCC-DAD2-4048-A721-C2F749FF0BD6}" WorkUnitID="{AF633A36-6CC5-470E-AD72-3F76D6F661BF}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+						<Event Name="Stop_MUS_Character" ID="{DFC3BA48-0CDF-43A9-9F8B-55C6534D0545}">
+							<ChildrenList>
+								<Action Name="" ID="{772BEEA9-E60B-4417-A19C-443A57F4E1CE}" ShortID="324566807">
+									<PropertyList>
+										<Property Name="ActionType" Type="int16" Value="2"/>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="MUS_Character" ID="{F6DCD1F0-8D6F-49CA-A8D4-B8EB108091FF}" WorkUnitID="{AF633A36-6CC5-470E-AD72-3F76D6F661BF}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+						<Event Name="Play_MUS_Character" ID="{44E5D87C-C9EE-4925-8962-FA761B8D15F0}">
+							<ChildrenList>
+								<Action Name="" ID="{3A912B5C-D6B1-418F-9091-9DE3A07E93A3}" ShortID="205979891">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="MUS_Character" ID="{F6DCD1F0-8D6F-49CA-A8D4-B8EB108091FF}" WorkUnitID="{AF633A36-6CC5-470E-AD72-3F76D6F661BF}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+						<Event Name="Stop_MUS_MainMenu" ID="{CA4116AE-77C2-480F-9560-FFC095D35812}">
+							<ChildrenList>
+								<Action Name="" ID="{38C9C255-A085-49C4-9962-E504A1CFF51C}" ShortID="613480111">
+									<PropertyList>
+										<Property Name="ActionType" Type="int16" Value="2"/>
+										<Property Name="FadeOutCurve" Type="int16" Value="5"/>
+										<Property Name="FadeTime" Type="Real64" Value="2"/>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="MUS_MainMenu" ID="{7FA8DFCC-DAD2-4048-A721-C2F749FF0BD6}" WorkUnitID="{AF633A36-6CC5-470E-AD72-3F76D6F661BF}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+						<Event Name="Play_MUS_MissionIntro" ID="{B8CD9CFA-133C-402C-B64E-0D292A6EB22D}">
+							<ChildrenList>
+								<Action Name="" ID="{BC51EF60-433C-4C6A-B01C-E48EC3E5EAB0}" ShortID="679219735">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="MUS_MissionIntro" ID="{73E02FD4-C9F6-4E99-9763-DB59B54A4672}" WorkUnitID="{AF633A36-6CC5-470E-AD72-3F76D6F661BF}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+						<Event Name="Play_MUS_MissionEnding" ID="{E45055A8-8942-47B8-8115-34543642317B}">
+							<ChildrenList>
+								<Action Name="" ID="{C7CDB94C-9AAA-4B25-9031-A922E4C95E09}" ShortID="337828359">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="MUS_MissionEnding" ID="{3A19AB97-7F51-4258-8EC9-657F03D0765A}" WorkUnitID="{AF633A36-6CC5-470E-AD72-3F76D6F661BF}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+						<Event Name="Stop_MUS_All" ID="{F664C197-2CFA-4703-BBB5-AD81AD6313A2}">
+							<ChildrenList>
+								<Action Name="" ID="{0DCBC46C-0933-4D11-B091-48578AD70686}" ShortID="644855109">
+									<PropertyList>
+										<Property Name="ActionType" Type="int16" Value="2"/>
+										<Property Name="FadeInCurve" Type="int16" Value="5"/>
+										<Property Name="FadeOutCurve" Type="int16" Value="5"/>
+										<Property Name="FadeTime" Type="Real64" Value="2"/>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="MUSIC" ID="{F759BC7F-4007-4D33-8F58-64648B34CD3D}" WorkUnitID="{F8A65CB3-3EA6-47C9-8C5A-27068DB4C3FF}"/>
 										</Reference>
 									</ReferenceList>
 								</Action>
@@ -303,6 +383,73 @@
 									<ReferenceList>
 										<Reference Name="Target">
 											<ObjectRef Name="AmbienceSpaceBar" ID="{DD564D66-ED32-47A3-BDA9-1916CA03BC78}" WorkUnitID="{AF633A36-6CC5-470E-AD72-3F76D6F661BF}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+						<Event Name="Stop_AMB_BackOfHouse" ID="{E980DD36-4E4A-455B-8CE4-A184BF85FBD0}">
+							<ChildrenList>
+								<Action Name="" ID="{845FAF91-6BBA-45C9-A801-DD9908A32D9F}" ShortID="574908192">
+									<PropertyList>
+										<Property Name="ActionType" Type="int16" Value="2"/>
+										<Property Name="FadeOutCurve" Type="int16" Value="5"/>
+										<Property Name="FadeTime" Type="Real64" Value="2"/>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="AmbienceBackOfHouse" ID="{56DD4EFC-A226-4025-95F7-E5269EF3427E}" WorkUnitID="{AF633A36-6CC5-470E-AD72-3F76D6F661BF}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+						<Event Name="Stop_AMB_FrontOfHouse" ID="{3FEB6287-778C-4F8A-B91F-C2E9970CC07F}">
+							<ChildrenList>
+								<Action Name="" ID="{4F724FE9-1768-4C06-8D29-6D834507DE81}" ShortID="481216014">
+									<PropertyList>
+										<Property Name="ActionType" Type="int16" Value="2"/>
+										<Property Name="FadeInCurve" Type="int16" Value="5"/>
+										<Property Name="FadeOutCurve" Type="int16" Value="5"/>
+										<Property Name="FadeTime" Type="Real64" Value="2"/>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="AmbienceFrontOfHouse" ID="{21DB8EFA-3F8E-41DD-944A-83F27536481D}" WorkUnitID="{AF633A36-6CC5-470E-AD72-3F76D6F661BF}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+						<Event Name="Stop_AMB_SpaceBar" ID="{54044E00-E195-493B-8AA9-9AEDA7A82144}">
+							<ChildrenList>
+								<Action Name="" ID="{6E148E06-04BF-4737-A0E7-CA39FB9C8407}" ShortID="715272814">
+									<PropertyList>
+										<Property Name="ActionType" Type="int16" Value="2"/>
+										<Property Name="FadeInCurve" Type="int16" Value="5"/>
+										<Property Name="FadeOutCurve" Type="int16" Value="5"/>
+										<Property Name="FadeTime" Type="Real64" Value="2"/>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="AmbienceSpaceBar" ID="{DD564D66-ED32-47A3-BDA9-1916CA03BC78}" WorkUnitID="{AF633A36-6CC5-470E-AD72-3F76D6F661BF}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+						<Event Name="Stop_AMB_All" ID="{EEAC5E1E-C457-45C6-A009-C9B36D62B1A5}">
+							<ChildrenList>
+								<Action Name="" ID="{E8A152AA-C626-46D4-A400-9E52631FC3E4}" ShortID="792936412">
+									<PropertyList>
+										<Property Name="ActionType" Type="int16" Value="2"/>
+										<Property Name="FadeInCurve" Type="int16" Value="5"/>
+										<Property Name="FadeOutCurve" Type="int16" Value="5"/>
+										<Property Name="FadeTime" Type="Real64" Value="2"/>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="AMBIENCE" ID="{0D3F0E73-E6DF-4226-8BD9-1CC7EEEBAE76}" WorkUnitID="{F8A65CB3-3EA6-47C9-8C5A-27068DB4C3FF}"/>
 										</Reference>
 									</ReferenceList>
 								</Action>

@@ -43,8 +43,8 @@ namespace ECS.Systems
                             HandleMeleeChick(ref enemy, ref snapshot, tick);
                         break;
                     case EnemyType.Buttler:
-                        // if (snapshot._players.GetNumEntities() == 4)
-                        HandleButtler(ref enemy, ref snapshot, world, tick);
+                        if (snapshot._players.GetNumEntities() == 4)
+                            HandleButtler(ref enemy, ref snapshot, world, tick);
                         break;
                 }
             }
@@ -279,7 +279,7 @@ namespace ECS.Systems
         private bool GetButtlerPosition(Random random, Vector2 currentPlayer, World world, out Vector2 spawnPosition)
         {
             var angle = random.NextFloat(0, 360f);
-            
+
             var maxLength = Mathf.Min(8000, Constants.ButtlerRespawnDistanceUnits * 16);
 
             for (var i = 0; i < 4; i++)
