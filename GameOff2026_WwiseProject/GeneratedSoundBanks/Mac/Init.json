@@ -10,7 +10,7 @@
     "Type": "User",
     "GUID": "{701ECBBD-9C7B-4030-8CDB-749EE5D1C7B9}",
     "Language": "SFX",
-    "Hash": "{D0F81CFA-8242-3BFC-D2CA-ED4E7F6CCB58}",
+    "Hash": "{BE672D35-C5D2-B5A2-16E1-456CC2D940C7}",
     "ObjectPath": "Init",
     "ShortName": "Init",
     "Path": "Init.bnk",
@@ -66,7 +66,79 @@
       "GUID": "{F759BC7F-4007-4D33-8F58-64648B34CD3D}"
      }
     ],
+    "StateGroups": [
+     {
+      "Id": "1413238543",
+      "Name": "Round",
+      "ObjectPath": "\\States\\Default Work Unit\\Round",
+      "GUID": "{AD9A563C-653A-4D1A-8C75-63F4F2C0924B}",
+      "States": [
+       {
+        "Id": "748895195",
+        "Name": "None",
+        "ObjectPath": "\\States\\Default Work Unit\\Round\\None",
+        "GUID": "{C9697BE0-1F92-4C7C-92D8-FFA9B02AB186}"
+       },
+       {
+        "Id": "1200082258",
+        "Name": "Round_4",
+        "ObjectPath": "\\States\\Default Work Unit\\Round\\Round_4",
+        "GUID": "{F39FE53F-3AF9-431B-AE26-DBF3E7967E58}"
+       },
+       {
+        "Id": "1200082260",
+        "Name": "Round_2",
+        "ObjectPath": "\\States\\Default Work Unit\\Round\\Round_2",
+        "GUID": "{F4CD4D35-CE3B-41B2-9E0B-6E004347776F}"
+       },
+       {
+        "Id": "1200082261",
+        "Name": "Round_3",
+        "ObjectPath": "\\States\\Default Work Unit\\Round\\Round_3",
+        "GUID": "{368377C0-A9B4-4367-BFA6-2450D5E592E3}"
+       },
+       {
+        "Id": "1200082263",
+        "Name": "Round_1",
+        "ObjectPath": "\\States\\Default Work Unit\\Round\\Round_1",
+        "GUID": "{75FB4324-C21A-4D82-B0CF-3542C815D862}"
+       }
+      ]
+     }
+    ],
     "SwitchGroups": [
+     {
+      "Id": "436743010",
+      "Name": "Character",
+      "ObjectPath": "\\Switches\\Default Work Unit\\Character",
+      "GUID": "{FC8A765D-1615-45B5-8855-91E373A25B5A}",
+      "Switches": [
+       {
+        "Id": "1204435000",
+        "Name": "Character_C",
+        "ObjectPath": "\\Switches\\Default Work Unit\\Character\\Character_C",
+        "GUID": "{494D65CC-B3B8-48AC-B859-16C5936339B8}"
+       },
+       {
+        "Id": "1204435001",
+        "Name": "Character_B",
+        "ObjectPath": "\\Switches\\Default Work Unit\\Character\\Character_B",
+        "GUID": "{F11D97A6-0011-495A-98D4-7CC9A6901DEC}"
+       },
+       {
+        "Id": "1204435002",
+        "Name": "Character_A",
+        "ObjectPath": "\\Switches\\Default Work Unit\\Character\\Character_A",
+        "GUID": "{01396F22-9182-4E10-AAAE-FF089A804BC5}"
+       },
+       {
+        "Id": "1204435007",
+        "Name": "Character_D",
+        "ObjectPath": "\\Switches\\Default Work Unit\\Character\\Character_D",
+        "GUID": "{60DCA616-D255-4FC0-83C9-F5B175B9768E}"
+       }
+      ]
+     },
      {
       "Id": "4274333454",
       "Name": "FloorMaterial",
@@ -96,6 +168,6 @@
     ]
    }
   ],
-  "FileHash": "{EA2118E6-E04D-3FAE-6DE8-8D58AC483D28}"
+  "FileHash": "{124E2AA5-59B6-7587-B9C0-0C5AD505919C}"
  }
 }

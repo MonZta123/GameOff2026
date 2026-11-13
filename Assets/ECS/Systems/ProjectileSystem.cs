@@ -1,4 +1,5 @@
-﻿using ECS.Entities;
+﻿using Domain;
+using ECS.Entities;
 using ECS.Events;
 
 namespace ECS.Systems
@@ -40,7 +41,7 @@ namespace ECS.Systems
                     snapshot._projectiles.DespawnAt(i);
                     continue;
                 }
-
+                
                 var deleted = false;
                 for (var j = snapshot._doors.GetNumEntities() - 1; j >= 0; j--)
                 {

@@ -54,7 +54,7 @@ public class GameSessionHost : MonoBehaviour
         _tickDriver = new TickDriver(stepsPerSecond);
         _tickDriver._onTick += OnTick;
 
-        _timeline = new Timeline(stepsPerSecond, _segmentTicks);
+        _timeline = new Timeline(stepsPerSecond, _segmentTicks, (int)(Time.realtimeSinceStartup * 100));
         _timeline.InitNextSegment(mapDefinition);
         mapRenderer.GenerateMap(mapDefinition);
 

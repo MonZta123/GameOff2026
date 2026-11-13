@@ -73,16 +73,19 @@ namespace Actors
 
         public void SetState(ECS.Entities.Enemy entity, int tick)
         {
+            if (entity._type != _incomingEntity._type)
+            {
+                animator.runtimeAnimatorController = animatorOverrideControllers[(int)entity._type];
+            }
+            
             transform.position = entity._position;
             gunRenderer.transform.rotation = Quaternion.Euler(0, 0, entity._angle);
 
             _health = entity._health;
             _incomingEntity = entity;
-            _tick = tick;
         }
 
         private ECS.Entities.Enemy _incomingEntity;
-        private int _tick;
 
         private Vector2 _lastPosition;
 

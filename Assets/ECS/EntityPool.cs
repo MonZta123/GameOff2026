@@ -72,6 +72,8 @@
 
         public int GetNumEntities() => _numEntities;
         
+        public ref Type GetLastEntity() => ref _entities[_numEntities - 1];
+        
         public bool IsAlive(short id) => _idToIndex[id - 1] != -1;
         
         public bool IsAliveAt(int index) => _indexToId[index] != 0;

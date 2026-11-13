@@ -2,9 +2,9 @@
 {
     public enum EnemyType
     {
-        RonWeasly,
-        LegSpreadChick,
+        RedHairGuy,
+        MeleeChick,
         WtfHair,
-        Butler
+        Buttler
     }
 }

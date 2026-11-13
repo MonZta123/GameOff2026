@@ -9,5 +9,14 @@ namespace ECS.Entities
         public EnemyType _type;
         public float _health;
         public Vector2 _linearVelocity;
+
+        public int _toTickThisDirection;
+        public int _toTickNoShoot;
+        
+        public float _colliderRadius;
+
+        // Snipe
+        public int _shootsAtTick;
+        public int _lockedOnAt;
     }
 }

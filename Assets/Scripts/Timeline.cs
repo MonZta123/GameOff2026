@@ -4,14 +4,14 @@ using ECS;
 
 public class Timeline
 {
-    public Timeline(int tickRate, int segmentTicks)
+    public Timeline(int tickRate, int segmentTicks, int worldSeed)
     {
         _segmentTicks = segmentTicks;
 
         _intents = new Intent[_segmentTicks * Constants.PlayerCount * Constants.Segments];
         _snapshots = new Snapshot[_segmentTicks + 1];
 
-        _world = new World(tickRate);
+        _world = new World(tickRate, worldSeed);
 
         for (var i = 0; i < _segmentTicks + 1; i++)
         {

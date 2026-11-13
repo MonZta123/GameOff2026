@@ -11,7 +11,7 @@ namespace Actors
         [Header("Sounds")]
         [SerializeField]
         private AK.Wwise.Event heavySlam;
-        
+
         [SerializeField]
         private PositionSmoother positionSmoother;
 
@@ -32,8 +32,6 @@ namespace Actors
 
         [SerializeField]
         private MoveBouncer moveBouncer;
-
-        private bool _activePlayer;
 
         public void Init(ECS.Entities.Player entity)
         {
@@ -57,9 +55,6 @@ namespace Actors
             gunRenderer.transform.rotation = Quaternion.Euler(0, 0, angle);
         }
 
-        private bool _isSlamming;
-        private int _dashTick;
-        
         private void Update()
         {
             var angle = gunRenderer.transform.rotation.eulerAngles.z;
@@ -74,7 +69,7 @@ namespace Actors
 
             var isBlockingMovementChanged = _lastPrimaryBlockingMovementTo != _lastEntity._primaryBlockingMovementTo;
             _lastPrimaryBlockingMovementTo = _lastEntity._primaryBlockingMovementTo;
-            
+
             if (isDead)
             {
                 animator.Play("Dead");
@@ -85,8 +80,8 @@ namespace Actors
             {
                 animator.Play("Slam");
                 return;
-            } 
-            
+            }
+
             if (actionActive)
             {
                 animator.Play("Action");
@@ -104,7 +99,7 @@ namespace Actors
                 {
                     _isLeftHand = !_isLeftHand;
                 }
-                
+
                 isPrimary = true;
                 prefix = "Primary_";
 
@@ -173,10 +168,6 @@ namespace Actors
                     moveBouncer.SetIsBouncing(false);
             }
         }
-        
-        private bool _isLeftHand = false;
-
-        private int _lastPrimaryBlockingMovementTo = 0;
 
         public void SetState(ECS.Entities.Player entity, int tick)
         {
@@ -193,10 +184,18 @@ namespace Actors
 
         private ECS.Entities.Player _lastEntity;
         private int _tick;
+        private bool _isLeftHand;
+        private int _lastPrimaryBlockingMovementTo;
+        private bool _activePlayer;
 
         public void Release()
         {
             positionSmoother.SetSmoothPosition(false);
+            _lastEntity = default;
+            _tick = 0;
+            _isLeftHand = false;
+            _lastPrimaryBlockingMovementTo = 0;
+            _activePlayer = false;
         }
 
 #if UNITY_EDITOR

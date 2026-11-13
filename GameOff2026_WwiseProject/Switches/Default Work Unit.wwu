@@ -10,6 +10,14 @@
 						<Switch Name="Tile" ID="{12732F6D-0116-4FAD-9028-7D2BA445288D}"/>
 					</ChildrenList>
 				</SwitchGroup>
+				<SwitchGroup Name="Character" ID="{FC8A765D-1615-45B5-8855-91E373A25B5A}">
+					<ChildrenList>
+						<Switch Name="Character_A" ID="{01396F22-9182-4E10-AAAE-FF089A804BC5}"/>
+						<Switch Name="Character_B" ID="{F11D97A6-0011-495A-98D4-7CC9A6901DEC}"/>
+						<Switch Name="Character_C" ID="{494D65CC-B3B8-48AC-B859-16C5936339B8}"/>
+						<Switch Name="Character_D" ID="{60DCA616-D255-4FC0-83C9-F5B175B9768E}"/>
+					</ChildrenList>
+				</SwitchGroup>
 			</ChildrenList>
 		</WorkUnit>
 	</Switches>
