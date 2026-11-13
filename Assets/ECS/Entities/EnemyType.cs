@@ -5,6 +5,6 @@
         RedHairGuy,
         MeleeChick,
         WtfHair,
-        Butler
+        Buttler
     }
 }

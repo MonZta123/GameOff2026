@@ -7,6 +7,13 @@ namespace ECS.Systems
 {
     public class DamageSystem
     {
+        public DamageSystem(int tickRate)
+        {
+            _tickRate = tickRate;
+        }
+        
+        private float _tickRate;
+        
         private float GetProjectileDamage(Projectile projectile)
         {
             switch (projectile._type)
@@ -42,27 +49,26 @@ namespace ECS.Systems
             };
         }
 
-        public void Execute(World world)
+        public void Execute(World world, int tick)
         {
             ref var snapshot = ref world.GetSnapshot();
 
             for (var j = snapshot._projectiles.GetNumEntities() - 1; j >= 0; j--)
             {
+                var hit = false;
                 ref var projectile = ref snapshot._projectiles.GetEntityAt(j);
                 for (var i = snapshot._enemies.GetNumEntities() - 1; i >= 0; i--)
                 {
                     ref var enemy = ref snapshot._enemies.GetEntityAt(i);
-                    
+
                     var distance = (enemy._position - projectile._position).sqrMagnitude;
-                    
+
                     if (distance < enemy._colliderRadius * enemy._colliderRadius)
                     {
                         if (!DoesDamageToEnemy(projectile))
                             continue;
-                        
-                        enemy._health -= GetProjectileDamage(projectile);
 
-                        snapshot._projectiles.DespawnAt(j);
+                        enemy._health -= GetProjectileDamage(projectile);
 
                         if (enemy._health <= 0)
                         {
@@ -79,11 +85,18 @@ namespace ECS.Systems
                             });
 
                             snapshot._enemies.DespawnAt(i);
-                            break;
                         }
+
+                        snapshot._projectiles.DespawnAt(j);
+
+                        hit = true;
+                        break;
                     }
                 }
-
+  
+                if (hit)
+                    continue;
+                
                 for (var i = snapshot._players.GetNumEntities() - 1; i >= 0; i--)
                 {
                     ref var player = ref snapshot._players.GetEntityAt(i);
@@ -93,7 +106,7 @@ namespace ECS.Systems
                     {
                         if (!DoesDamageToPlayer(projectile, player._type))
                             continue;
-                        
+
                         player._health -= GetProjectileDamage(projectile);
 
                         snapshot._projectiles.DespawnAt(j);
@@ -101,11 +114,21 @@ namespace ECS.Systems
                         if (player._health <= 0)
                         {
                             player._health = 0;
-                            snapshot._players.DespawnAt(i);
-
-                            break;
                         }
+
+                        hit = true;
+                        break;
                     }
+                }
+            }
+
+            for (var i = 0; i < snapshot._enemyDiedNotificationPool.GetNumNotifications(); i++)
+            {
+                var notification = snapshot._enemyDiedNotificationPool.GetEntityAt(i);
+
+                if (notification._enemyType == EnemyType.Buttler)
+                {
+                    snapshot._tickButtlerRespawnAt =  tick + (int)(Constants.ButtlerRespawnCooldownSeconds * _tickRate);
                 }
             }
         }

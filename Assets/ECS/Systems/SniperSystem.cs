@@ -45,13 +45,16 @@ namespace ECS.Systems
                         Mathf.Cos(radians),
                         Mathf.Sin(radians));
 
-                    var step = direction / 16f;
+                    var stepSize = 1f / 16f;
+
+                    var step = direction * stepSize;
 
                     var i = 0f;
                     Vector2 currentLazor;
                     do
                     {
-                        currentLazor = player._position + step * i;
+                        currentLazor = player._position + step * i +
+                                       direction.normalized * (Constants.SniperColliderRadius + stepSize);
 
                         for (var j = snapshot._enemies.GetNumEntities() - 1; j >= 0; j--)
                         {
@@ -69,6 +72,17 @@ namespace ECS.Systems
                                 });
 
                                 snapshot._enemies.DespawnAt(j);
+                            }
+                        }
+
+                        for (var j = snapshot._players.GetNumEntities() - 1; j >= 0; j--)
+                        {
+                            ref var player2 = ref snapshot._players.GetEntityAt(j);
+
+                            if ((player2._position - currentLazor).sqrMagnitude <
+                                player2._colliderRadius * player2._colliderRadius)
+                            {
+                                player2._health = 0;
                             }
                         }
 

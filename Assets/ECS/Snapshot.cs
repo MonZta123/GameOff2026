@@ -16,6 +16,8 @@ namespace ECS
         public int _hackProcess;
         public int _bombsLeft;
 
+        public int _tickButtlerRespawnAt;
+
         public NotificationPool<DoorDestructionNotification> _doorDestructionNotificationPool;
         public NotificationPool<SoundNotification> _soundNotificationPool;
         public NotificationPool<EnemyDiedNotification> _enemyDiedNotificationPool;
@@ -33,6 +35,8 @@ namespace ECS
             _damageProcess = snapshot._damageProcess;
             _hackProcess = snapshot._hackProcess;
             _bombsLeft = snapshot._bombsLeft;
+            
+            _tickButtlerRespawnAt = snapshot._tickButtlerRespawnAt;
         }
 
         public void CopyNotifications(Snapshot snapshot)

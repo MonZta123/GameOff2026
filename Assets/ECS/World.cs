@@ -29,7 +29,8 @@ namespace ECS
         private DemolitionSystem _demolitionSystem;
         private SniperSystem _sniperSystem;
         private MineSystem _mineSystem;
-
+private BlastWaveSystem _blastWaveSystem;
+        
         public MapDefinition _map;
 
         public ShootEvent[] _shootEvents;
@@ -76,7 +77,7 @@ namespace ECS
             _shootEvents = new ShootEvent[64];
 
             _projectileSystem = new ProjectileSystem();
-            _damageSystem = new DamageSystem();
+            _damageSystem = new DamageSystem(tickRate);
             _enemySystem = new EnemySystem(tickRate);
             _heavySystem = new HeavySystem(tickRate);
             _hackerSystem = new HackerSystem(tickRate);
@@ -84,6 +85,7 @@ namespace ECS
             _sniperSystem = new SniperSystem(tickRate);
             _doorSystem = new DoorSystem();
             _mineSystem = new MineSystem();
+            _blastWaveSystem = new BlastWaveSystem();
         }
         
         private readonly float _deltaTime;
@@ -421,7 +423,8 @@ namespace ECS
 
             _enemySystem.Execute(this, tick);
             _projectileSystem.Execute(this, tick);
-            _damageSystem.Execute(this);
+            _blastWaveSystem.Execute(this, tick);
+            _damageSystem.Execute(this, tick);
             _doorSystem.Execute(this, tick);
 
             _mineSystem.Execute(this);
@@ -434,7 +437,7 @@ namespace ECS
                 EnemyType.RedHairGuy => Constants.RedHairGuyMoveSpeed,
                 EnemyType.MeleeChick => Constants.ChickMoveSpeed,
                 EnemyType.WtfHair => Constants.WtfHairMoveSpeed,
-                EnemyType.Butler => Constants.ButlerMoveSpeed,
+                EnemyType.Buttler => Constants.ButtlerMoveSpeed,
                 _ => 0.0f
             };
         }
@@ -550,6 +553,8 @@ namespace ECS
                     break;
             }
 
+            player._isBlockedTo = -1;
+
             return player;
         }
 
@@ -593,7 +598,7 @@ namespace ECS
             player._primaryBlockingMovementTo = 0;
             player._secondaryReadyAt = 0;
             player._secondaryActivatedTo = 0;
-            player._isBlockedTo = 0;
+            player._isBlockedTo = -1;
             player._isActionActive = false;
         }
     }

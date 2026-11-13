@@ -14,5 +14,9 @@ namespace ECS.Entities
         public int _toTickNoShoot;
         
         public float _colliderRadius;
+
+        // Snipe
+        public int _shootsAtTick;
+        public int _lockedOnAt;
     }
 }
