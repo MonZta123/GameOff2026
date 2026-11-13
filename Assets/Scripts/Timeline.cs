@@ -27,6 +27,8 @@ public class Timeline
     private readonly Intent[] _intents;
 
     private int _currentSegment = -1;
+    
+    public int GetCurrentSegment() => _currentSegment;
 
     public void AddIntent(Intent intent, int tick)
     {
@@ -35,6 +37,11 @@ public class Timeline
         _intents[(tick * Constants.PlayerCount + activePlayerIndex) +
                  _currentSegment * _segmentTicks * Constants.PlayerCount] = intent;
 
+        PlayIntent(tick);
+    }
+
+    public void PlayIntent(int tick)
+    {
         var span = _intents.AsSpan(
             (tick * Constants.PlayerCount) + _currentSegment * _segmentTicks * Constants.PlayerCount,
             Constants.PlayerCount);
@@ -65,6 +72,6 @@ public class Timeline
     {
         _world.SetNextPlayer(ref _snapshots[0]);
     }
-
+    
     public int SnapshotLength => _snapshots.Length;
 }

@@ -1,5 +1,4 @@
-﻿using System;
-using ECS;
+﻿using ECS;
 using UnityEngine;
 
 public class GameFlowManager
@@ -11,7 +10,7 @@ public class GameFlowManager
 
     private readonly int _ticksPerRun;
 
-    public GameFlowResult CheckForLoopBreak(int tick, Snapshot snapshot)
+    public GameFlowResult CheckForLoopBreak(int tick, Snapshot snapshot, bool isLastSegment, bool isReplayMode)
     {
         var currentPlayer = snapshot._players.GetNumEntities() - 1;
 
@@ -26,6 +25,14 @@ public class GameFlowManager
         // Round end
         if (tick == _ticksPerRun)
         {
+            if (isReplayMode)
+            {
+                if (isLastSegment)
+                    return GameFlowResult.GameOver;
+                
+                return GameFlowResult.NextReplaySegment;
+            }
+
             if (currentPlayer == 0 && snapshot._damageProcess != 0)
             {
                 Debug.Log("Objective failed - damage left: " + snapshot._damageProcess + " enemies");
@@ -46,10 +53,13 @@ public class GameFlowManager
 
             if (currentPlayer == 3)
             {
+                if (isLastSegment)
+                    return GameFlowResult.StartReplay;
+                
                 return GameFlowResult.NextSegment;
             }
-
-            Debug.Log("Success");
+ 
+                
             return GameFlowResult.Success;
         }
 

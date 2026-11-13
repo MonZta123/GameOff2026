@@ -198,7 +198,8 @@ MonoBehaviour:
   mapRenderer: {fileID: 13633228}
   cam: {fileID: 330585545}
   inputManager: {fileID: 13633229}
-  map: {fileID: 2800000, guid: 81ba75a3bafc7354f8b736da654745dc, type: 3}
+  maps:
+  - {fileID: 2800000, guid: 81ba75a3bafc7354f8b736da654745dc, type: 3}
   snipeTarget: {fileID: 1672110092}
 --- !u!114 &13633226
 MonoBehaviour:
