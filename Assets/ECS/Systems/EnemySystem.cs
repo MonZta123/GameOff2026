@@ -51,52 +51,55 @@ namespace ECS.Systems
 
             #region buttler
 
-            var currentButtler = (Enemy)default;
-
-            var buttlerIndex = -1;
-
-            for (var i = 0; i < snapshot._enemies.GetNumEntities(); i++)
+            if (snapshot._players.GetNumEntities() == 4)
             {
-                var enemy = snapshot._enemies.GetEntityAt(i);
-                if (enemy._type == EnemyType.Buttler)
+                var currentButtler = (Enemy)default;
+
+                var buttlerIndex = -1;
+
+                for (var i = 0; i < snapshot._enemies.GetNumEntities(); i++)
                 {
-                    currentButtler = enemy;
-                    buttlerIndex = i;
-                    break;
-                }
-            }
-
-            var currentPlayer = snapshot._players.GetLastEntity();
-
-            if (buttlerIndex != -1 &&
-                (currentPlayer._position - currentButtler._position).sqrMagnitude >
-                Constants.ButtlerRespawnDistanceUnits * Constants.ButtlerRespawnDistanceUnits)
-            {
-                snapshot._tickButtlerRespawnAt = tick;
-                snapshot._enemies.DespawnAt(buttlerIndex);
-            }
-
-            if (snapshot._tickButtlerRespawnAt == tick)
-            {
-                var canSpawn = GetButtlerPosition(random, currentPlayer._position, world, out var buttlerPosition);
-                if (canSpawn)
-                {
-                    var enemy = new Enemy
+                    var enemy = snapshot._enemies.GetEntityAt(i);
+                    if (enemy._type == EnemyType.Buttler)
                     {
-                        _type = EnemyType.Buttler,
-                        _position = buttlerPosition,
-                        _health = 100,
-                        _lockedOnAt = -1,
-                        _shootsAtTick = -1,
-                        _toTickNoShoot = _tickRate,
-                        _colliderRadius = Constants.ButtlerColliderRadius,
-                    };
-
-                    snapshot._enemies.Spawn(enemy);
+                        currentButtler = enemy;
+                        buttlerIndex = i;
+                        break;
+                    }
                 }
-                else
+
+                var currentPlayer = snapshot._players.GetLastEntity();
+
+                if (buttlerIndex != -1 &&
+                    (currentPlayer._position - currentButtler._position).sqrMagnitude >
+                    Constants.ButtlerRespawnDistanceUnits * Constants.ButtlerRespawnDistanceUnits)
                 {
-                    snapshot._tickButtlerRespawnAt = tick + 1;
+                    snapshot._tickButtlerRespawnAt = tick;
+                    snapshot._enemies.DespawnAt(buttlerIndex);
+                }
+
+                if (snapshot._tickButtlerRespawnAt == tick)
+                {
+                    var canSpawn = GetButtlerPosition(random, currentPlayer._position, world, out var buttlerPosition);
+                    if (canSpawn)
+                    {
+                        var enemy = new Enemy
+                        {
+                            _type = EnemyType.Buttler,
+                            _position = buttlerPosition,
+                            _health = 100,
+                            _lockedOnAt = -1,
+                            _shootsAtTick = -1,
+                            _toTickNoShoot = _tickRate,
+                            _colliderRadius = Constants.ButtlerColliderRadius,
+                        };
+
+                        snapshot._enemies.Spawn(enemy);
+                    }
+                    else
+                    {
+                        snapshot._tickButtlerRespawnAt = tick + 1;
+                    }
                 }
             }
 

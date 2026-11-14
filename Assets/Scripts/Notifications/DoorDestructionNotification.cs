@@ -1,5 +1,4 @@
-﻿using ECS;
-using UnityEngine;
+﻿using UnityEngine;
 
 namespace Notifications
 {

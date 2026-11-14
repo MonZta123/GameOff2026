@@ -66,19 +66,20 @@ public class GameSessionHost : MonoBehaviour
     private void InitNextReplaySegment()
     {
         pools.ClearAllNotificationPools();
+        pools.ClearAllObjectPools();
 
         var mapDefinition = TextureMapBuilder.GetMap(maps[((_timeline.GetCurrentSegment() + 1) % Constants.Segments)]);
 
         _timeline.InitNextSegment(mapDefinition);
         mapRenderer.GenerateMap(mapDefinition);
-        
-        Rewind();
-        
+
+        ResetTickTimer();
+
         _timeline.SetNextPlayer();
         _timeline.SetNextPlayer();
         _timeline.SetNextPlayer();
         _timeline.SetNextPlayer();
-        
+
         var snapshot = _timeline.GetSnapshot(0);
 
         snapshotRenderer.SetSnapshot(snapshot, 0);
@@ -95,7 +96,7 @@ public class GameSessionHost : MonoBehaviour
         _timeline.SetNextPlayer();
 
         if (!isFirst)
-            Rewind();
+            ResetTickTimer();
         else
             _tickDriver.StartSim();
 
@@ -158,14 +159,35 @@ public class GameSessionHost : MonoBehaviour
         }
     }
 
+    private Coroutine _rewindingCoroutine;
+
+    private bool _isRewinding;
+
     private void PlayerDead()
     {
-        Rewind();
+        AkUnitySoundEngine.StopAll();
+        _isRewinding = true;
+        _tickDriver.StopSim();
+
+        pools.ClearAllNotificationPools();
+        if (_rewindingCoroutine != null)
+            StopCoroutine(_rewindingCoroutine);
+
+        _rewindingCoroutine = StartCoroutine(PlayRewindAnimation(ResetTickTimer));
     }
 
     private void ObjectiveFailed()
     {
-        Rewind();
+        AkUnitySoundEngine.StopAll();
+        _isRewinding = true;
+        _tickDriver.StopSim();
+
+        pools.ClearAllNotificationPools();
+
+        if (_rewindingCoroutine != null)
+            StopCoroutine(_rewindingCoroutine);
+
+        _rewindingCoroutine = StartCoroutine(PlayRewindAnimation(ResetTickTimer));
     }
 
     private void InitReplay()
@@ -174,10 +196,11 @@ public class GameSessionHost : MonoBehaviour
         _activePlayerObject?.SetActivePlayer(false);
         InitNextReplaySegment();
     }
-    
+
     private void NextSegment()
     {
         pools.ClearAllNotificationPools();
+        pools.ClearAllObjectPools();
 
         var mapDefinition = TextureMapBuilder.GetMap(maps[((_timeline.GetCurrentSegment() + 1) % Constants.Segments)]);
 
@@ -201,7 +224,7 @@ public class GameSessionHost : MonoBehaviour
 
     private void Update()
     {
-        if (!_isReplayMode)
+        if (!_isReplayMode && !_isRewinding)
             _activePlayerObject.SetAngle(inputManager.GetAngle(_activePlayerObject.transform));
 
         _tickDriver.Update(Time.deltaTime);
@@ -222,18 +245,54 @@ public class GameSessionHost : MonoBehaviour
             var snapshot = _timeline.GetSnapshot(_tickDriver.CurrentTick);
             snapshotRenderer.SetSnapshot(snapshot, _tickDriver.CurrentTick);
 
-            var result = _gameFlowManager.CheckForLoopBreak(_tickDriver.CurrentTick, snapshot,
-                _timeline.GetCurrentSegment() == Constants.Segments - 1, _isReplayMode);
+            if (!_isRewinding)
+            {
+                var result = _gameFlowManager.CheckForLoopBreak(_tickDriver.CurrentTick, snapshot,
+                    _timeline.GetCurrentSegment() == Constants.Segments - 1, _isReplayMode);
 
-            HandleResult(result);
+                HandleResult(result);
+            }
         }
     }
 
     private Player _activePlayerObject;
 
-    private void Rewind()
+    private IEnumerator PlayRewindAnimation(Action next = null)
+    {
+        yield return null;
+
+        var currentTick = _tickDriver.CurrentTick;
+
+        var duration = 1.5f;
+        var elapsed = 0f;
+
+        while (elapsed < duration)
+        {
+            elapsed += Time.deltaTime;
+
+            var t = Mathf.Clamp01(elapsed / duration);
+
+            var eased = t < 0.5f
+                ? 4f * t * t * t
+                : 1f - Mathf.Pow(-2f * t + 2f, 3f) / 2f;
+
+            var currentValue = Mathf.RoundToInt(
+                Mathf.Lerp(currentTick, 0f, eased)
+            );
+
+            _tickDriver.SetToTick(currentValue);
+
+            yield return null;
+        }
+
+        _isRewinding = false;
+        next?.Invoke();
+    }
+
+    private void ResetTickTimer()
     {
         _tickDriver.StopSim();
+
         _tickDriver.SetToTick(0);
         _lastProcessedTick = 0;
 
@@ -243,7 +302,6 @@ public class GameSessionHost : MonoBehaviour
         }
 
         _currentCoroutine = StartCoroutine(WaitForStart());
-        pools.ClearAllNotificationPools();
     }
 
     private IEnumerator WaitForStart()
