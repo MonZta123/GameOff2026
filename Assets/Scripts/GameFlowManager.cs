@@ -1,8 +1,31 @@
 ﻿using ECS;
 using UnityEngine;
 
+public struct GameFlowResult
+{
+    public GameFlowResultState _state;
+    public string _comment;
+}
+
 public class GameFlowManager
 {
+    private string IndexToCharacter(int index)
+    {
+        switch (index)
+        {
+            case 0:
+                return "Olga";
+            case 1:
+                return "Dave";
+            case 2:
+                return "Tien";
+            case 3:
+                return "Renoir";
+            default:
+                return "Player";
+        }
+    }
+
     public GameFlowManager(int ticksPerRun)
     {
         _ticksPerRun = ticksPerRun;
@@ -18,7 +41,7 @@ public class GameFlowManager
         {
             if (snapshot._players.GetEntityAt(i)._health <= 0)
             {
-                return GameFlowResult.PlayerDead;
+                return new GameFlowResult() { _state = GameFlowResultState.PlayerDead, _comment = IndexToCharacter(i) };
             }
         }
 
@@ -28,41 +51,52 @@ public class GameFlowManager
             if (isReplayMode)
             {
                 if (isLastSegment)
-                    return GameFlowResult.GameOver;
-                
-                return GameFlowResult.NextReplaySegment;
+                    return new GameFlowResult() { _state = GameFlowResultState.GameOver };
+
+                return new GameFlowResult() { _state = GameFlowResultState.NextReplaySegment };
             }
 
             if (currentPlayer == 0 && snapshot._damageProcess != 0)
             {
                 Debug.Log("Objective failed - damage left: " + snapshot._damageProcess + " enemies");
-                return GameFlowResult.ObjectiveFailed;
+                return new GameFlowResult()
+                {
+                    _state = GameFlowResultState.ObjectiveFailed,
+                    _comment = snapshot._damageProcess + " enemies left."
+                };
             }
 
             if (currentPlayer == 1 && snapshot._hackProcess != 0)
             {
                 Debug.Log("Objective failed - hack left: " + snapshot._hackProcess + " seconds");
-                return GameFlowResult.ObjectiveFailed;
+                return new GameFlowResult()
+                {
+                    _state = GameFlowResultState.ObjectiveFailed,
+                    _comment = snapshot._hackProcess + " seconds left to hack."
+                };
             }
 
             if (currentPlayer == 2 && snapshot._bombsLeft != 0)
             {
                 Debug.Log("Objective failed - bombs left: " + snapshot._bombsLeft);
-                return GameFlowResult.ObjectiveFailed;
+                return new GameFlowResult()
+                {
+                    _state = GameFlowResultState.ObjectiveFailed, _comment = snapshot._bombsLeft + " left to place."
+                };
             }
 
             if (currentPlayer == 3)
             {
                 if (isLastSegment)
-                    return GameFlowResult.StartReplay;
-                
-                return GameFlowResult.NextSegment;
+                    return new GameFlowResult() { _state = GameFlowResultState.StartReplay };
+
+                return new GameFlowResult() { _state = GameFlowResultState.NextSegment };
             }
- 
-                
-            return GameFlowResult.Success;
+
+
+            return new GameFlowResult() { _state = GameFlowResultState.Success };
         }
 
-        return GameFlowResult.Play;
+        return new GameFlowResult() { _state = GameFlowResultState.Play };
     }
 }

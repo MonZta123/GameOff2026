@@ -114,6 +114,7 @@ namespace ECS.Systems
                         if (player._health <= 0)
                         {
                             player._health = 0;
+                            player._velocity = Vector2.zero;
                         }
 
                         hit = true;

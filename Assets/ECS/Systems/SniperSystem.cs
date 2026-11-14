@@ -74,6 +74,7 @@ namespace ECS.Systems
                                 player2._colliderRadius * player2._colliderRadius)
                             {
                                 player2._health = 0;
+                                player2._velocity = Vector2.zero;
                             }
                         }
 

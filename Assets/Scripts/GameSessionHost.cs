@@ -3,6 +3,7 @@ using System.Collections;
 using Actors;
 using Domain;
 using ECS;
+using TMPro;
 using Unity.Cinemachine;
 using UnityEngine;
 
@@ -38,6 +39,9 @@ public class GameSessionHost : MonoBehaviour
     [SerializeField]
     private Transform snipeTarget;
 
+    [SerializeField]
+    private TextMeshProUGUI rewindText;
+
     private TickDriver _tickDriver;
     private Timeline _timeline;
 
@@ -45,12 +49,15 @@ public class GameSessionHost : MonoBehaviour
 
     private int _segmentTicks;
 
+    private GameSessionState _gameSessionState;
+
     private void Awake()
     {
         // Show LoadingScreen here
         pools.Initialize();
         _segmentTicks = maxSeconds * stepsPerSecond;
         var mapDefinition = TextureMapBuilder.GetMap(maps[0]);
+        _gameSessionState = GameSessionState.Playing;
 
         _tickDriver = new TickDriver(stepsPerSecond);
         _tickDriver._onTick += OnTick;
@@ -59,6 +66,7 @@ public class GameSessionHost : MonoBehaviour
         _timeline.InitNextSegment(mapDefinition);
         mapRenderer.GenerateMap(mapDefinition);
 
+        rewindText.gameObject.SetActive(false);
         _gameFlowManager = new GameFlowManager(_segmentTicks);
         // Hide Loadingscreen here
     }
@@ -91,7 +99,17 @@ public class GameSessionHost : MonoBehaviour
         inputManager.RemoveCrossHair();
     }
 
-    private void InitNextCharacter(bool isFirst = false)
+    private void InitNextCharacter()
+    {
+        pools.ClearAllNotificationPools();
+
+        if (_rewindingCoroutine != null)
+            StopCoroutine(_rewindingCoroutine);
+
+        _rewindingCoroutine = StartCoroutine(PlayRewindAnimation(() => BuildNextCharacter()));
+    }
+
+    private void BuildNextCharacter(bool isFirst = false)
     {
         _timeline.SetNextPlayer();
 
@@ -122,77 +140,85 @@ public class GameSessionHost : MonoBehaviour
             inputManager.SetCrossHair(snapshot._players.GetNumEntities() - 1);
         else
             inputManager.RemoveCrossHair();
+
+        _gameSessionState = GameSessionState.Playing;
     }
 
     private int _lastProcessedTick;
 
-    private void HandleResult(GameFlowResult result)
+    private void HandleResult(GameFlowResult resultState)
     {
-        switch (result)
+        switch (resultState._state)
         {
-            case GameFlowResult.Play:
+            case GameFlowResultState.Play:
                 break;
-            case GameFlowResult.Success:
-                InitNextCharacter();
+            case GameFlowResultState.Success:
+                PlayerSuccess();
                 break;
-            case GameFlowResult.NextSegment:
+            case GameFlowResultState.NextSegment:
                 NextSegment();
                 break;
-            case GameFlowResult.ObjectiveFailed:
-                ObjectiveFailed();
+            case GameFlowResultState.ObjectiveFailed:
+                ObjectiveFailed(resultState._comment);
                 break;
-            case GameFlowResult.PlayerDead:
-                PlayerDead();
+            case GameFlowResultState.PlayerDead:
+                PlayerDead(resultState._comment);
                 break;
-            case GameFlowResult.StartReplay:
+            case GameFlowResultState.StartReplay:
                 InitReplay();
                 break;
-            case GameFlowResult.NextReplaySegment:
+            case GameFlowResultState.NextReplaySegment:
                 InitNextReplaySegment();
                 break;
-            case GameFlowResult.GameOver:
+            case GameFlowResultState.GameOver:
                 Debug.Log("Game over");
                 // Say "thank you" and go back to the main menu
                 break;
             default:
-                throw new ArgumentOutOfRangeException(nameof(result), result, null);
+                throw new ArgumentOutOfRangeException(nameof(resultState), resultState, null);
         }
     }
 
     private Coroutine _rewindingCoroutine;
 
-    private bool _isRewinding;
-
-    private void PlayerDead()
+    private void PlayerSuccess()
     {
         AkUnitySoundEngine.StopAll();
-        _isRewinding = true;
-        _tickDriver.StopSim();
+        _gameSessionState = GameSessionState.WaitingForRSuccess;
+        rewindText.gameObject.SetActive(true);
+        rewindText.text = "Press R for next Player!";
+    }
 
-        pools.ClearAllNotificationPools();
+    private void PlayerDead(string who)
+    {
+        AkUnitySoundEngine.StopAll();
+        _gameSessionState = GameSessionState.WaitingForR;
+        rewindText.text = who + " was eliminated! Press R to retry!";
+        rewindText.gameObject.SetActive(true);
+        _tickDriver.StopSim();
+    }
+
+    private void DoRewindAnimation()
+    {
+        rewindText.gameObject.SetActive(false);
+
         if (_rewindingCoroutine != null)
             StopCoroutine(_rewindingCoroutine);
 
         _rewindingCoroutine = StartCoroutine(PlayRewindAnimation(ResetTickTimer));
     }
 
-    private void ObjectiveFailed()
+    private void ObjectiveFailed(string reason)
     {
         AkUnitySoundEngine.StopAll();
-        _isRewinding = true;
+        _gameSessionState = GameSessionState.WaitingForR;
+        rewindText.text = reason + " Press R to rewind!";
         _tickDriver.StopSim();
-
-        pools.ClearAllNotificationPools();
-
-        if (_rewindingCoroutine != null)
-            StopCoroutine(_rewindingCoroutine);
-
-        _rewindingCoroutine = StartCoroutine(PlayRewindAnimation(ResetTickTimer));
     }
 
     private void InitReplay()
     {
-        _isReplayMode = true;
+        _gameSessionState = GameSessionState.ReplayMode;
         _activePlayerObject?.SetActivePlayer(false);
         InitNextReplaySegment();
     }
@@ -219,12 +245,12 @@ public class GameSessionHost : MonoBehaviour
 
     public void Start()
     {
-        InitNextCharacter(true);
+        BuildNextCharacter(true);
     }
 
     private void Update()
     {
-        if (!_isReplayMode && !_isRewinding)
+        if (_gameSessionState == GameSessionState.Playing)
             _activePlayerObject.SetAngle(inputManager.GetAngle(_activePlayerObject.transform));
 
         _tickDriver.Update(Time.deltaTime);
@@ -238,6 +264,20 @@ public class GameSessionHost : MonoBehaviour
             _lastProcessedTick++;
         }
 
+        if (_gameSessionState == GameSessionState.WaitingForR && inputManager.IsRKeyDown)
+        {
+            pools.ClearAllNotificationPools();
+            _gameSessionState = GameSessionState.Rewinding;
+            DoRewindAnimation();
+        }
+
+        if (_gameSessionState == GameSessionState.WaitingForRSuccess && inputManager.IsRKeyDown)
+        {
+            pools.ClearAllNotificationPools();
+            _gameSessionState = GameSessionState.Rewinding;
+            InitNextCharacter();
+        }
+
         if (_tickDriver.CurrentTick != _lastSetTick && _tickDriver.CurrentTick < _timeline.SnapshotLength)
         {
             _lastSetTick = _tickDriver.CurrentTick;
@@ -245,10 +285,11 @@ public class GameSessionHost : MonoBehaviour
             var snapshot = _timeline.GetSnapshot(_tickDriver.CurrentTick);
             snapshotRenderer.SetSnapshot(snapshot, _tickDriver.CurrentTick);
 
-            if (!_isRewinding)
+            if (_gameSessionState == GameSessionState.Playing)
             {
                 var result = _gameFlowManager.CheckForLoopBreak(_tickDriver.CurrentTick, snapshot,
-                    _timeline.GetCurrentSegment() == Constants.Segments - 1, _isReplayMode);
+                    _timeline.GetCurrentSegment() == Constants.Segments - 1,
+                    _gameSessionState == GameSessionState.ReplayMode);
 
                 HandleResult(result);
             }
@@ -263,14 +304,13 @@ public class GameSessionHost : MonoBehaviour
 
         var currentTick = _tickDriver.CurrentTick;
 
-        var duration = 1.5f;
         var elapsed = 0f;
 
-        while (elapsed < duration)
+        while (elapsed < Constants.RewindDuration)
         {
             elapsed += Time.deltaTime;
 
-            var t = Mathf.Clamp01(elapsed / duration);
+            var t = Mathf.Clamp01(elapsed / Constants.RewindDuration);
 
             var eased = t < 0.5f
                 ? 4f * t * t * t
@@ -285,7 +325,8 @@ public class GameSessionHost : MonoBehaviour
             yield return null;
         }
 
-        _isRewinding = false;
+        _gameSessionState = GameSessionState.Playing;
+        rewindText.gameObject.SetActive(false);
         next?.Invoke();
     }
 
@@ -332,7 +373,7 @@ public class GameSessionHost : MonoBehaviour
             return;
         }
 
-        if (_isReplayMode)
+        if (_gameSessionState == GameSessionState.ReplayMode)
         {
             _timeline.PlayIntent(tick);
         }
@@ -344,10 +385,11 @@ public class GameSessionHost : MonoBehaviour
         }
     }
 
-    private bool _isReplayMode;
-
     private void LateUpdate()
     {
+        if (!_activePlayerObject)
+            return;
+
         var screenPos = inputManager.SnipePosition();
 
         screenPos.x *= (cam.orthographicSize * cam.aspect - 2);

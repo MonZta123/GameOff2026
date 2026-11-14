@@ -45,6 +45,8 @@ public class InputManager : MonoBehaviour
         return pos;
     }
     
+    public bool IsRKeyDown => Input.GetKeyDown(KeyCode.R);
+    
     public float GetAngle(Transform relativeTo)
     {
         Vector2 direction = _mousePosition - relativeTo.position;
