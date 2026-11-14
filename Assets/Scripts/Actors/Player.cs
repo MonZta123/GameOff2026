@@ -73,22 +73,24 @@ namespace Actors
             if (isDead)
             {
                 animator.Play("Dead");
+                moveBouncer.SetIsBouncing(false);
                 return;
             }
 
             if (isSlam)
             {
                 animator.Play("Slam");
+                moveBouncer.SetIsBouncing(false);
                 return;
             }
 
             if (actionActive)
             {
                 animator.Play("Action");
+                moveBouncer.SetIsBouncing(false);
                 return;
             }
 
-            var walk = false;
             var prefix = "Idle_";
 
             var isPrimary = false;
@@ -109,7 +111,7 @@ namespace Actors
                 if (end == start)
                     time = 0;
                 else
-                    time = Mathf.Clamp01((float)(_tick - start) / (float)(end - start));
+                    time = Mathf.Clamp01((_tick - start) / (float)(end - start));
             }
             else if (secondaryActive)
             {
@@ -118,7 +120,6 @@ namespace Actors
             else if (_lastEntity._velocity != Vector2.zero)
             {
                 prefix = "Walk_";
-                walk = true;
             }
 
             if (!secondaryActive)
@@ -149,7 +150,19 @@ namespace Actors
             gunRenderer.sortingOrder = angle is > 0 and < 180 ? 4 : 6;
             gunRenderer.flipY = angle is > 90 and < 270;
 
-            if (walk)
+           
+        }
+
+        public void SetState(ECS.Entities.Player entity, int tick)
+        {
+            transform.position = entity._position;
+
+            if (!_activePlayer)
+            {
+                gunRenderer.transform.rotation = Quaternion.Euler(0, 0, entity._angle);
+            }
+
+            if (entity._velocity.SqrMagnitude() > 0.01f)
             {
                 if (_lastEntity._velocity != Vector2.zero)
                 {
@@ -167,17 +180,7 @@ namespace Actors
                 if (moveBouncer.IsBouncing)
                     moveBouncer.SetIsBouncing(false);
             }
-        }
-
-        public void SetState(ECS.Entities.Player entity, int tick)
-        {
-            transform.position = entity._position;
-
-            if (!_activePlayer)
-            {
-                gunRenderer.transform.rotation = Quaternion.Euler(0, 0, entity._angle);
-            }
-
+            
             _lastEntity = entity;
             _tick = tick;
         }

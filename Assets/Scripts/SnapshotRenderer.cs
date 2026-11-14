@@ -34,7 +34,7 @@ public class SnapshotRenderer : MonoBehaviour
             var notification = snapshot._soundNotificationPool.GetEntityAt(i);
 
             soundNotification.PlayEvent(notification._soundType, notification._switchGroup,
-               "");
+                "");
         }
     }
 
@@ -59,11 +59,20 @@ public class SnapshotRenderer : MonoBehaviour
             var currentEntity = ecsPool.GetEntityAt(i);
             var id = ecsPool.GetIdAt(i);
 
+            var generation = ecsPool.GetGeneration(id);
+
+            if (generation != pool.Generations[id - 1] && pool.Active[id - 1])
+            {
+                pool.Return(pool.Active[id - 1]);
+                pool.Active[id - 1] = null;
+            }
+
             var obj = pool.Active[id - 1];
             if (!obj)
             {
                 obj = pool.Get(currentEntity);
                 pool.Active[id - 1] = obj;
+                pool.Generations[id - 1] = generation;
             }
 
             obj.SetState(currentEntity, tick);

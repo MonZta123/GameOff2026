@@ -8,6 +8,9 @@
         public const int Segments = 4;
 #endif
 
+
+        public const float RewindDuration = 1.5f;
+
         public const int PlayerCount = 4;
         public const int EnemyCount = 100;
         public const int ProjectileCount = 200;

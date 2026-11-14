@@ -1,5 +1,4 @@
 ﻿using ECS.Entities;
-using UnityEngine;
 
 namespace ECS.Systems
 {

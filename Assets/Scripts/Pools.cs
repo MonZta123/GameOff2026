@@ -53,6 +53,15 @@ public class Pools : MonoBehaviour
         _doorDestructionNotificationPool.ReturnAll();
     }
 
+    public void ClearAllObjectPools()
+    {
+        _enemyPool.ReturnAll();
+        _projectilePool.ReturnAll();
+        _playerPool.ReturnAll();
+        _doorPool.ReturnAll();
+        _triggerPool.ReturnAll();
+    }
+    
     public void Initialize()
     {
         _enemyPool = new GameObjectPool<Enemy, ECS.Entities.Enemy>(Constants.EnemyCount);

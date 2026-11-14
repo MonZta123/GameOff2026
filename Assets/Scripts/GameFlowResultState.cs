@@ -1,4 +1,4 @@
-﻿public enum GameFlowResult
+﻿public enum GameFlowResultState
 {
     Play,
     Success,

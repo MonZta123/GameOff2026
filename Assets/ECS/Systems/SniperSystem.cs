@@ -1,7 +1,5 @@
 ﻿using System;
 using Domain;
-using ECS.Entities;
-using ECS.Events;
 using ECS.Notification;
 using UnityEngine;
 
@@ -10,20 +8,13 @@ namespace ECS.Systems
     public class SniperSystem
     {
         public SniperSystem(int tickRate)
-        {
-            _tickRate = tickRate;
-
-            _shootCooldownTicks = (int)MathF.Floor(tickRate * _secondsPrimaryCooldown);
-
+        { 
+            _shootCooldownTicks = (int)MathF.Floor(tickRate * Constants.SniperCooldown);
             _speed = Constants.SniperMoveSpeed;
         }
-
-        private float _speed;
-
-        private int _tickRate;
-
-        private float _secondsPrimaryCooldown = 0.25f;
-        private int _shootCooldownTicks;
+        
+        private readonly float _speed;
+        private readonly int _shootCooldownTicks;
 
         public void Execute(World world, int currentTick)
         {
@@ -83,6 +74,7 @@ namespace ECS.Systems
                                 player2._colliderRadius * player2._colliderRadius)
                             {
                                 player2._health = 0;
+                                player2._velocity = Vector2.zero;
                             }
                         }
 

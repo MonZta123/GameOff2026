@@ -4,6 +4,7 @@
     {
         private readonly short[] _idToIndex;
         private readonly short[] _indexToId;
+        private readonly int[] _generations;
         private readonly short[] _freeIds;
         private readonly Type[] _entities;
         private short _numEntities;
@@ -14,6 +15,7 @@
             _indexToId = new short[entityCount];
             _entities = new Type[entityCount];
             _freeIds = new short[entityCount];
+            _generations = new int[entityCount];
             _numEntities = 0;
 
             for (var i = 0; i < entityCount; i++)
@@ -29,6 +31,7 @@
             _indexToId.CopyTo(snapshotPool._indexToId, 0);
             _entities.CopyTo(snapshotPool._entities, 0);
             _freeIds.CopyTo(snapshotPool._freeIds, 0);
+            _generations.CopyTo(snapshotPool._generations, 0);
             snapshotPool._numEntities = _numEntities;
         }
 
@@ -52,6 +55,7 @@
             _idToIndex[id - 1] = _numEntities;
             _entities[_numEntities] = entity;
             _indexToId[_numEntities] = id;
+            _generations[id - 1]++;
 
             _numEntities++;
 
@@ -69,6 +73,8 @@
         public int GetMaxLength() => _entities.Length;
 
         public ref Type GetEntityAt(int index) => ref _entities[index];
+        
+        public int GetGeneration(short id) => _generations[id - 1];
 
         public int GetNumEntities() => _numEntities;
         

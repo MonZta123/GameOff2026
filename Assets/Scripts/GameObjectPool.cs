@@ -7,11 +7,14 @@ public class GameObjectPool<TView, TEntity> where TView : MonoBehaviour, IEntity
     public GameObjectPool(int size)
     {
         Active = new TView[size];
+        Generations = new int[size];
     }
     
     private readonly Stack<TView> _pool = new();
 
     public TView[] Active { get; }
+    
+    public int[] Generations { get; }
 
     public TView Get(TEntity entity)
     {
@@ -32,5 +35,18 @@ public class GameObjectPool<TView, TEntity> where TView : MonoBehaviour, IEntity
         obj.Release();
         obj.gameObject.SetActive(false);
         _pool.Push(obj);
+    }
+
+    public void ReturnAll()
+    {
+        for (var index = 0; index < Active.Length; index++)
+        {
+            var obj = Active[index];
+            if (obj)
+                Return(obj);
+            
+            Active[index] = null;
+            Generations[index] = 0;
+        }
     }
 }

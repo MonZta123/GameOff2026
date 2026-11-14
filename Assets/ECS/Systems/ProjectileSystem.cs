@@ -1,5 +1,4 @@
-﻿using Domain;
-using ECS.Entities;
+﻿using ECS.Entities;
 using ECS.Events;
 
 namespace ECS.Systems
