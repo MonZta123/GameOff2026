@@ -242,10 +242,12 @@ private BlastWaveSystem _blastWaveSystem;
         {
             var spawnZone = _map._enemySpawnZone.ToList();
 
+            var random = Unity.Mathematics.Random.CreateFromIndex((uint)_seed + 1);
+
             for (var i = 0; i < 5; i++)
             {
-                var index = UnityEngine.Random.Range(0, spawnZone.Count);
-
+                var index = random.NextInt(0, spawnZone.Count);
+                
                 var trigger = new Trigger()
                 {
                     _leftBottom = spawnZone[index],

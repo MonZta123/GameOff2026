@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using Actors;
+using Domain;
 using ECS;
 using Unity.Cinemachine;
 using UnityEngine;
@@ -32,11 +33,11 @@ public class GameSessionHost : MonoBehaviour
     private InputManager inputManager;
 
     [SerializeField]
-    private Texture2D map;
+    private Texture2D[] maps;
 
     [SerializeField]
     private Transform snipeTarget;
-    
+
     private TickDriver _tickDriver;
     private Timeline _timeline;
 
@@ -49,7 +50,7 @@ public class GameSessionHost : MonoBehaviour
         // Show LoadingScreen here
         pools.Initialize();
         _segmentTicks = maxSeconds * stepsPerSecond;
-        var mapDefinition = TextureMapBuilder.GetMap(map);
+        var mapDefinition = TextureMapBuilder.GetMap(maps[0]);
 
         _tickDriver = new TickDriver(stepsPerSecond);
         _tickDriver._onTick += OnTick;
@@ -60,6 +61,33 @@ public class GameSessionHost : MonoBehaviour
 
         _gameFlowManager = new GameFlowManager(_segmentTicks);
         // Hide Loadingscreen here
+    }
+
+    private void InitNextReplaySegment()
+    {
+        pools.ClearAllNotificationPools();
+
+        var mapDefinition = TextureMapBuilder.GetMap(maps[((_timeline.GetCurrentSegment() + 1) % Constants.Segments)]);
+
+        _timeline.InitNextSegment(mapDefinition);
+        mapRenderer.GenerateMap(mapDefinition);
+        
+        Rewind();
+        
+        _timeline.SetNextPlayer();
+        _timeline.SetNextPlayer();
+        _timeline.SetNextPlayer();
+        _timeline.SetNextPlayer();
+        
+        var snapshot = _timeline.GetSnapshot(0);
+
+        snapshotRenderer.SetSnapshot(snapshot, 0);
+
+        _activePlayerObject = snapshotRenderer.GetPlayerByIndex(0);
+        positionComposer.VirtualCamera.Follow = _activePlayerObject.transform;
+        positionComposer.Damping = Vector3.one;
+
+        inputManager.RemoveCrossHair();
     }
 
     private void InitNextCharacter(bool isFirst = false)
@@ -115,6 +143,16 @@ public class GameSessionHost : MonoBehaviour
             case GameFlowResult.PlayerDead:
                 PlayerDead();
                 break;
+            case GameFlowResult.StartReplay:
+                InitReplay();
+                break;
+            case GameFlowResult.NextReplaySegment:
+                InitNextReplaySegment();
+                break;
+            case GameFlowResult.GameOver:
+                Debug.Log("Game over");
+                // Say "thank you" and go back to the main menu
+                break;
             default:
                 throw new ArgumentOutOfRangeException(nameof(result), result, null);
         }
@@ -130,13 +168,18 @@ public class GameSessionHost : MonoBehaviour
         Rewind();
     }
 
+    private void InitReplay()
+    {
+        _isReplayMode = true;
+        _activePlayerObject?.SetActivePlayer(false);
+        InitNextReplaySegment();
+    }
+    
     private void NextSegment()
     {
-        // mapDefinition fehlt hier noch
-        // Ja hier sollte die nächste Map kommen:
         pools.ClearAllNotificationPools();
 
-        var mapDefinition = TextureMapBuilder.GetMap(map);
+        var mapDefinition = TextureMapBuilder.GetMap(maps[((_timeline.GetCurrentSegment() + 1) % Constants.Segments)]);
 
         _timeline.InitNextSegment(mapDefinition);
         mapRenderer.GenerateMap(mapDefinition);
@@ -158,13 +201,15 @@ public class GameSessionHost : MonoBehaviour
 
     private void Update()
     {
-        _activePlayerObject.SetAngle(inputManager.GetAngle(_activePlayerObject.transform));
+        if (!_isReplayMode)
+            _activePlayerObject.SetAngle(inputManager.GetAngle(_activePlayerObject.transform));
+
         _tickDriver.Update(Time.deltaTime);
 
         while (_lastProcessedTick + 1 <= _tickDriver.CurrentTick)
         {
             var snapshot = _timeline.GetSnapshot(_lastProcessedTick + 1);
-            
+
             snapshotRenderer.RunNotifications(snapshot);
             snapshotRenderer.RunSounds(snapshot);
             _lastProcessedTick++;
@@ -176,8 +221,9 @@ public class GameSessionHost : MonoBehaviour
 
             var snapshot = _timeline.GetSnapshot(_tickDriver.CurrentTick);
             snapshotRenderer.SetSnapshot(snapshot, _tickDriver.CurrentTick);
-            
-            var result = _gameFlowManager.CheckForLoopBreak(_tickDriver.CurrentTick, snapshot);
+
+            var result = _gameFlowManager.CheckForLoopBreak(_tickDriver.CurrentTick, snapshot,
+                _timeline.GetCurrentSegment() == Constants.Segments - 1, _isReplayMode);
 
             HandleResult(result);
         }
@@ -225,15 +271,22 @@ public class GameSessionHost : MonoBehaviour
         if (tick + 1 >= _segmentTicks + 1)
         {
             _tickDriver.StopSim();
-
-            // Time Over
             return;
         }
 
-        var intent = inputManager.BuildIntent(_activePlayerObject.transform);
+        if (_isReplayMode)
+        {
+            _timeline.PlayIntent(tick);
+        }
+        else
+        {
+            var intent = inputManager.BuildIntent(_activePlayerObject.transform);
 
-        _timeline.AddIntent(intent, tick);
+            _timeline.AddIntent(intent, tick);
+        }
     }
+
+    private bool _isReplayMode;
 
     private void LateUpdate()
     {

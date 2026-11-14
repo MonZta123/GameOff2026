@@ -5,5 +5,7 @@
     NextSegment,
     ObjectiveFailed,
     PlayerDead,
-    GameEnd
+    StartReplay,
+    NextReplaySegment,
+    GameOver
 }

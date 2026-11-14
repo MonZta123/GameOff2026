@@ -2,7 +2,11 @@
 {
     public static class Constants
     {
+#if UNITY_EDITOR
+        public const int Segments = 1;
+#else
         public const int Segments = 4;
+#endif
 
         public const int PlayerCount = 4;
         public const int EnemyCount = 100;
