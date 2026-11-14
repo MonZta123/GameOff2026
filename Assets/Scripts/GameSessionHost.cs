@@ -103,6 +103,8 @@ public class GameSessionHost : MonoBehaviour
     {
         pools.ClearAllNotificationPools();
 
+        rewindText.gameObject.SetActive(false);
+
         if (_rewindingCoroutine != null)
             StopCoroutine(_rewindingCoroutine);
 
@@ -121,7 +123,8 @@ public class GameSessionHost : MonoBehaviour
         var snapshot = _timeline.GetSnapshot(0);
 
         snapshotRenderer.SetSnapshot(snapshot, 0);
-        _activePlayerObject?.SetActivePlayer(false);
+        if (_activePlayerObject)
+            _activePlayerObject.SetActivePlayer(false);
         _activePlayerObject = snapshotRenderer.GetPlayerByIndex(snapshot._players.GetNumEntities() - 1);
         _activePlayerObject.SetActivePlayer(true);
 
@@ -187,6 +190,7 @@ public class GameSessionHost : MonoBehaviour
         _gameSessionState = GameSessionState.WaitingForRSuccess;
         rewindText.gameObject.SetActive(true);
         rewindText.text = "Press R for next Player!";
+        _tickDriver.StopSim();
     }
 
     private void PlayerDead(string who)
@@ -213,13 +217,15 @@ public class GameSessionHost : MonoBehaviour
         AkUnitySoundEngine.StopAll();
         _gameSessionState = GameSessionState.WaitingForR;
         rewindText.text = reason + " Press R to rewind!";
+        rewindText.gameObject.SetActive(true);
         _tickDriver.StopSim();
     }
 
     private void InitReplay()
     {
         _gameSessionState = GameSessionState.ReplayMode;
-        _activePlayerObject?.SetActivePlayer(false);
+        if (_activePlayerObject)
+            _activePlayerObject.SetActivePlayer(false);
         InitNextReplaySegment();
     }
 
@@ -233,7 +239,7 @@ public class GameSessionHost : MonoBehaviour
         _timeline.InitNextSegment(mapDefinition);
         mapRenderer.GenerateMap(mapDefinition);
 
-        InitNextCharacter();
+        BuildNextCharacter();
     }
 
     private void OnDestroy()
