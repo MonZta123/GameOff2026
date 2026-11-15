@@ -29,8 +29,8 @@ namespace ECS
         private DemolitionSystem _demolitionSystem;
         private SniperSystem _sniperSystem;
         private MineSystem _mineSystem;
-private BlastWaveSystem _blastWaveSystem;
-        
+        private BlastWaveSystem _blastWaveSystem;
+
         public MapDefinition _map;
 
         public ShootEvent[] _shootEvents;
@@ -87,10 +87,10 @@ private BlastWaveSystem _blastWaveSystem;
             _mineSystem = new MineSystem();
             _blastWaveSystem = new BlastWaveSystem();
         }
-        
+
         private readonly float _deltaTime;
         private readonly int _seed;
-        
+
         public bool IsBlocked(Vector2 position, float radius = 0.0f)
         {
             if (position.x < 0 || position.y < 0 || position.x >= _map._width || position.y >= _map._height - 1)
@@ -128,6 +128,7 @@ private BlastWaveSystem _blastWaveSystem;
             // First Player
             _currentPlayer = GetCharacter(PlayerType.Heavy);
             _currentPlayer._health = 100;
+            _currentPlayer._maxHealth = 100;
             _currentPlayer._position = mapDefinition._spawnPoints[0];
 
             // Generate Doors
@@ -205,7 +206,7 @@ private BlastWaveSystem _blastWaveSystem;
             var spawnZone = _map._enemySpawnZone.ToList();
 
             var random = Unity.Mathematics.Random.CreateFromIndex((uint)_seed);
-            
+
             for (var i = 0; i < 30; i++)
             {
                 var index = random.NextInt(0, spawnZone.Count);
@@ -247,12 +248,12 @@ private BlastWaveSystem _blastWaveSystem;
             for (var i = 0; i < 5; i++)
             {
                 var index = random.NextInt(0, spawnZone.Count);
-                
+
                 var trigger = new Trigger()
                 {
                     _leftBottom = spawnZone[index],
                     _rightTop = new Vector2(spawnZone[index].x + 1, spawnZone[index].y + 1),
-                    _triggerType = TriggerType.Mine, 
+                    _triggerType = TriggerType.Mine,
                     _timer = 1.0f
                 };
 
@@ -564,14 +565,22 @@ private BlastWaveSystem _blastWaveSystem;
 
         public void SetNextPlayer(ref Snapshot snapshot)
         {
-            var currentPlayer = snapshot._players.GetNumEntities();
+            var totalPlayers = snapshot._players.GetNumEntities();
 
-            _currentPlayer = GetCharacter((PlayerType)(currentPlayer));
-            _currentPlayer._position = _map._spawnPoints[currentPlayer];
+            for (var i = 0; i < totalPlayers; i++)
+            {
+                ref var player = ref snapshot._players.GetEntityAt(i);
+                player._maxHealth = 200;
+                player._health = 200;
+            }
+            
+            _currentPlayer = GetCharacter((PlayerType)(totalPlayers));
+            _currentPlayer._position = _map._spawnPoints[totalPlayers];
             _currentPlayer._health = 100;
+            _currentPlayer._maxHealth = 100;
             snapshot._players.Spawn(_currentPlayer);
 
-            switch (currentPlayer)
+            switch (totalPlayers)
             {
                 case 0:
                     BuildHeavy(ref snapshot);
@@ -592,16 +601,6 @@ private BlastWaveSystem _blastWaveSystem;
         {
             _heavyDamageConeEvent = heavyDamageConeEvent;
             _hasHeavyDamageCone = true;
-        }
-
-        public void ResetCharacterTickStates(ref Player player)
-        {
-            player._primaryReadyAt = 0;
-            player._primaryBlockingMovementTo = 0;
-            player._secondaryReadyAt = 0;
-            player._secondaryActivatedTo = 0;
-            player._isBlockedTo = -1;
-            player._isActionActive = false;
         }
     }
 }

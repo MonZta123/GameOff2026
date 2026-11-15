@@ -14,7 +14,7 @@ namespace ECS.Systems
         
         private float _tickRate;
         
-        private float GetProjectileDamage(Projectile projectile)
+        private int GetProjectileDamage(Projectile projectile)
         {
             switch (projectile._type)
             {

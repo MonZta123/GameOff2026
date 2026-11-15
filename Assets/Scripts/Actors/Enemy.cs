@@ -18,10 +18,13 @@ namespace Actors
         [SerializeField]
         private MoveBouncer moveBouncer;
 
+        [SerializeField]
+        private Healthbar healthbar;
+
         public void Init(ECS.Entities.Enemy entity)
         {
             animator.runtimeAnimatorController = animatorOverrideControllers[(int)entity._type];
-            
+
             _lastPosition = entity._position;
             _incomingEntity = entity;
         }
@@ -34,7 +37,7 @@ namespace Actors
             _lastPosition = _incomingEntity._position;
 
             var isWalking = velocity != Vector2.zero;
-            
+
             var isDead = _health <= 0;
 
             if (isDead)
@@ -56,10 +59,24 @@ namespace Actors
 
             gunRenderer.sortingOrder = angle is > 0 and < 180 ? 4 : 6;
             gunRenderer.flipY = angle is > 90 or < -90;
-            
-            animator.Play(prefix + postfix);
 
-            if (isWalking)
+            animator.Play(prefix + postfix);
+        }
+
+        public void SetState(ECS.Entities.Enemy entity, int tick)
+        {
+            if (entity._type != _incomingEntity._type)
+            {
+                animator.runtimeAnimatorController = animatorOverrideControllers[(int)entity._type];
+            }
+
+            transform.position = entity._position;
+            gunRenderer.transform.rotation = Quaternion.Euler(0, 0, entity._angle);
+
+
+            _health = entity._health;
+
+            if (entity._linearVelocity.SqrMagnitude() > 0.01f && entity._position != _lastPosition)
             {
                 if (!moveBouncer.IsBouncing)
                     moveBouncer.SetIsBouncing(true);
@@ -69,20 +86,11 @@ namespace Actors
                 if (moveBouncer.IsBouncing)
                     moveBouncer.SetIsBouncing(false);
             }
-        }
 
-        public void SetState(ECS.Entities.Enemy entity, int tick)
-        {
-            if (entity._type != _incomingEntity._type)
-            {
-                animator.runtimeAnimatorController = animatorOverrideControllers[(int)entity._type];
-            }
-            
-            transform.position = entity._position;
-            gunRenderer.transform.rotation = Quaternion.Euler(0, 0, entity._angle);
 
-            _health = entity._health;
             _incomingEntity = entity;
+
+            healthbar.SetHealthPercent(_health);
         }
 
         private ECS.Entities.Enemy _incomingEntity;
@@ -100,6 +108,7 @@ namespace Actors
 
         public void Release()
         {
+            healthbar.ReturnToFullHealth();
         }
     }
 }

@@ -199,6 +199,17 @@ public class GameSessionHost : MonoBehaviour
         _gameSessionState = GameSessionState.WaitingForR;
         rewindText.text = who + " was eliminated! Press R to retry!";
         rewindText.gameObject.SetActive(true);
+
+        var snapshot = _timeline.GetSnapshot(_tickDriver.CurrentTick);
+        for (var i = 0; i < snapshot._players.GetNumEntities(); i++)
+        {
+            var player = snapshot._players.GetEntityAt(i);
+            if (player._health <= 0)
+            {
+                positionComposer.VirtualCamera.Follow = pools._playerPool.Active[i].transform;
+            }
+        }
+
         _tickDriver.StopSim();
     }
 
@@ -366,6 +377,8 @@ public class GameSessionHost : MonoBehaviour
 
         _tickDriver.StartSim();
 
+        positionComposer.VirtualCamera.Follow = _activePlayerObject.transform;
+        
         _currentCoroutine = null;
     }
 

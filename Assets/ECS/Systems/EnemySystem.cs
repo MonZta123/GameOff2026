@@ -137,7 +137,7 @@ namespace ECS.Systems
                             {
                                 _angle = 0,
                                 _colliderRadius = Constants.ChickColliderRadius,
-                                _health = 3,
+                                _health = 100,
                                 _type = EnemyType.MeleeChick,
                                 _position = targetPos
                             };

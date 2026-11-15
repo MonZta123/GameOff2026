@@ -60,24 +60,6 @@ namespace ECS.Systems
                 }
             }
 
-            if (player._secondaryReadyAt <= currentTick)
-            {
-                if (moveEvt._secondary)
-                {
-                    player._secondaryReadyAt = currentTick + _secondaryCooldownTicks;
-                    player._secondaryActivatedTo = currentTick + _secondaryActiveTicks;
-
-                    // HIER SECONDARY
-
-                    return;
-                }
-            }
-
-            if (player._secondaryActivatedTo > currentTick)
-            {
-                return;
-            }
-
             for (var i = snapshot._triggers.GetNumEntities() - 1; i >= 0; i--)
             {
                 ref var trigger = ref snapshot._triggers.GetEntityAt(i);

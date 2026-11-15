@@ -10,7 +10,7 @@ namespace ECS.Systems
 
             for (var i = snapshot._players.GetNumEntities() - 1; i >= 0; i--)
             {
-                var player = snapshot._players.GetEntityAt(i);
+                ref var player = ref snapshot._players.GetEntityAt(i);
                 for (var j = snapshot._triggers.GetNumEntities() - 1; j >= 0; j--)
                 {
                     var trigger = snapshot._triggers.GetEntityAt(j);

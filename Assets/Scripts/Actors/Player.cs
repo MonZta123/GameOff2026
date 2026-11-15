@@ -33,6 +33,9 @@ namespace Actors
         [SerializeField]
         private MoveBouncer moveBouncer;
 
+        [SerializeField]
+        private Healthbar healthbar;
+
         public void Init(ECS.Entities.Player entity)
         {
             transform.position = entity._position;
@@ -149,8 +152,6 @@ namespace Actors
 
             gunRenderer.sortingOrder = angle is > 0 and < 180 ? 4 : 6;
             gunRenderer.flipY = angle is > 90 and < 270;
-
-           
         }
 
         public void SetState(ECS.Entities.Player entity, int tick)
@@ -181,6 +182,11 @@ namespace Actors
                     moveBouncer.SetIsBouncing(false);
             }
             
+            if (entity._health != _lastEntity._health || entity._maxHealth != _lastEntity._maxHealth)
+            {
+                healthbar.SetHealthPercent(entity._health / (float)entity._maxHealth * 100);
+            }
+            
             _lastEntity = entity;
             _tick = tick;
         }
@@ -199,6 +205,8 @@ namespace Actors
             _isLeftHand = false;
             _lastPrimaryBlockingMovementTo = 0;
             _activePlayer = false;
+            
+            healthbar.ReturnToFullHealth();
         }
 
 #if UNITY_EDITOR
