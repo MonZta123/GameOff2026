@@ -262,7 +262,7 @@ namespace Actors
         private int _lastPrimaryBlockingMovementTo;
         private bool _activePlayer;
 
-        private bool _footstepsActive;
+        private bool _footstepsActive = true;
         
         public void SetFootstepsOnOff(bool value)
         {
