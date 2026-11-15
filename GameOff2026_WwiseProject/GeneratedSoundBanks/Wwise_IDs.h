@@ -40,8 +40,13 @@ namespace AK
         static const AkUniqueID PLAY_SFX_UI_BACK = 1117141914U;
         static const AkUniqueID PLAY_SFX_UI_HOVER = 708671363U;
         static const AkUniqueID PLAY_SFX_UI_SELECT = 2484137795U;
-        static const AkUniqueID PLAY_VO_D_ORDER = 1789269391U;
-        static const AkUniqueID PLAY_VO_D_SELECT = 2625069657U;
+        static const AkUniqueID PLAY_VO_B_DEAD = 3385676497U;
+        static const AkUniqueID PLAY_VO_B_DODGE = 3987225948U;
+        static const AkUniqueID PLAY_VO_B_HACK = 2892588484U;
+        static const AkUniqueID PLAY_VO_B_HIT = 2625050970U;
+        static const AkUniqueID PLAY_VO_B_HITHEAVY = 520291271U;
+        static const AkUniqueID PLAY_VO_B_SELECT = 2920175019U;
+        static const AkUniqueID PLAY_VO_B_WIN = 2629729319U;
         static const AkUniqueID STOP_AMB_ALL = 1051898308U;
         static const AkUniqueID STOP_AMB_BACKOFHOUSE = 820384135U;
         static const AkUniqueID STOP_AMB_FRONTOFHOUSE = 1408943389U;
