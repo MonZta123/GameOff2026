@@ -326,7 +326,7 @@ public class GameSessionHost : MonoBehaviour
 
     public void Start()
     {
-        BuildNextCharacter(true);
+        BuildNextCharacter(true, () => StartCoroutine(FadeIn()));
     }
 
     private void Update()
