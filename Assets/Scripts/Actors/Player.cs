@@ -250,6 +250,9 @@ namespace Actors
 
         public void PlayStepSound()
         {
+            if (!_footstepsActive)
+                return;
+            
             stepSound[_stepIndex].Post(gameObject);
         }
 
@@ -259,6 +262,13 @@ namespace Actors
         private int _lastPrimaryBlockingMovementTo;
         private bool _activePlayer;
 
+        private bool _footstepsActive;
+        
+        public void SetFootstepsOnOff(bool value)
+        {
+            _footstepsActive = value;
+        }
+        
         public void Release()
         {
             positionSmoother.SetSmoothPosition(false);
@@ -268,6 +278,7 @@ namespace Actors
             _lastPrimaryBlockingMovementTo = 0;
             _activePlayer = false;
             _stepIndex = 0;
+            _footstepsActive = false;
             
             spriteRenderer.GetPropertyBlock(_materialPropertyBlock);
             _materialPropertyBlock.SetFloat(s_flashAmount, 0f);

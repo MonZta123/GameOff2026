@@ -410,8 +410,19 @@ public class GameSessionHost : MonoBehaviour
 
     private Player _activePlayerObject;
 
+    private void SetAllFootsteps(bool value)
+    {
+        for (var i = 0; i < pools._playerPool.Active.Length; i++)
+        {
+            var player = pools._playerPool.Active[i];
+            if (player)
+                player.SetFootstepsOnOff(value);
+        }
+    }
+
     private IEnumerator PlayRewindAnimation(Action next = null)
     {
+        SetAllFootsteps(false);
         yield return null;
 
         var currentTick = _tickDriver.CurrentTick;
@@ -441,6 +452,7 @@ public class GameSessionHost : MonoBehaviour
 
         _gameSessionState = GameSessionState.Playing;
         rewindText.gameObject.SetActive(false);
+        SetAllFootsteps(true);
         next?.Invoke();
     }
 
