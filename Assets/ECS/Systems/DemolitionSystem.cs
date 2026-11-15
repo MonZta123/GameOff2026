@@ -55,7 +55,7 @@ namespace ECS.Systems
                     {
                         _type = ProjectileType.Demolition,
                         _position = player._position,
-                        _angle = player._angle,
+                        _angle = moveEvt._angle,
                         _ttl = _tickRate
                     });
                 }
