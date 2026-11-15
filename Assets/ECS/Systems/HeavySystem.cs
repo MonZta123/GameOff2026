@@ -94,7 +94,7 @@ namespace ECS.Systems
                     _position = player._position
                 });
                 
-                world.AddBlastWaveEvent(new BlastWaveEvent() { _position = player._position, _radius = 2f });
+                world.AddBlastWaveEvent(new BlastWaveEvent() { _position = player._position, _radius = 2f, _ignoreHeavy = true });
             }
 
             if (player._isBlockedTo >= currentTick)

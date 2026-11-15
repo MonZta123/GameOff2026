@@ -31,8 +31,6 @@ public class Healthbar : MonoBehaviour
 
     private Coroutine _scrollDown;
 
-    private float _animationHealthPercent;
-
     public void SetHealthPercent(float healthPercent)
     {
         healthPercent = Mathf.Clamp(healthPercent, 0, 100);
@@ -49,6 +47,12 @@ public class Healthbar : MonoBehaviour
         else
         {
             health.size = new Vector2(unitsWidth * healthPercent / 100, health.size.y);
+            animationRed.size = new Vector2(unitsWidth * healthPercent / 100, animationRed.size.y);
+            
+            if (_scrollDown != null)
+                StopCoroutine(_scrollDown);
+            
+            _scrollDown = null;
         }
 
         _healthPercent = healthPercent;

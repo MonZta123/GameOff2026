@@ -214,6 +214,7 @@ namespace ECS
                 var enemy = new Enemy()
                 {
                     _health = 100,
+                    _maxHealth = 100,
                     _angle = 0,
                     _position = spawnZone[index],
                     _type = EnemyType.RedHairGuy,

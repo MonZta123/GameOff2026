@@ -88,6 +88,7 @@ namespace ECS.Systems
                             _type = EnemyType.Buttler,
                             _position = buttlerPosition,
                             _health = 100,
+                            _maxHealth = 100,
                             _lockedOnAt = -1,
                             _shootsAtTick = -1,
                             _toTickNoShoot = _tickRate,
@@ -138,6 +139,7 @@ namespace ECS.Systems
                                 _angle = 0,
                                 _colliderRadius = Constants.ChickColliderRadius,
                                 _health = 100,
+                                _maxHealth = 100,
                                 _type = EnemyType.MeleeChick,
                                 _position = targetPos
                             };

@@ -4,6 +4,7 @@ public struct GameFlowResult
 {
     public GameFlowResultState _state;
     public string _comment;
+    public int index;
 }
 
 public class GameFlowManager
@@ -42,7 +43,7 @@ public class GameFlowManager
             {
                 return new GameFlowResult()
                 {
-                    _state = GameFlowResultState.PlayerDead, _comment = IndexToCharacter(i)
+                    _state = GameFlowResultState.PlayerDead, _comment = IndexToCharacter(i), index = i
                 };
             }
         }

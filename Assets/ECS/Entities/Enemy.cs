@@ -7,7 +7,8 @@ namespace ECS.Entities
         public Vector2 _position;
         public float _angle; 
         public EnemyType _type;
-        public float _health;
+        public int _health;
+        public int _maxHealth;
         public Vector2 _linearVelocity;
 
         public int _toTickThisDirection;

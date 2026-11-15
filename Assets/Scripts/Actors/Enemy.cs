@@ -65,16 +65,17 @@ namespace Actors
 
         public void SetState(ECS.Entities.Enemy entity, int tick)
         {
-            if (entity._type != _incomingEntity._type)
-            {
-                animator.runtimeAnimatorController = animatorOverrideControllers[(int)entity._type];
-            }
-
             transform.position = entity._position;
             gunRenderer.transform.rotation = Quaternion.Euler(0, 0, entity._angle);
 
+            if (entity._health != _health || entity._maxHealth != _maxHealth)
+            {
+                healthbar.SetHealthPercent(entity._health / (float)entity._maxHealth * 100);
+            }
+
 
             _health = entity._health;
+            _maxHealth = entity._maxHealth;
 
             if (entity._linearVelocity.SqrMagnitude() > 0.01f && entity._position != _lastPosition)
             {
@@ -87,17 +88,15 @@ namespace Actors
                     moveBouncer.SetIsBouncing(false);
             }
 
-
             _incomingEntity = entity;
-
-            healthbar.SetHealthPercent(_health);
         }
 
         private ECS.Entities.Enemy _incomingEntity;
 
         private Vector2 _lastPosition;
 
-        private float _health;
+        private int _health;
+        private int _maxHealth;
 
 #if UNITY_EDITOR
         private void OnDrawGizmos()
@@ -109,6 +108,8 @@ namespace Actors
         public void Release()
         {
             healthbar.ReturnToFullHealth();
+            _health = 100;
+            _lastPosition = Vector2.zero;
         }
     }
 }

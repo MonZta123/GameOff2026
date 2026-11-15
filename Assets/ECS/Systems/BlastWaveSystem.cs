@@ -1,4 +1,5 @@
-﻿using ECS.Events;
+﻿using ECS.Entities;
+using ECS.Events;
 using ECS.Notification;
 using UnityEngine;
 
@@ -47,10 +48,13 @@ namespace ECS.Systems
                     }
                 }
             }
-            
+
             for (var i = snapshot._players.GetNumEntities() - 1; i >= 0; i--)
             {
                 ref var player = ref snapshot._players.GetEntityAt(i);
+
+                if (evt._ignoreHeavy && player._type == PlayerType.Heavy)
+                    continue;
 
                 var distance = Vector2.Distance(player._position, evt._position);
                 if (distance < evt._radius)
