@@ -2,6 +2,7 @@
 using Domain;
 using ECS.Entities;
 using ECS.Events;
+using ECS.Notification;
 using UnityEngine;
 
 namespace ECS.Systems
@@ -64,6 +65,12 @@ namespace ECS.Systems
                     player._secondaryActivatedTo = currentTick + _secondaryActiveTicks;
 
                     var radians = moveEvt._angle * Mathf.Deg2Rad;
+                    
+                    snapshot._soundNotificationPool.Add(new SoundNotification()
+                    {
+                        _soundType = SoundType.HackerDodge,
+                        _position = player._position
+                    });
 
                     var direction = new Vector2(
                         Mathf.Cos(radians),

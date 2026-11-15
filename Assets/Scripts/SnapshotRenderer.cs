@@ -9,7 +9,7 @@ public class SnapshotRenderer : MonoBehaviour
     private Pools pools;
 
     [SerializeField]
-    private SoundNotification soundNotification;
+    private SoundSystem soundSystem;
 
     public void SetSnapshot(Snapshot snapshot, int tick)
     {
@@ -34,8 +34,7 @@ public class SnapshotRenderer : MonoBehaviour
         {
             var notification = snapshot._soundNotificationPool.GetEntityAt(i);
 
-            soundNotification.PlayEvent(notification._soundType, notification._switchGroup,
-                "");
+            soundSystem.PlayEvent(notification);
         }
     }
 

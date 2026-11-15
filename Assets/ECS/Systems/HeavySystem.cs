@@ -63,7 +63,6 @@ namespace ECS.Systems
                     snapshot._soundNotificationPool.Add(new SoundNotification()
                     {
                         _soundType = SoundType.Dash,
-                        _switchGroup = "FloorMaterial",
                         _position = player._position
                     });
 
@@ -90,7 +89,6 @@ namespace ECS.Systems
                 snapshot._soundNotificationPool.Add(new SoundNotification()
                 {
                     _soundType = SoundType.Slam,
-                    _switchGroup = "FloorMaterial",
                     _position = player._position
                 });
                 

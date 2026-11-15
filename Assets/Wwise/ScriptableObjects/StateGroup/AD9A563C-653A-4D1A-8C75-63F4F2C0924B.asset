@@ -1,0 +1,17 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d3dd69e0a716c2f449dca041f3f4e86b, type: 3}
+  m_Name: AD9A563C-653A-4D1A-8C75-63F4F2C0924B
+  m_EditorClassIdentifier: AK.Wwise.Unity.API.WwiseTypes::WwiseStateGroupReference
+  objectName: Round
+  id: 1413238543
+  guid: AD9A563C-653A-4D1A-8C75-63F4F2C0924B

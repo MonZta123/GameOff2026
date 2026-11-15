@@ -175,7 +175,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
+  - {fileID: 2100000, guid: fab67082a3b25d44792bc3d691ddfd33, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -203,7 +203,7 @@ SpriteRenderer:
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 0.16, y: 0.16}
+  m_Size: {x: 1.125, y: 1.125}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -294,6 +294,7 @@ MonoBehaviour:
   animator: {fileID: 2545667964959951024}
   moveBouncer: {fileID: 4887206294677729123}
   healthbar: {fileID: 4689670078613096624}
+  spriteRenderer: {fileID: 4262337228588844169}
 --- !u!1001 &1109957088229425931
 PrefabInstance:
   m_ObjectHideFlags: 0

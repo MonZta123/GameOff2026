@@ -1,4 +1,5 @@
 ﻿using ECS.Entities;
+using ECS.Notification;
 
 namespace ECS.Systems
 {
@@ -21,6 +22,12 @@ namespace ECS.Systems
                         {
                             snapshot._triggers.DespawnAt(j);
                             player._health -= 40;
+                            
+                            snapshot._soundNotificationPool.Add(new SoundNotification()
+                            {
+                                _position = (trigger._leftBottom + trigger._rightTop) / 2f,
+                                _soundType = SoundType.MineExplosion
+                            });
                         }
                     }
                 }
