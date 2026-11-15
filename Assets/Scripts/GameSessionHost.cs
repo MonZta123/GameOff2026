@@ -190,7 +190,10 @@ public class GameSessionHost : MonoBehaviour
         if (!isFirst)
             ResetTickTimer();
         else
+        {
+            inputManager.ClearInput();
             _tickDriver.StartSim();
+        }
     }
 
     private void UpdateCam()
@@ -253,6 +256,7 @@ public class GameSessionHost : MonoBehaviour
         rewindText.gameObject.SetActive(true);
         rewindText.text = "Press R for next Player!";
         _tickDriver.StopSim();
+        StopCharacterBouncing();
     }
 
     private void PlayerDead(string who, int index)
@@ -265,6 +269,7 @@ public class GameSessionHost : MonoBehaviour
         positionComposer.VirtualCamera.Follow = pools._playerPool.Active[index].transform;
 
         _tickDriver.StopSim();
+        StopCharacterBouncing();
     }
 
     private void DoRewindAnimation()
@@ -298,7 +303,7 @@ public class GameSessionHost : MonoBehaviour
     {
         AkUnitySoundEngine.StopAll();
         _tickDriver.StopSim();
-        
+
         StartCoroutine(FadeOut(Action));
         return;
 
@@ -441,6 +446,7 @@ public class GameSessionHost : MonoBehaviour
             yield return null;
         }
 
+        inputManager.ClearInput();
         _tickDriver.StartSim();
 
         _currentCoroutine = null;
@@ -453,6 +459,7 @@ public class GameSessionHost : MonoBehaviour
         if (tick + 1 >= _segmentTicks + 1)
         {
             _tickDriver.StopSim();
+            StopCharacterBouncing();
             return;
         }
 
@@ -465,6 +472,23 @@ public class GameSessionHost : MonoBehaviour
             var intent = inputManager.BuildIntent(_activePlayerObject.transform);
 
             _timeline.AddIntent(intent, tick);
+        }
+    }
+
+    private void StopCharacterBouncing()
+    {
+        for (var i = 0; i < pools._playerPool.Active.Length; i++)
+        {
+            var player = pools._playerPool.Active[i];
+            if (player)
+                player.StopBouncing();
+        }
+
+        for (var i = 0; i < pools._enemyPool.Active.Length; i++)
+        {
+            var enemy = pools._enemyPool.Active[i];
+            if (enemy)
+                enemy.StopBouncing();
         }
     }
 

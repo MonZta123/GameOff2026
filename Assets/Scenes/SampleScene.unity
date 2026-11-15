@@ -163,6 +163,7 @@ MonoBehaviour:
   enemyDiedNotification: {fileID: -3753237614961215173, guid: cce6eb6079cadcf418c1ffa5d8dd0936, type: 3}
   snipeShotHitscan: {fileID: 5881695076861086506, guid: 4f9d4d50634fa604d92ccc98ab8c9ab9, type: 3}
   doorDestructionNotification: {fileID: 8812971169499925501, guid: ff7c7d3e53ef17842881e9f38dd523ef, type: 3}
+  placedBomb: {fileID: 5673399217549167104, guid: cf6a54144b4513d4c8fa35d02b3600c1, type: 3}
 --- !u!4 &13633224
 Transform:
   m_ObjectHideFlags: 0

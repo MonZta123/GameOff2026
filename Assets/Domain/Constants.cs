@@ -19,7 +19,7 @@
         public const int EnemyDiedNotificationCount = 10;
         public const int SnipeShotNotificationCount = 5;
         public const int DoorDestructionNotificationCount = 10;
-        public const int BombPlacedNotificationCount = 10;
+        public const int PlacedBombCount = 10;
 
         public const float EnemyMoveSpeed = 0.5f;
 

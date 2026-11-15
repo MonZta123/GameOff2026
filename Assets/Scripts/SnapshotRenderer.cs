@@ -18,6 +18,7 @@ public class SnapshotRenderer : MonoBehaviour
         UpdateView(snapshot._projectiles, pools._projectilePool, tick);
         UpdateView(snapshot._doors, pools._doorPool, tick);
         UpdateView(snapshot._triggers, pools._triggerPool, tick);
+        UpdateView(snapshot._placedBombs, pools._placedBombs, tick);
     }
 
     public void RunNotifications(Snapshot snapshot)

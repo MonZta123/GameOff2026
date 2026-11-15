@@ -5,6 +5,7 @@ using Notifications;
 using UnityEngine;
 using DoorDestructionNotification = Notifications.DoorDestructionNotification;
 using EnemyDiedNotification = Notifications.EnemyDiedNotification;
+using PlacedBomb = Actors.PlacedBomb;
 
 public class Pools : MonoBehaviour
 {
@@ -32,6 +33,9 @@ public class Pools : MonoBehaviour
     [SerializeField]
     private DoorDestructionNotification doorDestructionNotification;
 
+    [SerializeField]
+    private PlacedBomb placedBomb;
+
     public GameObjectPool<Enemy, ECS.Entities.Enemy> _enemyPool;
     public GameObjectPool<Projectile, ECS.Entities.Projectile> _projectilePool;
     public GameObjectPool<Player, ECS.Entities.Player> _playerPool;
@@ -45,6 +49,9 @@ public class Pools : MonoBehaviour
 
     public GameNotificationPool<DoorDestructionNotification, ECS.Notification.DoorDestructionNotification>
         _doorDestructionNotificationPool;
+
+    public GameObjectPool<PlacedBomb, ECS.Entities.PlacedBomb>
+        _placedBombs;
 
     public void ClearAllNotificationPools()
     {
@@ -60,8 +67,9 @@ public class Pools : MonoBehaviour
         _playerPool.ReturnAll();
         _doorPool.ReturnAll();
         _triggerPool.ReturnAll();
+        _placedBombs.ReturnAll();
     }
-    
+
     public void Initialize()
     {
         _enemyPool = new GameObjectPool<Enemy, ECS.Entities.Enemy>(Constants.EnemyCount);
@@ -69,6 +77,8 @@ public class Pools : MonoBehaviour
         _playerPool = new GameObjectPool<Player, ECS.Entities.Player>(Constants.PlayerCount);
         _doorPool = new GameObjectPool<Door, ECS.Entities.Door>(Constants.DoorCount);
         _triggerPool = new GameObjectPool<Trigger, ECS.Entities.Trigger>(Constants.TriggerCount);
+        _placedBombs = new GameObjectPool<PlacedBomb, ECS.Entities.PlacedBomb>(Constants.PlacedBombCount);
+
         _snipeShotNotificationPool =
             new GameNotificationPool<SnipeShotHitscan, SnipeShotNotification>(Constants.SnipeShotNotificationCount);
 
@@ -92,6 +102,9 @@ public class Pools : MonoBehaviour
 
         for (var i = 0; i < Constants.DoorCount; i++)
             _doorPool.Add(Instantiate(door));
+
+        for (var i = 0; i < Constants.PlacedBombCount; i++)
+            _placedBombs.Add(Instantiate(placedBomb));
 
         for (var i = 0; i < Constants.TriggerCount; i++)
             _triggerPool.Add(Instantiate(trigger));

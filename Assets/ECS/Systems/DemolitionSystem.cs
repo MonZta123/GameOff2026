@@ -2,6 +2,7 @@
 using Domain;
 using ECS.Entities;
 using ECS.Events;
+using ECS.Notification;
 using UnityEngine;
 
 namespace ECS.Systems
@@ -71,6 +72,11 @@ namespace ECS.Systems
                     trigger._timer = 0;
                     snapshot._bombsLeft--;
                     snapshot._triggers.DespawnAt(i);
+                    
+                    snapshot._placedBombs.Spawn(new PlacedBomb()
+                    {
+                        _position = player._position
+                    });
                 }
                 else if (trigger._triggerType == TriggerType.Mine &&
                          trigger.IsInCircle(player._position, 2f, 1f, out _) && moveEvt._action)

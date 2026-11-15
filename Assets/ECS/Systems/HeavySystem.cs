@@ -47,7 +47,7 @@ namespace ECS.Systems
 
                     world.AddHeavyDamageCone(new HeavyDamageConeEvent()
                     {
-                        _position = player._position, _angle = player._angle,
+                        _position = player._position, _angle = moveEvt._angle,
                     });
                 }
             }
@@ -67,7 +67,7 @@ namespace ECS.Systems
                         _position = player._position
                     });
 
-                    var radians = player._angle * Mathf.Deg2Rad;
+                    var radians = moveEvt._angle * Mathf.Deg2Rad;
 
                     var direction = new Vector2(
                         Mathf.Cos(radians),

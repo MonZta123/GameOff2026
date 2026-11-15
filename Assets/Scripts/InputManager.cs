@@ -85,4 +85,10 @@ public class InputManager : MonoBehaviour
 
         return intent;
     }
+
+    public void ClearInput()
+    {
+        _secondaryDown = false;
+        _actionDown = false;
+    }
 }

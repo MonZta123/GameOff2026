@@ -11,6 +11,7 @@ namespace ECS
         public EntityPool<Projectile> _projectiles;
         public EntityPool<Door> _doors;
         public EntityPool<Trigger> _triggers;
+        public EntityPool<PlacedBomb> _placedBombs;
 
         public int _damageProcess;
         public int _hackProcess;
@@ -22,7 +23,6 @@ namespace ECS
         public NotificationPool<SoundNotification> _soundNotificationPool;
         public NotificationPool<EnemyDiedNotification> _enemyDiedNotificationPool;
         public NotificationPool<SnipeShotNotification> _snipeShotNotificationPool;
-        public NotificationPool<BombPlacedNotification> _bombPlacedNotificationPool;
 
         public void BuildFrom(Snapshot snapshot)
         {
@@ -31,11 +31,12 @@ namespace ECS
             snapshot._projectiles.CopyTo(ref _projectiles);
             snapshot._doors.CopyTo(ref _doors);
             snapshot._triggers.CopyTo(ref _triggers);
+            snapshot._placedBombs.CopyTo(ref _placedBombs);
 
             _damageProcess = snapshot._damageProcess;
             _hackProcess = snapshot._hackProcess;
             _bombsLeft = snapshot._bombsLeft;
-            
+
             _tickButtlerRespawnAt = snapshot._tickButtlerRespawnAt;
         }
 
@@ -45,7 +46,6 @@ namespace ECS
             snapshot._soundNotificationPool.CopyTo(ref _soundNotificationPool);
             snapshot._enemyDiedNotificationPool.CopyTo(ref _enemyDiedNotificationPool);
             snapshot._snipeShotNotificationPool.CopyTo(ref _snipeShotNotificationPool);
-            snapshot._bombPlacedNotificationPool.CopyTo(ref _bombPlacedNotificationPool);
         }
 
         public void Initialize()
@@ -55,6 +55,7 @@ namespace ECS
             _projectiles = new EntityPool<Projectile>(Constants.ProjectileCount);
             _doors = new EntityPool<Door>(Constants.DoorCount);
             _triggers = new EntityPool<Trigger>(Constants.TriggerCount);
+            _placedBombs = new EntityPool<PlacedBomb>(Constants.PlacedBombCount);
 
             _doorDestructionNotificationPool = new NotificationPool<DoorDestructionNotification>(8);
             _soundNotificationPool = new NotificationPool<SoundNotification>(8);
@@ -62,8 +63,6 @@ namespace ECS
                 new NotificationPool<EnemyDiedNotification>(Constants.EnemyDiedNotificationCount);
             _snipeShotNotificationPool =
                 new NotificationPool<SnipeShotNotification>(Constants.SnipeShotNotificationCount);
-            _bombPlacedNotificationPool =
-                new NotificationPool<BombPlacedNotification>(Constants.BombPlacedNotificationCount);
         }
     }
 }

@@ -104,6 +104,11 @@ namespace Actors
             Handles.Label(transform.position, "" + _health);
         }
 #endif
+        
+        public void StopBouncing()
+        {
+            moveBouncer.SetIsBouncing(false);
+        }
 
         public void Release()
         {

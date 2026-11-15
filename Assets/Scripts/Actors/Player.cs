@@ -209,6 +209,11 @@ namespace Actors
             healthbar.ReturnToFullHealth();
         }
 
+        public void StopBouncing()
+        {
+            moveBouncer.SetIsBouncing(false);
+        }
+
 #if UNITY_EDITOR
         private void OnDrawGizmos()
         {
