@@ -2,7 +2,6 @@
 using Domain;
 using ECS.Entities;
 using ECS.Events;
-using ECS.Notification;
 using UnityEngine;
 
 namespace ECS.Systems
@@ -14,8 +13,6 @@ namespace ECS.Systems
             _tickRate = tickRate;
 
             _shootCooldownTicks = (int)MathF.Floor(tickRate * _secondsPrimaryCooldown);
-            _secondaryCooldownTicks = (int)MathF.Floor(tickRate * _secondsSecondaryCooldown);
-            _secondaryActiveTicks = (int)MathF.Floor(tickRate * _secondaryDuration);
 
             _speed = Constants.DemolitionMoveSpeed;
 
@@ -30,12 +27,6 @@ namespace ECS.Systems
 
         private float _secondsPrimaryCooldown = 0.25f;
         private int _shootCooldownTicks;
-
-        private float _secondsSecondaryCooldown = 1.0f;
-        private int _secondaryCooldownTicks;
-
-        private float _secondaryDuration = 0.5f;
-        private int _secondaryActiveTicks;
 
         public void Execute(World world, int currentTick)
         {
