@@ -2,6 +2,7 @@
 using Domain;
 using ECS.Entities;
 using ECS.Events;
+using ECS.Notification;
 using UnityEngine;
 
 namespace ECS.Systems
@@ -50,7 +51,7 @@ namespace ECS.Systems
                     {
                         _type = ProjectileType.Hacker,
                         _position = player._position,
-                        _angle = player._angle,
+                        _angle = moveEvt._angle,
                         _ttl = _tickRate * 3
                     });
                 }
@@ -63,7 +64,13 @@ namespace ECS.Systems
                     player._secondaryReadyAt = currentTick + _secondaryCooldownTicks;
                     player._secondaryActivatedTo = currentTick + _secondaryActiveTicks;
 
-                    var radians = player._angle * Mathf.Deg2Rad;
+                    var radians = moveEvt._angle * Mathf.Deg2Rad;
+                    
+                    snapshot._soundNotificationPool.Add(new SoundNotification()
+                    {
+                        _soundType = SoundType.HackerDodge,
+                        _position = player._position
+                    });
 
                     var direction = new Vector2(
                         Mathf.Cos(radians),

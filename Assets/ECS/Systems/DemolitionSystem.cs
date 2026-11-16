@@ -2,6 +2,7 @@
 using Domain;
 using ECS.Entities;
 using ECS.Events;
+using ECS.Notification;
 using UnityEngine;
 
 namespace ECS.Systems
@@ -13,8 +14,6 @@ namespace ECS.Systems
             _tickRate = tickRate;
 
             _shootCooldownTicks = (int)MathF.Floor(tickRate * _secondsPrimaryCooldown);
-            _secondaryCooldownTicks = (int)MathF.Floor(tickRate * _secondsSecondaryCooldown);
-            _secondaryActiveTicks = (int)MathF.Floor(tickRate * _secondaryDuration);
 
             _speed = Constants.DemolitionMoveSpeed;
 
@@ -29,12 +28,6 @@ namespace ECS.Systems
 
         private float _secondsPrimaryCooldown = 0.25f;
         private int _shootCooldownTicks;
-
-        private float _secondsSecondaryCooldown = 1.0f;
-        private int _secondaryCooldownTicks;
-
-        private float _secondaryDuration = 0.5f;
-        private int _secondaryActiveTicks;
 
         public void Execute(World world, int currentTick)
         {
@@ -54,28 +47,10 @@ namespace ECS.Systems
                     {
                         _type = ProjectileType.Demolition,
                         _position = player._position,
-                        _angle = player._angle,
+                        _angle = moveEvt._angle,
                         _ttl = _tickRate
                     });
                 }
-            }
-
-            if (player._secondaryReadyAt <= currentTick)
-            {
-                if (moveEvt._secondary)
-                {
-                    player._secondaryReadyAt = currentTick + _secondaryCooldownTicks;
-                    player._secondaryActivatedTo = currentTick + _secondaryActiveTicks;
-
-                    // HIER SECONDARY
-
-                    return;
-                }
-            }
-
-            if (player._secondaryActivatedTo > currentTick)
-            {
-                return;
             }
 
             for (var i = snapshot._triggers.GetNumEntities() - 1; i >= 0; i--)
@@ -89,6 +64,11 @@ namespace ECS.Systems
                     trigger._timer = 0;
                     snapshot._bombsLeft--;
                     snapshot._triggers.DespawnAt(i);
+                    
+                    snapshot._placedBombs.Spawn(new PlacedBomb()
+                    {
+                        _position = player._position
+                    });
                 }
                 else if (trigger._triggerType == TriggerType.Mine &&
                          trigger.IsInCircle(player._position, 2f, 1f, out _) && moveEvt._action)
@@ -97,7 +77,14 @@ namespace ECS.Systems
 
                     trigger._timer -= _deltaTime;
                     if (trigger._timer <= 0)
+                    {
+                        snapshot._soundNotificationPool.Add(new SoundNotification()
+                        {
+                            _soundType = SoundType.MineDefuse,
+                            _position = player._position
+                        });
                         snapshot._triggers.DespawnAt(i);
+                    }
                 }
             }
 

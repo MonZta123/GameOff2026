@@ -6,5 +6,6 @@ namespace ECS.Events
     {
         public Vector2 _position;
         public float _radius;
+        public bool _ignoreHeavy;
     }
 }

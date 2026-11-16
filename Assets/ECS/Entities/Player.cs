@@ -9,7 +9,8 @@ namespace ECS.Entities
         public Vector2 _position;
         public Vector2 _velocity;
         public float _angle;
-        public float _health;
+        public int _health;
+        public int _maxHealth;
 
         public float _colliderRadius;
 

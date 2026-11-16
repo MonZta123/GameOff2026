@@ -7,13 +7,18 @@ namespace ECS.Notification
         Dash,
         Slam,
         
-        DoorDestruction
+        HackerDodge,
+        
+        DoorDestruction,
+        
+        MineExplosion,
+        Rewind,
+        MineDefuse
     }
     
     public struct SoundNotification
     {
         public SoundType _soundType;
-        public string _switchGroup;
         public Vector2 _position;
     }
 }

@@ -20,7 +20,7 @@ namespace ECS
             TickTime = 1 / (float)tickRate;
         }
 
-        private bool _runSim = false;
+        private bool _runSim;
 
         public void StartSim()
         {

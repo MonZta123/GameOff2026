@@ -134,7 +134,6 @@ GameObject:
   - component: {fileID: 13633225}
   - component: {fileID: 13633227}
   - component: {fileID: 13633229}
-  - component: {fileID: 13633230}
   - component: {fileID: 13633231}
   m_Layer: 0
   m_Name: Managers
@@ -163,6 +162,7 @@ MonoBehaviour:
   enemyDiedNotification: {fileID: -3753237614961215173, guid: cce6eb6079cadcf418c1ffa5d8dd0936, type: 3}
   snipeShotHitscan: {fileID: 5881695076861086506, guid: 4f9d4d50634fa604d92ccc98ab8c9ab9, type: 3}
   doorDestructionNotification: {fileID: 8812971169499925501, guid: ff7c7d3e53ef17842881e9f38dd523ef, type: 3}
+  placedBomb: {fileID: 5673399217549167104, guid: cf6a54144b4513d4c8fa35d02b3600c1, type: 3}
 --- !u!4 &13633224
 Transform:
   m_ObjectHideFlags: 0
@@ -202,6 +202,8 @@ MonoBehaviour:
   - {fileID: 2800000, guid: 81ba75a3bafc7354f8b736da654745dc, type: 3}
   snipeTarget: {fileID: 1672110092}
   rewindText: {fileID: 229467704}
+  fade: {fileID: 353079796}
+  soundSystem: {fileID: 13633231}
 --- !u!114 &13633226
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -215,7 +217,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SnapshotRenderer
   pools: {fileID: 13633223}
-  soundNotification: {fileID: 13633231}
+  soundSystem: {fileID: 13633231}
 --- !u!114 &13633227
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -291,35 +293,6 @@ MonoBehaviour:
   - {fileID: 2800000, guid: 25fa253d004e8a646a1e14a120d6b4dc, type: 3}
   - {fileID: 2800000, guid: c5c1bd861951f3f4c8ee5f4a1516cb72, type: 3}
   - {fileID: 2800000, guid: 47e3cf617cdfc8a4086f5e27e77a8211, type: 3}
---- !u!114 &13633230
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 13633222}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7877fd225a0e407a948d0b758de509e2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::GlobalSoundManager
-  characterMusic:
-  - idInternal: 0
-    valueGuidInternal: 
-    WwiseObjectReference: {fileID: 0}
-  - idInternal: 0
-    valueGuidInternal: 
-    WwiseObjectReference: {fileID: 0}
-  - idInternal: 0
-    valueGuidInternal: 
-    WwiseObjectReference: {fileID: 0}
-  - idInternal: 0
-    valueGuidInternal: 
-    WwiseObjectReference: {fileID: 0}
-  scratchSound:
-    idInternal: 0
-    valueGuidInternal: 
-    WwiseObjectReference: {fileID: 11400000, guid: d92eb0d05d65d774abfcdbc4ae3daf36, type: 2}
 --- !u!114 &13633231
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -337,12 +310,91 @@ MonoBehaviour:
     value:
       idInternal: 0
       valueGuidInternal: 
-      WwiseObjectReference: {fileID: 11400000, guid: c3cac02ad45e07448901c760f8ca1b0d, type: 2}
+      WwiseObjectReference: {fileID: 11400000, guid: db97f4924485d9342bf91c2db8916ed6, type: 2}
   - key: 1
     value:
       idInternal: 0
       valueGuidInternal: 
+      WwiseObjectReference: {fileID: 11400000, guid: c3cac02ad45e07448901c760f8ca1b0d, type: 2}
+  - key: 3
+    value:
+      idInternal: 0
+      valueGuidInternal: 
       WwiseObjectReference: {fileID: 11400000, guid: 13697fa7f24d92949a0439e898f4db32, type: 2}
+  - key: 4
+    value:
+      idInternal: 0
+      valueGuidInternal: 
+      WwiseObjectReference: {fileID: 11400000, guid: 6b1fddddaf6611e479ffdd6c636a5db2, type: 2}
+  - key: 2
+    value:
+      idInternal: 0
+      valueGuidInternal: 
+      WwiseObjectReference: {fileID: 11400000, guid: 985274083b9708d45a2109f871921549, type: 2}
+  - key: 5
+    value:
+      idInternal: 0
+      valueGuidInternal: 
+      WwiseObjectReference: {fileID: 11400000, guid: d92eb0d05d65d774abfcdbc4ae3daf36, type: 2}
+  - key: 6
+    value:
+      idInternal: 0
+      valueGuidInternal: 
+      WwiseObjectReference: {fileID: 11400000, guid: 98f400b6dff8b994aae0b7fd54a0330e, type: 2}
+  music:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: 9a66bc62817d17b40a0748a2d14dd899, type: 2}
+  musicSwitchGroup:
+  - idInternal: 0
+    valueGuidInternal: 
+    groupIdInternal: 0
+    groupGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: adce4163ade31c343abbd23c9b47ee8b, type: 2}
+  - idInternal: 0
+    valueGuidInternal: 
+    groupIdInternal: 0
+    groupGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: 83573a1c02041f94c92e5a293e2ce368, type: 2}
+  - idInternal: 0
+    valueGuidInternal: 
+    groupIdInternal: 0
+    groupGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: e4a082b4154a98947b9a47ac49a01937, type: 2}
+  - idInternal: 0
+    valueGuidInternal: 
+    groupIdInternal: 0
+    groupGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: 4f529554ac1091641bff595a1d7296f0, type: 2}
+  musicStateGroup:
+  - idInternal: 0
+    valueGuidInternal: 
+    groupIdInternal: 0
+    groupGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: 0aad8cb536e874c47857e7ca7221cd22, type: 2}
+  - idInternal: 0
+    valueGuidInternal: 
+    groupIdInternal: 0
+    groupGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: 220ff6c8a4fba544593a89c4e09c3bfb, type: 2}
+  - idInternal: 0
+    valueGuidInternal: 
+    groupIdInternal: 0
+    groupGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: 11cf186ea87879f40b6292d4bef39bf3, type: 2}
+  - idInternal: 0
+    valueGuidInternal: 
+    groupIdInternal: 0
+    groupGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: f9f808fe166ff9c42a9e7bad3b1146ed, type: 2}
+  stopMusic:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: a441963a9d3b3634287a37a26ca180bf, type: 2}
+  introMusic:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: 27c6e6a35ea744e4e99c5816ff867a0a, type: 2}
 --- !u!1 &86234796
 GameObject:
   m_ObjectHideFlags: 0
@@ -764,7 +816,7 @@ Camera:
   far clip plane: 5000
   field of view: 40
   orthographic: 1
-  orthographic size: 7.5625
+  orthographic size: 8
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -947,6 +999,8 @@ GameObject:
   - component: {fileID: 353079794}
   - component: {fileID: 353079793}
   - component: {fileID: 353079792}
+  - component: {fileID: 353079797}
+  - component: {fileID: 353079796}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -983,10 +1037,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.CanvasScaler
-  m_UiScaleMode: 0
+  m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
-  m_ReferenceResolution: {x: 800, y: 600}
+  m_ReferenceResolution: {x: 1920, y: 1080}
   m_ScreenMatchMode: 0
   m_MatchWidthOrHeight: 0
   m_PhysicalUnit: 3
@@ -1038,6 +1092,44 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!114 &353079796
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 353079791}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
+  m_Material: {fileID: 0}
+  m_Color: {r: 0, g: 0, b: 0, a: 1}
+  m_RaycastTarget: 0
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 0}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &353079797
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 353079791}
+  m_CullTransparentMesh: 1
 --- !u!1 &410087039
 GameObject:
   m_ObjectHideFlags: 0

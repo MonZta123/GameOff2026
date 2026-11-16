@@ -1,8 +1,8 @@
 ﻿using UnityEngine;
 
-namespace ECS.Notification
+namespace ECS.Entities
 {
-    public struct BombPlacedNotification
+    public struct PlacedBomb
     {
         public Vector2 _position;
     }

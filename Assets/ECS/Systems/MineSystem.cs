@@ -1,4 +1,5 @@
 ﻿using ECS.Entities;
+using ECS.Notification;
 
 namespace ECS.Systems
 {
@@ -10,7 +11,7 @@ namespace ECS.Systems
 
             for (var i = snapshot._players.GetNumEntities() - 1; i >= 0; i--)
             {
-                var player = snapshot._players.GetEntityAt(i);
+                ref var player = ref snapshot._players.GetEntityAt(i);
                 for (var j = snapshot._triggers.GetNumEntities() - 1; j >= 0; j--)
                 {
                     var trigger = snapshot._triggers.GetEntityAt(j);
@@ -21,6 +22,12 @@ namespace ECS.Systems
                         {
                             snapshot._triggers.DespawnAt(j);
                             player._health -= 40;
+                            
+                            snapshot._soundNotificationPool.Add(new SoundNotification()
+                            {
+                                _position = (trigger._leftBottom + trigger._rightTop) / 2f,
+                                _soundType = SoundType.MineExplosion
+                            });
                         }
                     }
                 }

@@ -3,9 +3,12 @@ using System.Collections;
 using Actors;
 using Domain;
 using ECS;
+using ECS.Notification;
+using Notifications;
 using TMPro;
 using Unity.Cinemachine;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class GameSessionHost : MonoBehaviour
 {
@@ -42,6 +45,12 @@ public class GameSessionHost : MonoBehaviour
     [SerializeField]
     private TextMeshProUGUI rewindText;
 
+    [SerializeField]
+    private Image fade;
+
+    [SerializeField]
+    private SoundSystem soundSystem;
+
     private TickDriver _tickDriver;
     private Timeline _timeline;
 
@@ -71,32 +80,81 @@ public class GameSessionHost : MonoBehaviour
         // Hide Loadingscreen here
     }
 
+    private IEnumerator FadeIn(Action next = null)
+    {
+        yield return null;
+        var elapsed = 0f;
+
+        var duration = 0.5f;
+
+        while (elapsed < duration)
+        {
+            elapsed += Time.deltaTime;
+
+            fade.color = new Color(0, 0, 0, 1 - elapsed / duration);
+
+            yield return null;
+        }
+
+        fade.color = new Color(0, 0, 0, 0);
+        next?.Invoke();
+    }
+
+    private IEnumerator FadeOut(Action next = null)
+    {
+        yield return null;
+        var elapsed = 0f;
+
+        var duration = 0.5f;
+
+        while (elapsed < duration)
+        {
+            elapsed += Time.deltaTime;
+
+            fade.color = new Color(0, 0, 0, elapsed / duration);
+
+            yield return null;
+        }
+
+        fade.color = new Color(0, 0, 0, 1);
+        next?.Invoke();
+    }
+
     private void InitNextReplaySegment()
     {
-        pools.ClearAllNotificationPools();
-        pools.ClearAllObjectPools();
+        StartCoroutine(FadeOut(Next));
+        return;
 
-        var mapDefinition = TextureMapBuilder.GetMap(maps[((_timeline.GetCurrentSegment() + 1) % Constants.Segments)]);
+        void Next()
+        {
+            pools.ClearAllNotificationPools();
+            pools.ClearAllObjectPools();
 
-        _timeline.InitNextSegment(mapDefinition);
-        mapRenderer.GenerateMap(mapDefinition);
+            var mapDefinition =
+                TextureMapBuilder.GetMap(maps[((_timeline.GetCurrentSegment() + 1) % Constants.Segments)]);
 
-        ResetTickTimer();
+            _timeline.InitNextSegment(mapDefinition);
+            mapRenderer.GenerateMap(mapDefinition);
 
-        _timeline.SetNextPlayer();
-        _timeline.SetNextPlayer();
-        _timeline.SetNextPlayer();
-        _timeline.SetNextPlayer();
+            _timeline.SetNextPlayer();
+            _timeline.SetNextPlayer();
+            _timeline.SetNextPlayer();
+            _timeline.SetNextPlayer();
 
-        var snapshot = _timeline.GetSnapshot(0);
+            var snapshot = _timeline.GetSnapshot(0);
 
-        snapshotRenderer.SetSnapshot(snapshot, 0);
+            snapshotRenderer.SetSnapshot(snapshot, 0);
 
-        _activePlayerObject = snapshotRenderer.GetPlayerByIndex(0);
-        positionComposer.VirtualCamera.Follow = _activePlayerObject.transform;
-        positionComposer.Damping = Vector3.one;
+            _activePlayerObject = snapshotRenderer.GetPlayerByIndex(0);
+            positionComposer.VirtualCamera.Follow = _activePlayerObject.transform;
+            positionComposer.Damping = Vector3.one;
 
-        inputManager.RemoveCrossHair();
+            inputManager.RemoveCrossHair();
+
+            positionComposer.VirtualCamera.PreviousStateIsValid = false;
+
+            StartCoroutine(FadeIn(ResetTickTimer));
+        }
     }
 
     private void InitNextCharacter()
@@ -111,14 +169,9 @@ public class GameSessionHost : MonoBehaviour
         _rewindingCoroutine = StartCoroutine(PlayRewindAnimation(() => BuildNextCharacter()));
     }
 
-    private void BuildNextCharacter(bool isFirst = false)
+    private void BuildNextCharacter(bool isFirst = false, Action next = null)
     {
         _timeline.SetNextPlayer();
-
-        if (!isFirst)
-            ResetTickTimer();
-        else
-            _tickDriver.StartSim();
 
         var snapshot = _timeline.GetSnapshot(0);
 
@@ -128,7 +181,34 @@ public class GameSessionHost : MonoBehaviour
         _activePlayerObject = snapshotRenderer.GetPlayerByIndex(snapshot._players.GetNumEntities() - 1);
         _activePlayerObject.SetActivePlayer(true);
 
-        if (snapshot._players.GetNumEntities() < 4)
+        UpdateCam();
+
+        if (snapshot._players.GetNumEntities() > 1)
+            inputManager.SetCrossHair(snapshot._players.GetNumEntities() - 1);
+        else
+            inputManager.RemoveCrossHair();
+
+        _gameSessionState = GameSessionState.Playing;
+
+        next?.Invoke();
+
+        if (!isFirst)
+        {
+            ResetTickTimer();
+        }
+        else
+        {
+            soundSystem.PlayCharacterMusic(snapshot._players.GetNumEntities() - 1, _timeline.GetCurrentSegment());
+            inputManager.ClearInput();
+            _tickDriver.StartSim();
+        }
+    }
+
+    private void UpdateCam()
+    {
+        var snapshot = _timeline.GetSnapshot(0);
+
+        if (snapshot._players.GetNumEntities() < 4 || _gameSessionState == GameSessionState.ReplayMode)
         {
             positionComposer.VirtualCamera.Follow = _activePlayerObject.transform;
             positionComposer.Damping = Vector3.one;
@@ -138,13 +218,6 @@ public class GameSessionHost : MonoBehaviour
             positionComposer.VirtualCamera.Follow = snipeTarget;
             positionComposer.Damping = Vector3.one * 0.5f;
         }
-
-        if (snapshot._players.GetNumEntities() > 1)
-            inputManager.SetCrossHair(snapshot._players.GetNumEntities() - 1);
-        else
-            inputManager.RemoveCrossHair();
-
-        _gameSessionState = GameSessionState.Playing;
     }
 
     private int _lastProcessedTick;
@@ -165,7 +238,7 @@ public class GameSessionHost : MonoBehaviour
                 ObjectiveFailed(resultState._comment);
                 break;
             case GameFlowResultState.PlayerDead:
-                PlayerDead(resultState._comment);
+                PlayerDead(resultState._comment, resultState.index);
                 break;
             case GameFlowResultState.StartReplay:
                 InitReplay();
@@ -191,15 +264,20 @@ public class GameSessionHost : MonoBehaviour
         rewindText.gameObject.SetActive(true);
         rewindText.text = "Press R for next Player!";
         _tickDriver.StopSim();
+        StopCharacterBouncing();
     }
 
-    private void PlayerDead(string who)
+    private void PlayerDead(string who, int index)
     {
         AkUnitySoundEngine.StopAll();
         _gameSessionState = GameSessionState.WaitingForR;
         rewindText.text = who + " was eliminated! Press R to retry!";
         rewindText.gameObject.SetActive(true);
+
+        positionComposer.VirtualCamera.Follow = pools._playerPool.Active[index].transform;
+
         _tickDriver.StopSim();
+        StopCharacterBouncing();
     }
 
     private void DoRewindAnimation()
@@ -231,15 +309,25 @@ public class GameSessionHost : MonoBehaviour
 
     private void NextSegment()
     {
-        pools.ClearAllNotificationPools();
-        pools.ClearAllObjectPools();
+        AkUnitySoundEngine.StopAll();
+        _tickDriver.StopSim();
 
-        var mapDefinition = TextureMapBuilder.GetMap(maps[((_timeline.GetCurrentSegment() + 1) % Constants.Segments)]);
+        StartCoroutine(FadeOut(Action));
+        return;
 
-        _timeline.InitNextSegment(mapDefinition);
-        mapRenderer.GenerateMap(mapDefinition);
+        void Action()
+        {
+            pools.ClearAllNotificationPools();
+            pools.ClearAllObjectPools();
 
-        BuildNextCharacter();
+            var mapDefinition =
+                TextureMapBuilder.GetMap(maps[((_timeline.GetCurrentSegment() + 1) % Constants.Segments)]);
+
+            _timeline.InitNextSegment(mapDefinition);
+            mapRenderer.GenerateMap(mapDefinition);
+            positionComposer.VirtualCamera.PreviousStateIsValid = false;
+            BuildNextCharacter(false, () => StartCoroutine(FadeIn()));
+        }
     }
 
     private void OnDestroy()
@@ -251,7 +339,20 @@ public class GameSessionHost : MonoBehaviour
 
     public void Start()
     {
-        BuildNextCharacter(true);
+        _gameSessionState = GameSessionState.Intro;
+        StartCoroutine(DoIntroMusic(() => BuildNextCharacter(true, () => StartCoroutine(FadeIn()))));
+    }
+
+    private IEnumerator DoIntroMusic(Action next = null)
+    {
+        yield return new WaitForSeconds(0.2f);
+        soundSystem.PlayIntroMusic();
+        var duration = 5.368f;
+
+        yield return new WaitForSeconds(duration);
+        
+        next?.Invoke();
+        _gameSessionState = GameSessionState.Playing;
     }
 
     private void Update()
@@ -284,6 +385,11 @@ public class GameSessionHost : MonoBehaviour
             InitNextCharacter();
         }
 
+        if (_gameSessionState is GameSessionState.Playing && _activePlayerObject)
+        {
+            _activePlayerObject.SetSwitchGroupFloor(1);
+        }
+
         if (_tickDriver.CurrentTick != _lastSetTick && _tickDriver.CurrentTick < _timeline.SnapshotLength)
         {
             _lastSetTick = _tickDriver.CurrentTick;
@@ -291,7 +397,7 @@ public class GameSessionHost : MonoBehaviour
             var snapshot = _timeline.GetSnapshot(_tickDriver.CurrentTick);
             snapshotRenderer.SetSnapshot(snapshot, _tickDriver.CurrentTick);
 
-            if (_gameSessionState == GameSessionState.Playing)
+            if (_gameSessionState is GameSessionState.Playing or GameSessionState.ReplayMode)
             {
                 var result = _gameFlowManager.CheckForLoopBreak(_tickDriver.CurrentTick, snapshot,
                     _timeline.GetCurrentSegment() == Constants.Segments - 1,
@@ -304,13 +410,26 @@ public class GameSessionHost : MonoBehaviour
 
     private Player _activePlayerObject;
 
+    private void SetAllFootsteps(bool value)
+    {
+        for (var i = 0; i < pools._playerPool.Active.Length; i++)
+        {
+            var player = pools._playerPool.Active[i];
+            if (player)
+                player.SetFootstepsOnOff(value);
+        }
+    }
+
     private IEnumerator PlayRewindAnimation(Action next = null)
     {
+        SetAllFootsteps(false);
         yield return null;
 
         var currentTick = _tickDriver.CurrentTick;
 
         var elapsed = 0f;
+
+        soundSystem.PlayEvent(new SoundNotification() { _soundType = SoundType.Rewind });
 
         while (elapsed < Constants.RewindDuration)
         {
@@ -333,6 +452,7 @@ public class GameSessionHost : MonoBehaviour
 
         _gameSessionState = GameSessionState.Playing;
         rewindText.gameObject.SetActive(false);
+        SetAllFootsteps(true);
         next?.Invoke();
     }
 
@@ -357,6 +477,8 @@ public class GameSessionHost : MonoBehaviour
 
         var elapsed = 0f;
 
+        UpdateCam();
+
         while (elapsed < 0.5f)
         {
             elapsed += Time.deltaTime;
@@ -364,6 +486,11 @@ public class GameSessionHost : MonoBehaviour
             yield return null;
         }
 
+        inputManager.ClearInput();
+
+        var snapshot = _timeline.GetSnapshot(0);
+
+        soundSystem.PlayCharacterMusic(snapshot._players.GetNumEntities() - 1, _timeline.GetCurrentSegment());
         _tickDriver.StartSim();
 
         _currentCoroutine = null;
@@ -376,6 +503,7 @@ public class GameSessionHost : MonoBehaviour
         if (tick + 1 >= _segmentTicks + 1)
         {
             _tickDriver.StopSim();
+            StopCharacterBouncing();
             return;
         }
 
@@ -388,6 +516,23 @@ public class GameSessionHost : MonoBehaviour
             var intent = inputManager.BuildIntent(_activePlayerObject.transform);
 
             _timeline.AddIntent(intent, tick);
+        }
+    }
+
+    private void StopCharacterBouncing()
+    {
+        for (var i = 0; i < pools._playerPool.Active.Length; i++)
+        {
+            var player = pools._playerPool.Active[i];
+            if (player)
+                player.StopBouncing();
+        }
+
+        for (var i = 0; i < pools._enemyPool.Active.Length; i++)
+        {
+            var enemy = pools._enemyPool.Active[i];
+            if (enemy)
+                enemy.StopBouncing();
         }
     }
 

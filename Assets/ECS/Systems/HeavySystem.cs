@@ -47,7 +47,7 @@ namespace ECS.Systems
 
                     world.AddHeavyDamageCone(new HeavyDamageConeEvent()
                     {
-                        _position = player._position, _angle = player._angle,
+                        _position = player._position, _angle = moveEvt._angle,
                     });
                 }
             }
@@ -63,11 +63,10 @@ namespace ECS.Systems
                     snapshot._soundNotificationPool.Add(new SoundNotification()
                     {
                         _soundType = SoundType.Dash,
-                        _switchGroup = "FloorMaterial",
                         _position = player._position
                     });
 
-                    var radians = player._angle * Mathf.Deg2Rad;
+                    var radians = moveEvt._angle * Mathf.Deg2Rad;
 
                     var direction = new Vector2(
                         Mathf.Cos(radians),
@@ -90,11 +89,10 @@ namespace ECS.Systems
                 snapshot._soundNotificationPool.Add(new SoundNotification()
                 {
                     _soundType = SoundType.Slam,
-                    _switchGroup = "FloorMaterial",
                     _position = player._position
                 });
                 
-                world.AddBlastWaveEvent(new BlastWaveEvent() { _position = player._position, _radius = 2f });
+                world.AddBlastWaveEvent(new BlastWaveEvent() { _position = player._position, _radius = 2f, _ignoreHeavy = true });
             }
 
             if (player._isBlockedTo >= currentTick)

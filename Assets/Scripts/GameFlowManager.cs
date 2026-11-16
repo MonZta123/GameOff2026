@@ -1,10 +1,10 @@
 ﻿using ECS;
-using UnityEngine;
 
 public struct GameFlowResult
 {
     public GameFlowResultState _state;
     public string _comment;
+    public int index;
 }
 
 public class GameFlowManager
@@ -41,7 +41,10 @@ public class GameFlowManager
         {
             if (snapshot._players.GetEntityAt(i)._health <= 0)
             {
-                return new GameFlowResult() { _state = GameFlowResultState.PlayerDead, _comment = IndexToCharacter(i) };
+                return new GameFlowResult()
+                {
+                    _state = GameFlowResultState.PlayerDead, _comment = IndexToCharacter(i), index = i
+                };
             }
         }
 
@@ -58,7 +61,6 @@ public class GameFlowManager
 
             if (currentPlayer == 0 && snapshot._damageProcess != 0)
             {
-                Debug.Log("Objective failed - damage left: " + snapshot._damageProcess + " enemies");
                 return new GameFlowResult()
                 {
                     _state = GameFlowResultState.ObjectiveFailed,
@@ -68,7 +70,6 @@ public class GameFlowManager
 
             if (currentPlayer == 1 && snapshot._hackProcess != 0)
             {
-                Debug.Log("Objective failed - hack left: " + snapshot._hackProcess + " seconds");
                 return new GameFlowResult()
                 {
                     _state = GameFlowResultState.ObjectiveFailed,
@@ -78,7 +79,6 @@ public class GameFlowManager
 
             if (currentPlayer == 2 && snapshot._bombsLeft != 0)
             {
-                Debug.Log("Objective failed - bombs left: " + snapshot._bombsLeft);
                 return new GameFlowResult()
                 {
                     _state = GameFlowResultState.ObjectiveFailed, _comment = snapshot._bombsLeft + " left to place."
@@ -92,7 +92,6 @@ public class GameFlowManager
 
                 return new GameFlowResult() { _state = GameFlowResultState.NextSegment };
             }
-
 
             return new GameFlowResult() { _state = GameFlowResultState.Success };
         }
