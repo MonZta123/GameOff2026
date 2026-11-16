@@ -10,6 +10,7 @@
 						<ObjectRef Name="Play_SFX_Attack_A_Slam" ID="{52A47EF3-BFA2-410A-A7F4-221BE57ABFC5}" WorkUnitID="{2B12C590-A22E-47AF-9697-251FEA2DB802}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="Play_SFX_UI_Select" ID="{B523CDC4-6928-410D-87A9-2A88A3221FD8}" WorkUnitID="{2B12C590-A22E-47AF-9697-251FEA2DB802}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="Play_SFX_Attack_A_Swing" ID="{777B20AF-D502-4148-BC01-29CB1D045B91}" WorkUnitID="{2B12C590-A22E-47AF-9697-251FEA2DB802}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="Stop_MUS_CharacterSlowdown" ID="{987FE2D7-7D81-418C-B888-5C92D45B29DE}" WorkUnitID="{2B12C590-A22E-47AF-9697-251FEA2DB802}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="Play_VO_B_Hit" ID="{94B68B7F-EEFF-41EA-B395-54CB92F37C67}" WorkUnitID="{2B12C590-A22E-47AF-9697-251FEA2DB802}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="Play_SFX_BigExplosion" ID="{E02E6D0C-F676-4241-B29F-FCEFD60C8FD3}" WorkUnitID="{2B12C590-A22E-47AF-9697-251FEA2DB802}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="Crunch" ID="{C8601496-AF7B-42A1-9A36-DF7704701F01}" WorkUnitID="{AF633A36-6CC5-470E-AD72-3F76D6F661BF}" Origin="Manual" Filter="7"/>

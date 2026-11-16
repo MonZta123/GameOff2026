@@ -96,6 +96,64 @@
 								</Action>
 							</ChildrenList>
 						</Event>
+						<Event Name="Stop_MUS_CharacterSlowdown" ID="{987FE2D7-7D81-418C-B888-5C92D45B29DE}">
+							<ChildrenList>
+								<Action Name="" ID="{014DED5D-3C5B-436F-8557-C29A5C1A174B}" ShortID="512516822">
+									<PropertyList>
+										<Property Name="ActionType" Type="int16" Value="2"/>
+										<Property Name="FadeOutCurve" Type="int16" Value="5"/>
+										<Property Name="FadeTime" Type="Real64" Value="1"/>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="MUS_Character" ID="{F6DCD1F0-8D6F-49CA-A8D4-B8EB108091FF}" WorkUnitID="{AF633A36-6CC5-470E-AD72-3F76D6F661BF}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+								<Action Name="" ID="{9A6F5F22-2B53-40C6-9449-BBA8CA6F8D9A}" ShortID="843188467">
+									<PropertyList>
+										<Property Name="ActionType" Type="int16" Value="13"/>
+										<Property Name="FadeInCurve" Type="int16" Value="5"/>
+										<Property Name="FadeTime" Type="Real64" Value="1"/>
+										<Property Name="Pitch" Type="int32" Value="-1200"/>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="MUS_Character" ID="{F6DCD1F0-8D6F-49CA-A8D4-B8EB108091FF}" WorkUnitID="{AF633A36-6CC5-470E-AD72-3F76D6F661BF}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+								<Action Name="" ID="{56726375-89A7-4C45-9BEB-3306A9B2E2BE}" ShortID="937697003">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="Slowdown" ID="{E7B868B9-EB78-40B0-AA25-574933B67D84}" WorkUnitID="{AF633A36-6CC5-470E-AD72-3F76D6F661BF}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+								<Action Name="" ID="{45BF06A4-532C-4A1F-95CC-1EF921C02F9F}" ShortID="399310595">
+									<PropertyList>
+										<Property Name="ActionType" Type="int16" Value="34"/>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="MUS_Character" ID="{F6DCD1F0-8D6F-49CA-A8D4-B8EB108091FF}" WorkUnitID="{AF633A36-6CC5-470E-AD72-3F76D6F661BF}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+								<Action Name="" ID="{477A30F8-970C-46C0-B2D4-630711DDC1C6}" ShortID="371325535">
+									<PropertyList>
+										<Property Name="ActionType" Type="int16" Value="13"/>
+										<Property Name="Delay" Type="Real64" Value="2"/>
+										<Property Name="FadeInCurve" Type="int16" Value="5"/>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="MUS_Character" ID="{F6DCD1F0-8D6F-49CA-A8D4-B8EB108091FF}" WorkUnitID="{AF633A36-6CC5-470E-AD72-3F76D6F661BF}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
 					</ChildrenList>
 				</Folder>
 				<Folder Name="SFX" ID="{F60444EA-C359-4820-A24A-BB45EB6FDF94}" ShortID="373921432">
@@ -163,6 +221,17 @@
 											<ReferenceList>
 												<Reference Name="Target">
 													<ObjectRef Name="Dash" ID="{77593CA0-C4E7-4F94-954E-9546443125E6}" WorkUnitID="{AF633A36-6CC5-470E-AD72-3F76D6F661BF}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+								<Event Name="Play_SFX_Slowdown" ID="{221FF7E5-961A-4D36-B5C3-BEE6603E651A}">
+									<ChildrenList>
+										<Action Name="" ID="{59B717FF-D799-4BCC-8949-B3A70BEE700C}" ShortID="1047445719">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="Shift" ID="{3FFE2DC5-E081-43EF-8FDF-006FE4C46B80}" WorkUnitID="{AF633A36-6CC5-470E-AD72-3F76D6F661BF}"/>
 												</Reference>
 											</ReferenceList>
 										</Action>

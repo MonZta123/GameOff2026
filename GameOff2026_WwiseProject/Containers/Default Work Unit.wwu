@@ -2656,6 +2656,99 @@
 										<ActiveSource Name="UI_Select" ID="{E4E2CD3A-607E-415C-8C02-937164623620}" Platform="Linked"/>
 									</ActiveSourceList>
 								</Sound>
+								<RandomSequenceContainer Name="Slowdown" ID="{E7B868B9-EB78-40B0-AA25-574933B67D84}" ShortID="998803928">
+									<PropertyList>
+										<Property Name="NormalOrShuffle" Type="int16" Value="0"/>
+										<Property Name="Pitch" Type="int32">
+											<ModifierList>
+												<ModifierInfo>
+													<Modifier Name="" ID="{3DC194BB-8238-4DA7-9458-8F3DF402D7A0}">
+														<PropertyList>
+															<Property Name="Max" Type="Real64" Value="1000"/>
+															<Property Name="Min" Type="Real64" Value="-1000"/>
+														</PropertyList>
+													</Modifier>
+												</ModifierInfo>
+											</ModifierList>
+										</Property>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{4ADFD3A0-A42B-432C-8502-1433439D5054}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="SFX" ID="{282B1519-D877-4EF3-9048-C765F53AAF2A}" WorkUnitID="{F8A65CB3-3EA6-47C9-8C5A-27068DB4C3FF}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<Sound Name="Slowdown_01" ID="{6DBE9CCE-8392-480B-876B-938457A4D587}" ShortID="508361087">
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{4ADFD3A0-A42B-432C-8502-1433439D5054}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{F8A65CB3-3EA6-47C9-8C5A-27068DB4C3FF}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="Slowdown_01" ID="{92FE8466-4053-47C4-8A11-60D153D85E8E}">
+													<Language>SFX</Language>
+													<AudioFile>Slowdown_01.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="185087095"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ActiveSourceList>
+												<ActiveSource Name="Slowdown_01" ID="{92FE8466-4053-47C4-8A11-60D153D85E8E}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+										<Sound Name="Slowdown_02" ID="{69C31A2C-8B48-4B17-9E5B-FF7755A8561D}" ShortID="773498611">
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{4ADFD3A0-A42B-432C-8502-1433439D5054}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{F8A65CB3-3EA6-47C9-8C5A-27068DB4C3FF}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="Slowdown_02" ID="{23B30F57-1FEA-4671-BA93-4E910F699005}">
+													<Language>SFX</Language>
+													<AudioFile>Slowdown_02.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="961369476"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ActiveSourceList>
+												<ActiveSource Name="Slowdown_02" ID="{23B30F57-1FEA-4671-BA93-4E910F699005}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+										<Sound Name="Slowdown_03" ID="{99F75FD7-1142-4935-A4DD-A929276F0FEB}" ShortID="195002050">
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{4ADFD3A0-A42B-432C-8502-1433439D5054}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{F8A65CB3-3EA6-47C9-8C5A-27068DB4C3FF}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="Slowdown_03" ID="{70CD2339-D9F2-45A4-8E53-BB1A49FDA55E}">
+													<Language>SFX</Language>
+													<AudioFile>Slowdown_03.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="845892068"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ActiveSourceList>
+												<ActiveSource Name="Slowdown_03" ID="{70CD2339-D9F2-45A4-8E53-BB1A49FDA55E}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+									</ChildrenList>
+								</RandomSequenceContainer>
 							</ChildrenList>
 						</Folder>
 						<Folder Name="Environment" ID="{70588B54-73D8-4F31-897C-46564DACCFE7}" ShortID="688997603">

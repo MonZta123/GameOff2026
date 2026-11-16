@@ -67,6 +67,18 @@
 						</Module>
 					</ModuleList>
 				</SoundcasterSession>
+				<SoundcasterSession Name="Slowdown" ID="{4ACF0554-69A3-4D62-934E-495860CAEC9A}">
+					<ModuleList>
+						<Module>
+							<ObjectRef Name="Play_MUS_Character" ID="{44E5D87C-C9EE-4925-8962-FA761B8D15F0}" WorkUnitID="{2B12C590-A22E-47AF-9697-251FEA2DB802}"/>
+							<Position X="0" Y="0"/>
+						</Module>
+						<Module>
+							<ObjectRef Name="Stop_MUS_CharacterSlowdown" ID="{987FE2D7-7D81-418C-B888-5C92D45B29DE}" WorkUnitID="{2B12C590-A22E-47AF-9697-251FEA2DB802}"/>
+							<Position X="1" Y="0"/>
+						</Module>
+					</ModuleList>
+				</SoundcasterSession>
 			</ChildrenList>
 		</WorkUnit>
 	</SoundcasterSessions>

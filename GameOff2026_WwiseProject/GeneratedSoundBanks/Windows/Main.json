@@ -10,7 +10,7 @@
     "Type": "User",
     "GUID": "{3059A6CE-8152-4CD2-BEA9-69E98BB60D65}",
     "Language": "SFX",
-    "Hash": "{793F9067-A611-C7D0-095E-BF4FE5868718}",
+    "Hash": "{84D3BA66-5A9C-E864-F104-ED5F82C7D280}",
     "ObjectPath": "\\SoundBanks\\Default Work Unit\\Main",
     "ShortName": "Main",
     "Path": "Main.bnk",
@@ -246,6 +246,14 @@
       "Location": "Memory",
       "ShortName": "VO_B_Win_02.wav",
       "CachePath": "81/{8193F8A9-04B7-B229-7DFD-48B5AF49AE4F}.wem"
+     },
+     {
+      "Id": "185087095",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "Slowdown_01.wav",
+      "CachePath": "D5/{D5D2DB9C-9FE7-9A03-3847-34BB0DAB5A8F}.wem"
      },
      {
       "Id": "186869576",
@@ -856,6 +864,14 @@
       "CachePath": "27/{27DD4FA0-AFBA-6607-92EC-7051CDDE9B8E}.wem"
      },
      {
+      "Id": "845892068",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "Slowdown_03.wav",
+      "CachePath": "3B/{3BA2C2DD-49DD-BA1D-FBAC-945FB542AC9D}.wem"
+     },
+     {
       "Id": "851917532",
       "Language": "SFX",
       "Streaming": "false",
@@ -990,6 +1006,14 @@
       "Location": "Memory",
       "ShortName": "FootstepC_03.wav",
       "CachePath": "C6/{C64070C5-B142-A17C-DB41-25C5DA5759CC}.wem"
+     },
+     {
+      "Id": "961369476",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "Slowdown_02.wav",
+      "CachePath": "16/{1653B7A9-4ED2-E6CC-93FF-2EB9A870BBA5}.wem"
      },
      {
       "Id": "962310616",
@@ -2486,6 +2510,26 @@
       "DurationMax": "0"
      },
      {
+      "Id": "2058610914",
+      "Name": "Stop_MUS_CharacterSlowdown",
+      "ObjectPath": "\\Events\\Default Work Unit\\MUSIC\\Stop_MUS_CharacterSlowdown",
+      "GUID": "{987FE2D7-7D81-418C-B888-5C92D45B29DE}",
+      "DurationType": "OneShot",
+      "DurationMin": "2.8649206",
+      "DurationMax": "3",
+      "MediaRefs": [
+       {
+        "Id": "185087095"
+       },
+       {
+        "Id": "845892068"
+       },
+       {
+        "Id": "961369476"
+       }
+      ]
+     },
+     {
       "Id": "4243441902",
       "Name": "Stop_MUS_MainMenu",
       "ObjectPath": "\\Events\\Default Work Unit\\MUSIC\\Stop_MUS_MainMenu",
@@ -2598,6 +2642,6 @@
     ]
    }
   ],
-  "FileHash": "{C84336AF-8EDA-1D93-4424-4888A3DC37B6}"
+  "FileHash": "{8E356F79-59FF-D2B1-2528-9D5609818974}"
  }
 }
