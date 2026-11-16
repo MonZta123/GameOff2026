@@ -1,14 +1,15 @@
 ﻿using System;
 using System.Collections;
-using Actors;
 using Domain;
 using ECS;
+using ECS.Entities;
 using ECS.Notification;
 using Notifications;
 using TMPro;
 using Unity.Cinemachine;
 using UnityEngine;
 using UnityEngine.UI;
+using Player = Actors.Player;
 
 public class GameSessionHost : MonoBehaviour
 {
@@ -51,6 +52,9 @@ public class GameSessionHost : MonoBehaviour
     [SerializeField]
     private SoundSystem soundSystem;
 
+    [SerializeField]
+    private MarkerManager markerManager;
+
     private TickDriver _tickDriver;
     private Timeline _timeline;
 
@@ -67,6 +71,7 @@ public class GameSessionHost : MonoBehaviour
         _segmentTicks = maxSeconds * stepsPerSecond;
         var mapDefinition = TextureMapBuilder.GetMap(maps[0]);
         _gameSessionState = GameSessionState.Playing;
+        markerManager.SetVisible(true);
 
         _tickDriver = new TickDriver(stepsPerSecond);
         _tickDriver._onTick += OnTick;
@@ -189,6 +194,7 @@ public class GameSessionHost : MonoBehaviour
             inputManager.RemoveCrossHair();
 
         _gameSessionState = GameSessionState.Playing;
+        markerManager.SetVisible(true);
 
         next?.Invoke();
 
@@ -201,6 +207,20 @@ public class GameSessionHost : MonoBehaviour
             soundSystem.PlayCharacterMusic(snapshot._players.GetNumEntities() - 1, _timeline.GetCurrentSegment());
             inputManager.ClearInput();
             _tickDriver.StartSim();
+        }
+
+        SetMarkers();
+    }
+
+    private void SetMarkers()
+    {
+        var snapshot = _timeline.GetSnapshot(0);
+
+        for (var i = 0; i < pools._triggerPool.Active.Length; i++)
+        {
+            var trigger = pools._triggerPool.Active[i];
+            if (trigger)
+                trigger.SetCurrentPlayerType((PlayerType)(snapshot._players.GetNumEntities() - 1));
         }
     }
 
@@ -302,6 +322,7 @@ public class GameSessionHost : MonoBehaviour
     private void InitReplay()
     {
         _gameSessionState = GameSessionState.ReplayMode;
+        markerManager.SetVisible(false);
         if (_activePlayerObject)
             _activePlayerObject.SetActivePlayer(false);
         InitNextReplaySegment();
@@ -350,9 +371,10 @@ public class GameSessionHost : MonoBehaviour
         var duration = 5.368f;
 
         yield return new WaitForSeconds(duration);
-        
+
         next?.Invoke();
         _gameSessionState = GameSessionState.Playing;
+        markerManager.SetVisible(true);
     }
 
     private void Update()
@@ -375,6 +397,7 @@ public class GameSessionHost : MonoBehaviour
         {
             pools.ClearAllNotificationPools();
             _gameSessionState = GameSessionState.Rewinding;
+            markerManager.SetVisible(false);
             DoRewindAnimation();
         }
 
@@ -382,6 +405,7 @@ public class GameSessionHost : MonoBehaviour
         {
             pools.ClearAllNotificationPools();
             _gameSessionState = GameSessionState.Rewinding;
+            markerManager.SetVisible(false);
             InitNextCharacter();
         }
 
@@ -451,6 +475,7 @@ public class GameSessionHost : MonoBehaviour
         }
 
         _gameSessionState = GameSessionState.Playing;
+        markerManager.SetVisible(true);
         rewindText.gameObject.SetActive(false);
         SetAllFootsteps(true);
         next?.Invoke();

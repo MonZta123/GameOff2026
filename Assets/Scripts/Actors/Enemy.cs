@@ -1,4 +1,5 @@
 ﻿using System.Collections;
+using ECS.Entities;
 using UnityEditor;
 using UnityEngine;
 using Visual;
@@ -27,12 +28,18 @@ namespace Actors
         [SerializeField]
         private SpriteRenderer spriteRenderer;
 
+        [SerializeField]
+        private Marker marker;
+
         public void Init(ECS.Entities.Enemy entity)
         {
             animator.runtimeAnimatorController = animatorOverrideControllers[(int)entity._type];
 
             _lastPosition = entity._position;
             _incomingEntity = entity;
+
+            marker.gameObject.SetActive(entity._type == EnemyType.Buttler);
+            marker.SetUsesArrow(false);
         }
 
         private void Update()
