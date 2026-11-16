@@ -154,6 +154,32 @@
 								</Action>
 							</ChildrenList>
 						</Event>
+						<Event Name="Play_MUS_MissionPaused" ID="{5FB0A79F-8C17-4BBC-8B13-4FC195E511ED}">
+							<ChildrenList>
+								<Action Name="" ID="{3E4E7A1A-BA50-47FD-B628-6673A4FF7AC5}" ShortID="163887136">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="MUS_MissionPaused" ID="{6FF39F40-A3A2-4BDD-AAE5-C73B1F6A0867}" WorkUnitID="{AF633A36-6CC5-470E-AD72-3F76D6F661BF}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+						<Event Name="Stop_MUS_MissionPaused" ID="{7683046E-CF5C-48C0-BC43-C9AF4F4E7512}">
+							<ChildrenList>
+								<Action Name="" ID="{6CF337C6-9544-464A-94CA-B11B0A6E89A8}" ShortID="395167916">
+									<PropertyList>
+										<Property Name="ActionType" Type="int16" Value="2"/>
+										<Property Name="FadeTime" Type="Real64" Value="0.2"/>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="MUS_MissionPaused" ID="{6FF39F40-A3A2-4BDD-AAE5-C73B1F6A0867}" WorkUnitID="{AF633A36-6CC5-470E-AD72-3F76D6F661BF}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
 					</ChildrenList>
 				</Folder>
 				<Folder Name="SFX" ID="{F60444EA-C359-4820-A24A-BB45EB6FDF94}" ShortID="373921432">
@@ -221,17 +247,6 @@
 											<ReferenceList>
 												<Reference Name="Target">
 													<ObjectRef Name="Dash" ID="{77593CA0-C4E7-4F94-954E-9546443125E6}" WorkUnitID="{AF633A36-6CC5-470E-AD72-3F76D6F661BF}"/>
-												</Reference>
-											</ReferenceList>
-										</Action>
-									</ChildrenList>
-								</Event>
-								<Event Name="Play_SFX_Slowdown" ID="{221FF7E5-961A-4D36-B5C3-BEE6603E651A}">
-									<ChildrenList>
-										<Action Name="" ID="{59B717FF-D799-4BCC-8949-B3A70BEE700C}" ShortID="1047445719">
-											<ReferenceList>
-												<Reference Name="Target">
-													<ObjectRef Name="Shift" ID="{3FFE2DC5-E081-43EF-8FDF-006FE4C46B80}" WorkUnitID="{AF633A36-6CC5-470E-AD72-3F76D6F661BF}"/>
 												</Reference>
 											</ReferenceList>
 										</Action>

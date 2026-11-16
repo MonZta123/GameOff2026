@@ -10,7 +10,7 @@
     "Type": "User",
     "GUID": "{3059A6CE-8152-4CD2-BEA9-69E98BB60D65}",
     "Language": "SFX",
-    "Hash": "{84D3BA66-5A9C-E864-F104-ED5F82C7D280}",
+    "Hash": "{CB3031C3-FC3A-46E8-B5A4-D697FBB276DD}",
     "ObjectPath": "\\SoundBanks\\Default Work Unit\\Main",
     "ShortName": "Main",
     "Path": "Main.bnk",
@@ -358,6 +358,14 @@
       "Location": "Memory",
       "ShortName": "SFX_Crunch_03.wav",
       "CachePath": "72/{729A443F-1C2C-C83E-0A09-8093E22452E9}.wem"
+     },
+     {
+      "Id": "268413720",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "MUS_Pause_Intro.wav",
+      "CachePath": "B1/{B198F273-0541-9550-AC7E-1C2645F0A717}.wem"
      },
      {
       "Id": "278186006",
@@ -1094,6 +1102,14 @@
       "Location": "Memory",
       "ShortName": "VO_B_Hit_04.wav",
       "CachePath": "3F/{3FAFBDA3-CB95-8DB0-8151-06878BB28B46}.wem"
+     },
+     {
+      "Id": "1062283916",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "MUS_Pause_Loop.wav",
+      "CachePath": "25/{25C74FE6-F89B-B3B1-68F7-DE316F684A0F}.wem"
      }
     ],
     "Plugins": {
@@ -1458,6 +1474,21 @@
       "MediaRefs": [
        {
         "Id": "112886040"
+       }
+      ]
+     },
+     {
+      "Id": "680738558",
+      "Name": "Play_MUS_MissionPaused",
+      "ObjectPath": "\\Events\\Default Work Unit\\MUSIC\\Play_MUS_MissionPaused",
+      "GUID": "{5FB0A79F-8C17-4BBC-8B13-4FC195E511ED}",
+      "DurationType": "Infinite",
+      "MediaRefs": [
+       {
+        "Id": "268413720"
+       },
+       {
+        "Id": "1062283916"
        }
       ]
      },
@@ -2538,6 +2569,16 @@
       "DurationType": "OneShot",
       "DurationMin": "0",
       "DurationMax": "0"
+     },
+     {
+      "Id": "1909315380",
+      "Name": "Stop_MUS_MissionPaused",
+      "ObjectPath": "\\Events\\Default Work Unit\\MUSIC\\Stop_MUS_MissionPaused",
+      "GUID": "{7683046E-CF5C-48C0-BC43-C9AF4F4E7512}",
+      "MaxAttenuation": "0",
+      "DurationType": "OneShot",
+      "DurationMin": "0",
+      "DurationMax": "0"
      }
     ],
     "StateGroups": [
@@ -2642,6 +2683,6 @@
     ]
    }
   ],
-  "FileHash": "{C41BD0DA-CC3A-2AED-46EB-54493478C3CD}"
+  "FileHash": "{E251BD44-35CC-E4DB-2BD8-327397CD2A2C}"
  }
 }
