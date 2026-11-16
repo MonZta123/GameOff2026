@@ -1,3 +1,0 @@
-Event	ID	Name			Wwise Object Path	Notes
-	3133765605	Play_SFX_Slowdown			\Default Work Unit\SFX\Movement\Play_SFX_Slowdown	
-
