@@ -55,6 +55,9 @@ public class GameSessionHost : MonoBehaviour
     [SerializeField]
     private MarkerManager markerManager;
 
+    [SerializeField]
+    private TaskTextManager taskTextManager;
+
     private TickDriver _tickDriver;
     private Timeline _timeline;
 
@@ -81,6 +84,7 @@ public class GameSessionHost : MonoBehaviour
         mapRenderer.GenerateMap(mapDefinition);
 
         rewindText.gameObject.SetActive(false);
+        taskTextManager.SetText("");
         _gameFlowManager = new GameFlowManager(_segmentTicks);
         // Hide Loadingscreen here
     }
@@ -429,7 +433,72 @@ public class GameSessionHost : MonoBehaviour
 
                 HandleResult(result);
             }
+
+            if (_gameSessionState == GameSessionState.Playing)
+            {
+                UpdateTaskText();
+            }
+            else
+            {
+                taskTextManager.SetText("");
+            }
         }
+    }
+
+    private void UpdateTaskText()
+    {
+        var tick = _tickDriver.CurrentTick;
+
+        var text = "Your mission: ";
+
+        var snapshot = _timeline.GetSnapshot(tick);
+
+        var currentPlayer = snapshot._players.GetLastEntity();
+
+        switch (currentPlayer._type)
+        {
+            case PlayerType.Heavy:
+                text += "Cause havoc! " + snapshot._damageProcess + " enemies left!";
+                break;
+            case PlayerType.Hacker:
+                if (snapshot._hackProcess > 0)
+                {
+                    text += "Hack the computer - " + (Math.Round(snapshot._hackProcess / Time.deltaTime, 2) + " seconds left!");
+                }
+                else
+                {
+                    text += "Protect your team from incoming threats!";
+                }
+                break;
+            case PlayerType.Demolition:
+                if (snapshot._bombsLeft > 0)
+                {
+                    text += "Place detonators - " + snapshot._bombsLeft + " spots left!";
+                }
+                else
+                {
+                    text += "Defuse the mines - protect your Team!";
+                }
+                break;
+            case PlayerType.Sniper:
+                var buttlerActive = false;
+
+                for (var i = 0; i < snapshot._enemies.GetNumEntities(); i++)
+                {
+                    if (snapshot._enemies.GetEntityAt(i)._type != EnemyType.Buttler)
+                        continue;
+
+                    buttlerActive = true;
+                    break;
+                }
+
+                text = buttlerActive ? "WARNING: Enemy Sniper is active!" : "No immediate threat detected!";
+                break;
+            default:
+                throw new ArgumentOutOfRangeException();
+        }
+
+        taskTextManager.SetText(text);
     }
 
     private Player _activePlayerObject;
