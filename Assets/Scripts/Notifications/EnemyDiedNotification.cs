@@ -6,6 +6,8 @@ namespace Notifications
 {
     public class EnemyDiedNotification : NotificationView<ECS.Notification.EnemyDiedNotification>
     {
+        private static readonly int s_flashAmount = Shader.PropertyToID("_FlashAmount");
+        
         [SerializeField]
         private Animator animator;
 
@@ -13,6 +15,9 @@ namespace Notifications
         private AnimatorOverrideController[] overrideControllers;
 
         private Coroutine _coroutine;
+        
+        [SerializeField]
+        private SpriteRenderer spriteRenderer;
 
         public override void Notify(ECS.Notification.EnemyDiedNotification notification)
         {
@@ -35,6 +40,8 @@ namespace Notifications
 
         private IEnumerator PlayAnimation(ECS.Notification.EnemyDiedNotification notification)
         {
+            DoFlash();
+            
             if (notification._isKnockback)
             {
                 var elapsed = 0f;
@@ -57,9 +64,49 @@ namespace Notifications
             _returnToPool?.Invoke();
             _coroutine = null;
         }
+        
+        private void Awake()
+        {
+            _materialPropertyBlock = new MaterialPropertyBlock();
+        }
 
+        private MaterialPropertyBlock _materialPropertyBlock;
+
+        
+        private void DoFlash()
+        {
+            if (_flashCoroutine != null)
+                StopCoroutine(_flashCoroutine);
+
+            _flashCoroutine = StartCoroutine(FlashMaterial());
+        }
+        
+        private Coroutine _flashCoroutine;
+
+        private IEnumerator FlashMaterial()
+        {
+            spriteRenderer.GetPropertyBlock(_materialPropertyBlock);
+
+            _materialPropertyBlock.SetFloat(s_flashAmount, 1f);
+            spriteRenderer.SetPropertyBlock(_materialPropertyBlock);
+
+            yield return new WaitForSeconds(0.1f);
+
+            _materialPropertyBlock.SetFloat(s_flashAmount, 0f);
+            spriteRenderer.SetPropertyBlock(_materialPropertyBlock);
+
+            _flashCoroutine = null;
+        }
+
+        
         public override void OnReturn()
         {
+            spriteRenderer.GetPropertyBlock(_materialPropertyBlock);
+            _materialPropertyBlock.SetFloat(s_flashAmount, 0f);
+            spriteRenderer.SetPropertyBlock(_materialPropertyBlock);
+            if (_flashCoroutine != null)
+                StopCoroutine(_flashCoroutine);
+            _flashCoroutine = null;
             _coroutine = null;
         }
     }

@@ -97,7 +97,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
+  - {fileID: 2100000, guid: fab67082a3b25d44792bc3d691ddfd33, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -146,6 +146,22 @@ MonoBehaviour:
   bounceSpeed: 15
   bounceHeight: 0.2
   bounceAngle: 11.25
+  onTouchFloor:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: -8676144183153262626}
+        m_TargetAssemblyTypeName: Actors.Player, Assembly-CSharp
+        m_MethodName: PlayStepSound
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  _bounceCount: 0
 --- !u!1 &4966694149308037225
 GameObject:
   m_ObjectHideFlags: 0
@@ -215,6 +231,36 @@ MonoBehaviour:
   animator: {fileID: 4312963925318771561}
   moveBouncer: {fileID: 703506496700824585}
   healthbar: {fileID: 3238036701835122791}
+  spriteRenderer: {fileID: 6336420142323767381}
+  switchGroupFloor:
+  - idInternal: 0
+    valueGuidInternal: 
+    groupIdInternal: 0
+    groupGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: 9c8293bcf017a414e8135a845303d4d1, type: 2}
+  - idInternal: 0
+    valueGuidInternal: 
+    groupIdInternal: 0
+    groupGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: 04dff61571fe0dc479b13b75a453a2ee, type: 2}
+  - idInternal: 0
+    valueGuidInternal: 
+    groupIdInternal: 0
+    groupGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: 07529e3b6dff1b8449cf517b764ed969, type: 2}
+  stepSound:
+  - idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: 6cffc87dd5ff32c46aa0b169729e14ad, type: 2}
+  - idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: 397c95cbf57798f48809aa3a2084a65e, type: 2}
+  - idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: eefe51333b06148418961fa25882939d, type: 2}
+  - idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: 19be3dd7a3a39724495df8e7a59500d5, type: 2}
 --- !u!95 &8297006746479347886
 Animator:
   serializedVersion: 7
@@ -263,7 +309,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
+  - {fileID: 2100000, guid: fab67082a3b25d44792bc3d691ddfd33, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -355,7 +401,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 9dfc825aed78fcd4ba02077103263b40, type: 2}
+  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0

@@ -2,6 +2,7 @@
 using Domain;
 using ECS.Entities;
 using ECS.Events;
+using ECS.Notification;
 using UnityEngine;
 
 namespace ECS.Systems
@@ -76,7 +77,14 @@ namespace ECS.Systems
 
                     trigger._timer -= _deltaTime;
                     if (trigger._timer <= 0)
+                    {
+                        snapshot._soundNotificationPool.Add(new SoundNotification()
+                        {
+                            _soundType = SoundType.MineDefuse,
+                            _position = player._position
+                        });
                         snapshot._triggers.DespawnAt(i);
+                    }
                 }
             }
 

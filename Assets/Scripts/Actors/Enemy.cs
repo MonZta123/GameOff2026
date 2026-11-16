@@ -1,4 +1,5 @@
-﻿using UnityEditor;
+﻿using System.Collections;
+using UnityEditor;
 using UnityEngine;
 using Visual;
 
@@ -6,6 +7,8 @@ namespace Actors
 {
     public class Enemy : MonoBehaviour, IEntityView<ECS.Entities.Enemy>
     {
+        private static readonly int s_flashAmount = Shader.PropertyToID("_FlashAmount");
+
         [SerializeField]
         private SpriteRenderer gunRenderer;
 
@@ -20,6 +23,9 @@ namespace Actors
 
         [SerializeField]
         private Healthbar healthbar;
+
+        [SerializeField]
+        private SpriteRenderer spriteRenderer;
 
         public void Init(ECS.Entities.Enemy entity)
         {
@@ -70,9 +76,13 @@ namespace Actors
 
             if (entity._health != _health || entity._maxHealth != _maxHealth)
             {
+                if (entity._health < _health)
+                {
+                    DoFlash();
+                }
+
                 healthbar.SetHealthPercent(entity._health / (float)entity._maxHealth * 100);
             }
-
 
             _health = entity._health;
             _maxHealth = entity._maxHealth;
@@ -104,7 +114,39 @@ namespace Actors
             Handles.Label(transform.position, "" + _health);
         }
 #endif
-        
+
+        private void Awake()
+        {
+            _materialPropertyBlock = new MaterialPropertyBlock();
+        }
+
+        private MaterialPropertyBlock _materialPropertyBlock;
+
+        private void DoFlash()
+        {
+            if (_flashCoroutine != null)
+                StopCoroutine(_flashCoroutine);
+
+            _flashCoroutine = StartCoroutine(FlashMaterial());
+        }
+
+        private Coroutine _flashCoroutine;
+
+        private IEnumerator FlashMaterial()
+        {
+            spriteRenderer.GetPropertyBlock(_materialPropertyBlock);
+
+            _materialPropertyBlock.SetFloat(s_flashAmount, 1f);
+            spriteRenderer.SetPropertyBlock(_materialPropertyBlock);
+
+            yield return new WaitForSeconds(0.1f);
+
+            _materialPropertyBlock.SetFloat(s_flashAmount, 0f);
+            spriteRenderer.SetPropertyBlock(_materialPropertyBlock);
+
+            _flashCoroutine = null;
+        }
+
         public void StopBouncing()
         {
             moveBouncer.SetIsBouncing(false);
@@ -115,6 +157,13 @@ namespace Actors
             healthbar.ReturnToFullHealth();
             _health = 100;
             _lastPosition = Vector2.zero;
+
+            spriteRenderer.GetPropertyBlock(_materialPropertyBlock);
+            _materialPropertyBlock.SetFloat(s_flashAmount, 0f);
+            spriteRenderer.SetPropertyBlock(_materialPropertyBlock);
+            if (_flashCoroutine != null)
+                StopCoroutine(_flashCoroutine);
+            _flashCoroutine = null;
         }
     }
 }

@@ -3,6 +3,8 @@ using System.Collections;
 using Actors;
 using Domain;
 using ECS;
+using ECS.Notification;
+using Notifications;
 using TMPro;
 using Unity.Cinemachine;
 using UnityEngine;
@@ -45,6 +47,9 @@ public class GameSessionHost : MonoBehaviour
 
     [SerializeField]
     private Image fade;
+
+    [SerializeField]
+    private SoundSystem soundSystem;
 
     private TickDriver _tickDriver;
     private Timeline _timeline;
@@ -188,9 +193,12 @@ public class GameSessionHost : MonoBehaviour
         next?.Invoke();
 
         if (!isFirst)
+        {
             ResetTickTimer();
+        }
         else
         {
+            soundSystem.PlayCharacterMusic(snapshot._players.GetNumEntities() - 1, _timeline.GetCurrentSegment());
             inputManager.ClearInput();
             _tickDriver.StartSim();
         }
@@ -331,7 +339,20 @@ public class GameSessionHost : MonoBehaviour
 
     public void Start()
     {
-        BuildNextCharacter(true, () => StartCoroutine(FadeIn()));
+        _gameSessionState = GameSessionState.Intro;
+        StartCoroutine(DoIntroMusic(() => BuildNextCharacter(true, () => StartCoroutine(FadeIn()))));
+    }
+
+    private IEnumerator DoIntroMusic(Action next = null)
+    {
+        yield return new WaitForSeconds(0.2f);
+        soundSystem.PlayIntroMusic();
+        var duration = 5.368f;
+
+        yield return new WaitForSeconds(duration);
+        
+        next?.Invoke();
+        _gameSessionState = GameSessionState.Playing;
     }
 
     private void Update()
@@ -364,6 +385,11 @@ public class GameSessionHost : MonoBehaviour
             InitNextCharacter();
         }
 
+        if (_gameSessionState is GameSessionState.Playing && _activePlayerObject)
+        {
+            _activePlayerObject.SetSwitchGroupFloor(1);
+        }
+
         if (_tickDriver.CurrentTick != _lastSetTick && _tickDriver.CurrentTick < _timeline.SnapshotLength)
         {
             _lastSetTick = _tickDriver.CurrentTick;
@@ -371,7 +397,7 @@ public class GameSessionHost : MonoBehaviour
             var snapshot = _timeline.GetSnapshot(_tickDriver.CurrentTick);
             snapshotRenderer.SetSnapshot(snapshot, _tickDriver.CurrentTick);
 
-            if (_gameSessionState == GameSessionState.Playing || _gameSessionState == GameSessionState.ReplayMode)
+            if (_gameSessionState is GameSessionState.Playing or GameSessionState.ReplayMode)
             {
                 var result = _gameFlowManager.CheckForLoopBreak(_tickDriver.CurrentTick, snapshot,
                     _timeline.GetCurrentSegment() == Constants.Segments - 1,
@@ -384,13 +410,26 @@ public class GameSessionHost : MonoBehaviour
 
     private Player _activePlayerObject;
 
+    private void SetAllFootsteps(bool value)
+    {
+        for (var i = 0; i < pools._playerPool.Active.Length; i++)
+        {
+            var player = pools._playerPool.Active[i];
+            if (player)
+                player.SetFootstepsOnOff(value);
+        }
+    }
+
     private IEnumerator PlayRewindAnimation(Action next = null)
     {
+        SetAllFootsteps(false);
         yield return null;
 
         var currentTick = _tickDriver.CurrentTick;
 
         var elapsed = 0f;
+
+        soundSystem.PlayEvent(new SoundNotification() { _soundType = SoundType.Rewind });
 
         while (elapsed < Constants.RewindDuration)
         {
@@ -413,6 +452,7 @@ public class GameSessionHost : MonoBehaviour
 
         _gameSessionState = GameSessionState.Playing;
         rewindText.gameObject.SetActive(false);
+        SetAllFootsteps(true);
         next?.Invoke();
     }
 
@@ -447,6 +487,10 @@ public class GameSessionHost : MonoBehaviour
         }
 
         inputManager.ClearInput();
+
+        var snapshot = _timeline.GetSnapshot(0);
+
+        soundSystem.PlayCharacterMusic(snapshot._players.GetNumEntities() - 1, _timeline.GetCurrentSegment());
         _tickDriver.StartSim();
 
         _currentCoroutine = null;

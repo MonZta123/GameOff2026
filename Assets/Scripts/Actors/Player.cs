@@ -1,6 +1,7 @@
 ﻿#if UNITY_EDITOR
 using UnityEditor;
 #endif
+using System.Collections;
 using UnityEngine;
 using Visual;
 
@@ -8,6 +9,8 @@ namespace Actors
 {
     public class Player : MonoBehaviour, IEntityView<ECS.Entities.Player>
     {
+        private static readonly int s_flashAmount = Shader.PropertyToID("_FlashAmount");
+
         [Header("Sounds")]
         [SerializeField]
         private AK.Wwise.Event heavySlam;
@@ -36,6 +39,15 @@ namespace Actors
         [SerializeField]
         private Healthbar healthbar;
 
+        [SerializeField]
+        private SpriteRenderer spriteRenderer;
+
+        [SerializeField]
+        private AK.Wwise.Switch[] switchGroupFloor;
+
+        [SerializeField]
+        private AK.Wwise.Event[] stepSound;
+
         public void Init(ECS.Entities.Player entity)
         {
             transform.position = entity._position;
@@ -43,6 +55,15 @@ namespace Actors
             animator.runtimeAnimatorController = animatorOverrideController[(int)entity._type];
 
             gunRenderer.sprite = gunz[(int)entity._type];
+            
+            _stepIndex = (int)entity._type;
+        }
+
+        private int _stepIndex;
+        
+        public void SetSwitchGroupFloor(int value)
+        {
+            switchGroupFloor[value].SetValue(gameObject);
         }
 
         public void SetActivePlayer(bool value)
@@ -51,6 +72,39 @@ namespace Actors
 
             if (!positionSmoother.IsSmoothingPosition)
                 positionSmoother.SetSmoothPosition(true);
+        }
+
+        private void Awake()
+        {
+            _materialPropertyBlock = new MaterialPropertyBlock();
+        }
+
+        private MaterialPropertyBlock _materialPropertyBlock;
+
+        private void DoFlash()
+        {
+            if (_flashCoroutine != null)
+                StopCoroutine(_flashCoroutine);
+
+            _flashCoroutine = StartCoroutine(FlashMaterial());
+        }
+
+
+        private Coroutine _flashCoroutine;
+
+        private IEnumerator FlashMaterial()
+        {
+            spriteRenderer.GetPropertyBlock(_materialPropertyBlock);
+
+            _materialPropertyBlock.SetFloat(s_flashAmount, 1f);
+            spriteRenderer.SetPropertyBlock(_materialPropertyBlock);
+
+            yield return new WaitForSeconds(0.1f);
+
+            _materialPropertyBlock.SetFloat(s_flashAmount, 0f);
+            spriteRenderer.SetPropertyBlock(_materialPropertyBlock);
+
+            _flashCoroutine = null;
         }
 
         public void SetAngle(float angle)
@@ -181,14 +235,25 @@ namespace Actors
                 if (moveBouncer.IsBouncing)
                     moveBouncer.SetIsBouncing(false);
             }
-            
+
             if (entity._health != _lastEntity._health || entity._maxHealth != _lastEntity._maxHealth)
             {
+                if (entity._health < _lastEntity._health)
+                    DoFlash();
+
                 healthbar.SetHealthPercent(entity._health / (float)entity._maxHealth * 100);
             }
-            
+
             _lastEntity = entity;
             _tick = tick;
+        }
+
+        public void PlayStepSound()
+        {
+            if (!_footstepsActive)
+                return;
+            
+            stepSound[_stepIndex].Post(gameObject);
         }
 
         private ECS.Entities.Player _lastEntity;
@@ -197,6 +262,13 @@ namespace Actors
         private int _lastPrimaryBlockingMovementTo;
         private bool _activePlayer;
 
+        private bool _footstepsActive = true;
+        
+        public void SetFootstepsOnOff(bool value)
+        {
+            _footstepsActive = value;
+        }
+        
         public void Release()
         {
             positionSmoother.SetSmoothPosition(false);
@@ -205,7 +277,16 @@ namespace Actors
             _isLeftHand = false;
             _lastPrimaryBlockingMovementTo = 0;
             _activePlayer = false;
+            _stepIndex = 0;
+            _footstepsActive = false;
             
+            spriteRenderer.GetPropertyBlock(_materialPropertyBlock);
+            _materialPropertyBlock.SetFloat(s_flashAmount, 0f);
+            spriteRenderer.SetPropertyBlock(_materialPropertyBlock);
+            if (_flashCoroutine != null)
+                StopCoroutine(_flashCoroutine);
+            _flashCoroutine = null;
+
             healthbar.ReturnToFullHealth();
         }
 
