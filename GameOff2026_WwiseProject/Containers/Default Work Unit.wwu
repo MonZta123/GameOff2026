@@ -95,6 +95,11 @@
 												</ModifierInfo>
 											</ModifierList>
 										</Property>
+										<Property Name="Volume" Type="Real64">
+											<ValueList>
+												<Value>-5</Value>
+											</ValueList>
+										</Property>
 									</PropertyList>
 									<ReferenceList>
 										<Reference Name="Conversion">
@@ -438,6 +443,11 @@
 													<Modifier Name="" ID="{4A138FF2-2199-41FE-99A1-86F7FEB8998F}"/>
 												</ModifierInfo>
 											</ModifierList>
+										</Property>
+										<Property Name="Volume" Type="Real64">
+											<ValueList>
+												<Value>-5</Value>
+											</ValueList>
 										</Property>
 									</PropertyList>
 									<ReferenceList>
@@ -973,6 +983,13 @@
 									</GroupingInfo>
 								</SwitchContainer>
 								<SwitchContainer Name="FootstepsD" ID="{44B70534-CE5A-4DBA-88C5-DB89967F6BD0}" ShortID="850990890">
+									<PropertyList>
+										<Property Name="Volume" Type="Real64">
+											<ValueList>
+												<Value>-5</Value>
+											</ValueList>
+										</Property>
+									</PropertyList>
 									<ReferenceList>
 										<Reference Name="Conversion">
 											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{4ADFD3A0-A42B-432C-8502-1433439D5054}"/>
@@ -1315,6 +1332,11 @@
 													<Modifier Name="" ID="{15204BE9-54C0-41AE-B0B5-52F148240254}"/>
 												</ModifierInfo>
 											</ModifierList>
+										</Property>
+										<Property Name="Volume" Type="Real64">
+											<ValueList>
+												<Value>-5</Value>
+											</ValueList>
 										</Property>
 									</PropertyList>
 									<ReferenceList>
@@ -3984,6 +4006,13 @@
 									</ActiveSourceList>
 								</Sound>
 								<MusicPlaylistContainer Name="MUS_MissionPaused" ID="{6FF39F40-A3A2-4BDD-AAE5-C73B1F6A0867}" ShortID="405995769">
+									<PropertyList>
+										<Property Name="Lowpass" Type="int16">
+											<ValueList>
+												<Value>62</Value>
+											</ValueList>
+										</Property>
+									</PropertyList>
 									<ReferenceList>
 										<Reference Name="Conversion">
 											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{4ADFD3A0-A42B-432C-8502-1433439D5054}"/>
