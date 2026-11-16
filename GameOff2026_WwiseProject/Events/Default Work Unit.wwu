@@ -351,6 +351,46 @@
 								</Event>
 							</ChildrenList>
 						</Folder>
+						<Folder Name="Impacts" ID="{2A92ECEE-B8A8-409C-BF21-481424498D22}" ShortID="1052164442">
+							<ChildrenList>
+								<Event Name="Play_SFX_ImpactHeavy" ID="{4335A160-53B6-473D-9447-A2B4A8C23FDD}">
+									<ChildrenList>
+										<Action Name="" ID="{F5711DAE-C105-41CA-957B-068DBDFD0557}" ShortID="1035097617">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="CrunchHeavy" ID="{EDF28EC9-652B-4D0A-92E2-9E306DD60E80}" WorkUnitID="{AF633A36-6CC5-470E-AD72-3F76D6F661BF}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+										<Action Name="" ID="{45CE5B30-27CB-411B-8448-49A51BA2E760}" ShortID="343061072">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="ImpactHeavy" ID="{296272C3-09B0-4EBD-BECF-7E9D853AC53A}" WorkUnitID="{AF633A36-6CC5-470E-AD72-3F76D6F661BF}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+								<Event Name="Play_SFX_Impact" ID="{A671DCAC-9993-4AC3-B194-BF98779E356E}">
+									<ChildrenList>
+										<Action Name="" ID="{7E0CAF3C-BDEB-4FFF-B477-9785DC8F7AD9}" ShortID="1058201004">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="Crunch" ID="{C8601496-AF7B-42A1-9A36-DF7704701F01}" WorkUnitID="{AF633A36-6CC5-470E-AD72-3F76D6F661BF}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+										<Action Name="" ID="{F5FF5447-552A-491F-9947-8376B0CB6595}" ShortID="600819731">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="Impact" ID="{6713D016-0B06-459C-9AE2-C068B096A9A4}" WorkUnitID="{AF633A36-6CC5-470E-AD72-3F76D6F661BF}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+							</ChildrenList>
+						</Folder>
 					</ChildrenList>
 				</Folder>
 				<Folder Name="AMBIENCE" ID="{A55CDA7E-9FA2-4DE0-A034-544AD10448E8}" ShortID="841075420">
@@ -543,6 +583,7 @@
 						<Folder Name="A" ID="{D78148EC-9FD1-4ECF-B840-FD6DF55AE6E3}" ShortID="438006302"/>
 						<Folder Name="C" ID="{4F8415BF-34AA-4C4E-97D8-5EF1DE13A930}" ShortID="1876240"/>
 						<Folder Name="D" ID="{001501E5-C936-463F-B7DF-800714AEB414}" ShortID="426253793"/>
+						<Folder Name="E" ID="{909B386B-E7FC-4801-8BD4-ABC7DC958E05}" ShortID="412715"/>
 					</ChildrenList>
 				</Folder>
 			</ChildrenList>
