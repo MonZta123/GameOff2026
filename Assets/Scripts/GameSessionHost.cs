@@ -85,7 +85,7 @@ public class GameSessionHost : MonoBehaviour
 
         rewindText.gameObject.SetActive(false);
         taskTextManager.SetText("");
-        _gameFlowManager = new GameFlowManager(_segmentTicks);
+        _gameFlowManager = new GameFlowManager(_segmentTicks, stepsPerSecond);
         // Hide Loadingscreen here
     }
 
@@ -449,11 +449,27 @@ public class GameSessionHost : MonoBehaviour
     {
         var tick = _tickDriver.CurrentTick;
 
-        var text = "Your mission: ";
+        var text = "Your mission:";
 
         var snapshot = _timeline.GetSnapshot(tick);
 
         var currentPlayer = snapshot._players.GetLastEntity();
+
+        var moneyLeft = 0;
+        for (var i = 0; i < snapshot._triggers.GetNumEntities(); i++)
+        {
+            if (snapshot._triggers.GetEntityAt(i)._triggerType == TriggerType.Money)
+                moneyLeft++;
+        }
+
+        if (moneyLeft > 0)
+        {
+            text += "\n1. Collect " + moneyLeft + " cash piles!\n2. ";
+        }
+        else
+        {
+            text += " ";
+        }
 
         switch (currentPlayer._type)
         {
@@ -463,12 +479,14 @@ public class GameSessionHost : MonoBehaviour
             case PlayerType.Hacker:
                 if (snapshot._hackProcess > 0)
                 {
-                    text += "Hack the computer - " + (Math.Round(snapshot._hackProcess / Time.deltaTime, 2) + " seconds left!");
+                    text += "Hack the computer - " +
+                            (Mathf.CeilToInt(snapshot._hackProcess / (float)_tickDriver.TickRate) + " seconds left!");
                 }
                 else
                 {
                     text += "Protect your team from incoming threats!";
                 }
+
                 break;
             case PlayerType.Demolition:
                 if (snapshot._bombsLeft > 0)
@@ -477,8 +495,26 @@ public class GameSessionHost : MonoBehaviour
                 }
                 else
                 {
-                    text += "Defuse the mines - protect your Team!";
+                    var hasMines = false;
+                    for (var i = 0; i < snapshot._triggers.GetNumEntities(); i++)
+                    {
+                        if (snapshot._triggers.GetEntityAt(i)._triggerType == TriggerType.Mine)
+                        {
+                            hasMines = true;
+                            break;
+                        }
+                    }
+
+                    if (hasMines)
+                    {
+                        text += "Defuse the mines - protect your Team!";
+                    }
+                    else
+                    {
+                        text += "Protect your team from incoming threats!";
+                    }
                 }
+
                 break;
             case PlayerType.Sniper:
                 var buttlerActive = false;

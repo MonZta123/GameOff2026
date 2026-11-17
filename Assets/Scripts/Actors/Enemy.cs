@@ -11,6 +11,9 @@ namespace Actors
         private static readonly int s_flashAmount = Shader.PropertyToID("_FlashAmount");
 
         [SerializeField]
+        private Sprite[] gunSprites;
+
+        [SerializeField]
         private SpriteRenderer gunRenderer;
 
         [SerializeField]
@@ -31,6 +34,9 @@ namespace Actors
         [SerializeField]
         private Marker marker;
 
+        [SerializeField]
+        private LineRenderer lineRenderer;
+
         public void Init(ECS.Entities.Enemy entity)
         {
             animator.runtimeAnimatorController = animatorOverrideControllers[(int)entity._type];
@@ -40,6 +46,16 @@ namespace Actors
 
             marker.gameObject.SetActive(entity._type == EnemyType.Buttler);
             marker.SetUsesArrow(false);
+
+            switch (entity._type)
+            {
+                case EnemyType.Buttler:
+                    gunRenderer.sprite = gunSprites[1];
+                    break;
+                case EnemyType.RedHairGuy:
+                    gunRenderer.sprite = gunSprites[0];
+                    break;
+            }
         }
 
         private void Update()
@@ -56,7 +72,39 @@ namespace Actors
             if (isDead)
             {
                 animator.Play("Dead");
+                lineRenderer.enabled = false;
                 return;
+            }
+
+            if (_incomingEntity._shootsAtTick > _tick)
+            {
+                if (!lineRenderer.enabled)
+                    lineRenderer.enabled = true;
+
+                var offset = (_incomingEntity._lockedOnPosition -
+                              new Vector2(transform.position.x, transform.position.y)).normalized;
+
+                lineRenderer.SetPosition(0, transform.position + new Vector3(offset.x, offset.y, 0));
+                lineRenderer.SetPosition(1, _incomingEntity._lockedOnPosition);
+
+                var timeLeft = (_incomingEntity._shootsAtTick - _tick) / 64f;
+
+                if (timeLeft > 1f)
+                {
+                    lineRenderer.startColor = new Color(1, 0, 0);
+                    lineRenderer.endColor = new Color(1, 0, 0);
+                }
+                else
+                {
+                    var val = Color.Lerp(Color.red, Color.white, (Mathf.Sin(_tick * 0.5f) + 1f) / 2f);
+                    lineRenderer.startColor = val;
+                    lineRenderer.endColor = val;
+                }
+            }
+            else
+            {
+                if (lineRenderer.enabled)
+                    lineRenderer.enabled = false;
             }
 
             var prefix = "Idle_";
@@ -106,8 +154,12 @@ namespace Actors
             }
 
             _incomingEntity = entity;
+
+            _tick = tick;
         }
 
+
+        private int _tick;
         private ECS.Entities.Enemy _incomingEntity;
 
         private Vector2 _lastPosition;
@@ -164,6 +216,8 @@ namespace Actors
             healthbar.ReturnToFullHealth();
             _health = 100;
             _lastPosition = Vector2.zero;
+            lineRenderer.enabled = false;
+            gunRenderer.sprite = null;
 
             spriteRenderer.GetPropertyBlock(_materialPropertyBlock);
             _materialPropertyBlock.SetFloat(s_flashAmount, 0f);

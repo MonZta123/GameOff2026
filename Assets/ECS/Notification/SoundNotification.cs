@@ -13,7 +13,9 @@ namespace ECS.Notification
         
         MineExplosion,
         Rewind,
-        MineDefuse
+        MineDefuse,
+        
+        CashIn
     }
     
     public struct SoundNotification

@@ -1,4 +1,7 @@
-﻿using ECS;
+﻿using System;
+using ECS;
+using ECS.Entities;
+using UnityEngine;
 
 public struct GameFlowResult
 {
@@ -26,11 +29,13 @@ public class GameFlowManager
         }
     }
 
-    public GameFlowManager(int ticksPerRun)
+    public GameFlowManager(int ticksPerRun, int tickRate)
     {
         _ticksPerRun = ticksPerRun;
+        _tickRate = tickRate;
     }
 
+    private readonly int _tickRate;
     private readonly int _ticksPerRun;
 
     public GameFlowResult CheckForLoopBreak(int tick, Snapshot snapshot, bool isLastSegment, bool isReplayMode)
@@ -59,6 +64,19 @@ public class GameFlowManager
                 return new GameFlowResult() { _state = GameFlowResultState.NextReplaySegment };
             }
 
+            var moneyLeft = 0;
+            for (var i = 0; i < snapshot._triggers.GetNumEntities(); i++)
+                if (snapshot._triggers.GetEntityAt(i)._triggerType == TriggerType.Money)
+                    moneyLeft++;
+
+            if (moneyLeft > 0)
+            {
+                return new GameFlowResult()
+                {
+                    _state = GameFlowResultState.ObjectiveFailed, _comment = moneyLeft + " cash piles left."
+                };
+            }
+
             if (currentPlayer == 0 && snapshot._damageProcess != 0)
             {
                 return new GameFlowResult()
@@ -73,7 +91,7 @@ public class GameFlowManager
                 return new GameFlowResult()
                 {
                     _state = GameFlowResultState.ObjectiveFailed,
-                    _comment = snapshot._hackProcess + " seconds left to hack."
+                    _comment = Mathf.CeilToInt(snapshot._hackProcess / (float)_tickRate) + " seconds left to hack."
                 };
             }
 

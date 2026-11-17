@@ -10,6 +10,8 @@ namespace ECS.Entities
 
         public float _timer;
 
+        // public int _playerFilter;
+
         public bool IsInBox(Vector2 position, float radius, out Vector2 closestPoint)
         {
             closestPoint = new Vector2(Mathf.Clamp(position.x, _leftBottom.x, _rightTop.x),

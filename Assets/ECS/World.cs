@@ -29,6 +29,8 @@ namespace ECS
         private DemolitionSystem _demolitionSystem;
         private SniperSystem _sniperSystem;
         private MineSystem _mineSystem;
+        private MoneySystem _moneySystem;
+        private ExitSystem _exitSystem;
         private BlastWaveSystem _blastWaveSystem;
 
         public MapDefinition _map;
@@ -85,6 +87,8 @@ namespace ECS
             _sniperSystem = new SniperSystem(tickRate);
             _doorSystem = new DoorSystem();
             _mineSystem = new MineSystem();
+            _moneySystem = new MoneySystem();
+            _exitSystem = new ExitSystem();
             _blastWaveSystem = new BlastWaveSystem();
         }
 
@@ -171,7 +175,10 @@ namespace ECS
 
                 var evt = new Trigger()
                 {
-                    _leftBottom = leftBottom, _rightTop = rightTop, _triggerType = TriggerType.HackerZone
+                    _leftBottom = leftBottom,
+                    _rightTop = rightTop,
+                    _triggerType = TriggerType.HackerZone,
+                    // _playerFilter = -1
                 };
 
                 snapshot._triggers.Spawn(evt);
@@ -190,7 +197,10 @@ namespace ECS
 
                     var evt = new Trigger()
                     {
-                        _leftBottom = leftBottom, _rightTop = rightTop, _triggerType = TriggerType.DemolitionZone
+                        _leftBottom = leftBottom,
+                        _rightTop = rightTop,
+                        _triggerType = TriggerType.DemolitionZone,
+                        // _playerFilter = -1
                     };
 
                     snapshot._bombsLeft++;
@@ -224,6 +234,20 @@ namespace ECS
                 snapshot._enemies.Spawn(enemy);
             }
 
+            // for (var i = 0; i < 5; i++)
+            // {
+            //     var index = random.NextInt(0, spawnZone.Count);
+            //
+            //     var trigger = new Trigger()
+            //     {
+            //         _leftBottom = spawnZone[index],
+            //         _rightTop = new Vector2(spawnZone[index].x + 1, spawnZone[index].y + 1),
+            //         _triggerType = TriggerType.Money
+            //     };
+            //     
+            //     snapshot._triggers.Spawn(trigger);
+            // }
+
             snapshot._damageProcess = 3;
 #if UNITY_EDITOR
             snapshot._damageProcess = 0;
@@ -255,7 +279,8 @@ namespace ECS
                     _leftBottom = spawnZone[index],
                     _rightTop = new Vector2(spawnZone[index].x + 1, spawnZone[index].y + 1),
                     _triggerType = TriggerType.Mine,
-                    _timer = 1.0f
+                    _timer = 1.0f,
+                    // _playerFilter = -1
                 };
 
                 snapshot._triggers.Spawn(trigger);
@@ -432,6 +457,8 @@ namespace ECS
             _doorSystem.Execute(this, tick);
 
             _mineSystem.Execute(this);
+            _moneySystem.Execute(this);
+            _exitSystem.Execute(this);
         }
 
         private float GetMoveSpeed(EnemyType type)
@@ -574,7 +601,7 @@ namespace ECS
                 player._maxHealth = 200;
                 player._health = 200;
             }
-            
+
             _currentPlayer = GetCharacter((PlayerType)(totalPlayers));
             _currentPlayer._position = _map._spawnPoints[totalPlayers];
             _currentPlayer._health = 100;
