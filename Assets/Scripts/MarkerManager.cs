@@ -57,11 +57,6 @@ public class MarkerManager : MonoBehaviour
 
             var viewPortVec = new Vector2(position.x, position.y);
 
-            var newPointX = Mathf.Clamp(position.x, 0f, 1f);
-            var newPointY = Mathf.Clamp(position.y, 0f, 1f);
-
-            var newPos = new Vector2(newPointX, newPointY);
-
             var newTextX = Mathf.Clamp(position.x, 0.2f, 0.8f);
             var newTextY = Mathf.Clamp(position.y, 0.2f, 0.8f);
 
