@@ -1764,6 +1764,7 @@
 									<ChildrenList>
 										<RandomSequenceContainer Name="AttackHeavySwing" ID="{AD3900AC-57BA-4293-B739-2E416F41FC8E}" ShortID="229832379">
 											<PropertyList>
+												<Property Name="3DSpatialization" Type="int16" Value="2"/>
 												<Property Name="NormalOrShuffle" Type="int16" Value="0"/>
 												<Property Name="Pitch" Type="int32">
 													<ModifierList>
@@ -1781,6 +1782,9 @@
 												<Property Name="RandomAvoidRepeatingCount" Type="int32" Value="2"/>
 											</PropertyList>
 											<ReferenceList>
+												<Reference Name="Attenuation">
+													<ObjectRef Name="ATT_ObjectDistance" ID="{561C61D3-69C0-414A-8BC5-DA941AF50071}" WorkUnitID="{096A0857-8B20-44A3-ADF2-07EE6756A01B}"/>
+												</Reference>
 												<Reference Name="Conversion">
 													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{4ADFD3A0-A42B-432C-8502-1433439D5054}"/>
 												</Reference>
@@ -1868,6 +1872,7 @@
 										</RandomSequenceContainer>
 										<SwitchContainer Name="AttackHeavySlam" ID="{D85940C6-654E-4FC8-9F80-D7CFD08A7309}" ShortID="83761447">
 											<PropertyList>
+												<Property Name="3DSpatialization" Type="int16" Value="2"/>
 												<Property Name="Pitch" Type="int32">
 													<ModifierList>
 														<ModifierInfo>
@@ -1877,6 +1882,9 @@
 												</Property>
 											</PropertyList>
 											<ReferenceList>
+												<Reference Name="Attenuation">
+													<ObjectRef Name="ATT_ObjectDistance" ID="{561C61D3-69C0-414A-8BC5-DA941AF50071}" WorkUnitID="{096A0857-8B20-44A3-ADF2-07EE6756A01B}"/>
+												</Reference>
 												<Reference Name="Conversion">
 													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{4ADFD3A0-A42B-432C-8502-1433439D5054}"/>
 												</Reference>
@@ -2075,6 +2083,7 @@
 									<ChildrenList>
 										<RandomSequenceContainer Name="AttackRifle" ID="{21AC844B-BA03-4798-B19E-38B470729988}" ShortID="1051127059">
 											<PropertyList>
+												<Property Name="3DSpatialization" Type="int16" Value="2"/>
 												<Property Name="NormalOrShuffle" Type="int16" Value="0"/>
 												<Property Name="Pitch" Type="int32">
 													<ModifierList>
@@ -2092,6 +2101,9 @@
 												<Property Name="RandomAvoidRepeatingCount" Type="int32" Value="2"/>
 											</PropertyList>
 											<ReferenceList>
+												<Reference Name="Attenuation">
+													<ObjectRef Name="ATT_ObjectDistance" ID="{561C61D3-69C0-414A-8BC5-DA941AF50071}" WorkUnitID="{096A0857-8B20-44A3-ADF2-07EE6756A01B}"/>
+												</Reference>
 												<Reference Name="Conversion">
 													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{4ADFD3A0-A42B-432C-8502-1433439D5054}"/>
 												</Reference>

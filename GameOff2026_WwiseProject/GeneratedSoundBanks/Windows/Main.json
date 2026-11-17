@@ -10,7 +10,7 @@
     "Type": "User",
     "GUID": "{3059A6CE-8152-4CD2-BEA9-69E98BB60D65}",
     "Language": "SFX",
-    "Hash": "{A08269C2-6446-A142-1591-546F2EA879F6}",
+    "Hash": "{9D51DEA4-4544-BA99-2F06-E14546EF2E3A}",
     "ObjectPath": "\\SoundBanks\\Default Work Unit\\Main",
     "ShortName": "Main",
     "Path": "Main.bnk",
@@ -1584,6 +1584,7 @@
       "Name": "Play_SFX_Attack_A_Slam",
       "ObjectPath": "\\Events\\Default Work Unit\\SFX\\Attacks\\Play_SFX_Attack_A_Slam",
       "GUID": "{52A47EF3-BFA2-410A-A7F4-221BE57ABFC5}",
+      "MaxAttenuation": "100",
       "DurationType": "OneShot",
       "DurationMin": "1.9626858",
       "DurationMax": "1.965679",
@@ -1635,6 +1636,7 @@
       "Name": "Play_SFX_Attack_A_Swing",
       "ObjectPath": "\\Events\\Default Work Unit\\SFX\\Attacks\\Play_SFX_Attack_A_Swing",
       "GUID": "{777B20AF-D502-4148-BC01-29CB1D045B91}",
+      "MaxAttenuation": "100",
       "DurationType": "OneShot",
       "DurationMin": "0.2399806",
       "DurationMax": "0.6480979",
@@ -2259,6 +2261,7 @@
       "Name": "Play_SFX_Rifle",
       "ObjectPath": "\\Events\\Default Work Unit\\SFX\\Weapons\\Play_SFX_Rifle",
       "GUID": "{FC3B028A-50F3-42CB-8E0B-C6CC94A0A8DD}",
+      "MaxAttenuation": "100",
       "DurationType": "OneShot",
       "DurationMin": "2.17436",
       "DurationMax": "2.6172187",
@@ -3430,6 +3433,6 @@
     ]
    }
   ],
-  "FileHash": "{9C727F92-ABC4-581B-E59E-6EE54D90E5FA}"
+  "FileHash": "{8027259E-5B86-67A8-D465-0382EF84E3E5}"
  }
 }
