@@ -355,6 +355,17 @@
 										</Action>
 									</ChildrenList>
 								</Event>
+								<Event Name="Play_SFX_Rifle" ID="{FC3B028A-50F3-42CB-8E0B-C6CC94A0A8DD}">
+									<ChildrenList>
+										<Action Name="" ID="{AC826D68-C701-4E6C-B242-62C44B3CFD2D}" ShortID="38864957">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="AttackRifle" ID="{21AC844B-BA03-4798-B19E-38B470729988}" WorkUnitID="{AF633A36-6CC5-470E-AD72-3F76D6F661BF}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
 							</ChildrenList>
 						</Folder>
 						<Folder Name="Environment" ID="{5CA75071-56AB-4C59-832A-BA300731A667}" ShortID="893867293">
@@ -427,7 +438,39 @@
 										<Action Name="" ID="{DD33F461-BE11-4CAA-92A8-D342A0BF4116}" ShortID="1054513398">
 											<ReferenceList>
 												<Reference Name="Target">
-													<ObjectRef Name="MineDefuse" ID="{DAC5EC8C-ED15-4597-A2C4-E73CD3D6C684}" WorkUnitID="{AF633A36-6CC5-470E-AD72-3F76D6F661BF}"/>
+													<ObjectRef Name="Mine_Defuse" ID="{654C3BEF-F0B4-4332-8EC5-0874B8ECE7BF}" WorkUnitID="{AF633A36-6CC5-470E-AD72-3F76D6F661BF}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+								<Event Name="Play_SFX_Action_B_Hack" ID="{470A4D75-AAC0-4981-AEA8-A0F6959DB48D}">
+									<ChildrenList>
+										<Action Name="" ID="{0E7D629C-C376-456C-8ED4-E3D1AFA4DD4C}" ShortID="326512849">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="Hack_Loop" ID="{D3BECE3E-0891-405A-88A0-00D7AAE3939E}" WorkUnitID="{AF633A36-6CC5-470E-AD72-3F76D6F661BF}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+								<Event Name="Stop_SFX_Action_B_HackSuccess" ID="{0639D74A-12D0-468A-A0C5-ABECC4E4E7C7}">
+									<ChildrenList>
+										<Action Name="" ID="{85689FC8-59ED-40DA-A06B-380D9B3E15F0}" ShortID="527415315">
+											<PropertyList>
+												<Property Name="ActionType" Type="int16" Value="2"/>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="Hack_Loop" ID="{D3BECE3E-0891-405A-88A0-00D7AAE3939E}" WorkUnitID="{AF633A36-6CC5-470E-AD72-3F76D6F661BF}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+										<Action Name="" ID="{675773B3-637A-4838-B109-E1BA6E044373}" ShortID="491343741">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="Hack_Unlock" ID="{A30B247C-033C-46E0-A0F8-848E3C0D44D0}" WorkUnitID="{AF633A36-6CC5-470E-AD72-3F76D6F661BF}"/>
 												</Reference>
 											</ReferenceList>
 										</Action>
