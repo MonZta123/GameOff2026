@@ -481,10 +481,10 @@ public class GameSessionHost : MonoBehaviour
         if (isEvacuationMission)
             text += "\nGet to the evacuation point!";
 
-        if (moneyLeft == 0 && !isEvacuationMission) 
-            text += " "; 
+        if (moneyLeft == 0 && !isEvacuationMission)
+            text += " ";
         else
-            text += "\n"; 
+            text += "\n";
 
         switch (currentPlayer._type)
         {
@@ -548,6 +548,9 @@ public class GameSessionHost : MonoBehaviour
             default:
                 throw new ArgumentOutOfRangeException();
         }
+
+        text += "\nTime left: " +
+                (maxSeconds - _tickDriver.CurrentTick / (float)stepsPerSecond).ToString("0.0") + " seconds";
 
         taskTextManager.SetText(text);
     }

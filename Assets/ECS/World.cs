@@ -177,8 +177,7 @@ namespace ECS
                 {
                     _leftBottom = leftBottom,
                     _rightTop = rightTop,
-                    _triggerType = TriggerType.HackerZone,
-                    // _playerFilter = -1
+                    _triggerType = TriggerType.HackerZone
                 };
 
                 snapshot._triggers.Spawn(evt);
@@ -199,8 +198,7 @@ namespace ECS
                     {
                         _leftBottom = leftBottom,
                         _rightTop = rightTop,
-                        _triggerType = TriggerType.DemolitionZone,
-                        // _playerFilter = -1
+                        _triggerType = TriggerType.DemolitionZone
                     };
 
                     snapshot._bombsLeft++;
@@ -224,8 +222,7 @@ namespace ECS
                     {
                         _leftBottom = leftBottom,
                         _rightTop = rightTop,
-                        _triggerType = TriggerType.Exit,
-                        // _playerFilter = -1
+                        _triggerType = TriggerType.Exit
                     };
 
                     snapshot._triggers.Spawn(evt);

@@ -31,7 +31,7 @@ public class MarkerArrow : MonoBehaviour
         arrowGameObject.transform.position = viewPortVec;
     }
 
-    public void SetColor(object color)
+    public void SetColor(Color color)
     {
         arrowGameObject.color = (Color)color;
     }

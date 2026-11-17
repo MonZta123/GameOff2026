@@ -18,7 +18,7 @@ namespace ECS.Systems
                     var trigger = snapshot._triggers.GetEntityAt(j);
 
                     if (trigger._triggerType == TriggerType.Exit &&
-                        trigger.IsInBox(player._position, player._colliderRadius, out _))
+                        trigger.IsInBox(player._position, player._colliderRadius / 2f, out _))
                     {
                         player._escaped = true;
                         break;
