@@ -26,7 +26,7 @@ namespace ECS
         public Vector2Int[] _exit;
         public Vector2Int[] _woodenDoors;
         public Vector2Int[] _computerAsset;
-        public Vector2Int[] _enemySpawnZone;
+        public Vector2Int[] _enemySpawnZone; 
 
         public int CoordToIndex(int x, int y)
         {

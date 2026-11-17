@@ -8,6 +8,7 @@ using Notifications;
 using TMPro;
 using Unity.Cinemachine;
 using UnityEngine;
+using UnityEngine.Rendering.Universal;
 using UnityEngine.UI;
 using Player = Actors.Player;
 
@@ -58,6 +59,9 @@ public class GameSessionHost : MonoBehaviour
     [SerializeField]
     private TaskTextManager taskTextManager;
 
+    [SerializeField]
+    private ScriptableRendererData scriptableRendererData;
+
     private TickDriver _tickDriver;
     private Timeline _timeline;
 
@@ -86,6 +90,8 @@ public class GameSessionHost : MonoBehaviour
         rewindText.gameObject.SetActive(false);
         taskTextManager.SetText("");
         _gameFlowManager = new GameFlowManager(_segmentTicks, stepsPerSecond);
+
+        scriptableRendererData.rendererFeatures[0].SetActive(false);
         // Hide Loadingscreen here
     }
 
@@ -359,6 +365,7 @@ public class GameSessionHost : MonoBehaviour
     {
         _tickDriver.StopSim();
         _tickDriver._onTick -= OnTick;
+        scriptableRendererData.rendererFeatures[0].SetActive(false);
         _tickDriver = null;
     }
 
@@ -456,20 +463,28 @@ public class GameSessionHost : MonoBehaviour
         var currentPlayer = snapshot._players.GetLastEntity();
 
         var moneyLeft = 0;
+        var isEvacuationMission = false;
         for (var i = 0; i < snapshot._triggers.GetNumEntities(); i++)
         {
-            if (snapshot._triggers.GetEntityAt(i)._triggerType == TriggerType.Money)
+            var trigger = snapshot._triggers.GetEntityAt(i);
+
+            if (trigger._triggerType == TriggerType.Money)
                 moneyLeft++;
+
+            if (trigger._triggerType == TriggerType.Exit)
+                isEvacuationMission = true;
         }
 
         if (moneyLeft > 0)
-        {
-            text += "\n1. Collect " + moneyLeft + " cash piles!\n2. ";
-        }
-        else
-        {
+            text += "\nCollect " + moneyLeft + " cash piles!";
+
+        if (isEvacuationMission)
+            text += "\nGet to the evacuation point!";
+
+        if (moneyLeft == 0 && !isEvacuationMission)
             text += " ";
-        }
+        else
+            text += "\n";
 
         switch (currentPlayer._type)
         {
@@ -534,6 +549,9 @@ public class GameSessionHost : MonoBehaviour
                 throw new ArgumentOutOfRangeException();
         }
 
+        text += "\nTime left: " +
+                (maxSeconds - _tickDriver.CurrentTick / (float)stepsPerSecond).ToString("0.0") + " seconds";
+
         taskTextManager.SetText(text);
     }
 
@@ -551,6 +569,7 @@ public class GameSessionHost : MonoBehaviour
 
     private IEnumerator PlayRewindAnimation(Action next = null)
     {
+        scriptableRendererData.rendererFeatures[0].SetActive(true);
         SetAllFootsteps(false);
         yield return null;
 
@@ -583,6 +602,7 @@ public class GameSessionHost : MonoBehaviour
         markerManager.SetVisible(true);
         rewindText.gameObject.SetActive(false);
         SetAllFootsteps(true);
+        scriptableRendererData.rendererFeatures[0].SetActive(false);
         next?.Invoke();
     }
 

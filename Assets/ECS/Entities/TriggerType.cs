@@ -3,10 +3,9 @@
     public enum TriggerType
     {
         Mine = 0,
-        Computer = 1,
-        DemolitionZone = 2,
-        HackerZone = 3,
-        Money = 4,
-        Exit = 5
+        DemolitionZone = 1,
+        HackerZone = 2,
+        Money = 3,
+        Exit = 4
     }
 }

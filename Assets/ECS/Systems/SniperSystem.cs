@@ -22,6 +22,11 @@ namespace ECS.Systems
             ref var snapshot = ref world.GetSnapshot();
             ref var player = ref snapshot._players.GetEntityAt(3);
 
+            player._externalVelocity *= 0.95f;
+            
+            if (player._externalVelocity.sqrMagnitude < 0.01f)
+                player._externalVelocity = Vector2.zero;
+
             if (player._primaryReadyAt <= currentTick)
             {
                 if (moveEvt._primary)
@@ -85,6 +90,8 @@ namespace ECS.Systems
                     {
                         _from = player._position, _to = currentLazor,
                     });
+
+                    player._externalVelocity = -direction * Constants.SniperRecoilForce;
                 }
             }
 

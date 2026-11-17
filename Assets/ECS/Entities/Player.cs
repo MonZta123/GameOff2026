@@ -8,6 +8,7 @@ namespace ECS.Entities
 
         public Vector2 _position;
         public Vector2 _velocity;
+        public Vector2 _externalVelocity;
         public float _angle;
         public int _health;
         public int _maxHealth;
@@ -23,5 +24,7 @@ namespace ECS.Entities
         public bool _isActionActive;
 
         public Vector2 _size;
+
+        public bool _escaped;
     }
 }

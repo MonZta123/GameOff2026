@@ -7,7 +7,7 @@ public class MarkerArrow : MonoBehaviour
     private TextMeshPro arrowText;
 
     [SerializeField]
-    private GameObject arrowGameObject;
+    private SpriteRenderer arrowGameObject;
     
     public void SetText(string text)
     {
@@ -29,5 +29,10 @@ public class MarkerArrow : MonoBehaviour
     public void SetPosition(Vector2 viewPortVec)
     {
         arrowGameObject.transform.position = viewPortVec;
+    }
+
+    public void SetColor(Color color)
+    {
+        arrowGameObject.color = (Color)color;
     }
 }
