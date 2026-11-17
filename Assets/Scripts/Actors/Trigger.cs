@@ -17,6 +17,9 @@ namespace Actors
         private TileBase demolitionZone;
 
         [SerializeField]
+        private TileBase evacuationZone;
+
+        [SerializeField]
         private SpriteRenderer spriteRenderer;
 
         [SerializeField]
@@ -62,6 +65,13 @@ namespace Actors
                 color = Color.red;
             }
 
+            if (_entity._triggerType == TriggerType.Exit)
+            {
+                marker.SetText("Wait here to evacuate!");
+                marker.SetUsesArrow(true);
+                color = Color.green;
+            }
+
             if (_entity._triggerType == TriggerType.Mine && _playerType == PlayerType.Demolition)
             {
                 color = Color.red;
@@ -81,15 +91,23 @@ namespace Actors
         public void Init(ECS.Entities.Trigger entity)
         {
             marker.SetUsesArrow(false);
-            if (entity._triggerType is TriggerType.HackerZone or TriggerType.DemolitionZone)
+            if (entity._triggerType is TriggerType.HackerZone or TriggerType.DemolitionZone or TriggerType.Exit)
             {
                 var sizeX = entity._rightTop.x - entity._leftBottom.x;
                 var sizeY = entity._rightTop.y - entity._leftBottom.y;
 
+                var tile = entity._triggerType switch
+                {
+                    TriggerType.HackerZone => hackerZone,
+                    TriggerType.DemolitionZone => demolitionZone,
+                    TriggerType.Exit => evacuationZone,
+                    _ => null
+                };
+
                 for (var i = 0; i < sizeX; i++)
                 for (var j = 0; j < sizeY; j++)
                     tilemap.SetTile(new Vector3Int((int)entity._leftBottom.x + i, (int)entity._leftBottom.y + j, 0),
-                        demolitionZone);
+                        tile);
             }
             else if (entity._triggerType == TriggerType.Mine)
             {
@@ -115,8 +133,9 @@ namespace Actors
         {
             if (!_oscillate)
                 return;
-            
-            spriteRenderer.transform.localPosition = Vector2.up * (amplitude * Mathf.Sin(Time.time * speed + transform.position.x));
+
+            spriteRenderer.transform.localPosition =
+                Vector2.up * (amplitude * Mathf.Sin(Time.time * speed + transform.position.x));
         }
 
         public void SetState(ECS.Entities.Trigger entity, int tick)

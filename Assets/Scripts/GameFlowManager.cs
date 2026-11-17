@@ -64,6 +64,19 @@ public class GameFlowManager
                 return new GameFlowResult() { _state = GameFlowResultState.NextReplaySegment };
             }
 
+
+            for (var i = 0; i < snapshot._triggers.GetNumEntities(); i++)
+            {
+                var trigger = snapshot._triggers.GetEntityAt(i);
+                if (trigger._triggerType == TriggerType.Exit && !snapshot._players.GetEntityAt(currentPlayer)._escaped)
+                {
+                    return new GameFlowResult()
+                    {
+                        _state = GameFlowResultState.ObjectiveFailed, _comment = "Not in evacuation area."
+                    };
+                }
+            }
+
             var moneyLeft = 0;
             for (var i = 0; i < snapshot._triggers.GetNumEntities(); i++)
                 if (snapshot._triggers.GetEntityAt(i)._triggerType == TriggerType.Money)

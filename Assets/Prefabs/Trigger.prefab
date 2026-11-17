@@ -314,10 +314,13 @@ MonoBehaviour:
   tilemap: {fileID: 8348499451452161621}
   hackerZone: {fileID: 11400000, guid: 30f129a2b310f2a4e8127a6f4def1a74, type: 2}
   demolitionZone: {fileID: 11400000, guid: 26893556d40b37342bf5566988a069f3, type: 2}
+  evacuationZone: {fileID: 11400000, guid: 3c953f94d58f7164b8644b11ee7045f6, type: 2}
   spriteRenderer: {fileID: 6241501012382716769}
   marker: {fileID: 690802176159160072}
   mine: {fileID: -5837547947205013397, guid: fe3e53022fc78cdb289172160befbbf9, type: 3}
   money: {fileID: 8776938416231274175, guid: 8055b7547991894dd8a784a81a750785, type: 3}
+  speed: 4
+  amplitude: 0.25
 --- !u!1001 &5559577124168899655
 PrefabInstance:
   m_ObjectHideFlags: 0

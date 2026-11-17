@@ -24,5 +24,7 @@ namespace ECS.Entities
         public bool _isActionActive;
 
         public Vector2 _size;
+
+        public bool _escaped;
     }
 }

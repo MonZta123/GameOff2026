@@ -25,7 +25,10 @@ public class Marker : MonoBehaviour
     {
         _baseSize = size;
         visualObject.color = inputColor;
+        MarkerColor = inputColor;
     }
+
+    public Color MarkerColor { get; private set; }
 
     public void SetText(string text)
     {

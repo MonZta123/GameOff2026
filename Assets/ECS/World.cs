@@ -208,6 +208,29 @@ namespace ECS
                     snapshot._triggers.Spawn(evt);
                 }
             }
+            
+            if (_map._exit.Length > 0)
+            {
+                var evacuationTile = _map._exit.ToList();
+
+                while (evacuationTile.Count > 0)
+                {
+                    var head = LookupHackerTrigger(evacuationTile[0], evacuationTile);
+
+                    var leftBottom = new Vector2(head.Min(n => n.x), head.Min(n => n.y));
+                    var rightTop = new Vector2(head.Max(n => n.x) + 1, head.Max(n => n.y) + 1);
+
+                    var evt = new Trigger()
+                    {
+                        _leftBottom = leftBottom,
+                        _rightTop = rightTop,
+                        _triggerType = TriggerType.Exit,
+                        // _playerFilter = -1
+                    };
+
+                    snapshot._triggers.Spawn(evt);
+                }
+            }
         }
 
 
@@ -233,20 +256,6 @@ namespace ECS
 
                 snapshot._enemies.Spawn(enemy);
             }
-
-            // for (var i = 0; i < 5; i++)
-            // {
-            //     var index = random.NextInt(0, spawnZone.Count);
-            //
-            //     var trigger = new Trigger()
-            //     {
-            //         _leftBottom = spawnZone[index],
-            //         _rightTop = new Vector2(spawnZone[index].x + 1, spawnZone[index].y + 1),
-            //         _triggerType = TriggerType.Money
-            //     };
-            //     
-            //     snapshot._triggers.Spawn(trigger);
-            // }
 
             snapshot._damageProcess = 3;
 #if UNITY_EDITOR
@@ -279,8 +288,7 @@ namespace ECS
                     _leftBottom = spawnZone[index],
                     _rightTop = new Vector2(spawnZone[index].x + 1, spawnZone[index].y + 1),
                     _triggerType = TriggerType.Mine,
-                    _timer = 1.0f,
-                    // _playerFilter = -1
+                    _timer = 1.0f
                 };
 
                 snapshot._triggers.Spawn(trigger);

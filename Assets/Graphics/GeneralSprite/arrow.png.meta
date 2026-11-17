@@ -1,19 +1,10 @@
 fileFormatVersion: 2
-<<<<<<<< HEAD:Assets/Graphics/GeneralSprite/arrow.png.meta
 guid: a7a0365ed10d83c45a1e706d4fafc0a3
 TextureImporter:
   internalIDToNameTable:
   - first:
       213: -765150924802650856
     second: arrow_0
-========
-guid: 224c33ff4ea78188b96b046c11e6986c
-TextureImporter:
-  internalIDToNameTable:
-  - first:
-      213: -8814573095034661654
-    second: spr_settings_background_0
->>>>>>>> art:Assets/Graphics/UI/spr_settings_background.png.meta
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -60,11 +51,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-<<<<<<<< HEAD:Assets/Graphics/GeneralSprite/arrow.png.meta
   spritePixelsToUnits: 16
-========
-  spritePixelsToUnits: 100
->>>>>>>> art:Assets/Graphics/UI/spr_settings_background.png.meta
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -81,9 +68,9 @@ TextureImporter:
   compressionQualitySet: 0
   textureFormatSet: 0
   ignorePngGamma: 0
-  applyGammaDecoding: 0
+  applyGammaDecoding: 1
   swizzle: 50462976
-  cookieLightType: 0
+  cookieLightType: 2
   platformSettings:
   - serializedVersion: 4
     buildTarget: DefaultTexturePlatform
@@ -103,7 +90,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -116,7 +103,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -128,37 +115,23 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-<<<<<<<< HEAD:Assets/Graphics/GeneralSprite/arrow.png.meta
       name: arrow_0
-========
-      name: spr_settings_background_0
->>>>>>>> art:Assets/Graphics/UI/spr_settings_background.png.meta
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 800
-        height: 600
+        width: 16
+        height: 16
       alignment: 0
-<<<<<<<< HEAD:Assets/Graphics/GeneralSprite/arrow.png.meta
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-========
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 120, y: 100, z: 120, w: 100}
->>>>>>>> art:Assets/Graphics/UI/spr_settings_background.png.meta
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-<<<<<<<< HEAD:Assets/Graphics/GeneralSprite/arrow.png.meta
       spriteID: 81d839fa943a165f0800000000000000
       internalID: -765150924802650856
-========
-      spriteID: ae45ebfb8785ca580800000000000000
-      internalID: -8814573095034661654
->>>>>>>> art:Assets/Graphics/UI/spr_settings_background.png.meta
       vertices: []
       indices: 
       edges: []
@@ -167,11 +140,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-<<<<<<<< HEAD:Assets/Graphics/GeneralSprite/arrow.png.meta
     spriteID: 5e97eb03825dee720800000000000000
-========
-    spriteID: 40a3353e07be29ca1a1430ef73ba1c60
->>>>>>>> art:Assets/Graphics/UI/spr_settings_background.png.meta
     internalID: 0
     vertices: []
     indices: 
@@ -180,12 +149,7 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-<<<<<<<< HEAD:Assets/Graphics/GeneralSprite/arrow.png.meta
     nameFileIdTable: {}
-========
-    nameFileIdTable:
-      spr_settings_background_0: -8814573095034661654
->>>>>>>> art:Assets/Graphics/UI/spr_settings_background.png.meta
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

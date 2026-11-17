@@ -463,20 +463,28 @@ public class GameSessionHost : MonoBehaviour
         var currentPlayer = snapshot._players.GetLastEntity();
 
         var moneyLeft = 0;
+        var isEvacuationMission = false;
         for (var i = 0; i < snapshot._triggers.GetNumEntities(); i++)
         {
-            if (snapshot._triggers.GetEntityAt(i)._triggerType == TriggerType.Money)
+            var trigger = snapshot._triggers.GetEntityAt(i);
+
+            if (trigger._triggerType == TriggerType.Money)
                 moneyLeft++;
+
+            if (trigger._triggerType == TriggerType.Exit)
+                isEvacuationMission = true;
         }
 
         if (moneyLeft > 0)
-        {
-            text += "\n1. Collect " + moneyLeft + " cash piles!\n2. ";
-        }
+            text += "\nCollect " + moneyLeft + " cash piles!";
+
+        if (isEvacuationMission)
+            text += "\nGet to the evacuation point!";
+
+        if (moneyLeft == 0 && !isEvacuationMission) 
+            text += " "; 
         else
-        {
-            text += " ";
-        }
+            text += "\n"; 
 
         switch (currentPlayer._type)
         {

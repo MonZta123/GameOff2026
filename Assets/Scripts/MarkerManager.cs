@@ -61,8 +61,8 @@ public class MarkerManager : MonoBehaviour
             var newTextY = Mathf.Clamp(position.y, 0.2f, 0.8f);
 
             var newTextPos = new Vector2(newTextX, newTextY);
-            var arrowPositionX = Mathf.Clamp(position.x, 0.15f, 0.85f);
-            var arrowPositionY = Mathf.Clamp(position.y, 0.15f, 0.85f);
+            var arrowPositionX = Mathf.Clamp(position.x, 0.10f, 0.9f);
+            var arrowPositionY = Mathf.Clamp(position.y, 0.10f, 0.9f);
 
             var arrowPosition = new Vector2(arrowPositionX, arrowPositionY);
 
@@ -70,6 +70,7 @@ public class MarkerManager : MonoBehaviour
             vec.x *= camera.aspect;
 
             arrow.SetVector(vec);
+            arrow.SetColor(marker.MarkerColor);
             arrow.SetText(marker.Text);
             arrow.SetPosition(camera.ViewportToWorldPoint(arrowPosition));
             arrow.SetTextPosition(camera.ViewportToWorldPoint(newTextPos));

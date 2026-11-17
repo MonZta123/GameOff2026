@@ -1396,6 +1396,7 @@ GameObject:
   - component: {fileID: 1121035383}
   - component: {fileID: 1121035382}
   - component: {fileID: 1121035384}
+  - component: {fileID: 1121035385}
   m_Layer: 0
   m_Name: vCam
   m_TagString: Untagged
@@ -1474,7 +1475,7 @@ MonoBehaviour:
     CustomLookAtTarget: 0
   Lens:
     FieldOfView: 40
-    OrthographicSize: 10
+    OrthographicSize: 5.625
     NearClipPlane: 0.1
     FarClipPlane: 5000
     Dutch: 0
@@ -1516,6 +1517,18 @@ MonoBehaviour:
     FrequencyGain: 1
     Duration: 1
     m_NoiseOffsets: {x: 0, y: 0, z: 0}
+--- !u!114 &1121035385
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1121035380}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1a8a05de0ac134f4f9d01bef6b9da077, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.Cinemachine::Unity.Cinemachine.CinemachinePixelPerfect
 --- !u!1 &1374665532
 GameObject:
   m_ObjectHideFlags: 0
