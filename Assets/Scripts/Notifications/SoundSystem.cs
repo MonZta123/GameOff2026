@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using ECS.Notification;
 using UnityEngine;
 
@@ -8,34 +9,50 @@ namespace Notifications
     {
         [SerializeField]
         private Dictionary<SoundType, AK.Wwise.Event> sounds;
-        
+
         [SerializeField]
         private AK.Wwise.Event music;
 
         [SerializeField]
         private AK.Wwise.Switch[] musicSwitchGroup;
-        
+
         [SerializeField]
         private AK.Wwise.State[] musicStateGroup;
-        
+
         [SerializeField]
         private AK.Wwise.Event stopMusic;
-        
+
         [SerializeField]
         private AK.Wwise.Event introMusic;
-        
+
         public void PlayEvent(SoundNotification notification)
         {
             // if (!string.IsNullOrWhiteSpace(switchGroup))
             //     AkUnitySoundEngine.SetSwitch(switchGroup, parameter, gameObject);
-            
-            
+
+
             if (sounds.TryGetValue(notification._soundType, out var sound))
             {
                 sound.Post(gameObject);
             }
         }
-        
+
+        public void PauseMusic()
+        {
+            music.ExecuteAction(gameObject, AkActionOnEventType.AkActionOnEventType_Pause, 0,
+                AkCurveInterpolation.AkCurveInterpolation_Constant);
+            introMusic.ExecuteAction(gameObject, AkActionOnEventType.AkActionOnEventType_Pause, 0,
+                AkCurveInterpolation.AkCurveInterpolation_Constant);
+        }
+
+        public void ResumeMusic()
+        {
+            music.ExecuteAction(gameObject, AkActionOnEventType.AkActionOnEventType_Resume, 0,
+                AkCurveInterpolation.AkCurveInterpolation_Constant);
+            introMusic.ExecuteAction(gameObject, AkActionOnEventType.AkActionOnEventType_Resume, 0,
+                AkCurveInterpolation.AkCurveInterpolation_Constant);
+        }
+
         public void PlayCharacterMusic(int index, int segmentIndex)
         {
             StopCharacterMusic();
@@ -49,9 +66,18 @@ namespace Notifications
             stopMusic.Post(gameObject);
         }
 
-        public void PlayIntroMusic()
+        public void PlayIntroMusic(Action cont)
         {
-            introMusic.Post(gameObject);
+            var result = introMusic.Post(gameObject, (uint)AkCallbackType.AK_EndOfEvent, (cookie, type, info) =>
+            {
+                if (type == AkCallbackType.AK_EndOfEvent)
+                    cont();
+            });
+            
+            if (result == AkUnitySoundEngine.AK_INVALID_PLAYING_ID)
+            {
+                cont();
+            }
         }
     }
 }
