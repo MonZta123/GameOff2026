@@ -58,20 +58,30 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
+    - _Brightness: 1.4
+    - _ColorMask: 15
     - _ImageCurve: 10
     - _ImageFlicker: 1
     - _ImageSkip: 4
-    - _ScanlineOpacity: 0.2
+    - _ScanlineOpacity: 0.1
     - _ScanlineSpacing: 5
     - _ScanlineSpeed: 1
     - _ScanlineThickness: 0.7
-    - _SmallScanlineOpacity: 0.5
+    - _SmallScanlineOpacity: 0.125
     - _SmallScanlineProximity: 10
     - _SmallScanlineSpeed: 100
+    - _Stencil: 0
+    - _StencilComp: 8
+    - _StencilOp: 0
+    - _StencilReadMask: 255
+    - _StencilWriteMask: 255
+    - _UIMaskSoftnessX: 1
+    - _UIMaskSoftnessY: 1
     - _VignetteFlickerSpeed: 0.2
-    - _VignetteStrength: 0.4
-    - _isActive: 1
+    - _VignetteStrength: 0.2
+    - _isActive: 0
     m_Colors:
     - White: {r: 1, g: 1, b: 1, a: 1}
+    - _ClipRect: {r: 0, g: 0, b: 0, a: 0}
   m_BuildTextureStacks: []
   m_AllowLocking: 1

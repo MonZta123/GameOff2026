@@ -8,6 +8,7 @@ using Notifications;
 using TMPro;
 using Unity.Cinemachine;
 using UnityEngine;
+using UnityEngine.Rendering.Universal;
 using UnityEngine.UI;
 using Player = Actors.Player;
 
@@ -58,6 +59,9 @@ public class GameSessionHost : MonoBehaviour
     [SerializeField]
     private TaskTextManager taskTextManager;
 
+    [SerializeField]
+    private ScriptableRendererData scriptableRendererData;
+
     private TickDriver _tickDriver;
     private Timeline _timeline;
 
@@ -86,6 +90,8 @@ public class GameSessionHost : MonoBehaviour
         rewindText.gameObject.SetActive(false);
         taskTextManager.SetText("");
         _gameFlowManager = new GameFlowManager(_segmentTicks, stepsPerSecond);
+
+        scriptableRendererData.rendererFeatures[0].SetActive(false);
         // Hide Loadingscreen here
     }
 
@@ -359,6 +365,7 @@ public class GameSessionHost : MonoBehaviour
     {
         _tickDriver.StopSim();
         _tickDriver._onTick -= OnTick;
+        scriptableRendererData.rendererFeatures[0].SetActive(false);
         _tickDriver = null;
     }
 
@@ -551,6 +558,7 @@ public class GameSessionHost : MonoBehaviour
 
     private IEnumerator PlayRewindAnimation(Action next = null)
     {
+        scriptableRendererData.rendererFeatures[0].SetActive(true);
         SetAllFootsteps(false);
         yield return null;
 
@@ -583,6 +591,7 @@ public class GameSessionHost : MonoBehaviour
         markerManager.SetVisible(true);
         rewindText.gameObject.SetActive(false);
         SetAllFootsteps(true);
+        scriptableRendererData.rendererFeatures[0].SetActive(false);
         next?.Invoke();
     }
 
