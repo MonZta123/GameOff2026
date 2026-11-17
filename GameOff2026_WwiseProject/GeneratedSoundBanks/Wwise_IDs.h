@@ -134,6 +134,7 @@ namespace AK
         static const AkUniqueID MASTER_VOLUME = 4179668880U;
         static const AkUniqueID MUSIC_VOLUME = 1006694123U;
         static const AkUniqueID SFX_VOLUME = 1564184899U;
+        static const AkUniqueID VOICE_VOLUME = 3538560642U;
     } // namespace GAME_PARAMETERS
 
     namespace BANKS
