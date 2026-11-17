@@ -34,7 +34,6 @@ Event	ID	Name			Wwise Object Path	Notes
 	2629729319	Play_VO_B_Win			\Default Work Unit\VO\B\Play_VO_B_Win	
 	2632977701	Play_SFX_DoorSlideOpen			\Default Work Unit\SFX\Environment\Play_SFX_DoorSlideOpen	
 	2770407763	Play_SFX_Action_C_Defuse			\Default Work Unit\SFX\Actions\Play_SFX_Action_C_Defuse	
-	2892588484	Play_VO_B_Hack			\Default Work Unit\VO\B\Play_VO_B_Hack	
 	2908297336	Play_SFX_Impact			\Default Work Unit\SFX\Impacts\Play_SFX_Impact	
 	2920175019	Play_VO_B_Select			\Default Work Unit\VO\B\Play_VO_B_Select	
 	2935530180	Play_SFX_MineCountdown			\Default Work Unit\SFX\Weapons\Play_SFX_MineCountdown	

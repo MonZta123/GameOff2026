@@ -2182,7 +2182,7 @@
 													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{4ADFD3A0-A42B-432C-8502-1433439D5054}"/>
 												</Reference>
 												<Reference Name="OutputBus">
-													<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{F8A65CB3-3EA6-47C9-8C5A-27068DB4C3FF}"/>
+													<ObjectRef Name="SFX" ID="{282B1519-D877-4EF3-9048-C765F53AAF2A}" WorkUnitID="{F8A65CB3-3EA6-47C9-8C5A-27068DB4C3FF}"/>
 												</Reference>
 											</ReferenceList>
 											<ChildrenList>
@@ -4551,6 +4551,11 @@
 								</SwitchContainer>
 								<RandomSequenceContainer Name="Hack" ID="{1EA654C2-DD83-48E8-AE15-C17B9CAFC1AF}" ShortID="709378543">
 									<PropertyList>
+										<Property Name="InitialDelay" Type="Real64">
+											<ValueList>
+												<Value>0.5</Value>
+											</ValueList>
+										</Property>
 										<Property Name="NormalOrShuffle" Type="int16" Value="0"/>
 										<Property Name="Pitch" Type="int32">
 											<ModifierList>
@@ -4581,6 +4586,9 @@
 											</ReferenceList>
 											<ChildrenList>
 												<AudioFileSource Name="VO_B_Hack_01" ID="{7E3ECF38-BE34-4A74-BD6E-AC01A1E93A9C}">
+													<PropertyList>
+														<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+													</PropertyList>
 													<Language>SFX</Language>
 													<AudioFile>VO_B_Hack_01.wav</AudioFile>
 													<MediaIDList>

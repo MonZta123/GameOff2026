@@ -10,7 +10,7 @@
     "Type": "User",
     "GUID": "{3059A6CE-8152-4CD2-BEA9-69E98BB60D65}",
     "Language": "SFX",
-    "Hash": "{7D653DA1-4071-91B9-3D6C-EFF0419C8378}",
+    "Hash": "{5BAA09B4-5620-92EA-F66C-758A73B3E4C2}",
     "ObjectPath": "\\SoundBanks\\Default Work Unit\\Main",
     "ShortName": "Main",
     "Path": "Main.bnk",
@@ -1540,6 +1540,21 @@
       "DurationType": "Infinite",
       "MediaRefs": [
        {
+        "Id": "31454529"
+       },
+       {
+        "Id": "72949655"
+       },
+       {
+        "Id": "120991060"
+       },
+       {
+        "Id": "249038957"
+       },
+       {
+        "Id": "455626202"
+       },
+       {
         "Id": "486628042"
        }
       ]
@@ -2381,32 +2396,6 @@
       }
      },
      {
-      "Id": "2892588484",
-      "Name": "Play_VO_B_Hack",
-      "ObjectPath": "\\Events\\Default Work Unit\\VO\\B\\Play_VO_B_Hack",
-      "GUID": "{7F34D386-0643-4047-BC7E-3073CA1B408D}",
-      "DurationType": "OneShot",
-      "DurationMin": "1.9609298",
-      "DurationMax": "3.2249887",
-      "MediaRefs": [
-       {
-        "Id": "31454529"
-       },
-       {
-        "Id": "72949655"
-       },
-       {
-        "Id": "120991060"
-       },
-       {
-        "Id": "249038957"
-       },
-       {
-        "Id": "455626202"
-       }
-      ]
-     },
-     {
       "Id": "2625050970",
       "Name": "Play_VO_B_Hit",
       "ObjectPath": "\\Events\\Default Work Unit\\VO\\B\\Play_VO_B_Hit",
@@ -2769,6 +2758,6 @@
     ]
    }
   ],
-  "FileHash": "{A4907F67-8969-CA13-4DFF-738136FDFB35}"
+  "FileHash": "{17FEC0E2-8FF0-3417-7926-FB3AB7680638}"
  }
 }

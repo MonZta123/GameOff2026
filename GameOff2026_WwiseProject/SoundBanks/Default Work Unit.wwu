@@ -6,7 +6,6 @@
 				<SoundBank Name="Main" ID="{3059A6CE-8152-4CD2-BEA9-69E98BB60D65}">
 					<ObjectInclusionList>
 						<ObjectRef Name="Play_MUS_MissionIntro" ID="{B8CD9CFA-133C-402C-B64E-0D292A6EB22D}" WorkUnitID="{2B12C590-A22E-47AF-9697-251FEA2DB802}" Origin="Manual" Filter="7"/>
-						<ObjectRef Name="Play_VO_B_Hack" ID="{7F34D386-0643-4047-BC7E-3073CA1B408D}" WorkUnitID="{2B12C590-A22E-47AF-9697-251FEA2DB802}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="Play_SFX_Attack_A_Slam" ID="{52A47EF3-BFA2-410A-A7F4-221BE57ABFC5}" WorkUnitID="{2B12C590-A22E-47AF-9697-251FEA2DB802}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="Play_SFX_UI_Select" ID="{B523CDC4-6928-410D-87A9-2A88A3221FD8}" WorkUnitID="{2B12C590-A22E-47AF-9697-251FEA2DB802}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="Play_SFX_Attack_A_Swing" ID="{777B20AF-D502-4148-BC01-29CB1D045B91}" WorkUnitID="{2B12C590-A22E-47AF-9697-251FEA2DB802}" Origin="Manual" Filter="7"/>

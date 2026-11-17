@@ -47,7 +47,6 @@ namespace AK
         static const AkUniqueID PLAY_SFX_UI_SELECT = 2484137795U;
         static const AkUniqueID PLAY_VO_B_DEAD = 3385676497U;
         static const AkUniqueID PLAY_VO_B_DODGE = 3987225948U;
-        static const AkUniqueID PLAY_VO_B_HACK = 2892588484U;
         static const AkUniqueID PLAY_VO_B_HIT = 2625050970U;
         static const AkUniqueID PLAY_VO_B_HITHEAVY = 520291271U;
         static const AkUniqueID PLAY_VO_B_SELECT = 2920175019U;
