@@ -10,7 +10,7 @@
     "Type": "User",
     "GUID": "{3059A6CE-8152-4CD2-BEA9-69E98BB60D65}",
     "Language": "SFX",
-    "Hash": "{5BAA09B4-5620-92EA-F66C-758A73B3E4C2}",
+    "Hash": "{1C3518B7-67E9-9F33-8D0A-460262FCEE33}",
     "ObjectPath": "\\SoundBanks\\Default Work Unit\\Main",
     "ShortName": "Main",
     "Path": "Main.bnk",
@@ -352,14 +352,6 @@
       "CachePath": "1C/{1C7C70C0-66EE-D646-536F-4B7C03EF9E5A}.wem"
      },
      {
-      "Id": "253443902",
-      "Language": "SFX",
-      "Streaming": "false",
-      "Location": "Memory",
-      "ShortName": "MUS_Act2_Intro.wav",
-      "CachePath": "AF/{AF9C5DD1-2EDA-EE7C-2D3E-E1B52ED09D3F}.wem"
-     },
-     {
       "Id": "267769419",
       "Language": "SFX",
       "Streaming": "false",
@@ -496,6 +488,14 @@
       "CachePath": "B8/{B8D62A5B-A971-350B-E502-973DD8A091AF}.wem"
      },
      {
+      "Id": "425018429",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "MUS_SpacingOut_Intro.wav",
+      "CachePath": "C8/{C834F238-5D0D-1F1B-CD60-031DED409017}.wem"
+     },
+     {
       "Id": "437476328",
       "Language": "SFX",
       "Streaming": "false",
@@ -565,7 +565,7 @@
       "Streaming": "false",
       "Location": "Memory",
       "ShortName": "AmbienceSpaceBar_Intro.wav",
-      "CachePath": "83/{83CA98B6-7524-2078-CA97-8A11E009A0C6}.wem"
+      "CachePath": "31/{3100C202-CD34-589F-A579-1CB83FF59A52}.wem"
      },
      {
       "Id": "463990089",
@@ -622,6 +622,14 @@
       "Location": "Memory",
       "ShortName": "VO_E_Impact_05.wav",
       "CachePath": "DC/{DC9EAD06-B47E-4497-D622-562B01C382FB}.wem"
+     },
+     {
+      "Id": "521808120",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "MUS_SpacingOut_Loop.wav",
+      "CachePath": "A1/{A1A39DF7-840E-9FB6-03B3-818E34458073}.wem"
      },
      {
       "Id": "544387914",
@@ -760,14 +768,6 @@
       "CachePath": "5D/{5D06395A-9C8D-C864-30EA-27C6582407F2}.wem"
      },
      {
-      "Id": "675216016",
-      "Language": "SFX",
-      "Streaming": "false",
-      "Location": "Memory",
-      "ShortName": "MUS_Act2_Loop.wav",
-      "CachePath": "23/{233937BE-233A-BB76-F0C1-E5B75F82900B}.wem"
-     },
-     {
       "Id": "679854016",
       "Language": "SFX",
       "Streaming": "false",
@@ -797,7 +797,7 @@
       "Streaming": "false",
       "Location": "Memory",
       "ShortName": "AmbienceSpaceBar_Loop.wav",
-      "CachePath": "89/{89688BA5-C680-F265-93F3-97D60B7E8D8E}.wem"
+      "CachePath": "F9/{F9E40A31-6979-018D-382E-0548B9455F71}.wem"
      },
      {
       "Id": "715211921",
@@ -1482,10 +1482,10 @@
       "DurationType": "Infinite",
       "MediaRefs": [
        {
-        "Id": "253443902"
+        "Id": "425018429"
        },
        {
-        "Id": "675216016"
+        "Id": "521808120"
        }
       ]
      },
@@ -1737,6 +1737,79 @@
       "MediaRefs": [
        {
         "Id": "927294332"
+       }
+      ]
+     },
+     {
+      "Id": "2154578732",
+      "Name": "Play_SFX_E_Impact",
+      "ObjectPath": "\\Events\\Default Work Unit\\SFX\\Impacts\\Play_SFX_E_Impact",
+      "GUID": "{A671DCAC-9993-4AC3-B194-BF98779E356E}",
+      "DurationType": "OneShot",
+      "DurationMin": "0.6060318",
+      "DurationMax": "0.90709746",
+      "MediaRefs": [
+       {
+        "Id": "28431044"
+       },
+       {
+        "Id": "152056061"
+       },
+       {
+        "Id": "267769419"
+       },
+       {
+        "Id": "406799164"
+       },
+       {
+        "Id": "462163115"
+       },
+       {
+        "Id": "502481671"
+       },
+       {
+        "Id": "654791911"
+       },
+       {
+        "Id": "720365280"
+       },
+       {
+        "Id": "814068947"
+       },
+       {
+        "Id": "1030344162"
+       }
+      ]
+     },
+     {
+      "Id": "4163582617",
+      "Name": "Play_SFX_E_ImpactHeavy",
+      "ObjectPath": "\\Events\\Default Work Unit\\SFX\\Impacts\\Play_SFX_E_ImpactHeavy",
+      "GUID": "{4335A160-53B6-473D-9447-A2B4A8C23FDD}",
+      "DurationType": "OneShot",
+      "DurationMin": "0.6662585",
+      "DurationMax": "1.3779365",
+      "MediaRefs": [
+       {
+        "Id": "2491189"
+       },
+       {
+        "Id": "19273968"
+       },
+       {
+        "Id": "35023313"
+       },
+       {
+        "Id": "544387914"
+       },
+       {
+        "Id": "598450474"
+       },
+       {
+        "Id": "749289317"
+       },
+       {
+        "Id": "859905531"
        }
       ]
      },
@@ -2134,79 +2207,6 @@
       ]
      },
      {
-      "Id": "2908297336",
-      "Name": "Play_SFX_Impact",
-      "ObjectPath": "\\Events\\Default Work Unit\\SFX\\Impacts\\Play_SFX_Impact",
-      "GUID": "{A671DCAC-9993-4AC3-B194-BF98779E356E}",
-      "DurationType": "OneShot",
-      "DurationMin": "0.6060318",
-      "DurationMax": "0.90709746",
-      "MediaRefs": [
-       {
-        "Id": "28431044"
-       },
-       {
-        "Id": "152056061"
-       },
-       {
-        "Id": "267769419"
-       },
-       {
-        "Id": "406799164"
-       },
-       {
-        "Id": "462163115"
-       },
-       {
-        "Id": "502481671"
-       },
-       {
-        "Id": "654791911"
-       },
-       {
-        "Id": "720365280"
-       },
-       {
-        "Id": "814068947"
-       },
-       {
-        "Id": "1030344162"
-       }
-      ]
-     },
-     {
-      "Id": "1896465373",
-      "Name": "Play_SFX_ImpactHeavy",
-      "ObjectPath": "\\Events\\Default Work Unit\\SFX\\Impacts\\Play_SFX_ImpactHeavy",
-      "GUID": "{4335A160-53B6-473D-9447-A2B4A8C23FDD}",
-      "DurationType": "OneShot",
-      "DurationMin": "0.6662585",
-      "DurationMax": "1.3779365",
-      "MediaRefs": [
-       {
-        "Id": "2491189"
-       },
-       {
-        "Id": "19273968"
-       },
-       {
-        "Id": "35023313"
-       },
-       {
-        "Id": "544387914"
-       },
-       {
-        "Id": "598450474"
-       },
-       {
-        "Id": "749289317"
-       },
-       {
-        "Id": "859905531"
-       }
-      ]
-     },
-     {
       "Id": "1150067858",
       "Name": "Play_SFX_MineBeeps",
       "ObjectPath": "\\Events\\Default Work Unit\\SFX\\Weapons\\Play_SFX_MineBeeps",
@@ -2330,6 +2330,262 @@
       "MediaRefs": [
        {
         "Id": "437476328"
+       }
+      ]
+     },
+     {
+      "Id": "29826510",
+      "Name": "Play_VO_A_Attack",
+      "ObjectPath": "\\Events\\Default Work Unit\\VO\\A\\Play_VO_A_Attack",
+      "GUID": "{45D09A81-1E38-4B25-8C6B-84C6488B23D5}",
+      "DurationType": "OneShot",
+      "DurationMin": "0.6185538",
+      "DurationMax": "2.1065593",
+      "MediaRefs": [
+       {
+        "Id": "13345672"
+       },
+       {
+        "Id": "72698772"
+       },
+       {
+        "Id": "241379826"
+       },
+       {
+        "Id": "300372930"
+       },
+       {
+        "Id": "333456175"
+       },
+       {
+        "Id": "388256774"
+       },
+       {
+        "Id": "600500171"
+       },
+       {
+        "Id": "828655390"
+       },
+       {
+        "Id": "869297126"
+       },
+       {
+        "Id": "884540179"
+       }
+      ],
+      "PluginRefs": {
+       "Custom": [
+        {
+         "Id": "471447123"
+        }
+       ]
+      }
+     },
+     {
+      "Id": "4226132611",
+      "Name": "Play_VO_A_AttackHeavy",
+      "ObjectPath": "\\Events\\Default Work Unit\\VO\\A\\Play_VO_A_AttackHeavy",
+      "GUID": "{FDA1C5F4-79D5-48BD-9D38-F5757A18C2F7}",
+      "DurationType": "OneShot",
+      "DurationMin": "0.6185538",
+      "DurationMax": "2.1065593",
+      "MediaRefs": [
+       {
+        "Id": "13345672"
+       },
+       {
+        "Id": "72698772"
+       },
+       {
+        "Id": "241379826"
+       },
+       {
+        "Id": "300372930"
+       },
+       {
+        "Id": "333456175"
+       },
+       {
+        "Id": "388256774"
+       },
+       {
+        "Id": "600500171"
+       },
+       {
+        "Id": "828655390"
+       },
+       {
+        "Id": "869297126"
+       },
+       {
+        "Id": "884540179"
+       }
+      ],
+      "PluginRefs": {
+       "Custom": [
+        {
+         "Id": "471447123"
+        }
+       ]
+      }
+     },
+     {
+      "Id": "1233489828",
+      "Name": "Play_VO_A_Dead",
+      "ObjectPath": "\\Events\\Default Work Unit\\VO\\A\\Play_VO_A_Dead",
+      "GUID": "{95A352DD-B694-45E4-B9D6-F7A7C83982E8}",
+      "DurationType": "OneShot",
+      "DurationMin": "1.9219302",
+      "DurationMax": "1.9219302",
+      "MediaRefs": [
+       {
+        "Id": "2562951"
+       }
+      ]
+     },
+     {
+      "Id": "1258449045",
+      "Name": "Play_VO_A_Hit",
+      "ObjectPath": "\\Events\\Default Work Unit\\VO\\A\\Play_VO_A_Hit",
+      "GUID": "{874B107B-B234-47D6-9730-65CCC4406DA9}",
+      "DurationType": "OneShot",
+      "DurationMin": "0.37027416",
+      "DurationMax": "0.67537296",
+      "MediaRefs": [
+       {
+        "Id": "284150746"
+       },
+       {
+        "Id": "807765666"
+       },
+       {
+        "Id": "977912169"
+       },
+       {
+        "Id": "1055102690"
+       }
+      ]
+     },
+     {
+      "Id": "3997635366",
+      "Name": "Play_VO_A_HitHeavy",
+      "ObjectPath": "\\Events\\Default Work Unit\\VO\\A\\Play_VO_A_HitHeavy",
+      "GUID": "{8EAD13E7-31B6-45D4-B5CD-8804AD23F0AF}",
+      "DurationType": "OneShot",
+      "DurationMin": "0.6771066",
+      "DurationMax": "1.111304",
+      "MediaRefs": [
+       {
+        "Id": "442356810"
+       },
+       {
+        "Id": "497766376"
+       },
+       {
+        "Id": "679854016"
+       }
+      ]
+     },
+     {
+      "Id": "2090247314",
+      "Name": "Play_VO_A_Select",
+      "ObjectPath": "\\Events\\Default Work Unit\\VO\\A\\Play_VO_A_Select",
+      "GUID": "{46F1FD6B-3196-4A89-B7C7-32725EABF3E7}",
+      "DurationType": "OneShot",
+      "DurationMin": "1.2389293",
+      "DurationMax": "2.5860317",
+      "SwitchContainers": [
+       {
+        "SwitchValue": {
+         "GroupType": "State",
+         "GroupId": "1413238543",
+         "Id": "1200082263",
+         "GUID": "{75FB4324-C21A-4D82-B0CF-3542C815D862}"
+        },
+        "MediaRefs": [
+         {
+          "Id": "410590335"
+         }
+        ]
+       },
+       {
+        "SwitchValue": {
+         "GroupType": "State",
+         "GroupId": "1413238543",
+         "Id": "1200082260",
+         "GUID": "{F4CD4D35-CE3B-41B2-9E0B-6E004347776F}"
+        },
+        "MediaRefs": [
+         {
+          "Id": "10943219"
+         }
+        ]
+       },
+       {
+        "SwitchValue": {
+         "GroupType": "State",
+         "GroupId": "1413238543",
+         "Id": "1200082258",
+         "GUID": "{F39FE53F-3AF9-431B-AE26-DBF3E7967E58}"
+        },
+        "MediaRefs": [
+         {
+          "Id": "659334181"
+         }
+        ]
+       },
+       {
+        "SwitchValue": {
+         "GroupType": "State",
+         "GroupId": "1413238543",
+         "Id": "1200082261",
+         "GUID": "{368377C0-A9B4-4367-BFA6-2450D5E592E3}"
+        },
+        "MediaRefs": [
+         {
+          "Id": "936875036"
+         }
+        ]
+       },
+       {
+        "SwitchValue": {
+         "GroupType": "State",
+         "GroupId": "1413238543",
+         "Id": "748895195",
+         "GUID": "{C9697BE0-1F92-4C7C-92D8-FFA9B02AB186}",
+         "Default": "true"
+        },
+        "MediaRefs": [
+         {
+          "Id": "410590335"
+         }
+        ]
+       }
+      ]
+     },
+     {
+      "Id": "1261553528",
+      "Name": "Play_VO_A_Win",
+      "ObjectPath": "\\Events\\Default Work Unit\\VO\\A\\Play_VO_A_Win",
+      "GUID": "{A34B477D-9354-450C-8CEB-F8746C6B91E7}",
+      "DurationType": "OneShot",
+      "DurationMin": "0.9833787",
+      "DurationMax": "2.9002042",
+      "MediaRefs": [
+       {
+        "Id": "173793195"
+       },
+       {
+        "Id": "184732188"
+       },
+       {
+        "Id": "547594150"
+       },
+       {
+        "Id": "555140878"
+       },
+       {
+        "Id": "851917532"
        }
       ]
      },
@@ -2520,6 +2776,422 @@
       "Name": "Play_VO_B_Win",
       "ObjectPath": "\\Events\\Default Work Unit\\VO\\B\\Play_VO_B_Win",
       "GUID": "{21741351-D5C5-4C74-BE59-045D6315ABF7}",
+      "DurationType": "OneShot",
+      "DurationMin": "0.9833787",
+      "DurationMax": "2.9002042",
+      "MediaRefs": [
+       {
+        "Id": "173793195"
+       },
+       {
+        "Id": "184732188"
+       },
+       {
+        "Id": "547594150"
+       },
+       {
+        "Id": "555140878"
+       },
+       {
+        "Id": "851917532"
+       }
+      ]
+     },
+     {
+      "Id": "1226388500",
+      "Name": "Play_VO_C_Attack",
+      "ObjectPath": "\\Events\\Default Work Unit\\VO\\C\\Play_VO_C_Attack",
+      "GUID": "{4DDB5433-A1A0-46D0-9C86-2DAB28264CBF}",
+      "DurationType": "OneShot",
+      "DurationMin": "0.6185538",
+      "DurationMax": "2.1065593",
+      "MediaRefs": [
+       {
+        "Id": "13345672"
+       },
+       {
+        "Id": "72698772"
+       },
+       {
+        "Id": "241379826"
+       },
+       {
+        "Id": "300372930"
+       },
+       {
+        "Id": "333456175"
+       },
+       {
+        "Id": "388256774"
+       },
+       {
+        "Id": "600500171"
+       },
+       {
+        "Id": "828655390"
+       },
+       {
+        "Id": "869297126"
+       },
+       {
+        "Id": "884540179"
+       }
+      ],
+      "PluginRefs": {
+       "Custom": [
+        {
+         "Id": "471447123"
+        }
+       ]
+      }
+     },
+     {
+      "Id": "4198220282",
+      "Name": "Play_VO_C_Dead",
+      "ObjectPath": "\\Events\\Default Work Unit\\VO\\C\\Play_VO_C_Dead",
+      "GUID": "{335EBBEB-523F-400E-AB8F-C5BA862AB40F}",
+      "DurationType": "OneShot",
+      "DurationMin": "1.9219302",
+      "DurationMax": "1.9219302",
+      "MediaRefs": [
+       {
+        "Id": "2562951"
+       }
+      ]
+     },
+     {
+      "Id": "669863127",
+      "Name": "Play_VO_C_Hit",
+      "ObjectPath": "\\Events\\Default Work Unit\\VO\\C\\Play_VO_C_Hit",
+      "GUID": "{E25E0A70-19F2-421C-81F9-D45D1A302936}",
+      "DurationType": "OneShot",
+      "DurationMin": "0.37027416",
+      "DurationMax": "0.67537296",
+      "MediaRefs": [
+       {
+        "Id": "284150746"
+       },
+       {
+        "Id": "807765666"
+       },
+       {
+        "Id": "977912169"
+       },
+       {
+        "Id": "1055102690"
+       }
+      ]
+     },
+     {
+      "Id": "2324079728",
+      "Name": "Play_VO_C_HitHeavy",
+      "ObjectPath": "\\Events\\Default Work Unit\\VO\\C\\Play_VO_C_HitHeavy",
+      "GUID": "{27B7546D-646F-4EF6-9C1F-9920CF11918B}",
+      "DurationType": "OneShot",
+      "DurationMin": "0.6771066",
+      "DurationMax": "1.111304",
+      "MediaRefs": [
+       {
+        "Id": "442356810"
+       },
+       {
+        "Id": "497766376"
+       },
+       {
+        "Id": "679854016"
+       }
+      ]
+     },
+     {
+      "Id": "1555471512",
+      "Name": "Play_VO_C_Select",
+      "ObjectPath": "\\Events\\Default Work Unit\\VO\\C\\Play_VO_C_Select",
+      "GUID": "{9592EF1C-F7CB-4452-91A9-C012CD864B8A}",
+      "DurationType": "OneShot",
+      "DurationMin": "1.2389293",
+      "DurationMax": "2.5860317",
+      "SwitchContainers": [
+       {
+        "SwitchValue": {
+         "GroupType": "State",
+         "GroupId": "1413238543",
+         "Id": "1200082263",
+         "GUID": "{75FB4324-C21A-4D82-B0CF-3542C815D862}"
+        },
+        "MediaRefs": [
+         {
+          "Id": "410590335"
+         }
+        ]
+       },
+       {
+        "SwitchValue": {
+         "GroupType": "State",
+         "GroupId": "1413238543",
+         "Id": "1200082260",
+         "GUID": "{F4CD4D35-CE3B-41B2-9E0B-6E004347776F}"
+        },
+        "MediaRefs": [
+         {
+          "Id": "10943219"
+         }
+        ]
+       },
+       {
+        "SwitchValue": {
+         "GroupType": "State",
+         "GroupId": "1413238543",
+         "Id": "1200082258",
+         "GUID": "{F39FE53F-3AF9-431B-AE26-DBF3E7967E58}"
+        },
+        "MediaRefs": [
+         {
+          "Id": "659334181"
+         }
+        ]
+       },
+       {
+        "SwitchValue": {
+         "GroupType": "State",
+         "GroupId": "1413238543",
+         "Id": "1200082261",
+         "GUID": "{368377C0-A9B4-4367-BFA6-2450D5E592E3}"
+        },
+        "MediaRefs": [
+         {
+          "Id": "936875036"
+         }
+        ]
+       },
+       {
+        "SwitchValue": {
+         "GroupType": "State",
+         "GroupId": "1413238543",
+         "Id": "748895195",
+         "GUID": "{C9697BE0-1F92-4C7C-92D8-FFA9B02AB186}",
+         "Default": "true"
+        },
+        "MediaRefs": [
+         {
+          "Id": "410590335"
+         }
+        ]
+       }
+      ]
+     },
+     {
+      "Id": "806496890",
+      "Name": "Play_VO_C_Win",
+      "ObjectPath": "\\Events\\Default Work Unit\\VO\\C\\Play_VO_C_Win",
+      "GUID": "{DE9AB8C1-CF40-43E9-9478-25CB2F98892D}",
+      "DurationType": "OneShot",
+      "DurationMin": "0.9833787",
+      "DurationMax": "2.9002042",
+      "MediaRefs": [
+       {
+        "Id": "173793195"
+       },
+       {
+        "Id": "184732188"
+       },
+       {
+        "Id": "547594150"
+       },
+       {
+        "Id": "555140878"
+       },
+       {
+        "Id": "851917532"
+       }
+      ]
+     },
+     {
+      "Id": "3891568401",
+      "Name": "Play_VO_D_Attack",
+      "ObjectPath": "\\Events\\Default Work Unit\\VO\\D\\Play_VO_D_Attack",
+      "GUID": "{77AFA440-412C-4B7B-8843-536E3479CD54}",
+      "DurationType": "OneShot",
+      "DurationMin": "0.6185538",
+      "DurationMax": "2.1065593",
+      "MediaRefs": [
+       {
+        "Id": "13345672"
+       },
+       {
+        "Id": "72698772"
+       },
+       {
+        "Id": "241379826"
+       },
+       {
+        "Id": "300372930"
+       },
+       {
+        "Id": "333456175"
+       },
+       {
+        "Id": "388256774"
+       },
+       {
+        "Id": "600500171"
+       },
+       {
+        "Id": "828655390"
+       },
+       {
+        "Id": "869297126"
+       },
+       {
+        "Id": "884540179"
+       }
+      ],
+      "PluginRefs": {
+       "Custom": [
+        {
+         "Id": "471447123"
+        }
+       ]
+      }
+     },
+     {
+      "Id": "1018631967",
+      "Name": "Play_VO_D_Dead",
+      "ObjectPath": "\\Events\\Default Work Unit\\VO\\D\\Play_VO_D_Dead",
+      "GUID": "{B2C7AAFB-B802-4DE9-A20C-7D8C426F1C15}",
+      "DurationType": "OneShot",
+      "DurationMin": "1.9219302",
+      "DurationMax": "1.9219302",
+      "MediaRefs": [
+       {
+        "Id": "2562951"
+       }
+      ]
+     },
+     {
+      "Id": "518999636",
+      "Name": "Play_VO_D_Hit",
+      "ObjectPath": "\\Events\\Default Work Unit\\VO\\D\\Play_VO_D_Hit",
+      "GUID": "{C236B21F-27CA-40F4-B66C-A4942FADFDAE}",
+      "DurationType": "OneShot",
+      "DurationMin": "0.37027416",
+      "DurationMax": "0.67537296",
+      "MediaRefs": [
+       {
+        "Id": "284150746"
+       },
+       {
+        "Id": "807765666"
+       },
+       {
+        "Id": "977912169"
+       },
+       {
+        "Id": "1055102690"
+       }
+      ]
+     },
+     {
+      "Id": "688013969",
+      "Name": "Play_VO_D_HitHeavy",
+      "ObjectPath": "\\Events\\Default Work Unit\\VO\\D\\Play_VO_D_HitHeavy",
+      "GUID": "{7C805774-2F8A-4D48-8746-FD718FDAF1CD}",
+      "DurationType": "OneShot",
+      "DurationMin": "0.6771066",
+      "DurationMax": "1.111304",
+      "MediaRefs": [
+       {
+        "Id": "442356810"
+       },
+       {
+        "Id": "497766376"
+       },
+       {
+        "Id": "679854016"
+       }
+      ]
+     },
+     {
+      "Id": "2625069657",
+      "Name": "Play_VO_D_Select",
+      "ObjectPath": "\\Events\\Default Work Unit\\VO\\D\\Play_VO_D_Select",
+      "GUID": "{06D740BC-760B-4C5F-93B8-17CAFE3EB736}",
+      "DurationType": "OneShot",
+      "DurationMin": "1.2389293",
+      "DurationMax": "2.5860317",
+      "SwitchContainers": [
+       {
+        "SwitchValue": {
+         "GroupType": "State",
+         "GroupId": "1413238543",
+         "Id": "1200082263",
+         "GUID": "{75FB4324-C21A-4D82-B0CF-3542C815D862}"
+        },
+        "MediaRefs": [
+         {
+          "Id": "410590335"
+         }
+        ]
+       },
+       {
+        "SwitchValue": {
+         "GroupType": "State",
+         "GroupId": "1413238543",
+         "Id": "1200082260",
+         "GUID": "{F4CD4D35-CE3B-41B2-9E0B-6E004347776F}"
+        },
+        "MediaRefs": [
+         {
+          "Id": "10943219"
+         }
+        ]
+       },
+       {
+        "SwitchValue": {
+         "GroupType": "State",
+         "GroupId": "1413238543",
+         "Id": "1200082258",
+         "GUID": "{F39FE53F-3AF9-431B-AE26-DBF3E7967E58}"
+        },
+        "MediaRefs": [
+         {
+          "Id": "659334181"
+         }
+        ]
+       },
+       {
+        "SwitchValue": {
+         "GroupType": "State",
+         "GroupId": "1413238543",
+         "Id": "1200082261",
+         "GUID": "{368377C0-A9B4-4367-BFA6-2450D5E592E3}"
+        },
+        "MediaRefs": [
+         {
+          "Id": "936875036"
+         }
+        ]
+       },
+       {
+        "SwitchValue": {
+         "GroupType": "State",
+         "GroupId": "1413238543",
+         "Id": "748895195",
+         "GUID": "{C9697BE0-1F92-4C7C-92D8-FFA9B02AB186}",
+         "Default": "true"
+        },
+        "MediaRefs": [
+         {
+          "Id": "410590335"
+         }
+        ]
+       }
+      ]
+     },
+     {
+      "Id": "652087801",
+      "Name": "Play_VO_D_Win",
+      "ObjectPath": "\\Events\\Default Work Unit\\VO\\D\\Play_VO_D_Win",
+      "GUID": "{8AC87665-A05D-45BA-B6A5-CE6FDA96C2FF}",
       "DurationType": "OneShot",
       "DurationMin": "0.9833787",
       "DurationMax": "2.9002042",
@@ -2758,6 +3430,6 @@
     ]
    }
   ],
-  "FileHash": "{660AB8C7-DFDB-AB37-8F43-47A8B7482926}"
+  "FileHash": "{03EECC12-44D1-08BF-5144-92589E69A0C9}"
  }
 }
