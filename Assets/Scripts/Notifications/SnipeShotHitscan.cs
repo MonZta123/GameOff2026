@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using ECS.Notification;
+using Unity.Cinemachine;
 using UnityEngine;
 
 namespace Notifications
@@ -12,6 +13,9 @@ namespace Notifications
 
         [SerializeField]
         private LineRenderer lineRenderer2;
+
+        [SerializeField]
+        private CinemachineImpulseSource impulseSource;
 
         private Coroutine _coroutine;
 
@@ -30,6 +34,8 @@ namespace Notifications
         {
             lineRenderer.SetPosition(0, notification._from);
             lineRenderer.SetPosition(1, notification._to);
+
+            impulseSource.GenerateImpulseWithVelocity((notification._from - notification._to).normalized * 0.5f);
 
             if (_coroutine != null)
                 StopCoroutine(_coroutine);

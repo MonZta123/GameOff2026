@@ -115,9 +115,9 @@ namespace ECS.Systems
                         {
                             player._health = 0;
                             player._velocity = Vector2.zero;
+                            player._externalVelocity = Vector2.zero;
                         }
-
-                        hit = true;
+                        
                         break;
                     }
                 }

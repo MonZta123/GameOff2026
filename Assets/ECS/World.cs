@@ -493,13 +493,14 @@ namespace ECS
 
                 var velocity = player._velocity;
 
-                var nextPos = player._position + player._velocity * _deltaTime;
+                var nextPos = player._position + (player._velocity + player._externalVelocity) * _deltaTime;
 
                 var nextX = new Vector2(nextPos.x, player._position.y);
 
                 if (IsBlocked(nextX, player._size.x / 2f))
                 {
-                    velocity.x = 0;
+                    velocity.x = 0; 
+                    player._externalVelocity.x = 0;
                 }
 
                 var nextY = new Vector2(player._position.x, nextPos.y);
@@ -507,9 +508,10 @@ namespace ECS
                 if (IsBlocked(nextY, player._size.y / 2f))
                 {
                     velocity.y = 0;
+                    player._externalVelocity.y = 0;
                 }
 
-                player._position += velocity * _deltaTime;
+                player._position += (velocity + player._externalVelocity) * _deltaTime;
             }
 
             for (var i = 0; i < _workspace._projectiles.GetNumEntities(); i++)
