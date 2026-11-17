@@ -25,6 +25,15 @@ namespace Actors
         [SerializeField]
         private Sprite mine;
 
+        [SerializeField]
+        private Sprite money;
+
+        [SerializeField]
+        private float speed = 4f;
+
+        [SerializeField]
+        private float amplitude = 0.25f;
+
         public void SetCurrentPlayerType(PlayerType value)
         {
             marker.SetUsesArrow(false);
@@ -88,11 +97,27 @@ namespace Actors
                 transform.position = (entity._leftBottom + entity._rightTop) / 2f;
                 marker.SetText("Optional: E to defuse!");
             }
-            
+            else if (entity._triggerType == TriggerType.Money)
+            {
+                spriteRenderer.sprite = money;
+                _oscillate = true;
+                transform.position = (entity._leftBottom + entity._rightTop) / 2f;
+                marker.SetText("Collect Money!");
+            }
+
             _entity = entity;
         }
 
         private ECS.Entities.Trigger _entity;
+        private bool _oscillate;
+
+        private void Update()
+        {
+            if (!_oscillate)
+                return;
+            
+            spriteRenderer.transform.localPosition = Vector2.up * (amplitude * Mathf.Sin(Time.time * speed + transform.position.x));
+        }
 
         public void SetState(ECS.Entities.Trigger entity, int tick)
         {
@@ -100,7 +125,9 @@ namespace Actors
 
         public void Release()
         {
+            _oscillate = false;
             spriteRenderer.sprite = null;
+            spriteRenderer.transform.localPosition = Vector2.zero;
             transform.position = Vector2.zero;
             marker.SetUsesArrow(false);
             tilemap.ClearAllTiles();

@@ -19,5 +19,6 @@ namespace ECS.Entities
         // Snipe
         public int _shootsAtTick;
         public int _lockedOnAt;
+        public Vector2 _lockedOnPosition;
     }
 }

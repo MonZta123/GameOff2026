@@ -128,14 +128,15 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 13633224}
+  - component: {fileID: 13633225}
   - component: {fileID: 13633223}
   - component: {fileID: 13633226}
   - component: {fileID: 13633228}
-  - component: {fileID: 13633225}
   - component: {fileID: 13633227}
   - component: {fileID: 13633229}
   - component: {fileID: 13633231}
   - component: {fileID: 13633232}
+  - component: {fileID: 13633233}
   m_Layer: 0
   m_Name: Managers
   m_TagString: Untagged
@@ -206,6 +207,7 @@ MonoBehaviour:
   fade: {fileID: 353079796}
   soundSystem: {fileID: 13633231}
   markerManager: {fileID: 13633232}
+  taskTextManager: {fileID: 13633233}
 --- !u!114 &13633226
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -411,6 +413,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: '::'
   camera: {fileID: 330585545}
   arrowPrefab: {fileID: 3303887000072466487, guid: fdea3b1e83ccc144fa10e41860c261f7, type: 3}
+--- !u!114 &13633233
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 13633222}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0d4b226368c049be8318789f8a182d37, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::TaskTextManager
+  taskText: {fileID: 1681834828}
 --- !u!1 &86234796
 GameObject:
   m_ObjectHideFlags: 0

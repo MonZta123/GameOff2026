@@ -5,6 +5,8 @@
         Mine = 0,
         Computer = 1,
         DemolitionZone = 2,
-        HackerZone = 3
+        HackerZone = 3,
+        Money = 4,
+        Exit = 5
     }
 }

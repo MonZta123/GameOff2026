@@ -353,13 +353,6 @@ namespace ECS.Systems
 
                     if (HasView(enemy._position, player._position, world, Constants.ButtlerMaxViewDistanceUnits))
                     {
-                        var direction = player._position - enemy._position;
-
-                        var angle = Mathf.Atan2(
-                            direction.y,
-                            direction.x
-                        ) * Mathf.Rad2Deg;
-
                         if (enemy._lockedOnAt == -1 || enemy._lockedOnAt != i)
                         {
                             var lockNewTarget = false;
@@ -381,7 +374,19 @@ namespace ECS.Systems
                             }
                         }
 
+                        var targetPlayer = snapshot._players.GetEntityAt(enemy._lockedOnAt);
+
+                        enemy._lockedOnPosition = targetPlayer._position;
+
+                        var direction = targetPlayer._position - enemy._position;
+
+                        var angle = Mathf.Atan2(
+                            direction.y,
+                            direction.x
+                        ) * Mathf.Rad2Deg;
+
                         enemy._angle = angle;
+
                         break;
                     }
 
