@@ -5,7 +5,7 @@ using System.Linq;
 [CreateAssetMenu(fileName = "MissionDialogues", menuName = "Mission Objects/Mission Dialogues")]
 public class MissionDialogue : ScriptableObject
 {
-    public MissionDialoguePair[] missionDialogueDatabase;
+    public MissionTypeDialogue[] missionDialogueDatabase;
 
     [System.Serializable]
     public class MissionTypeDialogue

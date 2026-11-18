@@ -25,6 +25,15 @@ namespace Notifications
         [SerializeField]
         private AK.Wwise.Event introMusic;
 
+        [SerializeField]
+        private AK.Wwise.Event stopSlowdown;
+        
+        [SerializeField]
+        private AK.Wwise.Event pauseMusic;
+        
+        [SerializeField]
+        private AK.Wwise.Event stopPauseMusic;
+
         public void PlayEvent(SoundNotification notification)
         {
             // if (!string.IsNullOrWhiteSpace(switchGroup))
@@ -78,6 +87,22 @@ namespace Notifications
             {
                 cont();
             }
+        }
+
+        public void PlayFailMusic()
+        {
+            stopSlowdown.Post(gameObject);
+            PlayPauseMusic();
+        }
+
+        public void PlayPauseMusic()
+        {
+            pauseMusic.Post(gameObject);
+        }
+        
+        public void StopPauseMusic()
+        {
+            pauseMusic.Post(gameObject);
         }
     }
 }

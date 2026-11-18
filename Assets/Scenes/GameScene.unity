@@ -351,6 +351,21 @@ MonoBehaviour:
       idInternal: 0
       valueGuidInternal: 
       WwiseObjectReference: {fileID: 11400000, guid: 98f400b6dff8b994aae0b7fd54a0330e, type: 2}
+  - key: 8
+    value:
+      idInternal: 0
+      valueGuidInternal: 
+      WwiseObjectReference: {fileID: 11400000, guid: 5bff2a9cc629ef54dbb45697eb1cafd5, type: 2}
+  - key: 9
+    value:
+      idInternal: 0
+      valueGuidInternal: 
+      WwiseObjectReference: {fileID: 11400000, guid: 3170f2155b1216841807d942496b37b8, type: 2}
+  - key: 10
+    value:
+      idInternal: 0
+      valueGuidInternal: 
+      WwiseObjectReference: {fileID: 11400000, guid: a26ffff489239d34cb1c94e79e9e87d5, type: 2}
   music:
     idInternal: 0
     valueGuidInternal: 
@@ -400,11 +415,23 @@ MonoBehaviour:
   stopMusic:
     idInternal: 0
     valueGuidInternal: 
-    WwiseObjectReference: {fileID: 11400000, guid: a441963a9d3b3634287a37a26ca180bf, type: 2}
+    WwiseObjectReference: {fileID: 11400000, guid: a83fd9b666168b748abb0cb936daa193, type: 2}
   introMusic:
     idInternal: 0
     valueGuidInternal: 
     WwiseObjectReference: {fileID: 11400000, guid: 27c6e6a35ea744e4e99c5816ff867a0a, type: 2}
+  stopSlowdown:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: a9833cb2a69ce594c8851937d6c4342a, type: 2}
+  pauseMusic:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: 1848f2be15d881943bdbf009365405a1, type: 2}
+  stopPauseMusic:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: 2feeb21eea70a6c45b782f446fa81b2b, type: 2}
 --- !u!114 &13633232
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1067,7 +1094,7 @@ Camera:
   far clip plane: 5000
   field of view: 40
   orthographic: 1
-  orthographic size: 4.65625
+  orthographic size: 6.34375
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -1334,9 +1361,9 @@ RectTransform:
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 1477212881}
   - {fileID: 1265162655}
   - {fileID: 1912886528}
-  - {fileID: 1477212881}
   - {fileID: 1092737046}
   - {fileID: 507166451}
   - {fileID: 1223292895}
@@ -4329,7 +4356,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1477212881
 RectTransform:
   m_ObjectHideFlags: 0

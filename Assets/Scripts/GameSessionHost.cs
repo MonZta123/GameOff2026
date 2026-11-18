@@ -312,6 +312,8 @@ public class GameSessionHost : MonoBehaviour
 
         positionComposer.VirtualCamera.Follow = pools._playerPool.Active[index].transform;
 
+        soundSystem.PlayFailMusic();
+
         _tickDriver.StopSim();
         StopCharacterBouncing();
     }
@@ -324,6 +326,8 @@ public class GameSessionHost : MonoBehaviour
             StopCoroutine(_rewindingCoroutine);
 
         _rewindingCoroutine = StartCoroutine(PlayRewindAnimation(ResetTickTimer));
+        
+        soundSystem.StopPauseMusic();
     }
 
     private void ObjectiveFailed(string reason)
@@ -332,6 +336,9 @@ public class GameSessionHost : MonoBehaviour
         _gameSessionState = GameSessionState.WaitingForR;
         rewindText.text = reason + " Press R to rewind!";
         rewindText.gameObject.SetActive(true);
+        
+        soundSystem.PlayFailMusic();
+        
         _tickDriver.StopSim();
     }
 
@@ -401,6 +408,7 @@ public class GameSessionHost : MonoBehaviour
         _pauseActive = false;
         pauseMenu.gameObject.SetActive(false);
         inputManager.ClearInput();
+        soundSystem.StopPauseMusic();
     }
 
     private void PauseGame()
@@ -409,6 +417,7 @@ public class GameSessionHost : MonoBehaviour
         Time.timeScale = 0f;
         _pauseActive = true;
         pauseMenu.gameObject.SetActive(true);
+        soundSystem.PlayPauseMusic();
     }
 
     private bool _pauseActive;

@@ -15,7 +15,10 @@ namespace ECS.Notification
         Rewind,
         MineDefuse,
         
-        CashIn
+        CashIn,
+        StartedHacking,
+        HackSuccess,
+        InterruptedHacking
     }
     
     public struct SoundNotification

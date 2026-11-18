@@ -38,7 +38,9 @@ namespace ECS.Systems
             var moveEvt = world._moveEvents[1];
             ref var snapshot = ref world.GetSnapshot();
             ref var player = ref snapshot._players.GetEntityAt(1);
-            
+
+            var wasHacking = player._isActionActive;
+
             player._isActionActive = false;
 
             if (player._primaryReadyAt <= currentTick)
@@ -65,11 +67,10 @@ namespace ECS.Systems
                     player._secondaryActivatedTo = currentTick + _secondaryActiveTicks;
 
                     var radians = moveEvt._angle * Mathf.Deg2Rad;
-                    
+
                     snapshot._soundNotificationPool.Add(new SoundNotification()
                     {
-                        _soundType = SoundType.HackerDodge,
-                        _position = player._position
+                        _soundType = SoundType.HackerDodge, _position = player._position
                     });
 
                     var direction = new Vector2(
@@ -79,15 +80,31 @@ namespace ECS.Systems
 
                     player._velocity = direction * (_speed * 2f);
 
+                    if (wasHacking && snapshot._hackProcess > 0)
+                    {
+                        snapshot._soundNotificationPool.Add(new SoundNotification()
+                        {
+                            _soundType = SoundType.InterruptedHacking, _position = player._position
+                        });
+                    }
+                    
                     return;
                 }
             }
 
             if (player._secondaryActivatedTo > currentTick)
             {
+                if (wasHacking && snapshot._hackProcess > 0)
+                {
+                    snapshot._soundNotificationPool.Add(new SoundNotification()
+                    {
+                        _soundType = SoundType.InterruptedHacking, _position = player._position
+                    });
+                }
+                
                 return;
             }
-            
+
             for (var i = snapshot._triggers.GetNumEntities() - 1; i >= 0; i--)
             {
                 ref var trigger = ref snapshot._triggers.GetEntityAt(i);
@@ -98,12 +115,32 @@ namespace ECS.Systems
                     snapshot._hackProcess--;
 
                     player._isActionActive = true;
-                    
+
                     if (snapshot._hackProcess == 0)
                     {
+                        snapshot._soundNotificationPool.Add(new SoundNotification()
+                        {
+                            _soundType = SoundType.HackSuccess, _position = closestPoint
+                        });
                         snapshot._triggers.DespawnAt(i);
                     }
+
+                    if (!wasHacking)
+                    {
+                        snapshot._soundNotificationPool.Add(new SoundNotification()
+                        {
+                            _soundType = SoundType.StartedHacking, _position = closestPoint
+                        });
+                    }
                 }
+            }
+
+            if (snapshot._hackProcess > 0 && wasHacking && !player._isActionActive)
+            {
+                snapshot._soundNotificationPool.Add(new SoundNotification()
+                {
+                    _soundType = SoundType.InterruptedHacking, _position = player._position
+                });
             }
 
             if (player._isBlockedTo >= currentTick)
