@@ -23,6 +23,20 @@
 						<Property Name="InitialValue" Type="Real64" Value="100"/>
 					</PropertyList>
 				</GameParameter>
+				<GameParameter Name="DuckingVO" ID="{B322547F-F7E7-4C42-B6A9-1208F784E42F}">
+					<PropertyList>
+						<Property Name="InitialValue" Type="Real64" Value="-48"/>
+						<Property Name="Max" Type="Real64" Value="0"/>
+						<Property Name="Min" Type="Real64" Value="-48"/>
+					</PropertyList>
+				</GameParameter>
+				<GameParameter Name="DuckingSFX" ID="{9F92B4CD-201F-47A8-80AF-A2DF167E36DC}">
+					<PropertyList>
+						<Property Name="InitialValue" Type="Real64" Value="-30"/>
+						<Property Name="Max" Type="Real64" Value="0"/>
+						<Property Name="Min" Type="Real64" Value="-30"/>
+					</PropertyList>
+				</GameParameter>
 			</ChildrenList>
 		</WorkUnit>
 	</GameParameters>

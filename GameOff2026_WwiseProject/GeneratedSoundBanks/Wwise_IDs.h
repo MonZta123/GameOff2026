@@ -131,6 +131,8 @@ namespace AK
 
     namespace GAME_PARAMETERS
     {
+        static const AkUniqueID DUCKINGSFX = 1329694923U;
+        static const AkUniqueID DUCKINGVO = 3155249223U;
         static const AkUniqueID MASTER_VOLUME = 4179668880U;
         static const AkUniqueID MUSIC_VOLUME = 1006694123U;
         static const AkUniqueID SFX_VOLUME = 1564184899U;

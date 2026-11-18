@@ -10,7 +10,7 @@
     "Type": "User",
     "GUID": "{3059A6CE-8152-4CD2-BEA9-69E98BB60D65}",
     "Language": "SFX",
-    "Hash": "{9D51DEA4-4544-BA99-2F06-E14546EF2E3A}",
+    "Hash": "{239B28C6-451B-C462-6290-C45FC696D523}",
     "ObjectPath": "\\SoundBanks\\Default Work Unit\\Main",
     "ShortName": "Main",
     "Path": "Main.bnk",
@@ -104,14 +104,6 @@
       "CachePath": "0C/{0CFCF9DA-261C-A3D7-6499-B90548826F33}.wem"
      },
      {
-      "Id": "31454529",
-      "Language": "SFX",
-      "Streaming": "false",
-      "Location": "Memory",
-      "ShortName": "VO_B_Hack_04.wav",
-      "CachePath": "AB/{AB3981FD-2654-61F9-25B1-954FECD1B1F6}.wem"
-     },
-     {
       "Id": "35023313",
       "Language": "SFX",
       "Streaming": "false",
@@ -150,14 +142,6 @@
       "Location": "Memory",
       "ShortName": "VO_B_Roll_01.wav",
       "CachePath": "8E/{8E8C7B0A-FA99-C952-756E-281306BB2258}.wem"
-     },
-     {
-      "Id": "72949655",
-      "Language": "SFX",
-      "Streaming": "false",
-      "Location": "Memory",
-      "ShortName": "VO_B_Hack_05.wav",
-      "CachePath": "60/{60C79480-4001-62EE-28A5-61DDE2DBBFC2}.wem"
      },
      {
       "Id": "105804198",
@@ -344,14 +328,6 @@
       "CachePath": "A1/{A1A5402B-E65D-91BB-E4FC-C1A20DC605A2}.wem"
      },
      {
-      "Id": "249038957",
-      "Language": "SFX",
-      "Streaming": "false",
-      "Location": "Memory",
-      "ShortName": "VO_B_Hack_02.wav",
-      "CachePath": "1C/{1C7C70C0-66EE-D646-536F-4B7C03EF9E5A}.wem"
-     },
-     {
       "Id": "267769419",
       "Language": "SFX",
       "Streaming": "false",
@@ -534,14 +510,6 @@
       "Location": "Memory",
       "ShortName": "FootstepA_01_Concrete.wav",
       "CachePath": "4A/{4A683746-A97A-E1EF-2983-45D8711F98D0}.wem"
-     },
-     {
-      "Id": "455626202",
-      "Language": "SFX",
-      "Streaming": "false",
-      "Location": "Memory",
-      "ShortName": "VO_B_Hack_03.wav",
-      "CachePath": "40/{40FB35DB-3404-8A4B-F9BF-1C1A14FE12EB}.wem"
      },
      {
       "Id": "456280109",
@@ -1540,19 +1508,7 @@
       "DurationType": "Infinite",
       "MediaRefs": [
        {
-        "Id": "31454529"
-       },
-       {
-        "Id": "72949655"
-       },
-       {
         "Id": "120991060"
-       },
-       {
-        "Id": "249038957"
-       },
-       {
-        "Id": "455626202"
        },
        {
         "Id": "486628042"
@@ -1564,6 +1520,7 @@
       "Name": "Play_SFX_Action_C_Defuse",
       "ObjectPath": "\\Events\\Default Work Unit\\SFX\\Actions\\Play_SFX_Action_C_Defuse",
       "GUID": "{50C950DC-2033-4BD6-B0A2-22C4070A3229}",
+      "MaxAttenuation": "100",
       "DurationType": "OneShot",
       "DurationMin": "0.38485262",
       "DurationMax": "0.62247163",
@@ -1657,6 +1614,7 @@
       "Name": "Play_SFX_BigExplosion",
       "ObjectPath": "\\Events\\Default Work Unit\\SFX\\Weapons\\Play_SFX_BigExplosion",
       "GUID": "{E02E6D0C-F676-4241-B29F-FCEFD60C8FD3}",
+      "MaxAttenuation": "100",
       "DurationType": "OneShot",
       "DurationMin": "3.721202",
       "DurationMax": "3.721202",
@@ -1671,6 +1629,7 @@
       "Name": "Play_SFX_BombExplosion",
       "ObjectPath": "\\Events\\Default Work Unit\\SFX\\Weapons\\Play_SFX_BombExplosion",
       "GUID": "{30F644E1-4A6B-491A-B312-78F56222651D}",
+      "MaxAttenuation": "100",
       "DurationType": "OneShot",
       "DurationMin": "1.683693",
       "DurationMax": "6.9634748",
@@ -1691,6 +1650,7 @@
       "Name": "Play_SFX_Dash",
       "ObjectPath": "\\Events\\Default Work Unit\\SFX\\Movement\\Play_SFX_Dash",
       "GUID": "{7E19B84C-C838-4A91-89DA-BB94F3FE01E9}",
+      "MaxAttenuation": "100",
       "DurationType": "OneShot",
       "DurationMin": "0.3764357",
       "DurationMax": "0.44766",
@@ -1705,6 +1665,7 @@
       "Name": "Play_SFX_DoorSlideOpen",
       "ObjectPath": "\\Events\\Default Work Unit\\SFX\\Environment\\Play_SFX_DoorSlideOpen",
       "GUID": "{388DF802-A380-4E4E-BD1C-F49CD5EE78A3}",
+      "MaxAttenuation": "100",
       "DurationType": "OneShot",
       "DurationMin": "1.0679365",
       "DurationMax": "1.0679365",
@@ -1719,6 +1680,7 @@
       "Name": "Play_SFX_DoorSlideShut",
       "ObjectPath": "\\Events\\Default Work Unit\\SFX\\Environment\\Play_SFX_DoorSlideShut",
       "GUID": "{32135886-32E2-4FE4-B958-B416DF9B4299}",
+      "MaxAttenuation": "100",
       "DurationType": "OneShot",
       "DurationMin": "0.8900227",
       "DurationMax": "0.8900227",
@@ -1733,6 +1695,7 @@
       "Name": "Play_SFX_DoorSmash",
       "ObjectPath": "\\Events\\Default Work Unit\\SFX\\Environment\\Play_SFX_DoorSmash",
       "GUID": "{666ACBC8-30A5-4B03-853D-52CF84ADE9CF}",
+      "MaxAttenuation": "100",
       "DurationType": "OneShot",
       "DurationMin": "1.7159637",
       "DurationMax": "1.7159637",
@@ -1747,6 +1710,7 @@
       "Name": "Play_SFX_E_Impact",
       "ObjectPath": "\\Events\\Default Work Unit\\SFX\\Impacts\\Play_SFX_E_Impact",
       "GUID": "{A671DCAC-9993-4AC3-B194-BF98779E356E}",
+      "MaxAttenuation": "100",
       "DurationType": "OneShot",
       "DurationMin": "0.6060318",
       "DurationMax": "0.90709746",
@@ -1788,6 +1752,7 @@
       "Name": "Play_SFX_E_ImpactHeavy",
       "ObjectPath": "\\Events\\Default Work Unit\\SFX\\Impacts\\Play_SFX_E_ImpactHeavy",
       "GUID": "{4335A160-53B6-473D-9447-A2B4A8C23FDD}",
+      "MaxAttenuation": "100",
       "DurationType": "OneShot",
       "DurationMin": "0.6662585",
       "DurationMax": "1.3779365",
@@ -1820,6 +1785,7 @@
       "Name": "Play_SFX_Footsteps_A",
       "ObjectPath": "\\Events\\Default Work Unit\\SFX\\Movement\\Play_SFX_Footsteps_A",
       "GUID": "{3ED77479-A148-44F9-817A-A296ABFBE50F}",
+      "MaxAttenuation": "100",
       "DurationType": "OneShot",
       "DurationMin": "0.1395569",
       "DurationMax": "0.5593066",
@@ -1907,6 +1873,7 @@
       "Name": "Play_SFX_Footsteps_B",
       "ObjectPath": "\\Events\\Default Work Unit\\SFX\\Movement\\Play_SFX_Footsteps_B",
       "GUID": "{CAED62F8-B6A5-4771-95C3-5C04452AB617}",
+      "MaxAttenuation": "100",
       "DurationType": "OneShot",
       "DurationMin": "0.25863713",
       "DurationMax": "1.3195806",
@@ -2039,6 +2006,7 @@
       "Name": "Play_SFX_Footsteps_C",
       "ObjectPath": "\\Events\\Default Work Unit\\SFX\\Movement\\Play_SFX_Footsteps_C",
       "GUID": "{76CCE283-0B61-485F-84F2-96637B943C4D}",
+      "MaxAttenuation": "100",
       "DurationType": "OneShot",
       "DurationMin": "0.24433571",
       "DurationMax": "0.6695425",
@@ -2126,6 +2094,7 @@
       "Name": "Play_SFX_Footsteps_D",
       "ObjectPath": "\\Events\\Default Work Unit\\SFX\\Movement\\Play_SFX_Footsteps_D",
       "GUID": "{9FDF8A70-9647-464A-8FEB-D2A548DE98DF}",
+      "MaxAttenuation": "100",
       "DurationType": "OneShot",
       "DurationMin": "0.27585587",
       "DurationMax": "1.0031803",
@@ -2213,6 +2182,7 @@
       "Name": "Play_SFX_MineBeeps",
       "ObjectPath": "\\Events\\Default Work Unit\\SFX\\Weapons\\Play_SFX_MineBeeps",
       "GUID": "{0E5DE2F2-5313-45DA-8FA6-A3469A2C1DFD}",
+      "MaxAttenuation": "100",
       "DurationType": "OneShot",
       "DurationMin": "1.2868934",
       "DurationMax": "1.2868934",
@@ -2227,6 +2197,7 @@
       "Name": "Play_SFX_MineCountdown",
       "ObjectPath": "\\Events\\Default Work Unit\\SFX\\Weapons\\Play_SFX_MineCountdown",
       "GUID": "{2E4350FE-4AE1-4D66-A4EF-72CE53E75CF4}",
+      "MaxAttenuation": "100",
       "DurationType": "OneShot",
       "DurationMin": "2.3805668",
       "DurationMax": "2.3805668",
@@ -2241,6 +2212,7 @@
       "Name": "Play_SFX_MineExplode",
       "ObjectPath": "\\Events\\Default Work Unit\\SFX\\Weapons\\Play_SFX_MineExplode",
       "GUID": "{2E3C0A98-F559-4F88-94EA-9353FFFA4DB9}",
+      "MaxAttenuation": "100",
       "DurationType": "OneShot",
       "DurationMin": "1.683693",
       "DurationMax": "6.9634748",
@@ -3322,11 +3294,20 @@
       "ObjectPath": "\\Events\\Default Work Unit\\SFX\\Actions\\Stop_SFX_Action_B_HackSuccess",
       "GUID": "{0639D74A-12D0-468A-A0C5-ABECC4E4E7C7}",
       "DurationType": "OneShot",
-      "DurationMin": "1.467279",
-      "DurationMax": "1.467279",
+      "DurationMin": "1.4833786",
+      "DurationMax": "2.1504989",
       "MediaRefs": [
        {
+        "Id": "184732188"
+       },
+       {
         "Id": "463990089"
+       },
+       {
+        "Id": "555140878"
+       },
+       {
+        "Id": "851917532"
        }
       ]
      }
@@ -3433,6 +3414,6 @@
     ]
    }
   ],
-  "FileHash": "{8027259E-5B86-67A8-D465-0382EF84E3E5}"
+  "FileHash": "{4F199A38-13A2-BF2E-6EF0-F8D3ECAB9DB8}"
  }
 }

@@ -4,6 +4,9 @@
 		<WorkUnit Name="Default Work Unit" ID="{83FEC721-9B39-4DBB-B358-13CEE3947778}" PersistMode="Standalone">
 			<ChildrenList>
 				<StateGroup Name="Round" ID="{AD9A563C-653A-4D1A-8C75-63F4F2C0924B}">
+					<PropertyList>
+						<Property Name="DefaultTransitionTime" Type="Real64" Value="0"/>
+					</PropertyList>
 					<ChildrenList>
 						<State Name="None" ID="{C9697BE0-1F92-4C7C-92D8-FFA9B02AB186}"/>
 						<State Name="Round_1" ID="{75FB4324-C21A-4D82-B0CF-3542C815D862}"/>

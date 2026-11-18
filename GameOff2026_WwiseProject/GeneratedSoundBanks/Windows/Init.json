@@ -10,11 +10,45 @@
     "Type": "User",
     "GUID": "{701ECBBD-9C7B-4030-8CDB-749EE5D1C7B9}",
     "Language": "SFX",
-    "Hash": "{02F8C182-C460-DFA7-5B33-0D6547749607}",
+    "Hash": "{B7B5DBCD-C331-7011-BF94-1F5F147C2FA4}",
     "ObjectPath": "Init",
     "ShortName": "Init",
     "Path": "Init.bnk",
     "Plugins": {
+     "ShareSets": [
+      {
+       "Id": "1329694923",
+       "Name": "DuckingSFX",
+       "ObjectPath": "\\Effects\\Default Work Unit\\DuckingSFX",
+       "GUID": "{4F47A82C-75FD-42B4-973F-392996D0F68D}",
+       "LibName": "Wwise Meter",
+       "LibId": "8454147"
+      },
+      {
+       "Id": "3093856314",
+       "Name": "SFX_Ducking",
+       "ObjectPath": "\\Effects\\Default Work Unit\\SFX_Ducking",
+       "GUID": "{46ABBA0E-718C-40E2-949D-B2F56AB99665}",
+       "LibName": "Wwise Compressor",
+       "LibId": "7077891"
+      },
+      {
+       "Id": "3155249223",
+       "Name": "DuckingVO",
+       "ObjectPath": "\\Effects\\Default Work Unit\\DuckingVO",
+       "GUID": "{E807226D-B3B0-4E06-9523-11AFD9CB8463}",
+       "LibName": "Wwise Meter",
+       "LibId": "8454147"
+      },
+      {
+       "Id": "3375880468",
+       "Name": "VO_Ducking",
+       "ObjectPath": "\\Effects\\Default Work Unit\\VO_Ducking",
+       "GUID": "{C1C7B2CB-DB13-4DE3-A398-FBFCABB78DE1}",
+       "LibName": "Wwise Compressor",
+       "LibId": "7077891"
+      }
+     ],
      "AudioDevices": [
       {
        "Id": "2317455096",
@@ -45,13 +79,27 @@
       "Id": "393239870",
       "Name": "SFX",
       "ObjectPath": "\\Busses\\Default Work Unit\\Main Audio Bus\\SFX",
-      "GUID": "{282B1519-D877-4EF3-9048-C765F53AAF2A}"
+      "GUID": "{282B1519-D877-4EF3-9048-C765F53AAF2A}",
+      "PluginRefs": {
+       "ShareSets": [
+        {
+         "Id": "1329694923"
+        }
+       ]
+      }
      },
      {
       "Id": "1534528548",
       "Name": "VO",
       "ObjectPath": "\\Busses\\Default Work Unit\\Main Audio Bus\\VO",
-      "GUID": "{832227F3-45D1-422A-8529-93517E731F5A}"
+      "GUID": "{832227F3-45D1-422A-8529-93517E731F5A}",
+      "PluginRefs": {
+       "ShareSets": [
+        {
+         "Id": "3155249223"
+        }
+       ]
+      }
      },
      {
       "Id": "2246998526",
@@ -63,7 +111,17 @@
       "Id": "3991942870",
       "Name": "MUSIC",
       "ObjectPath": "\\Busses\\Default Work Unit\\Main Audio Bus\\MUSIC",
-      "GUID": "{F759BC7F-4007-4D33-8F58-64648B34CD3D}"
+      "GUID": "{F759BC7F-4007-4D33-8F58-64648B34CD3D}",
+      "PluginRefs": {
+       "ShareSets": [
+        {
+         "Id": "3093856314"
+        },
+        {
+         "Id": "3375880468"
+        }
+       ]
+      }
      }
     ],
     "GameParameters": [
@@ -74,10 +132,22 @@
       "GUID": "{DBF1A7E6-A148-4144-BDB9-1074F976F456}"
      },
      {
+      "Id": "1329694923",
+      "Name": "DuckingSFX",
+      "ObjectPath": "\\Game Parameters\\Default Work Unit\\DuckingSFX",
+      "GUID": "{9F92B4CD-201F-47A8-80AF-A2DF167E36DC}"
+     },
+     {
       "Id": "1564184899",
       "Name": "SFX_Volume",
       "ObjectPath": "\\Game Parameters\\Default Work Unit\\SFX_Volume",
       "GUID": "{B15FE639-7CD2-4340-8A5A-4751BB096418}"
+     },
+     {
+      "Id": "3155249223",
+      "Name": "DuckingVO",
+      "ObjectPath": "\\Game Parameters\\Default Work Unit\\DuckingVO",
+      "GUID": "{B322547F-F7E7-4C42-B6A9-1208F784E42F}"
      },
      {
       "Id": "3538560642",
@@ -194,6 +264,6 @@
     ]
    }
   ],
-  "FileHash": "{0F717512-3826-BEF3-A16D-7B33DAE5FA83}"
+  "FileHash": "{FD5B4917-7FC4-6EEE-F2B2-F578489243FC}"
  }
 }

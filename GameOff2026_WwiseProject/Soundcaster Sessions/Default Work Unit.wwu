@@ -26,8 +26,16 @@
 							<Position X="0" Y="1"/>
 						</Module>
 						<Module>
-							<ObjectRef Name="Play_MUS_MissionEnding" ID="{E45055A8-8942-47B8-8115-34543642317B}" WorkUnitID="{2B12C590-A22E-47AF-9697-251FEA2DB802}"/>
+							<ObjectRef Name="Play_VO_B_Dead" ID="{71D3AACC-0B82-43B1-870A-E80857458AB5}" WorkUnitID="{2B12C590-A22E-47AF-9697-251FEA2DB802}"/>
 							<Position X="0" Y="2"/>
+						</Module>
+						<Module>
+							<ObjectRef Name="Play_VO_B_Win" ID="{21741351-D5C5-4C74-BE59-045D6315ABF7}" WorkUnitID="{2B12C590-A22E-47AF-9697-251FEA2DB802}"/>
+							<Position X="0" Y="3"/>
+						</Module>
+						<Module>
+							<ObjectRef Name="Play_SFX_Action_B_Hack" ID="{470A4D75-AAC0-4981-AEA8-A0F6959DB48D}" WorkUnitID="{2B12C590-A22E-47AF-9697-251FEA2DB802}"/>
+							<Position X="0" Y="4"/>
 						</Module>
 						<Module>
 							<ObjectRef Name="Stop_AMB_SpaceBar" ID="{54044E00-E195-493B-8AA9-9AEDA7A82144}" WorkUnitID="{2B12C590-A22E-47AF-9697-251FEA2DB802}"/>
@@ -38,27 +46,51 @@
 							<Position X="1" Y="1"/>
 						</Module>
 						<Module>
-							<ObjectRef Name="Stop_AMB_All" ID="{EEAC5E1E-C457-45C6-A009-C9B36D62B1A5}" WorkUnitID="{2B12C590-A22E-47AF-9697-251FEA2DB802}"/>
+							<ObjectRef Name="Play_VO_B_Dodge" ID="{55080AD5-30D4-4833-ABB5-FE34932A8851}" WorkUnitID="{2B12C590-A22E-47AF-9697-251FEA2DB802}"/>
+							<Position X="1" Y="2"/>
+						</Module>
+						<Module>
+							<ObjectRef Name="Stop_SFX_Action_B_HackSuccess" ID="{0639D74A-12D0-468A-A0C5-ABECC4E4E7C7}" WorkUnitID="{2B12C590-A22E-47AF-9697-251FEA2DB802}"/>
+							<Position X="1" Y="4"/>
+						</Module>
+						<Module>
+							<ObjectRef Name="AmbienceBackOfHouse" ID="{56DD4EFC-A226-4025-95F7-E5269EF3427E}" WorkUnitID="{AF633A36-6CC5-470E-AD72-3F76D6F661BF}"/>
 							<Position X="2" Y="0"/>
 						</Module>
 						<Module>
-							<ObjectRef Name="Stop_MUS_All" ID="{F664C197-2CFA-4703-BBB5-AD81AD6313A2}" WorkUnitID="{2B12C590-A22E-47AF-9697-251FEA2DB802}"/>
-							<Position X="2" Y="1"/>
+							<ObjectRef Name="Play_VO_B_Hit" ID="{94B68B7F-EEFF-41EA-B395-54CB92F37C67}" WorkUnitID="{2B12C590-A22E-47AF-9697-251FEA2DB802}"/>
+							<Position X="2" Y="2"/>
 						</Module>
 						<Module>
-							<ObjectRef Name="Play_AMB_SpaceBar" ID="{0D969937-733A-4893-8CA6-04ABFCDC1782}" WorkUnitID="{2B12C590-A22E-47AF-9697-251FEA2DB802}"/>
+							<ObjectRef Name="UI_Back" ID="{26C19CB6-50DC-49C1-A5F0-E7AC93E1472C}" WorkUnitID="{AF633A36-6CC5-470E-AD72-3F76D6F661BF}"/>
+							<Position X="2" Y="3"/>
+						</Module>
+						<Module>
+							<ObjectRef Name="Play_SFX_Action_C_Defuse" ID="{50C950DC-2033-4BD6-B0A2-22C4070A3229}" WorkUnitID="{2B12C590-A22E-47AF-9697-251FEA2DB802}"/>
+							<Position X="2" Y="4"/>
+						</Module>
+						<Module>
+							<ObjectRef Name="AmbienceFrontOfHouse" ID="{21DB8EFA-3F8E-41DD-944A-83F27536481D}" WorkUnitID="{AF633A36-6CC5-470E-AD72-3F76D6F661BF}"/>
 							<Position X="3" Y="0"/>
 						</Module>
 						<Module>
-							<ObjectRef Name="Stop_AMB_All" ID="{EEAC5E1E-C457-45C6-A009-C9B36D62B1A5}" WorkUnitID="{2B12C590-A22E-47AF-9697-251FEA2DB802}"/>
+							<ObjectRef Name="Play_MUS_Character" ID="{44E5D87C-C9EE-4925-8962-FA761B8D15F0}" WorkUnitID="{2B12C590-A22E-47AF-9697-251FEA2DB802}"/>
 							<Position X="3" Y="1"/>
 						</Module>
 						<Module>
-							<ObjectRef Name="Play_SFX_Action_B_Hack" ID="{470A4D75-AAC0-4981-AEA8-A0F6959DB48D}" WorkUnitID="{2B12C590-A22E-47AF-9697-251FEA2DB802}"/>
+							<ObjectRef Name="Play_VO_B_HitHeavy" ID="{D77E0490-71FF-4E40-8DA3-4D5C12E56BE7}" WorkUnitID="{2B12C590-A22E-47AF-9697-251FEA2DB802}"/>
 							<Position X="3" Y="2"/>
 						</Module>
 						<Module>
-							<ObjectRef Name="Play_MUS_MainMenu" ID="{5D3A0225-7ABD-4859-81CA-ADE23BFF2392}" WorkUnitID="{2B12C590-A22E-47AF-9697-251FEA2DB802}"/>
+							<ObjectRef Name="UI_Hover" ID="{B69E88EC-1091-4476-87DB-7428D3C3B64B}" WorkUnitID="{AF633A36-6CC5-470E-AD72-3F76D6F661BF}"/>
+							<Position X="3" Y="3"/>
+						</Module>
+						<Module>
+							<ObjectRef Name="AttackRifle" ID="{21AC844B-BA03-4798-B19E-38B470729988}" WorkUnitID="{AF633A36-6CC5-470E-AD72-3F76D6F661BF}"/>
+							<Position X="3" Y="4"/>
+						</Module>
+						<Module>
+							<ObjectRef Name="Stop_AMB_All" ID="{EEAC5E1E-C457-45C6-A009-C9B36D62B1A5}" WorkUnitID="{2B12C590-A22E-47AF-9697-251FEA2DB802}"/>
 							<Position X="4" Y="0"/>
 						</Module>
 						<Module>
@@ -66,8 +98,12 @@
 							<Position X="4" Y="1"/>
 						</Module>
 						<Module>
-							<ObjectRef Name="Stop_SFX_Action_B_HackSuccess" ID="{0639D74A-12D0-468A-A0C5-ABECC4E4E7C7}" WorkUnitID="{2B12C590-A22E-47AF-9697-251FEA2DB802}"/>
+							<ObjectRef Name="Play_VO_B_Select" ID="{A9E6999F-C9FC-4B06-BD62-4615A067A96A}" WorkUnitID="{2B12C590-A22E-47AF-9697-251FEA2DB802}"/>
 							<Position X="4" Y="2"/>
+						</Module>
+						<Module>
+							<ObjectRef Name="UI_Select" ID="{6E3CCD4A-D88D-47DF-9F9D-2D6F7C445737}" WorkUnitID="{AF633A36-6CC5-470E-AD72-3F76D6F661BF}"/>
+							<Position X="4" Y="3"/>
 						</Module>
 					</ModuleList>
 				</SoundcasterSession>

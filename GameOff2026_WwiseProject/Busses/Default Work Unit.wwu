@@ -12,6 +12,15 @@
 					<ChildrenList>
 						<Bus Name="SFX" ID="{282B1519-D877-4EF3-9048-C765F53AAF2A}">
 							<ObjectLists>
+								<ObjectList Name="Effects">
+									<EffectSlot Name="" ID="{8640A4A1-1DE3-45ED-A0D0-2AB647F55086}" ShortID="817274397">
+										<ReferenceList>
+											<Reference Name="Effect" PluginName="Wwise Meter" CompanyID="0" PluginID="129" PluginType="3">
+												<ObjectRef Name="DuckingSFX" ID="{4F47A82C-75FD-42B4-973F-392996D0F68D}" WorkUnitID="{ECBC3E17-72D2-47E6-BB8F-B9B750AFD99D}"/>
+											</Reference>
+										</ReferenceList>
+									</EffectSlot>
+								</ObjectList>
 								<ObjectList Name="RTPC">
 									<RTPC Name="" ID="{7C67A80E-2794-4451-BBC0-A36F5AD9666F}" ShortID="569156471">
 										<PropertyList>
@@ -45,11 +54,69 @@
 											</Reference>
 										</ReferenceList>
 									</RTPC>
+									<RTPC Name="" ID="{87704DC0-49CA-4A97-B32E-88765F932A16}" ShortID="559249797">
+										<PropertyList>
+											<Property Name="PropertyName" Type="string" Value="BusVolume"/>
+										</PropertyList>
+										<ReferenceList>
+											<Reference Name="ControlInput">
+												<ObjectRef Name="DuckingVO" ID="{B322547F-F7E7-4C42-B6A9-1208F784E42F}" WorkUnitID="{6F8DEDD3-88D9-4999-911F-2B2AC466C6FF}"/>
+											</Reference>
+											<Reference Name="Curve">
+												<Custom>
+													<Curve Name="" ID="{AF23E56D-9C54-41FB-8080-594427F54A88}">
+														<PropertyList>
+															<Property Name="Flags" Type="int32" Value="3"/>
+														</PropertyList>
+														<PointList>
+															<Point>
+																<XPos>-48</XPos>
+																<YPos>0</YPos>
+																<Flags>5</Flags>
+															</Point>
+															<Point>
+																<XPos>-37</XPos>
+																<YPos>0</YPos>
+																<Flags>0</Flags>
+																<SegmentShape>Log1</SegmentShape>
+															</Point>
+															<Point>
+																<XPos>-32.49874</XPos>
+																<YPos>-4.54684</YPos>
+																<Flags>0</Flags>
+															</Point>
+															<Point>
+																<XPos>0</XPos>
+																<YPos>-4.78272999999999</YPos>
+																<Flags>37</Flags>
+															</Point>
+														</PointList>
+													</Curve>
+												</Custom>
+											</Reference>
+										</ReferenceList>
+									</RTPC>
 								</ObjectList>
 							</ObjectLists>
 						</Bus>
 						<Bus Name="MUSIC" ID="{F759BC7F-4007-4D33-8F58-64648B34CD3D}">
 							<ObjectLists>
+								<ObjectList Name="Effects">
+									<EffectSlot Name="" ID="{1659FC5D-D7CA-4C86-AE10-1C5EEE5D73F8}" ShortID="1040672185">
+										<ReferenceList>
+											<Reference Name="Effect" PluginName="Wwise Compressor" CompanyID="0" PluginID="108" PluginType="3">
+												<ObjectRef Name="VO_Ducking" ID="{C1C7B2CB-DB13-4DE3-A398-FBFCABB78DE1}" WorkUnitID="{ECBC3E17-72D2-47E6-BB8F-B9B750AFD99D}"/>
+											</Reference>
+										</ReferenceList>
+									</EffectSlot>
+									<EffectSlot Name="" ID="{F5A26C07-CCF3-4C7C-9D5E-52E4B2F85350}" ShortID="690987352">
+										<ReferenceList>
+											<Reference Name="Effect" PluginName="Wwise Compressor" CompanyID="0" PluginID="108" PluginType="3">
+												<ObjectRef Name="SFX_Ducking" ID="{46ABBA0E-718C-40E2-949D-B2F56AB99665}" WorkUnitID="{ECBC3E17-72D2-47E6-BB8F-B9B750AFD99D}"/>
+											</Reference>
+										</ReferenceList>
+									</EffectSlot>
+								</ObjectList>
 								<ObjectList Name="RTPC">
 									<RTPC Name="" ID="{803EDB7D-0288-4562-8993-10C42E0BD4EF}" ShortID="117646798">
 										<PropertyList>
@@ -83,11 +150,62 @@
 											</Reference>
 										</ReferenceList>
 									</RTPC>
+									<RTPC Name="" ID="{A919C649-C437-4739-9CB6-980896710E64}" ShortID="368952671">
+										<PropertyList>
+											<Property Name="PropertyName" Type="string" Value="BusVolume"/>
+										</PropertyList>
+										<ReferenceList>
+											<Reference Name="ControlInput">
+												<ObjectRef Name="DuckingVO" ID="{B322547F-F7E7-4C42-B6A9-1208F784E42F}" WorkUnitID="{6F8DEDD3-88D9-4999-911F-2B2AC466C6FF}"/>
+											</Reference>
+											<Reference Name="Curve">
+												<Custom>
+													<Curve Name="" ID="{1A48501B-0118-4B2F-ABAA-27E0BF9280AE}">
+														<PropertyList>
+															<Property Name="Flags" Type="int32" Value="3"/>
+														</PropertyList>
+														<PointList>
+															<Point>
+																<XPos>-48</XPos>
+																<YPos>0</YPos>
+																<Flags>5</Flags>
+															</Point>
+															<Point>
+																<XPos>-37</XPos>
+																<YPos>0</YPos>
+																<Flags>0</Flags>
+																<SegmentShape>Log1</SegmentShape>
+															</Point>
+															<Point>
+																<XPos>-32.49874</XPos>
+																<YPos>-4.78273</YPos>
+																<Flags>0</Flags>
+															</Point>
+															<Point>
+																<XPos>0</XPos>
+																<YPos>-4.78273</YPos>
+																<Flags>37</Flags>
+															</Point>
+														</PointList>
+													</Curve>
+												</Custom>
+											</Reference>
+										</ReferenceList>
+									</RTPC>
 								</ObjectList>
 							</ObjectLists>
 						</Bus>
 						<Bus Name="VO" ID="{832227F3-45D1-422A-8529-93517E731F5A}">
 							<ObjectLists>
+								<ObjectList Name="Effects">
+									<EffectSlot Name="" ID="{B75F164E-A657-422D-9447-D5AFF3A20D1C}" ShortID="738301994">
+										<ReferenceList>
+											<Reference Name="Effect" PluginName="Wwise Meter" CompanyID="0" PluginID="129" PluginType="3">
+												<ObjectRef Name="DuckingVO" ID="{E807226D-B3B0-4E06-9523-11AFD9CB8463}" WorkUnitID="{ECBC3E17-72D2-47E6-BB8F-B9B750AFD99D}"/>
+											</Reference>
+										</ReferenceList>
+									</EffectSlot>
+								</ObjectList>
 								<ObjectList Name="RTPC">
 									<RTPC Name="" ID="{2773DCE4-0873-4DED-B26E-C4A236F5D705}" ShortID="774071721">
 										<PropertyList>
@@ -150,6 +268,48 @@
 															<Point>
 																<XPos>100</XPos>
 																<YPos>0</YPos>
+																<Flags>37</Flags>
+															</Point>
+														</PointList>
+													</Curve>
+												</Custom>
+											</Reference>
+										</ReferenceList>
+									</RTPC>
+									<RTPC Name="" ID="{23594959-32B4-4FD3-AC34-77629F6298CB}" ShortID="966988694">
+										<PropertyList>
+											<Property Name="PropertyName" Type="string" Value="BusVolume"/>
+										</PropertyList>
+										<ReferenceList>
+											<Reference Name="ControlInput">
+												<ObjectRef Name="DuckingVO" ID="{B322547F-F7E7-4C42-B6A9-1208F784E42F}" WorkUnitID="{6F8DEDD3-88D9-4999-911F-2B2AC466C6FF}"/>
+											</Reference>
+											<Reference Name="Curve">
+												<Custom>
+													<Curve Name="" ID="{EA1D13D9-49A5-4DFC-B832-BBAD5791CE9C}">
+														<PropertyList>
+															<Property Name="Flags" Type="int32" Value="3"/>
+														</PropertyList>
+														<PointList>
+															<Point>
+																<XPos>-48</XPos>
+																<YPos>0</YPos>
+																<Flags>5</Flags>
+															</Point>
+															<Point>
+																<XPos>-37</XPos>
+																<YPos>0</YPos>
+																<Flags>0</Flags>
+																<SegmentShape>Log1</SegmentShape>
+															</Point>
+															<Point>
+																<XPos>-32.49874</XPos>
+																<YPos>-4.54684</YPos>
+																<Flags>0</Flags>
+															</Point>
+															<Point>
+																<XPos>0</XPos>
+																<YPos>-4.78272999999999</YPos>
 																<Flags>37</Flags>
 															</Point>
 														</PointList>

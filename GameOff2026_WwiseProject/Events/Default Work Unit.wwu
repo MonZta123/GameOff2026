@@ -8,6 +8,9 @@
 						<Event Name="Play_MUS_MainMenu" ID="{5D3A0225-7ABD-4859-81CA-ADE23BFF2392}">
 							<ChildrenList>
 								<Action Name="" ID="{D323F51B-6C0C-47E1-ABAA-3E07B03B986B}" ShortID="193138012">
+									<PropertyList>
+										<Property Name="Delay" Type="Real64" Value="1"/>
+									</PropertyList>
 									<ReferenceList>
 										<Reference Name="Target">
 											<ObjectRef Name="MUS_MainMenu" ID="{7FA8DFCC-DAD2-4048-A721-C2F749FF0BD6}" WorkUnitID="{AF633A36-6CC5-470E-AD72-3F76D6F661BF}"/>
@@ -478,6 +481,16 @@
 											<ReferenceList>
 												<Reference Name="Target">
 													<ObjectRef Name="Hack_Unlock" ID="{A30B247C-033C-46E0-A0F8-848E3C0D44D0}" WorkUnitID="{AF633A36-6CC5-470E-AD72-3F76D6F661BF}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+										<Action Name="" ID="{A40CE423-FC4B-493D-B42B-47DDB948AAD7}" ShortID="55683389">
+											<PropertyList>
+												<Property Name="Delay" Type="Real64" Value="0.5"/>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="HackSuccess" ID="{96F192D7-CD52-4AD6-88E1-F8EB34DE64ED}" WorkUnitID="{AF633A36-6CC5-470E-AD72-3F76D6F661BF}"/>
 												</Reference>
 											</ReferenceList>
 										</Action>

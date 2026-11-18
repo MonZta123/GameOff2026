@@ -1,6 +1,35 @@
 <?xml version="1.0" encoding="utf-8"?>
 <WwiseDocument Type="WorkUnit" ID="{ECBC3E17-72D2-47E6-BB8F-B9B750AFD99D}" SchemaVersion="133">
 	<Effects>
-		<WorkUnit Name="Default Work Unit" ID="{ECBC3E17-72D2-47E6-BB8F-B9B750AFD99D}" PersistMode="Standalone"/>
+		<WorkUnit Name="Default Work Unit" ID="{ECBC3E17-72D2-47E6-BB8F-B9B750AFD99D}" PersistMode="Standalone">
+			<ChildrenList>
+				<Effect Name="VO_Ducking" ID="{C1C7B2CB-DB13-4DE3-A398-FBFCABB78DE1}" PluginName="Wwise Compressor" CompanyID="0" PluginID="108" PluginType="3"/>
+				<Effect Name="DuckingVO" ID="{E807226D-B3B0-4E06-9523-11AFD9CB8463}" PluginName="Wwise Meter" CompanyID="0" PluginID="129" PluginType="3">
+					<PropertyList>
+						<Property Name="ApplyDownstreamVolume" Type="bool" Value="True"/>
+						<Property Name="Min" Type="Real32" Value="-30"/>
+						<Property Name="ReleaseTime" Type="Real32" Value="0.2"/>
+					</PropertyList>
+					<ReferenceList>
+						<Reference Name="GameParameter">
+							<ObjectRef Name="DuckingSFX" ID="{9F92B4CD-201F-47A8-80AF-A2DF167E36DC}" WorkUnitID="{6F8DEDD3-88D9-4999-911F-2B2AC466C6FF}"/>
+						</Reference>
+					</ReferenceList>
+				</Effect>
+				<Effect Name="SFX_Ducking" ID="{46ABBA0E-718C-40E2-949D-B2F56AB99665}" PluginName="Wwise Compressor" CompanyID="0" PluginID="108" PluginType="3"/>
+				<Effect Name="DuckingSFX" ID="{4F47A82C-75FD-42B4-973F-392996D0F68D}" PluginName="Wwise Meter" CompanyID="0" PluginID="129" PluginType="3">
+					<PropertyList>
+						<Property Name="ApplyDownstreamVolume" Type="bool" Value="True"/>
+						<Property Name="Min" Type="Real32" Value="-30"/>
+						<Property Name="ReleaseTime" Type="Real32" Value="0.2"/>
+					</PropertyList>
+					<ReferenceList>
+						<Reference Name="GameParameter">
+							<ObjectRef Name="DuckingSFX" ID="{9F92B4CD-201F-47A8-80AF-A2DF167E36DC}" WorkUnitID="{6F8DEDD3-88D9-4999-911F-2B2AC466C6FF}"/>
+						</Reference>
+					</ReferenceList>
+				</Effect>
+			</ChildrenList>
+		</WorkUnit>
 	</Effects>
 </WwiseDocument>
