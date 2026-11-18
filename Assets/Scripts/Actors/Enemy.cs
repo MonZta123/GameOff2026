@@ -36,6 +36,9 @@ namespace Actors
 
         [SerializeField]
         private LineRenderer lineRenderer;
+        
+        [SerializeField]
+        private AK.Wwise.Event enemyDamageSound;
 
         public void Init(ECS.Entities.Enemy entity)
         {
@@ -134,6 +137,7 @@ namespace Actors
                 if (entity._health < _health)
                 {
                     DoFlash();
+                    enemyDamageSound.Post(gameObject);
                 }
 
                 healthbar.SetHealthPercent(entity._health / (float)entity._maxHealth * 100);

@@ -10,7 +10,7 @@
     "Type": "User",
     "GUID": "{3059A6CE-8152-4CD2-BEA9-69E98BB60D65}",
     "Language": "SFX",
-    "Hash": "{8078CC92-6E83-A8F9-1A74-BC1CDF083F8E}",
+    "Hash": "{DA234078-B4E1-D15E-42A8-3F83422F94DA}",
     "ObjectPath": "\\SoundBanks\\Default Work Unit\\Main",
     "ShortName": "Main",
     "Path": "Main.bnk",
@@ -358,6 +358,14 @@
       "Location": "Memory",
       "ShortName": "VO_B_Hit_01.wav",
       "CachePath": "68/{683586B9-B42F-3A97-5984-5F75F711F1AC}.wem"
+     },
+     {
+      "Id": "289669370",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "Roar.wav",
+      "CachePath": "5F/{5F026DD3-2A04-7FB7-75EA-7D24F7185C54}.wem"
      },
      {
       "Id": "300372930",
@@ -1519,7 +1527,6 @@
       "Name": "Play_MUS_MissionPaused",
       "ObjectPath": "\\Events\\Default Work Unit\\MUSIC\\Play_MUS_MissionPaused",
       "GUID": "{5FB0A79F-8C17-4BBC-8B13-4FC195E511ED}",
-      "Color": "10",
       "DurationType": "Infinite",
       "MediaRefs": [
        {
@@ -1575,6 +1582,11 @@
       "DurationType": "OneShot",
       "DurationMin": "1.9626858",
       "DurationMax": "1.965679",
+      "MediaRefs": [
+       {
+        "Id": "289669370"
+       }
+      ],
       "SwitchContainers": [
        {
         "SwitchValue": {
@@ -2586,33 +2598,6 @@
       ]
      },
      {
-      "Id": "1261553528",
-      "Name": "Play_VO_A_Win",
-      "ObjectPath": "\\Events\\Default Work Unit\\VO\\A\\Play_VO_A_Win",
-      "GUID": "{A34B477D-9354-450C-8CEB-F8746C6B91E7}",
-      "Color": "2",
-      "DurationType": "OneShot",
-      "DurationMin": "0.9833787",
-      "DurationMax": "2.9002042",
-      "MediaRefs": [
-       {
-        "Id": "173793195"
-       },
-       {
-        "Id": "184732188"
-       },
-       {
-        "Id": "547594150"
-       },
-       {
-        "Id": "555140878"
-       },
-       {
-        "Id": "851917532"
-       }
-      ]
-     },
-     {
       "Id": "3385676497",
       "Name": "Play_VO_B_Dead",
       "ObjectPath": "\\Events\\Default Work Unit\\VO\\B\\Play_VO_B_Dead",
@@ -2795,33 +2780,6 @@
           "Id": "410590335"
          }
         ]
-       }
-      ]
-     },
-     {
-      "Id": "2629729319",
-      "Name": "Play_VO_B_Win",
-      "ObjectPath": "\\Events\\Default Work Unit\\VO\\B\\Play_VO_B_Win",
-      "GUID": "{21741351-D5C5-4C74-BE59-045D6315ABF7}",
-      "Color": "10",
-      "DurationType": "OneShot",
-      "DurationMin": "0.9833787",
-      "DurationMax": "2.9002042",
-      "MediaRefs": [
-       {
-        "Id": "173793195"
-       },
-       {
-        "Id": "184732188"
-       },
-       {
-        "Id": "547594150"
-       },
-       {
-        "Id": "555140878"
-       },
-       {
-        "Id": "851917532"
        }
       ]
      },
@@ -3013,33 +2971,6 @@
       ]
      },
      {
-      "Id": "806496890",
-      "Name": "Play_VO_C_Win",
-      "ObjectPath": "\\Events\\Default Work Unit\\VO\\C\\Play_VO_C_Win",
-      "GUID": "{DE9AB8C1-CF40-43E9-9478-25CB2F98892D}",
-      "Color": "1",
-      "DurationType": "OneShot",
-      "DurationMin": "0.9833787",
-      "DurationMax": "2.9002042",
-      "MediaRefs": [
-       {
-        "Id": "173793195"
-       },
-       {
-        "Id": "184732188"
-       },
-       {
-        "Id": "547594150"
-       },
-       {
-        "Id": "555140878"
-       },
-       {
-        "Id": "851917532"
-       }
-      ]
-     },
-     {
       "Id": "3891568401",
       "Name": "Play_VO_D_Attack",
       "ObjectPath": "\\Events\\Default Work Unit\\VO\\D\\Play_VO_D_Attack",
@@ -3227,11 +3158,11 @@
       ]
      },
      {
-      "Id": "652087801",
-      "Name": "Play_VO_D_Win",
-      "ObjectPath": "\\Events\\Default Work Unit\\VO\\D\\Play_VO_D_Win",
-      "GUID": "{8AC87665-A05D-45BA-B6A5-CE6FDA96C2FF}",
-      "Color": "1",
+      "Id": "1985965712",
+      "Name": "Play_VO_Win",
+      "ObjectPath": "\\Events\\Default Work Unit\\VO\\Play_VO_Win",
+      "GUID": "{26B21666-DAE0-481D-B5C8-0753260D28CF}",
+      "Color": "10",
       "DurationType": "OneShot",
       "DurationMin": "0.9833787",
       "DurationMax": "2.9002042",
@@ -3503,6 +3434,6 @@
     ]
    }
   ],
-  "FileHash": "{CFEF07DE-4419-FD20-A35E-DB7A5B78EBF4}"
+  "FileHash": "{62B713AE-82D0-F0C3-0C5E-52F70986BAF4}"
  }
 }

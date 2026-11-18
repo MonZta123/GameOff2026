@@ -5,13 +5,11 @@ Event	ID	Name			Wwise Object Path	Notes
 	395039606	Play_SFX_Dash			\Default Work Unit\SFX\Movement\Play_SFX_Dash	
 	518999636	Play_VO_D_Hit			\Default Work Unit\VO\D\Play_VO_D_Hit	
 	520291271	Play_VO_B_HitHeavy			\Default Work Unit\VO\B\Play_VO_B_HitHeavy	
-	652087801	Play_VO_D_Win			\Default Work Unit\VO\D\Play_VO_D_Win	
 	669863127	Play_VO_C_Hit			\Default Work Unit\VO\C\Play_VO_C_Hit	
 	680738558	Play_MUS_MissionPaused			\Default Work Unit\MUSIC\Play_MUS_MissionPaused	
 	688013969	Play_VO_D_HitHeavy			\Default Work Unit\VO\D\Play_VO_D_HitHeavy	
 	704212210	Play_SFX_DoorSmash			\Default Work Unit\SFX\Environment\Play_SFX_DoorSmash	
 	708671363	Play_SFX_UI_Hover			\Default Work Unit\SFX\UI\Play_SFX_UI_Hover	
-	806496890	Play_VO_C_Win			\Default Work Unit\VO\C\Play_VO_C_Win	
 	820384135	Stop_AMB_BackOfHouse			\Default Work Unit\AMBIENCE\Stop_AMB_BackOfHouse	
 	1018631967	Play_VO_D_Dead			\Default Work Unit\VO\D\Play_VO_D_Dead	
 	1043591872	Play_MUS_MainMenu			\Default Work Unit\MUSIC\Play_MUS_MainMenu	
@@ -22,7 +20,6 @@ Event	ID	Name			Wwise Object Path	Notes
 	1226388500	Play_VO_C_Attack			\Default Work Unit\VO\C\Play_VO_C_Attack	
 	1233489828	Play_VO_A_Dead			\Default Work Unit\VO\A\Play_VO_A_Dead	
 	1258449045	Play_VO_A_Hit			\Default Work Unit\VO\A\Play_VO_A_Hit	
-	1261553528	Play_VO_A_Win			\Default Work Unit\VO\A\Play_VO_A_Win	
 	1408943389	Stop_AMB_FrontOfHouse			\Default Work Unit\AMBIENCE\Stop_AMB_FrontOfHouse	
 	1523744589	Stop_MUS_Character			\Default Work Unit\MUSIC\Stop_MUS_Character	
 	1555471512	Play_VO_C_Select			\Default Work Unit\VO\C\Play_VO_C_Select	
@@ -33,6 +30,7 @@ Event	ID	Name			Wwise Object Path	Notes
 	1953576305	Play_SFX_Footsteps_C			\Default Work Unit\SFX\Movement\Play_SFX_Footsteps_C	
 	1953576307	Play_SFX_Footsteps_A			\Default Work Unit\SFX\Movement\Play_SFX_Footsteps_A	
 	1953576310	Play_SFX_Footsteps_D			\Default Work Unit\SFX\Movement\Play_SFX_Footsteps_D	
+	1985965712	Play_VO_Win			\Default Work Unit\VO\Play_VO_Win	
 	2058610914	Stop_MUS_CharacterSlowdown			\Default Work Unit\MUSIC\Stop_MUS_CharacterSlowdown	
 	2090247314	Play_VO_A_Select			\Default Work Unit\VO\A\Play_VO_A_Select	
 	2154578732	Play_SFX_E_Impact			\Default Work Unit\SFX\Impacts\Play_SFX_E_Impact	
@@ -46,7 +44,6 @@ Event	ID	Name			Wwise Object Path	Notes
 	2484137795	Play_SFX_UI_Select			\Default Work Unit\SFX\UI\Play_SFX_UI_Select	
 	2625050970	Play_VO_B_Hit			\Default Work Unit\VO\B\Play_VO_B_Hit	
 	2625069657	Play_VO_D_Select			\Default Work Unit\VO\D\Play_VO_D_Select	
-	2629729319	Play_VO_B_Win			\Default Work Unit\VO\B\Play_VO_B_Win	
 	2632977701	Play_SFX_DoorSlideOpen			\Default Work Unit\SFX\Environment\Play_SFX_DoorSlideOpen	
 	2770407763	Play_SFX_Action_C_Defuse			\Default Work Unit\SFX\Actions\Play_SFX_Action_C_Defuse	
 	2920175019	Play_VO_B_Select			\Default Work Unit\VO\B\Play_VO_B_Select	
@@ -138,6 +135,7 @@ In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
 	268413720	MUS_Pause_Intro	.cache\B1\{B198F273-0541-9550-AC7E-1C2645F0A717}.wem		\Containers\Default Work Unit\MUSIC\MUS_Mission\MUS_MissionPaused\MUS_Pause_Intro\MUS_Pause_Intro		668560
 	278186006	Dash	.cache\89\{8948EAFF-45BC-8C5C-31F5-D2DD09017A0F}.wem		\Containers\Default Work Unit\SFX\Movement\Dash		79064
 	284150746	VO_B_Hit_01	.cache\68\{683586B9-B42F-3A97-5984-5F75F711F1AC}.wem		\Containers\Default Work Unit\VO\CharacterB\Hit\VO_B_Hit_01		54720
+	289669370	Roar	.cache\5F\{5F026DD3-2A04-7FB7-75EA-7D24F7185C54}.wem		\Containers\Default Work Unit\SFX\Attacks\Olga\AttackHeavySlam\Roar		232256
 	300372930	VO_B_Dodge_03	.cache\C3\{C3F00F1F-BCAE-3267-81EB-EBA2A91400C7}.wem		\Containers\Default Work Unit\VO\CharacterB\Dodge\Quip or Silence\Quip\VO_B_Dodge_03		60336
 	302324581	FootstepD_03_Concrete	.cache\B8\{B8D62A5B-A971-350B-E502-973DD8A091AF}.wem		\Containers\Default Work Unit\SFX\Movement\FootstepsD\Concrete\FootstepD_03_Concrete		88020
 	312967604	Mine_Beeps	.cache\15\{15388B51-E6D8-FC7D-5EC9-CE7D42364A07}.wem		\Containers\Default Work Unit\SFX\Weapons\Mine_Beeps		227104
@@ -170,7 +168,7 @@ In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
 	521808120	MUS_SpacingOut_Loop	.cache\A1\{A1A39DF7-840E-9FB6-03B3-818E34458073}.wem		\Containers\Default Work Unit\MUSIC\MUS_MainMenu\MUS_SpacingOut_Loop\MUS_SpacingOut_Loop		5976944
 	544387914	VO_E_ImpactHeavy_01	.cache\F0\{F0E71142-2EB2-8C65-8631-00E2961A1E27}.wem		\Containers\Default Work Unit\VO\CharacterE\ImpactHeavy\VO_E_ImpactHeavy_01		121630
 	547164501	Mine Countdown	.cache\37\{37AC0F88-1ABB-5F48-8758-A71F30EB9FD7}.wem		\Containers\Default Work Unit\SFX\Weapons\Mine Countdown		420028
-	547594150	VO_B_Win_04	.cache\21\{216B6B49-C303-1C7A-040A-F3A73458DD44}.wem		\Containers\Default Work Unit\VO\CharacterB\Win\VO_B_Win_04		183982
+	547594150	VO_B_Win_04	.cache\21\{216B6B49-C303-1C7A-040A-F3A73458DD44}.wem		\Containers\Default Work Unit\VO\CharacterC\Win\VO_B_Win_04		183982
 	555140878	VO_B_Win_03	.cache\16\{162EC88C-6993-4FCF-23CB-AE0A957398EE}.wem		\Containers\Default Work Unit\VO\CharacterB\Win\VO_B_Win_03		97794
 	593952616	FootstepC_02	.cache\00\{00CD67D2-97DB-D848-9B1A-4D56CA831903}.wem		\Containers\Default Work Unit\SFX\Movement\FootstepsC\Carpet\FootstepC_02		60072
 	598450474	VO_E_ImpactHeavy_04	.cache\81\{818C2069-89C0-55B5-60E1-02E627CCCA31}.wem		\Containers\Default Work Unit\VO\CharacterE\ImpactHeavy\VO_E_ImpactHeavy_04		58860
@@ -204,7 +202,7 @@ In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
 	828655390	VO_B_Dodge_06	.cache\27\{27DD4FA0-AFBA-6607-92EC-7051CDDE9B8E}.wem		\Containers\Default Work Unit\VO\CharacterB\Dodge\Quip or Silence\Quip\VO_B_Dodge_06		49454
 	845892068	Slowdown_03	.cache\3B\{3BA2C2DD-49DD-BA1D-FBAC-945FB542AC9D}.wem		\Containers\Default Work Unit\SFX\UI\Slowdown\Slowdown_03		505468
 	846871773	Rifle_03	.cache\0E\{0E565B79-1B9C-B29D-2F2E-123C5EA86DFE}.wem		\Containers\Default Work Unit\SFX\Attacks\Renoir\AttackRifle\Rifle_03		418664
-	851917532	VO_B_Win_01	.cache\C9\{C919768A-381E-E137-C4C8-10F2B1EDA375}.wem		\Containers\Default Work Unit\VO\CharacterB\HackSuccess\VO_B_Win_01		86830
+	851917532	VO_B_Win_01	.cache\C9\{C919768A-381E-E137-C4C8-10F2B1EDA375}.wem		\Containers\Default Work Unit\VO\CharacterC\Win\VO_B_Win_01		86830
 	858358347	ActionMineDefuse_02	.cache\96\{96772F55-C9BD-0E3F-99E7-61181F437F2F}.wem		\Containers\Default Work Unit\SFX\Actions\TNT\Mine_Defuse\ActionMineDefuse_02		109900
 	859905531	CrunchHeavy_02	.cache\49\{492FE86A-F98C-2309-9913-F10F3D6BE635}.wem		\Containers\Default Work Unit\SFX\Impacts\CrunchHeavy\CrunchHeavy_02		105628
 	869297126	VO_B_Roll_04	.cache\06\{06FBA5FD-3C57-A4CB-9FD1-C53F25B5513B}.wem		\Containers\Default Work Unit\VO\CharacterB\Dodge\Dodge\VO_B_Roll_04		69216

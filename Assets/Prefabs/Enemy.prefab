@@ -306,6 +306,10 @@ MonoBehaviour:
   spriteRenderer: {fileID: 4262337228588844169}
   marker: {fileID: 3467674511701697104}
   lineRenderer: {fileID: 3116849325634933024}
+  enemyDamageSound:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: fe9605dd754dc464d83f069e5eac48d1, type: 2}
 --- !u!120 &3116849325634933024
 LineRenderer:
   serializedVersion: 3

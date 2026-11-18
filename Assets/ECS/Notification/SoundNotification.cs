@@ -18,7 +18,8 @@ namespace ECS.Notification
         CashIn,
         StartedHacking,
         HackSuccess,
-        InterruptedHacking
+        InterruptedHacking,
+        HeavyImpact
     }
     
     public struct SoundNotification

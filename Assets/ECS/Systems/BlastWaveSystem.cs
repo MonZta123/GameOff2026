@@ -20,6 +20,8 @@ namespace ECS.Systems
 
         private void BlastWaveEvent(ref Snapshot snapshot, BlastWaveEvent evt)
         {
+            var deadEnemy = false;
+            
             for (var i = snapshot._enemies.GetNumEntities() - 1; i >= 0; i--)
             {
                 ref var enemy = ref snapshot._enemies.GetEntityAt(i);
@@ -43,8 +45,9 @@ namespace ECS.Systems
                             _knockbackDirection = directionToPlayer.normalized,
                             _position = enemy._position
                         });
-
+                        
                         snapshot._enemies.DespawnAt(i);
+                        deadEnemy = true;
                     }
                 }
             }
@@ -61,6 +64,14 @@ namespace ECS.Systems
                 {
                     player._health -= 20;
                 }
+            }
+
+            if (deadEnemy)
+            {
+                snapshot._soundNotificationPool.Add(new SoundNotification()
+                {
+                    _soundType = SoundType.HeavyImpact, _position = evt._position
+                });
             }
         }
     }

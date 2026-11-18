@@ -366,6 +366,11 @@ MonoBehaviour:
       idInternal: 0
       valueGuidInternal: 
       WwiseObjectReference: {fileID: 11400000, guid: a26ffff489239d34cb1c94e79e9e87d5, type: 2}
+  - key: 11
+    value:
+      idInternal: 0
+      valueGuidInternal: 
+      WwiseObjectReference: {fileID: 11400000, guid: 0f38d94c18978bd448c362e08796ac69, type: 2}
   music:
     idInternal: 0
     valueGuidInternal: 

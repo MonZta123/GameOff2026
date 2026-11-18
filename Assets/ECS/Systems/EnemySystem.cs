@@ -237,6 +237,11 @@ namespace ECS.Systems
                         enemy._health -= 100;
                         if (enemy._health <= 0)
                         {
+                            snapshot._soundNotificationPool.Add(new SoundNotification()
+                            {
+                                _soundType = SoundType.HeavyImpact, _position = enemy._position
+                            });
+                            
                             snapshot._damageProcess--;
                             if (snapshot._damageProcess < 0)
                                 snapshot._damageProcess = 0;

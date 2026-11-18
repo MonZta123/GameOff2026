@@ -27,10 +27,10 @@ namespace Notifications
 
         [SerializeField]
         private AK.Wwise.Event stopSlowdown;
-        
+
         [SerializeField]
         private AK.Wwise.Event pauseMusic;
-        
+
         [SerializeField]
         private AK.Wwise.Event stopPauseMusic;
 
@@ -82,7 +82,7 @@ namespace Notifications
                 if (type == AkCallbackType.AK_EndOfEvent)
                     cont();
             });
-            
+
             if (result == AkUnitySoundEngine.AK_INVALID_PLAYING_ID)
             {
                 cont();
@@ -99,7 +99,7 @@ namespace Notifications
         {
             pauseMusic.Post(gameObject);
         }
-        
+
         public void StopPauseMusic()
         {
             pauseMusic.Post(gameObject);
