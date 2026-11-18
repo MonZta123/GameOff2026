@@ -5,7 +5,7 @@ public class InputManager : MonoBehaviour
 {
     [SerializeField]
     private Camera cam;
-    
+
     [SerializeField]
     private Texture2D[] crossHairs;
 
@@ -14,11 +14,6 @@ public class InputManager : MonoBehaviour
         if (!_secondaryDown && Input.GetKeyDown(KeyCode.Space))
         {
             _secondaryDown = true;
-        }
-
-        if (!_actionDown && Input.GetKey(KeyCode.E))
-        {
-            _actionDown = true;
         }
 
         _mousePosition = cam.ScreenToWorldPoint(Input.mousePosition);
@@ -33,22 +28,22 @@ public class InputManager : MonoBehaviour
     {
         Cursor.SetCursor(null, Vector2.zero, CursorMode.Auto);
     }
-    
+
     public Vector3 SnipePosition()
     {
         var pos = (cam.ScreenToViewportPoint(Input.mousePosition) - new Vector3(0.5f, 0.5f, 0.5f)) * 2f;
-        
+
         pos.x = Mathf.Clamp(pos.x, -1, 1);
         pos.y = Mathf.Clamp(pos.y, -1, 1);
         pos.z = 0;
-    
+
         return pos;
     }
-    
+
     public bool IsRKeyDown => Input.GetKeyDown(KeyCode.R);
-    
+
     public bool IsEscKeyDown => Input.GetKeyDown(KeyCode.Escape);
-    
+
     public float GetAngle(Transform relativeTo)
     {
         Vector2 direction = _mousePosition - relativeTo.position;
@@ -62,7 +57,6 @@ public class InputManager : MonoBehaviour
     private float _angle;
 
     private bool _secondaryDown;
-    private bool _actionDown;
 
     private Vector3 _mousePosition;
 
@@ -73,17 +67,18 @@ public class InputManager : MonoBehaviour
 
         var angle = GetAngle(relativeTo);
 
+        var eDown = Input.GetKey(KeyCode.E);
+
         var intent = new Intent()
         {
             _movement = Vector2.ClampMagnitude(new Vector2(xAxis, yAxis), 1),
             _primary = Input.GetMouseButton(0),
             _secondary = _secondaryDown,
-            _action = _actionDown,
-            _angle = angle
+            _angle = angle,
+            _action = eDown
         };
 
         _secondaryDown = false;
-        _actionDown = false;
 
         return intent;
     }
@@ -91,6 +86,5 @@ public class InputManager : MonoBehaviour
     public void ClearInput()
     {
         _secondaryDown = false;
-        _actionDown = false;
     }
 }

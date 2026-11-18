@@ -5,7 +5,6 @@ using ECS;
 using ECS.Entities;
 using ECS.Notification;
 using Notifications;
-using TMPro;
 using Unity.Cinemachine;
 using UnityEngine;
 using UnityEngine.Rendering.Universal;
@@ -42,13 +41,13 @@ public class GameSessionHost : MonoBehaviour
     private InputManager inputManager;
 
     [SerializeField]
+    private HUD hud;
+
+    [SerializeField]
     private Texture2D[] maps;
 
     [SerializeField]
     private Transform snipeTarget;
-
-    [SerializeField]
-    private TextMeshProUGUI rewindText;
 
     [SerializeField]
     private Image fade;
@@ -83,6 +82,7 @@ public class GameSessionHost : MonoBehaviour
         pools.Initialize();
         _segmentTicks = maxSeconds * stepsPerSecond;
         var mapDefinition = TextureMapBuilder.GetMap(maps[0]);
+        SetObjectives(mapDefinition);
         _gameSessionState = GameSessionState.Playing;
         markerManager.SetVisible(true);
 
@@ -93,9 +93,14 @@ public class GameSessionHost : MonoBehaviour
         _timeline.InitNextSegment(mapDefinition);
         mapRenderer.GenerateMap(mapDefinition);
 
-        rewindText.gameObject.SetActive(false);
         taskTextManager.SetText("");
         _gameFlowManager = new GameFlowManager(_segmentTicks, stepsPerSecond);
+
+        hud.HideThreatMeter();
+        hud.HideRewindMessage();
+        hud.HideMissionPanel();
+        hud.HideObjectivePanel();
+        hud.InitLogoAnimation();
 
         scriptableRendererData.rendererFeatures[0].SetActive(false);
         // Hide Loadingscreen here
@@ -143,6 +148,8 @@ public class GameSessionHost : MonoBehaviour
 
     private void InitNextReplaySegment()
     {
+        hud.HideThreatMeter();
+
         StartCoroutine(FadeOut(Next));
         return;
 
@@ -153,7 +160,7 @@ public class GameSessionHost : MonoBehaviour
 
             var mapDefinition =
                 TextureMapBuilder.GetMap(maps[((_timeline.GetCurrentSegment() + 1) % Constants.Segments)]);
-
+            SetObjectives(mapDefinition);
             _timeline.InitNextSegment(mapDefinition);
             mapRenderer.GenerateMap(mapDefinition);
 
@@ -182,7 +189,8 @@ public class GameSessionHost : MonoBehaviour
     {
         pools.ClearAllNotificationPools();
 
-        rewindText.gameObject.SetActive(false);
+        hud.HideRewindMessage();
+        hud.HideObjectivePanel();
 
         if (_rewindingCoroutine != null)
             StopCoroutine(_rewindingCoroutine);
@@ -297,8 +305,7 @@ public class GameSessionHost : MonoBehaviour
     {
         AkUnitySoundEngine.StopAll();
         _gameSessionState = GameSessionState.WaitingForRSuccess;
-        rewindText.gameObject.SetActive(true);
-        rewindText.text = "Press R for next Player!";
+        hud.ShowRewindMessage("Success! Press R to continue.");
         _tickDriver.StopSim();
         StopCharacterBouncing();
     }
@@ -306,9 +313,8 @@ public class GameSessionHost : MonoBehaviour
     private void PlayerDead(string who, int index)
     {
         AkUnitySoundEngine.StopAll();
+        hud.ShowRewindMessage(who + " died! Press R to try again.");
         _gameSessionState = GameSessionState.WaitingForR;
-        rewindText.text = who + " was eliminated! Press R to retry!";
-        rewindText.gameObject.SetActive(true);
 
         positionComposer.VirtualCamera.Follow = pools._playerPool.Active[index].transform;
 
@@ -320,25 +326,24 @@ public class GameSessionHost : MonoBehaviour
 
     private void DoRewindAnimation()
     {
-        rewindText.gameObject.SetActive(false);
+        hud.HideRewindMessage();
 
         if (_rewindingCoroutine != null)
             StopCoroutine(_rewindingCoroutine);
 
         _rewindingCoroutine = StartCoroutine(PlayRewindAnimation(ResetTickTimer));
-        
+
         soundSystem.StopPauseMusic();
     }
 
     private void ObjectiveFailed(string reason)
     {
+        hud.ShowRewindMessage(reason);
         AkUnitySoundEngine.StopAll();
         _gameSessionState = GameSessionState.WaitingForR;
-        rewindText.text = reason + " Press R to rewind!";
-        rewindText.gameObject.SetActive(true);
-        
+
         soundSystem.PlayFailMusic();
-        
+
         _tickDriver.StopSim();
     }
 
@@ -366,7 +371,7 @@ public class GameSessionHost : MonoBehaviour
 
             var mapDefinition =
                 TextureMapBuilder.GetMap(maps[((_timeline.GetCurrentSegment() + 1) % Constants.Segments)]);
-
+            SetObjectives(mapDefinition);
             _timeline.InitNextSegment(mapDefinition);
             mapRenderer.GenerateMap(mapDefinition);
             positionComposer.VirtualCamera.PreviousStateIsValid = false;
@@ -385,8 +390,33 @@ public class GameSessionHost : MonoBehaviour
 
     public void Start()
     {
-        _gameSessionState = GameSessionState.Intro;
-        StartCoroutine(DoIntroMusic(() => BuildNextCharacter(true, () => StartCoroutine(FadeIn()))));
+        _gameSessionState = GameSessionState.Briefing;
+
+        Invoke(nameof(StartPauseMusic), 0.2f);
+
+        hud.RollBriefingMessage(
+            "Listen up, Shift Squad! Those pesky CAPSLOCKERS need to know who's in charge. \nDemolish their security, then smash and grab everything in their vault! \nJust... don't die on me. You lot haven't paid your bar tab yet.",
+            () =>
+            {
+                soundSystem.StopPauseMusic();
+
+                hud.ShowRewindMessage("Press R to understand!");
+
+                _gameSessionState = GameSessionState.WaitingForInitInput;
+            });
+    }
+
+    private void StartPauseMusic()
+    {
+        soundSystem.PlayPauseMusic();
+    }
+
+    private void StartGame()
+    {
+        hud.HideBriefingPanel();
+        hud.HideRewindMessage();
+        hud.PlayLogoAnimation(() => StartCoroutine(FadeIn()));
+        StartCoroutine(DoIntroMusic(() => BuildNextCharacter(true)));
     }
 
     private IEnumerator DoIntroMusic(Action next = null)
@@ -424,14 +454,26 @@ public class GameSessionHost : MonoBehaviour
 
     private void Update()
     {
+        if (_gameSessionState == GameSessionState.WaitingForInitInput)
+        {
+            if (inputManager.IsRKeyDown)
+            {
+                soundSystem.StopPauseMusic();
+                StartGame();
+            }
+        }
+
         if (_pauseActive && inputManager.IsEscKeyDown)
         {
             OnResumeGame();
             return;
         }
 
-        if (_gameSessionState is GameSessionState.ReplayMode or GameSessionState.Playing or GameSessionState.Intro &&
-            inputManager.IsEscKeyDown)
+        if (_gameSessionState
+                is GameSessionState.ReplayMode
+                or GameSessionState.Playing
+                or GameSessionState.Intro
+            && inputManager.IsEscKeyDown)
         {
             PauseGame();
             return;
@@ -499,6 +541,15 @@ public class GameSessionHost : MonoBehaviour
         }
     }
 
+    private void SetObjectives(MapDefinition map)
+    {
+        _hasHackerMission = map._hackerZone.Length > 0;
+        _hasDemolitionMission = map._demolitionZone.Length > 0;
+    }
+
+    private bool _hasHackerMission;
+    private bool _hasDemolitionMission;
+
     private void UpdateTaskText()
     {
         var tick = _tickDriver.CurrentTick;
@@ -511,6 +562,7 @@ public class GameSessionHost : MonoBehaviour
 
         var moneyLeft = 0;
         var isEvacuationMission = false;
+        var minesLeft = 0;
         for (var i = 0; i < snapshot._triggers.GetNumEntities(); i++)
         {
             var trigger = snapshot._triggers.GetEntityAt(i);
@@ -520,65 +572,73 @@ public class GameSessionHost : MonoBehaviour
 
             if (trigger._triggerType == TriggerType.Exit)
                 isEvacuationMission = true;
+
+            if (trigger._triggerType == TriggerType.DemolitionZone)
+                minesLeft++;
         }
 
         if (moneyLeft > 0)
-            text += "\nCollect " + moneyLeft + " cash piles!";
+        {
+            hud.SetMissionText("Collect cash piles!");
+            hud.SetMissionCount(moneyLeft.ToString());
+        }
+        else if (isEvacuationMission)
+        {
+            hud.SetMissionText("Stay in the evacuation point!");
+            hud.SetMissionCount(string.Empty);
+        }
+        else if (currentPlayer._type == PlayerType.Demolition && minesLeft > 0)
+        {
+            hud.SetMissionText("Optional: Defuse mines!");
+            hud.SetMissionCount(string.Empty);
+        }
 
-        if (isEvacuationMission)
-            text += "\nStay in the evacuation point!";
-
-        if (moneyLeft == 0 && !isEvacuationMission)
-            text += " ";
-        else
-            text += "\n";
+        if (!isEvacuationMission && moneyLeft == 0 && minesLeft == 0)
+        {
+            hud.SetMissionText("Protect your team!");
+            hud.SetMissionCount(string.Empty);
+        }
 
         switch (currentPlayer._type)
         {
             case PlayerType.Heavy:
-                text += "Cause havoc! " + snapshot._damageProcess + " enemies left!";
+                hud.SetObjectiveText("Enemies left:");
+                hud.SetObjectiveCount(snapshot._damageProcess.ToString());
+                hud.SetSuccessState(snapshot._damageProcess == 0);
+
                 break;
+
             case PlayerType.Hacker:
-                if (snapshot._hackProcess > 0)
+
+                if (_hasHackerMission)
                 {
-                    text += "Hack the computer - " +
-                            (Mathf.CeilToInt(snapshot._hackProcess / (float)_tickDriver.TickRate) + " seconds left!");
+                    hud.SetObjectiveText("Hack the computer:");
+                    hud.SetObjectiveCount((Math.Round(snapshot._hackProcess / (float)_tickDriver.TickRate, 1) +
+                                           " s left!"));
+                    hud.SetSuccessState(snapshot._hackProcess == 0);
                 }
                 else
                 {
-                    text += "Protect your team from incoming threats!";
+                    hud.HideObjectivePanel();
                 }
 
                 break;
             case PlayerType.Demolition:
-                if (snapshot._bombsLeft > 0)
+                if (_hasDemolitionMission)
                 {
-                    text += "Place detonators - " + snapshot._bombsLeft + " spots left!";
+                    hud.SetObjectiveText("TNT left:");
+                    hud.SetObjectiveCount(snapshot._bombsLeft.ToString());
+                    hud.SetSuccessState(snapshot._bombsLeft == 0);
                 }
                 else
                 {
-                    var hasMines = false;
-                    for (var i = 0; i < snapshot._triggers.GetNumEntities(); i++)
-                    {
-                        if (snapshot._triggers.GetEntityAt(i)._triggerType == TriggerType.Mine)
-                        {
-                            hasMines = true;
-                            break;
-                        }
-                    }
-
-                    if (hasMines)
-                    {
-                        text += "Defuse the mines - protect your Team!";
-                    }
-                    else
-                    {
-                        text += "Protect your team from incoming threats!";
-                    }
+                    hud.HideObjectivePanel();
                 }
 
                 break;
             case PlayerType.Sniper:
+                hud.HideObjectivePanel();
+
                 var buttlerActive = false;
 
                 for (var i = 0; i < snapshot._enemies.GetNumEntities(); i++)
@@ -590,7 +650,10 @@ public class GameSessionHost : MonoBehaviour
                     break;
                 }
 
-                text = buttlerActive ? "WARNING: Enemy Sniper is active!" : "No immediate threat detected!";
+                hud.SetThreatMeterText(
+                    buttlerActive ? "WARNING: Enemy Sniper is active!" : "No immediate threat detected!",
+                    buttlerActive);
+
                 break;
             default:
                 throw new ArgumentOutOfRangeException();
@@ -647,7 +710,7 @@ public class GameSessionHost : MonoBehaviour
 
         _gameSessionState = GameSessionState.Playing;
         markerManager.SetVisible(true);
-        rewindText.gameObject.SetActive(false);
+        hud.HideRewindMessage();
         SetAllFootsteps(true);
         scriptableRendererData.rendererFeatures[0].SetActive(false);
         next?.Invoke();

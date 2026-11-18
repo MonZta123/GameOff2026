@@ -37,26 +37,27 @@ namespace Notifications
         private List<GameObject> _soundChannels = new();
 
         private int _nextSoundChannel;
-        
+
         private void Awake()
         {
             for (var i = 0; i < 8; i++)
             {
                 var go = new GameObject($"Sound Channel {i}");
+                go.AddComponent<AkGameObj>();
                 _soundChannels.Add(go);
                 go.transform.SetParent(transform);
             }
         }
-        
+
         public void PlayEvent(SoundNotification notification)
         {
             if (sounds.TryGetValue(notification._soundType, out var sound))
             {
                 var nextGo = _soundChannels[_nextSoundChannel];
                 _nextSoundChannel = (_nextSoundChannel + 1) % _soundChannels.Count;
-                
                 nextGo.transform.position = notification._position;
-                
+                AkUnitySoundEngine.SetObjectPosition(nextGo, nextGo.transform);
+
                 sound.Post(nextGo);
             }
         }

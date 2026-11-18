@@ -47,7 +47,7 @@ namespace Actors
             {
                 if (_playerType == PlayerType.Hacker)
                 {
-                    marker.SetText("Hold E to hack Computer!");
+                    marker.SetText("Hold E to hack Computer!", "Hold E to hack!");
                     marker.SetUsesArrow(true);
                 }
 
@@ -58,7 +58,7 @@ namespace Actors
             {
                 if (_playerType == PlayerType.Demolition)
                 {
-                    marker.SetText("Press E to place TNT!");
+                    marker.SetText("Press E to place TNT!", "Press E to plant!");
                     marker.SetUsesArrow(true);
                 }
 
@@ -67,7 +67,7 @@ namespace Actors
 
             if (_entity._triggerType == TriggerType.Exit)
             {
-                marker.SetText("Wait here to evacuate!");
+                marker.SetText("Wait here to evacuate!", "Evacuationzone!");
                 marker.SetUsesArrow(true);
                 color = Color.green;
             }

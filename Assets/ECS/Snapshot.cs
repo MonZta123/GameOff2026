@@ -12,7 +12,7 @@ namespace ECS
         public EntityPool<Door> _doors;
         public EntityPool<Trigger> _triggers;
         public EntityPool<PlacedBomb> _placedBombs;
-
+        
         public int _damageProcess;
         public int _hackProcess;
         public int _bombsLeft;
@@ -36,7 +36,7 @@ namespace ECS
             _damageProcess = snapshot._damageProcess;
             _hackProcess = snapshot._hackProcess;
             _bombsLeft = snapshot._bombsLeft;
-
+            
             _tickButtlerRespawnAt = snapshot._tickButtlerRespawnAt;
         }
 
