@@ -928,7 +928,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Tien, make your way to the vault and blast that vault door to pieces!
+  m_text: 'Tien, make your way to the vault and blast that vault door to pieces! Just make sure you don''t blast yourself!
 
     (LMB to throw grenades, RMB to diffuse mines, SHIFT key to set mine)'
   m_isRightToLeft: 0
@@ -2361,7 +2361,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Renoir, pick off anyone else that you see and keep the team alive!
+  m_text: 'Renoir, pick off the CAPSLOCKERS that you see and keep the team alive! Get as many as you can!
 
     (LMB to snipe)'
   m_isRightToLeft: 0
@@ -4232,7 +4232,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Olga, clear a path to the security terminal by any means necessary! \n(LMB to punch, and RMB to slam)"
+  m_text: "Olga, give those CAPSLOCKERS a beating they'll remember! Knock out 50 of 'em and clear a path to the security terminal by any means necessary! \n(LMB to punch, and RMB to slam)"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 4485a306f20aa4a04b7ad9f22443ab4e, type: 2}
   m_sharedMaterial: {fileID: -8876081502632558886, guid: 4485a306f20aa4a04b7ad9f22443ab4e, type: 2}
@@ -4956,7 +4956,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Dave! Er, I  mean, H4ck3rm4n! Get to the security terminal and hack open that door!
+  m_text: 'Dave! Er, I  mean, H4ck3rm4n! Get to the security terminal and hack open that door! Knock out 20 of ''em and I''ll buy you a beer!
 
     (LMB to shoot, RMB to switch to hack mode, SHIFT key to begin hacking)'
   m_isRightToLeft: 0
