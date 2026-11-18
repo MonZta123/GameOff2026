@@ -15,6 +15,9 @@ using Player = Actors.Player;
 public class GameSessionHost : MonoBehaviour
 {
     [SerializeField]
+    private PauseMenuScript pauseMenu;
+
+    [SerializeField]
     private int stepsPerSecond = 64;
 
     [SerializeField]
@@ -61,6 +64,9 @@ public class GameSessionHost : MonoBehaviour
 
     [SerializeField]
     private ScriptableRendererData scriptableRendererData;
+
+    [SerializeField]
+    private AK.Wwise.Event stopMusic;
 
     private TickDriver _tickDriver;
     private Timeline _timeline;
@@ -367,6 +373,7 @@ public class GameSessionHost : MonoBehaviour
         _tickDriver._onTick -= OnTick;
         scriptableRendererData.rendererFeatures[0].SetActive(false);
         _tickDriver = null;
+        stopMusic.Post(gameObject);
     }
 
     public void Start()
@@ -378,18 +385,49 @@ public class GameSessionHost : MonoBehaviour
     private IEnumerator DoIntroMusic(Action next = null)
     {
         yield return new WaitForSeconds(0.2f);
-        soundSystem.PlayIntroMusic();
-        var duration = 5.368f;
-
-        yield return new WaitForSeconds(duration);
-
-        next?.Invoke();
-        _gameSessionState = GameSessionState.Playing;
-        markerManager.SetVisible(true);
+        soundSystem.PlayIntroMusic(() =>
+        {
+            next?.Invoke();
+            _gameSessionState = GameSessionState.Playing;
+            markerManager.SetVisible(true);
+        });
     }
+
+    public void OnResumeGame()
+    {
+        soundSystem.ResumeMusic();
+        pauseMenu.CloseAll();
+        Time.timeScale = 1f;
+        _pauseActive = false;
+        pauseMenu.gameObject.SetActive(false);
+        inputManager.ClearInput();
+    }
+
+    private void PauseGame()
+    {
+        soundSystem.PauseMusic();
+        Time.timeScale = 0f;
+        _pauseActive = true;
+        pauseMenu.gameObject.SetActive(true);
+    }
+
+    private bool _pauseActive;
 
     private void Update()
     {
+        if (_pauseActive && inputManager.IsEscKeyDown)
+        {
+            OnResumeGame();
+            return;
+        }
+
+        if (_gameSessionState is GameSessionState.ReplayMode or GameSessionState.Playing or GameSessionState.Intro &&
+            inputManager.IsEscKeyDown)
+        {
+            PauseGame();
+            return;
+        }
+
         if (_gameSessionState == GameSessionState.Playing)
             _activePlayerObject.SetAngle(inputManager.GetAngle(_activePlayerObject.transform));
 
@@ -479,7 +517,7 @@ public class GameSessionHost : MonoBehaviour
             text += "\nCollect " + moneyLeft + " cash piles!";
 
         if (isEvacuationMission)
-            text += "\nGet to the evacuation point!";
+            text += "\nStay in the evacuation point!";
 
         if (moneyLeft == 0 && !isEvacuationMission)
             text += " ";
