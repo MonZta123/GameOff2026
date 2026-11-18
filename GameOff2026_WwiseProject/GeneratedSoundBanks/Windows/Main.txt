@@ -52,6 +52,7 @@ Event	ID	Name			Wwise Object Path	Notes
 	2920175019	Play_VO_B_Select			\Default Work Unit\VO\B\Play_VO_B_Select	
 	2935530180	Play_SFX_MineCountdown			\Default Work Unit\SFX\Weapons\Play_SFX_MineCountdown	
 	3049103921	Play_MUS_MissionEnding			\Default Work Unit\MUSIC\Play_MUS_MissionEnding	
+	3080212395	Stop_AMB_Mission			\Default Work Unit\AMBIENCE\Stop_AMB_Mission	
 	3272234049	Play_SFX_Attack_A_Swing			\Default Work Unit\SFX\Attacks\Play_SFX_Attack_A_Swing	
 	3287225507	Play_SFX_DoorSlideShut			\Default Work Unit\SFX\Environment\Play_SFX_DoorSlideShut	
 	3385676497	Play_VO_B_Dead			\Default Work Unit\VO\B\Play_VO_B_Dead	
@@ -61,6 +62,7 @@ Event	ID	Name			Wwise Object Path	Notes
 	3891568401	Play_VO_D_Attack			\Default Work Unit\VO\D\Play_VO_D_Attack	
 	3987225948	Play_VO_B_Dodge			\Default Work Unit\VO\B\Play_VO_B_Dodge	
 	3997635366	Play_VO_A_HitHeavy			\Default Work Unit\VO\A\Play_VO_A_HitHeavy	
+	4118679155	Stop_SFX_Action_B_Hack			\Default Work Unit\SFX\Actions\Stop_SFX_Action_B_Hack	
 	4163582617	Play_SFX_E_ImpactHeavy			\Default Work Unit\SFX\Impacts\Play_SFX_E_ImpactHeavy	
 	4198220282	Play_VO_C_Dead			\Default Work Unit\VO\C\Play_VO_C_Dead	
 	4226132611	Play_VO_A_AttackHeavy			\Default Work Unit\VO\A\Play_VO_A_AttackHeavy	

@@ -72,12 +72,14 @@ namespace AK
         static const AkUniqueID STOP_AMB_ALL = 1051898308U;
         static const AkUniqueID STOP_AMB_BACKOFHOUSE = 820384135U;
         static const AkUniqueID STOP_AMB_FRONTOFHOUSE = 1408943389U;
+        static const AkUniqueID STOP_AMB_MISSION = 3080212395U;
         static const AkUniqueID STOP_AMB_SPACEBAR = 2448774054U;
         static const AkUniqueID STOP_MUS_ALL = 3649037401U;
         static const AkUniqueID STOP_MUS_CHARACTER = 1523744589U;
         static const AkUniqueID STOP_MUS_CHARACTERSLOWDOWN = 2058610914U;
         static const AkUniqueID STOP_MUS_MAINMENU = 4243441902U;
         static const AkUniqueID STOP_MUS_MISSIONPAUSED = 1909315380U;
+        static const AkUniqueID STOP_SFX_ACTION_B_HACK = 4118679155U;
         static const AkUniqueID STOP_SFX_ACTION_B_HACKSUCCESS = 2417158132U;
     } // namespace EVENTS
 
