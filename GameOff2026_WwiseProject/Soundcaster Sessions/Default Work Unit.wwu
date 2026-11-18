@@ -105,6 +105,10 @@
 							<ObjectRef Name="UI_Select" ID="{6E3CCD4A-D88D-47DF-9F9D-2D6F7C445737}" WorkUnitID="{AF633A36-6CC5-470E-AD72-3F76D6F661BF}"/>
 							<Position X="4" Y="3"/>
 						</Module>
+						<Module>
+							<ObjectRef Name="Stop_MUS_CharacterSlowdown" ID="{987FE2D7-7D81-418C-B888-5C92D45B29DE}" WorkUnitID="{2B12C590-A22E-47AF-9697-251FEA2DB802}"/>
+							<Position X="4" Y="4"/>
+						</Module>
 					</ModuleList>
 				</SoundcasterSession>
 				<SoundcasterSession Name="Footsteps" ID="{BBD8F538-8E33-4826-98EE-6143836EDD98}">

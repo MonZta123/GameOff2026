@@ -10,7 +10,7 @@
     "Type": "User",
     "GUID": "{3059A6CE-8152-4CD2-BEA9-69E98BB60D65}",
     "Language": "SFX",
-    "Hash": "{239B28C6-451B-C462-6290-C45FC696D523}",
+    "Hash": "{F37BBA18-80DC-8D53-29AE-4A51578D0679}",
     "ObjectPath": "\\SoundBanks\\Default Work Unit\\Main",
     "ShortName": "Main",
     "Path": "Main.bnk",
@@ -1134,32 +1134,60 @@
     },
     "Events": [
      {
-      "Id": "3319877457",
-      "Name": "Play_AMB_BackOfHouse",
-      "ObjectPath": "\\Events\\Default Work Unit\\AMBIENCE\\Play_AMB_BackOfHouse",
-      "GUID": "{91F1FB6C-729D-497C-A22E-730BB0B4496A}",
+      "Id": "3798341745",
+      "Name": "Play_AMB_Mission",
+      "ObjectPath": "\\Events\\Default Work Unit\\AMBIENCE\\Play_AMB_Mission",
+      "GUID": "{1B7C0568-7406-4D4E-AEDA-EEFC3A2B70EE}",
+      "Color": "10",
       "DurationType": "Infinite",
-      "MediaRefs": [
+      "SwitchContainers": [
        {
-        "Id": "348368234"
+        "SwitchValue": {
+         "GroupType": "Switch",
+         "GroupId": "4274333454",
+         "Id": "2412606308",
+         "GUID": "{99160A53-9799-49CE-B8F4-986AC51B6391}"
+        },
+        "MediaRefs": [
+         {
+          "Id": "661821976"
+         },
+         {
+          "Id": "902322511"
+         }
+        ]
        },
        {
-        "Id": "483397239"
-       }
-      ]
-     },
-     {
-      "Id": "4275398447",
-      "Name": "Play_AMB_FrontOfHouse",
-      "ObjectPath": "\\Events\\Default Work Unit\\AMBIENCE\\Play_AMB_FrontOfHouse",
-      "GUID": "{60AA718B-3A65-4ADA-83B9-49CEE4C11C7F}",
-      "DurationType": "Infinite",
-      "MediaRefs": [
-       {
-        "Id": "661821976"
+        "SwitchValue": {
+         "GroupType": "Switch",
+         "GroupId": "4274333454",
+         "Id": "2637588553",
+         "GUID": "{12732F6D-0116-4FAD-9028-7D2BA445288D}"
+        },
+        "MediaRefs": [
+         {
+          "Id": "661821976"
+         },
+         {
+          "Id": "902322511"
+         }
+        ]
        },
        {
-        "Id": "902322511"
+        "SwitchValue": {
+         "GroupType": "Switch",
+         "GroupId": "4274333454",
+         "Id": "841620460",
+         "GUID": "{851BB592-1957-4048-B336-69AF55E26BCF}"
+        },
+        "MediaRefs": [
+         {
+          "Id": "348368234"
+         },
+         {
+          "Id": "483397239"
+         }
+        ]
        }
       ]
      },
@@ -1462,6 +1490,7 @@
       "Name": "Play_MUS_MissionEnding",
       "ObjectPath": "\\Events\\Default Work Unit\\MUSIC\\Play_MUS_MissionEnding",
       "GUID": "{E45055A8-8942-47B8-8115-34543642317B}",
+      "Color": "10",
       "DurationType": "OneShot",
       "DurationMin": "10.10527",
       "DurationMax": "10.10527",
@@ -1490,6 +1519,7 @@
       "Name": "Play_MUS_MissionPaused",
       "ObjectPath": "\\Events\\Default Work Unit\\MUSIC\\Play_MUS_MissionPaused",
       "GUID": "{5FB0A79F-8C17-4BBC-8B13-4FC195E511ED}",
+      "Color": "10",
       "DurationType": "Infinite",
       "MediaRefs": [
        {
@@ -1614,6 +1644,7 @@
       "Name": "Play_SFX_BigExplosion",
       "ObjectPath": "\\Events\\Default Work Unit\\SFX\\Weapons\\Play_SFX_BigExplosion",
       "GUID": "{E02E6D0C-F676-4241-B29F-FCEFD60C8FD3}",
+      "Color": "10",
       "MaxAttenuation": "100",
       "DurationType": "OneShot",
       "DurationMin": "3.721202",
@@ -1629,6 +1660,7 @@
       "Name": "Play_SFX_BombExplosion",
       "ObjectPath": "\\Events\\Default Work Unit\\SFX\\Weapons\\Play_SFX_BombExplosion",
       "GUID": "{30F644E1-4A6B-491A-B312-78F56222651D}",
+      "Color": "10",
       "MaxAttenuation": "100",
       "DurationType": "OneShot",
       "DurationMin": "1.683693",
@@ -1665,6 +1697,7 @@
       "Name": "Play_SFX_DoorSlideOpen",
       "ObjectPath": "\\Events\\Default Work Unit\\SFX\\Environment\\Play_SFX_DoorSlideOpen",
       "GUID": "{388DF802-A380-4E4E-BD1C-F49CD5EE78A3}",
+      "Color": "10",
       "MaxAttenuation": "100",
       "DurationType": "OneShot",
       "DurationMin": "1.0679365",
@@ -1680,6 +1713,7 @@
       "Name": "Play_SFX_DoorSlideShut",
       "ObjectPath": "\\Events\\Default Work Unit\\SFX\\Environment\\Play_SFX_DoorSlideShut",
       "GUID": "{32135886-32E2-4FE4-B958-B416DF9B4299}",
+      "Color": "10",
       "MaxAttenuation": "100",
       "DurationType": "OneShot",
       "DurationMin": "0.8900227",
@@ -1710,6 +1744,7 @@
       "Name": "Play_SFX_E_Impact",
       "ObjectPath": "\\Events\\Default Work Unit\\SFX\\Impacts\\Play_SFX_E_Impact",
       "GUID": "{A671DCAC-9993-4AC3-B194-BF98779E356E}",
+      "Color": "10",
       "MaxAttenuation": "100",
       "DurationType": "OneShot",
       "DurationMin": "0.6060318",
@@ -1752,6 +1787,7 @@
       "Name": "Play_SFX_E_ImpactHeavy",
       "ObjectPath": "\\Events\\Default Work Unit\\SFX\\Impacts\\Play_SFX_E_ImpactHeavy",
       "GUID": "{4335A160-53B6-473D-9447-A2B4A8C23FDD}",
+      "Color": "10",
       "MaxAttenuation": "100",
       "DurationType": "OneShot",
       "DurationMin": "0.6662585",
@@ -2212,6 +2248,7 @@
       "Name": "Play_SFX_MineExplode",
       "ObjectPath": "\\Events\\Default Work Unit\\SFX\\Weapons\\Play_SFX_MineExplode",
       "GUID": "{2E3C0A98-F559-4F88-94EA-9353FFFA4DB9}",
+      "Color": "10",
       "MaxAttenuation": "100",
       "DurationType": "OneShot",
       "DurationMin": "1.683693",
@@ -2233,6 +2270,7 @@
       "Name": "Play_SFX_Rifle",
       "ObjectPath": "\\Events\\Default Work Unit\\SFX\\Weapons\\Play_SFX_Rifle",
       "GUID": "{FC3B028A-50F3-42CB-8E0B-C6CC94A0A8DD}",
+      "Color": "10",
       "MaxAttenuation": "100",
       "DurationType": "OneShot",
       "DurationMin": "2.17436",
@@ -2271,6 +2309,7 @@
       "Name": "Play_SFX_UI_Back",
       "ObjectPath": "\\Events\\Default Work Unit\\SFX\\UI\\Play_SFX_UI_Back",
       "GUID": "{24407F4D-86FB-45EA-BCE9-724A6801CF46}",
+      "Color": "10",
       "DurationType": "OneShot",
       "DurationMin": "0.6226757",
       "DurationMax": "0.6226757",
@@ -2285,6 +2324,7 @@
       "Name": "Play_SFX_UI_Hover",
       "ObjectPath": "\\Events\\Default Work Unit\\SFX\\UI\\Play_SFX_UI_Hover",
       "GUID": "{775AAA7A-5AD7-4404-96B6-EE23F9948E6A}",
+      "Color": "10",
       "DurationType": "OneShot",
       "DurationMin": "0.08131519",
       "DurationMax": "0.08131519",
@@ -2299,6 +2339,7 @@
       "Name": "Play_SFX_UI_Select",
       "ObjectPath": "\\Events\\Default Work Unit\\SFX\\UI\\Play_SFX_UI_Select",
       "GUID": "{B523CDC4-6928-410D-87A9-2A88A3221FD8}",
+      "Color": "10",
       "DurationType": "OneShot",
       "DurationMin": "0.19049887",
       "DurationMax": "0.19049887",
@@ -3203,6 +3244,7 @@
       "Name": "Stop_AMB_BackOfHouse",
       "ObjectPath": "\\Events\\Default Work Unit\\AMBIENCE\\Stop_AMB_BackOfHouse",
       "GUID": "{E980DD36-4E4A-455B-8CE4-A184BF85FBD0}",
+      "Color": "10",
       "MaxAttenuation": "0",
       "DurationType": "OneShot",
       "DurationMin": "0",
@@ -3213,6 +3255,7 @@
       "Name": "Stop_AMB_FrontOfHouse",
       "ObjectPath": "\\Events\\Default Work Unit\\AMBIENCE\\Stop_AMB_FrontOfHouse",
       "GUID": "{3FEB6287-778C-4F8A-B91F-C2E9970CC07F}",
+      "Color": "10",
       "MaxAttenuation": "0",
       "DurationType": "OneShot",
       "DurationMin": "0",
@@ -3253,6 +3296,7 @@
       "Name": "Stop_MUS_CharacterSlowdown",
       "ObjectPath": "\\Events\\Default Work Unit\\MUSIC\\Stop_MUS_CharacterSlowdown",
       "GUID": "{987FE2D7-7D81-418C-B888-5C92D45B29DE}",
+      "Color": "10",
       "DurationType": "OneShot",
       "DurationMin": "2.8649206",
       "DurationMax": "3",
@@ -3414,6 +3458,6 @@
     ]
    }
   ],
-  "FileHash": "{AA79C066-EB1A-1E40-E11A-E9E0A4447AA6}"
+  "FileHash": "{1EFF70D3-5B36-3C8F-C59E-840FC04D2EC8}"
  }
 }

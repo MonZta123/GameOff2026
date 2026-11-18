@@ -9280,173 +9280,6 @@
 				</Folder>
 				<Folder Name="AMBIENCE" ID="{CD740D99-6C6C-4C35-8AF4-9972D3290E30}" ShortID="627092753">
 					<ChildrenList>
-						<RandomSequenceContainer Name="AmbienceFrontOfHouse" ID="{21DB8EFA-3F8E-41DD-944A-83F27536481D}" ShortID="231722023">
-							<PropertyList>
-								<Property Name="PlayMechanismStepOrContinuous" Type="int16" Value="0"/>
-								<Property Name="RandomOrSequence" Type="int16" Value="0"/>
-							</PropertyList>
-							<ReferenceList>
-								<Reference Name="Conversion">
-									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{4ADFD3A0-A42B-432C-8502-1433439D5054}"/>
-								</Reference>
-								<Reference Name="OutputBus">
-									<ObjectRef Name="AMBIENCE" ID="{0D3F0E73-E6DF-4226-8BD9-1CC7EEEBAE76}" WorkUnitID="{F8A65CB3-3EA6-47C9-8C5A-27068DB4C3FF}"/>
-								</Reference>
-							</ReferenceList>
-							<ChildrenList>
-								<Sound Name="AmbienceFrontOfHouse_Intro" ID="{6B5DE1B8-1F54-4BD7-B5FC-58FE189A6050}" ShortID="468096081">
-									<ReferenceList>
-										<Reference Name="Conversion">
-											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{4ADFD3A0-A42B-432C-8502-1433439D5054}"/>
-										</Reference>
-										<Reference Name="OutputBus">
-											<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{F8A65CB3-3EA6-47C9-8C5A-27068DB4C3FF}"/>
-										</Reference>
-									</ReferenceList>
-									<ChildrenList>
-										<AudioFileSource Name="AmbienceFrontOfHouse_Intro" ID="{2647A41A-80BD-40A9-A6D2-EDF3B1B2F681}">
-											<Language>SFX</Language>
-											<AudioFile>AmbienceFrontOfHouse_Intro.wav</AudioFile>
-											<MediaIDList>
-												<MediaID ID="661821976"/>
-											</MediaIDList>
-										</AudioFileSource>
-									</ChildrenList>
-									<ActiveSourceList>
-										<ActiveSource Name="AmbienceFrontOfHouse_Intro" ID="{2647A41A-80BD-40A9-A6D2-EDF3B1B2F681}" Platform="Linked"/>
-									</ActiveSourceList>
-								</Sound>
-								<Sound Name="AmbienceFrontOfHouse_Loop" ID="{10B07911-7F8E-43D5-BD39-8EE92C20336A}" ShortID="222943889">
-									<PropertyList>
-										<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
-									</PropertyList>
-									<ReferenceList>
-										<Reference Name="Conversion">
-											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{4ADFD3A0-A42B-432C-8502-1433439D5054}"/>
-										</Reference>
-										<Reference Name="OutputBus">
-											<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{F8A65CB3-3EA6-47C9-8C5A-27068DB4C3FF}"/>
-										</Reference>
-									</ReferenceList>
-									<ChildrenList>
-										<AudioFileSource Name="AmbienceFrontOfHouse_Loop" ID="{9B0D0E1E-BA03-4A07-BDC0-8E95678BF4F4}">
-											<Language>SFX</Language>
-											<AudioFile>AmbienceFrontOfHouse_Loop.wav</AudioFile>
-											<MediaIDList>
-												<MediaID ID="902322511"/>
-											</MediaIDList>
-										</AudioFileSource>
-									</ChildrenList>
-									<ActiveSourceList>
-										<ActiveSource Name="AmbienceFrontOfHouse_Loop" ID="{9B0D0E1E-BA03-4A07-BDC0-8E95678BF4F4}" Platform="Linked"/>
-									</ActiveSourceList>
-								</Sound>
-							</ChildrenList>
-							<ObjectLists>
-								<ObjectList Name="Playlist">
-									<PluginInnerObject Name="" ID="{4E6C306F-50AE-47FD-9640-6EA41AFD88C7}" PluginName="PlaylistSlot" CompanyID="0" PluginID="86">
-										<ReferenceList>
-											<Reference Name="PlaylistObject">
-												<ObjectRef Name="AmbienceFrontOfHouse_Intro" ID="{6B5DE1B8-1F54-4BD7-B5FC-58FE189A6050}" WorkUnitID="{AF633A36-6CC5-470E-AD72-3F76D6F661BF}"/>
-											</Reference>
-										</ReferenceList>
-									</PluginInnerObject>
-									<PluginInnerObject Name="" ID="{34055928-3AAE-4592-BB50-9D00F188E44E}" PluginName="PlaylistSlot" CompanyID="0" PluginID="86">
-										<ReferenceList>
-											<Reference Name="PlaylistObject">
-												<ObjectRef Name="AmbienceFrontOfHouse_Loop" ID="{10B07911-7F8E-43D5-BD39-8EE92C20336A}" WorkUnitID="{AF633A36-6CC5-470E-AD72-3F76D6F661BF}"/>
-											</Reference>
-										</ReferenceList>
-									</PluginInnerObject>
-								</ObjectList>
-							</ObjectLists>
-						</RandomSequenceContainer>
-						<RandomSequenceContainer Name="AmbienceBackOfHouse" ID="{56DD4EFC-A226-4025-95F7-E5269EF3427E}" ShortID="679878675">
-							<PropertyList>
-								<Property Name="PlayMechanismStepOrContinuous" Type="int16" Value="0"/>
-								<Property Name="RandomOrSequence" Type="int16" Value="0"/>
-								<Property Name="Volume" Type="Real64">
-									<ValueList>
-										<Value>-6</Value>
-									</ValueList>
-								</Property>
-							</PropertyList>
-							<ReferenceList>
-								<Reference Name="Conversion">
-									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{4ADFD3A0-A42B-432C-8502-1433439D5054}"/>
-								</Reference>
-								<Reference Name="OutputBus">
-									<ObjectRef Name="AMBIENCE" ID="{0D3F0E73-E6DF-4226-8BD9-1CC7EEEBAE76}" WorkUnitID="{F8A65CB3-3EA6-47C9-8C5A-27068DB4C3FF}"/>
-								</Reference>
-							</ReferenceList>
-							<ChildrenList>
-								<Sound Name="AmbienceBackOfHouse_Intro" ID="{A8C77E3E-44E2-4E23-85BD-63BDBD8D26F2}" ShortID="345752368">
-									<ReferenceList>
-										<Reference Name="Conversion">
-											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{4ADFD3A0-A42B-432C-8502-1433439D5054}"/>
-										</Reference>
-										<Reference Name="OutputBus">
-											<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{F8A65CB3-3EA6-47C9-8C5A-27068DB4C3FF}"/>
-										</Reference>
-									</ReferenceList>
-									<ChildrenList>
-										<AudioFileSource Name="AmbienceBackOfHouse_Intro" ID="{CA585F94-8BC9-478E-B685-49408C11A6D4}">
-											<Language>SFX</Language>
-											<AudioFile>AmbienceBackOfHouse_Intro.wav</AudioFile>
-											<MediaIDList>
-												<MediaID ID="483397239"/>
-											</MediaIDList>
-										</AudioFileSource>
-									</ChildrenList>
-									<ActiveSourceList>
-										<ActiveSource Name="AmbienceBackOfHouse_Intro" ID="{CA585F94-8BC9-478E-B685-49408C11A6D4}" Platform="Linked"/>
-									</ActiveSourceList>
-								</Sound>
-								<Sound Name="AmbienceBackOfHouse_Loop" ID="{EA5EDAF2-A274-4DB4-8920-BD2FE9C8B750}" ShortID="713528560">
-									<PropertyList>
-										<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
-									</PropertyList>
-									<ReferenceList>
-										<Reference Name="Conversion">
-											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{4ADFD3A0-A42B-432C-8502-1433439D5054}"/>
-										</Reference>
-										<Reference Name="OutputBus">
-											<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{F8A65CB3-3EA6-47C9-8C5A-27068DB4C3FF}"/>
-										</Reference>
-									</ReferenceList>
-									<ChildrenList>
-										<AudioFileSource Name="AmbienceBackOfHouse_Loop" ID="{CC7388B3-B19B-4682-A4C3-E1F58DE25EE9}">
-											<Language>SFX</Language>
-											<AudioFile>AmbienceBackOfHouse_Loop.wav</AudioFile>
-											<MediaIDList>
-												<MediaID ID="348368234"/>
-											</MediaIDList>
-										</AudioFileSource>
-									</ChildrenList>
-									<ActiveSourceList>
-										<ActiveSource Name="AmbienceBackOfHouse_Loop" ID="{CC7388B3-B19B-4682-A4C3-E1F58DE25EE9}" Platform="Linked"/>
-									</ActiveSourceList>
-								</Sound>
-							</ChildrenList>
-							<ObjectLists>
-								<ObjectList Name="Playlist">
-									<PluginInnerObject Name="" ID="{C71E3685-4FD5-4C53-85A6-69954114E422}" PluginName="PlaylistSlot" CompanyID="0" PluginID="86">
-										<ReferenceList>
-											<Reference Name="PlaylistObject">
-												<ObjectRef Name="AmbienceBackOfHouse_Intro" ID="{A8C77E3E-44E2-4E23-85BD-63BDBD8D26F2}" WorkUnitID="{AF633A36-6CC5-470E-AD72-3F76D6F661BF}"/>
-											</Reference>
-										</ReferenceList>
-									</PluginInnerObject>
-									<PluginInnerObject Name="" ID="{762481A7-E80A-4E3A-94F9-2E7C16911770}" PluginName="PlaylistSlot" CompanyID="0" PluginID="86">
-										<ReferenceList>
-											<Reference Name="PlaylistObject">
-												<ObjectRef Name="AmbienceBackOfHouse_Loop" ID="{EA5EDAF2-A274-4DB4-8920-BD2FE9C8B750}" WorkUnitID="{AF633A36-6CC5-470E-AD72-3F76D6F661BF}"/>
-											</Reference>
-										</ReferenceList>
-									</PluginInnerObject>
-								</ObjectList>
-							</ObjectLists>
-						</RandomSequenceContainer>
 						<RandomSequenceContainer Name="AmbienceSpaceBar" ID="{DD564D66-ED32-47A3-BDA9-1916CA03BC78}" ShortID="394888837">
 							<PropertyList>
 								<Property Name="PlayMechanismStepOrContinuous" Type="int16" Value="0"/>
@@ -9528,6 +9361,218 @@
 								</ObjectList>
 							</ObjectLists>
 						</RandomSequenceContainer>
+						<SwitchContainer Name="AmbienceMission" ID="{228E1394-D116-4B12-8A60-F9F94CE90355}" ShortID="657829129">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{4ADFD3A0-A42B-432C-8502-1433439D5054}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{F8A65CB3-3EA6-47C9-8C5A-27068DB4C3FF}"/>
+								</Reference>
+								<Reference Name="SwitchGroupOrStateGroup">
+									<ObjectRef Name="FloorMaterial" ID="{6515BE3D-FA5D-430E-843B-13353CF6B1A7}" WorkUnitID="{D8E1DC27-9AD1-475D-9CD4-C63E49CC47B8}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<RandomSequenceContainer Name="AmbienceBackOfHouse" ID="{56DD4EFC-A226-4025-95F7-E5269EF3427E}" ShortID="679878675">
+									<PropertyList>
+										<Property Name="PlayMechanismStepOrContinuous" Type="int16" Value="0"/>
+										<Property Name="RandomOrSequence" Type="int16" Value="0"/>
+										<Property Name="Volume" Type="Real64">
+											<ValueList>
+												<Value>-6</Value>
+											</ValueList>
+										</Property>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{4ADFD3A0-A42B-432C-8502-1433439D5054}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="AMBIENCE" ID="{0D3F0E73-E6DF-4226-8BD9-1CC7EEEBAE76}" WorkUnitID="{F8A65CB3-3EA6-47C9-8C5A-27068DB4C3FF}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<Sound Name="AmbienceBackOfHouse_Intro" ID="{A8C77E3E-44E2-4E23-85BD-63BDBD8D26F2}" ShortID="345752368">
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{4ADFD3A0-A42B-432C-8502-1433439D5054}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{F8A65CB3-3EA6-47C9-8C5A-27068DB4C3FF}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="AmbienceBackOfHouse_Intro" ID="{CA585F94-8BC9-478E-B685-49408C11A6D4}">
+													<Language>SFX</Language>
+													<AudioFile>AmbienceBackOfHouse_Intro.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="483397239"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ActiveSourceList>
+												<ActiveSource Name="AmbienceBackOfHouse_Intro" ID="{CA585F94-8BC9-478E-B685-49408C11A6D4}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+										<Sound Name="AmbienceBackOfHouse_Loop" ID="{EA5EDAF2-A274-4DB4-8920-BD2FE9C8B750}" ShortID="713528560">
+											<PropertyList>
+												<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{4ADFD3A0-A42B-432C-8502-1433439D5054}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{F8A65CB3-3EA6-47C9-8C5A-27068DB4C3FF}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="AmbienceBackOfHouse_Loop" ID="{CC7388B3-B19B-4682-A4C3-E1F58DE25EE9}">
+													<Language>SFX</Language>
+													<AudioFile>AmbienceBackOfHouse_Loop.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="348368234"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ActiveSourceList>
+												<ActiveSource Name="AmbienceBackOfHouse_Loop" ID="{CC7388B3-B19B-4682-A4C3-E1F58DE25EE9}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+									</ChildrenList>
+									<ObjectLists>
+										<ObjectList Name="Playlist">
+											<PluginInnerObject Name="" ID="{C71E3685-4FD5-4C53-85A6-69954114E422}" PluginName="PlaylistSlot" CompanyID="0" PluginID="86">
+												<ReferenceList>
+													<Reference Name="PlaylistObject">
+														<ObjectRef Name="AmbienceBackOfHouse_Intro" ID="{A8C77E3E-44E2-4E23-85BD-63BDBD8D26F2}" WorkUnitID="{AF633A36-6CC5-470E-AD72-3F76D6F661BF}"/>
+													</Reference>
+												</ReferenceList>
+											</PluginInnerObject>
+											<PluginInnerObject Name="" ID="{762481A7-E80A-4E3A-94F9-2E7C16911770}" PluginName="PlaylistSlot" CompanyID="0" PluginID="86">
+												<ReferenceList>
+													<Reference Name="PlaylistObject">
+														<ObjectRef Name="AmbienceBackOfHouse_Loop" ID="{EA5EDAF2-A274-4DB4-8920-BD2FE9C8B750}" WorkUnitID="{AF633A36-6CC5-470E-AD72-3F76D6F661BF}"/>
+													</Reference>
+												</ReferenceList>
+											</PluginInnerObject>
+										</ObjectList>
+									</ObjectLists>
+								</RandomSequenceContainer>
+								<RandomSequenceContainer Name="AmbienceFrontOfHouse" ID="{21DB8EFA-3F8E-41DD-944A-83F27536481D}" ShortID="231722023">
+									<PropertyList>
+										<Property Name="PlayMechanismStepOrContinuous" Type="int16" Value="0"/>
+										<Property Name="RandomOrSequence" Type="int16" Value="0"/>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{4ADFD3A0-A42B-432C-8502-1433439D5054}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="AMBIENCE" ID="{0D3F0E73-E6DF-4226-8BD9-1CC7EEEBAE76}" WorkUnitID="{F8A65CB3-3EA6-47C9-8C5A-27068DB4C3FF}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<Sound Name="AmbienceFrontOfHouse_Intro" ID="{6B5DE1B8-1F54-4BD7-B5FC-58FE189A6050}" ShortID="468096081">
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{4ADFD3A0-A42B-432C-8502-1433439D5054}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{F8A65CB3-3EA6-47C9-8C5A-27068DB4C3FF}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="AmbienceFrontOfHouse_Intro" ID="{2647A41A-80BD-40A9-A6D2-EDF3B1B2F681}">
+													<Language>SFX</Language>
+													<AudioFile>AmbienceFrontOfHouse_Intro.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="661821976"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ActiveSourceList>
+												<ActiveSource Name="AmbienceFrontOfHouse_Intro" ID="{2647A41A-80BD-40A9-A6D2-EDF3B1B2F681}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+										<Sound Name="AmbienceFrontOfHouse_Loop" ID="{10B07911-7F8E-43D5-BD39-8EE92C20336A}" ShortID="222943889">
+											<PropertyList>
+												<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{4ADFD3A0-A42B-432C-8502-1433439D5054}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{F8A65CB3-3EA6-47C9-8C5A-27068DB4C3FF}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="AmbienceFrontOfHouse_Loop" ID="{9B0D0E1E-BA03-4A07-BDC0-8E95678BF4F4}">
+													<Language>SFX</Language>
+													<AudioFile>AmbienceFrontOfHouse_Loop.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="902322511"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ActiveSourceList>
+												<ActiveSource Name="AmbienceFrontOfHouse_Loop" ID="{9B0D0E1E-BA03-4A07-BDC0-8E95678BF4F4}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+									</ChildrenList>
+									<ObjectLists>
+										<ObjectList Name="Playlist">
+											<PluginInnerObject Name="" ID="{4E6C306F-50AE-47FD-9640-6EA41AFD88C7}" PluginName="PlaylistSlot" CompanyID="0" PluginID="86">
+												<ReferenceList>
+													<Reference Name="PlaylistObject">
+														<ObjectRef Name="AmbienceFrontOfHouse_Intro" ID="{6B5DE1B8-1F54-4BD7-B5FC-58FE189A6050}" WorkUnitID="{AF633A36-6CC5-470E-AD72-3F76D6F661BF}"/>
+													</Reference>
+												</ReferenceList>
+											</PluginInnerObject>
+											<PluginInnerObject Name="" ID="{34055928-3AAE-4592-BB50-9D00F188E44E}" PluginName="PlaylistSlot" CompanyID="0" PluginID="86">
+												<ReferenceList>
+													<Reference Name="PlaylistObject">
+														<ObjectRef Name="AmbienceFrontOfHouse_Loop" ID="{10B07911-7F8E-43D5-BD39-8EE92C20336A}" WorkUnitID="{AF633A36-6CC5-470E-AD72-3F76D6F661BF}"/>
+													</Reference>
+												</ReferenceList>
+											</PluginInnerObject>
+										</ObjectList>
+									</ObjectLists>
+								</RandomSequenceContainer>
+							</ChildrenList>
+							<GroupingInfo>
+								<GroupingBehaviorList>
+									<GroupingBehavior>
+										<ItemRef Name="AmbienceFrontOfHouse" ID="{21DB8EFA-3F8E-41DD-944A-83F27536481D}"/>
+									</GroupingBehavior>
+									<GroupingBehavior>
+										<ItemRef Name="AmbienceBackOfHouse" ID="{56DD4EFC-A226-4025-95F7-E5269EF3427E}"/>
+									</GroupingBehavior>
+								</GroupingBehaviorList>
+								<GroupingList>
+									<Grouping>
+										<SwitchRef Name="Carpet" ID="{99160A53-9799-49CE-B8F4-986AC51B6391}"/>
+										<ItemList>
+											<ItemRef Name="AmbienceFrontOfHouse" ID="{21DB8EFA-3F8E-41DD-944A-83F27536481D}"/>
+										</ItemList>
+									</Grouping>
+									<Grouping>
+										<SwitchRef Name="Tile" ID="{12732F6D-0116-4FAD-9028-7D2BA445288D}"/>
+										<ItemList>
+											<ItemRef Name="AmbienceFrontOfHouse" ID="{21DB8EFA-3F8E-41DD-944A-83F27536481D}"/>
+										</ItemList>
+									</Grouping>
+									<Grouping>
+										<SwitchRef Name="Concrete" ID="{851BB592-1957-4048-B336-69AF55E26BCF}"/>
+										<ItemList>
+											<ItemRef Name="AmbienceBackOfHouse" ID="{56DD4EFC-A226-4025-95F7-E5269EF3427E}"/>
+										</ItemList>
+									</Grouping>
+								</GroupingList>
+							</GroupingInfo>
+						</SwitchContainer>
 					</ChildrenList>
 				</Folder>
 			</ChildrenList>

@@ -72,6 +72,10 @@
 							</ChildrenList>
 						</Event>
 						<Event Name="Play_MUS_MissionEnding" ID="{E45055A8-8942-47B8-8115-34543642317B}">
+							<PropertyList>
+								<Property Name="Color" Type="int16" Value="10"/>
+								<Property Name="OverrideColor" Type="bool" Value="True"/>
+							</PropertyList>
 							<ChildrenList>
 								<Action Name="" ID="{C7CDB94C-9AAA-4B25-9031-A922E4C95E09}" ShortID="337828359">
 									<ReferenceList>
@@ -100,6 +104,10 @@
 							</ChildrenList>
 						</Event>
 						<Event Name="Stop_MUS_CharacterSlowdown" ID="{987FE2D7-7D81-418C-B888-5C92D45B29DE}">
+							<PropertyList>
+								<Property Name="Color" Type="int16" Value="10"/>
+								<Property Name="OverrideColor" Type="bool" Value="True"/>
+							</PropertyList>
 							<ChildrenList>
 								<Action Name="" ID="{014DED5D-3C5B-436F-8557-C29A5C1A174B}" ShortID="512516822">
 									<PropertyList>
@@ -158,6 +166,10 @@
 							</ChildrenList>
 						</Event>
 						<Event Name="Play_MUS_MissionPaused" ID="{5FB0A79F-8C17-4BBC-8B13-4FC195E511ED}">
+							<PropertyList>
+								<Property Name="Color" Type="int16" Value="10"/>
+								<Property Name="OverrideColor" Type="bool" Value="True"/>
+							</PropertyList>
 							<ChildrenList>
 								<Action Name="" ID="{3E4E7A1A-BA50-47FD-B628-6673A4FF7AC5}" ShortID="163887136">
 									<ReferenceList>
@@ -260,6 +272,10 @@
 						<Folder Name="UI" ID="{9D9EFAD9-6188-4ECD-9A1F-B00C6DDA808F}" ShortID="202227406">
 							<ChildrenList>
 								<Event Name="Play_SFX_UI_Select" ID="{B523CDC4-6928-410D-87A9-2A88A3221FD8}">
+									<PropertyList>
+										<Property Name="Color" Type="int16" Value="10"/>
+										<Property Name="OverrideColor" Type="bool" Value="True"/>
+									</PropertyList>
 									<ChildrenList>
 										<Action Name="" ID="{762F5078-52B9-4F63-96B3-EEC21A8FE316}" ShortID="1009846387">
 											<ReferenceList>
@@ -271,6 +287,10 @@
 									</ChildrenList>
 								</Event>
 								<Event Name="Play_SFX_UI_Hover" ID="{775AAA7A-5AD7-4404-96B6-EE23F9948E6A}">
+									<PropertyList>
+										<Property Name="Color" Type="int16" Value="10"/>
+										<Property Name="OverrideColor" Type="bool" Value="True"/>
+									</PropertyList>
 									<ChildrenList>
 										<Action Name="" ID="{E2FDDCFE-85AB-49E5-BCAE-0C6E9716EDB3}" ShortID="974122980">
 											<ReferenceList>
@@ -282,6 +302,10 @@
 									</ChildrenList>
 								</Event>
 								<Event Name="Play_SFX_UI_Back" ID="{24407F4D-86FB-45EA-BCE9-724A6801CF46}">
+									<PropertyList>
+										<Property Name="Color" Type="int16" Value="10"/>
+										<Property Name="OverrideColor" Type="bool" Value="True"/>
+									</PropertyList>
 									<ChildrenList>
 										<Action Name="" ID="{26336255-2C1C-45F3-8310-CA36A45B7BA2}" ShortID="179371993">
 											<ReferenceList>
@@ -297,6 +321,10 @@
 						<Folder Name="Weapons" ID="{57DA2AE2-A214-41E3-82F5-5D3BD6E34B38}" ShortID="817725652">
 							<ChildrenList>
 								<Event Name="Play_SFX_BombExplosion" ID="{30F644E1-4A6B-491A-B312-78F56222651D}">
+									<PropertyList>
+										<Property Name="Color" Type="int16" Value="10"/>
+										<Property Name="OverrideColor" Type="bool" Value="True"/>
+									</PropertyList>
 									<ChildrenList>
 										<Action Name="" ID="{49002A2A-ED6E-412A-928B-33F757CFCBAC}" ShortID="238446411">
 											<ReferenceList>
@@ -308,6 +336,10 @@
 									</ChildrenList>
 								</Event>
 								<Event Name="Play_SFX_BigExplosion" ID="{E02E6D0C-F676-4241-B29F-FCEFD60C8FD3}">
+									<PropertyList>
+										<Property Name="Color" Type="int16" Value="10"/>
+										<Property Name="OverrideColor" Type="bool" Value="True"/>
+									</PropertyList>
 									<ChildrenList>
 										<Action Name="" ID="{2E76E6BC-A436-4B69-AB8A-F0A1B7CD90E8}" ShortID="784762622">
 											<ReferenceList>
@@ -342,11 +374,13 @@
 								</Event>
 								<Event Name="Play_SFX_MineExplode" ID="{2E3C0A98-F559-4F88-94EA-9353FFFA4DB9}">
 									<PropertyList>
+										<Property Name="Color" Type="int16" Value="10"/>
 										<Property Name="InstanceLimit" Type="int16">
 											<ValueList>
 												<Value>1</Value>
 											</ValueList>
 										</Property>
+										<Property Name="OverrideColor" Type="bool" Value="True"/>
 									</PropertyList>
 									<ChildrenList>
 										<Action Name="" ID="{B5368418-9306-4C1C-89E5-5928C1A8EA68}" ShortID="293322604">
@@ -359,6 +393,10 @@
 									</ChildrenList>
 								</Event>
 								<Event Name="Play_SFX_Rifle" ID="{FC3B028A-50F3-42CB-8E0B-C6CC94A0A8DD}">
+									<PropertyList>
+										<Property Name="Color" Type="int16" Value="10"/>
+										<Property Name="OverrideColor" Type="bool" Value="True"/>
+									</PropertyList>
 									<ChildrenList>
 										<Action Name="" ID="{AC826D68-C701-4E6C-B242-62C44B3CFD2D}" ShortID="38864957">
 											<ReferenceList>
@@ -385,6 +423,10 @@
 									</ChildrenList>
 								</Event>
 								<Event Name="Play_SFX_DoorSlideOpen" ID="{388DF802-A380-4E4E-BD1C-F49CD5EE78A3}">
+									<PropertyList>
+										<Property Name="Color" Type="int16" Value="10"/>
+										<Property Name="OverrideColor" Type="bool" Value="True"/>
+									</PropertyList>
 									<ChildrenList>
 										<Action Name="" ID="{906B4F34-363A-40AF-9195-22A542DC992D}" ShortID="376304507">
 											<ReferenceList>
@@ -396,6 +438,10 @@
 									</ChildrenList>
 								</Event>
 								<Event Name="Play_SFX_DoorSlideShut" ID="{32135886-32E2-4FE4-B958-B416DF9B4299}">
+									<PropertyList>
+										<Property Name="Color" Type="int16" Value="10"/>
+										<Property Name="OverrideColor" Type="bool" Value="True"/>
+									</PropertyList>
 									<ChildrenList>
 										<Action Name="" ID="{1A4483B5-3E25-4ACC-960C-B7B26A8AF928}" ShortID="317154492">
 											<ReferenceList>
@@ -501,6 +547,10 @@
 						<Folder Name="Impacts" ID="{2A92ECEE-B8A8-409C-BF21-481424498D22}" ShortID="1052164442">
 							<ChildrenList>
 								<Event Name="Play_SFX_E_ImpactHeavy" ID="{4335A160-53B6-473D-9447-A2B4A8C23FDD}">
+									<PropertyList>
+										<Property Name="Color" Type="int16" Value="10"/>
+										<Property Name="OverrideColor" Type="bool" Value="True"/>
+									</PropertyList>
 									<ChildrenList>
 										<Action Name="" ID="{F5711DAE-C105-41CA-957B-068DBDFD0557}" ShortID="1035097617">
 											<ReferenceList>
@@ -519,6 +569,10 @@
 									</ChildrenList>
 								</Event>
 								<Event Name="Play_SFX_E_Impact" ID="{A671DCAC-9993-4AC3-B194-BF98779E356E}">
+									<PropertyList>
+										<Property Name="Color" Type="int16" Value="10"/>
+										<Property Name="OverrideColor" Type="bool" Value="True"/>
+									</PropertyList>
 									<ChildrenList>
 										<Action Name="" ID="{7E0CAF3C-BDEB-4FFF-B477-9785DC8F7AD9}" ShortID="1058201004">
 											<ReferenceList>
@@ -543,6 +597,11 @@
 				<Folder Name="AMBIENCE" ID="{A55CDA7E-9FA2-4DE0-A034-544AD10448E8}" ShortID="841075420">
 					<ChildrenList>
 						<Event Name="Play_AMB_FrontOfHouse" ID="{60AA718B-3A65-4ADA-83B9-49CEE4C11C7F}">
+							<PropertyList>
+								<Property Name="Color" Type="int16" Value="10"/>
+								<Property Name="Inclusion" Type="bool" Value="False"/>
+								<Property Name="OverrideColor" Type="bool" Value="True"/>
+							</PropertyList>
 							<ChildrenList>
 								<Action Name="" ID="{3917A1AB-FEEA-4F88-AC31-397B14EB3F5D}" ShortID="986795723">
 									<ReferenceList>
@@ -554,6 +613,11 @@
 							</ChildrenList>
 						</Event>
 						<Event Name="Play_AMB_BackOfHouse" ID="{91F1FB6C-729D-497C-A22E-730BB0B4496A}">
+							<PropertyList>
+								<Property Name="Color" Type="int16" Value="10"/>
+								<Property Name="Inclusion" Type="bool" Value="False"/>
+								<Property Name="OverrideColor" Type="bool" Value="True"/>
+							</PropertyList>
 							<ChildrenList>
 								<Action Name="" ID="{DD74408C-30C6-485D-941C-0A9307466BB8}" ShortID="323270837">
 									<ReferenceList>
@@ -576,6 +640,10 @@
 							</ChildrenList>
 						</Event>
 						<Event Name="Stop_AMB_BackOfHouse" ID="{E980DD36-4E4A-455B-8CE4-A184BF85FBD0}">
+							<PropertyList>
+								<Property Name="Color" Type="int16" Value="10"/>
+								<Property Name="OverrideColor" Type="bool" Value="True"/>
+							</PropertyList>
 							<ChildrenList>
 								<Action Name="" ID="{845FAF91-6BBA-45C9-A801-DD9908A32D9F}" ShortID="574908192">
 									<PropertyList>
@@ -592,6 +660,10 @@
 							</ChildrenList>
 						</Event>
 						<Event Name="Stop_AMB_FrontOfHouse" ID="{3FEB6287-778C-4F8A-B91F-C2E9970CC07F}">
+							<PropertyList>
+								<Property Name="Color" Type="int16" Value="10"/>
+								<Property Name="OverrideColor" Type="bool" Value="True"/>
+							</PropertyList>
 							<ChildrenList>
 								<Action Name="" ID="{4F724FE9-1768-4C06-8D29-6D834507DE81}" ShortID="481216014">
 									<PropertyList>
@@ -637,6 +709,21 @@
 									<ReferenceList>
 										<Reference Name="Target">
 											<ObjectRef Name="AMBIENCE" ID="{0D3F0E73-E6DF-4226-8BD9-1CC7EEEBAE76}" WorkUnitID="{F8A65CB3-3EA6-47C9-8C5A-27068DB4C3FF}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+						<Event Name="Play_AMB_Mission" ID="{1B7C0568-7406-4D4E-AEDA-EEFC3A2B70EE}">
+							<PropertyList>
+								<Property Name="Color" Type="int16" Value="10"/>
+								<Property Name="OverrideColor" Type="bool" Value="True"/>
+							</PropertyList>
+							<ChildrenList>
+								<Action Name="" ID="{629F558B-1E37-48EB-8328-9DD11A8CE8AB}" ShortID="989973884">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="AmbienceMission" ID="{228E1394-D116-4B12-8A60-F9F94CE90355}" WorkUnitID="{AF633A36-6CC5-470E-AD72-3F76D6F661BF}"/>
 										</Reference>
 									</ReferenceList>
 								</Action>

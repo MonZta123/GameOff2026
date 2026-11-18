@@ -49,12 +49,10 @@
 						<ObjectRef Name="Play_SFX_BombExplosion" ID="{30F644E1-4A6B-491A-B312-78F56222651D}" WorkUnitID="{2B12C590-A22E-47AF-9697-251FEA2DB802}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="Play_MUS_Character" ID="{44E5D87C-C9EE-4925-8962-FA761B8D15F0}" WorkUnitID="{2B12C590-A22E-47AF-9697-251FEA2DB802}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="Stop_AMB_SpaceBar" ID="{54044E00-E195-493B-8AA9-9AEDA7A82144}" WorkUnitID="{2B12C590-A22E-47AF-9697-251FEA2DB802}" Origin="Manual" Filter="7"/>
-						<ObjectRef Name="Play_AMB_BackOfHouse" ID="{91F1FB6C-729D-497C-A22E-730BB0B4496A}" WorkUnitID="{2B12C590-A22E-47AF-9697-251FEA2DB802}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="Play_SFX_Action_B_Hack" ID="{470A4D75-AAC0-4981-AEA8-A0F6959DB48D}" WorkUnitID="{2B12C590-A22E-47AF-9697-251FEA2DB802}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="Play_VO_A_Select" ID="{46F1FD6B-3196-4A89-B7C7-32725EABF3E7}" WorkUnitID="{2B12C590-A22E-47AF-9697-251FEA2DB802}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="Play_SFX_Dash" ID="{7E19B84C-C838-4A91-89DA-BB94F3FE01E9}" WorkUnitID="{2B12C590-A22E-47AF-9697-251FEA2DB802}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="Play_SFX_E_Impact" ID="{A671DCAC-9993-4AC3-B194-BF98779E356E}" WorkUnitID="{2B12C590-A22E-47AF-9697-251FEA2DB802}" Origin="Manual" Filter="7"/>
-						<ObjectRef Name="Play_AMB_FrontOfHouse" ID="{60AA718B-3A65-4ADA-83B9-49CEE4C11C7F}" WorkUnitID="{2B12C590-A22E-47AF-9697-251FEA2DB802}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="Play_SFX_DoorSmash" ID="{666ACBC8-30A5-4B03-853D-52CF84ADE9CF}" WorkUnitID="{2B12C590-A22E-47AF-9697-251FEA2DB802}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="Play_VO_B_Select" ID="{A9E6999F-C9FC-4B06-BD62-4615A067A96A}" WorkUnitID="{2B12C590-A22E-47AF-9697-251FEA2DB802}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="Play_VO_A_Attack" ID="{45D09A81-1E38-4B25-8C6B-84C6488B23D5}" WorkUnitID="{2B12C590-A22E-47AF-9697-251FEA2DB802}" Origin="Manual" Filter="7"/>
@@ -66,6 +64,7 @@
 						<ObjectRef Name="Play_VO_B_Win" ID="{21741351-D5C5-4C74-BE59-045D6315ABF7}" WorkUnitID="{2B12C590-A22E-47AF-9697-251FEA2DB802}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="CrunchHeavy" ID="{EDF28EC9-652B-4D0A-92E2-9E306DD60E80}" WorkUnitID="{AF633A36-6CC5-470E-AD72-3F76D6F661BF}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="Play_VO_D_HitHeavy" ID="{7C805774-2F8A-4D48-8746-FD718FDAF1CD}" WorkUnitID="{2B12C590-A22E-47AF-9697-251FEA2DB802}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="Play_AMB_Mission" ID="{1B7C0568-7406-4D4E-AEDA-EEFC3A2B70EE}" WorkUnitID="{2B12C590-A22E-47AF-9697-251FEA2DB802}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="Play_SFX_MineCountdown" ID="{2E4350FE-4AE1-4D66-A4EF-72CE53E75CF4}" WorkUnitID="{2B12C590-A22E-47AF-9697-251FEA2DB802}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="Play_VO_D_Dead" ID="{B2C7AAFB-B802-4DE9-A20C-7D8C426F1C15}" WorkUnitID="{2B12C590-A22E-47AF-9697-251FEA2DB802}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="Play_VO_B_HitHeavy" ID="{D77E0490-71FF-4E40-8DA3-4D5C12E56BE7}" WorkUnitID="{2B12C590-A22E-47AF-9697-251FEA2DB802}" Origin="Manual" Filter="7"/>
