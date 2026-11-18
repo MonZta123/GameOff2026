@@ -928,7 +928,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Tien, make your way to the safe door sealing unit and blast it to pieces!
+  m_text: 'Tien, make your way to the vault and blast that vault door to pieces!
 
     (LMB to throw grenades, RMB to diffuse mines, SHIFT key to set mine)'
   m_isRightToLeft: 0
@@ -2179,7 +2179,7 @@ GameObject:
   - component: {fileID: 595889726}
   - component: {fileID: 595889725}
   m_Layer: 5
-  m_Name: VaultInstructions
+  m_Name: OpenedVaultText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2224,7 +2224,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Shift Squad! Time to synchronise and break open those vault doors with dynamite and hacking power!
+  m_text: Brilliant work, Shift Squad! That vault door didn't stand a chance. Now hurry up, and grab that loot!
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 4485a306f20aa4a04b7ad9f22443ab4e, type: 2}
   m_sharedMaterial: {fileID: -8876081502632558886, guid: 4485a306f20aa4a04b7ad9f22443ab4e, type: 2}
@@ -2766,7 +2766,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: -136}
   m_SizeDelta: {x: 250, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1092737047
@@ -2964,7 +2964,7 @@ GameObject:
   - component: {fileID: 1161683744}
   - component: {fileID: 1161683743}
   m_Layer: 5
-  m_Name: Goal Text
+  m_Name: GoalText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3101,7 +3101,7 @@ GameObject:
   - component: {fileID: 1173846258}
   - component: {fileID: 1173846257}
   m_Layer: 5
-  m_Name: GetInVaultInstructions
+  m_Name: GotLootText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3146,7 +3146,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: We're almost done - everyone get inside the vault now and grab everything! Leave nothing behind!
+  m_text: You've got the loot? Right-o! Head to the excavation point and hold the line until I get there. Don't die on me!
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 4485a306f20aa4a04b7ad9f22443ab4e, type: 2}
   m_sharedMaterial: {fileID: -8876081502632558886, guid: 4485a306f20aa4a04b7ad9f22443ab4e, type: 2}
@@ -4055,7 +4055,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1462023351
 RectTransform:
   m_ObjectHideFlags: 0
@@ -4232,7 +4232,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Olga, clear a path to the hacking terminal by any means necessary! \n(LMB to punch, and RMB to slam)"
+  m_text: "Olga, clear a path to the security terminal by any means necessary! \n(LMB to punch, and RMB to slam)"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 4485a306f20aa4a04b7ad9f22443ab4e, type: 2}
   m_sharedMaterial: {fileID: -8876081502632558886, guid: 4485a306f20aa4a04b7ad9f22443ab4e, type: 2}
@@ -4399,7 +4399,7 @@ GameObject:
   - component: {fileID: 1509787904}
   - component: {fileID: 1509787903}
   m_Layer: 5
-  m_Name: EscapeInstructions
+  m_Name: SuccessText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4446,7 +4446,7 @@ MonoBehaviour:
       m_Calls: []
   m_text: 'Great job, Shift Squad. Those CAPSLOCKERS will think twice next time before messing with us.
 
-    Head to the extraction point and I''ll get the beers lined up for you. They''ll be added to your tab, of course.'
+    I''ll get the beers lined up for you. They''ll be added to your tab, of course.'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 4485a306f20aa4a04b7ad9f22443ab4e, type: 2}
   m_sharedMaterial: {fileID: -8876081502632558886, guid: 4485a306f20aa4a04b7ad9f22443ab4e, type: 2}
@@ -4706,12 +4706,12 @@ GameObject:
   - component: {fileID: 1681834829}
   - component: {fileID: 1681834828}
   m_Layer: 5
-  m_Name: TheftMissionText
+  m_Name: DefaultMissionText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1681834827
 RectTransform:
   m_ObjectHideFlags: 0
@@ -4956,7 +4956,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Dave! Er, I  mean, H4ck3rm4n! Get to the terminal and bypass the security alarms!
+  m_text: 'Dave! Er, I  mean, H4ck3rm4n! Get to the security terminal and hack open that door!
 
     (LMB to shoot, RMB to switch to hack mode, SHIFT key to begin hacking)'
   m_isRightToLeft: 0
