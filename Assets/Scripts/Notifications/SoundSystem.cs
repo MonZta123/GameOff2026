@@ -34,15 +34,30 @@ namespace Notifications
         [SerializeField]
         private AK.Wwise.Event stopPauseMusic;
 
+        private List<GameObject> _soundChannels = new();
+
+        private int _nextSoundChannel;
+        
+        private void Awake()
+        {
+            for (var i = 0; i < 8; i++)
+            {
+                var go = new GameObject($"Sound Channel {i}");
+                _soundChannels.Add(go);
+                go.transform.SetParent(transform);
+            }
+        }
+        
         public void PlayEvent(SoundNotification notification)
         {
-            // if (!string.IsNullOrWhiteSpace(switchGroup))
-            //     AkUnitySoundEngine.SetSwitch(switchGroup, parameter, gameObject);
-
-
             if (sounds.TryGetValue(notification._soundType, out var sound))
             {
-                sound.Post(gameObject);
+                var nextGo = _soundChannels[_nextSoundChannel];
+                _nextSoundChannel = (_nextSoundChannel + 1) % _soundChannels.Count;
+                
+                nextGo.transform.position = notification._position;
+                
+                sound.Post(nextGo);
             }
         }
 
@@ -77,7 +92,7 @@ namespace Notifications
 
         public void PlayIntroMusic(Action cont)
         {
-            var result = introMusic.Post(gameObject, (uint)AkCallbackType.AK_EndOfEvent, (cookie, type, info) =>
+            var result = introMusic.Post(gameObject, (uint)AkCallbackType.AK_EndOfEvent, (_, type, _) =>
             {
                 if (type == AkCallbackType.AK_EndOfEvent)
                     cont();
