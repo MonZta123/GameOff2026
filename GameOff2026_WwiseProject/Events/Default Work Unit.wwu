@@ -73,7 +73,7 @@
 						</Event>
 						<Event Name="Play_MUS_MissionEnding" ID="{E45055A8-8942-47B8-8115-34543642317B}">
 							<PropertyList>
-								<Property Name="Color" Type="int16" Value="10"/>
+								<Property Name="Color" Type="int16" Value="25"/>
 								<Property Name="OverrideColor" Type="bool" Value="True"/>
 							</PropertyList>
 							<ChildrenList>
@@ -106,7 +106,6 @@
 						<Event Name="Stop_MUS_CharacterSlowdown" ID="{987FE2D7-7D81-418C-B888-5C92D45B29DE}">
 							<PropertyList>
 								<Property Name="Color" Type="int16" Value="10"/>
-								<Property Name="OverrideColor" Type="bool" Value="True"/>
 							</PropertyList>
 							<ChildrenList>
 								<Action Name="" ID="{014DED5D-3C5B-436F-8557-C29A5C1A174B}" ShortID="512516822">
@@ -368,6 +367,9 @@
 									</ChildrenList>
 								</Event>
 								<Event Name="Play_SFX_MineCountdown" ID="{2E4350FE-4AE1-4D66-A4EF-72CE53E75CF4}">
+									<PropertyList>
+										<Property Name="Inclusion" Type="bool" Value="False"/>
+									</PropertyList>
 									<ChildrenList>
 										<Action Name="" ID="{1C64FF45-5D76-4923-99A1-9D7BFE5A1E5D}" ShortID="430081745">
 											<ReferenceList>
@@ -400,7 +402,7 @@
 								</Event>
 								<Event Name="Play_SFX_Rifle" ID="{FC3B028A-50F3-42CB-8E0B-C6CC94A0A8DD}">
 									<PropertyList>
-										<Property Name="Color" Type="int16" Value="10"/>
+										<Property Name="Color" Type="int16" Value="4"/>
 										<Property Name="OverrideColor" Type="bool" Value="True"/>
 									</PropertyList>
 									<ChildrenList>
@@ -408,6 +410,16 @@
 											<ReferenceList>
 												<Reference Name="Target">
 													<ObjectRef Name="AttackRifle" ID="{21AC844B-BA03-4798-B19E-38B470729988}" WorkUnitID="{AF633A36-6CC5-470E-AD72-3F76D6F661BF}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+										<Action Name="" ID="{8B789E18-7574-41B9-B351-0368CC21B968}" ShortID="129723698">
+											<PropertyList>
+												<Property Name="Delay" Type="Real64" Value="0.2"/>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="AttackQuip" ID="{B9ACB286-5E6F-4ED3-B449-7927CD1A28B9}" WorkUnitID="{AF633A36-6CC5-470E-AD72-3F76D6F661BF}"/>
 												</Reference>
 											</ReferenceList>
 										</Action>
@@ -430,7 +442,7 @@
 								</Event>
 								<Event Name="Play_SFX_DoorSlideOpen" ID="{388DF802-A380-4E4E-BD1C-F49CD5EE78A3}">
 									<PropertyList>
-										<Property Name="Color" Type="int16" Value="10"/>
+										<Property Name="Color" Type="int16" Value="25"/>
 										<Property Name="OverrideColor" Type="bool" Value="True"/>
 									</PropertyList>
 									<ChildrenList>
@@ -445,7 +457,7 @@
 								</Event>
 								<Event Name="Play_SFX_DoorSlideShut" ID="{32135886-32E2-4FE4-B958-B416DF9B4299}">
 									<PropertyList>
-										<Property Name="Color" Type="int16" Value="10"/>
+										<Property Name="Color" Type="int16" Value="25"/>
 										<Property Name="OverrideColor" Type="bool" Value="True"/>
 									</PropertyList>
 									<ChildrenList>
@@ -474,7 +486,7 @@
 										<Action Name="" ID="{C762517D-2A72-466D-A281-7107E502B595}" ShortID="713313781">
 											<ReferenceList>
 												<Reference Name="Target">
-													<ObjectRef Name="Attack" ID="{4123531D-3429-46E2-A38E-C5771B1788E5}" WorkUnitID="{AF633A36-6CC5-470E-AD72-3F76D6F661BF}"/>
+													<ObjectRef Name="AttackQuip" ID="{4123531D-3429-46E2-A38E-C5771B1788E5}" WorkUnitID="{AF633A36-6CC5-470E-AD72-3F76D6F661BF}"/>
 												</Reference>
 											</ReferenceList>
 										</Action>
@@ -598,7 +610,7 @@
 							<ChildrenList>
 								<Event Name="Play_SFX_E_ImpactHeavy" ID="{4335A160-53B6-473D-9447-A2B4A8C23FDD}">
 									<PropertyList>
-										<Property Name="Color" Type="int16" Value="10"/>
+										<Property Name="Color" Type="int16" Value="25"/>
 										<Property Name="OverrideColor" Type="bool" Value="True"/>
 									</PropertyList>
 									<ChildrenList>
@@ -620,7 +632,7 @@
 								</Event>
 								<Event Name="Play_SFX_E_Impact" ID="{A671DCAC-9993-4AC3-B194-BF98779E356E}">
 									<PropertyList>
-										<Property Name="Color" Type="int16" Value="10"/>
+										<Property Name="Color" Type="int16" Value="25"/>
 										<Property Name="OverrideColor" Type="bool" Value="True"/>
 									</PropertyList>
 									<ChildrenList>
@@ -689,7 +701,7 @@
 						</Event>
 						<Event Name="Stop_AMB_BackOfHouse" ID="{E980DD36-4E4A-455B-8CE4-A184BF85FBD0}">
 							<PropertyList>
-								<Property Name="Color" Type="int16" Value="10"/>
+								<Property Name="Color" Type="int16" Value="25"/>
 								<Property Name="OverrideColor" Type="bool" Value="True"/>
 							</PropertyList>
 							<ChildrenList>
@@ -709,7 +721,7 @@
 						</Event>
 						<Event Name="Stop_AMB_FrontOfHouse" ID="{3FEB6287-778C-4F8A-B91F-C2E9970CC07F}">
 							<PropertyList>
-								<Property Name="Color" Type="int16" Value="10"/>
+								<Property Name="Color" Type="int16" Value="25"/>
 								<Property Name="OverrideColor" Type="bool" Value="True"/>
 							</PropertyList>
 							<ChildrenList>
@@ -764,7 +776,7 @@
 						</Event>
 						<Event Name="Play_AMB_Mission" ID="{1B7C0568-7406-4D4E-AEDA-EEFC3A2B70EE}">
 							<PropertyList>
-								<Property Name="Color" Type="int16" Value="10"/>
+								<Property Name="Color" Type="int16" Value="25"/>
 								<Property Name="OverrideColor" Type="bool" Value="True"/>
 							</PropertyList>
 							<ChildrenList>
@@ -779,7 +791,7 @@
 						</Event>
 						<Event Name="Stop_AMB_Mission" ID="{CCB3003B-1FC1-4032-9334-2BD50CE62F34}">
 							<PropertyList>
-								<Property Name="Color" Type="int16" Value="10"/>
+								<Property Name="Color" Type="int16" Value="25"/>
 								<Property Name="OverrideColor" Type="bool" Value="True"/>
 							</PropertyList>
 							<ChildrenList>
@@ -804,7 +816,7 @@
 							<ChildrenList>
 								<Event Name="Play_VO_B_Dead" ID="{71D3AACC-0B82-43B1-870A-E80857458AB5}">
 									<PropertyList>
-										<Property Name="Color" Type="int16" Value="10"/>
+										<Property Name="Color" Type="int16" Value="2"/>
 										<Property Name="OverrideColor" Type="bool" Value="True"/>
 									</PropertyList>
 									<ChildrenList>
@@ -819,7 +831,7 @@
 								</Event>
 								<Event Name="Play_VO_B_HitHeavy" ID="{D77E0490-71FF-4E40-8DA3-4D5C12E56BE7}">
 									<PropertyList>
-										<Property Name="Color" Type="int16" Value="10"/>
+										<Property Name="Color" Type="int16" Value="2"/>
 										<Property Name="OverrideColor" Type="bool" Value="True"/>
 									</PropertyList>
 									<ChildrenList>
@@ -834,7 +846,7 @@
 								</Event>
 								<Event Name="Play_VO_B_Hit" ID="{94B68B7F-EEFF-41EA-B395-54CB92F37C67}">
 									<PropertyList>
-										<Property Name="Color" Type="int16" Value="10"/>
+										<Property Name="Color" Type="int16" Value="2"/>
 										<Property Name="OverrideColor" Type="bool" Value="True"/>
 									</PropertyList>
 									<ChildrenList>
@@ -876,7 +888,7 @@
 								<Event Name="Play_VO_B_Select" ID="{A9E6999F-C9FC-4B06-BD62-4615A067A96A}">
 									<PropertyList>
 										<Property Name="Color" Type="int16" Value="10"/>
-										<Property Name="OverrideColor" Type="bool" Value="True"/>
+										<Property Name="Inclusion" Type="bool" Value="False"/>
 									</PropertyList>
 									<ChildrenList>
 										<Action Name="" ID="{332C8BCF-E01F-4298-B3F8-2EAB7A2C4614}" ShortID="258084746">
@@ -901,7 +913,7 @@
 										<Action Name="" ID="{D71567B8-0BCC-4F6A-938D-E7B4BAD0D854}" ShortID="620741191">
 											<ReferenceList>
 												<Reference Name="Target">
-													<ObjectRef Name="Attack" ID="{4123531D-3429-46E2-A38E-C5771B1788E5}" WorkUnitID="{AF633A36-6CC5-470E-AD72-3F76D6F661BF}"/>
+													<ObjectRef Name="AttackQuip" ID="{4123531D-3429-46E2-A38E-C5771B1788E5}" WorkUnitID="{AF633A36-6CC5-470E-AD72-3F76D6F661BF}"/>
 												</Reference>
 											</ReferenceList>
 										</Action>
@@ -909,7 +921,7 @@
 								</Event>
 								<Event Name="Play_VO_A_Dead" ID="{95A352DD-B694-45E4-B9D6-F7A7C83982E8}">
 									<PropertyList>
-										<Property Name="Color" Type="int16" Value="10"/>
+										<Property Name="Color" Type="int16" Value="19"/>
 										<Property Name="OverrideColor" Type="bool" Value="True"/>
 									</PropertyList>
 									<ChildrenList>
@@ -925,7 +937,7 @@
 								<Event Name="Play_VO_A_Select" ID="{46F1FD6B-3196-4A89-B7C7-32725EABF3E7}">
 									<PropertyList>
 										<Property Name="Color" Type="int16" Value="10"/>
-										<Property Name="OverrideColor" Type="bool" Value="True"/>
+										<Property Name="Inclusion" Type="bool" Value="False"/>
 									</PropertyList>
 									<ChildrenList>
 										<Action Name="" ID="{B805B227-B04C-44CE-90E3-03307B027058}" ShortID="803476404">
@@ -939,7 +951,7 @@
 								</Event>
 								<Event Name="Play_VO_A_Hit" ID="{874B107B-B234-47D6-9730-65CCC4406DA9}">
 									<PropertyList>
-										<Property Name="Color" Type="int16" Value="10"/>
+										<Property Name="Color" Type="int16" Value="19"/>
 										<Property Name="OverrideColor" Type="bool" Value="True"/>
 									</PropertyList>
 									<ChildrenList>
@@ -969,7 +981,7 @@
 								</Event>
 								<Event Name="Play_VO_A_HitHeavy" ID="{8EAD13E7-31B6-45D4-B5CD-8804AD23F0AF}">
 									<PropertyList>
-										<Property Name="Color" Type="int16" Value="10"/>
+										<Property Name="Color" Type="int16" Value="19"/>
 										<Property Name="OverrideColor" Type="bool" Value="True"/>
 									</PropertyList>
 									<ChildrenList>
@@ -1003,7 +1015,7 @@
 							<ChildrenList>
 								<Event Name="Play_VO_C_Throw" ID="{4DDB5433-A1A0-46D0-9C86-2DAB28264CBF}">
 									<PropertyList>
-										<Property Name="Color" Type="int16" Value="1"/>
+										<Property Name="Color" Type="int16" Value="10"/>
 										<Property Name="OverrideColor" Type="bool" Value="True"/>
 									</PropertyList>
 									<ChildrenList>
@@ -1018,7 +1030,7 @@
 								</Event>
 								<Event Name="Play_VO_C_Dead" ID="{335EBBEB-523F-400E-AB8F-C5BA862AB40F}">
 									<PropertyList>
-										<Property Name="Color" Type="int16" Value="1"/>
+										<Property Name="Color" Type="int16" Value="10"/>
 										<Property Name="OverrideColor" Type="bool" Value="True"/>
 									</PropertyList>
 									<ChildrenList>
@@ -1034,7 +1046,7 @@
 								<Event Name="Play_VO_C_Select" ID="{9592EF1C-F7CB-4452-91A9-C012CD864B8A}">
 									<PropertyList>
 										<Property Name="Color" Type="int16" Value="1"/>
-										<Property Name="OverrideColor" Type="bool" Value="True"/>
+										<Property Name="Inclusion" Type="bool" Value="False"/>
 									</PropertyList>
 									<ChildrenList>
 										<Action Name="" ID="{FD731C49-8131-48AC-A414-A1E28FAAB31D}" ShortID="101695440">
@@ -1048,7 +1060,7 @@
 								</Event>
 								<Event Name="Play_VO_C_Hit" ID="{E25E0A70-19F2-421C-81F9-D45D1A302936}">
 									<PropertyList>
-										<Property Name="Color" Type="int16" Value="1"/>
+										<Property Name="Color" Type="int16" Value="10"/>
 										<Property Name="OverrideColor" Type="bool" Value="True"/>
 									</PropertyList>
 									<ChildrenList>
@@ -1078,7 +1090,7 @@
 								</Event>
 								<Event Name="Play_VO_C_HitHeavy" ID="{27B7546D-646F-4EF6-9C1F-9920CF11918B}">
 									<PropertyList>
-										<Property Name="Color" Type="int16" Value="1"/>
+										<Property Name="Color" Type="int16" Value="10"/>
 										<Property Name="OverrideColor" Type="bool" Value="True"/>
 									</PropertyList>
 									<ChildrenList>
@@ -1095,7 +1107,7 @@
 						</Folder>
 						<Folder Name="D" ID="{001501E5-C936-463F-B7DF-800714AEB414}" ShortID="426253793">
 							<ChildrenList>
-								<Event Name="Play_VO_D_Attack" ID="{77AFA440-412C-4B7B-8843-536E3479CD54}">
+								<Event Name="Play_VO_D_AttackQuip" ID="{77AFA440-412C-4B7B-8843-536E3479CD54}">
 									<PropertyList>
 										<Property Name="Color" Type="int16" Value="1"/>
 										<Property Name="Inclusion" Type="bool" Value="False"/>
@@ -1104,7 +1116,7 @@
 										<Action Name="" ID="{36AD7175-845A-4C97-8AAA-05C8562D6D3D}" ShortID="585795637">
 											<ReferenceList>
 												<Reference Name="Target">
-													<ObjectRef Name="Dodge" ID="{503510A6-6244-4C03-B579-3D9A2511F70F}" WorkUnitID="{AF633A36-6CC5-470E-AD72-3F76D6F661BF}"/>
+													<ObjectRef Name="AttackQuip" ID="{B9ACB286-5E6F-4ED3-B449-7927CD1A28B9}" WorkUnitID="{AF633A36-6CC5-470E-AD72-3F76D6F661BF}"/>
 												</Reference>
 											</ReferenceList>
 										</Action>
@@ -1112,14 +1124,14 @@
 								</Event>
 								<Event Name="Play_VO_D_Dead" ID="{B2C7AAFB-B802-4DE9-A20C-7D8C426F1C15}">
 									<PropertyList>
-										<Property Name="Color" Type="int16" Value="1"/>
+										<Property Name="Color" Type="int16" Value="4"/>
 										<Property Name="OverrideColor" Type="bool" Value="True"/>
 									</PropertyList>
 									<ChildrenList>
 										<Action Name="" ID="{025BDAF6-2D3D-4E17-9D56-44B60F33316C}" ShortID="109626467">
 											<ReferenceList>
 												<Reference Name="Target">
-													<ObjectRef Name="VO_B_Dead_01" ID="{26EA853B-8C7B-4645-ACEE-2E9D9A5C39A4}" WorkUnitID="{AF633A36-6CC5-470E-AD72-3F76D6F661BF}"/>
+													<ObjectRef Name="VO_D_Dead_01" ID="{DA93643E-3AEE-403F-96EF-5AF4CFD8701F}" WorkUnitID="{AF633A36-6CC5-470E-AD72-3F76D6F661BF}"/>
 												</Reference>
 											</ReferenceList>
 										</Action>
@@ -1128,7 +1140,7 @@
 								<Event Name="Play_VO_D_Select" ID="{06D740BC-760B-4C5F-93B8-17CAFE3EB736}">
 									<PropertyList>
 										<Property Name="Color" Type="int16" Value="1"/>
-										<Property Name="OverrideColor" Type="bool" Value="True"/>
+										<Property Name="Inclusion" Type="bool" Value="False"/>
 									</PropertyList>
 									<ChildrenList>
 										<Action Name="" ID="{7A7AFD70-80FC-48EA-BB2D-141EE1FF1A3C}" ShortID="169972579">
@@ -1142,14 +1154,14 @@
 								</Event>
 								<Event Name="Play_VO_D_Hit" ID="{C236B21F-27CA-40F4-B66C-A4942FADFDAE}">
 									<PropertyList>
-										<Property Name="Color" Type="int16" Value="1"/>
+										<Property Name="Color" Type="int16" Value="4"/>
 										<Property Name="OverrideColor" Type="bool" Value="True"/>
 									</PropertyList>
 									<ChildrenList>
 										<Action Name="" ID="{14692C29-46B0-4988-8FE7-E256D4F89572}" ShortID="1056003349">
 											<ReferenceList>
 												<Reference Name="Target">
-													<ObjectRef Name="Hit" ID="{6DCCADEE-7CAF-4E71-B13D-151C625D155D}" WorkUnitID="{AF633A36-6CC5-470E-AD72-3F76D6F661BF}"/>
+													<ObjectRef Name="Hit" ID="{1076023D-6305-4E23-A95D-B8F82D5CDED0}" WorkUnitID="{AF633A36-6CC5-470E-AD72-3F76D6F661BF}"/>
 												</Reference>
 											</ReferenceList>
 										</Action>
@@ -1172,14 +1184,14 @@
 								</Event>
 								<Event Name="Play_VO_D_HitHeavy" ID="{7C805774-2F8A-4D48-8746-FD718FDAF1CD}">
 									<PropertyList>
-										<Property Name="Color" Type="int16" Value="1"/>
+										<Property Name="Color" Type="int16" Value="4"/>
 										<Property Name="OverrideColor" Type="bool" Value="True"/>
 									</PropertyList>
 									<ChildrenList>
 										<Action Name="" ID="{93CD36AB-9019-4E92-840C-04BD2EC09284}" ShortID="452118681">
 											<ReferenceList>
 												<Reference Name="Target">
-													<ObjectRef Name="Wind" ID="{72C68C4E-CE97-4011-9A57-FD96E22D4B15}" WorkUnitID="{AF633A36-6CC5-470E-AD72-3F76D6F661BF}"/>
+													<ObjectRef Name="Wind" ID="{14AB59D5-C110-404B-9A88-AFD07C16423A}" WorkUnitID="{AF633A36-6CC5-470E-AD72-3F76D6F661BF}"/>
 												</Reference>
 											</ReferenceList>
 										</Action>
@@ -1198,7 +1210,7 @@
 						</Folder>
 						<Event Name="Play_VO_ABCD_Win" ID="{26B21666-DAE0-481D-B5C8-0753260D28CF}">
 							<PropertyList>
-								<Property Name="Color" Type="int16" Value="10"/>
+								<Property Name="Color" Type="int16" Value="25"/>
 								<Property Name="OverrideColor" Type="bool" Value="True"/>
 							</PropertyList>
 							<ChildrenList>
@@ -1234,7 +1246,7 @@
 						</Event>
 						<Event Name="Play_VO_ABCD_CharacterSelect" ID="{7BD38E24-5B74-49EA-A6C6-8B3F37FE1D9B}">
 							<PropertyList>
-								<Property Name="Color" Type="int16" Value="10"/>
+								<Property Name="Color" Type="int16" Value="25"/>
 								<Property Name="OverrideColor" Type="bool" Value="True"/>
 							</PropertyList>
 							<ChildrenList>

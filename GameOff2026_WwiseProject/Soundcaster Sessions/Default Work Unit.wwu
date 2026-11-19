@@ -166,6 +166,10 @@
 							<Position X="0" Y="2"/>
 						</Module>
 						<Module>
+							<ObjectRef Name="Play_SFX_Rifle" ID="{FC3B028A-50F3-42CB-8E0B-C6CC94A0A8DD}" WorkUnitID="{2B12C590-A22E-47AF-9697-251FEA2DB802}"/>
+							<Position X="0" Y="3"/>
+						</Module>
+						<Module>
 							<ObjectRef Name="Play_SFX_Dash" ID="{7E19B84C-C838-4A91-89DA-BB94F3FE01E9}" WorkUnitID="{2B12C590-A22E-47AF-9697-251FEA2DB802}"/>
 							<Position X="1" Y="1"/>
 						</Module>

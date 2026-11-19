@@ -10,7 +10,7 @@
     "Type": "User",
     "GUID": "{3059A6CE-8152-4CD2-BEA9-69E98BB60D65}",
     "Language": "SFX",
-    "Hash": "{C369A632-D452-2DB9-2CB8-BD2FD885C8F4}",
+    "Hash": "{B47DE1BE-2995-9638-AB9C-58B05A2E2375}",
     "ObjectPath": "\\SoundBanks\\Default Work Unit\\Main",
     "ShortName": "Main",
     "Path": "Main.bnk",
@@ -192,6 +192,22 @@
       "CachePath": "60/{60C79480-4001-62EE-28A5-61DDE2DBBFC2}.wem"
      },
      {
+      "Id": "80020541",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "D_Hit_01.wav",
+      "CachePath": "6C/{6CBFC654-5BA3-5B12-058F-37314B4FE9A9}.wem"
+     },
+     {
+      "Id": "87366083",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "D_Select_01.wav",
+      "CachePath": "08/{08AE225A-D6FF-FC20-C871-CDAA1A615E5A}.wem"
+     },
+     {
       "Id": "95153162",
       "Language": "SFX",
       "Streaming": "false",
@@ -230,6 +246,22 @@
       "Location": "Memory",
       "ShortName": "VO_B_Hack_01.wav",
       "CachePath": "D8/{D8F8235B-989A-42F6-32EA-D287C0B88F97}.wem"
+     },
+     {
+      "Id": "121023244",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "D_HitHeavy_02.wav",
+      "CachePath": "2D/{2D2B3368-3CB2-B67D-DC32-17B45932296A}.wem"
+     },
+     {
+      "Id": "121532258",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "D_AttackQuip_02.wav",
+      "CachePath": "04/{0482DA4B-A4CF-FBD7-C39A-5D5E41A9383E}.wem"
      },
      {
       "Id": "146835285",
@@ -376,6 +408,14 @@
       "CachePath": "0C/{0C2E0F68-2A7A-E866-93A9-9980C6751C21}.wem"
      },
      {
+      "Id": "216779663",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "D_HitHeavy_01.wav",
+      "CachePath": "F6/{F62E3E58-0381-9E99-C259-1EAE21ADDC25}.wem"
+     },
+     {
       "Id": "231962521",
       "Language": "SFX",
       "Streaming": "false",
@@ -390,6 +430,14 @@
       "Location": "Memory",
       "ShortName": "FootstepC_02_Tile.wav",
       "CachePath": "BC/{BC0E95B4-A232-0920-6B56-A6C2FE0C71D9}.wem"
+     },
+     {
+      "Id": "238493097",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "D_AttackQuip_05.wav",
+      "CachePath": "9A/{9A1E9AFB-2645-A9AC-0682-53E5D2128B60}.wem"
      },
      {
       "Id": "241379826",
@@ -488,6 +536,14 @@
       "CachePath": "15/{15388B51-E6D8-FC7D-5EC9-CE7D42364A07}.wem"
      },
      {
+      "Id": "321535931",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "D_HitHeavy_05.wav",
+      "CachePath": "14/{1405DBA9-E863-1A98-0389-29C35CABAD88}.wem"
+     },
+     {
       "Id": "333456175",
       "Language": "SFX",
       "Streaming": "false",
@@ -510,6 +566,22 @@
       "Location": "Memory",
       "ShortName": "FootstepB_06.wav",
       "CachePath": "67/{67DCC473-3921-7B9D-18F9-2832A805D56D}.wem"
+     },
+     {
+      "Id": "362760604",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "D_Hit_06.wav",
+      "CachePath": "5A/{5A7C3A2F-DAE7-7E14-C676-2E47546C8467}.wem"
+     },
+     {
+      "Id": "366008783",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "D_Select_04.wav",
+      "CachePath": "A1/{A1A522FC-37C1-5423-ABB6-CD835FEDA8DD}.wem"
      },
      {
       "Id": "369065416",
@@ -558,6 +630,14 @@
       "Location": "Memory",
       "ShortName": "FootstepB_06_Concrete.wav",
       "CachePath": "07/{0722BBB5-D9B1-40C0-A25B-603F1B011B81}.wem"
+     },
+     {
+      "Id": "406484774",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "D_HitHeavy_06.wav",
+      "CachePath": "F9/{F92D11E0-6DE7-3752-6CF9-134DF64A1F54}.wem"
      },
      {
       "Id": "406799164",
@@ -672,6 +752,14 @@
       "CachePath": "31/{3100C202-CD34-589F-A579-1CB83FF59A52}.wem"
      },
      {
+      "Id": "463930129",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "D_Win_01.wav",
+      "CachePath": "2B/{2B133692-5152-DCED-1BFB-F5E1FE594394}.wem"
+     },
+     {
       "Id": "463990089",
       "Language": "SFX",
       "Streaming": "false",
@@ -744,6 +832,14 @@
       "CachePath": "40/{40EA4B07-52F2-CD95-9035-F75C5C3966C6}.wem"
      },
      {
+      "Id": "521326818",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "D_Select_03.wav",
+      "CachePath": "C3/{C314EE44-936C-62BC-E9B2-685B1B79279B}.wem"
+     },
+     {
       "Id": "521808120",
       "Language": "SFX",
       "Streaming": "false",
@@ -758,14 +854,6 @@
       "Location": "Memory",
       "ShortName": "VO_E_ImpactHeavy_01.wav",
       "CachePath": "F0/{F0E71142-2EB2-8C65-8631-00E2961A1E27}.wem"
-     },
-     {
-      "Id": "547164501",
-      "Language": "SFX",
-      "Streaming": "false",
-      "Location": "Memory",
-      "ShortName": "Mine Countdown.wav",
-      "CachePath": "37/{37AC0F88-1ABB-5F48-8758-A71F30EB9FD7}.wem"
      },
      {
       "Id": "547594150",
@@ -790,6 +878,14 @@
       "Location": "Memory",
       "ShortName": "A_Attack_03.wav",
       "CachePath": "A3/{A36BB8AD-B3E6-3C09-C115-9F5AF9C7F936}.wem"
+     },
+     {
+      "Id": "589992553",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "D_AttackQuip_03.wav",
+      "CachePath": "19/{192949F4-7EDE-073B-3A92-3A9AD5C00A69}.wem"
      },
      {
       "Id": "593952616",
@@ -824,12 +920,28 @@
       "CachePath": "F0/{F0B0F2B4-814C-B576-1F1F-ACF909F7ED9C}.wem"
      },
      {
+      "Id": "615590457",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "D_Win_02.wav",
+      "CachePath": "89/{89B78EDE-3FEB-4C17-888B-8F7ED12DDAEE}.wem"
+     },
+     {
       "Id": "619518375",
       "Language": "SFX",
       "Streaming": "false",
       "Location": "Memory",
       "ShortName": "Hack_Abort.wav",
       "CachePath": "0A/{0A138AF6-C3A9-FBD9-1936-7BEBA4FEDCAB}.wem"
+     },
+     {
+      "Id": "620156882",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "D_HitHeavy_03.wav",
+      "CachePath": "A9/{A9913BC2-AF34-0B72-A7D3-1B87CF4FC1DC}.wem"
      },
      {
       "Id": "621743721",
@@ -854,6 +966,14 @@
       "Location": "Memory",
       "ShortName": "FootstepA_03_Concrete.wav",
       "CachePath": "32/{320966AE-53D7-485E-5E41-FF325B82D486}.wem"
+     },
+     {
+      "Id": "646928954",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "D_HitHeavy_07.wav",
+      "CachePath": "1C/{1C561AC6-CC56-238F-BC63-BD4AFE85BCB5}.wem"
      },
      {
       "Id": "649226668",
@@ -926,6 +1046,14 @@
       "Location": "Memory",
       "ShortName": "A_Dash_01.wav",
       "CachePath": "33/{33D6F2A0-F362-FC07-9B7F-94896DA56918}.wem"
+     },
+     {
+      "Id": "679635913",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "D_Hit_04.wav",
+      "CachePath": "BE/{BEAA786E-4E22-7527-6529-70A87845D7CC}.wem"
      },
      {
       "Id": "679854016",
@@ -1048,6 +1176,22 @@
       "CachePath": "FF/{FFB772A2-EF1C-319F-5C39-2AE09A40E7C5}.wem"
      },
      {
+      "Id": "799796383",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "D_Hit_05.wav",
+      "CachePath": "45/{458B2E9D-911A-C7C0-EDBD-BC132F827765}.wem"
+     },
+     {
+      "Id": "806950712",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "D_Select_05.wav",
+      "CachePath": "B9/{B9385EBB-208A-86EC-A677-0989D61B42A6}.wem"
+     },
+     {
       "Id": "807765666",
       "Language": "SFX",
       "Streaming": "false",
@@ -1072,6 +1216,22 @@
       "CachePath": "71/{71D9F3F3-E513-7708-5763-CE85258A4B03}.wem"
      },
      {
+      "Id": "820641460",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "D_AttackQuip_04.wav",
+      "CachePath": "08/{08FD7695-884F-8BE1-7C49-F2690B9A2DF0}.wem"
+     },
+     {
+      "Id": "828278725",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "D_Hit_03.wav",
+      "CachePath": "27/{27FD848E-B75A-9200-1B71-CB5465C0B622}.wem"
+     },
+     {
       "Id": "828655390",
       "Language": "SFX",
       "Streaming": "false",
@@ -1086,6 +1246,14 @@
       "Location": "Memory",
       "ShortName": "A_Hit_04.wav",
       "CachePath": "17/{17A47A26-D277-A50E-A1B6-90DE66C8DEF2}.wem"
+     },
+     {
+      "Id": "831793489",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "D_HitHeavy_04.wav",
+      "CachePath": "ED/{ED045268-13D6-C891-4ADF-B59207398C5F}.wem"
      },
      {
       "Id": "845711448",
@@ -1400,6 +1568,14 @@
       "CachePath": "DA/{DAFEB2E8-3378-0ADF-CC24-2E557AF61550}.wem"
      },
      {
+      "Id": "1045731519",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "D_Hit_02.wav",
+      "CachePath": "2A/{2A5B416D-2CA0-C907-CC37-4B4CCB1B70ED}.wem"
+     },
+     {
       "Id": "1047698713",
       "Language": "SFX",
       "Streaming": "false",
@@ -1443,9 +1619,17 @@
        "LibId": "6619138"
       },
       {
+       "Id": "92181853",
+       "Name": "Silence",
+       "ObjectPath": "\\Containers\\Default Work Unit\\VO\\CharacterD\\AttackQuip\\Silence_04\\Silence",
+       "GUID": "{38107037-D5EE-46F3-89C5-FDCCFE426F90}",
+       "LibName": "Wwise Silence",
+       "LibId": "6619138"
+      },
+      {
        "Id": "105388584",
        "Name": "Silence",
-       "ObjectPath": "\\Containers\\Default Work Unit\\VO\\CharacterA\\Attack\\Quip or Silence\\Silence_08\\Silence",
+       "ObjectPath": "\\Containers\\Default Work Unit\\VO\\CharacterA\\AttackQuip\\Quip or Silence\\Silence_08\\Silence",
        "GUID": "{8907C6D9-9725-4D2A-B385-D6E5FB151324}",
        "LibName": "Wwise Silence",
        "LibId": "6619138"
@@ -1453,7 +1637,7 @@
       {
        "Id": "255324071",
        "Name": "Silence",
-       "ObjectPath": "\\Containers\\Default Work Unit\\VO\\CharacterA\\Attack\\Quip or Silence\\Silence_06\\Silence",
+       "ObjectPath": "\\Containers\\Default Work Unit\\VO\\CharacterA\\AttackQuip\\Quip or Silence\\Silence_06\\Silence",
        "GUID": "{08F02F82-9A47-4C95-8EAE-D89B374E3445}",
        "LibName": "Wwise Silence",
        "LibId": "6619138"
@@ -1469,15 +1653,23 @@
       {
        "Id": "325225571",
        "Name": "Silence",
-       "ObjectPath": "\\Containers\\Default Work Unit\\VO\\CharacterA\\Attack\\Quip or Silence\\Silence_07\\Silence",
+       "ObjectPath": "\\Containers\\Default Work Unit\\VO\\CharacterA\\AttackQuip\\Quip or Silence\\Silence_07\\Silence",
        "GUID": "{9AA3293A-7E3A-4E79-A248-CDE356DF536A}",
+       "LibName": "Wwise Silence",
+       "LibId": "6619138"
+      },
+      {
+       "Id": "379246537",
+       "Name": "Silence",
+       "ObjectPath": "\\Containers\\Default Work Unit\\VO\\CharacterD\\AttackQuip\\Silence_01\\Silence",
+       "GUID": "{4305D0A9-A74C-41D6-A6AB-12B4C562757F}",
        "LibName": "Wwise Silence",
        "LibId": "6619138"
       },
       {
        "Id": "399523509",
        "Name": "Silence",
-       "ObjectPath": "\\Containers\\Default Work Unit\\VO\\CharacterA\\Attack\\Quip or Silence\\Silence_05\\Silence",
+       "ObjectPath": "\\Containers\\Default Work Unit\\VO\\CharacterA\\AttackQuip\\Quip or Silence\\Silence_05\\Silence",
        "GUID": "{E79DB30A-AC4E-4FC3-9A77-0D18AFE2FD6E}",
        "LibName": "Wwise Silence",
        "LibId": "6619138"
@@ -1485,7 +1677,7 @@
       {
        "Id": "442655646",
        "Name": "Silence",
-       "ObjectPath": "\\Containers\\Default Work Unit\\VO\\CharacterA\\Attack\\Quip or Silence\\Silence_03\\Silence",
+       "ObjectPath": "\\Containers\\Default Work Unit\\VO\\CharacterA\\AttackQuip\\Quip or Silence\\Silence_03\\Silence",
        "GUID": "{CF184942-AA05-4577-B8F0-C5CCAB63BBE8}",
        "LibName": "Wwise Silence",
        "LibId": "6619138"
@@ -1517,7 +1709,7 @@
       {
        "Id": "505840438",
        "Name": "Silence",
-       "ObjectPath": "\\Containers\\Default Work Unit\\VO\\CharacterA\\Attack\\Quip or Silence\\Silence_09\\Silence",
+       "ObjectPath": "\\Containers\\Default Work Unit\\VO\\CharacterA\\AttackQuip\\Quip or Silence\\Silence_09\\Silence",
        "GUID": "{035FDC33-DCD0-4A5E-B054-17500F8A2A97}",
        "LibName": "Wwise Silence",
        "LibId": "6619138"
@@ -1533,7 +1725,7 @@
       {
        "Id": "543044671",
        "Name": "Silence",
-       "ObjectPath": "\\Containers\\Default Work Unit\\VO\\CharacterA\\Attack\\Quip or Silence\\Silence_01\\Silence",
+       "ObjectPath": "\\Containers\\Default Work Unit\\VO\\CharacterA\\AttackQuip\\Quip or Silence\\Silence_01\\Silence",
        "GUID": "{E1803B8B-484F-472F-9A20-A5F6F49BD009}",
        "LibName": "Wwise Silence",
        "LibId": "6619138"
@@ -1541,15 +1733,23 @@
       {
        "Id": "659896684",
        "Name": "Silence",
-       "ObjectPath": "\\Containers\\Default Work Unit\\VO\\CharacterA\\Attack\\Quip or Silence\\Silence_02\\Silence",
+       "ObjectPath": "\\Containers\\Default Work Unit\\VO\\CharacterA\\AttackQuip\\Quip or Silence\\Silence_02\\Silence",
        "GUID": "{FEAAC026-C055-4520-A26F-521731194992}",
+       "LibName": "Wwise Silence",
+       "LibId": "6619138"
+      },
+      {
+       "Id": "668594920",
+       "Name": "Silence",
+       "ObjectPath": "\\Containers\\Default Work Unit\\VO\\CharacterD\\AttackQuip\\Silence\\Silence",
+       "GUID": "{FC2E5D26-7133-4F27-988C-E826A91C4D31}",
        "LibName": "Wwise Silence",
        "LibId": "6619138"
       },
       {
        "Id": "721153692",
        "Name": "Silence",
-       "ObjectPath": "\\Containers\\Default Work Unit\\VO\\CharacterA\\Attack\\Quip or Silence\\Silence\\Silence",
+       "ObjectPath": "\\Containers\\Default Work Unit\\VO\\CharacterA\\AttackQuip\\Quip or Silence\\Silence\\Silence",
        "GUID": "{7C8C483B-047D-4320-B458-578E33024F65}",
        "LibName": "Wwise Silence",
        "LibId": "6619138"
@@ -1565,7 +1765,7 @@
       {
        "Id": "810851202",
        "Name": "Silence",
-       "ObjectPath": "\\Containers\\Default Work Unit\\VO\\CharacterA\\Attack\\Quip or Silence\\Silence_04\\Silence",
+       "ObjectPath": "\\Containers\\Default Work Unit\\VO\\CharacterA\\AttackQuip\\Quip or Silence\\Silence_04\\Silence",
        "GUID": "{B1C3BCD6-BC56-4D68-854A-EE72D60C97EF}",
        "LibName": "Wwise Silence",
        "LibId": "6619138"
@@ -1587,6 +1787,14 @@
        "LibId": "6619138"
       },
       {
+       "Id": "903176789",
+       "Name": "Silence",
+       "ObjectPath": "\\Containers\\Default Work Unit\\VO\\CharacterD\\AttackQuip\\Silence_02\\Silence",
+       "GUID": "{3687138A-B07A-4F2B-9E4C-C74F8D463626}",
+       "LibName": "Wwise Silence",
+       "LibId": "6619138"
+      },
+      {
        "Id": "914545128",
        "Name": "Silence",
        "ObjectPath": "\\Containers\\Default Work Unit\\VO\\CharacterB\\Dodge\\Quip or Silence\\Silence_08\\Silence",
@@ -1597,7 +1805,7 @@
       {
        "Id": "946266822",
        "Name": "Silence",
-       "ObjectPath": "\\Containers\\Default Work Unit\\VO\\CharacterA\\Attack\\Quip or Silence\\Silence_10\\Silence",
+       "ObjectPath": "\\Containers\\Default Work Unit\\VO\\CharacterA\\AttackQuip\\Quip or Silence\\Silence_10\\Silence",
        "GUID": "{3D160F04-1F7A-45DC-95DB-319125891CC6}",
        "LibName": "Wwise Silence",
        "LibId": "6619138"
@@ -1609,6 +1817,14 @@
        "GUID": "{A1A0F2C7-D27A-4C46-9718-05AE31206067}",
        "LibName": "Wwise Silence",
        "LibId": "6619138"
+      },
+      {
+       "Id": "1015551851",
+       "Name": "Silence",
+       "ObjectPath": "\\Containers\\Default Work Unit\\VO\\CharacterD\\AttackQuip\\Silence_03\\Silence",
+       "GUID": "{AEF186B6-B9BA-493D-AF91-2B4F0ABCBA32}",
+       "LibName": "Wwise Silence",
+       "LibId": "6619138"
       }
      ]
     },
@@ -1618,7 +1834,7 @@
       "Name": "Play_AMB_Mission",
       "ObjectPath": "\\Events\\Default Work Unit\\AMBIENCE\\Play_AMB_Mission",
       "GUID": "{1B7C0568-7406-4D4E-AEDA-EEFC3A2B70EE}",
-      "Color": "10",
+      "Color": "25",
       "DurationType": "Infinite",
       "SwitchContainers": [
        {
@@ -1970,7 +2186,7 @@
       "Name": "Play_MUS_MissionEnding",
       "ObjectPath": "\\Events\\Default Work Unit\\MUSIC\\Play_MUS_MissionEnding",
       "GUID": "{E45055A8-8942-47B8-8115-34543642317B}",
-      "Color": "10",
+      "Color": "25",
       "DurationType": "OneShot",
       "DurationMin": "10.10527",
       "DurationMax": "10.10527",
@@ -2282,7 +2498,7 @@
       "Name": "Play_SFX_DoorSlideOpen",
       "ObjectPath": "\\Events\\Default Work Unit\\SFX\\Environment\\Play_SFX_DoorSlideOpen",
       "GUID": "{388DF802-A380-4E4E-BD1C-F49CD5EE78A3}",
-      "Color": "10",
+      "Color": "25",
       "MaxAttenuation": "100",
       "DurationType": "OneShot",
       "DurationMin": "1.0679365",
@@ -2298,7 +2514,7 @@
       "Name": "Play_SFX_DoorSlideShut",
       "ObjectPath": "\\Events\\Default Work Unit\\SFX\\Environment\\Play_SFX_DoorSlideShut",
       "GUID": "{32135886-32E2-4FE4-B958-B416DF9B4299}",
-      "Color": "10",
+      "Color": "25",
       "MaxAttenuation": "100",
       "DurationType": "OneShot",
       "DurationMin": "0.8900227",
@@ -2329,7 +2545,7 @@
       "Name": "Play_SFX_E_Impact",
       "ObjectPath": "\\Events\\Default Work Unit\\SFX\\Impacts\\Play_SFX_E_Impact",
       "GUID": "{A671DCAC-9993-4AC3-B194-BF98779E356E}",
-      "Color": "10",
+      "Color": "25",
       "MaxAttenuation": "100",
       "DurationType": "OneShot",
       "DurationMin": "0.6060318",
@@ -2372,7 +2588,7 @@
       "Name": "Play_SFX_E_ImpactHeavy",
       "ObjectPath": "\\Events\\Default Work Unit\\SFX\\Impacts\\Play_SFX_E_ImpactHeavy",
       "GUID": "{4335A160-53B6-473D-9447-A2B4A8C23FDD}",
-      "Color": "10",
+      "Color": "25",
       "MaxAttenuation": "100",
       "DurationType": "OneShot",
       "DurationMin": "0.6662585",
@@ -2814,21 +3030,6 @@
       ]
      },
      {
-      "Id": "2935530180",
-      "Name": "Play_SFX_MineCountdown",
-      "ObjectPath": "\\Events\\Default Work Unit\\SFX\\Weapons\\Play_SFX_MineCountdown",
-      "GUID": "{2E4350FE-4AE1-4D66-A4EF-72CE53E75CF4}",
-      "MaxAttenuation": "100",
-      "DurationType": "OneShot",
-      "DurationMin": "2.3805668",
-      "DurationMax": "2.3805668",
-      "MediaRefs": [
-       {
-        "Id": "547164501"
-       }
-      ]
-     },
-     {
       "Id": "1561061870",
       "Name": "Play_SFX_MineExplode",
       "ObjectPath": "\\Events\\Default Work Unit\\SFX\\Weapons\\Play_SFX_MineExplode",
@@ -2855,22 +3056,53 @@
       "Name": "Play_SFX_Rifle",
       "ObjectPath": "\\Events\\Default Work Unit\\SFX\\Weapons\\Play_SFX_Rifle",
       "GUID": "{FC3B028A-50F3-42CB-8E0B-C6CC94A0A8DD}",
-      "Color": "10",
+      "Color": "4",
       "MaxAttenuation": "100",
       "DurationType": "OneShot",
       "DurationMin": "2.17436",
       "DurationMax": "2.6172187",
       "MediaRefs": [
        {
+        "Id": "121532258"
+       },
+       {
         "Id": "174024542"
+       },
+       {
+        "Id": "238493097"
        },
        {
         "Id": "437602278"
        },
        {
+        "Id": "589992553"
+       },
+       {
+        "Id": "820641460"
+       },
+       {
         "Id": "846871773"
        }
-      ]
+      ],
+      "PluginRefs": {
+       "Custom": [
+        {
+         "Id": "92181853"
+        },
+        {
+         "Id": "379246537"
+        },
+        {
+         "Id": "668594920"
+        },
+        {
+         "Id": "903176789"
+        },
+        {
+         "Id": "1015551851"
+        }
+       ]
+      }
      },
      {
       "Id": "2453180302",
@@ -2939,7 +3171,7 @@
       "Name": "Play_VO_A_Dead",
       "ObjectPath": "\\Events\\Default Work Unit\\VO\\A\\Play_VO_A_Dead",
       "GUID": "{95A352DD-B694-45E4-B9D6-F7A7C83982E8}",
-      "Color": "10",
+      "Color": "19",
       "MaxAttenuation": "100",
       "DurationType": "OneShot",
       "DurationMin": "1.21839",
@@ -2955,7 +3187,7 @@
       "Name": "Play_VO_A_Hit",
       "ObjectPath": "\\Events\\Default Work Unit\\VO\\A\\Play_VO_A_Hit",
       "GUID": "{874B107B-B234-47D6-9730-65CCC4406DA9}",
-      "Color": "10",
+      "Color": "19",
       "MaxAttenuation": "100",
       "DurationType": "OneShot",
       "DurationMin": "0.3814404",
@@ -2980,7 +3212,7 @@
       "Name": "Play_VO_A_HitHeavy",
       "ObjectPath": "\\Events\\Default Work Unit\\VO\\A\\Play_VO_A_HitHeavy",
       "GUID": "{8EAD13E7-31B6-45D4-B5CD-8804AD23F0AF}",
-      "Color": "10",
+      "Color": "19",
       "MaxAttenuation": "100",
       "DurationType": "OneShot",
       "DurationMin": "0.5817257",
@@ -2998,92 +3230,14 @@
       ]
      },
      {
-      "Id": "2090247314",
-      "Name": "Play_VO_A_Select",
-      "ObjectPath": "\\Events\\Default Work Unit\\VO\\A\\Play_VO_A_Select",
-      "GUID": "{46F1FD6B-3196-4A89-B7C7-32725EABF3E7}",
-      "Color": "10",
-      "DurationType": "OneShot",
-      "DurationMin": "0.73882085",
-      "DurationMax": "2.0304534",
-      "SwitchContainers": [
-       {
-        "SwitchValue": {
-         "GroupType": "State",
-         "GroupId": "1413238543",
-         "Id": "1200082263",
-         "GUID": "{75FB4324-C21A-4D82-B0CF-3542C815D862}",
-         "Default": "true"
-        },
-        "MediaRefs": [
-         {
-          "Id": "1006487176"
-         }
-        ]
-       },
-       {
-        "SwitchValue": {
-         "GroupType": "State",
-         "GroupId": "1413238543",
-         "Id": "1200082260",
-         "GUID": "{F4CD4D35-CE3B-41B2-9E0B-6E004347776F}"
-        },
-        "MediaRefs": [
-         {
-          "Id": "985736822"
-         }
-        ]
-       },
-       {
-        "SwitchValue": {
-         "GroupType": "State",
-         "GroupId": "1413238543",
-         "Id": "1200082258",
-         "GUID": "{F39FE53F-3AF9-431B-AE26-DBF3E7967E58}"
-        },
-        "MediaRefs": [
-         {
-          "Id": "845711448"
-         }
-        ]
-       },
-       {
-        "SwitchValue": {
-         "GroupType": "State",
-         "GroupId": "1413238543",
-         "Id": "1200082261",
-         "GUID": "{368377C0-A9B4-4367-BFA6-2450D5E592E3}"
-        },
-        "MediaRefs": [
-         {
-          "Id": "70699534"
-         }
-        ]
-       },
-       {
-        "SwitchValue": {
-         "GroupType": "State",
-         "GroupId": "1413238543",
-         "Id": "748895195",
-         "GUID": "{C9697BE0-1F92-4C7C-92D8-FFA9B02AB186}"
-        },
-        "MediaRefs": [
-         {
-          "Id": "1006487176"
-         }
-        ]
-       }
-      ]
-     },
-     {
       "Id": "87373298",
       "Name": "Play_VO_ABCD_CharacterSelect",
       "ObjectPath": "\\Events\\Default Work Unit\\VO\\Play_VO_ABCD_CharacterSelect",
       "GUID": "{7BD38E24-5B74-49EA-A6C6-8B3F37FE1D9B}",
-      "Color": "10",
+      "Color": "25",
       "DurationType": "OneShot",
       "DurationMin": "0.73882085",
-      "DurationMax": "2.5860317",
+      "DurationMax": "2.6944444",
       "SwitchContainers": [
        {
         "SwitchValue": {
@@ -3098,11 +3252,12 @@
            "GroupType": "State",
            "GroupId": "1413238543",
            "Id": "1200082263",
-           "GUID": "{75FB4324-C21A-4D82-B0CF-3542C815D862}"
+           "GUID": "{75FB4324-C21A-4D82-B0CF-3542C815D862}",
+           "Default": "true"
           },
           "MediaRefs": [
            {
-            "Id": "410590335"
+            "Id": "87366083"
            }
           ]
          },
@@ -3115,7 +3270,7 @@
           },
           "MediaRefs": [
            {
-            "Id": "10943219"
+            "Id": "366008783"
            }
           ]
          },
@@ -3128,7 +3283,7 @@
           },
           "MediaRefs": [
            {
-            "Id": "659334181"
+            "Id": "806950712"
            }
           ]
          },
@@ -3141,7 +3296,7 @@
           },
           "MediaRefs": [
            {
-            "Id": "936875036"
+            "Id": "521326818"
            }
           ]
          },
@@ -3150,12 +3305,11 @@
            "GroupType": "State",
            "GroupId": "1413238543",
            "Id": "748895195",
-           "GUID": "{C9697BE0-1F92-4C7C-92D8-FFA9B02AB186}",
-           "Default": "true"
+           "GUID": "{C9697BE0-1F92-4C7C-92D8-FFA9B02AB186}"
           },
           "MediaRefs": [
            {
-            "Id": "410590335"
+            "Id": "87366083"
            }
           ]
          }
@@ -3396,7 +3550,7 @@
       "Name": "Play_VO_ABCD_Win",
       "ObjectPath": "\\Events\\Default Work Unit\\VO\\Play_VO_ABCD_Win",
       "GUID": "{26B21666-DAE0-481D-B5C8-0753260D28CF}",
-      "Color": "10",
+      "Color": "25",
       "DurationType": "OneShot",
       "DurationMin": "0.9833787",
       "DurationMax": "2.9002042",
@@ -3414,10 +3568,16 @@
         "Id": "438843644"
        },
        {
+        "Id": "463930129"
+       },
+       {
         "Id": "547594150"
        },
        {
         "Id": "555140878"
+       },
+       {
+        "Id": "615590457"
        },
        {
         "Id": "654948405"
@@ -3435,7 +3595,7 @@
       "Name": "Play_VO_B_Dead",
       "ObjectPath": "\\Events\\Default Work Unit\\VO\\B\\Play_VO_B_Dead",
       "GUID": "{71D3AACC-0B82-43B1-870A-E80857458AB5}",
-      "Color": "10",
+      "Color": "2",
       "DurationType": "OneShot",
       "DurationMin": "1.9219302",
       "DurationMax": "1.9219302",
@@ -3529,7 +3689,7 @@
       "Name": "Play_VO_B_Hit",
       "ObjectPath": "\\Events\\Default Work Unit\\VO\\B\\Play_VO_B_Hit",
       "GUID": "{94B68B7F-EEFF-41EA-B395-54CB92F37C67}",
-      "Color": "10",
+      "Color": "2",
       "MaxAttenuation": "100",
       "DurationType": "OneShot",
       "DurationMin": "0.37027416",
@@ -3554,7 +3714,7 @@
       "Name": "Play_VO_B_HitHeavy",
       "ObjectPath": "\\Events\\Default Work Unit\\VO\\B\\Play_VO_B_HitHeavy",
       "GUID": "{D77E0490-71FF-4E40-8DA3-4D5C12E56BE7}",
-      "Color": "10",
+      "Color": "2",
       "MaxAttenuation": "100",
       "DurationType": "OneShot",
       "DurationMin": "0.6771066",
@@ -3572,89 +3732,11 @@
       ]
      },
      {
-      "Id": "2920175019",
-      "Name": "Play_VO_B_Select",
-      "ObjectPath": "\\Events\\Default Work Unit\\VO\\B\\Play_VO_B_Select",
-      "GUID": "{A9E6999F-C9FC-4B06-BD62-4615A067A96A}",
-      "Color": "10",
-      "DurationType": "OneShot",
-      "DurationMin": "1.2389293",
-      "DurationMax": "2.5860317",
-      "SwitchContainers": [
-       {
-        "SwitchValue": {
-         "GroupType": "State",
-         "GroupId": "1413238543",
-         "Id": "1200082263",
-         "GUID": "{75FB4324-C21A-4D82-B0CF-3542C815D862}"
-        },
-        "MediaRefs": [
-         {
-          "Id": "410590335"
-         }
-        ]
-       },
-       {
-        "SwitchValue": {
-         "GroupType": "State",
-         "GroupId": "1413238543",
-         "Id": "1200082260",
-         "GUID": "{F4CD4D35-CE3B-41B2-9E0B-6E004347776F}"
-        },
-        "MediaRefs": [
-         {
-          "Id": "10943219"
-         }
-        ]
-       },
-       {
-        "SwitchValue": {
-         "GroupType": "State",
-         "GroupId": "1413238543",
-         "Id": "1200082258",
-         "GUID": "{F39FE53F-3AF9-431B-AE26-DBF3E7967E58}"
-        },
-        "MediaRefs": [
-         {
-          "Id": "659334181"
-         }
-        ]
-       },
-       {
-        "SwitchValue": {
-         "GroupType": "State",
-         "GroupId": "1413238543",
-         "Id": "1200082261",
-         "GUID": "{368377C0-A9B4-4367-BFA6-2450D5E592E3}"
-        },
-        "MediaRefs": [
-         {
-          "Id": "936875036"
-         }
-        ]
-       },
-       {
-        "SwitchValue": {
-         "GroupType": "State",
-         "GroupId": "1413238543",
-         "Id": "748895195",
-         "GUID": "{C9697BE0-1F92-4C7C-92D8-FFA9B02AB186}",
-         "Default": "true"
-        },
-        "MediaRefs": [
-         {
-          "Id": "410590335"
-         }
-        ]
-       }
-      ]
-     },
-     {
       "Id": "4198220282",
       "Name": "Play_VO_C_Dead",
       "ObjectPath": "\\Events\\Default Work Unit\\VO\\C\\Play_VO_C_Dead",
       "GUID": "{335EBBEB-523F-400E-AB8F-C5BA862AB40F}",
-      "Color": "1",
+      "Color": "10",
       "DurationType": "OneShot",
       "DurationMin": "1.9219302",
       "DurationMax": "1.9219302",
@@ -3669,7 +3751,7 @@
       "Name": "Play_VO_C_Hit",
       "ObjectPath": "\\Events\\Default Work Unit\\VO\\C\\Play_VO_C_Hit",
       "GUID": "{E25E0A70-19F2-421C-81F9-D45D1A302936}",
-      "Color": "1",
+      "Color": "10",
       "MaxAttenuation": "100",
       "DurationType": "OneShot",
       "DurationMin": "0.37027416",
@@ -3694,7 +3776,7 @@
       "Name": "Play_VO_C_HitHeavy",
       "ObjectPath": "\\Events\\Default Work Unit\\VO\\C\\Play_VO_C_HitHeavy",
       "GUID": "{27B7546D-646F-4EF6-9C1F-9920CF11918B}",
-      "Color": "1",
+      "Color": "10",
       "MaxAttenuation": "100",
       "DurationType": "OneShot",
       "DurationMin": "0.6771066",
@@ -3712,89 +3794,11 @@
       ]
      },
      {
-      "Id": "1555471512",
-      "Name": "Play_VO_C_Select",
-      "ObjectPath": "\\Events\\Default Work Unit\\VO\\C\\Play_VO_C_Select",
-      "GUID": "{9592EF1C-F7CB-4452-91A9-C012CD864B8A}",
-      "Color": "1",
-      "DurationType": "OneShot",
-      "DurationMin": "1.2389293",
-      "DurationMax": "2.5860317",
-      "SwitchContainers": [
-       {
-        "SwitchValue": {
-         "GroupType": "State",
-         "GroupId": "1413238543",
-         "Id": "1200082263",
-         "GUID": "{75FB4324-C21A-4D82-B0CF-3542C815D862}"
-        },
-        "MediaRefs": [
-         {
-          "Id": "410590335"
-         }
-        ]
-       },
-       {
-        "SwitchValue": {
-         "GroupType": "State",
-         "GroupId": "1413238543",
-         "Id": "1200082260",
-         "GUID": "{F4CD4D35-CE3B-41B2-9E0B-6E004347776F}"
-        },
-        "MediaRefs": [
-         {
-          "Id": "10943219"
-         }
-        ]
-       },
-       {
-        "SwitchValue": {
-         "GroupType": "State",
-         "GroupId": "1413238543",
-         "Id": "1200082258",
-         "GUID": "{F39FE53F-3AF9-431B-AE26-DBF3E7967E58}"
-        },
-        "MediaRefs": [
-         {
-          "Id": "659334181"
-         }
-        ]
-       },
-       {
-        "SwitchValue": {
-         "GroupType": "State",
-         "GroupId": "1413238543",
-         "Id": "1200082261",
-         "GUID": "{368377C0-A9B4-4367-BFA6-2450D5E592E3}"
-        },
-        "MediaRefs": [
-         {
-          "Id": "936875036"
-         }
-        ]
-       },
-       {
-        "SwitchValue": {
-         "GroupType": "State",
-         "GroupId": "1413238543",
-         "Id": "748895195",
-         "GUID": "{C9697BE0-1F92-4C7C-92D8-FFA9B02AB186}",
-         "Default": "true"
-        },
-        "MediaRefs": [
-         {
-          "Id": "410590335"
-         }
-        ]
-       }
-      ]
-     },
-     {
       "Id": "103125576",
       "Name": "Play_VO_C_Throw",
       "ObjectPath": "\\Events\\Default Work Unit\\VO\\C\\Play_VO_C_Throw",
       "GUID": "{4DDB5433-A1A0-46D0-9C86-2DAB28264CBF}",
-      "Color": "1",
+      "Color": "10",
       "MaxAttenuation": "100",
       "DurationType": "OneShot",
       "DurationMin": "0.6185538",
@@ -3874,7 +3878,7 @@
       "Name": "Play_VO_D_Dead",
       "ObjectPath": "\\Events\\Default Work Unit\\VO\\D\\Play_VO_D_Dead",
       "GUID": "{B2C7AAFB-B802-4DE9-A20C-7D8C426F1C15}",
-      "Color": "1",
+      "Color": "4",
       "DurationType": "OneShot",
       "DurationMin": "1.9219302",
       "DurationMax": "1.9219302",
@@ -3889,23 +3893,29 @@
       "Name": "Play_VO_D_Hit",
       "ObjectPath": "\\Events\\Default Work Unit\\VO\\D\\Play_VO_D_Hit",
       "GUID": "{C236B21F-27CA-40F4-B66C-A4942FADFDAE}",
-      "Color": "1",
+      "Color": "4",
       "MaxAttenuation": "100",
       "DurationType": "OneShot",
-      "DurationMin": "0.37027416",
-      "DurationMax": "0.67537296",
+      "DurationMin": "0.3718545",
+      "DurationMax": "0.5350659",
       "MediaRefs": [
        {
-        "Id": "284150746"
+        "Id": "80020541"
        },
        {
-        "Id": "807765666"
+        "Id": "362760604"
        },
        {
-        "Id": "977912169"
+        "Id": "679635913"
        },
        {
-        "Id": "1055102690"
+        "Id": "799796383"
+       },
+       {
+        "Id": "828278725"
+       },
+       {
+        "Id": "1045731519"
        }
       ]
      },
@@ -3914,98 +3924,32 @@
       "Name": "Play_VO_D_HitHeavy",
       "ObjectPath": "\\Events\\Default Work Unit\\VO\\D\\Play_VO_D_HitHeavy",
       "GUID": "{7C805774-2F8A-4D48-8746-FD718FDAF1CD}",
-      "Color": "1",
+      "Color": "4",
       "MaxAttenuation": "100",
       "DurationType": "OneShot",
-      "DurationMin": "0.6771066",
-      "DurationMax": "1.111304",
+      "DurationMin": "0.4459218",
+      "DurationMax": "0.87346953",
       "MediaRefs": [
        {
-        "Id": "442356810"
+        "Id": "121023244"
        },
        {
-        "Id": "497766376"
+        "Id": "216779663"
        },
        {
-        "Id": "679854016"
-       }
-      ]
-     },
-     {
-      "Id": "2625069657",
-      "Name": "Play_VO_D_Select",
-      "ObjectPath": "\\Events\\Default Work Unit\\VO\\D\\Play_VO_D_Select",
-      "GUID": "{06D740BC-760B-4C5F-93B8-17CAFE3EB736}",
-      "Color": "1",
-      "DurationType": "OneShot",
-      "DurationMin": "1.2389293",
-      "DurationMax": "2.5860317",
-      "SwitchContainers": [
-       {
-        "SwitchValue": {
-         "GroupType": "State",
-         "GroupId": "1413238543",
-         "Id": "1200082263",
-         "GUID": "{75FB4324-C21A-4D82-B0CF-3542C815D862}"
-        },
-        "MediaRefs": [
-         {
-          "Id": "410590335"
-         }
-        ]
+        "Id": "321535931"
        },
        {
-        "SwitchValue": {
-         "GroupType": "State",
-         "GroupId": "1413238543",
-         "Id": "1200082260",
-         "GUID": "{F4CD4D35-CE3B-41B2-9E0B-6E004347776F}"
-        },
-        "MediaRefs": [
-         {
-          "Id": "10943219"
-         }
-        ]
+        "Id": "406484774"
        },
        {
-        "SwitchValue": {
-         "GroupType": "State",
-         "GroupId": "1413238543",
-         "Id": "1200082258",
-         "GUID": "{F39FE53F-3AF9-431B-AE26-DBF3E7967E58}"
-        },
-        "MediaRefs": [
-         {
-          "Id": "659334181"
-         }
-        ]
+        "Id": "620156882"
        },
        {
-        "SwitchValue": {
-         "GroupType": "State",
-         "GroupId": "1413238543",
-         "Id": "1200082261",
-         "GUID": "{368377C0-A9B4-4367-BFA6-2450D5E592E3}"
-        },
-        "MediaRefs": [
-         {
-          "Id": "936875036"
-         }
-        ]
+        "Id": "646928954"
        },
        {
-        "SwitchValue": {
-         "GroupType": "State",
-         "GroupId": "1413238543",
-         "Id": "748895195",
-         "GUID": "{C9697BE0-1F92-4C7C-92D8-FFA9B02AB186}",
-         "Default": "true"
-        },
-        "MediaRefs": [
-         {
-          "Id": "410590335"
-         }
-        ]
+        "Id": "831793489"
        }
       ]
      },
@@ -4024,7 +3968,7 @@
       "Name": "Stop_AMB_BackOfHouse",
       "ObjectPath": "\\Events\\Default Work Unit\\AMBIENCE\\Stop_AMB_BackOfHouse",
       "GUID": "{E980DD36-4E4A-455B-8CE4-A184BF85FBD0}",
-      "Color": "10",
+      "Color": "25",
       "MaxAttenuation": "0",
       "DurationType": "OneShot",
       "DurationMin": "0",
@@ -4035,7 +3979,7 @@
       "Name": "Stop_AMB_FrontOfHouse",
       "ObjectPath": "\\Events\\Default Work Unit\\AMBIENCE\\Stop_AMB_FrontOfHouse",
       "GUID": "{3FEB6287-778C-4F8A-B91F-C2E9970CC07F}",
-      "Color": "10",
+      "Color": "25",
       "MaxAttenuation": "0",
       "DurationType": "OneShot",
       "DurationMin": "0",
@@ -4046,7 +3990,7 @@
       "Name": "Stop_AMB_Mission",
       "ObjectPath": "\\Events\\Default Work Unit\\AMBIENCE\\Stop_AMB_Mission",
       "GUID": "{CCB3003B-1FC1-4032-9334-2BD50CE62F34}",
-      "Color": "10",
+      "Color": "25",
       "MaxAttenuation": "0",
       "DurationType": "OneShot",
       "DurationMin": "0",
@@ -4087,7 +4031,6 @@
       "Name": "Stop_MUS_CharacterSlowdown",
       "ObjectPath": "\\Events\\Default Work Unit\\MUSIC\\Stop_MUS_CharacterSlowdown",
       "GUID": "{987FE2D7-7D81-418C-B888-5C92D45B29DE}",
-      "Color": "10",
       "DurationType": "OneShot",
       "DurationMin": "2.8649206",
       "DurationMax": "3",
@@ -4265,6 +4208,6 @@
     ]
    }
   ],
-  "FileHash": "{575C1B02-92AF-EE8A-BCA6-391B054D088C}"
+  "FileHash": "{600CE121-4C62-0267-1B93-053593E1679C}"
  }
 }
