@@ -5970,6 +5970,7 @@
 												</ModifierInfo>
 											</ModifierList>
 										</Property>
+										<Property Name="RandomAvoidRepeating" Type="bool" Value="False"/>
 										<Property Name="RandomAvoidRepeatingCount" Type="int32" Value="2"/>
 										<Property Name="Volume" Type="Real64">
 											<ValueList>
@@ -6023,11 +6024,6 @@
 										</Sound>
 										<Sound Name="VO_B_Hack_02" ID="{F07B9CFD-10F6-40FD-8D67-24A3DBE22CCD}" ShortID="99935410">
 											<PropertyList>
-												<Property Name="Inclusion" Type="bool">
-													<ValueList>
-														<Value>False</Value>
-													</ValueList>
-												</Property>
 												<Property Name="Volume" Type="Real64">
 													<ValueList>
 														<Value>3</Value>
@@ -6057,11 +6053,6 @@
 										</Sound>
 										<Sound Name="VO_B_Hack_03" ID="{AF580504-EFC8-40AA-8094-817D40452C30}" ShortID="540961317">
 											<PropertyList>
-												<Property Name="Inclusion" Type="bool">
-													<ValueList>
-														<Value>False</Value>
-													</ValueList>
-												</Property>
 												<Property Name="Volume" Type="Real64">
 													<ValueList>
 														<Value>4</Value>
@@ -6091,11 +6082,6 @@
 										</Sound>
 										<Sound Name="VO_B_Hack_04" ID="{113EDB21-494C-48CE-B790-0981A145FD48}" ShortID="173016871">
 											<PropertyList>
-												<Property Name="Inclusion" Type="bool">
-													<ValueList>
-														<Value>False</Value>
-													</ValueList>
-												</Property>
 												<Property Name="Volume" Type="Real64">
 													<ValueList>
 														<Value>1</Value>
@@ -6124,13 +6110,6 @@
 											</ActiveSourceList>
 										</Sound>
 										<Sound Name="VO_B_Hack_05" ID="{9BECFD6A-D241-4794-9DA1-5EEBA51E7536}" ShortID="238131284">
-											<PropertyList>
-												<Property Name="Inclusion" Type="bool">
-													<ValueList>
-														<Value>False</Value>
-													</ValueList>
-												</Property>
-											</PropertyList>
 											<ReferenceList>
 												<Reference Name="Conversion">
 													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{4ADFD3A0-A42B-432C-8502-1433439D5054}"/>
@@ -7399,6 +7378,7 @@
 												</ModifierInfo>
 											</ModifierList>
 										</Property>
+										<Property Name="RandomAvoidRepeating" Type="bool" Value="False"/>
 										<Property Name="RandomAvoidRepeatingCount" Type="int32" Value="2"/>
 									</PropertyList>
 									<ReferenceList>

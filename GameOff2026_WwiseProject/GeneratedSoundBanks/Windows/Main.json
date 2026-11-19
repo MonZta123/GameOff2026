@@ -10,7 +10,7 @@
     "Type": "User",
     "GUID": "{3059A6CE-8152-4CD2-BEA9-69E98BB60D65}",
     "Language": "SFX",
-    "Hash": "{AABDB677-A4A9-187F-3F09-D19287C4E2D1}",
+    "Hash": "{C369A632-D452-2DB9-2CB8-BD2FD885C8F4}",
     "ObjectPath": "\\SoundBanks\\Default Work Unit\\Main",
     "ShortName": "Main",
     "Path": "Main.bnk",
@@ -104,6 +104,14 @@
       "CachePath": "0C/{0CFCF9DA-261C-A3D7-6499-B90548826F33}.wem"
      },
      {
+      "Id": "31454529",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "VO_B_Hack_04.wav",
+      "CachePath": "AB/{AB3981FD-2654-61F9-25B1-954FECD1B1F6}.wem"
+     },
+     {
       "Id": "35023313",
       "Language": "SFX",
       "Streaming": "false",
@@ -174,6 +182,14 @@
       "Location": "Memory",
       "ShortName": "VO_B_Roll_01.wav",
       "CachePath": "8E/{8E8C7B0A-FA99-C952-756E-281306BB2258}.wem"
+     },
+     {
+      "Id": "72949655",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "VO_B_Hack_05.wav",
+      "CachePath": "60/{60C79480-4001-62EE-28A5-61DDE2DBBFC2}.wem"
      },
      {
       "Id": "95153162",
@@ -382,6 +398,14 @@
       "Location": "Memory",
       "ShortName": "VO_B_Dodge_05.wav",
       "CachePath": "A1/{A1A5402B-E65D-91BB-E4FC-C1A20DC605A2}.wem"
+     },
+     {
+      "Id": "249038957",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "VO_B_Hack_02.wav",
+      "CachePath": "1C/{1C7C70C0-66EE-D646-536F-4B7C03EF9E5A}.wem"
      },
      {
       "Id": "260779212",
@@ -614,6 +638,14 @@
       "Location": "Memory",
       "ShortName": "FootstepA_01_Concrete.wav",
       "CachePath": "4A/{4A683746-A97A-E1EF-2983-45D8711F98D0}.wem"
+     },
+     {
+      "Id": "455626202",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "VO_B_Hack_03.wav",
+      "CachePath": "40/{40FB35DB-3404-8A4B-F9BF-1C1A14FE12EB}.wem"
      },
      {
       "Id": "456280109",
@@ -1986,7 +2018,19 @@
       "DurationType": "Infinite",
       "MediaRefs": [
        {
+        "Id": "31454529"
+       },
+       {
+        "Id": "72949655"
+       },
+       {
         "Id": "120991060"
+       },
+       {
+        "Id": "249038957"
+       },
+       {
+        "Id": "455626202"
        },
        {
         "Id": "486628042"
@@ -4221,6 +4265,6 @@
     ]
    }
   ],
-  "FileHash": "{EEA74BDA-6326-E3D7-811C-5EA85F7F7371}"
+  "FileHash": "{93319023-1490-6B10-D6F9-1E32D9CC5D38}"
  }
 }
