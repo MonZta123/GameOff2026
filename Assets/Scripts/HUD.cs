@@ -2,12 +2,25 @@ using System;
 using System.Collections;
 using TMPro;
 using UnityEngine;
+using UnityEngine.Rendering;
 using UnityEngine.UI;
 
 public class HUD : MonoBehaviour
 {
     [SerializeField]
     private GameObject rewindPanel;
+
+    [SerializeField]
+    private Volume globalVolume;
+
+    [SerializeField]
+    private GameObject ouchScreen;
+
+    [SerializeField]
+    private TextMeshProUGUI wastedText;
+
+    [SerializeField]
+    private TextMeshProUGUI ouchText;
 
     [SerializeField]
     private GameObject briefingPanel;
@@ -221,8 +234,72 @@ public class HUD : MonoBehaviour
     public void HideRewindMessage()
     {
         rewindPanel.SetActive(false);
+        ouchScreen.SetActive(false);
+
+        globalVolume.weight = 0f;
+
+        if (_globalVolumeCoroutine != null)
+            StopCoroutine(_globalVolumeCoroutine);
+        _globalVolumeCoroutine = null;
     }
 
+    public void ShowOuchScreen(string text, Action next = null)
+    {
+        ouchText.gameObject.SetActive(false);
+        wastedText.gameObject.SetActive(false);
+        ouchScreen.SetActive(true);
+
+        if (_globalVolumeCoroutine != null)
+            StopCoroutine(_globalVolumeCoroutine);
+
+        _globalVolumeCoroutine = StartCoroutine(DoWastedScreen(text, next));
+    }
+
+    [SerializeField]
+    private float durationLengthWasted = 1f;
+
+    [SerializeField]
+    private AnimationCurve durationCurveWasted;
+
+    private IEnumerator DoWastedScreen(string text, Action next = null)
+    {
+        yield return null;
+
+        var elapsed = 0f;
+
+        while (elapsed < 1f)
+        {
+            elapsed += Time.unscaledDeltaTime / durationLengthWasted;
+
+            elapsed = Mathf.Clamp01(elapsed);
+
+            globalVolume.weight = Mathf.Lerp(0f, 1f, durationCurveWasted.Evaluate(elapsed));
+
+            yield return null;
+        }
+
+        yield return new WaitForSecondsRealtime(0.5f);
+
+        wastedText.gameObject.SetActive(true);
+
+        yield return new WaitForSecondsRealtime(1f);
+
+        ouchText.gameObject.SetActive(true);
+
+        var ouchTextText = string.Empty;
+
+        if (!string.IsNullOrWhiteSpace(text))
+        {
+            ouchTextText = text + "\n";
+        }
+
+        ouchText.text = ouchTextText + "Press R to rewind and retry!";
+
+        next?.Invoke();
+        _globalVolumeCoroutine = null;
+    }
+
+    private Coroutine _globalVolumeCoroutine;
     private Coroutine _briefingCoroutine;
 
     public void RollBriefingMessage(string text, Action onComplete = null)

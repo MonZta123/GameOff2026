@@ -313,7 +313,9 @@ public class GameSessionHost : MonoBehaviour
     private void PlayerDead(string who, int index)
     {
         AkUnitySoundEngine.StopAll();
-        hud.ShowRewindMessage(who + " died! Press R to try again.");
+        
+        hud.ShowOuchScreen(who + " died!");
+        
         _gameSessionState = GameSessionState.WaitingForR;
 
         positionComposer.VirtualCamera.Follow = pools._playerPool.Active[index].transform;
@@ -413,6 +415,7 @@ public class GameSessionHost : MonoBehaviour
 
     private void StartGame()
     {
+        _gameSessionState = GameSessionState.Intro;
         hud.HideBriefingPanel();
         hud.HideRewindMessage();
         hud.PlayLogoAnimation(() => StartCoroutine(FadeIn()));
