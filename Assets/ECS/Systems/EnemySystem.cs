@@ -241,7 +241,7 @@ namespace ECS.Systems
                             {
                                 _soundType = SoundType.HeavyImpact, _position = enemy._position
                             });
-                            
+
                             snapshot._damageProcess--;
                             if (snapshot._damageProcess < 0)
                                 snapshot._damageProcess = 0;
@@ -265,7 +265,7 @@ namespace ECS.Systems
             #endregion
         }
 
-        private bool HasPlayerInView(Snapshot snapshot, Enemy enemy)
+        private bool HasPlayerInView(World world, Snapshot snapshot, Enemy enemy)
         {
             var startPos = enemy._position;
             var stepSize = 1f / 16f;
@@ -274,12 +274,20 @@ namespace ECS.Systems
                 ref var player = ref snapshot._players.GetEntityAt(i);
 
                 var direction = (player._position - startPos).normalized;
-                for (var j = 0; j < 800; j++)
+                var isBlocked = false;
+                for (var j = 0; j < 800 && !isBlocked; j++)
                 {
                     var step = player._position - (startPos + j * stepSize * direction);
 
+                    var relativeDirection = startPos + step;
+
                     if (step.sqrMagnitude < 1f * 1f)
                         return true;
+
+                    if (world.IsBlocked(relativeDirection, 0.1f))
+                    {
+                        isBlocked = true;
+                    }
                 }
             }
 
@@ -520,7 +528,13 @@ namespace ECS.Systems
 
         private void HandleRedHairGuy(ref Enemy enemy, ref Snapshot snapshot, ref int nextAngle, int tick, World world)
         {
-            if (enemy._toTickThisDirection <= tick && HasPlayerInView(snapshot, enemy))
+            if (!HasPlayerInView(world, snapshot, enemy))
+            {
+                enemy._linearVelocity = Vector2.zero;
+                return;
+            }
+
+            if (enemy._toTickThisDirection <= tick)
             {
                 enemy._toTickThisDirection = tick + _tickRate * 1;
 
@@ -532,6 +546,12 @@ namespace ECS.Systems
 
                 nextAngle += 135;
             }
+
+            #region checkvelocity
+
+            CheckEnemyVelocity(ref enemy, world);
+
+            #endregion
 
             // closest anschauen
             var closestId = -1;
@@ -571,6 +591,27 @@ namespace ECS.Systems
                     _type = ProjectileType.RedHairGuy,
                     _ttl = _tickRate * 5
                 });
+            }
+        }
+
+        private void CheckEnemyVelocity(ref Enemy enemy, World world)
+        {
+            var nextY = enemy._position.y + enemy._linearVelocity.y * Constants.RedHairGuyMoveSpeed / _tickRate;
+
+            var nextPosY = new Vector2(enemy._position.x, nextY);
+
+            if (world.IsBlocked(nextPosY, enemy._colliderRadius))
+            {
+                enemy._linearVelocity.y *= -1;
+            }
+
+            var nextX = enemy._position.x + enemy._linearVelocity.x * Constants.RedHairGuyMoveSpeed / _tickRate;
+
+            var nextPosX = new Vector2(nextX, enemy._position.y);
+
+            if (world.IsBlocked(nextPosX, enemy._colliderRadius))
+            {
+                enemy._linearVelocity.x *= -1;
             }
         }
     }
