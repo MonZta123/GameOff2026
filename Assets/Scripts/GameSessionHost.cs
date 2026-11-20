@@ -11,6 +11,13 @@ using UnityEngine.Rendering.Universal;
 using UnityEngine.UI;
 using Player = Actors.Player;
 
+[Serializable]
+public struct Map
+{
+    public Texture2D _map;
+    public bool _isInside;
+}
+
 public class GameSessionHost : MonoBehaviour
 {
     [SerializeField]
@@ -44,7 +51,7 @@ public class GameSessionHost : MonoBehaviour
     private HUD hud;
 
     [SerializeField]
-    private Texture2D[] maps;
+    private Map[] maps;
 
     [SerializeField]
     private Transform snipeTarget;
@@ -81,7 +88,7 @@ public class GameSessionHost : MonoBehaviour
         // Show LoadingScreen here
         pools.Initialize();
         _segmentTicks = maxSeconds * stepsPerSecond;
-        var mapDefinition = TextureMapBuilder.GetMap(maps[0]);
+        var mapDefinition = TextureMapBuilder.BuildMap(maps[0]);
         SetObjectives(mapDefinition);
         _gameSessionState = GameSessionState.Playing;
         markerManager.SetVisible(true);
@@ -159,7 +166,7 @@ public class GameSessionHost : MonoBehaviour
             pools.ClearAllObjectPools();
 
             var mapDefinition =
-                TextureMapBuilder.GetMap(maps[((_timeline.GetCurrentSegment() + 1) % Constants.Segments)]);
+                TextureMapBuilder.BuildMap(maps[((_timeline.GetCurrentSegment() + 1) % Constants.Segments)]);
             SetObjectives(mapDefinition);
             _timeline.InitNextSegment(mapDefinition);
             mapRenderer.GenerateMap(mapDefinition);
@@ -372,7 +379,7 @@ public class GameSessionHost : MonoBehaviour
             pools.ClearAllObjectPools();
 
             var mapDefinition =
-                TextureMapBuilder.GetMap(maps[((_timeline.GetCurrentSegment() + 1) % Constants.Segments)]);
+                TextureMapBuilder.BuildMap(maps[((_timeline.GetCurrentSegment() + 1) % Constants.Segments)]);
             SetObjectives(mapDefinition);
             _timeline.InitNextSegment(mapDefinition);
             mapRenderer.GenerateMap(mapDefinition);

@@ -203,7 +203,8 @@ MonoBehaviour:
   inputManager: {fileID: 13633229}
   hud: {fileID: 353079798}
   maps:
-  - {fileID: 2800000, guid: 81ba75a3bafc7354f8b736da654745dc, type: 3}
+  - _map: {fileID: 2800000, guid: 81ba75a3bafc7354f8b736da654745dc, type: 3}
+    _isInside: 0
   snipeTarget: {fileID: 1672110092}
   fade: {fileID: 1477212882}
   soundSystem: {fileID: 13633231}
@@ -279,12 +280,29 @@ MonoBehaviour:
   - {fileID: 11400000, guid: f74110699aae59a45bdd1b3cccdd52aa, type: 2}
   - {fileID: 11400000, guid: 08d754baf56dcaa4788e11b73f8e3c33, type: 2}
   - {fileID: 11400000, guid: 9011fb44292b0494da2900b63c3a2aea, type: 2}
+  - {fileID: 11400000, guid: 4d97c5f0a86a0234e8f295ede710b1b9, type: 2}
+  - {fileID: 11400000, guid: a73a7a5f3d0d62049a51ccc6f3d33642, type: 2}
+  - {fileID: 11400000, guid: 4f5ea4e279cb2564db9fe67a5140436f, type: 2}
+  - {fileID: 11400000, guid: 368e1e53ee6a8704a930dae5b95a0b16, type: 2}
+  - {fileID: 11400000, guid: ceb5201d4c4ec0f478a43c3a0db2c736, type: 2}
+  - {fileID: 11400000, guid: cab6d15853fbf374192d8573cc3740cb, type: 2}
+  - {fileID: 11400000, guid: 0139aa7590e5ef14d8b7c7800f1d7b85, type: 2}
+  - {fileID: 11400000, guid: 267a948d4554f5b49b699f72c7bfe50c, type: 2}
+  - {fileID: 11400000, guid: 5cc181d7cbacb6749a6dd01755ff4d77, type: 2}
+  - {fileID: 11400000, guid: 05b7a4177e8d4f0449e10b501f49dc56, type: 2}
+  - {fileID: 11400000, guid: 163000838e5d4e44e860ca8f6b06db42, type: 2}
+  - {fileID: 11400000, guid: 21e8106f4acf88d48a06257f0b0140cf, type: 2}
   outside: {fileID: 11400000, guid: 03d08ec6c8cb3574897152e27bfa5118, type: 2}
   visualWall:
+  - {fileID: 11400000, guid: 96d53098034ae5c43b1162bd2aa8a3c7, type: 2}
+  - {fileID: 11400000, guid: 715026b169d162f4f9470821d0699b81, type: 2}
+  - {fileID: 11400000, guid: 8c667b49cf7b15e45b236d9498d5238d, type: 2}
   - {fileID: 11400000, guid: a67d7b089a6370c4fb309fe770cd37fb, type: 2}
   - {fileID: 11400000, guid: f18fed6895341124b9786691b361f37d, type: 2}
   - {fileID: 11400000, guid: a2b4601915ed6414a8904460edf267e9, type: 2}
-  floor: {fileID: 11400000, guid: f745b1c47707bd04fb701a9ca6a8377d, type: 2}
+  floor:
+  - {fileID: 11400000, guid: 01e7318927d93154b9d81f94f3c3c3de, type: 2}
+  - {fileID: 11400000, guid: f745b1c47707bd04fb701a9ca6a8377d, type: 2}
 --- !u!114 &13633229
 MonoBehaviour:
   m_ObjectHideFlags: 0

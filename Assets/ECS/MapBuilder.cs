@@ -26,7 +26,9 @@ namespace ECS
         public Vector2Int[] _exit;
         public Vector2Int[] _woodenDoors;
         public Vector2Int[] _computerAsset;
-        public Vector2Int[] _enemySpawnZone; 
+        public Vector2Int[] _enemySpawnZone;
+
+        public bool _isInside;
 
         public int CoordToIndex(int x, int y)
         {
@@ -36,9 +38,11 @@ namespace ECS
 
     public static class TextureMapBuilder
     {
-        public static MapDefinition GetMap(Texture2D mapTexture)
+        public static MapDefinition BuildMap(Map mapData)
         {
-            var map = new MapDefinition();
+            var mapTexture = mapData._map;
+
+            var map = new MapDefinition { _isInside = mapData._isInside };
             var result = new int[mapTexture.width * mapTexture.height];
 
             map._map = result;
