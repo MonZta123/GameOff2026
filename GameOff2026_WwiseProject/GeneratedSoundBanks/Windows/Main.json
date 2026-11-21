@@ -10,7 +10,7 @@
     "Type": "User",
     "GUID": "{3059A6CE-8152-4CD2-BEA9-69E98BB60D65}",
     "Language": "SFX",
-    "Hash": "{D299A30B-A816-0F3C-3294-E14C8A544CFE}",
+    "Hash": "{ABD28D86-350A-D084-CBD4-B0C667E8DDEB}",
     "ObjectPath": "\\SoundBanks\\Default Work Unit\\Main",
     "ShortName": "Main",
     "Path": "Main.bnk",
@@ -542,6 +542,14 @@
       "Location": "Memory",
       "ShortName": "FootstepD_03_Concrete.wav",
       "CachePath": "B8/{B8D62A5B-A971-350B-E502-973DD8A091AF}.wem"
+     },
+     {
+      "Id": "312967604",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "Mine_Beeps.wav",
+      "CachePath": "15/{15388B51-E6D8-FC7D-5EC9-CE7D42364A07}.wem"
      },
      {
       "Id": "332679464",
@@ -3357,8 +3365,13 @@
       "GUID": "{0E5DE2F2-5313-45DA-8FA6-A3469A2C1DFD}",
       "MaxAttenuation": "100",
       "DurationType": "OneShot",
-      "DurationMin": "0",
-      "DurationMax": "0"
+      "DurationMin": "1.2868934",
+      "DurationMax": "1.2868934",
+      "MediaRefs": [
+       {
+        "Id": "312967604"
+       }
+      ]
      },
      {
       "Id": "1561061870",
@@ -4506,6 +4519,6 @@
     ]
    }
   ],
-  "FileHash": "{C6718745-337B-FDDA-8335-EC678BA50F1B}"
+  "FileHash": "{94C32675-1A9E-4C6B-F2CA-E5A93704B421}"
  }
 }
