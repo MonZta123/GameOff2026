@@ -2930,11 +2930,6 @@
 								<Sound Name="Mine_Beeps" ID="{596943FB-D0F4-483B-A956-6F5AF1C471E4}" ShortID="436838114">
 									<PropertyList>
 										<Property Name="3DSpatialization" Type="int16" Value="2"/>
-										<Property Name="Inclusion" Type="bool">
-											<ValueList>
-												<Value>False</Value>
-											</ValueList>
-										</Property>
 										<Property Name="Pitch" Type="int32">
 											<ModifierList>
 												<ModifierInfo>

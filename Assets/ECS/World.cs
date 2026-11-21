@@ -255,9 +255,9 @@ namespace ECS
             }
 
             snapshot._damageProcess = 3;
-// #if UNITY_EDITOR
-//             snapshot._damageProcess = 0;
-// #endif
+#if UNITY_EDITOR
+            snapshot._damageProcess = 0;
+#endif
         }
 
         private void BuildHacker(ref Snapshot snapshot)
@@ -265,9 +265,9 @@ namespace ECS
             if (_map._hackerZone.Length > 0)
                 snapshot._hackProcess = (int)(5f / _deltaTime);
 
-// #if UNITY_EDITOR
-//             snapshot._hackProcess = 0;
-// #endif
+#if UNITY_EDITOR
+            snapshot._hackProcess = 0;
+#endif
         }
 
         private void BuildDemolition(ref Snapshot snapshot)
@@ -410,6 +410,7 @@ namespace ECS
             _workspace._soundNotificationPool.Clear();
             _workspace._enemyDiedNotificationPool.Clear();
             _workspace._snipeShotNotificationPool.Clear();
+            _workspace._splosionNotificationPool.Clear();
         }
 
         public void DoStep(ReadOnlySpan<Intent> intents, int tick)
@@ -457,7 +458,7 @@ namespace ECS
 
             _enemySystem.Execute(this, tick);
             _projectileSystem.Execute(this, tick);
-            _blastWaveSystem.Execute(this, tick);
+            _blastWaveSystem.Execute(this);
             _damageSystem.Execute(this, tick);
             _doorSystem.Execute(this, tick);
 

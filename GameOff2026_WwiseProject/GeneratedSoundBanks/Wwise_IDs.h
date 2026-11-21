@@ -36,6 +36,7 @@ namespace AK
         static const AkUniqueID PLAY_SFX_FOOTSTEPS_B = 1953576304U;
         static const AkUniqueID PLAY_SFX_FOOTSTEPS_C = 1953576305U;
         static const AkUniqueID PLAY_SFX_FOOTSTEPS_D = 1953576310U;
+        static const AkUniqueID PLAY_SFX_MINEBEEPS = 1150067858U;
         static const AkUniqueID PLAY_SFX_MINEEXPLODE = 1561061870U;
         static const AkUniqueID PLAY_SFX_RIFLE = 1078461092U;
         static const AkUniqueID PLAY_SFX_SHIFT = 2453180302U;

@@ -6,6 +6,7 @@ using UnityEngine;
 using DoorDestructionNotification = Notifications.DoorDestructionNotification;
 using EnemyDiedNotification = Notifications.EnemyDiedNotification;
 using PlacedBomb = Actors.PlacedBomb;
+using SplosionNotification = Notifications.SplosionNotification;
 
 public class Pools : MonoBehaviour
 {
@@ -36,11 +37,17 @@ public class Pools : MonoBehaviour
     [SerializeField]
     private PlacedBomb placedBomb;
 
+    [SerializeField]
+    private SplosionNotification splosionNotification;
+
     public GameObjectPool<Enemy, ECS.Entities.Enemy> _enemyPool;
     public GameObjectPool<Projectile, ECS.Entities.Projectile> _projectilePool;
     public GameObjectPool<Player, ECS.Entities.Player> _playerPool;
     public GameObjectPool<Door, ECS.Entities.Door> _doorPool;
     public GameObjectPool<Trigger, ECS.Entities.Trigger> _triggerPool;
+
+    public GameObjectPool<PlacedBomb, ECS.Entities.PlacedBomb>
+        _placedBombs;
 
     public GameNotificationPool<EnemyDiedNotification, ECS.Notification.EnemyDiedNotification>
         _enemyDiedNotificationPool;
@@ -50,14 +57,16 @@ public class Pools : MonoBehaviour
     public GameNotificationPool<DoorDestructionNotification, ECS.Notification.DoorDestructionNotification>
         _doorDestructionNotificationPool;
 
-    public GameObjectPool<PlacedBomb, ECS.Entities.PlacedBomb>
-        _placedBombs;
+    public GameNotificationPool<SplosionNotification, ECS.Notification.SplosionNotification>
+        _splosionNotificationPool;
+
 
     public void ClearAllNotificationPools()
     {
         _enemyDiedNotificationPool.ReturnAll();
         _snipeShotNotificationPool.ReturnAll();
         _doorDestructionNotificationPool.ReturnAll();
+        _splosionNotificationPool.ReturnAll();
     }
 
     public void ClearAllObjectPools()
@@ -91,6 +100,10 @@ public class Pools : MonoBehaviour
                 Constants
                     .DoorDestructionNotificationCount);
 
+        _splosionNotificationPool =
+            new GameNotificationPool<SplosionNotification, ECS.Notification.SplosionNotification>(Constants
+                .SplosionNotificationCount);
+
         for (var i = 0; i < Constants.PlayerCount; i++)
             _playerPool.Add(Instantiate(player));
 
@@ -117,5 +130,8 @@ public class Pools : MonoBehaviour
 
         for (var i = 0; i < Constants.DoorDestructionNotificationCount; i++)
             _doorDestructionNotificationPool.Add(Instantiate(doorDestructionNotification));
+
+        for (var i = 0; i < Constants.SplosionNotificationCount; i++)
+            _splosionNotificationPool.Add(Instantiate(splosionNotification));
     }
 }

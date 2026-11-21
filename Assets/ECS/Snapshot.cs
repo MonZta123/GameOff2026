@@ -1,6 +1,9 @@
 ﻿using Domain;
 using ECS.Entities;
 using ECS.Notification;
+using DoorDestructionNotification = ECS.Notification.DoorDestructionNotification;
+using EnemyDiedNotification = ECS.Notification.EnemyDiedNotification;
+using SplosionNotification = ECS.Notification.SplosionNotification;
 
 namespace ECS
 {
@@ -12,7 +15,7 @@ namespace ECS
         public EntityPool<Door> _doors;
         public EntityPool<Trigger> _triggers;
         public EntityPool<PlacedBomb> _placedBombs;
-        
+
         public int _damageProcess;
         public int _hackProcess;
         public int _bombsLeft;
@@ -23,6 +26,7 @@ namespace ECS
         public NotificationPool<SoundNotification> _soundNotificationPool;
         public NotificationPool<EnemyDiedNotification> _enemyDiedNotificationPool;
         public NotificationPool<SnipeShotNotification> _snipeShotNotificationPool;
+        public NotificationPool<SplosionNotification> _splosionNotificationPool;
 
         public void BuildFrom(Snapshot snapshot)
         {
@@ -36,7 +40,7 @@ namespace ECS
             _damageProcess = snapshot._damageProcess;
             _hackProcess = snapshot._hackProcess;
             _bombsLeft = snapshot._bombsLeft;
-            
+
             _tickButtlerRespawnAt = snapshot._tickButtlerRespawnAt;
         }
 
@@ -46,6 +50,7 @@ namespace ECS
             snapshot._soundNotificationPool.CopyTo(ref _soundNotificationPool);
             snapshot._enemyDiedNotificationPool.CopyTo(ref _enemyDiedNotificationPool);
             snapshot._snipeShotNotificationPool.CopyTo(ref _snipeShotNotificationPool);
+            snapshot._splosionNotificationPool.CopyTo(ref _splosionNotificationPool);
         }
 
         public void Initialize()
@@ -63,6 +68,7 @@ namespace ECS
                 new NotificationPool<EnemyDiedNotification>(Constants.EnemyDiedNotificationCount);
             _snipeShotNotificationPool =
                 new NotificationPool<SnipeShotNotification>(Constants.SnipeShotNotificationCount);
+            _splosionNotificationPool = new NotificationPool<SplosionNotification>(Constants.SplosionNotificationCount);
         }
     }
 }
