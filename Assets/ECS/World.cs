@@ -410,6 +410,7 @@ namespace ECS
             _workspace._soundNotificationPool.Clear();
             _workspace._enemyDiedNotificationPool.Clear();
             _workspace._snipeShotNotificationPool.Clear();
+            _workspace._splosionNotificationPool.Clear();
         }
 
         public void DoStep(ReadOnlySpan<Intent> intents, int tick)
@@ -457,7 +458,7 @@ namespace ECS
 
             _enemySystem.Execute(this, tick);
             _projectileSystem.Execute(this, tick);
-            _blastWaveSystem.Execute(this, tick);
+            _blastWaveSystem.Execute(this);
             _damageSystem.Execute(this, tick);
             _doorSystem.Execute(this, tick);
 

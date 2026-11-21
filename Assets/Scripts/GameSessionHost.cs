@@ -503,9 +503,11 @@ public class GameSessionHost : MonoBehaviour
             _lastProcessedTick++;
         }
 
-        if (_gameSessionState == GameSessionState.WaitingForR && inputManager.IsRKeyDown)
+        if (_gameSessionState is GameSessionState.WaitingForR or GameSessionState.Playing && inputManager.IsRKeyDown)
         {
             pools.ClearAllNotificationPools();
+            _tickDriver.StopSim();
+            StopCharacterBouncing();
             _gameSessionState = GameSessionState.Rewinding;
             markerManager.SetVisible(false);
             DoRewindAnimation();

@@ -7,21 +7,30 @@ namespace ECS.Systems
 {
     public class BlastWaveSystem
     {
-        public void Execute(World world, int tick)
+        public void Execute(World world)
         {
             ref var snapshot = ref world.GetSnapshot();
 
             if (world._hasBlastWaveEvent)
+            {
                 BlastWaveEvent(ref snapshot, world._blastWaveEvent);
+            }
 
             if (world._hasGranadeExplosionEvent)
+            {
                 BlastWaveEvent(ref snapshot, world._granadeExplosionEvent);
+                snapshot._splosionNotificationPool.Add(new SplosionNotification()
+                {
+                    _position = world._granadeExplosionEvent._position,
+                    _type = SplosionType.Granade
+                });
+            }
         }
 
         private void BlastWaveEvent(ref Snapshot snapshot, BlastWaveEvent evt)
         {
             var deadEnemy = false;
-            
+
             for (var i = snapshot._enemies.GetNumEntities() - 1; i >= 0; i--)
             {
                 ref var enemy = ref snapshot._enemies.GetEntityAt(i);
@@ -45,7 +54,7 @@ namespace ECS.Systems
                             _knockbackDirection = directionToPlayer.normalized,
                             _position = enemy._position
                         });
-                        
+
                         snapshot._enemies.DespawnAt(i);
                         deadEnemy = true;
                     }
