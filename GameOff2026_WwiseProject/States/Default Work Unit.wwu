@@ -13,6 +13,7 @@
 						<State Name="Round_2" ID="{F4CD4D35-CE3B-41B2-9E0B-6E004347776F}"/>
 						<State Name="Round_3" ID="{368377C0-A9B4-4367-BFA6-2450D5E592E3}"/>
 						<State Name="Round_4" ID="{F39FE53F-3AF9-431B-AE26-DBF3E7967E58}"/>
+						<State Name="Replay" ID="{BE840975-4904-44D9-98EF-C2EF582C583A}"/>
 					</ChildrenList>
 				</StateGroup>
 			</ChildrenList>
