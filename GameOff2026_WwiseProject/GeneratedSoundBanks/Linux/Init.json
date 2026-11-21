@@ -1,0 +1,275 @@
+{
+ "SoundBanksInfo": {
+  "Platform": "Linux",
+  "BasePlatform": "Linux",
+  "SchemaVersion": "16",
+  "SoundBankVersion": "172",
+  "SoundBanks": [
+   {
+    "Id": "1355168291",
+    "Type": "User",
+    "GUID": "{701ECBBD-9C7B-4030-8CDB-749EE5D1C7B9}",
+    "Language": "SFX",
+    "Hash": "{4AC857A6-C64E-EBE5-DA86-13573BACBF55}",
+    "ObjectPath": "Init",
+    "ShortName": "Init",
+    "Path": "Init.bnk",
+    "Plugins": {
+     "ShareSets": [
+      {
+       "Id": "1329694923",
+       "Name": "DuckingSFX",
+       "ObjectPath": "\\Effects\\Default Work Unit\\DuckingSFX",
+       "GUID": "{4F47A82C-75FD-42B4-973F-392996D0F68D}",
+       "LibName": "Wwise Meter",
+       "LibId": "8454147"
+      },
+      {
+       "Id": "3093856314",
+       "Name": "SFX_Ducking",
+       "ObjectPath": "\\Effects\\Default Work Unit\\SFX_Ducking",
+       "GUID": "{46ABBA0E-718C-40E2-949D-B2F56AB99665}",
+       "LibName": "Wwise Compressor",
+       "LibId": "7077891"
+      },
+      {
+       "Id": "3155249223",
+       "Name": "DuckingVO",
+       "ObjectPath": "\\Effects\\Default Work Unit\\DuckingVO",
+       "GUID": "{E807226D-B3B0-4E06-9523-11AFD9CB8463}",
+       "LibName": "Wwise Meter",
+       "LibId": "8454147"
+      },
+      {
+       "Id": "3375880468",
+       "Name": "VO_Ducking",
+       "ObjectPath": "\\Effects\\Default Work Unit\\VO_Ducking",
+       "GUID": "{C1C7B2CB-DB13-4DE3-A398-FBFCABB78DE1}",
+       "LibName": "Wwise Compressor",
+       "LibId": "7077891"
+      }
+     ],
+     "AudioDevices": [
+      {
+       "Id": "2317455096",
+       "Name": "No_Output",
+       "ObjectPath": "\\Devices\\Default Work Unit\\No_Output",
+       "GUID": "{0255F976-9E24-43B3-B899-FC6862BDF2E3}",
+       "LibName": "No Output",
+       "LibId": "11862023"
+      },
+      {
+       "Id": "3859886410",
+       "Name": "System",
+       "ObjectPath": "\\Devices\\Default Work Unit\\System",
+       "GUID": "{76C616A5-44E8-4DF8-85A7-020E8510008C}",
+       "LibName": "System",
+       "LibId": "11403271"
+      }
+     ]
+    },
+    "Busses": [
+     {
+      "Id": "85412153",
+      "Name": "AMBIENCE",
+      "ObjectPath": "\\Busses\\Default Work Unit\\Main Audio Bus\\AMBIENCE",
+      "GUID": "{0D3F0E73-E6DF-4226-8BD9-1CC7EEEBAE76}"
+     },
+     {
+      "Id": "393239870",
+      "Name": "SFX",
+      "ObjectPath": "\\Busses\\Default Work Unit\\Main Audio Bus\\SFX",
+      "GUID": "{282B1519-D877-4EF3-9048-C765F53AAF2A}",
+      "PluginRefs": {
+       "ShareSets": [
+        {
+         "Id": "1329694923"
+        }
+       ]
+      }
+     },
+     {
+      "Id": "1534528548",
+      "Name": "VO",
+      "ObjectPath": "\\Busses\\Default Work Unit\\Main Audio Bus\\VO",
+      "GUID": "{832227F3-45D1-422A-8529-93517E731F5A}",
+      "PluginRefs": {
+       "ShareSets": [
+        {
+         "Id": "3155249223"
+        }
+       ]
+      }
+     },
+     {
+      "Id": "2246998526",
+      "Name": "Main Audio Bus",
+      "ObjectPath": "\\Busses\\Default Work Unit\\Main Audio Bus",
+      "GUID": "{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}"
+     },
+     {
+      "Id": "3991942870",
+      "Name": "MUSIC",
+      "ObjectPath": "\\Busses\\Default Work Unit\\Main Audio Bus\\MUSIC",
+      "GUID": "{F759BC7F-4007-4D33-8F58-64648B34CD3D}",
+      "PluginRefs": {
+       "ShareSets": [
+        {
+         "Id": "3093856314"
+        },
+        {
+         "Id": "3375880468"
+        }
+       ]
+      }
+     }
+    ],
+    "GameParameters": [
+     {
+      "Id": "1006694123",
+      "Name": "Music_Volume",
+      "ObjectPath": "\\Game Parameters\\Default Work Unit\\Music_Volume",
+      "GUID": "{DBF1A7E6-A148-4144-BDB9-1074F976F456}"
+     },
+     {
+      "Id": "1329694923",
+      "Name": "DuckingSFX",
+      "ObjectPath": "\\Game Parameters\\Default Work Unit\\DuckingSFX",
+      "GUID": "{9F92B4CD-201F-47A8-80AF-A2DF167E36DC}"
+     },
+     {
+      "Id": "1564184899",
+      "Name": "SFX_Volume",
+      "ObjectPath": "\\Game Parameters\\Default Work Unit\\SFX_Volume",
+      "GUID": "{B15FE639-7CD2-4340-8A5A-4751BB096418}"
+     },
+     {
+      "Id": "3155249223",
+      "Name": "DuckingVO",
+      "ObjectPath": "\\Game Parameters\\Default Work Unit\\DuckingVO",
+      "GUID": "{B322547F-F7E7-4C42-B6A9-1208F784E42F}"
+     },
+     {
+      "Id": "3538560642",
+      "Name": "Voice_Volume",
+      "ObjectPath": "\\Game Parameters\\Default Work Unit\\Voice_Volume",
+      "GUID": "{130092C7-4E1A-412A-99EC-8C3A39309695}"
+     },
+     {
+      "Id": "4179668880",
+      "Name": "Master_Volume",
+      "ObjectPath": "\\Game Parameters\\Default Work Unit\\Master_Volume",
+      "GUID": "{0E8BB5A1-C10D-4166-9BFC-909072DF57CC}"
+     }
+    ],
+    "StateGroups": [
+     {
+      "Id": "1413238543",
+      "Name": "Round",
+      "ObjectPath": "\\States\\Default Work Unit\\Round",
+      "GUID": "{AD9A563C-653A-4D1A-8C75-63F4F2C0924B}",
+      "States": [
+       {
+        "Id": "748895195",
+        "Name": "None",
+        "ObjectPath": "\\States\\Default Work Unit\\Round\\None",
+        "GUID": "{C9697BE0-1F92-4C7C-92D8-FFA9B02AB186}"
+       },
+       {
+        "Id": "1200082258",
+        "Name": "Round_4",
+        "ObjectPath": "\\States\\Default Work Unit\\Round\\Round_4",
+        "GUID": "{F39FE53F-3AF9-431B-AE26-DBF3E7967E58}"
+       },
+       {
+        "Id": "1200082260",
+        "Name": "Round_2",
+        "ObjectPath": "\\States\\Default Work Unit\\Round\\Round_2",
+        "GUID": "{F4CD4D35-CE3B-41B2-9E0B-6E004347776F}"
+       },
+       {
+        "Id": "1200082261",
+        "Name": "Round_3",
+        "ObjectPath": "\\States\\Default Work Unit\\Round\\Round_3",
+        "GUID": "{368377C0-A9B4-4367-BFA6-2450D5E592E3}"
+       },
+       {
+        "Id": "1200082263",
+        "Name": "Round_1",
+        "ObjectPath": "\\States\\Default Work Unit\\Round\\Round_1",
+        "GUID": "{75FB4324-C21A-4D82-B0CF-3542C815D862}"
+       },
+       {
+        "Id": "2842388664",
+        "Name": "Replay",
+        "ObjectPath": "\\States\\Default Work Unit\\Round\\Replay",
+        "GUID": "{BE840975-4904-44D9-98EF-C2EF582C583A}"
+       }
+      ]
+     }
+    ],
+    "SwitchGroups": [
+     {
+      "Id": "436743010",
+      "Name": "Character",
+      "ObjectPath": "\\Switches\\Default Work Unit\\Character",
+      "GUID": "{FC8A765D-1615-45B5-8855-91E373A25B5A}",
+      "Switches": [
+       {
+        "Id": "1204435000",
+        "Name": "Character_C",
+        "ObjectPath": "\\Switches\\Default Work Unit\\Character\\Character_C",
+        "GUID": "{494D65CC-B3B8-48AC-B859-16C5936339B8}"
+       },
+       {
+        "Id": "1204435001",
+        "Name": "Character_B",
+        "ObjectPath": "\\Switches\\Default Work Unit\\Character\\Character_B",
+        "GUID": "{F11D97A6-0011-495A-98D4-7CC9A6901DEC}"
+       },
+       {
+        "Id": "1204435002",
+        "Name": "Character_A",
+        "ObjectPath": "\\Switches\\Default Work Unit\\Character\\Character_A",
+        "GUID": "{01396F22-9182-4E10-AAAE-FF089A804BC5}"
+       },
+       {
+        "Id": "1204435007",
+        "Name": "Character_D",
+        "ObjectPath": "\\Switches\\Default Work Unit\\Character\\Character_D",
+        "GUID": "{60DCA616-D255-4FC0-83C9-F5B175B9768E}"
+       }
+      ]
+     },
+     {
+      "Id": "4274333454",
+      "Name": "FloorMaterial",
+      "ObjectPath": "\\Switches\\Default Work Unit\\FloorMaterial",
+      "GUID": "{6515BE3D-FA5D-430E-843B-13353CF6B1A7}",
+      "Switches": [
+       {
+        "Id": "841620460",
+        "Name": "Concrete",
+        "ObjectPath": "\\Switches\\Default Work Unit\\FloorMaterial\\Concrete",
+        "GUID": "{851BB592-1957-4048-B336-69AF55E26BCF}"
+       },
+       {
+        "Id": "2412606308",
+        "Name": "Carpet",
+        "ObjectPath": "\\Switches\\Default Work Unit\\FloorMaterial\\Carpet",
+        "GUID": "{99160A53-9799-49CE-B8F4-986AC51B6391}"
+       },
+       {
+        "Id": "2637588553",
+        "Name": "Tile",
+        "ObjectPath": "\\Switches\\Default Work Unit\\FloorMaterial\\Tile",
+        "GUID": "{12732F6D-0116-4FAD-9028-7D2BA445288D}"
+       }
+      ]
+     }
+    ]
+   }
+  ],
+  "FileHash": "{E7DE1576-69B5-C884-6442-40134317DC0E}"
+ }
+}

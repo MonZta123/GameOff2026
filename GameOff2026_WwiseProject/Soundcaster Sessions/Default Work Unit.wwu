@@ -10,8 +10,16 @@
 							<Position X="0" Y="0"/>
 						</Module>
 						<Module>
+							<ObjectRef Name="Play_MUS_Character" ID="{44E5D87C-C9EE-4925-8962-FA761B8D15F0}" WorkUnitID="{2B12C590-A22E-47AF-9697-251FEA2DB802}"/>
+							<Position X="0" Y="2"/>
+						</Module>
+						<Module>
 							<ObjectRef Name="Stop_MUS_MainMenu" ID="{CA4116AE-77C2-480F-9560-FFC095D35812}" WorkUnitID="{2B12C590-A22E-47AF-9697-251FEA2DB802}"/>
 							<Position X="1" Y="0"/>
+						</Module>
+						<Module>
+							<ObjectRef Name="MUS_MissionEnding" ID="{3A19AB97-7F51-4258-8EC9-657F03D0765A}" WorkUnitID="{AF633A36-6CC5-470E-AD72-3F76D6F661BF}"/>
+							<Position X="1" Y="2"/>
 						</Module>
 					</ModuleList>
 				</SoundcasterSession>

@@ -36,7 +36,6 @@ namespace AK
         static const AkUniqueID PLAY_SFX_FOOTSTEPS_B = 1953576304U;
         static const AkUniqueID PLAY_SFX_FOOTSTEPS_C = 1953576305U;
         static const AkUniqueID PLAY_SFX_FOOTSTEPS_D = 1953576310U;
-        static const AkUniqueID PLAY_SFX_MINEBEEPS = 1150067858U;
         static const AkUniqueID PLAY_SFX_MINEEXPLODE = 1561061870U;
         static const AkUniqueID PLAY_SFX_RIFLE = 1078461092U;
         static const AkUniqueID PLAY_SFX_SHIFT = 2453180302U;
@@ -82,6 +81,7 @@ namespace AK
             namespace STATE
             {
                 static const AkUniqueID NONE = 748895195U;
+                static const AkUniqueID REPLAY = 2842388664U;
                 static const AkUniqueID ROUND_1 = 1200082263U;
                 static const AkUniqueID ROUND_2 = 1200082260U;
                 static const AkUniqueID ROUND_3 = 1200082261U;

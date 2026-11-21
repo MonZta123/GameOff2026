@@ -356,6 +356,9 @@
 									</ChildrenList>
 								</Event>
 								<Event Name="Play_SFX_MineBeeps" ID="{0E5DE2F2-5313-45DA-8FA6-A3469A2C1DFD}">
+									<PropertyList>
+										<Property Name="Inclusion" Type="bool" Value="False"/>
+									</PropertyList>
 									<ChildrenList>
 										<Action Name="" ID="{7887F10C-3479-4B34-9B4C-51FAFE596E8A}" ShortID="615733899">
 											<ReferenceList>
@@ -1199,15 +1202,7 @@
 								</Event>
 							</ChildrenList>
 						</Folder>
-						<Folder Name="E" ID="{909B386B-E7FC-4801-8BD4-ABC7DC958E05}" ShortID="412715">
-							<PropertyList>
-								<Property Name="Inclusion" Type="bool">
-									<ValueList>
-										<Value>False</Value>
-									</ValueList>
-								</Property>
-							</PropertyList>
-						</Folder>
+						<Folder Name="E" ID="{909B386B-E7FC-4801-8BD4-ABC7DC958E05}" ShortID="412715"/>
 						<Event Name="Play_VO_ABCD_Win" ID="{26B21666-DAE0-481D-B5C8-0753260D28CF}">
 							<PropertyList>
 								<Property Name="Color" Type="int16" Value="25"/>

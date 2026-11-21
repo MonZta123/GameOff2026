@@ -1,0 +1,35 @@
+State Group	ID	Name			Wwise Object Path	Notes
+	1413238543	Round			\Default Work Unit\Round	
+
+State	ID	Name	State Group			Notes
+	748895195	None	Round			
+	1200082258	Round_4	Round			
+	1200082260	Round_2	Round			
+	1200082261	Round_3	Round			
+	1200082263	Round_1	Round			
+	2842388664	Replay	Round			
+
+Game Parameter	ID	Name			Wwise Object Path	Notes
+	1006694123	Music_Volume			\Default Work Unit\Music_Volume	
+	1564184899	SFX_Volume			\Default Work Unit\SFX_Volume	
+	3155249223	DuckingVO			\Default Work Unit\DuckingVO	
+	3538560642	Voice_Volume			\Default Work Unit\Voice_Volume	
+	4179668880	Master_Volume			\Default Work Unit\Master_Volume	
+
+Audio Bus	ID	Name			Wwise Object Path	Notes
+	85412153	AMBIENCE			\Default Work Unit\Main Audio Bus\AMBIENCE	
+	393239870	SFX			\Default Work Unit\Main Audio Bus\SFX	
+	1534528548	VO			\Default Work Unit\Main Audio Bus\VO	
+	2246998526	Main Audio Bus			\Default Work Unit\Main Audio Bus	
+	3991942870	MUSIC			\Default Work Unit\Main Audio Bus\MUSIC	
+
+Effect plug-ins	ID	Name	Type				Notes
+	1329694923	DuckingSFX	Wwise Meter			
+	3093856314	SFX_Ducking	Wwise Compressor			
+	3155249223	DuckingVO	Wwise Meter			
+	3375880468	VO_Ducking	Wwise Compressor			
+
+Audio Devices	ID	Name	Type				Notes
+	2317455096	No_Output	No Output			
+	3859886410	System	System			
+

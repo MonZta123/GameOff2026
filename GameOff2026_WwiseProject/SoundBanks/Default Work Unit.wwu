@@ -24,7 +24,6 @@
 						<ObjectRef Name="Stop_AMB_BackOfHouse" ID="{E980DD36-4E4A-455B-8CE4-A184BF85FBD0}" WorkUnitID="{2B12C590-A22E-47AF-9697-251FEA2DB802}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="Stop_AMB_All" ID="{EEAC5E1E-C457-45C6-A009-C9B36D62B1A5}" WorkUnitID="{2B12C590-A22E-47AF-9697-251FEA2DB802}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="Play_VO_A_HitHeavy" ID="{8EAD13E7-31B6-45D4-B5CD-8804AD23F0AF}" WorkUnitID="{2B12C590-A22E-47AF-9697-251FEA2DB802}" Origin="Manual" Filter="7"/>
-						<ObjectRef Name="Play_SFX_MineBeeps" ID="{0E5DE2F2-5313-45DA-8FA6-A3469A2C1DFD}" WorkUnitID="{2B12C590-A22E-47AF-9697-251FEA2DB802}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="Play_VO_A_Dead" ID="{95A352DD-B694-45E4-B9D6-F7A7C83982E8}" WorkUnitID="{2B12C590-A22E-47AF-9697-251FEA2DB802}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="Play_SFX_UI_Back" ID="{24407F4D-86FB-45EA-BCE9-724A6801CF46}" WorkUnitID="{2B12C590-A22E-47AF-9697-251FEA2DB802}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="Play_SFX_Footsteps_D" ID="{9FDF8A70-9647-464A-8FEB-D2A548DE98DF}" WorkUnitID="{2B12C590-A22E-47AF-9697-251FEA2DB802}" Origin="Manual" Filter="7"/>
@@ -55,7 +54,6 @@
 						<ObjectRef Name="Play_SFX_Action_C_Defuse" ID="{50C950DC-2033-4BD6-B0A2-22C4070A3229}" WorkUnitID="{2B12C590-A22E-47AF-9697-251FEA2DB802}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="Play_VO_D_HitHeavy" ID="{7C805774-2F8A-4D48-8746-FD718FDAF1CD}" WorkUnitID="{2B12C590-A22E-47AF-9697-251FEA2DB802}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="Play_AMB_Mission" ID="{1B7C0568-7406-4D4E-AEDA-EEFC3A2B70EE}" WorkUnitID="{2B12C590-A22E-47AF-9697-251FEA2DB802}" Origin="Manual" Filter="7"/>
-						<ObjectRef Name="Play_SFX_MineCountdown" ID="{2E4350FE-4AE1-4D66-A4EF-72CE53E75CF4}" WorkUnitID="{2B12C590-A22E-47AF-9697-251FEA2DB802}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="Play_VO_D_Dead" ID="{B2C7AAFB-B802-4DE9-A20C-7D8C426F1C15}" WorkUnitID="{2B12C590-A22E-47AF-9697-251FEA2DB802}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="Stop_SFX_Action_B_Hack" ID="{C2AC2B4D-DC03-4E19-B71D-21F868930D35}" WorkUnitID="{2B12C590-A22E-47AF-9697-251FEA2DB802}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="Play_VO_B_HitHeavy" ID="{D77E0490-71FF-4E40-8DA3-4D5C12E56BE7}" WorkUnitID="{2B12C590-A22E-47AF-9697-251FEA2DB802}" Origin="Manual" Filter="7"/>

@@ -198,6 +198,12 @@
         "Name": "Round_1",
         "ObjectPath": "\\States\\Default Work Unit\\Round\\Round_1",
         "GUID": "{75FB4324-C21A-4D82-B0CF-3542C815D862}"
+       },
+       {
+        "Id": "2842388664",
+        "Name": "Replay",
+        "ObjectPath": "\\States\\Default Work Unit\\Round\\Replay",
+        "GUID": "{BE840975-4904-44D9-98EF-C2EF582C583A}"
        }
       ]
      }
@@ -264,6 +270,6 @@
     ]
    }
   ],
-  "FileHash": "{FD5B4917-7FC4-6EEE-F2B2-F578489243FC}"
+  "FileHash": "{7B767F54-917E-3C19-A6F6-54B0199F8E6F}"
  }
 }
