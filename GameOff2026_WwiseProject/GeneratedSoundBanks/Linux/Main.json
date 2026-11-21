@@ -10,7 +10,7 @@
     "Type": "User",
     "GUID": "{3059A6CE-8152-4CD2-BEA9-69E98BB60D65}",
     "Language": "SFX",
-    "Hash": "{D83BB031-951B-1047-12B2-889FFAEBBB67}",
+    "Hash": "{D299A30B-A816-0F3C-3294-E14C8A544CFE}",
     "ObjectPath": "\\SoundBanks\\Default Work Unit\\Main",
     "ShortName": "Main",
     "Path": "Main.bnk",
@@ -549,7 +549,7 @@
       "Streaming": "false",
       "Location": "Memory",
       "ShortName": "A_Master.wav",
-      "CachePath": "CC/{CC27542F-9AA5-2BCA-D2DD-AA1ACB8FCB3B}.wem"
+      "CachePath": "0E/{0ECD2D9E-8847-182A-B4C2-1280C31A179B}.wem"
      },
      {
       "Id": "333456175",
@@ -1357,7 +1357,7 @@
       "Streaming": "false",
       "Location": "Memory",
       "ShortName": "Intro_Master.wav",
-      "CachePath": "D3/{D333678F-831E-756F-75D8-A36397AFD12D}.wem"
+      "CachePath": "BC/{BC40BE27-A4A1-D489-1A79-A201B520CE7A}.wem"
      },
      {
       "Id": "888812096",
@@ -2595,8 +2595,8 @@
       "ObjectPath": "\\Events\\Default Work Unit\\MUSIC\\Play_MUS_MissionIntro",
       "GUID": "{B8CD9CFA-133C-402C-B64E-0D292A6EB22D}",
       "DurationType": "OneShot",
-      "DurationMin": "11.368413",
-      "DurationMax": "11.368413",
+      "DurationMin": "5.3684125",
+      "DurationMax": "5.3684125",
       "MediaRefs": [
        {
         "Id": "888201016"
@@ -3349,6 +3349,16 @@
         ]
        }
       ]
+     },
+     {
+      "Id": "1150067858",
+      "Name": "Play_SFX_MineBeeps",
+      "ObjectPath": "\\Events\\Default Work Unit\\SFX\\Weapons\\Play_SFX_MineBeeps",
+      "GUID": "{0E5DE2F2-5313-45DA-8FA6-A3469A2C1DFD}",
+      "MaxAttenuation": "100",
+      "DurationType": "OneShot",
+      "DurationMin": "0",
+      "DurationMax": "0"
      },
      {
       "Id": "1561061870",
@@ -4496,6 +4506,6 @@
     ]
    }
   ],
-  "FileHash": "{AE935E24-2124-BC5A-FD5B-492E7A74E334}"
+  "FileHash": "{44BD0824-CC93-F50C-89B1-418D8DAEBBE1}"
  }
 }

@@ -356,9 +356,6 @@
 									</ChildrenList>
 								</Event>
 								<Event Name="Play_SFX_MineBeeps" ID="{0E5DE2F2-5313-45DA-8FA6-A3469A2C1DFD}">
-									<PropertyList>
-										<Property Name="Inclusion" Type="bool" Value="False"/>
-									</PropertyList>
 									<ChildrenList>
 										<Action Name="" ID="{7887F10C-3479-4B34-9B4C-51FAFE596E8A}" ShortID="615733899">
 											<ReferenceList>
