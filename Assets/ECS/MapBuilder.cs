@@ -11,6 +11,11 @@ namespace ECS
         Exit
     }
 
+    public enum MapType
+    {
+        Outside, Inside, Safe
+    }
+
     public struct MapDefinition
     {
         public int[] _map;
@@ -28,7 +33,7 @@ namespace ECS
         public Vector2Int[] _computerAsset;
         public Vector2Int[] _enemySpawnZone;
 
-        public bool _isInside;
+        public MapType _scenery;
 
         public int CoordToIndex(int x, int y)
         {
@@ -40,14 +45,15 @@ namespace ECS
     {
         public static MapDefinition BuildMap(Map mapData)
         {
-            var mapTexture = mapData._map;
+            var area = mapData._area;
+            var enemies = mapData._enemyMap;
 
-            var map = new MapDefinition { _isInside = mapData._isInside };
-            var result = new int[mapTexture.width * mapTexture.height];
+            var map = new MapDefinition { _scenery = mapData._mapType };
+            var result = new int[area.width * area.height];
 
             map._map = result;
-            map._width = mapTexture.width;
-            map._height = mapTexture.height;
+            map._width = area.width;
+            map._height = area.height;
 
             map._spawnPoints = new Vector2Int[4];
 
@@ -59,22 +65,28 @@ namespace ECS
             var exit = new List<Vector2Int>();
             var enemySpawnZone = new List<Vector2Int>();
 
-            var pixelMap = mapTexture.GetPixels32();
+            var areaPixels = area.GetPixels32();
+            var enemyPixels = enemies.GetPixels32();
 
-            for (var i = 0; i < mapTexture.height; i++)
+            for (var i = 0; i < area.height; i++)
             {
-                for (var j = 0; j < mapTexture.width; j++)
+                for (var j = 0; j < area.width; j++)
                 {
-                    var color = pixelMap[i * mapTexture.width + j];
+                    var color = areaPixels[i * area.width + j];
+                    var enemyColor = enemyPixels[i * area.width + j];
 
                     var tile = ColorToTile(color);
 
-                    result[i * mapTexture.width + j] = 0;
+                    result[i * area.width + j] = 0;
 
                     if (tile is 0)
                         continue;
 
-                    result[i * mapTexture.width + j] = 1;
+                    result[i * area.width + j] = 1;
+
+                    if (tile is 12)
+                        result[i * area.width + j] = 12;
+
                     switch (tile)
                     {
                         case 2 or 3 or 4 or 5:
@@ -104,11 +116,10 @@ namespace ECS
                         case 11:
                             exit.Add(new Vector2Int(j, i));
                             break;
-
-                        case 12:
-                            enemySpawnZone.Add(new Vector2Int(j, i));
-                            break;
                     }
+
+                    if (enemyColor is { r: 195, g: 195, b: 195 })
+                        enemySpawnZone.Add(new Vector2Int(j, i));
                 }
             }
 
@@ -161,7 +172,7 @@ namespace ECS
             if (color is { r: 181, g: 230, b: 29 }) // Segment 4 Exit
                 return 11;
 
-            if (color is { r: 195, g: 195, b: 195 }) // Enemy Spawn Zone
+            if (color is { r: 195, g: 195, b: 195 }) // Other Tile
                 return 12;
 
             return -1;

@@ -293,7 +293,9 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 05b7a4177e8d4f0449e10b501f49dc56, type: 2}
   - {fileID: 11400000, guid: 163000838e5d4e44e860ca8f6b06db42, type: 2}
   - {fileID: 11400000, guid: 21e8106f4acf88d48a06257f0b0140cf, type: 2}
-  outside: {fileID: 11400000, guid: 03d08ec6c8cb3574897152e27bfa5118, type: 2}
+  outside:
+  - {fileID: 11400000, guid: 03d08ec6c8cb3574897152e27bfa5118, type: 2}
+  - {fileID: 11400000, guid: 5ef066520174ade42902bc44cb568a4a, type: 2}
   visualWall:
   - {fileID: 11400000, guid: 96d53098034ae5c43b1162bd2aa8a3c7, type: 2}
   - {fileID: 11400000, guid: 715026b169d162f4f9470821d0699b81, type: 2}
@@ -302,8 +304,17 @@ MonoBehaviour:
   - {fileID: 11400000, guid: f18fed6895341124b9786691b361f37d, type: 2}
   - {fileID: 11400000, guid: a2b4601915ed6414a8904460edf267e9, type: 2}
   floor:
+  - {fileID: 11400000, guid: 7c74067b267fa65429c8a2fec2512701, type: 2}
+  - {fileID: 11400000, guid: 4bd9bbb5403653a4b9e2967b67db9239, type: 2}
+  - {fileID: 11400000, guid: f459acbde36b105469f676e66b68ce44, type: 2}
+  tiledFloor:
   - {fileID: 11400000, guid: 01e7318927d93154b9d81f94f3c3c3de, type: 2}
   - {fileID: 11400000, guid: f745b1c47707bd04fb701a9ca6a8377d, type: 2}
+  crackedFloor: {fileID: 11400000, guid: 2e9bc929adcbf8444a20e99f3afb9686, type: 2}
+  doorSimpleOpen: []
+  doorSimpleClosed: []
+  doorDoubleOpen: []
+  doorDoubleClosed: []
 --- !u!114 &13633229
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1483,7 +1494,7 @@ Camera:
   far clip plane: 5000
   field of view: 40
   orthographic: 1
-  orthographic size: 6.59375
+  orthographic size: 6.1875
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2

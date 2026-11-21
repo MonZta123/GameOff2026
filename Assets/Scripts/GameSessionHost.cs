@@ -14,8 +14,9 @@ using Player = Actors.Player;
 [Serializable]
 public struct Map
 {
-    public Texture2D _map;
-    public bool _isInside;
+    public Texture2D _area;
+    public Texture2D _enemyMap;
+    public MapType _mapType;
 }
 
 public class GameSessionHost : MonoBehaviour
@@ -85,7 +86,10 @@ public class GameSessionHost : MonoBehaviour
 
     private void Awake()
     {
-        // Show LoadingScreen here
+#if UNITY_EDITOR
+        maxSeconds = 5;
+#endif
+
         pools.Initialize();
         _segmentTicks = maxSeconds * stepsPerSecond;
         var mapDefinition = TextureMapBuilder.BuildMap(maps[0]);
@@ -108,9 +112,6 @@ public class GameSessionHost : MonoBehaviour
         hud.HideMissionPanel();
         hud.HideObjectivePanel();
         hud.InitLogoAnimation();
-
-        scriptableRendererData.rendererFeatures[0].SetActive(false);
-        // Hide Loadingscreen here
     }
 
     private IEnumerator FadeIn(Action next = null)
@@ -320,9 +321,9 @@ public class GameSessionHost : MonoBehaviour
     private void PlayerDead(string who, int index)
     {
         AkUnitySoundEngine.StopAll();
-        
+
         hud.ShowOuchScreen(who + " died!");
-        
+
         _gameSessionState = GameSessionState.WaitingForR;
 
         positionComposer.VirtualCamera.Follow = pools._playerPool.Active[index].transform;

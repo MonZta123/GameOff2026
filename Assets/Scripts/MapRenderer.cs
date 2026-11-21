@@ -12,7 +12,7 @@ public class MapRenderer : MonoBehaviour
     private List<TileBase> border;
 
     [SerializeField]
-    private TileBase outside;
+    private TileBase[] outside;
 
     [SerializeField]
     private TileBase[] visualWall;
@@ -20,18 +20,44 @@ public class MapRenderer : MonoBehaviour
     [SerializeField]
     private TileBase[] floor;
 
+    [SerializeField]
+    private TileBase[] tiledFloor;
+
+    [SerializeField]
+    private TileBase crackedFloor;
+
+    [SerializeField]
+    private TileBase[] doorSimpleOpen;
+
+    [SerializeField]
+    private TileBase[] doorSimpleClosed;
+
+    [SerializeField]
+    private TileBase[] doorDoubleOpen;
+
+    [SerializeField]
+    private TileBase[] doorDoubleClosed;
+
+    private TileBase GetOutside()
+    {
+        if (Random.Range(0, 10) == 5)
+            return outside[1];
+
+        return outside[0];
+    }
+
     public void GenerateMap(MapDefinition mapDefinition)
     {
         tilemap.ClearAllTiles();
 
-        var floorTile = floor[mapDefinition._isInside ? 1 : 0];
+        var floorTile = floor[(int)mapDefinition._scenery];
 
         for (var i = -10; i < 0; i++)
         {
             for (var j = -10; j < mapDefinition._height + 10; j++)
             {
-                tilemap.SetTile(new Vector3Int(i, j, 0), outside);
-                tilemap.SetTile(new Vector3Int(i + mapDefinition._width + 10, j, 0), outside);
+                tilemap.SetTile(new Vector3Int(i, j, 0), GetOutside());
+                tilemap.SetTile(new Vector3Int(i + mapDefinition._width + 10, j, 0), GetOutside());
             }
         }
 
@@ -39,8 +65,8 @@ public class MapRenderer : MonoBehaviour
         {
             for (var j = -10; j < 0; j++)
             {
-                tilemap.SetTile(new Vector3Int(i, j, 0), outside);
-                tilemap.SetTile(new Vector3Int(i, j + mapDefinition._height + 10, 0), outside);
+                tilemap.SetTile(new Vector3Int(i, j, 0), GetOutside());
+                tilemap.SetTile(new Vector3Int(i, j + mapDefinition._height + 10, 0), GetOutside());
             }
         }
 
@@ -96,7 +122,26 @@ public class MapRenderer : MonoBehaviour
                     if (TopIsWallRule(i, j, mapDefinition))
                         continue;
 
-                    tilemap.SetTile(new Vector3Int(i, j, 0), floorTile);
+
+                    if (mapDefinition._scenery == MapType.Outside && Random.Range(0, 10) == 5 && value is 1)
+                    {
+                        tilemap.SetTile(new Vector3Int(i, j, 0), crackedFloor);
+                    }
+                    else
+                    {
+                        if (value is 1 or 12 || mapDefinition._scenery == MapType.Safe)
+                        {
+                            tilemap.SetTile(new Vector3Int(i, j, 0), floorTile);
+                        }
+
+                        if (value is 1 or 122 && mapDefinition._scenery != MapType.Safe)
+                        {
+                            if (mapDefinition._scenery == MapType.Outside)
+                                tilemap.SetTile(new Vector3Int(i, j, 0), tiledFloor[0]);
+                            else
+                                tilemap.SetTile(new Vector3Int(i, j, 0), tiledFloor[1]);
+                        }
+                    }
                 }
             }
         }
@@ -108,19 +153,19 @@ public class MapRenderer : MonoBehaviour
 
         if (j != map._height - 1 && a[map.CoordToIndex(i, j + 1)] == 0)
         {
-            if (i != 0 && a[map.CoordToIndex(i - 1, j + 1)] == 1)
+            if (i != 0 && a[map.CoordToIndex(i - 1, j + 1)] is 1 or 12)
             {
-                tilemap.SetTile(new Vector3Int(i, j, 0), visualWall[0 + (map._isInside ? 3 : 0)]);
+                tilemap.SetTile(new Vector3Int(i, j, 0), visualWall[0 + (map._scenery != MapType.Outside ? 3 : 0)]);
                 return true;
             }
 
-            if (i != map._width - 1 && a[map.CoordToIndex(i + 1, j + 1)] == 1)
+            if (i != map._width - 1 && a[map.CoordToIndex(i + 1, j + 1)] is 1 or 12)
             {
-                tilemap.SetTile(new Vector3Int(i, j, 0), visualWall[2 + (map._isInside ? 3 : 0)]);
+                tilemap.SetTile(new Vector3Int(i, j, 0), visualWall[2 + (map._scenery != MapType.Outside ? 3 : 0)]);
                 return true;
             }
 
-            tilemap.SetTile(new Vector3Int(i, j, 0), visualWall[1 + (map._isInside ? 3 : 0)]);
+            tilemap.SetTile(new Vector3Int(i, j, 0), visualWall[1 + (map._scenery != MapType.Outside ? 3 : 0)]);
             return true;
         }
 
@@ -142,7 +187,7 @@ public class MapRenderer : MonoBehaviour
             (i == map._width - 1 || j == map._height - 1 || a[map.CoordToIndex(i + 1, j + 1)] == 0)
         )
         {
-            tilemap.SetTile(new Vector3Int(i, j, 0), outside);
+            tilemap.SetTile(new Vector3Int(i, j, 0), GetOutside());
             return true;
         }
 
@@ -161,10 +206,10 @@ public class MapRenderer : MonoBehaviour
             (i == 0 || j == 0 || a[map.CoordToIndex(i - 1, j - 1)] == 0) && // Left Top
             (i == map._width - 1 || j == 0 || a[map.CoordToIndex(i + 1, j - 1)] == 0) && // Right Top
             (i == 0 || j == map._height - 1 || a[map.CoordToIndex(i - 1, j + 1)] == 0) && // Left Bottom
-            (i == map._width - 1 || j == map._height - 1 || a[map.CoordToIndex(i + 1, j + 1)] == 1) // Right Bottom
+            (i == map._width - 1 || j == map._height - 1 || a[map.CoordToIndex(i + 1, j + 1)] is 1 or 12) // Right Bottom
         )
         {
-            tilemap.SetTile(new Vector3Int(i, j, 0), border[9 + (map._isInside ? 12 : 0)]);
+            tilemap.SetTile(new Vector3Int(i, j, 0), border[9 + (map._scenery != MapType.Outside ? 12 : 0)]);
             return true;
         }
 
@@ -176,17 +221,17 @@ public class MapRenderer : MonoBehaviour
         var a = map._map;
 
         if (
-            (i == 0 || a[map.CoordToIndex(i - 1, j)] == 1) && // Left
-            (j == 0 || a[map.CoordToIndex(i, j - 1)] == 1) && // Up
+            (i == 0 || a[map.CoordToIndex(i - 1, j)] is 1 or 12) && // Left
+            (j == 0 || a[map.CoordToIndex(i, j - 1)] is 1 or 12) && // Up
             (i == map._width - 1 || a[map.CoordToIndex(i + 1, j)] == 0) && // Right
             (j == map._height - 1 || a[map.CoordToIndex(i, j + 1)] == 0) && // Down
-            // (i == 0 || j == 0 || a[map.CoordToIndex(i - 1, j - 1)] == 1) && // Left Top
+            // (i == 0 || j == 0 || a[map.CoordToIndex(i - 1, j - 1)] is 1 or 12) && // Left Top
             // (i == map._width - 1 || j == 0 || a[map.CoordToIndex(i + 1, j - 1)] == 0) && // Right Top
             // (i == 0 || j == map._height - 1 || a[map.CoordToIndex(i - 1, j + 1)] == 0) && // Left Bottom
             (i == map._width - 1 || j == map._height - 1 || a[map.CoordToIndex(i + 1, j + 1)] == 0) // Right Bottom
         )
         {
-            tilemap.SetTile(new Vector3Int(i, j, 0), border[2 + (map._isInside ? 12 : 0)]);
+            tilemap.SetTile(new Vector3Int(i, j, 0), border[2 + (map._scenery != MapType.Outside ? 12 : 0)]);
             return true;
         }
 
@@ -199,16 +244,16 @@ public class MapRenderer : MonoBehaviour
 
         if (
             (i == 0 || a[map.CoordToIndex(i - 1, j)] == 0) && // Left
-            (j == 0 || a[map.CoordToIndex(i, j - 1)] == 1) && // Up
-            (i == map._width - 1 || a[map.CoordToIndex(i + 1, j)] == 1) && // Right
+            (j == 0 || a[map.CoordToIndex(i, j - 1)] is 1 or 12) && // Up
+            (i == map._width - 1 || a[map.CoordToIndex(i + 1, j)] is 1 or 12) && // Right
             (j == map._height - 1 || a[map.CoordToIndex(i, j + 1)] == 0) && // Down
             // (i == 0 || j == 0 || a[map.CoordToIndex(i - 1, j - 1)] == 0) && // Left Top
-            (i == map._width - 1 || j == 0 || a[map.CoordToIndex(i + 1, j - 1)] == 1) // Right Top
-            // (i == 0 || j == map._height - 1 || a[map.CoordToIndex(i - 1, j + 1)] == 1) && // Left Bottom
+            (i == map._width - 1 || j == 0 || a[map.CoordToIndex(i + 1, j - 1)] is 1 or 12) // Right Top
+            // (i == 0 || j == map._height - 1 || a[map.CoordToIndex(i - 1, j + 1)] is 1 or 12) && // Left Bottom
             // (i == map._width - 1 || j == map._height - 1 || a[map.CoordToIndex(i + 1, j + 1)] == 0) // Right Bottom
         )
         {
-            tilemap.SetTile(new Vector3Int(i, j, 0), border[3 + (map._isInside ? 12 : 0)]);
+            tilemap.SetTile(new Vector3Int(i, j, 0), border[3 + (map._scenery != MapType.Outside ? 12 : 0)]);
             return true;
         }
 
@@ -226,11 +271,11 @@ public class MapRenderer : MonoBehaviour
             (j == map._height - 1 || a[map.CoordToIndex(i, j + 1)] == 0) && // Down
             (i == 0 || j == 0 || a[map.CoordToIndex(i - 1, j - 1)] == 0) && // Left Top
             (i == map._width - 1 || j == 0 || a[map.CoordToIndex(i + 1, j - 1)] == 0) && // Right Top
-            (i == 0 || j == map._height - 1 || a[map.CoordToIndex(i - 1, j + 1)] == 1) && // Left Bottom
+            (i == 0 || j == map._height - 1 || a[map.CoordToIndex(i - 1, j + 1)] is 1 or 12) && // Left Bottom
             (i == map._width - 1 || j == map._height - 1 || a[map.CoordToIndex(i + 1, j + 1)] == 0) // Right Bottom
         )
         {
-            tilemap.SetTile(new Vector3Int(i, j, 0), border[11 + (map._isInside ? 12 : 0)]);
+            tilemap.SetTile(new Vector3Int(i, j, 0), border[11 + (map._scenery != MapType.Outside ? 12 : 0)]);
             return true;
         }
 
@@ -247,13 +292,13 @@ public class MapRenderer : MonoBehaviour
             (j == 0 || a[map.CoordToIndex(i, j - 1)] == 0) && // Up
             (i == map._width - 1 || a[map.CoordToIndex(i + 1, j)] == 0) && // Right
             (j == map._height - 1 || a[map.CoordToIndex(i, j + 1)] == 0) && // Down
-            (i == 0 || j == 0 || a[map.CoordToIndex(i - 1, j - 1)] == 1) && // Left Top
+            (i == 0 || j == 0 || a[map.CoordToIndex(i - 1, j - 1)] is 1 or 12) && // Left Top
             (i == map._width - 1 || j == 0 || a[map.CoordToIndex(i + 1, j - 1)] == 0) && // Right Top
             (i == 0 || j == map._height - 1 || a[map.CoordToIndex(i - 1, j + 1)] == 0) && // Left Bottom
             (i == map._width - 1 || j == map._height - 1 || a[map.CoordToIndex(i + 1, j + 1)] == 0) // Right Bottom
         )
         {
-            tilemap.SetTile(new Vector3Int(i, j, 0), border[6 + (map._isInside ? 12 : 0)]);
+            tilemap.SetTile(new Vector3Int(i, j, 0), border[6 + (map._scenery != MapType.Outside ? 12 : 0)]);
             return true;
         }
 
@@ -267,15 +312,15 @@ public class MapRenderer : MonoBehaviour
         if (
             (i == 0 || a[map.CoordToIndex(i - 1, j)] == 0) && // Left
             (j == 0 || a[map.CoordToIndex(i, j - 1)] == 0) && // Up
-            (i == map._width - 1 || a[map.CoordToIndex(i + 1, j)] == 1) && // Right
-            (j == map._height - 1 || a[map.CoordToIndex(i, j + 1)] == 1) && // Down
-            // (i == 0 || j == 0 || a[map.CoordToIndex(i - 1, j - 1)] == 1) && // Left Top
+            (i == map._width - 1 || a[map.CoordToIndex(i + 1, j)] is 1 or 12) && // Right
+            (j == map._height - 1 || a[map.CoordToIndex(i, j + 1)] is 1 or 12) && // Down
+            // (i == 0 || j == 0 || a[map.CoordToIndex(i - 1, j - 1)] is 1 or 12) && // Left Top
             // (i == map._width - 1 || j == 0 || a[map.CoordToIndex(i + 1, j - 1)] == 0) && // Right Top
             // (i == 0 || j == map._height - 1 || a[map.CoordToIndex(i - 1, j + 1)] == 0) && // Left Bottom
-            (i == map._width - 1 || j == map._height - 1 || a[map.CoordToIndex(i + 1, j + 1)] == 1) // Right Bottom
+            (i == map._width - 1 || j == map._height - 1 || a[map.CoordToIndex(i + 1, j + 1)] is 1 or 12) // Right Bottom
         )
         {
-            tilemap.SetTile(new Vector3Int(i, j, 0), border[1 + (map._isInside ? 12 : 0)]);
+            tilemap.SetTile(new Vector3Int(i, j, 0), border[1 + (map._scenery != MapType.Outside ? 12 : 0)]);
             return true;
         }
 
@@ -287,17 +332,17 @@ public class MapRenderer : MonoBehaviour
         var a = map._map;
 
         if (
-            (i == 0 || a[map.CoordToIndex(i - 1, j)] == 1) && // Left
+            (i == 0 || a[map.CoordToIndex(i - 1, j)] is 1 or 12) && // Left
             (j == 0 || a[map.CoordToIndex(i, j - 1)] == 0) && // Up
             (i == map._width - 1 || a[map.CoordToIndex(i + 1, j)] == 0) && // Right
-            (j == map._height - 1 || a[map.CoordToIndex(i, j + 1)] == 1) && // Down
+            (j == map._height - 1 || a[map.CoordToIndex(i, j + 1)] is 1 or 12) && // Down
             // (i == 0 || j == 0 || a[map.CoordToIndex(i - 1, j - 1)] == 0) && // Left Top
             // (i == map._width - 1 || j == 0 || a[map.CoordToIndex(i + 1, j - 1)] == 0) && // Right Top
-            (i == 0 || j == map._height - 1 || a[map.CoordToIndex(i - 1, j + 1)] == 1) //&& // Left Bottom
+            (i == 0 || j == map._height - 1 || a[map.CoordToIndex(i - 1, j + 1)] is 1 or 12) //&& // Left Bottom
             // (i == map._width - 1 || j == map._height - 1 || a[map.CoordToIndex(i + 1, j + 1)] == 0) // Right Bottom
         )
         {
-            tilemap.SetTile(new Vector3Int(i, j, 0), border[0 + (map._isInside ? 12 : 0)]);
+            tilemap.SetTile(new Vector3Int(i, j, 0), border[0 + (map._scenery != MapType.Outside ? 12 : 0)]);
             return true;
         }
 
@@ -315,12 +360,12 @@ public class MapRenderer : MonoBehaviour
             (i == map._width - 1 || a[map.CoordToIndex(i + 1, j)] == 0) && // Right
             (j == map._height - 1 || a[map.CoordToIndex(i, j + 1)] == 0) && // Down
             (i == 0 || j == 0 || a[map.CoordToIndex(i - 1, j - 1)] == 0) && // Left Top
-            (i == map._width - 1 || j == 0 || a[map.CoordToIndex(i + 1, j - 1)] == 1) && // Right Top
+            (i == map._width - 1 || j == 0 || a[map.CoordToIndex(i + 1, j - 1)] is 1 or 12) && // Right Top
             (i == 0 || j == map._height - 1 || a[map.CoordToIndex(i - 1, j + 1)] == 0) && // Left Bottom
             (i == map._width - 1 || j == map._height - 1 || a[map.CoordToIndex(i + 1, j + 1)] == 0) // Right Bottom
         )
         {
-            tilemap.SetTile(new Vector3Int(i, j, 0), border[4 + (map._isInside ? 12 : 0)]);
+            tilemap.SetTile(new Vector3Int(i, j, 0), border[4 + (map._scenery != MapType.Outside ? 12 : 0)]);
             return true;
         }
 
@@ -335,14 +380,14 @@ public class MapRenderer : MonoBehaviour
             (i == 0 || a[map.CoordToIndex(i - 1, j)] == 0) && // Left
             (j == 0 || a[map.CoordToIndex(i, j - 1)] == 0) && // Up
             (i == map._width - 1 || a[map.CoordToIndex(i + 1, j)] == 0) && // Right
-            (j == map._height - 1 || a[map.CoordToIndex(i, j + 1)] == 1) && // Down
+            (j == map._height - 1 || a[map.CoordToIndex(i, j + 1)] is 1 or 12) && // Down
             (i == 0 || j == 0 || a[map.CoordToIndex(i - 1, j - 1)] == 0) && // Left Top
             (i == map._width - 1 || j == 0 || a[map.CoordToIndex(i + 1, j - 1)] == 0) // && // Right Top
-            // (i == 0 || j == map._height - 1 || a[map.CoordToIndex(i - 1, j + 1)] == 1) && // Left Bottom
-            // (i == map._width - 1 || j == map._height - 1 || a[map.CoordToIndex(i + 1, j + 1)] == 1) // Right Bottom
+            // (i == 0 || j == map._height - 1 || a[map.CoordToIndex(i - 1, j + 1)] is 1 or 12) && // Left Bottom
+            // (i == map._width - 1 || j == map._height - 1 || a[map.CoordToIndex(i + 1, j + 1)] is 1 or 12) // Right Bottom
         )
         {
-            tilemap.SetTile(new Vector3Int(i, j, 0), border[10 + (map._isInside ? 12 : 0)]);
+            tilemap.SetTile(new Vector3Int(i, j, 0), border[10 + (map._scenery != MapType.Outside ? 12 : 0)]);
             return true;
         }
 
@@ -355,16 +400,16 @@ public class MapRenderer : MonoBehaviour
 
         if (
             (i == 0 || a[map.CoordToIndex(i - 1, j)] == 0) && // Left
-            (j == 0 || a[map.CoordToIndex(i, j - 1)] == 1) && // Up
+            (j == 0 || a[map.CoordToIndex(i, j - 1)] is 1 or 12) && // Up
             (i == map._width - 1 || a[map.CoordToIndex(i + 1, j)] == 0) && // Right
             (j == map._height - 1 || a[map.CoordToIndex(i, j + 1)] == 0) && // Down
-            // (i == 0 || j == 0 || a[map.CoordToIndex(i - 1, j - 1)] == 1) && // Left Top
-            // (i == map._width - 1 || j == 0 || a[map.CoordToIndex(i + 1, j - 1)] == 1) && // Right Top
+            // (i == 0 || j == 0 || a[map.CoordToIndex(i - 1, j - 1)] is 1 or 12) && // Left Top
+            // (i == map._width - 1 || j == 0 || a[map.CoordToIndex(i + 1, j - 1)] is 1 or 12) && // Right Top
             (i == 0 || j == map._height - 1 || a[map.CoordToIndex(i - 1, j + 1)] == 0) && // Left Bottom
             (i == map._width - 1 || j == map._height - 1 || a[map.CoordToIndex(i + 1, j + 1)] == 0) // Right Bottom
         )
         {
-            tilemap.SetTile(new Vector3Int(i, j, 0), border[5 + (map._isInside ? 12 : 0)]);
+            tilemap.SetTile(new Vector3Int(i, j, 0), border[5 + (map._scenery != MapType.Outside ? 12 : 0)]);
             return true;
         }
 
@@ -378,15 +423,15 @@ public class MapRenderer : MonoBehaviour
         if (
             (i == 0 || a[map.CoordToIndex(i - 1, j)] == 0) && // Left
             (j == 0 || a[map.CoordToIndex(i, j - 1)] == 0) && // Up
-            (i == map._width - 1 || a[map.CoordToIndex(i + 1, j)] == 1) && // Right
+            (i == map._width - 1 || a[map.CoordToIndex(i + 1, j)] is 1 or 12) && // Right
             (j == map._height - 1 || a[map.CoordToIndex(i, j + 1)] == 0) && // Down
             (i == 0 || j == 0 || a[map.CoordToIndex(i - 1, j - 1)] == 0) && // Left Top
-            // (i == map._width - 1 || j == 0 || a[map.CoordToIndex(i + 1, j - 1)] == 1) && // Right Top
+            // (i == map._width - 1 || j == 0 || a[map.CoordToIndex(i + 1, j - 1)] is 1 or 12) && // Right Top
             (i == 0 || j == map._height - 1 || a[map.CoordToIndex(i - 1, j + 1)] == 0) // Left Bottom
-            // (i == map._width - 1 || j == map._height - 1 || a[map.CoordToIndex(i + 1, j + 1)] == 1) // Right Bottom
+            // (i == map._width - 1 || j == map._height - 1 || a[map.CoordToIndex(i + 1, j + 1)] is 1 or 12) // Right Bottom
         )
         {
-            tilemap.SetTile(new Vector3Int(i, j, 0), border[7 + (map._isInside ? 12 : 0)]);
+            tilemap.SetTile(new Vector3Int(i, j, 0), border[7 + (map._scenery != MapType.Outside ? 12 : 0)]);
             return true;
         }
 
@@ -398,17 +443,17 @@ public class MapRenderer : MonoBehaviour
         var a = map._map;
 
         if (
-            (i == 0 || a[map.CoordToIndex(i - 1, j)] == 1) && // Left
+            (i == 0 || a[map.CoordToIndex(i - 1, j)] is 1 or 12) && // Left
             (j == 0 || a[map.CoordToIndex(i, j - 1)] == 0) && // Up
             (i == map._width - 1 || a[map.CoordToIndex(i + 1, j)] == 0) && // Right
             (j == map._height - 1 || a[map.CoordToIndex(i, j + 1)] == 0) && // Down
-            // (i == 0 || j == 0 || a[map.CoordToIndex(i - 1, j - 1)] == 1) && // Left Top
+            // (i == 0 || j == 0 || a[map.CoordToIndex(i - 1, j - 1)] is 1 or 12) && // Left Top
             (i == map._width - 1 || j == 0 || a[map.CoordToIndex(i + 1, j - 1)] == 0) && // Right Top
-            // (i == 0 || j == map._height - 1 || a[map.CoordToIndex(i - 1, j + 1)] == 1) && // Left Bottom
+            // (i == 0 || j == map._height - 1 || a[map.CoordToIndex(i - 1, j + 1)] is 1 or 12) && // Left Bottom
             (i == map._width - 1 || j == map._height - 1 || a[map.CoordToIndex(i + 1, j + 1)] == 0) // Right Bottom
         )
         {
-            tilemap.SetTile(new Vector3Int(i, j, 0), border[8 + (map._isInside ? 12 : 0)]);
+            tilemap.SetTile(new Vector3Int(i, j, 0), border[8 + (map._scenery != MapType.Outside ? 12 : 0)]);
             return true;
         }
 

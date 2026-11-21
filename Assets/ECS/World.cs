@@ -255,9 +255,9 @@ namespace ECS
             }
 
             snapshot._damageProcess = 3;
-// #if UNITY_EDITOR
-//             snapshot._damageProcess = 0;
-// #endif
+#if UNITY_EDITOR
+            snapshot._damageProcess = 0;
+#endif
         }
 
         private void BuildHacker(ref Snapshot snapshot)
@@ -265,9 +265,9 @@ namespace ECS
             if (_map._hackerZone.Length > 0)
                 snapshot._hackProcess = (int)(5f / _deltaTime);
 
-// #if UNITY_EDITOR
-//             snapshot._hackProcess = 0;
-// #endif
+#if UNITY_EDITOR
+            snapshot._hackProcess = 0;
+#endif
         }
 
         private void BuildDemolition(ref Snapshot snapshot)
