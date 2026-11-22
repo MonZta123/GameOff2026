@@ -206,7 +206,7 @@ MonoBehaviour:
   maps:
   - _area: {fileID: 2800000, guid: 8a89f2c554b229347b96aa467ab18fee, type: 3}
     _enemyMap: {fileID: 2800000, guid: 4e10036963976ee479e515d04a82369a, type: 3}
-    _mapType: 1
+    _mapType: 2
   snipeTarget: {fileID: 1672110092}
   fade: {fileID: 1477212882}
   soundSystem: {fileID: 13633231}
