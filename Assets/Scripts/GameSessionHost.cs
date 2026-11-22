@@ -299,7 +299,7 @@ public class GameSessionHost : MonoBehaviour
                 InitNextReplaySegment();
                 break;
             case GameFlowResultState.GameOver:
-                Debug.Log("Game over");
+                // Debug.Log("Game over");
                 // Say "thank you" and go back to the main menu
                 break;
             default:
