@@ -19,7 +19,13 @@ namespace ECS.Notification
         StartedHacking,
         HackSuccess,
         InterruptedHacking,
-        HeavyImpact
+        HeavyImpact,
+        SnipeShot,
+        
+        HeavyAttack,
+        HackerShoot,
+        DemolitionThrow,
+        SniperShot
     }
     
     public struct SoundNotification

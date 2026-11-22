@@ -37,6 +37,9 @@ namespace Actors
         [SerializeField]
         private float amplitude = 0.25f;
 
+        [SerializeField]
+        private Animator triggerAnimator;
+
         public void SetCurrentPlayerType(PlayerType value)
         {
             marker.SetUsesArrow(false);

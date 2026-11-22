@@ -91,6 +91,17 @@ namespace ECS.Systems
                         _from = player._position, _to = currentLazor,
                     });
 
+                    snapshot._soundNotificationPool.Add(new SoundNotification()
+                    {
+                        _position = player._position,
+                        _soundType = SoundType.SnipeShot
+                    });
+
+                    snapshot._soundNotificationPool.Add(new SoundNotification()
+                    {
+                        _soundType = SoundType.SniperShot, _position = player._position
+                    });
+                    
                     player._externalVelocity = -direction * Constants.SniperRecoilForce;
                 }
             }

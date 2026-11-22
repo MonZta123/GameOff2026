@@ -129,3 +129,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Notifications.SplosionNotification
   animator: {fileID: 8903147079140113662}
+  splosionSound:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: 24a3d8b0989b98945b3e11fe5317c612, type: 2}
+  mineSplosionSound:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: 6b1fddddaf6611e479ffdd6c636a5db2, type: 2}

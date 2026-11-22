@@ -48,6 +48,12 @@ namespace Actors
         [SerializeField]
         private AK.Wwise.Event[] stepSound;
 
+        [SerializeField]
+        private AK.Wwise.Event[] hitSounds;
+
+        [SerializeField]
+        private AK.Wwise.Event[] heavyHitSounds;
+
         public void Init(ECS.Entities.Player entity)
         {
             transform.position = entity._position;
@@ -55,12 +61,12 @@ namespace Actors
             animator.runtimeAnimatorController = animatorOverrideController[(int)entity._type];
 
             gunRenderer.sprite = gunz[(int)entity._type];
-            
+
             _stepIndex = (int)entity._type;
         }
 
         private int _stepIndex;
-        
+
         public void SetSwitchGroupFloor(int value)
         {
             switchGroupFloor[value].SetValue(gameObject);
@@ -241,6 +247,21 @@ namespace Actors
                 if (entity._health < _lastEntity._health)
                     DoFlash();
 
+                var diff = _lastEntity._health - entity._health;
+
+                if (diff > 0)
+                {
+                    if (diff > 30)
+                    {
+                        heavyHitSounds[(int)entity._type].Post(gameObject);
+                    }
+                    else
+                    {
+                        hitSounds[(int)entity._type].Post(gameObject);
+                    }
+
+                }
+                
                 healthbar.SetHealthPercent(entity._health / (float)entity._maxHealth * 100);
             }
 
@@ -252,7 +273,7 @@ namespace Actors
         {
             if (!_footstepsActive)
                 return;
-            
+
             stepSound[_stepIndex].Post(gameObject);
         }
 
@@ -263,12 +284,12 @@ namespace Actors
         private bool _activePlayer;
 
         private bool _footstepsActive = true;
-        
+
         public void SetFootstepsOnOff(bool value)
         {
             _footstepsActive = value;
         }
-        
+
         public void Release()
         {
             positionSmoother.SetSmoothPosition(false);
@@ -279,7 +300,7 @@ namespace Actors
             _activePlayer = false;
             _stepIndex = 0;
             _footstepsActive = false;
-            
+
             spriteRenderer.GetPropertyBlock(_materialPropertyBlock);
             _materialPropertyBlock.SetFloat(s_flashAmount, 0f);
             spriteRenderer.SetPropertyBlock(_materialPropertyBlock);

@@ -2,6 +2,7 @@
 using Domain;
 using ECS.Events;
 using ECS.Notification;
+using Notifications;
 using UnityEngine;
 
 namespace ECS.Systems
@@ -49,6 +50,11 @@ namespace ECS.Systems
                     {
                         _position = player._position, _angle = moveEvt._angle,
                     });
+
+                    snapshot._soundNotificationPool.Add(new SoundNotification()
+                    {
+                        _soundType = SoundType.HeavyAttack, _position = player._position
+                    });
                 }
             }
 
@@ -62,8 +68,7 @@ namespace ECS.Systems
 
                     snapshot._soundNotificationPool.Add(new SoundNotification()
                     {
-                        _soundType = SoundType.Dash,
-                        _position = player._position
+                        _soundType = SoundType.Dash, _position = player._position
                     });
 
                     var radians = moveEvt._angle * Mathf.Deg2Rad;
@@ -88,11 +93,13 @@ namespace ECS.Systems
             {
                 snapshot._soundNotificationPool.Add(new SoundNotification()
                 {
-                    _soundType = SoundType.Slam,
-                    _position = player._position
+                    _soundType = SoundType.Slam, _position = player._position
                 });
-                
-                world.AddBlastWaveEvent(new BlastWaveEvent() { _position = player._position, _radius = 2f, _ignoreHeavy = true });
+
+                world.AddBlastWaveEvent(new BlastWaveEvent()
+                {
+                    _position = player._position, _radius = 2f, _ignoreHeavy = true
+                });
             }
 
             if (player._isBlockedTo >= currentTick)

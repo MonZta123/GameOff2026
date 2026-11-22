@@ -50,6 +50,12 @@ namespace ECS.Systems
                         _angle = moveEvt._angle,
                         _ttl = _tickRate
                     });
+                    
+                    snapshot._soundNotificationPool.Add(new SoundNotification()
+                    {
+                        _soundType = SoundType.DemolitionThrow,
+                        _position = player._position
+                    });
                 }
             }
 

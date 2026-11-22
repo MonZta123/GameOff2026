@@ -50,6 +50,10 @@ MonoBehaviour:
   lineRenderer: {fileID: 1206768857392580188}
   lineRenderer2: {fileID: 3825630693171295013}
   impulseSource: {fileID: -7597470432727921115}
+  rifleSound:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: 039fc21a00d35b944b4b412d2d792975, type: 2}
 --- !u!120 &1206768857392580188
 LineRenderer:
   serializedVersion: 3

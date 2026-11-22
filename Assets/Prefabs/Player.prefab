@@ -261,6 +261,32 @@ MonoBehaviour:
   - idInternal: 0
     valueGuidInternal: 
     WwiseObjectReference: {fileID: 11400000, guid: 19be3dd7a3a39724495df8e7a59500d5, type: 2}
+  hitSounds:
+  - idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: a21c62cc21d38324c9b0cc8a457f4659, type: 2}
+  - idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: 59fb773022e8ca04ea2264630301891d, type: 2}
+  - idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: 6645e6087acc5c14683dd479caa41f53, type: 2}
+  - idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: be126e422180d47449512bbac3563e62, type: 2}
+  heavyHitSounds:
+  - idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: d2ee152d4375e3a439d8ed545167d4e6, type: 2}
+  - idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: 2c3e7ec7bb6e498408170eeb981470b3, type: 2}
+  - idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: 0ba8fe8fb0b7df848bb4f9b51a156dfd, type: 2}
+  - idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: 0b23a7b4687c0d14db0582f0dfe18e2a, type: 2}
 --- !u!95 &8297006746479347886
 Animator:
   serializedVersion: 7

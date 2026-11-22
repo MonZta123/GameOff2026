@@ -75,7 +75,7 @@ public class GameSessionHost : MonoBehaviour
 
     [SerializeField]
     private AK.Wwise.Event stopMusic;
-    
+
     [SerializeField]
     private ReplayCredits credits;
 
@@ -87,7 +87,7 @@ public class GameSessionHost : MonoBehaviour
     private int _segmentTicks;
 
     private GameSessionState _gameSessionState;
-    
+
 
     private void Awake()
     {
@@ -337,7 +337,10 @@ public class GameSessionHost : MonoBehaviour
 
         positionComposer.VirtualCamera.Follow = pools._playerPool.Active[index].transform;
 
+        var snapshot = _timeline.GetSnapshot(_tickDriver.CurrentTick);
+
         soundSystem.PlayFailMusic();
+        soundSystem.PlayDeadSound(snapshot._players.GetNumEntities() - 1);
 
         _tickDriver.StopSim();
         StopCharacterBouncing();

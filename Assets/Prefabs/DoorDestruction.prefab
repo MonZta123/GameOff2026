@@ -2463,3 +2463,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Notifications.DoorDestructionNotification
   particleSystem: {fileID: 6155012618361232668}
+  smashDoorSound:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: 13697fa7f24d92949a0439e898f4db32, type: 2}

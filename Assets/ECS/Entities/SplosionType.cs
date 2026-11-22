@@ -3,6 +3,7 @@
     public enum SplosionType
     {
         Heavy,
-        Granade
+        Granade,
+        Mine
     }
 }

@@ -6,7 +6,10 @@ namespace Notifications
     {
         [SerializeField]
         private ParticleSystem particleSystem;
-
+        
+        [SerializeField]
+        private AK.Wwise.Event smashDoorSound;
+        
         public override void Notify(ECS.Notification.DoorDestructionNotification notification)
         {
             var direction = notification._direction;
@@ -18,6 +21,7 @@ namespace Notifications
             transform.rotation = Quaternion.Euler(angle, 90, 0);
 
             particleSystem.Play();
+            smashDoorSound.Post(gameObject);
             
             Invoke(nameof(ReturnThatStuff), 12f);
         }

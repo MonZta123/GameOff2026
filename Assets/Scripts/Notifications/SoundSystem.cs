@@ -11,6 +11,9 @@ namespace Notifications
         private Dictionary<SoundType, AK.Wwise.Event> sounds;
 
         [SerializeField]
+        private AK.Wwise.Event[] deadSounds;
+
+        [SerializeField]
         private AK.Wwise.Event music;
 
         [SerializeField]
@@ -40,7 +43,7 @@ namespace Notifications
 
         private void Awake()
         {
-            for (var i = 0; i < 8; i++)
+            for (var i = 0; i < 16; i++)
             {
                 var go = new GameObject($"Sound Channel {i}");
                 go.AddComponent<AkGameObj>();
@@ -119,6 +122,11 @@ namespace Notifications
         public void StopPauseMusic()
         {
             pauseMusic.Post(gameObject);
+        }
+
+        public void PlayDeadSound(int index)
+        {
+            deadSounds[index].Post(gameObject);
         }
     }
 }

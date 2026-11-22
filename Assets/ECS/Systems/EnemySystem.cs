@@ -426,6 +426,12 @@ namespace ECS.Systems
                 {
                     _from = enemy._position, _to = endPoint,
                 });
+                
+                snapshot._soundNotificationPool.Add(new SoundNotification()
+                {
+                    _position = enemy._position,
+                    _soundType = SoundType.SnipeShot
+                });
             }
         }
 

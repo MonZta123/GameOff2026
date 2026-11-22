@@ -22,11 +22,11 @@ namespace ECS.Systems
                         {
                             snapshot._triggers.DespawnAt(j);
                             player._health -= 40;
-                            
-                            snapshot._soundNotificationPool.Add(new SoundNotification()
+
+                            snapshot._splosionNotificationPool.Add(new SplosionNotification()
                             {
                                 _position = (trigger._leftBottom + trigger._rightTop) / 2f,
-                                _soundType = SoundType.MineExplosion
+                                _type = SplosionType.Mine
                             });
                         }
                     }

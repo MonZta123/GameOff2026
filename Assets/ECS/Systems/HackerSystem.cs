@@ -56,6 +56,11 @@ namespace ECS.Systems
                         _angle = moveEvt._angle,
                         _ttl = _tickRate * 3
                     });
+
+                    snapshot._soundNotificationPool.Add(new SoundNotification()
+                    {
+                        _soundType = SoundType.HackerShoot, _position = player._position
+                    });
                 }
             }
 
@@ -87,7 +92,7 @@ namespace ECS.Systems
                             _soundType = SoundType.InterruptedHacking, _position = player._position
                         });
                     }
-                    
+
                     return;
                 }
             }
@@ -101,7 +106,7 @@ namespace ECS.Systems
                         _soundType = SoundType.InterruptedHacking, _position = player._position
                     });
                 }
-                
+
                 return;
             }
 
