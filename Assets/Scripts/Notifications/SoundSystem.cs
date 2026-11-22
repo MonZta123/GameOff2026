@@ -36,6 +36,12 @@ namespace Notifications
 
         [SerializeField]
         private AK.Wwise.Event stopPauseMusic;
+        
+        [SerializeField]
+        private AK.Wwise.Event characterAnnounce;
+        
+        [SerializeField]
+        private AK.Wwise.Event win;
 
         private List<GameObject> _soundChannels = new();
 
@@ -127,6 +133,18 @@ namespace Notifications
         public void PlayDeadSound(int index)
         {
             deadSounds[index].Post(gameObject);
+        }
+
+        public void AnnounceCharacter(int index, int segmentIndex)
+        {
+            musicSwitchGroup[index].SetValue(gameObject);
+            musicStateGroup[segmentIndex].SetValue();
+            characterAnnounce.Post(gameObject);
+        }
+        
+        public void WinCharacter()
+        {
+            win.Post(gameObject);
         }
     }
 }

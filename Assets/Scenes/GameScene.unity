@@ -503,6 +503,16 @@ MonoBehaviour:
     groupIdInternal: 0
     groupGuidInternal: 
     WwiseObjectReference: {fileID: 11400000, guid: f9f808fe166ff9c42a9e7bad3b1146ed, type: 2}
+  - idInternal: 0
+    valueGuidInternal: 
+    groupIdInternal: 0
+    groupGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: af8793f978feb68459599d5cf1c1b410, type: 2}
+  - idInternal: 0
+    valueGuidInternal: 
+    groupIdInternal: 0
+    groupGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: 0feb1ac3501b9ce46b921f5f577b2048, type: 2}
   stopMusic:
     idInternal: 0
     valueGuidInternal: 
@@ -523,6 +533,14 @@ MonoBehaviour:
     idInternal: 0
     valueGuidInternal: 
     WwiseObjectReference: {fileID: 11400000, guid: 2feeb21eea70a6c45b782f446fa81b2b, type: 2}
+  characterAnnounce:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: 8dcbd88a9bf42864fb572d370d23e97f, type: 2}
+  win:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: 2b96275c8d18d35438ffd2e393620fe8, type: 2}
 --- !u!114 &13633232
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1550,7 +1568,7 @@ Camera:
   far clip plane: 5000
   field of view: 40
   orthographic: 1
-  orthographic size: 6.1666665
+  orthographic size: 5.0416665
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -3915,7 +3933,7 @@ MonoBehaviour:
       Offset: {x: 0, y: 0}
   CenterOnActivate: 1
   TargetOffset: {x: 0, y: 0, z: 0}
-  Damping: {x: 1, y: 1, z: 1}
+  Damping: {x: 0.5, y: 0.5, z: 0.5}
   Lookahead:
     Enabled: 0
     Time: 0

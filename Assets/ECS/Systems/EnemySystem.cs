@@ -435,6 +435,7 @@ namespace ECS.Systems
             }
         }
 
+        
         private Vector2 ButtlerShoot(Vector2 from, Vector2 direction, World world, ref Snapshot snapshot)
         {
             var stepSize = 1f / 16f;

@@ -891,6 +891,18 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: -200
       objectReference: {fileID: 0}
+    - target: {fileID: 4803199279668781106, guid: 2d89fc92fb728fd189b9cd4b3745df22, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 27743982}
+    - target: {fileID: 4803199279668781106, guid: 2d89fc92fb728fd189b9cd4b3745df22, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: CloseCreditsPanel
+      objectReference: {fileID: 0}
+    - target: {fileID: 4803199279668781106, guid: 2d89fc92fb728fd189b9cd4b3745df22, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: MainMenuManager, Assembly-CSharp
+      objectReference: {fileID: 0}
     - target: {fileID: 4895948948795506596, guid: 2d89fc92fb728fd189b9cd4b3745df22, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
