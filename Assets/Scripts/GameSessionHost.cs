@@ -105,7 +105,7 @@ public class GameSessionHost : MonoBehaviour
         _tickDriver = new TickDriver(stepsPerSecond);
         _tickDriver._onTick += OnTick;
 
-        _timeline = new Timeline(stepsPerSecond, _segmentTicks, (int)(Time.realtimeSinceStartup * 100));
+        _timeline = new Timeline(stepsPerSecond, _segmentTicks, (int)(Time.realtimeSinceStartup * 100), maps.Length);
         _timeline.InitNextSegment(mapDefinition);
         mapRenderer.GenerateMap(mapDefinition);
 
@@ -172,7 +172,7 @@ public class GameSessionHost : MonoBehaviour
             pools.ClearAllObjectPools();
 
             var mapDefinition =
-                TextureMapBuilder.BuildMap(maps[((_timeline.GetCurrentSegment() + 1) % Constants.Segments)]);
+                TextureMapBuilder.BuildMap(maps[((_timeline.GetCurrentSegment() + 1) % maps.Length)]);
             SetObjectives(mapDefinition);
             _timeline.InitNextSegment(mapDefinition);
             mapRenderer.GenerateMap(mapDefinition);
@@ -401,7 +401,7 @@ public class GameSessionHost : MonoBehaviour
             pools.ClearAllObjectPools();
 
             var mapDefinition =
-                TextureMapBuilder.BuildMap(maps[((_timeline.GetCurrentSegment() + 1) % Constants.Segments)]);
+                TextureMapBuilder.BuildMap(maps[((_timeline.GetCurrentSegment() + 1) % maps.Length)]);
             SetObjectives(mapDefinition);
             _timeline.InitNextSegment(mapDefinition);
             mapRenderer.GenerateMap(mapDefinition);
@@ -558,7 +558,7 @@ public class GameSessionHost : MonoBehaviour
             if (_gameSessionState is GameSessionState.Playing or GameSessionState.ReplayMode)
             {
                 var result = _gameFlowManager.CheckForLoopBreak(_tickDriver.CurrentTick, snapshot,
-                    _timeline.GetCurrentSegment() == Constants.Segments - 1,
+                    _timeline.GetCurrentSegment() == maps.Length - 1,
                     _gameSessionState == GameSessionState.ReplayMode);
 
                 HandleResult(result);
@@ -640,6 +640,8 @@ public class GameSessionHost : MonoBehaviour
                 hud.SetObjectiveCount(snapshot._damageProcess.ToString());
                 hud.SetSuccessState(snapshot._damageProcess == 0);
 
+                hud.HideThreatMeter();
+                
                 break;
 
             case PlayerType.Hacker:

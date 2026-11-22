@@ -4,11 +4,12 @@ using ECS;
 
 public class Timeline
 {
-    public Timeline(int tickRate, int segmentTicks, int worldSeed)
+    public Timeline(int tickRate, int segmentTicks, int worldSeed, int segments)
     {
         _segmentTicks = segmentTicks;
-
-        _intents = new Intent[_segmentTicks * Constants.PlayerCount * Constants.Segments];
+        _segments = segments;
+        
+        _intents = new Intent[_segmentTicks * Constants.PlayerCount * _segments];
         _snapshots = new Snapshot[_segmentTicks + 1];
 
         _world = new World(tickRate, worldSeed);
@@ -20,6 +21,8 @@ public class Timeline
             _snapshots[i] = snapshot;
         }
     }
+
+    private int _segments;
 
     private readonly World _world;
     private readonly int _segmentTicks;
@@ -56,7 +59,7 @@ public class Timeline
     public void InitNextSegment(MapDefinition mapDefinition)
     {
         _currentSegment++;
-        _currentSegment %= Constants.Segments;
+        _currentSegment %= _segments;
 
         _snapshots[0].Initialize();
 
