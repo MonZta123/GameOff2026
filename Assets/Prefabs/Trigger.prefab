@@ -312,9 +312,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Actors.Trigger
   tilemap: {fileID: 8348499451452161621}
-  hackerZone: {fileID: 11400000, guid: 30f129a2b310f2a4e8127a6f4def1a74, type: 2}
-  demolitionZone: {fileID: 11400000, guid: 26893556d40b37342bf5566988a069f3, type: 2}
-  evacuationZone: {fileID: 11400000, guid: 3c953f94d58f7164b8644b11ee7045f6, type: 2}
+  hackerZone: {fileID: 11400000, guid: 32c5ee332a17c1f4e919134110b83e11, type: 2}
+  demolitionZone: {fileID: 11400000, guid: b691b89ddc6395e419a0ed85461fa5e9, type: 2}
+  evacuationZone: {fileID: 11400000, guid: 8ad9cca4b1d253b4a9d2a846d7eeabd4, type: 2}
   spriteRenderer: {fileID: 6241501012382716769}
   marker: {fileID: 690802176159160072}
   mine: {fileID: -5837547947205013397, guid: fe3e53022fc78cdb289172160befbbf9, type: 3}

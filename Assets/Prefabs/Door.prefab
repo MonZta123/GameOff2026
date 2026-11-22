@@ -183,8 +183,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e68713a648804fbc8e876a7994c0f774, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Actors.Door
-  verticalSprite: {fileID: 11400000, guid: cf3cb8fa741baae43b677fc784a3d3fa, type: 2}
-  horizontalSprite: {fileID: 11400000, guid: 0cca6356b0e66c545bb4ceef75af14a5, type: 2}
+  verticalSprite: {fileID: 11400000, guid: b98239b6cac22794ea6282acf3858bd6, type: 2}
+  horizontalSprite: {fileID: 11400000, guid: f1a93274463679844905af4103ace94c, type: 2}
   doorRenderer: {fileID: 8138513174329295174}
 --- !u!1 &5012291852129662827
 GameObject:

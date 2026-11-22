@@ -23,14 +23,11 @@ namespace ECS
         public int _width;
         public int _height;
 
-        public ScenarioType _type;
         public Vector2Int[] _spawnPoints;
         public Vector2Int[] _hackerZone;
-        public Vector2Int[] _segmentDoor;
         public Vector2Int[] _demolitionZone;
         public Vector2Int[] _exit;
         public Vector2Int[] _woodenDoors;
-        public Vector2Int[] _computerAsset;
         public Vector2Int[] _enemySpawnZone;
 
         public MapType _scenery;
@@ -58,9 +55,7 @@ namespace ECS
             map._spawnPoints = new Vector2Int[4];
 
             var woodenDoors = new List<Vector2Int>();
-            var segmentDoor = new List<Vector2Int>();
             var hackerZone = new List<Vector2Int>();
-            var computerAsset = new List<Vector2Int>();
             var demolitionZone = new List<Vector2Int>();
             var exit = new List<Vector2Int>();
             var enemySpawnZone = new List<Vector2Int>();
@@ -98,7 +93,7 @@ namespace ECS
                             break;
 
                         case 7:
-                            segmentDoor.Add(new Vector2Int(j, i));
+                            result[i * area.width + j] = 7;
                             break;
 
                         case 8:
@@ -106,7 +101,7 @@ namespace ECS
                             break;
 
                         case 9:
-                            computerAsset.Add(new Vector2Int(j, i));
+                            result[i * area.width + j] = 9;
                             break;
 
                         case 10:
@@ -115,6 +110,14 @@ namespace ECS
 
                         case 11:
                             exit.Add(new Vector2Int(j, i));
+                            break;
+                        
+                        case 13:
+                            result[i * area.width + j] = 13;
+                            break;
+                        
+                        case 14:
+                            result[i * area.width + j] = 14;
                             break;
                     }
 
@@ -127,8 +130,6 @@ namespace ECS
             map._hackerZone = hackerZone.ToArray();
             map._enemySpawnZone = enemySpawnZone.ToArray();
             map._demolitionZone = demolitionZone.ToArray();
-            map._segmentDoor = segmentDoor.ToArray();
-            map._computerAsset = computerAsset.ToArray();
             map._exit = exit.ToArray();
 
             return map;
@@ -157,13 +158,13 @@ namespace ECS
             if (color is { r: 185, g: 122, b: 87 }) // Wooden Door
                 return 6;
 
-            if (color is { r: 127, g: 127, b: 127 }) // 1. Segment door
+            if (color is { r: 127, g: 127, b: 127 }) // Door
                 return 7;
 
             if (color is { r: 163, g: 73, b: 164 }) // Hacker Zone
                 return 8;
 
-            if (color is { r: 0, g: 162, b: 232 }) // Computer Asset
+            if (color is { r: 0, g: 162, b: 232 }) // Hacker Asset
                 return 9;
 
             if (color is { r: 255, g: 127, b: 39 }) // Demolition Zone
@@ -174,6 +175,9 @@ namespace ECS
 
             if (color is { r: 195, g: 195, b: 195 }) // Other Tile
                 return 12;
+
+            if (color is { r: 0, g: 127, b: 255 }) // Demolition Asset
+                return 13;
 
             return -1;
         }
