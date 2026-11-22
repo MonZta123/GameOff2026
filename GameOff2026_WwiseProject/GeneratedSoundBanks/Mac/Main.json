@@ -10,7 +10,7 @@
     "Type": "User",
     "GUID": "{3059A6CE-8152-4CD2-BEA9-69E98BB60D65}",
     "Language": "SFX",
-    "Hash": "{5F4A6295-8536-CB11-9378-14BB7347055E}",
+    "Hash": "{EA5697AE-EE4D-A822-3AF5-3E7377C50A9B}",
     "ObjectPath": "\\SoundBanks\\Default Work Unit\\Main",
     "ShortName": "Main",
     "Path": "Main.bnk",
@@ -254,14 +254,6 @@
       "Location": "Memory",
       "ShortName": "A_2_CelloPulse.wav",
       "CachePath": "BF/{BF627E45-80E2-D0F0-DF66-CF37C8CDB9B3}.wem"
-     },
-     {
-      "Id": "129666229",
-      "Language": "SFX",
-      "Streaming": "false",
-      "Location": "Memory",
-      "ShortName": "B_2_GameBoy1.wav",
-      "CachePath": "EB/{EB94019F-D3F8-36F8-90E5-1BBCABDCABE6}.wem"
      },
      {
       "Id": "136911883",
@@ -632,6 +624,14 @@
       "CachePath": "B8/{B8D62A5B-A971-350B-E502-973DD8A091AF}.wem"
      },
      {
+      "Id": "415836073",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "B_Synths2.wav",
+      "CachePath": "F5/{F5E57AF7-6128-A3C0-C07C-C2948934D979}.wem"
+     },
+     {
       "Id": "425018429",
       "Language": "SFX",
       "Streaming": "false",
@@ -734,14 +734,6 @@
       "Location": "Memory",
       "ShortName": "Hack_Unlock.wav",
       "CachePath": "8D/{8DBAC214-D36F-9C58-6E1A-E03BE1F8729C}.wem"
-     },
-     {
-      "Id": "467884008",
-      "Language": "SFX",
-      "Streaming": "false",
-      "Location": "Memory",
-      "ShortName": "B_2_GameBoy2.wav",
-      "CachePath": "8A/{8A5B8E1E-7B94-3FDE-9EBD-D3DD08D1C611}.wem"
      },
      {
       "Id": "483397239",
@@ -1038,6 +1030,14 @@
       "Location": "Memory",
       "ShortName": "AmbienceFrontOfHouse_Intro.wav",
       "CachePath": "C2/{C22FF64A-976E-ACE2-4544-1347BF329121}.wem"
+     },
+     {
+      "Id": "664748113",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "B_Synths1.wav",
+      "CachePath": "7F/{7FA9753F-B2D9-5FF6-CA03-555520566C56}.wem"
      },
      {
       "Id": "666776225",
@@ -2289,9 +2289,6 @@
           },
           "MediaRefs": [
            {
-            "Id": "129666229"
-           },
-           {
             "Id": "141284948"
            },
            {
@@ -2301,9 +2298,6 @@
             "Id": "183621196"
            },
            {
-            "Id": "467884008"
-           },
-           {
             "Id": "537429109"
            },
            {
@@ -2311,6 +2305,9 @@
            },
            {
             "Id": "582357738"
+           },
+           {
+            "Id": "664748113"
            },
            {
             "Id": "817365904"
@@ -2326,9 +2323,6 @@
           },
           "MediaRefs": [
            {
-            "Id": "129666229"
-           },
-           {
             "Id": "141284948"
            },
            {
@@ -2336,9 +2330,6 @@
            },
            {
             "Id": "183621196"
-           },
-           {
-            "Id": "467884008"
            },
            {
             "Id": "537429109"
@@ -2350,7 +2341,13 @@
             "Id": "582357738"
            },
            {
+            "Id": "664748113"
+           },
+           {
             "Id": "817365904"
+           },
+           {
+            "Id": "1071894219"
            }
           ]
          },
@@ -2376,6 +2373,9 @@
           },
           "MediaRefs": [
            {
+            "Id": "127032397"
+           },
+           {
             "Id": "141284948"
            },
            {
@@ -2383,6 +2383,9 @@
            },
            {
             "Id": "183621196"
+           },
+           {
+            "Id": "415836073"
            },
            {
             "Id": "537429109"
@@ -2395,9 +2398,6 @@
            },
            {
             "Id": "817365904"
-           },
-           {
-            "Id": "1071894219"
            }
           ]
          }
@@ -4514,6 +4514,6 @@
     ]
    }
   ],
-  "FileHash": "{B02FC718-240B-733A-E6B4-495CD80F6655}"
+  "FileHash": "{336681B2-BE7B-0B40-42A5-7F7A6A4DC44D}"
  }
 }

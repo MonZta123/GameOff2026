@@ -144,7 +144,6 @@ In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
 	120991060	VO_B_Hack_01	.cache\D8\{D8F8235B-989A-42F6-32EA-D287C0B88F97}.wem		\Containers\Default Work Unit\VO\CharacterB\Hack\VO_B_Hack_01		192336
 	121532258	D_AttackQuip_02	.cache\04\{0482DA4B-A4CF-FBD7-C39A-5D5E41A9383E}.wem		\Containers\Default Work Unit\VO\CharacterD\AttackQuip\D_AttackQuip_02		45262
 	127032397	A_2_CelloPulse	.cache\BF\{BF627E45-80E2-D0F0-DF66-CF37C8CDB9B3}.wem		\Containers\Default Work Unit\MUSIC\MUS_Mission\MUS_Character\Character_A\Round_3\MUS_A_2\A_2_CelloPulse		6016264
-	129666229	B_2_GameBoy1	.cache\EB\{EB94019F-D3F8-36F8-90E5-1BBCABDCABE6}.wem		\Containers\Default Work Unit\MUSIC\MUS_Mission\MUS_Character\Character_B\Round_4\MUS_B3\B_2_GameBoy1		6016264
 	136911883	A_2_StompsClicks	.cache\A4\{A4259060-F1E6-F26E-5278-78B8D0657278}.wem		\Containers\Default Work Unit\MUSIC\MUS_Mission\MUS_Character\Character_D\Round_3\MUS_D_2\Other\A_2_StompsClicks		6016264
 	141284948	ABCD_3_DrumsRockF	.cache\11\{113376D4-C9D4-7933-BAF9-7D09396BAB39}.wem		\Containers\Default Work Unit\MUSIC\MUS_Mission\MUS_Character\Character_B\Round_2\MUS_A_2\Drums\ABCD_3_DrumsRockF		6016264
 	146835285	A_Dash_04	.cache\35\{35A85526-79B8-3EC9-490E-4E776EC3C881}.wem		\Containers\Default Work Unit\VO\CharacterA\Dash\A_Dash_04		37640
@@ -191,6 +190,7 @@ In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
 	392981642	A_HitHeavy_03	.cache\9A\{9ADEA9A8-473F-21A7-3E16-32CFE157E548}.wem		\Containers\Default Work Unit\VO\CharacterA\Wind\A_HitHeavy_03		71530
 	410590335	VO_B_Select_01	.cache\05\{058D6365-B158-87F8-1F4A-869787A69ED3}.wem		\Containers\Default Work Unit\VO\CharacterSelect\Select_C\VO_B_Select_01		197606
 	412846175	FootstepC_03_Concrete	.cache\B8\{B8D62A5B-A971-350B-E502-973DD8A091AF}.wem		\Containers\Default Work Unit\SFX\Movement\FootstepsC\Concrete\FootstepC_03_Concrete		88020
+	415836073	B_2_Synthy2	.cache\F5\{F5E57AF7-6128-A3C0-C07C-C2948934D979}.wem		\Containers\Default Work Unit\MUSIC\MUS_Mission\MUS_Character\Character_B\Round_3\MUS_B3\B_2_Synthy2		6016264
 	425018429	MUS_SpacingOut_Intro	.cache\C8\{C834F238-5D0D-1F1B-CD60-031DED409017}.wem		\Containers\Default Work Unit\MUSIC\MUS_MainMenu\MUS_SpacingOut_Intro\MUS_SpacingOut_Intro		591664
 	437476328	UI_Select	.cache\5F\{5F861DA6-2A47-CD19-E618-D2E7F139E740}.wem		\Containers\Default Work Unit\SFX\UI\UI_Select		33700
 	437602278	Rifle_02	.cache\53\{53D6A69C-846F-6387-B1FA-A49483CFC75C}.wem		\Containers\Default Work Unit\SFX\Attacks\Renoir\AttackRifle\Rifle_02		418368
@@ -204,7 +204,6 @@ In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
 	462440525	AmbienceSpaceBar_Intro	.cache\31\{3100C202-CD34-589F-A579-1CB83FF59A52}.wem		\Containers\Default Work Unit\AMBIENCE\AmbienceSpaceBar\AmbienceSpaceBar_Intro		1693536
 	463930129	D_Win_01	.cache\2B\{2B133692-5152-DCED-1BFB-F5E1FE594394}.wem		\Containers\Default Work Unit\VO\CharacterD\Win\D_Win_01		154676
 	463990089	Hack_Unlock	.cache\8D\{8DBAC214-D36F-9C58-6E1A-E03BE1F8729C}.wem		\Containers\Default Work Unit\SFX\Actions\Dave\Hack_Unlock		258924
-	467884008	B_2_GameBoy2	.cache\8A\{8A5B8E1E-7B94-3FDE-9EBD-D3DD08D1C611}.wem		\Containers\Default Work Unit\MUSIC\MUS_Mission\MUS_Character\Character_B\Round_4\MUS_B3\B_2_GameBoy2		6016264
 	483397239	AmbienceBackOfHouse_Intro	.cache\FC\{FCF7888B-3194-CE98-B7B2-BE79988E7756}.wem		\Containers\Default Work Unit\AMBIENCE\AmbienceMission\AmbienceBackOfHouse\AmbienceBackOfHouse_Intro		1693536
 	486628042	Hack_Loop	.cache\1A\{1A37677C-D201-48C4-90A2-3B4474DD10AA}.wem		\Containers\Default Work Unit\SFX\Actions\Dave\Hack_Loop		498676
 	494885781	A_AttackQuip_03	.cache\93\{933589EB-6EF1-F51A-76D6-F9B90403D533}.wem		\Containers\Default Work Unit\VO\CharacterA\AttackQuip\Quip or Silence\A_AttackQuip_03		144020
@@ -242,6 +241,7 @@ In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
 	655132536	A_Attack_02	.cache\0A\{0A6DFEE3-2D74-F7A9-7D09-087A7F7D335A}.wem		\Containers\Default Work Unit\VO\CharacterA\AttackQuip\Attack\A_Attack_02		52098
 	659334181	VO_B_Select_06	.cache\0A\{0AD12AF2-FA6D-906C-D93E-635F7F59D2EA}.wem		\Containers\Default Work Unit\VO\CharacterSelect\Select_C\VO_B_Select_06		228184
 	661821976	AmbienceFrontOfHouse_Intro	.cache\C2\{C22FF64A-976E-ACE2-4544-1347BF329121}.wem		\Containers\Default Work Unit\AMBIENCE\AmbienceMission\AmbienceFrontOfHouse\AmbienceFrontOfHouse_Intro		1693536
+	664748113	B_2_Synthy1	.cache\7F\{7FA9753F-B2D9-5FF6-CA03-555520566C56}.wem		\Containers\Default Work Unit\MUSIC\MUS_Mission\MUS_Character\Character_B\Round_2\MUS_A_2\B_2_Synthy1		6016264
 	666776225	FootstepC_01_Tile	.cache\5D\{5D06395A-9C8D-C864-30EA-27C6582407F2}.wem		\Containers\Default Work Unit\SFX\Movement\FootstepsC\Tile\FootstepC_01_Tile		86800
 	674111839	A_Dash_01	.cache\33\{33D6F2A0-F362-FC07-9B7F-94896DA56918}.wem		\Containers\Default Work Unit\VO\CharacterA\Dash\A_Dash_01		51698
 	679854016	VO_B_HitHeavy_01	.cache\1C\{1C2EBEAD-E3DB-33A4-ECD1-A69017D41160}.wem		\Containers\Default Work Unit\VO\CharacterB\Wind\VO_B_HitHeavy_01		69878
@@ -313,5 +313,5 @@ In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
 	1053093362	FootstepA_01	.cache\0D\{0D3AE7B7-3F23-8C04-CB41-79DC09F23CE0}.wem		\Containers\Default Work Unit\SFX\Movement\FootstepsA\Carpet\FootstepA_01		49204
 	1062283916	MUS_Pause_Loop	.cache\25\{25C74FE6-F89B-B3B1-68F7-DE316F684A0F}.wem		\Containers\Default Work Unit\MUSIC\MUS_Mission\MUS_MissionPaused\MUS_Pause_Loop\MUS_Pause_Loop		1782664
 	1067238736	A_2_FancyTrumpets	.cache\27\{2749EF45-FDA1-784E-ED4B-C2A412A48461}.wem		\Containers\Default Work Unit\MUSIC\MUS_Mission\MUS_Character\Character_A\Round_2\MUS_A_2\Other\A_2_FancyTrumpets		6016264
-	1071894219	C_2_GuitarVibe	.cache\A4\{A455B42E-4ACC-F1AC-16A2-90094049C0AC}.wem		\Containers\Default Work Unit\MUSIC\MUS_Mission\MUS_Character\Character_B\Round_3\MUS_B3\Melody\C_2_GuitarVibe		6003680
+	1071894219	C_2_GuitarVibe	.cache\A4\{A455B42E-4ACC-F1AC-16A2-90094049C0AC}.wem		\Containers\Default Work Unit\MUSIC\MUS_Mission\MUS_Character\Character_B\Round_4\MUS_B3\Melody\C_2_GuitarVibe		6003680
 
