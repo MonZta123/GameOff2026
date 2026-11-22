@@ -20,7 +20,7 @@ namespace ECS.Notification
         HackSuccess,
         InterruptedHacking,
         HeavyImpact,
-        SnipeShot,
+        EnemySnipeShot,
         
         HeavyAttack,
         HackerShoot,

@@ -93,12 +93,6 @@ namespace ECS.Systems
 
                     snapshot._soundNotificationPool.Add(new SoundNotification()
                     {
-                        _position = player._position,
-                        _soundType = SoundType.SnipeShot
-                    });
-
-                    snapshot._soundNotificationPool.Add(new SoundNotification()
-                    {
                         _soundType = SoundType.SniperShot, _position = player._position
                     });
                     

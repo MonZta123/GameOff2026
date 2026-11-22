@@ -425,6 +425,36 @@
 										</Action>
 									</ChildrenList>
 								</Event>
+								<Event Name="Stop_SFX_ChargeSet" ID="{F1D77053-D09A-42C7-A653-B7669265A660}">
+									<ChildrenList>
+										<Action Name="" ID="{3CF4E9DC-CF0F-4FED-8227-AB2C0D7F8B61}" ShortID="241759646">
+											<PropertyList>
+												<Property Name="ActionType" Type="int16" Value="2"/>
+												<Property Name="Scope" Type="int16" Value="1"/>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="Mine_Beeps" ID="{596943FB-D0F4-483B-A956-6F5AF1C471E4}" WorkUnitID="{AF633A36-6CC5-470E-AD72-3F76D6F661BF}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+								<Event Name="Play_SFX_RifleEnemy" ID="{214485B7-449F-4BAC-BD61-B7C36B271B46}">
+									<PropertyList>
+										<Property Name="Color" Type="int16" Value="4"/>
+										<Property Name="OverrideColor" Type="bool" Value="True"/>
+									</PropertyList>
+									<ChildrenList>
+										<Action Name="" ID="{D39060D6-6844-4AB6-8F58-DC273569B0BF}" ShortID="44027845">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="AttackRifle" ID="{21AC844B-BA03-4798-B19E-38B470729988}" WorkUnitID="{AF633A36-6CC5-470E-AD72-3F76D6F661BF}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
 							</ChildrenList>
 						</Folder>
 						<Folder Name="Environment" ID="{5CA75071-56AB-4C59-832A-BA300731A667}" ShortID="893867293">

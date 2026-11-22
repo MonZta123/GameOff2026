@@ -21,6 +21,7 @@ Event	ID	Name			Wwise Object Path	Notes
 	1233489828	Play_VO_A_Dead			\Default Work Unit\VO\A\Play_VO_A_Dead	
 	1258449045	Play_VO_A_Hit			\Default Work Unit\VO\A\Play_VO_A_Hit	
 	1408943389	Stop_AMB_FrontOfHouse			\Default Work Unit\AMBIENCE\Stop_AMB_FrontOfHouse	
+	1514844964	Stop_SFX_ChargeSet			\Default Work Unit\SFX\Weapons\Stop_SFX_ChargeSet	
 	1523744589	Stop_MUS_Character			\Default Work Unit\MUSIC\Stop_MUS_Character	
 	1561061870	Play_SFX_MineExplode			\Default Work Unit\SFX\Weapons\Play_SFX_MineExplode	
 	1691696806	Play_SFX_ChargeSet			\Default Work Unit\SFX\Weapons\Play_SFX_ChargeSet	
@@ -51,6 +52,7 @@ Event	ID	Name			Wwise Object Path	Notes
 	3385676497	Play_VO_B_Dead			\Default Work Unit\VO\B\Play_VO_B_Dead	
 	3401867411	Play_SFX_BombExplosion			\Default Work Unit\SFX\Weapons\Play_SFX_BombExplosion	
 	3649037401	Stop_MUS_All			\Default Work Unit\MUSIC\Stop_MUS_All	
+	3696050016	Play_SFX_RifleEnemy			\Default Work Unit\SFX\Weapons\Play_SFX_RifleEnemy	
 	3798341745	Play_AMB_Mission			\Default Work Unit\AMBIENCE\Play_AMB_Mission	
 	3987225948	Play_VO_B_Dodge			\Default Work Unit\VO\B\Play_VO_B_Dodge	
 	3997635366	Play_VO_A_HitHeavy			\Default Work Unit\VO\A\Play_VO_A_HitHeavy	
