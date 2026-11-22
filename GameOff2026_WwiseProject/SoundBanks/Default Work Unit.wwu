@@ -16,6 +16,7 @@
 						<ObjectRef Name="Play_VO_B_Hit" ID="{94B68B7F-EEFF-41EA-B395-54CB92F37C67}" WorkUnitID="{2B12C590-A22E-47AF-9697-251FEA2DB802}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="Play_VO_C_Hit" ID="{E25E0A70-19F2-421C-81F9-D45D1A302936}" WorkUnitID="{2B12C590-A22E-47AF-9697-251FEA2DB802}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="Play_SFX_BigExplosion" ID="{E02E6D0C-F676-4241-B29F-FCEFD60C8FD3}" WorkUnitID="{2B12C590-A22E-47AF-9697-251FEA2DB802}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="Stop_SFX_ChargeSet" ID="{F1D77053-D09A-42C7-A653-B7669265A660}" WorkUnitID="{2B12C590-A22E-47AF-9697-251FEA2DB802}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="Play_SFX_Rifle" ID="{FC3B028A-50F3-42CB-8E0B-C6CC94A0A8DD}" WorkUnitID="{2B12C590-A22E-47AF-9697-251FEA2DB802}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="Stop_MUS_Character" ID="{DFC3BA48-0CDF-43A9-9F8B-55C6534D0545}" WorkUnitID="{2B12C590-A22E-47AF-9697-251FEA2DB802}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="Play_VO_B_Dead" ID="{71D3AACC-0B82-43B1-870A-E80857458AB5}" WorkUnitID="{2B12C590-A22E-47AF-9697-251FEA2DB802}" Origin="Manual" Filter="7"/>
@@ -51,6 +52,7 @@
 						<ObjectRef Name="Play_SFX_E_Impact" ID="{A671DCAC-9993-4AC3-B194-BF98779E356E}" WorkUnitID="{2B12C590-A22E-47AF-9697-251FEA2DB802}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="Play_SFX_DoorSmash" ID="{666ACBC8-30A5-4B03-853D-52CF84ADE9CF}" WorkUnitID="{2B12C590-A22E-47AF-9697-251FEA2DB802}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="Play_SFX_Shift" ID="{FE2001B2-A82F-4B45-BBE4-31BBED8D8DED}" WorkUnitID="{2B12C590-A22E-47AF-9697-251FEA2DB802}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="Play_SFX_RifleEnemy" ID="{214485B7-449F-4BAC-BD61-B7C36B271B46}" WorkUnitID="{2B12C590-A22E-47AF-9697-251FEA2DB802}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="Play_MUS_MissionPaused" ID="{5FB0A79F-8C17-4BBC-8B13-4FC195E511ED}" WorkUnitID="{2B12C590-A22E-47AF-9697-251FEA2DB802}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="Play_SFX_Action_C_Defuse" ID="{50C950DC-2033-4BD6-B0A2-22C4070A3229}" WorkUnitID="{2B12C590-A22E-47AF-9697-251FEA2DB802}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="Play_VO_D_HitHeavy" ID="{7C805774-2F8A-4D48-8746-FD718FDAF1CD}" WorkUnitID="{2B12C590-A22E-47AF-9697-251FEA2DB802}" Origin="Manual" Filter="7"/>

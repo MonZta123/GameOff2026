@@ -10,7 +10,7 @@
     "Type": "User",
     "GUID": "{3059A6CE-8152-4CD2-BEA9-69E98BB60D65}",
     "Language": "SFX",
-    "Hash": "{FE27E264-0EBE-B929-06BE-96B7C80AD733}",
+    "Hash": "{CD3CE4DF-86FA-3B94-1639-B9C7A72B99DC}",
     "ObjectPath": "\\SoundBanks\\Default Work Unit\\Main",
     "ShortName": "Main",
     "Path": "Main.bnk",
@@ -3444,6 +3444,28 @@
       }
      },
      {
+      "Id": "3696050016",
+      "Name": "Play_SFX_RifleEnemy",
+      "ObjectPath": "\\Events\\Default Work Unit\\SFX\\Weapons\\Play_SFX_RifleEnemy",
+      "GUID": "{214485B7-449F-4BAC-BD61-B7C36B271B46}",
+      "Color": "4",
+      "MaxAttenuation": "100",
+      "DurationType": "OneShot",
+      "DurationMin": "2.17436",
+      "DurationMax": "2.6172187",
+      "MediaRefs": [
+       {
+        "Id": "174024542"
+       },
+       {
+        "Id": "437602278"
+       },
+       {
+        "Id": "846871773"
+       }
+      ]
+     },
+     {
       "Id": "2453180302",
       "Name": "Play_SFX_Shift",
       "ObjectPath": "\\Events\\Default Work Unit\\SFX\\Movement\\Play_SFX_Shift",
@@ -4431,6 +4453,16 @@
         "Id": "851917532"
        }
       ]
+     },
+     {
+      "Id": "1514844964",
+      "Name": "Stop_SFX_ChargeSet",
+      "ObjectPath": "\\Events\\Default Work Unit\\SFX\\Weapons\\Stop_SFX_ChargeSet",
+      "GUID": "{F1D77053-D09A-42C7-A653-B7669265A660}",
+      "MaxAttenuation": "0",
+      "DurationType": "OneShot",
+      "DurationMin": "0",
+      "DurationMax": "0"
      }
     ],
     "StateGroups": [
@@ -4541,6 +4573,6 @@
     ]
    }
   ],
-  "FileHash": "{FB2F8B06-C9EA-0884-0FAD-A8CD748A7843}"
+  "FileHash": "{22570305-0A20-E611-ED7C-1128708160AD}"
  }
 }

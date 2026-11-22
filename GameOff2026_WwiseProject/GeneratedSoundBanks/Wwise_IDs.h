@@ -39,6 +39,7 @@ namespace AK
         static const AkUniqueID PLAY_SFX_FOOTSTEPS_D = 1953576310U;
         static const AkUniqueID PLAY_SFX_MINEEXPLODE = 1561061870U;
         static const AkUniqueID PLAY_SFX_RIFLE = 1078461092U;
+        static const AkUniqueID PLAY_SFX_RIFLEENEMY = 3696050016U;
         static const AkUniqueID PLAY_SFX_SHIFT = 2453180302U;
         static const AkUniqueID PLAY_SFX_THROW = 1721105142U;
         static const AkUniqueID PLAY_SFX_UI_BACK = 1117141914U;
@@ -72,6 +73,7 @@ namespace AK
         static const AkUniqueID STOP_MUS_MISSIONPAUSED = 1909315380U;
         static const AkUniqueID STOP_SFX_ACTION_B_HACK = 4118679155U;
         static const AkUniqueID STOP_SFX_ACTION_B_HACKSUCCESS = 2417158132U;
+        static const AkUniqueID STOP_SFX_CHARGESET = 1514844964U;
     } // namespace EVENTS
 
     namespace STATES
