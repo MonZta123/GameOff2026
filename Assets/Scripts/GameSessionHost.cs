@@ -75,6 +75,9 @@ public class GameSessionHost : MonoBehaviour
 
     [SerializeField]
     private AK.Wwise.Event stopMusic;
+    
+    [SerializeField]
+    private ReplayCredits credits;
 
     private TickDriver _tickDriver;
     private Timeline _timeline;
@@ -84,6 +87,7 @@ public class GameSessionHost : MonoBehaviour
     private int _segmentTicks;
 
     private GameSessionState _gameSessionState;
+    
 
     private void Awake()
     {
@@ -364,6 +368,7 @@ public class GameSessionHost : MonoBehaviour
 
     private void InitReplay()
     {
+        credits.RunCredits(maxSeconds * 4);
         _gameSessionState = GameSessionState.ReplayMode;
         markerManager.SetVisible(false);
         if (_activePlayerObject)
