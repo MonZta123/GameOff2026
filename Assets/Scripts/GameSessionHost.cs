@@ -79,6 +79,9 @@ public class GameSessionHost : MonoBehaviour
     [SerializeField]
     private ReplayCredits credits;
 
+    [SerializeField]
+    private FlashingText flashingText;
+
     private TickDriver _tickDriver;
     private Timeline _timeline;
 
@@ -111,6 +114,7 @@ public class GameSessionHost : MonoBehaviour
 
         taskTextManager.SetText("");
         _gameFlowManager = new GameFlowManager(_segmentTicks, stepsPerSecond);
+        flashingText.SetState(FlashingTextState.Recording);
 
         hud.HideThreatMeter();
         hud.HideRewindMessage();
@@ -378,6 +382,7 @@ public class GameSessionHost : MonoBehaviour
 
     private void InitReplay()
     {
+        flashingText.SetState(FlashingTextState.Playing);
         soundSystem.WinCharacter();
         credits.RunCredits(maxSeconds * 4);
         _gameSessionState = GameSessionState.ReplayMode;
@@ -715,6 +720,8 @@ public class GameSessionHost : MonoBehaviour
 
     private IEnumerator PlayRewindAnimation(Action next = null)
     {
+        
+        flashingText.SetState(FlashingTextState.Rewinding);
         scriptableRendererData.rendererFeatures[0].SetActive(true);
         SetAllFootsteps(false);
         yield return null;
@@ -749,6 +756,7 @@ public class GameSessionHost : MonoBehaviour
         hud.HideRewindMessage();
         SetAllFootsteps(true);
         scriptableRendererData.rendererFeatures[0].SetActive(false);
+        flashingText.SetState(FlashingTextState.Recording);
         next?.Invoke();
     }
 
