@@ -207,6 +207,15 @@ MonoBehaviour:
   - _area: {fileID: 2800000, guid: 8a89f2c554b229347b96aa467ab18fee, type: 3}
     _enemyMap: {fileID: 2800000, guid: 4e10036963976ee479e515d04a82369a, type: 3}
     _mapType: 2
+  - _area: {fileID: 2800000, guid: 8a89f2c554b229347b96aa467ab18fee, type: 3}
+    _enemyMap: {fileID: 2800000, guid: 4e10036963976ee479e515d04a82369a, type: 3}
+    _mapType: 0
+  - _area: {fileID: 2800000, guid: 8a89f2c554b229347b96aa467ab18fee, type: 3}
+    _enemyMap: {fileID: 2800000, guid: 4e10036963976ee479e515d04a82369a, type: 3}
+    _mapType: 1
+  - _area: {fileID: 2800000, guid: 8a89f2c554b229347b96aa467ab18fee, type: 3}
+    _enemyMap: {fileID: 2800000, guid: 4e10036963976ee479e515d04a82369a, type: 3}
+    _mapType: 2
   snipeTarget: {fileID: 1672110092}
   fade: {fileID: 1477212882}
   soundSystem: {fileID: 13633231}
@@ -2449,7 +2458,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 56448554088463333, guid: 6876414437fc0432a809b138b28356e4, type: 3}
       propertyPath: m_text
-      value: OUCH
+      value: WAFFLED
       objectReference: {fileID: 0}
     - target: {fileID: 2836334344531659772, guid: 6876414437fc0432a809b138b28356e4, type: 3}
       propertyPath: m_Pivot.x
