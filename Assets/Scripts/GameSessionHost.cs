@@ -8,6 +8,7 @@ using Notifications;
 using Unity.Cinemachine;
 using UnityEngine;
 using UnityEngine.Rendering.Universal;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using Player = Actors.Player;
 
@@ -299,12 +300,16 @@ public class GameSessionHost : MonoBehaviour
                 InitNextReplaySegment();
                 break;
             case GameFlowResultState.GameOver:
-                // Debug.Log("Game over");
-                // Say "thank you" and go back to the main menu
+                GoToThankYouScreen();
                 break;
             default:
                 throw new ArgumentOutOfRangeException(nameof(resultState), resultState, null);
         }
+    }
+
+    private void GoToThankYouScreen()
+    {
+        StartCoroutine(FadeOut(() => SceneManager.LoadScene("Scenes/ThankYouScene", LoadSceneMode.Single)));
     }
 
     private Coroutine _rewindingCoroutine;

@@ -24,7 +24,7 @@ public class ThankYouScreenScript : MonoBehaviour
             _fadeCoroutine = null;
         }
 
-        SceneManager.LoadScene("Scenes/Title");
+        SceneManager.LoadScene("Scenes/Title", LoadSceneMode.Single);
     }
 
     private IEnumerator FadeOut()
