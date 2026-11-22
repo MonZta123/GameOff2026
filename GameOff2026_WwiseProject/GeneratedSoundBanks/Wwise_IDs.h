@@ -40,6 +40,7 @@ namespace AK
         static const AkUniqueID PLAY_SFX_MINEEXPLODE = 1561061870U;
         static const AkUniqueID PLAY_SFX_RIFLE = 1078461092U;
         static const AkUniqueID PLAY_SFX_SHIFT = 2453180302U;
+        static const AkUniqueID PLAY_SFX_THROW = 1721105142U;
         static const AkUniqueID PLAY_SFX_UI_BACK = 1117141914U;
         static const AkUniqueID PLAY_SFX_UI_HOVER = 708671363U;
         static const AkUniqueID PLAY_SFX_UI_SELECT = 2484137795U;

@@ -24,6 +24,7 @@ Event	ID	Name			Wwise Object Path	Notes
 	1523744589	Stop_MUS_Character			\Default Work Unit\MUSIC\Stop_MUS_Character	
 	1561061870	Play_SFX_MineExplode			\Default Work Unit\SFX\Weapons\Play_SFX_MineExplode	
 	1691696806	Play_SFX_ChargeSet			\Default Work Unit\SFX\Weapons\Play_SFX_ChargeSet	
+	1721105142	Play_SFX_Throw			\Default Work Unit\SFX\Actions\Play_SFX_Throw	
 	1724459581	Play_SFX_Action_B_Hack			\Default Work Unit\SFX\Actions\Play_SFX_Action_B_Hack	
 	1909315380	Stop_MUS_MissionPaused			\Default Work Unit\MUSIC\Stop_MUS_MissionPaused	
 	1953576304	Play_SFX_Footsteps_B			\Default Work Unit\SFX\Movement\Play_SFX_Footsteps_B	

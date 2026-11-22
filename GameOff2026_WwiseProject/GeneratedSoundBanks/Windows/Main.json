@@ -10,7 +10,7 @@
     "Type": "User",
     "GUID": "{3059A6CE-8152-4CD2-BEA9-69E98BB60D65}",
     "Language": "SFX",
-    "Hash": "{EA5697AE-EE4D-A822-3AF5-3E7377C50A9B}",
+    "Hash": "{FE27E264-0EBE-B929-06BE-96B7C80AD733}",
     "ObjectPath": "\\SoundBanks\\Default Work Unit\\Main",
     "ShortName": "Main",
     "Path": "Main.bnk",
@@ -3458,6 +3458,33 @@
       ]
      },
      {
+      "Id": "1721105142",
+      "Name": "Play_SFX_Throw",
+      "ObjectPath": "\\Events\\Default Work Unit\\SFX\\Actions\\Play_SFX_Throw",
+      "GUID": "{D9547F96-937C-4F93-A9F3-81A4EDB89615}",
+      "MaxAttenuation": "100",
+      "DurationType": "OneShot",
+      "DurationMin": "0.38437232",
+      "DurationMax": "0.63800883",
+      "MediaRefs": [
+       {
+        "Id": "98692465"
+       },
+       {
+        "Id": "146835285"
+       },
+       {
+        "Id": "278186006"
+       },
+       {
+        "Id": "674111839"
+       },
+       {
+        "Id": "908541921"
+       }
+      ]
+     },
+     {
       "Id": "1117141914",
       "Name": "Play_SFX_UI_Back",
       "ObjectPath": "\\Events\\Default Work Unit\\SFX\\UI\\Play_SFX_UI_Back",
@@ -4514,6 +4541,6 @@
     ]
    }
   ],
-  "FileHash": "{7D0BC476-CFE3-F383-3779-10476A5206A6}"
+  "FileHash": "{1CAC2593-D333-47D6-363F-A210513BD4B2}"
  }
 }
