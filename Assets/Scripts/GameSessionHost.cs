@@ -232,6 +232,10 @@ public class GameSessionHost : MonoBehaviour
 
         _gameSessionState = GameSessionState.Playing;
         markerManager.SetVisible(true);
+        
+        
+        var entityNum = snapshot._players.GetNumEntities() - 1;
+        var state = _gameSessionState == GameSessionState.ReplayMode ? 4 : _timeline.GetCurrentSegment();
 
         next?.Invoke();
 
@@ -241,14 +245,13 @@ public class GameSessionHost : MonoBehaviour
         }
         else
         {
-            var entityNum = snapshot._players.GetNumEntities() - 1;
-            var state = _gameSessionState == GameSessionState.ReplayMode ? 4 : _timeline.GetCurrentSegment();
             
             soundSystem.PlayCharacterMusic(entityNum, state);
-            soundSystem.AnnounceCharacter(entityNum, state);
             inputManager.ClearInput();
             _tickDriver.StartSim();
         }
+        
+        soundSystem.AnnounceCharacter(entityNum, state);
 
         SetMarkers();
     }
@@ -785,7 +788,6 @@ public class GameSessionHost : MonoBehaviour
         var state = _gameSessionState == GameSessionState.ReplayMode ? 4 : _timeline.GetCurrentSegment();
         
         soundSystem.PlayCharacterMusic(entityNum, state);
-        soundSystem.AnnounceCharacter(entityNum, state);
         
         _tickDriver.StartSim();
         
