@@ -2388,6 +2388,13 @@
 													</ActiveSourceList>
 												</Sound>
 												<Sound Name="ActionMineDefuse_03" ID="{E8E40B66-9D77-43F2-B3C5-DA01AEF69A21}" ShortID="486374253">
+													<PropertyList>
+														<Property Name="Inclusion" Type="bool">
+															<ValueList>
+																<Value>False</Value>
+															</ValueList>
+														</Property>
+													</PropertyList>
 													<ReferenceList>
 														<Reference Name="Conversion">
 															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{4ADFD3A0-A42B-432C-8502-1433439D5054}"/>
@@ -2930,6 +2937,7 @@
 								<Sound Name="Mine_Beeps" ID="{596943FB-D0F4-483B-A956-6F5AF1C471E4}" ShortID="436838114">
 									<PropertyList>
 										<Property Name="3DSpatialization" Type="int16" Value="2"/>
+										<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
 										<Property Name="Pitch" Type="int32">
 											<ModifierList>
 												<ModifierInfo>
@@ -5171,10 +5179,15 @@
 																			</ReferenceList>
 																			<ChildrenList>
 																				<AudioFileSource Name="C_2_GuitarVibe" ID="{A03FEAD5-254F-4BAD-A60C-9CDF95E16516}">
+																					<PropertyList>
+																						<Property Name="LoopBegin" Type="Real64" Value="2.48832"/>
+																						<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+																						<Property Name="TrimBegin" Type="Real64" Value="0.0716"/>
+																					</PropertyList>
 																					<Language>SFX</Language>
 																					<AudioFile>C_2_GuitarVibe.wav</AudioFile>
 																					<MediaIDList>
-																						<MediaID ID="153022710"/>
+																						<MediaID ID="1071894219"/>
 																					</MediaIDList>
 																				</AudioFileSource>
 																			</ChildrenList>

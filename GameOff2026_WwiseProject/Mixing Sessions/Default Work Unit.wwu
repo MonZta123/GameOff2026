@@ -1,6 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
 <WwiseDocument Type="WorkUnit" ID="{D48A81BA-892F-4F03-9BD5-F3CE0D41A877}" SchemaVersion="133">
 	<MixingSessions>
-		<WorkUnit Name="Default Work Unit" ID="{D48A81BA-892F-4F03-9BD5-F3CE0D41A877}" PersistMode="Standalone"/>
+		<WorkUnit Name="Default Work Unit" ID="{D48A81BA-892F-4F03-9BD5-F3CE0D41A877}" PersistMode="Standalone">
+			<ChildrenList>
+				<MixingSession Name="DuckingMix" ID="{3F7D0559-2686-419D-9203-19DB40877F5A}">
+					<ObjectList>
+						<ObjectRef Name="Hack_Loop" ID="{D3BECE3E-0891-405A-88A0-00D7AAE3939E}" WorkUnitID="{AF633A36-6CC5-470E-AD72-3F76D6F661BF}"/>
+						<ObjectRef Name="HackSuccess" ID="{96F192D7-CD52-4AD6-88E1-F8EB34DE64ED}" WorkUnitID="{AF633A36-6CC5-470E-AD72-3F76D6F661BF}"/>
+						<ObjectRef Name="Character_B" ID="{4EF5FE19-4C09-4C5D-9A10-C747BEDBA0EA}" WorkUnitID="{AF633A36-6CC5-470E-AD72-3F76D6F661BF}"/>
+						<ObjectRef Name="AMBIENCE" ID="{0D3F0E73-E6DF-4226-8BD9-1CC7EEEBAE76}" WorkUnitID="{F8A65CB3-3EA6-47C9-8C5A-27068DB4C3FF}"/>
+						<ObjectRef Name="MUSIC" ID="{F759BC7F-4007-4D33-8F58-64648B34CD3D}" WorkUnitID="{F8A65CB3-3EA6-47C9-8C5A-27068DB4C3FF}"/>
+						<ObjectRef Name="SFX" ID="{282B1519-D877-4EF3-9048-C765F53AAF2A}" WorkUnitID="{F8A65CB3-3EA6-47C9-8C5A-27068DB4C3FF}"/>
+						<ObjectRef Name="VO" ID="{832227F3-45D1-422A-8529-93517E731F5A}" WorkUnitID="{F8A65CB3-3EA6-47C9-8C5A-27068DB4C3FF}"/>
+						<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{F8A65CB3-3EA6-47C9-8C5A-27068DB4C3FF}"/>
+					</ObjectList>
+				</MixingSession>
+			</ChildrenList>
+		</WorkUnit>
 	</MixingSessions>
 </WwiseDocument>

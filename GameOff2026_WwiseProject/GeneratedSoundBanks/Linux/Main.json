@@ -10,7 +10,7 @@
     "Type": "User",
     "GUID": "{3059A6CE-8152-4CD2-BEA9-69E98BB60D65}",
     "Language": "SFX",
-    "Hash": "{ABD28D86-350A-D084-CBD4-B0C667E8DDEB}",
+    "Hash": "{5F4A6295-8536-CB11-9378-14BB7347055E}",
     "ObjectPath": "\\SoundBanks\\Default Work Unit\\Main",
     "ShortName": "Main",
     "Path": "Main.bnk",
@@ -392,14 +392,6 @@
       "CachePath": "29/{2978F84F-4B29-EAEF-0771-830DBF5A0D2F}.wem"
      },
      {
-      "Id": "197993965",
-      "Language": "SFX",
-      "Streaming": "false",
-      "Location": "Memory",
-      "ShortName": "ActionMineDefuse_03.wav",
-      "CachePath": "DA/{DA18C670-76AC-60F7-05A5-8041506E8D02}.wem"
-     },
-     {
       "Id": "201331341",
       "Language": "SFX",
       "Streaming": "false",
@@ -549,7 +541,7 @@
       "Streaming": "false",
       "Location": "Memory",
       "ShortName": "Mine_Beeps.wav",
-      "CachePath": "15/{15388B51-E6D8-FC7D-5EC9-CE7D42364A07}.wem"
+      "CachePath": "79/{790DCF18-E5DE-C2DE-16BB-77C22E3FFE57}.wem"
      },
      {
       "Id": "332679464",
@@ -1614,6 +1606,14 @@
       "Location": "Memory",
       "ShortName": "A_2_FancyTrumpets.wav",
       "CachePath": "27/{2749EF45-FDA1-784E-ED4B-C2A412A48461}.wem"
+     },
+     {
+      "Id": "1071894219",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "C_2_GuitarVibe.wav",
+      "CachePath": "A4/{A455B42E-4ACC-F1AC-16A2-90094049C0AC}.wem"
      }
     ],
     "Plugins": {
@@ -2379,9 +2379,6 @@
             "Id": "141284948"
            },
            {
-            "Id": "153022710"
-           },
-           {
             "Id": "176081225"
            },
            {
@@ -2398,6 +2395,9 @@
            },
            {
             "Id": "817365904"
+           },
+           {
+            "Id": "1071894219"
            }
           ]
          }
@@ -2665,9 +2665,6 @@
       "DurationMax": "0.62247163",
       "MediaRefs": [
        {
-        "Id": "197993965"
-       },
-       {
         "Id": "639789442"
        },
        {
@@ -2864,6 +2861,19 @@
        },
        {
         "Id": "1021562170"
+       }
+      ]
+     },
+     {
+      "Id": "1691696806",
+      "Name": "Play_SFX_ChargeSet",
+      "ObjectPath": "\\Events\\Default Work Unit\\SFX\\Weapons\\Play_SFX_ChargeSet",
+      "GUID": "{0E5DE2F2-5313-45DA-8FA6-A3469A2C1DFD}",
+      "MaxAttenuation": "100",
+      "DurationType": "Infinite",
+      "MediaRefs": [
+       {
+        "Id": "312967604"
        }
       ]
      },
@@ -3355,21 +3365,6 @@
           "Id": "897976614"
          }
         ]
-       }
-      ]
-     },
-     {
-      "Id": "1150067858",
-      "Name": "Play_SFX_MineBeeps",
-      "ObjectPath": "\\Events\\Default Work Unit\\SFX\\Weapons\\Play_SFX_MineBeeps",
-      "GUID": "{0E5DE2F2-5313-45DA-8FA6-A3469A2C1DFD}",
-      "MaxAttenuation": "100",
-      "DurationType": "OneShot",
-      "DurationMin": "1.2868934",
-      "DurationMax": "1.2868934",
-      "MediaRefs": [
-       {
-        "Id": "312967604"
        }
       ]
      },
@@ -4519,6 +4514,6 @@
     ]
    }
   ],
-  "FileHash": "{AFC832C7-061A-766A-7749-37F53BF1F76E}"
+  "FileHash": "{02F78293-D884-F094-3F26-12B50C57B801}"
  }
 }

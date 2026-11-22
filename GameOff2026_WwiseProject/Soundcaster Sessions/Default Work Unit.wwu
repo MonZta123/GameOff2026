@@ -74,10 +74,6 @@
 							<Position X="2" Y="3"/>
 						</Module>
 						<Module>
-							<ObjectRef Name="Play_SFX_Action_C_Defuse" ID="{50C950DC-2033-4BD6-B0A2-22C4070A3229}" WorkUnitID="{2B12C590-A22E-47AF-9697-251FEA2DB802}"/>
-							<Position X="2" Y="4"/>
-						</Module>
-						<Module>
 							<ObjectRef Name="AmbienceFrontOfHouse" ID="{21DB8EFA-3F8E-41DD-944A-83F27536481D}" WorkUnitID="{AF633A36-6CC5-470E-AD72-3F76D6F661BF}"/>
 							<Position X="3" Y="0"/>
 						</Module>
@@ -204,6 +200,42 @@
 						<Module>
 							<ObjectRef Name="Play_SFX_BombExplosion" ID="{30F644E1-4A6B-491A-B312-78F56222651D}" WorkUnitID="{2B12C590-A22E-47AF-9697-251FEA2DB802}"/>
 							<Position X="1" Y="1"/>
+						</Module>
+					</ModuleList>
+				</SoundcasterSession>
+				<SoundcasterSession Name="DuckingSoundcaster" ID="{1DE31EB1-FB76-47E6-9379-42280F20A4B5}">
+					<ModuleList>
+						<Module>
+							<ObjectRef Name="Play_MUS_Character" ID="{44E5D87C-C9EE-4925-8962-FA761B8D15F0}" WorkUnitID="{2B12C590-A22E-47AF-9697-251FEA2DB802}"/>
+							<Position X="0" Y="0"/>
+						</Module>
+						<Module>
+							<ObjectRef Name="Dodge" ID="{503510A6-6244-4C03-B579-3D9A2511F70F}" WorkUnitID="{AF633A36-6CC5-470E-AD72-3F76D6F661BF}"/>
+							<Position X="0" Y="1"/>
+						</Module>
+						<Module>
+							<ObjectRef Name="Stop_MUS_CharacterSlowdown" ID="{987FE2D7-7D81-418C-B888-5C92D45B29DE}" WorkUnitID="{2B12C590-A22E-47AF-9697-251FEA2DB802}"/>
+							<Position X="1" Y="0"/>
+						</Module>
+						<Module>
+							<ObjectRef Name="Hack" ID="{1EA654C2-DD83-48E8-AE15-C17B9CAFC1AF}" WorkUnitID="{AF633A36-6CC5-470E-AD72-3F76D6F661BF}"/>
+							<Position X="1" Y="1"/>
+						</Module>
+						<Module>
+							<ObjectRef Name="HackSuccess" ID="{96F192D7-CD52-4AD6-88E1-F8EB34DE64ED}" WorkUnitID="{AF633A36-6CC5-470E-AD72-3F76D6F661BF}"/>
+							<Position X="2" Y="1"/>
+						</Module>
+						<Module>
+							<ObjectRef Name="Hit" ID="{6DCCADEE-7CAF-4E71-B13D-151C625D155D}" WorkUnitID="{AF633A36-6CC5-470E-AD72-3F76D6F661BF}"/>
+							<Position X="3" Y="1"/>
+						</Module>
+						<Module>
+							<ObjectRef Name="Win" ID="{30C9CFB1-4D57-4C61-A846-F374C05A5893}" WorkUnitID="{AF633A36-6CC5-470E-AD72-3F76D6F661BF}"/>
+							<Position X="4" Y="1"/>
+						</Module>
+						<Module>
+							<ObjectRef Name="Wind" ID="{72C68C4E-CE97-4011-9A57-FD96E22D4B15}" WorkUnitID="{AF633A36-6CC5-470E-AD72-3F76D6F661BF}"/>
+							<Position X="5" Y="1"/>
 						</Module>
 					</ModuleList>
 				</SoundcasterSession>

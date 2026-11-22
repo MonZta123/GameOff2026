@@ -18,6 +18,13 @@
     "StaticLib": "AkCompressorFX"
    },
    {
+    "LibName": "Wwise Peak Limiter",
+    "LibId": "7208963",
+    "Type": "Effect",
+    "DLL": "AkPeakLimiter",
+    "StaticLib": "AkPeakLimiterFX"
+   },
+   {
     "LibName": "Wwise Meter",
     "LibId": "8454147",
     "Type": "Effect",
@@ -35,6 +42,6 @@
     "Type": "AudioDevice"
    }
   ],
-  "FileHash": "{3F3797C5-7C80-6827-E0EB-D435686646B0}"
+  "FileHash": "{3FC38604-8A4E-2770-B111-DE0F701F8291}"
  }
 }

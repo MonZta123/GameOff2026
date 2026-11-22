@@ -25,6 +25,7 @@ Audio Bus	ID	Name			Wwise Object Path	Notes
 
 Effect plug-ins	ID	Name	Type				Notes
 	1329694923	DuckingSFX	Wwise Meter			
+	1459522457	Brick_Wall_Minus_1dB_Peak_Fast_Release	Wwise Peak Limiter			
 	3093856314	SFX_Ducking	Wwise Compressor			
 	3155249223	DuckingVO	Wwise Meter			
 	3375880468	VO_Ducking	Wwise Compressor			

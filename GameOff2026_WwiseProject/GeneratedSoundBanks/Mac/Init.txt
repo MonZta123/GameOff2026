@@ -7,6 +7,7 @@ State	ID	Name	State Group			Notes
 	1200082260	Round_2	Round			
 	1200082261	Round_3	Round			
 	1200082263	Round_1	Round			
+	2842388664	Replay	Round			
 
 Game Parameter	ID	Name			Wwise Object Path	Notes
 	1006694123	Music_Volume			\Default Work Unit\Music_Volume	
@@ -24,6 +25,7 @@ Audio Bus	ID	Name			Wwise Object Path	Notes
 
 Effect plug-ins	ID	Name	Type				Notes
 	1329694923	DuckingSFX	Wwise Meter			
+	1459522457	Brick_Wall_Minus_1dB_Peak_Fast_Release	Wwise Peak Limiter			
 	3093856314	SFX_Ducking	Wwise Compressor			
 	3155249223	DuckingVO	Wwise Meter			
 	3375880468	VO_Ducking	Wwise Compressor			

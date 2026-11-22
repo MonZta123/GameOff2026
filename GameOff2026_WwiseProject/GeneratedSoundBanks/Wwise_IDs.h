@@ -26,6 +26,7 @@ namespace AK
         static const AkUniqueID PLAY_SFX_ATTACK_A_SWING = 3272234049U;
         static const AkUniqueID PLAY_SFX_BIGEXPLOSION = 2310908281U;
         static const AkUniqueID PLAY_SFX_BOMBEXPLOSION = 3401867411U;
+        static const AkUniqueID PLAY_SFX_CHARGESET = 1691696806U;
         static const AkUniqueID PLAY_SFX_DASH = 395039606U;
         static const AkUniqueID PLAY_SFX_DOORSLIDEOPEN = 2632977701U;
         static const AkUniqueID PLAY_SFX_DOORSLIDESHUT = 3287225507U;
@@ -36,7 +37,6 @@ namespace AK
         static const AkUniqueID PLAY_SFX_FOOTSTEPS_B = 1953576304U;
         static const AkUniqueID PLAY_SFX_FOOTSTEPS_C = 1953576305U;
         static const AkUniqueID PLAY_SFX_FOOTSTEPS_D = 1953576310U;
-        static const AkUniqueID PLAY_SFX_MINEBEEPS = 1150067858U;
         static const AkUniqueID PLAY_SFX_MINEEXPLODE = 1561061870U;
         static const AkUniqueID PLAY_SFX_RIFLE = 1078461092U;
         static const AkUniqueID PLAY_SFX_SHIFT = 2453180302U;
