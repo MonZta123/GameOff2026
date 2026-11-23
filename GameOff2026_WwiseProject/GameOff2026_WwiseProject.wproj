@@ -36,6 +36,7 @@
 						<Value Platform="Linux">256</Value>
 					</ValueList>
 				</Property>
+				<Property Name="LicenseKey" Type="string" Value="PHByb2plY3QgaWQ9IjI0NTI2IiBtYXNrPSJGTkRHODM4MyIgZW5jPSIwIj48bGljZW5zZSBpZD0iMSIgbmFtZT0iV3dpc2UiIHR5cGU9IjMiIHBsYXRmb3Jtcz0iNCwxMCwxNCIgZXhwaXJlcz0iMjAyNy0xMi0wMSIgIC8+PGxpY2Vuc2UgaWQ9IjIxIiBuYW1lPSJNYWludGVuYW5jZSIgdHlwZT0iMyIgcGxhdGZvcm1zPSI0LDEwLDE0IiBleHBpcmVzPSIyMDI3LTEyLTAxIiAgLz48bGljZW5zZSBpZD0iNzAiIG5hbWU9IkluZGllIExpY2Vuc2UiIHR5cGU9IjMiIHBsYXRmb3Jtcz0iNCwxMCwxNCIgZXhwaXJlcz0iMjAyNy0xMi0wMSIgIC8+PC9wcm9qZWN0Pg==|yrqXlFl4HslaKVxsXTmLJHkV/H/8gcFcyaCp/HMV+ewNfUSHAQd7BgMhdbZ28n9hDU8lbXwTweAHdHbn6MrwEMXswvZ7MvoN4uq9OG6OXu1BAU0Fn4Cd8URd2g2V0LQhX72E9Tl1HGgo1L/A/IA1NlqT5yFXvb88fSCfPguxWb5as0HbxNMfs9X8l2bHDa11h7oN84MKAZxLDS8QhOTjN7kxRUkPquX5W1FGG0VYWdOh7jLRMsw7E/wFMCnYJsfYhTENygvFid98F5MhkH/hfnzmnCyRTWiTL5UH5eGZ0ZzDn8P2AxYmG+xBzi+hvbCI6ctZjGq6oXmt/dd47Iji8A=="/>
 				<Property Name="SoundBankGenerateHeaderFile" Type="bool" Value="True"/>
 				<Property Name="SoundBankHeaderFilePath" Type="string" Value="GeneratedSoundBanks/"/>
 				<Property Name="SoundBankPaths" Type="string">

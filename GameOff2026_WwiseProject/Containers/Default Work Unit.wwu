@@ -573,13 +573,6 @@
 													</ActiveSourceList>
 												</Sound>
 												<Sound Name="FootstepB_04" ID="{B4441BB2-5AC6-42F5-AB90-3024BCD7AF26}" ShortID="508926200">
-													<PropertyList>
-														<Property Name="Inclusion" Type="bool">
-															<ValueList>
-																<Value>False</Value>
-															</ValueList>
-														</Property>
-													</PropertyList>
 													<ReferenceList>
 														<Reference Name="Conversion">
 															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{4ADFD3A0-A42B-432C-8502-1433439D5054}"/>
@@ -602,13 +595,6 @@
 													</ActiveSourceList>
 												</Sound>
 												<Sound Name="FootstepB_05" ID="{739E3C6D-1269-4FAF-A230-0C61F71DAFF5}" ShortID="226961756">
-													<PropertyList>
-														<Property Name="Inclusion" Type="bool">
-															<ValueList>
-																<Value>False</Value>
-															</ValueList>
-														</Property>
-													</PropertyList>
 													<ReferenceList>
 														<Reference Name="Conversion">
 															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{4ADFD3A0-A42B-432C-8502-1433439D5054}"/>
@@ -631,13 +617,6 @@
 													</ActiveSourceList>
 												</Sound>
 												<Sound Name="FootstepB_06" ID="{A7E23BC2-5FBD-4A8E-99F7-F51E2F7F141B}" ShortID="846006092">
-													<PropertyList>
-														<Property Name="Inclusion" Type="bool">
-															<ValueList>
-																<Value>False</Value>
-															</ValueList>
-														</Property>
-													</PropertyList>
 													<ReferenceList>
 														<Reference Name="Conversion">
 															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{4ADFD3A0-A42B-432C-8502-1433439D5054}"/>
@@ -688,13 +667,6 @@
 											</ReferenceList>
 											<ChildrenList>
 												<Sound Name="FootstepB_06_Concrete" ID="{43E0A191-DAB2-40C2-95C9-B192695F570A}" ShortID="103485045">
-													<PropertyList>
-														<Property Name="Inclusion" Type="bool">
-															<ValueList>
-																<Value>False</Value>
-															</ValueList>
-														</Property>
-													</PropertyList>
 													<ReferenceList>
 														<Reference Name="Conversion">
 															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{4ADFD3A0-A42B-432C-8502-1433439D5054}"/>
@@ -739,13 +711,6 @@
 													</ActiveSourceList>
 												</Sound>
 												<Sound Name="FootstepB_02_Concrete" ID="{D726B07F-03DC-428E-A6A3-18B646DAF951}" ShortID="739962461">
-													<PropertyList>
-														<Property Name="Inclusion" Type="bool">
-															<ValueList>
-																<Value>False</Value>
-															</ValueList>
-														</Property>
-													</PropertyList>
 													<ReferenceList>
 														<Reference Name="Conversion">
 															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{4ADFD3A0-A42B-432C-8502-1433439D5054}"/>
@@ -790,13 +755,6 @@
 													</ActiveSourceList>
 												</Sound>
 												<Sound Name="FootstepB_03_Concrete" ID="{E4D85BC0-1041-4049-ACFA-D2B0785AA5DA}" ShortID="224900693">
-													<PropertyList>
-														<Property Name="Inclusion" Type="bool">
-															<ValueList>
-																<Value>False</Value>
-															</ValueList>
-														</Property>
-													</PropertyList>
 													<ReferenceList>
 														<Reference Name="Conversion">
 															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{4ADFD3A0-A42B-432C-8502-1433439D5054}"/>
@@ -891,13 +849,6 @@
 													</ActiveSourceList>
 												</Sound>
 												<Sound Name="FootstepB_02_Tile" ID="{278F573E-A6EE-4258-8228-FCC3B2D0B564}" ShortID="982769601">
-													<PropertyList>
-														<Property Name="Inclusion" Type="bool">
-															<ValueList>
-																<Value>False</Value>
-															</ValueList>
-														</Property>
-													</PropertyList>
 													<ReferenceList>
 														<Reference Name="Conversion">
 															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{4ADFD3A0-A42B-432C-8502-1433439D5054}"/>
@@ -942,13 +893,6 @@
 													</ActiveSourceList>
 												</Sound>
 												<Sound Name="FootstepB_04_Tile" ID="{839EB3AA-394F-407A-BAF1-5984F2BC3A72}" ShortID="560512619">
-													<PropertyList>
-														<Property Name="Inclusion" Type="bool">
-															<ValueList>
-																<Value>False</Value>
-															</ValueList>
-														</Property>
-													</PropertyList>
 													<ReferenceList>
 														<Reference Name="Conversion">
 															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{4ADFD3A0-A42B-432C-8502-1433439D5054}"/>
@@ -993,13 +937,6 @@
 													</ActiveSourceList>
 												</Sound>
 												<Sound Name="FootstepB_06_Tile" ID="{5BF6737D-C054-4B36-8787-0D32C39397AD}" ShortID="1000879566">
-													<PropertyList>
-														<Property Name="Inclusion" Type="bool">
-															<ValueList>
-																<Value>False</Value>
-															</ValueList>
-														</Property>
-													</PropertyList>
 													<ReferenceList>
 														<Reference Name="Conversion">
 															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{4ADFD3A0-A42B-432C-8502-1433439D5054}"/>
@@ -2387,13 +2324,6 @@
 													</ActiveSourceList>
 												</Sound>
 												<Sound Name="ActionMineDefuse_03" ID="{E8E40B66-9D77-43F2-B3C5-DA01AEF69A21}" ShortID="486374253">
-													<PropertyList>
-														<Property Name="Inclusion" Type="bool">
-															<ValueList>
-																<Value>False</Value>
-															</ValueList>
-														</Property>
-													</PropertyList>
 													<ReferenceList>
 														<Reference Name="Conversion">
 															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{4ADFD3A0-A42B-432C-8502-1433439D5054}"/>
@@ -3075,13 +3005,6 @@
 									</ReferenceList>
 									<ChildrenList>
 										<Sound Name="Slowdown_01" ID="{6DBE9CCE-8392-480B-876B-938457A4D587}" ShortID="508361087">
-											<PropertyList>
-												<Property Name="Inclusion" Type="bool">
-													<ValueList>
-														<Value>False</Value>
-													</ValueList>
-												</Property>
-											</PropertyList>
 											<ReferenceList>
 												<Reference Name="Conversion">
 													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{4ADFD3A0-A42B-432C-8502-1433439D5054}"/>
@@ -3104,13 +3027,6 @@
 											</ActiveSourceList>
 										</Sound>
 										<Sound Name="Slowdown_02" ID="{69C31A2C-8B48-4B17-9E5B-FF7755A8561D}" ShortID="773498611">
-											<PropertyList>
-												<Property Name="Inclusion" Type="bool">
-													<ValueList>
-														<Value>False</Value>
-													</ValueList>
-												</Property>
-											</PropertyList>
 											<ReferenceList>
 												<Reference Name="Conversion">
 													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{4ADFD3A0-A42B-432C-8502-1433439D5054}"/>
@@ -8055,9 +7971,16 @@
 								</Sound>
 								<MusicPlaylistContainer Name="MUS_MissionPaused" ID="{6FF39F40-A3A2-4BDD-AAE5-C73B1F6A0867}" ShortID="405995769">
 									<PropertyList>
+										<Property Name="IsGlobalLimit" Type="int16" Value="1"/>
 										<Property Name="Lowpass" Type="int16">
 											<ValueList>
 												<Value>62</Value>
+											</ValueList>
+										</Property>
+										<Property Name="MaxReachedBehavior" Type="int16" Value="1"/>
+										<Property Name="MaxSoundPerInstance" Type="int16">
+											<ValueList>
+												<Value>1</Value>
 											</ValueList>
 										</Property>
 									</PropertyList>
@@ -9192,11 +9115,6 @@
 										</Sound>
 										<Sound Name="A_Hit_04" ID="{B9C45A20-29F7-4621-B948-CCE8855054E3}" ShortID="856523087">
 											<PropertyList>
-												<Property Name="Inclusion" Type="bool">
-													<ValueList>
-														<Value>False</Value>
-													</ValueList>
-												</Property>
 												<Property Name="Pitch" Type="int32">
 													<ModifierList>
 														<ModifierInfo>
@@ -9947,13 +9865,6 @@
 											</ActiveSourceList>
 										</Sound>
 										<Sound Name="VO_B_Hack_05" ID="{9BECFD6A-D241-4794-9DA1-5EEBA51E7536}" ShortID="238131284">
-											<PropertyList>
-												<Property Name="Inclusion" Type="bool">
-													<ValueList>
-														<Value>False</Value>
-													</ValueList>
-												</Property>
-											</PropertyList>
 											<ReferenceList>
 												<Reference Name="Conversion">
 													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{4ADFD3A0-A42B-432C-8502-1433439D5054}"/>
@@ -10172,13 +10083,6 @@
 									</ReferenceList>
 									<ChildrenList>
 										<Sound Name="VO_B_Hit_01" ID="{8D02A59C-AC71-4B10-A983-07FEBBF19BA5}" ShortID="962395154">
-											<PropertyList>
-												<Property Name="Volume" Type="Real64">
-													<ValueList>
-														<Value>-6</Value>
-													</ValueList>
-												</Property>
-											</PropertyList>
 											<ReferenceList>
 												<Reference Name="Conversion">
 													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{4ADFD3A0-A42B-432C-8502-1433439D5054}"/>
@@ -10201,13 +10105,6 @@
 											</ActiveSourceList>
 										</Sound>
 										<Sound Name="VO_B_Hit_02" ID="{604FF9C8-39D4-4033-B754-DBEC195F6BA2}" ShortID="311349851">
-											<PropertyList>
-												<Property Name="Volume" Type="Real64">
-													<ValueList>
-														<Value>-6</Value>
-													</ValueList>
-												</Property>
-											</PropertyList>
 											<ReferenceList>
 												<Reference Name="Conversion">
 													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{4ADFD3A0-A42B-432C-8502-1433439D5054}"/>
@@ -10230,13 +10127,6 @@
 											</ActiveSourceList>
 										</Sound>
 										<Sound Name="VO_B_Hit_03" ID="{7EC3994F-6429-44D9-93DA-83AF9C847ABF}" ShortID="197677578">
-											<PropertyList>
-												<Property Name="Volume" Type="Real64">
-													<ValueList>
-														<Value>-6</Value>
-													</ValueList>
-												</Property>
-											</PropertyList>
 											<ReferenceList>
 												<Reference Name="Conversion">
 													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{4ADFD3A0-A42B-432C-8502-1433439D5054}"/>
@@ -10259,18 +10149,6 @@
 											</ActiveSourceList>
 										</Sound>
 										<Sound Name="VO_B_Hit_04" ID="{B7AEF091-E90B-418E-9E19-C5E9CFC30FF7}" ShortID="356691035">
-											<PropertyList>
-												<Property Name="Inclusion" Type="bool">
-													<ValueList>
-														<Value>False</Value>
-													</ValueList>
-												</Property>
-												<Property Name="Volume" Type="Real64">
-													<ValueList>
-														<Value>-6</Value>
-													</ValueList>
-												</Property>
-											</PropertyList>
 											<ReferenceList>
 												<Reference Name="Conversion">
 													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{4ADFD3A0-A42B-432C-8502-1433439D5054}"/>
@@ -11461,6 +11339,15 @@
 									</ReferenceList>
 									<ChildrenList>
 										<Sound Name="C_Win_01" ID="{C0814167-8983-4637-9DAC-5732643E2282}" ShortID="366726435">
+											<PropertyList>
+												<Property Name="Pitch" Type="int32">
+													<ModifierList>
+														<ModifierInfo>
+															<Modifier Name="" ID="{C413E35D-3111-4691-A5D0-828D6DC81B8A}"/>
+														</ModifierInfo>
+													</ModifierList>
+												</Property>
+											</PropertyList>
 											<ReferenceList>
 												<Reference Name="Conversion">
 													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{4ADFD3A0-A42B-432C-8502-1433439D5054}"/>
@@ -11484,10 +11371,12 @@
 										</Sound>
 										<Sound Name="C_Win_02" ID="{394944A0-B3E5-4433-B69C-A7F5FFD13B41}" ShortID="568209584">
 											<PropertyList>
-												<Property Name="Inclusion" Type="bool">
-													<ValueList>
-														<Value>False</Value>
-													</ValueList>
+												<Property Name="Pitch" Type="int32">
+													<ModifierList>
+														<ModifierInfo>
+															<Modifier Name="" ID="{2C1CE5AD-F59D-4A41-BFA9-FDE80FDCA7E7}"/>
+														</ModifierInfo>
+													</ModifierList>
 												</Property>
 											</PropertyList>
 											<ReferenceList>
@@ -11563,6 +11452,13 @@
 												<Sound Name="C_Throw_01" ID="{0905C67E-4CFD-4959-973C-C9FFAF9FFF74}" ShortID="309396473">
 													<PropertyList>
 														<Property Name="3DSpatialization" Type="int16" Value="2"/>
+														<Property Name="Pitch" Type="int32">
+															<ModifierList>
+																<ModifierInfo>
+																	<Modifier Name="" ID="{8FCDFF9F-68E8-445E-A707-42FC0BF71E8A}"/>
+																</ModifierInfo>
+															</ModifierList>
+														</Property>
 													</PropertyList>
 													<ReferenceList>
 														<Reference Name="Attenuation">
@@ -11591,10 +11487,12 @@
 												<Sound Name="C_Throw_03" ID="{9342CA7F-81D8-46F7-AEB4-F0C65FEC0413}" ShortID="16764305">
 													<PropertyList>
 														<Property Name="3DSpatialization" Type="int16" Value="2"/>
-														<Property Name="Inclusion" Type="bool">
-															<ValueList>
-																<Value>False</Value>
-															</ValueList>
+														<Property Name="Pitch" Type="int32">
+															<ModifierList>
+																<ModifierInfo>
+																	<Modifier Name="" ID="{DE08D0F3-CB01-4333-BDD6-43BDC7ECA5DC}"/>
+																</ModifierInfo>
+															</ModifierList>
 														</Property>
 													</PropertyList>
 													<ReferenceList>
@@ -11624,10 +11522,12 @@
 												<Sound Name="C_Throw_04" ID="{DF496C05-DA4E-41C0-8E6A-261C9829CC58}" ShortID="675700536">
 													<PropertyList>
 														<Property Name="3DSpatialization" Type="int16" Value="2"/>
-														<Property Name="Inclusion" Type="bool">
-															<ValueList>
-																<Value>False</Value>
-															</ValueList>
+														<Property Name="Pitch" Type="int32">
+															<ModifierList>
+																<ModifierInfo>
+																	<Modifier Name="" ID="{44A96DBF-DBFB-46E4-BB4E-23CE4A62A027}"/>
+																</ModifierInfo>
+															</ModifierList>
 														</Property>
 													</PropertyList>
 													<ReferenceList>
@@ -11657,10 +11557,12 @@
 												<Sound Name="C_Throw_02" ID="{DE204817-6699-47FA-B79B-161A496B5424}" ShortID="501611066">
 													<PropertyList>
 														<Property Name="3DSpatialization" Type="int16" Value="2"/>
-														<Property Name="Inclusion" Type="bool">
-															<ValueList>
-																<Value>False</Value>
-															</ValueList>
+														<Property Name="Pitch" Type="int32">
+															<ModifierList>
+																<ModifierInfo>
+																	<Modifier Name="" ID="{EC6087A9-A638-44C3-8176-E51CFE5B37BB}"/>
+																</ModifierInfo>
+															</ModifierList>
 														</Property>
 													</PropertyList>
 													<ReferenceList>
@@ -11690,10 +11592,12 @@
 												<Sound Name="C_Throw_05" ID="{9D18541C-012B-4903-81BA-68801F08B6E8}" ShortID="565802567">
 													<PropertyList>
 														<Property Name="3DSpatialization" Type="int16" Value="2"/>
-														<Property Name="Inclusion" Type="bool">
-															<ValueList>
-																<Value>False</Value>
-															</ValueList>
+														<Property Name="Pitch" Type="int32">
+															<ModifierList>
+																<ModifierInfo>
+																	<Modifier Name="" ID="{CE8F7682-031B-4FE8-9261-D7A71F4F5BA0}"/>
+																</ModifierInfo>
+															</ModifierList>
 														</Property>
 													</PropertyList>
 													<ReferenceList>
@@ -11769,10 +11673,12 @@
 													<ChildrenList>
 														<Sound Name="C_ThrowQuip_01" ID="{5DEA73A3-01AB-4EAA-B493-EA14B279AE0E}" ShortID="662704349">
 															<PropertyList>
-																<Property Name="Inclusion" Type="bool">
-																	<ValueList>
-																		<Value>False</Value>
-																	</ValueList>
+																<Property Name="Pitch" Type="int32">
+																	<ModifierList>
+																		<ModifierInfo>
+																			<Modifier Name="" ID="{76BFC576-05EE-41EA-A066-016EF52BBD27}"/>
+																		</ModifierInfo>
+																	</ModifierList>
 																</Property>
 															</PropertyList>
 															<ReferenceList>
@@ -11798,10 +11704,12 @@
 														</Sound>
 														<Sound Name="C_ThrowQuip_02" ID="{496E6A95-1809-4C54-B06B-5191EC954437}" ShortID="516133716">
 															<PropertyList>
-																<Property Name="Inclusion" Type="bool">
-																	<ValueList>
-																		<Value>False</Value>
-																	</ValueList>
+																<Property Name="Pitch" Type="int32">
+																	<ModifierList>
+																		<ModifierInfo>
+																			<Modifier Name="" ID="{E4D81A8E-4521-40B6-9197-7D6AC7C625DC}"/>
+																		</ModifierInfo>
+																	</ModifierList>
 																</Property>
 															</PropertyList>
 															<ReferenceList>
@@ -11826,6 +11734,15 @@
 															</ActiveSourceList>
 														</Sound>
 														<Sound Name="C_ThrowQuip_03" ID="{6BD3D840-42D4-403C-AF42-76B522325F53}" ShortID="73095154">
+															<PropertyList>
+																<Property Name="Pitch" Type="int32">
+																	<ModifierList>
+																		<ModifierInfo>
+																			<Modifier Name="" ID="{688544D3-412E-4E71-B063-F7C4156E13AB}"/>
+																		</ModifierInfo>
+																	</ModifierList>
+																</Property>
+															</PropertyList>
 															<ReferenceList>
 																<Reference Name="Conversion">
 																	<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{4ADFD3A0-A42B-432C-8502-1433439D5054}"/>
@@ -11849,10 +11766,12 @@
 														</Sound>
 														<Sound Name="C_ThrowQuip_04" ID="{EC4FB46C-C4A8-4496-86F1-23FC01AA653E}" ShortID="653622508">
 															<PropertyList>
-																<Property Name="Inclusion" Type="bool">
-																	<ValueList>
-																		<Value>False</Value>
-																	</ValueList>
+																<Property Name="Pitch" Type="int32">
+																	<ModifierList>
+																		<ModifierInfo>
+																			<Modifier Name="" ID="{A462D7BF-6D79-404F-99E9-720B8B6BDB42}"/>
+																		</ModifierInfo>
+																	</ModifierList>
 																</Property>
 															</PropertyList>
 															<ReferenceList>
@@ -11878,10 +11797,12 @@
 														</Sound>
 														<Sound Name="C_ThrowQuip_05" ID="{B77FAB35-BF3A-4142-94B9-D8DE4573F4EE}" ShortID="901345503">
 															<PropertyList>
-																<Property Name="Inclusion" Type="bool">
-																	<ValueList>
-																		<Value>False</Value>
-																	</ValueList>
+																<Property Name="Pitch" Type="int32">
+																	<ModifierList>
+																		<ModifierInfo>
+																			<Modifier Name="" ID="{A80DBBF9-6DA2-4BE7-9450-B0D741491102}"/>
+																		</ModifierInfo>
+																	</ModifierList>
 																</Property>
 															</PropertyList>
 															<ReferenceList>
@@ -11907,10 +11828,12 @@
 														</Sound>
 														<Sound Name="C_ThrowQuip_06" ID="{88C83C39-A0CF-4EB8-9A5C-02DC8A8F1578}" ShortID="565118443">
 															<PropertyList>
-																<Property Name="Inclusion" Type="bool">
-																	<ValueList>
-																		<Value>False</Value>
-																	</ValueList>
+																<Property Name="Pitch" Type="int32">
+																	<ModifierList>
+																		<ModifierInfo>
+																			<Modifier Name="" ID="{26BB43CD-712E-4651-9A3B-5B8F3E59CE9E}"/>
+																		</ModifierInfo>
+																	</ModifierList>
 																</Property>
 															</PropertyList>
 															<ReferenceList>
@@ -12037,13 +11960,6 @@
 											</ActiveSourceList>
 										</Sound>
 										<Sound Name="C_Hit_02" ID="{62239830-15B3-41E8-B086-E213204E138F}" ShortID="542639172">
-											<PropertyList>
-												<Property Name="Inclusion" Type="bool">
-													<ValueList>
-														<Value>False</Value>
-													</ValueList>
-												</Property>
-											</PropertyList>
 											<ReferenceList>
 												<Reference Name="Conversion">
 													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{4ADFD3A0-A42B-432C-8502-1433439D5054}"/>
@@ -12066,13 +11982,6 @@
 											</ActiveSourceList>
 										</Sound>
 										<Sound Name="C_Hit_03" ID="{2B5CA02D-8084-47B1-87A0-16AC7CD21675}" ShortID="324749750">
-											<PropertyList>
-												<Property Name="Inclusion" Type="bool">
-													<ValueList>
-														<Value>False</Value>
-													</ValueList>
-												</Property>
-											</PropertyList>
 											<ReferenceList>
 												<Reference Name="Conversion">
 													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{4ADFD3A0-A42B-432C-8502-1433439D5054}"/>
@@ -12095,13 +12004,6 @@
 											</ActiveSourceList>
 										</Sound>
 										<Sound Name="C_Hit_04" ID="{2D911270-8C96-4698-AA4E-406E00D07298}" ShortID="684301517">
-											<PropertyList>
-												<Property Name="Inclusion" Type="bool">
-													<ValueList>
-														<Value>False</Value>
-													</ValueList>
-												</Property>
-											</PropertyList>
 											<ReferenceList>
 												<Reference Name="Conversion">
 													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{4ADFD3A0-A42B-432C-8502-1433439D5054}"/>
@@ -12183,13 +12085,6 @@
 											</ActiveSourceList>
 										</Sound>
 										<Sound Name="C_HitHeavy_02" ID="{7CB69FF0-F3C6-47C9-B975-E5C318D3B118}" ShortID="350627467">
-											<PropertyList>
-												<Property Name="Inclusion" Type="bool">
-													<ValueList>
-														<Value>False</Value>
-													</ValueList>
-												</Property>
-											</PropertyList>
 											<ReferenceList>
 												<Reference Name="Conversion">
 													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{4ADFD3A0-A42B-432C-8502-1433439D5054}"/>
@@ -12309,11 +12204,6 @@
 										</Sound>
 										<Sound Name="D_Hit_04" ID="{49EAAD45-6221-4D51-B308-93577A41BEFF}" ShortID="908073762">
 											<PropertyList>
-												<Property Name="Inclusion" Type="bool">
-													<ValueList>
-														<Value>False</Value>
-													</ValueList>
-												</Property>
 												<Property Name="Volume" Type="Real64">
 													<ValueList>
 														<Value>-6</Value>
@@ -12343,11 +12233,6 @@
 										</Sound>
 										<Sound Name="D_Hit_03" ID="{8393AFE7-01AF-4294-B718-A7424F746E13}" ShortID="676207098">
 											<PropertyList>
-												<Property Name="Inclusion" Type="bool">
-													<ValueList>
-														<Value>False</Value>
-													</ValueList>
-												</Property>
 												<Property Name="Volume" Type="Real64">
 													<ValueList>
 														<Value>-6</Value>
@@ -12377,10 +12262,12 @@
 										</Sound>
 										<Sound Name="D_Hit_02" ID="{20FA3F4F-FC2F-4BCA-9E20-99097FBC17CC}" ShortID="507888172">
 											<PropertyList>
-												<Property Name="Inclusion" Type="bool">
-													<ValueList>
-														<Value>False</Value>
-													</ValueList>
+												<Property Name="Pitch" Type="int32">
+													<ModifierList>
+														<ModifierInfo>
+															<Modifier Name="" ID="{42F0D6A9-4594-4B82-A3BC-DB9216B45018}"/>
+														</ModifierInfo>
+													</ModifierList>
 												</Property>
 												<Property Name="Volume" Type="Real64">
 													<ValueList>
@@ -12411,11 +12298,6 @@
 										</Sound>
 										<Sound Name="D_Hit_05" ID="{FDCAD6DE-A9A1-4024-8276-C43750190F0F}" ShortID="554948127">
 											<PropertyList>
-												<Property Name="Inclusion" Type="bool">
-													<ValueList>
-														<Value>False</Value>
-													</ValueList>
-												</Property>
 												<Property Name="Volume" Type="Real64">
 													<ValueList>
 														<Value>-6</Value>
@@ -12445,11 +12327,6 @@
 										</Sound>
 										<Sound Name="D_Hit_06" ID="{1344AD33-A029-48DE-9F0D-D169A04CDED2}" ShortID="90262051">
 											<PropertyList>
-												<Property Name="Inclusion" Type="bool">
-													<ValueList>
-														<Value>False</Value>
-													</ValueList>
-												</Property>
 												<Property Name="Volume" Type="Real64">
 													<ValueList>
 														<Value>-6</Value>
@@ -12516,11 +12393,6 @@
 									<ChildrenList>
 										<Sound Name="D_HitHeavy_03" ID="{7F6179E1-50B5-4085-A661-CD0D51EC058B}" ShortID="225374953">
 											<PropertyList>
-												<Property Name="Inclusion" Type="bool">
-													<ValueList>
-														<Value>False</Value>
-													</ValueList>
-												</Property>
 												<Property Name="Volume" Type="Real64">
 													<ValueList>
 														<Value>-6</Value>
@@ -12550,11 +12422,6 @@
 										</Sound>
 										<Sound Name="D_HitHeavy_05" ID="{AD25EBA1-DD95-49C4-8331-EF9E6617CFED}" ShortID="459721756">
 											<PropertyList>
-												<Property Name="Inclusion" Type="bool">
-													<ValueList>
-														<Value>False</Value>
-													</ValueList>
-												</Property>
 												<Property Name="Volume" Type="Real64">
 													<ValueList>
 														<Value>-6</Value>
@@ -12584,11 +12451,6 @@
 										</Sound>
 										<Sound Name="D_HitHeavy_07" ID="{11D7AEB4-25DA-4206-AE48-12CDBD59D5BA}" ShortID="45609599">
 											<PropertyList>
-												<Property Name="Inclusion" Type="bool">
-													<ValueList>
-														<Value>False</Value>
-													</ValueList>
-												</Property>
 												<Property Name="Volume" Type="Real64">
 													<ValueList>
 														<Value>-6</Value>
@@ -12647,11 +12509,6 @@
 										</Sound>
 										<Sound Name="D_HitHeavy_02" ID="{4BA1525D-296C-4E87-9188-CDB58CD82CE9}" ShortID="71304443">
 											<PropertyList>
-												<Property Name="Inclusion" Type="bool">
-													<ValueList>
-														<Value>False</Value>
-													</ValueList>
-												</Property>
 												<Property Name="Volume" Type="Real64">
 													<ValueList>
 														<Value>-6</Value>
@@ -12681,11 +12538,6 @@
 										</Sound>
 										<Sound Name="D_HitHeavy_04" ID="{C468AF51-D5B4-4CCE-A851-87ED6E593426}" ShortID="183696838">
 											<PropertyList>
-												<Property Name="Inclusion" Type="bool">
-													<ValueList>
-														<Value>False</Value>
-													</ValueList>
-												</Property>
 												<Property Name="Volume" Type="Real64">
 													<ValueList>
 														<Value>-6</Value>
@@ -12715,11 +12567,6 @@
 										</Sound>
 										<Sound Name="D_HitHeavy_06" ID="{ED26AD5D-D673-4453-89B7-6B250818D477}" ShortID="1006706061">
 											<PropertyList>
-												<Property Name="Inclusion" Type="bool">
-													<ValueList>
-														<Value>False</Value>
-													</ValueList>
-												</Property>
 												<Property Name="Volume" Type="Real64">
 													<ValueList>
 														<Value>-6</Value>
@@ -13134,6 +12981,15 @@
 									</ReferenceList>
 									<ChildrenList>
 										<Sound Name="VO_E_Impact_01" ID="{BAE8080F-0A0D-4B97-A7D4-C4DE7ACEBE2E}" ShortID="1009425942">
+											<PropertyList>
+												<Property Name="Pitch" Type="int32">
+													<ModifierList>
+														<ModifierInfo>
+															<Modifier Name="" ID="{4BDC0A53-BD75-41D9-BCE6-D8AE2700D0DA}"/>
+														</ModifierInfo>
+													</ModifierList>
+												</Property>
+											</PropertyList>
 											<ReferenceList>
 												<Reference Name="Conversion">
 													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{4ADFD3A0-A42B-432C-8502-1433439D5054}"/>
@@ -13157,10 +13013,12 @@
 										</Sound>
 										<Sound Name="VO_E_Impact_02" ID="{DF690F93-C741-4E02-BD92-7F190CC1A757}" ShortID="769573954">
 											<PropertyList>
-												<Property Name="Inclusion" Type="bool">
-													<ValueList>
-														<Value>False</Value>
-													</ValueList>
+												<Property Name="Pitch" Type="int32">
+													<ModifierList>
+														<ModifierInfo>
+															<Modifier Name="" ID="{F29D85C1-FEFC-4B96-A5AD-4FD00A82E14A}"/>
+														</ModifierInfo>
+													</ModifierList>
 												</Property>
 											</PropertyList>
 											<ReferenceList>
@@ -13185,6 +13043,15 @@
 											</ActiveSourceList>
 										</Sound>
 										<Sound Name="VO_E_Impact_03" ID="{274ECD14-0AB9-4695-98AC-C833B16BD735}" ShortID="247947499">
+											<PropertyList>
+												<Property Name="Pitch" Type="int32">
+													<ModifierList>
+														<ModifierInfo>
+															<Modifier Name="" ID="{36E6F69F-31A8-407C-B56F-43A2AC79070D}"/>
+														</ModifierInfo>
+													</ModifierList>
+												</Property>
+											</PropertyList>
 											<ReferenceList>
 												<Reference Name="Conversion">
 													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{4ADFD3A0-A42B-432C-8502-1433439D5054}"/>
@@ -13208,10 +13075,12 @@
 										</Sound>
 										<Sound Name="VO_E_Impact_04" ID="{12489307-DBD3-4C6B-A04C-218DA6F1A9D1}" ShortID="148149741">
 											<PropertyList>
-												<Property Name="Inclusion" Type="bool">
-													<ValueList>
-														<Value>False</Value>
-													</ValueList>
+												<Property Name="Pitch" Type="int32">
+													<ModifierList>
+														<ModifierInfo>
+															<Modifier Name="" ID="{2BBAAD3A-19FE-4A74-8B54-39902938713D}"/>
+														</ModifierInfo>
+													</ModifierList>
 												</Property>
 											</PropertyList>
 											<ReferenceList>
@@ -13236,6 +13105,15 @@
 											</ActiveSourceList>
 										</Sound>
 										<Sound Name="VO_E_Impact_05" ID="{6436E07E-DA1D-4E64-BFB9-76EB0609DF1A}" ShortID="962234370">
+											<PropertyList>
+												<Property Name="Pitch" Type="int32">
+													<ModifierList>
+														<ModifierInfo>
+															<Modifier Name="" ID="{CBA9A4B3-A008-46FD-B24D-645CE860AE4E}"/>
+														</ModifierInfo>
+													</ModifierList>
+												</Property>
+											</PropertyList>
 											<ReferenceList>
 												<Reference Name="Conversion">
 													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{4ADFD3A0-A42B-432C-8502-1433439D5054}"/>
@@ -13259,10 +13137,12 @@
 										</Sound>
 										<Sound Name="VO_E_Impact_06" ID="{3D94C5E4-DC2B-4A60-83A4-D1A46655A91B}" ShortID="527856218">
 											<PropertyList>
-												<Property Name="Inclusion" Type="bool">
-													<ValueList>
-														<Value>False</Value>
-													</ValueList>
+												<Property Name="Pitch" Type="int32">
+													<ModifierList>
+														<ModifierInfo>
+															<Modifier Name="" ID="{A4AEF234-D010-4A95-BCAA-B900A6F04975}"/>
+														</ModifierInfo>
+													</ModifierList>
 												</Property>
 											</PropertyList>
 											<ReferenceList>
@@ -13287,6 +13167,15 @@
 											</ActiveSourceList>
 										</Sound>
 										<Sound Name="VO_E_Impact_07" ID="{5D77F6C3-B99D-47A7-8D15-E2BAFFA2270C}" ShortID="444010134">
+											<PropertyList>
+												<Property Name="Pitch" Type="int32">
+													<ModifierList>
+														<ModifierInfo>
+															<Modifier Name="" ID="{141225DF-DAF2-46B4-992D-0AD3CDD56639}"/>
+														</ModifierInfo>
+													</ModifierList>
+												</Property>
+											</PropertyList>
 											<ReferenceList>
 												<Reference Name="Conversion">
 													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{4ADFD3A0-A42B-432C-8502-1433439D5054}"/>
@@ -13328,6 +13217,15 @@
 									</ReferenceList>
 									<ChildrenList>
 										<Sound Name="VO_E_ImpactHeavy_01" ID="{503D44C3-8EFD-49E4-88E0-679AD48F2D2C}" ShortID="612108408">
+											<PropertyList>
+												<Property Name="Pitch" Type="int32">
+													<ModifierList>
+														<ModifierInfo>
+															<Modifier Name="" ID="{AC1773A7-12F2-479A-9909-F9D93EE66D44}"/>
+														</ModifierInfo>
+													</ModifierList>
+												</Property>
+											</PropertyList>
 											<ReferenceList>
 												<Reference Name="Conversion">
 													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{4ADFD3A0-A42B-432C-8502-1433439D5054}"/>
@@ -13373,10 +13271,12 @@
 										</Sound>
 										<Sound Name="VO_E_ImpactHeavy_03" ID="{65913C47-DA31-4600-A16B-7C642F15E5B9}" ShortID="198938500">
 											<PropertyList>
-												<Property Name="Inclusion" Type="bool">
-													<ValueList>
-														<Value>False</Value>
-													</ValueList>
+												<Property Name="Pitch" Type="int32">
+													<ModifierList>
+														<ModifierInfo>
+															<Modifier Name="" ID="{679A1216-D1E8-4FB3-99EE-37B2B48BF78C}"/>
+														</ModifierInfo>
+													</ModifierList>
 												</Property>
 											</PropertyList>
 											<ReferenceList>
@@ -13401,6 +13301,15 @@
 											</ActiveSourceList>
 										</Sound>
 										<Sound Name="VO_E_ImpactHeavy_04" ID="{80A87A9B-1A84-452A-BB4F-97C941D9D82C}" ShortID="997467775">
+											<PropertyList>
+												<Property Name="Pitch" Type="int32">
+													<ModifierList>
+														<ModifierInfo>
+															<Modifier Name="" ID="{57FC5EC5-9A38-4A3C-A184-4DFD2380FF98}"/>
+														</ModifierInfo>
+													</ModifierList>
+												</Property>
+											</PropertyList>
 											<ReferenceList>
 												<Reference Name="Conversion">
 													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{4ADFD3A0-A42B-432C-8502-1433439D5054}"/>
