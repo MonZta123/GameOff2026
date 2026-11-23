@@ -10,7 +10,7 @@
     "Type": "User",
     "GUID": "{3059A6CE-8152-4CD2-BEA9-69E98BB60D65}",
     "Language": "SFX",
-    "Hash": "{E8C94CCC-CA7F-40C7-6EC5-E1FFEED7C96C}",
+    "Hash": "{54D1136F-0578-3E7A-B2EB-C4C69A3904BA}",
     "ObjectPath": "\\SoundBanks\\Default Work Unit\\Main",
     "ShortName": "Main",
     "Path": "Main.bnk",
@@ -160,14 +160,6 @@
       "CachePath": "8E/{8E8C7B0A-FA99-C952-756E-281306BB2258}.wem"
      },
      {
-      "Id": "72949655",
-      "Language": "SFX",
-      "Streaming": "false",
-      "Location": "Memory",
-      "ShortName": "VO_B_Hack_05.wav",
-      "CachePath": "60/{60C79480-4001-62EE-28A5-61DDE2DBBFC2}.wem"
-     },
-     {
       "Id": "80020541",
       "Language": "SFX",
       "Streaming": "false",
@@ -294,6 +286,30 @@
       "Location": "Memory",
       "ShortName": "C_2_GuitarVibe.wav",
       "CachePath": "DD/{DDCA3FCD-28B1-E513-2144-F586A7CFE09D}.wem"
+     },
+     {
+      "Id": "159229097",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "C_Select_02.wav",
+      "CachePath": "C1/{C1F51623-0DBB-1009-E7BE-832E67DC2A29}.wem"
+     },
+     {
+      "Id": "163441454",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "C_Dead_01.wav",
+      "CachePath": "C0/{C0EE2B2B-41B2-6C23-356F-F6A96D034069}.wem"
+     },
+     {
+      "Id": "163993297",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "C_HitHeavy_01.wav",
+      "CachePath": "3F/{3F869C3B-A29B-8A0B-550A-D8F97FB15A27}.wem"
      },
      {
       "Id": "164772367",
@@ -424,14 +440,6 @@
       "CachePath": "BC/{BC0E95B4-A232-0920-6B56-A6C2FE0C71D9}.wem"
      },
      {
-      "Id": "238493097",
-      "Language": "SFX",
-      "Streaming": "false",
-      "Location": "Memory",
-      "ShortName": "D_AttackQuip_05.wav",
-      "CachePath": "9A/{9A1E9AFB-2645-A9AC-0682-53E5D2128B60}.wem"
-     },
-     {
       "Id": "241379826",
       "Language": "SFX",
       "Streaming": "false",
@@ -454,6 +462,14 @@
       "Location": "Memory",
       "ShortName": "A_Attack_01.wav",
       "CachePath": "B0/{B0C36D06-EDBF-43CB-2664-DE7841A261C0}.wem"
+     },
+     {
+      "Id": "266101686",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "C_Select_03.wav",
+      "CachePath": "A8/{A85F1647-A7D4-6BC2-2279-CDC74C8D9172}.wem"
      },
      {
       "Id": "267769419",
@@ -528,14 +544,6 @@
       "CachePath": "B8/{B8D62A5B-A971-350B-E502-973DD8A091AF}.wem"
      },
      {
-      "Id": "312967604",
-      "Language": "SFX",
-      "Streaming": "false",
-      "Location": "Memory",
-      "ShortName": "Mine_Beeps.wav",
-      "CachePath": "79/{790DCF18-E5DE-C2DE-16BB-77C22E3FFE57}.wem"
-     },
-     {
       "Id": "332679464",
       "Language": "SFX",
       "Streaming": "false",
@@ -558,6 +566,14 @@
       "Location": "Memory",
       "ShortName": "AmbienceBackOfHouse_Loop.wav",
       "CachePath": "7E/{7E0FDFE8-2B3B-1FBD-EBC0-780E61977F1E}.wem"
+     },
+     {
+      "Id": "359792775",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "C_Win_01.wav",
+      "CachePath": "0F/{0F15CAF9-A0B4-5730-5636-372E7032D6CD}.wem"
      },
      {
       "Id": "360860511",
@@ -710,6 +726,14 @@
       "Location": "Memory",
       "ShortName": "SFX_Crunch_02.wav",
       "CachePath": "19/{19DA1DB7-FA6D-27A6-ADA8-9C58079A6FAB}.wem"
+     },
+     {
+      "Id": "462396197",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "C_Select_04.wav",
+      "CachePath": "BB/{BB98030E-D945-362D-2C65-77A7CEF52539}.wem"
      },
      {
       "Id": "462440525",
@@ -880,14 +904,6 @@
       "CachePath": "A3/{A36BB8AD-B3E6-3C09-C115-9F5AF9C7F936}.wem"
      },
      {
-      "Id": "589992553",
-      "Language": "SFX",
-      "Streaming": "false",
-      "Location": "Memory",
-      "ShortName": "D_AttackQuip_03.wav",
-      "CachePath": "19/{192949F4-7EDE-073B-3A92-3A9AD5C00A69}.wem"
-     },
-     {
       "Id": "593952616",
       "Language": "SFX",
       "Streaming": "false",
@@ -936,14 +952,6 @@
       "CachePath": "0A/{0A138AF6-C3A9-FBD9-1936-7BEBA4FEDCAB}.wem"
      },
      {
-      "Id": "620156882",
-      "Language": "SFX",
-      "Streaming": "false",
-      "Location": "Memory",
-      "ShortName": "D_HitHeavy_03.wav",
-      "CachePath": "A9/{A9913BC2-AF34-0B72-A7D3-1B87CF4FC1DC}.wem"
-     },
-     {
       "Id": "621743721",
       "Language": "SFX",
       "Streaming": "false",
@@ -966,14 +974,6 @@
       "Location": "Memory",
       "ShortName": "FootstepA_03_Concrete.wav",
       "CachePath": "32/{320966AE-53D7-485E-5E41-FF325B82D486}.wem"
-     },
-     {
-      "Id": "646928954",
-      "Language": "SFX",
-      "Streaming": "false",
-      "Location": "Memory",
-      "ShortName": "D_HitHeavy_07.wav",
-      "CachePath": "1C/{1C561AC6-CC56-238F-BC63-BD4AFE85BCB5}.wem"
      },
      {
       "Id": "649226668",
@@ -1072,14 +1072,6 @@
       "CachePath": "2C/{2CB1DA4C-3ABC-F453-BD1B-A8C4B3602A04}.wem"
      },
      {
-      "Id": "689588674",
-      "Language": "SFX",
-      "Streaming": "false",
-      "Location": "Memory",
-      "ShortName": "BigExplosion.wav",
-      "CachePath": "A0/{A0D95EF1-337B-CF75-3E03-27B9F1F210E2}.wem"
-     },
-     {
       "Id": "701481381",
       "Language": "SFX",
       "Streaming": "false",
@@ -1168,12 +1160,28 @@
       "CachePath": "CD/{CD0D026A-6DD6-122F-7623-531BC4043107}.wem"
      },
      {
+      "Id": "779424892",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "C_ThrowQuip_03.wav",
+      "CachePath": "C2/{C2E35A96-A407-2E8B-9606-CB6D805A81B9}.wem"
+     },
+     {
       "Id": "780423143",
       "Language": "SFX",
       "Streaming": "false",
       "Location": "Memory",
       "ShortName": "C_Master.wav",
       "CachePath": "B4/{B46C851B-DC41-1207-A89D-B8C9A6F43BE4}.wem"
+     },
+     {
+      "Id": "792966004",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "C_Select_01.wav",
+      "CachePath": "CF/{CF162388-D640-DDAB-AA1C-72526A6A6F07}.wem"
      },
      {
       "Id": "793817075",
@@ -1230,22 +1238,6 @@
       "Location": "Memory",
       "ShortName": "B_1_Brass.wav",
       "CachePath": "CB/{CB0C53FC-4CAE-2476-DE88-1174DA22E639}.wem"
-     },
-     {
-      "Id": "820641460",
-      "Language": "SFX",
-      "Streaming": "false",
-      "Location": "Memory",
-      "ShortName": "D_AttackQuip_04.wav",
-      "CachePath": "08/{08FD7695-884F-8BE1-7C49-F2690B9A2DF0}.wem"
-     },
-     {
-      "Id": "828278725",
-      "Language": "SFX",
-      "Streaming": "false",
-      "Location": "Memory",
-      "ShortName": "D_Hit_03.wav",
-      "CachePath": "27/{27FD848E-B75A-9200-1B71-CB5465C0B622}.wem"
      },
      {
       "Id": "828655390",
@@ -1334,6 +1326,14 @@
       "Location": "Memory",
       "ShortName": "VO_B_Roll_04.wav",
       "CachePath": "06/{06FBA5FD-3C57-A4CB-9FD1-C53F25B5513B}.wem"
+     },
+     {
+      "Id": "871490212",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "C_Hit_01.wav",
+      "CachePath": "94/{94003A51-843E-7BDC-BDE1-57911D6CF932}.wem"
      },
      {
       "Id": "883936672",
@@ -1576,12 +1576,12 @@
       "CachePath": "DA/{DAFEB2E8-3378-0ADF-CC24-2E557AF61550}.wem"
      },
      {
-      "Id": "1045731519",
+      "Id": "1046734891",
       "Language": "SFX",
       "Streaming": "false",
       "Location": "Memory",
-      "ShortName": "D_Hit_02.wav",
-      "CachePath": "2A/{2A5B416D-2CA0-C907-CC37-4B4CCB1B70ED}.wem"
+      "ShortName": "C_Throw_01.wav",
+      "CachePath": "11/{1181B55D-7BC7-4CE4-CAC3-7F5C88E01799}.wem"
      },
      {
       "Id": "1053093362",
@@ -1623,6 +1623,7 @@
        "Name": "Silence",
        "ObjectPath": "\\Containers\\Default Work Unit\\VO\\CharacterB\\Dodge\\Quip or Silence\\Silence_06\\Silence",
        "GUID": "{D0BA363E-EC23-4970-9503-E6A8A3C1E2A1}",
+       "Color": "2",
        "LibName": "Wwise Silence",
        "LibId": "6619138"
       },
@@ -1631,6 +1632,7 @@
        "Name": "Silence",
        "ObjectPath": "\\Containers\\Default Work Unit\\VO\\CharacterD\\AttackQuip\\Silence_04\\Silence",
        "GUID": "{38107037-D5EE-46F3-89C5-FDCCFE426F90}",
+       "Color": "4",
        "LibName": "Wwise Silence",
        "LibId": "6619138"
       },
@@ -1639,6 +1641,7 @@
        "Name": "Silence",
        "ObjectPath": "\\Containers\\Default Work Unit\\VO\\CharacterA\\AttackQuip\\Quip or Silence\\Silence_08\\Silence",
        "GUID": "{8907C6D9-9725-4D2A-B385-D6E5FB151324}",
+       "Color": "19",
        "LibName": "Wwise Silence",
        "LibId": "6619138"
       },
@@ -1647,6 +1650,7 @@
        "Name": "Silence",
        "ObjectPath": "\\Containers\\Default Work Unit\\VO\\CharacterA\\AttackQuip\\Quip or Silence\\Silence_06\\Silence",
        "GUID": "{08F02F82-9A47-4C95-8EAE-D89B374E3445}",
+       "Color": "19",
        "LibName": "Wwise Silence",
        "LibId": "6619138"
       },
@@ -1655,6 +1659,16 @@
        "Name": "Silence",
        "ObjectPath": "\\Containers\\Default Work Unit\\VO\\CharacterB\\Dodge\\Quip or Silence\\Silence_07\\Silence",
        "GUID": "{DD521F8B-A443-4D35-9DCF-415DB960B472}",
+       "Color": "2",
+       "LibName": "Wwise Silence",
+       "LibId": "6619138"
+      },
+      {
+       "Id": "295992875",
+       "Name": "Silence",
+       "ObjectPath": "\\Containers\\Default Work Unit\\VO\\CharacterC\\Throw\\Quip or Silence\\Silence\\Silence",
+       "GUID": "{44BBE812-2DC6-40E3-A6E6-4DD83DF17E18}",
+       "Color": "10",
        "LibName": "Wwise Silence",
        "LibId": "6619138"
       },
@@ -1663,6 +1677,7 @@
        "Name": "Silence",
        "ObjectPath": "\\Containers\\Default Work Unit\\VO\\CharacterA\\AttackQuip\\Quip or Silence\\Silence_07\\Silence",
        "GUID": "{9AA3293A-7E3A-4E79-A248-CDE356DF536A}",
+       "Color": "19",
        "LibName": "Wwise Silence",
        "LibId": "6619138"
       },
@@ -1671,6 +1686,7 @@
        "Name": "Silence",
        "ObjectPath": "\\Containers\\Default Work Unit\\VO\\CharacterD\\AttackQuip\\Silence_01\\Silence",
        "GUID": "{4305D0A9-A74C-41D6-A6AB-12B4C562757F}",
+       "Color": "4",
        "LibName": "Wwise Silence",
        "LibId": "6619138"
       },
@@ -1679,6 +1695,7 @@
        "Name": "Silence",
        "ObjectPath": "\\Containers\\Default Work Unit\\VO\\CharacterA\\AttackQuip\\Quip or Silence\\Silence_05\\Silence",
        "GUID": "{E79DB30A-AC4E-4FC3-9A77-0D18AFE2FD6E}",
+       "Color": "19",
        "LibName": "Wwise Silence",
        "LibId": "6619138"
       },
@@ -1687,6 +1704,7 @@
        "Name": "Silence",
        "ObjectPath": "\\Containers\\Default Work Unit\\VO\\CharacterA\\AttackQuip\\Quip or Silence\\Silence_03\\Silence",
        "GUID": "{CF184942-AA05-4577-B8F0-C5CCAB63BBE8}",
+       "Color": "19",
        "LibName": "Wwise Silence",
        "LibId": "6619138"
       },
@@ -1695,6 +1713,7 @@
        "Name": "Silence",
        "ObjectPath": "\\Containers\\Default Work Unit\\VO\\CharacterB\\Dodge\\Quip or Silence\\Silence\\Silence",
        "GUID": "{3FE26951-C221-4E40-955D-A2266C710BBF}",
+       "Color": "2",
        "LibName": "Wwise Silence",
        "LibId": "6619138"
       },
@@ -1703,6 +1722,7 @@
        "Name": "Silence",
        "ObjectPath": "\\Containers\\Default Work Unit\\VO\\CharacterB\\Dodge\\Quip or Silence\\Silence_04\\Silence",
        "GUID": "{B9F4DE23-6E08-489C-832E-D86481E95A25}",
+       "Color": "2",
        "LibName": "Wwise Silence",
        "LibId": "6619138"
       },
@@ -1711,6 +1731,7 @@
        "Name": "Silence",
        "ObjectPath": "\\Containers\\Default Work Unit\\VO\\CharacterB\\Dodge\\Quip or Silence\\Silence_01\\Silence",
        "GUID": "{7BB0E871-A12F-43CE-A769-C07F7CCA2BC8}",
+       "Color": "2",
        "LibName": "Wwise Silence",
        "LibId": "6619138"
       },
@@ -1719,6 +1740,7 @@
        "Name": "Silence",
        "ObjectPath": "\\Containers\\Default Work Unit\\VO\\CharacterA\\AttackQuip\\Quip or Silence\\Silence_09\\Silence",
        "GUID": "{035FDC33-DCD0-4A5E-B054-17500F8A2A97}",
+       "Color": "19",
        "LibName": "Wwise Silence",
        "LibId": "6619138"
       },
@@ -1727,6 +1749,7 @@
        "Name": "Silence",
        "ObjectPath": "\\Containers\\Default Work Unit\\VO\\CharacterB\\Dodge\\Quip or Silence\\Silence_05\\Silence",
        "GUID": "{C934F594-B035-4280-A982-F2B25BC4F2A9}",
+       "Color": "2",
        "LibName": "Wwise Silence",
        "LibId": "6619138"
       },
@@ -1735,6 +1758,7 @@
        "Name": "Silence",
        "ObjectPath": "\\Containers\\Default Work Unit\\VO\\CharacterA\\AttackQuip\\Quip or Silence\\Silence_01\\Silence",
        "GUID": "{E1803B8B-484F-472F-9A20-A5F6F49BD009}",
+       "Color": "19",
        "LibName": "Wwise Silence",
        "LibId": "6619138"
       },
@@ -1752,6 +1776,7 @@
        "Name": "Silence",
        "ObjectPath": "\\Containers\\Default Work Unit\\VO\\CharacterA\\AttackQuip\\Quip or Silence\\Silence_02\\Silence",
        "GUID": "{FEAAC026-C055-4520-A26F-521731194992}",
+       "Color": "19",
        "LibName": "Wwise Silence",
        "LibId": "6619138"
       },
@@ -1760,6 +1785,7 @@
        "Name": "Silence",
        "ObjectPath": "\\Containers\\Default Work Unit\\VO\\CharacterD\\AttackQuip\\Silence\\Silence",
        "GUID": "{FC2E5D26-7133-4F27-988C-E826A91C4D31}",
+       "Color": "4",
        "LibName": "Wwise Silence",
        "LibId": "6619138"
       },
@@ -1768,6 +1794,7 @@
        "Name": "Silence",
        "ObjectPath": "\\Containers\\Default Work Unit\\VO\\CharacterA\\AttackQuip\\Quip or Silence\\Silence\\Silence",
        "GUID": "{7C8C483B-047D-4320-B458-578E33024F65}",
+       "Color": "19",
        "LibName": "Wwise Silence",
        "LibId": "6619138"
       },
@@ -1776,6 +1803,7 @@
        "Name": "Silence",
        "ObjectPath": "\\Containers\\Default Work Unit\\VO\\CharacterB\\Dodge\\Quip or Silence\\Silence_02\\Silence",
        "GUID": "{91CF2E88-95C1-4D5B-8541-FFD53F103437}",
+       "Color": "2",
        "LibName": "Wwise Silence",
        "LibId": "6619138"
       },
@@ -1793,6 +1821,7 @@
        "Name": "Silence",
        "ObjectPath": "\\Containers\\Default Work Unit\\VO\\CharacterA\\AttackQuip\\Quip or Silence\\Silence_04\\Silence",
        "GUID": "{B1C3BCD6-BC56-4D68-854A-EE72D60C97EF}",
+       "Color": "19",
        "LibName": "Wwise Silence",
        "LibId": "6619138"
       },
@@ -1801,6 +1830,7 @@
        "Name": "Silence",
        "ObjectPath": "\\Containers\\Default Work Unit\\VO\\CharacterB\\Dodge\\Quip or Silence\\Silence_03\\Silence",
        "GUID": "{640D5D39-2CB0-4D0D-B63E-97DE228E9C66}",
+       "Color": "2",
        "LibName": "Wwise Silence",
        "LibId": "6619138"
       },
@@ -1809,6 +1839,7 @@
        "Name": "Silence",
        "ObjectPath": "\\Containers\\Default Work Unit\\VO\\CharacterB\\Dodge\\Quip or Silence\\Silence_10\\Silence",
        "GUID": "{D70EE5CE-5D98-432E-8DA0-192384A47BEB}",
+       "Color": "2",
        "LibName": "Wwise Silence",
        "LibId": "6619138"
       },
@@ -1817,6 +1848,7 @@
        "Name": "Silence",
        "ObjectPath": "\\Containers\\Default Work Unit\\VO\\CharacterD\\AttackQuip\\Silence_02\\Silence",
        "GUID": "{3687138A-B07A-4F2B-9E4C-C74F8D463626}",
+       "Color": "4",
        "LibName": "Wwise Silence",
        "LibId": "6619138"
       },
@@ -1825,6 +1857,7 @@
        "Name": "Silence",
        "ObjectPath": "\\Containers\\Default Work Unit\\VO\\CharacterB\\Dodge\\Quip or Silence\\Silence_08\\Silence",
        "GUID": "{F47FCF06-2CEB-4BD0-B1F7-508EE20A9BA0}",
+       "Color": "2",
        "LibName": "Wwise Silence",
        "LibId": "6619138"
       },
@@ -1833,6 +1866,7 @@
        "Name": "Silence",
        "ObjectPath": "\\Containers\\Default Work Unit\\VO\\CharacterA\\AttackQuip\\Quip or Silence\\Silence_10\\Silence",
        "GUID": "{3D160F04-1F7A-45DC-95DB-319125891CC6}",
+       "Color": "19",
        "LibName": "Wwise Silence",
        "LibId": "6619138"
       },
@@ -1841,6 +1875,7 @@
        "Name": "Silence",
        "ObjectPath": "\\Containers\\Default Work Unit\\VO\\CharacterB\\Dodge\\Quip or Silence\\Silence_09\\Silence",
        "GUID": "{A1A0F2C7-D27A-4C46-9718-05AE31206067}",
+       "Color": "2",
        "LibName": "Wwise Silence",
        "LibId": "6619138"
       },
@@ -1849,6 +1884,7 @@
        "Name": "Silence",
        "ObjectPath": "\\Containers\\Default Work Unit\\VO\\CharacterD\\AttackQuip\\Silence_03\\Silence",
        "GUID": "{AEF186B6-B9BA-493D-AF91-2B4F0ABCBA32}",
+       "Color": "4",
        "LibName": "Wwise Silence",
        "LibId": "6619138"
       }
@@ -2638,9 +2674,6 @@
         "Id": "31454529"
        },
        {
-        "Id": "72949655"
-       },
-       {
         "Id": "120991060"
        },
        {
@@ -2827,22 +2860,6 @@
       }
      },
      {
-      "Id": "2310908281",
-      "Name": "Play_SFX_BigExplosion",
-      "ObjectPath": "\\Events\\Default Work Unit\\SFX\\Weapons\\Play_SFX_BigExplosion",
-      "GUID": "{E02E6D0C-F676-4241-B29F-FCEFD60C8FD3}",
-      "Color": "10",
-      "MaxAttenuation": "100",
-      "DurationType": "OneShot",
-      "DurationMin": "3.721202",
-      "DurationMax": "3.721202",
-      "MediaRefs": [
-       {
-        "Id": "689588674"
-       }
-      ]
-     },
-     {
       "Id": "3401867411",
       "Name": "Play_SFX_BombExplosion",
       "ObjectPath": "\\Events\\Default Work Unit\\SFX\\Weapons\\Play_SFX_BombExplosion",
@@ -2861,19 +2878,6 @@
        },
        {
         "Id": "1021562170"
-       }
-      ]
-     },
-     {
-      "Id": "1691696806",
-      "Name": "Play_SFX_ChargeSet",
-      "ObjectPath": "\\Events\\Default Work Unit\\SFX\\Weapons\\Play_SFX_ChargeSet",
-      "GUID": "{0E5DE2F2-5313-45DA-8FA6-A3469A2C1DFD}",
-      "MaxAttenuation": "100",
-      "DurationType": "Infinite",
-      "MediaRefs": [
-       {
-        "Id": "312967604"
        }
       ]
      },
@@ -3398,8 +3402,8 @@
       "Color": "4",
       "MaxAttenuation": "100",
       "DurationType": "OneShot",
-      "DurationMin": "2.17436",
-      "DurationMax": "2.6172187",
+      "DurationMin": "2.3711565",
+      "DurationMax": "2.4",
       "MediaRefs": [
        {
         "Id": "121532258"
@@ -3408,16 +3412,7 @@
         "Id": "174024542"
        },
        {
-        "Id": "238493097"
-       },
-       {
         "Id": "437602278"
-       },
-       {
-        "Id": "589992553"
-       },
-       {
-        "Id": "820641460"
        },
        {
         "Id": "846871773"
@@ -3451,8 +3446,8 @@
       "Color": "4",
       "MaxAttenuation": "100",
       "DurationType": "OneShot",
-      "DurationMin": "2.17436",
-      "DurationMax": "2.6172187",
+      "DurationMin": "2.3711565",
+      "DurationMax": "2.4",
       "MediaRefs": [
        {
         "Id": "174024542"
@@ -3619,7 +3614,7 @@
       "Color": "25",
       "DurationType": "OneShot",
       "DurationMin": "0.73882085",
-      "DurationMax": "2.6944444",
+      "DurationMax": "2.9854195",
       "SwitchContainers": [
        {
         "SwitchValue": {
@@ -3866,7 +3861,7 @@
           },
           "MediaRefs": [
            {
-            "Id": "410590335"
+            "Id": "792966004"
            }
           ]
          },
@@ -3879,7 +3874,7 @@
           },
           "MediaRefs": [
            {
-            "Id": "10943219"
+            "Id": "159229097"
            }
           ]
          },
@@ -3892,7 +3887,7 @@
           },
           "MediaRefs": [
            {
-            "Id": "659334181"
+            "Id": "462396197"
            }
           ]
          },
@@ -3905,7 +3900,7 @@
           },
           "MediaRefs": [
            {
-            "Id": "936875036"
+            "Id": "266101686"
            }
           ]
          },
@@ -3919,7 +3914,7 @@
           },
           "MediaRefs": [
            {
-            "Id": "410590335"
+            "Id": "792966004"
            }
           ]
          }
@@ -3934,7 +3929,7 @@
       "GUID": "{26B21666-DAE0-481D-B5C8-0753260D28CF}",
       "Color": "25",
       "DurationType": "OneShot",
-      "DurationMin": "0.9833787",
+      "DurationMin": "1.5747846",
       "DurationMax": "2.9002042",
       "MediaRefs": [
        {
@@ -3945,6 +3940,9 @@
        },
        {
         "Id": "279610568"
+       },
+       {
+        "Id": "359792775"
        },
        {
         "Id": "438843644"
@@ -4117,11 +4115,11 @@
       "GUID": "{335EBBEB-523F-400E-AB8F-C5BA862AB40F}",
       "Color": "10",
       "DurationType": "OneShot",
-      "DurationMin": "1.9219302",
-      "DurationMax": "1.9219302",
+      "DurationMin": "1.5460091",
+      "DurationMax": "1.5460091",
       "MediaRefs": [
        {
-        "Id": "2562951"
+        "Id": "163441454"
        }
       ]
      },
@@ -4133,17 +4131,11 @@
       "Color": "10",
       "MaxAttenuation": "100",
       "DurationType": "OneShot",
-      "DurationMin": "0.37027416",
-      "DurationMax": "0.67537296",
+      "DurationMin": "0.6506362",
+      "DurationMax": "0.7737412",
       "MediaRefs": [
        {
-        "Id": "284150746"
-       },
-       {
-        "Id": "807765666"
-       },
-       {
-        "Id": "977912169"
+        "Id": "871490212"
        }
       ]
      },
@@ -4155,17 +4147,11 @@
       "Color": "10",
       "MaxAttenuation": "100",
       "DurationType": "OneShot",
-      "DurationMin": "0.6771066",
-      "DurationMax": "1.111304",
+      "DurationMin": "0.9270059",
+      "DurationMax": "1.102402",
       "MediaRefs": [
        {
-        "Id": "442356810"
-       },
-       {
-        "Id": "497766376"
-       },
-       {
-        "Id": "679854016"
+        "Id": "163993297"
        }
       ]
      },
@@ -4177,74 +4163,20 @@
       "Color": "10",
       "MaxAttenuation": "100",
       "DurationType": "OneShot",
-      "DurationMin": "0.6185538",
-      "DurationMax": "2.1065593",
+      "DurationMin": "0.72508657",
+      "DurationMax": "1.8092794",
       "MediaRefs": [
        {
-        "Id": "13345672"
+        "Id": "779424892"
        },
        {
-        "Id": "72698772"
-       },
-       {
-        "Id": "241379826"
-       },
-       {
-        "Id": "300372930"
-       },
-       {
-        "Id": "333456175"
-       },
-       {
-        "Id": "388256774"
-       },
-       {
-        "Id": "600500171"
-       },
-       {
-        "Id": "828655390"
-       },
-       {
-        "Id": "869297126"
-       },
-       {
-        "Id": "884540179"
+        "Id": "1046734891"
        }
       ],
       "PluginRefs": {
        "Custom": [
         {
-         "Id": "53961230"
-        },
-        {
-         "Id": "262236259"
-        },
-        {
-         "Id": "471447123"
-        },
-        {
-         "Id": "472017458"
-        },
-        {
-         "Id": "501684028"
-        },
-        {
-         "Id": "531834480"
-        },
-        {
-         "Id": "730041516"
-        },
-        {
-         "Id": "813789196"
-        },
-        {
-         "Id": "896194296"
-        },
-        {
-         "Id": "914545128"
-        },
-        {
-         "Id": "1013606733"
+         "Id": "295992875"
         }
        ]
       }
@@ -4272,17 +4204,11 @@
       "Color": "4",
       "MaxAttenuation": "100",
       "DurationType": "OneShot",
-      "DurationMin": "0.38834396",
-      "DurationMax": "0.5350659",
+      "DurationMin": "0.4313662",
+      "DurationMax": "0.51298374",
       "MediaRefs": [
        {
         "Id": "80020541"
-       },
-       {
-        "Id": "828278725"
-       },
-       {
-        "Id": "1045731519"
        }
       ]
      },
@@ -4294,17 +4220,11 @@
       "Color": "4",
       "MaxAttenuation": "100",
       "DurationType": "OneShot",
-      "DurationMin": "0.4459218",
-      "DurationMax": "0.87346953",
+      "DurationMin": "0.5621588",
+      "DurationMax": "0.66852325",
       "MediaRefs": [
        {
         "Id": "216779663"
-       },
-       {
-        "Id": "620156882"
-       },
-       {
-        "Id": "646928954"
        }
       ]
      },
@@ -4453,16 +4373,6 @@
         "Id": "851917532"
        }
       ]
-     },
-     {
-      "Id": "1514844964",
-      "Name": "Stop_SFX_ChargeSet",
-      "ObjectPath": "\\Events\\Default Work Unit\\SFX\\Weapons\\Stop_SFX_ChargeSet",
-      "GUID": "{F1D77053-D09A-42C7-A653-B7669265A660}",
-      "MaxAttenuation": "0",
-      "DurationType": "OneShot",
-      "DurationMin": "0",
-      "DurationMax": "0"
      }
     ],
     "StateGroups": [
@@ -4573,6 +4483,6 @@
     ]
    }
   ],
-  "FileHash": "{9950FBE8-FC0A-7D04-6A1C-35AE398CE5A8}"
+  "FileHash": "{1795220A-88D2-E4C6-2CC4-026DD3306001}"
  }
 }

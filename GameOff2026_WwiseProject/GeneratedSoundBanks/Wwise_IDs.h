@@ -24,9 +24,7 @@ namespace AK
         static const AkUniqueID PLAY_SFX_ACTION_C_DEFUSE = 2770407763U;
         static const AkUniqueID PLAY_SFX_ATTACK_A_SLAM = 41955962U;
         static const AkUniqueID PLAY_SFX_ATTACK_A_SWING = 3272234049U;
-        static const AkUniqueID PLAY_SFX_BIGEXPLOSION = 2310908281U;
         static const AkUniqueID PLAY_SFX_BOMBEXPLOSION = 3401867411U;
-        static const AkUniqueID PLAY_SFX_CHARGESET = 1691696806U;
         static const AkUniqueID PLAY_SFX_DASH = 395039606U;
         static const AkUniqueID PLAY_SFX_DOORSLIDEOPEN = 2632977701U;
         static const AkUniqueID PLAY_SFX_DOORSLIDESHUT = 3287225507U;
@@ -73,7 +71,6 @@ namespace AK
         static const AkUniqueID STOP_MUS_MISSIONPAUSED = 1909315380U;
         static const AkUniqueID STOP_SFX_ACTION_B_HACK = 4118679155U;
         static const AkUniqueID STOP_SFX_ACTION_B_HACKSUCCESS = 2417158132U;
-        static const AkUniqueID STOP_SFX_CHARGESET = 1514844964U;
     } // namespace EVENTS
 
     namespace STATES
