@@ -10,7 +10,7 @@
     "Type": "User",
     "GUID": "{3059A6CE-8152-4CD2-BEA9-69E98BB60D65}",
     "Language": "SFX",
-    "Hash": "{7FCE83CD-F45D-74E6-D9C7-96E1F4E1F824}",
+    "Hash": "{5A4F71D6-7ED8-4DAB-50A1-02175C957A08}",
     "ObjectPath": "\\SoundBanks\\Default Work Unit\\Main",
     "ShortName": "Main",
     "Path": "Main.bnk",
@@ -21,7 +21,7 @@
       "Streaming": "false",
       "Location": "Memory",
       "ShortName": "CrunchHeavy_03.wav",
-      "CachePath": "B5/{B5176AD7-C11D-6206-E9F9-EEAED1CFD9D5}.wem"
+      "CachePath": "F1/{F1C0F878-2BCD-AABF-0F28-2C84BCAECD46}.wem"
      },
      {
       "Id": "2562951",
@@ -29,7 +29,7 @@
       "Streaming": "false",
       "Location": "Memory",
       "ShortName": "VO_B_Dead_01.wav",
-      "CachePath": "C0/{C09508ED-2B25-F2E4-E9DC-956A5680B9AC}.wem"
+      "CachePath": "7B/{7B080536-4EE6-5EA3-B01F-095D5063029D}.wem"
      },
      {
       "Id": "8111459",
@@ -37,7 +37,7 @@
       "Streaming": "false",
       "Location": "Memory",
       "ShortName": "FootstepC_03_Tile.wav",
-      "CachePath": "9E/{9E124CD0-BF8F-6EBF-A11F-4DF2C8556F61}.wem"
+      "CachePath": "C4/{C4ECF400-66AC-A8E7-7670-0CB6AC37B9FC}.wem"
      },
      {
       "Id": "8819262",
@@ -45,7 +45,7 @@
       "Streaming": "false",
       "Location": "Memory",
       "ShortName": "UI_Back.wav",
-      "CachePath": "1D/{1D402D81-655F-EB79-1AF3-E9F72F3A5F12}.wem"
+      "CachePath": "A5/{A52852EB-59E0-D9B8-7918-32D3DBED40DE}.wem"
      },
      {
       "Id": "10320711",
@@ -53,7 +53,7 @@
       "Streaming": "false",
       "Location": "Memory",
       "ShortName": "FootstepB_05_Tile.wav",
-      "CachePath": "0F/{0F59419E-A454-A9A9-0A3F-443BDFE13C08}.wem"
+      "CachePath": "E4/{E4258571-F270-4F66-C6B0-B7D94027049B}.wem"
      },
      {
       "Id": "10943219",
@@ -61,7 +61,7 @@
       "Streaming": "false",
       "Location": "Memory",
       "ShortName": "VO_B_Select_02.wav",
-      "CachePath": "84/{84560BC6-2730-6512-E8C3-B409E67BA805}.wem"
+      "CachePath": "9B/{9B3958B4-861F-D9E9-D67B-A718387E43BA}.wem"
      },
      {
       "Id": "13345672",
@@ -69,7 +69,7 @@
       "Streaming": "false",
       "Location": "Memory",
       "ShortName": "VO_B_Dodge_02.wav",
-      "CachePath": "62/{62FAB84A-A4C2-8707-6EC3-C11FD8F0E907}.wem"
+      "CachePath": "06/{06AEB83D-C3C4-FC24-1C8E-D273B77114EB}.wem"
      },
      {
       "Id": "19273968",
@@ -77,7 +77,7 @@
       "Streaming": "false",
       "Location": "Memory",
       "ShortName": "VO_E_ImpactHeavy_03.wav",
-      "CachePath": "EE/{EE468B97-630E-29AF-00DE-BB09056846DB}.wem"
+      "CachePath": "6E/{6E680957-57CA-BAE2-4AD1-7A1A5EBD23F6}.wem"
      },
      {
       "Id": "28431044",
@@ -85,7 +85,7 @@
       "Streaming": "false",
       "Location": "Memory",
       "ShortName": "VO_E_Impact_06.wav",
-      "CachePath": "0C/{0CFCF9DA-261C-A3D7-6499-B90548826F33}.wem"
+      "CachePath": "B5/{B53C5A9E-ABEA-CDF2-7A7F-C4B663EDBF4D}.wem"
      },
      {
       "Id": "28881280",
@@ -93,7 +93,7 @@
       "Streaming": "false",
       "Location": "Memory",
       "ShortName": "C_1_Brass.wav",
-      "CachePath": "88/{88F74C84-A92C-BA4F-F995-73A744FEB965}.wem"
+      "CachePath": "8D/{8D8F173C-BA8F-DCA0-9F58-142591A481C4}.wem"
      },
      {
       "Id": "31454529",
@@ -101,7 +101,7 @@
       "Streaming": "false",
       "Location": "Memory",
       "ShortName": "VO_B_Hack_04.wav",
-      "CachePath": "AB/{AB3981FD-2654-61F9-25B1-954FECD1B1F6}.wem"
+      "CachePath": "3A/{3A372A22-F419-5871-7192-36E61EB7F078}.wem"
      },
      {
       "Id": "35023313",
@@ -109,7 +109,7 @@
       "Streaming": "false",
       "Location": "Memory",
       "ShortName": "VO_E_ImpactHeavy_02.wav",
-      "CachePath": "2E/{2EB62FDF-86C5-AECD-642E-9017B6AAB066}.wem"
+      "CachePath": "7C/{7CA0BE93-D4BD-1921-3AF4-06EC83418112}.wem"
      },
      {
       "Id": "37499091",
@@ -117,7 +117,7 @@
       "Streaming": "false",
       "Location": "Memory",
       "ShortName": "A_AttackQuip_05.wav",
-      "CachePath": "78/{78227C17-DEEA-A4FB-CD30-03BBD07F3D82}.wem"
+      "CachePath": "2D/{2D993DF9-E029-5DD6-41F6-1FCC5D45E678}.wem"
      },
      {
       "Id": "49760524",
@@ -125,7 +125,7 @@
       "Streaming": "false",
       "Location": "Memory",
       "ShortName": "AttackHeavy_01.wav",
-      "CachePath": "FB/{FB027B7C-6A76-2FEF-8403-43810F9D3B64}.wem"
+      "CachePath": "F2/{F29A2456-A1AC-BF42-4506-3A2C97A1320A}.wem"
      },
      {
       "Id": "59328381",
@@ -133,7 +133,7 @@
       "Streaming": "false",
       "Location": "Memory",
       "ShortName": "A_Hit_01.wav",
-      "CachePath": "29/{29213859-8463-7DE4-B4CE-B4328625FFC9}.wem"
+      "CachePath": "82/{820A2076-5777-25D4-7B5F-E9D78EBCBBEA}.wem"
      },
      {
       "Id": "60538125",
@@ -141,7 +141,7 @@
       "Streaming": "false",
       "Location": "Memory",
       "ShortName": "FootstepB_03_Concrete.wav",
-      "CachePath": "7E/{7EEA50C9-C812-DA6D-0DA5-721EA0E297BD}.wem"
+      "CachePath": "6F/{6F9ABF51-2B9C-8158-A8C9-09FE49F13FE9}.wem"
      },
      {
       "Id": "64245047",
@@ -149,7 +149,7 @@
       "Streaming": "false",
       "Location": "Memory",
       "ShortName": "FootstepB_02.wav",
-      "CachePath": "EB/{EBF13F93-0C1F-E351-0F8E-690F8DDB374A}.wem"
+      "CachePath": "E6/{E6137EDE-04CB-1BEB-15DE-EF3F921D1C2A}.wem"
      },
      {
       "Id": "69418785",
@@ -157,7 +157,7 @@
       "Streaming": "false",
       "Location": "Memory",
       "ShortName": "A_1_MixedPerc.wav",
-      "CachePath": "E6/{E6E09121-A6F0-6E84-2973-A37E06354E61}.wem"
+      "CachePath": "3C/{3CA44BDF-7A9F-0385-B6C7-0AC968EFDB48}.wem"
      },
      {
       "Id": "70699534",
@@ -165,7 +165,7 @@
       "Streaming": "false",
       "Location": "Memory",
       "ShortName": "A_Select_04.wav",
-      "CachePath": "CE/{CE9A7749-50B7-BE96-CBDF-36AD654B9023}.wem"
+      "CachePath": "EF/{EFE571A8-8FAA-5E36-94B1-9977DB55EB33}.wem"
      },
      {
       "Id": "71820172",
@@ -173,7 +173,7 @@
       "Streaming": "false",
       "Location": "Memory",
       "ShortName": "A_AttackHeavy_03.wav",
-      "CachePath": "EB/{EBD9841B-C894-9483-D685-C5F88CF4A9DA}.wem"
+      "CachePath": "AC/{AC0BDB29-189F-0F14-E9F6-7ED030143A1C}.wem"
      },
      {
       "Id": "72698772",
@@ -181,7 +181,7 @@
       "Streaming": "false",
       "Location": "Memory",
       "ShortName": "VO_B_Roll_01.wav",
-      "CachePath": "8E/{8E8C7B0A-FA99-C952-756E-281306BB2258}.wem"
+      "CachePath": "51/{5158211A-C1A1-CF2E-035A-F8581ABB479A}.wem"
      },
      {
       "Id": "72949655",
@@ -189,7 +189,7 @@
       "Streaming": "false",
       "Location": "Memory",
       "ShortName": "VO_B_Hack_05.wav",
-      "CachePath": "60/{60C79480-4001-62EE-28A5-61DDE2DBBFC2}.wem"
+      "CachePath": "ED/{EDD808D5-CB7B-6F18-FE5F-FFCCCB89F9DF}.wem"
      },
      {
       "Id": "80020541",
@@ -197,7 +197,7 @@
       "Streaming": "false",
       "Location": "Memory",
       "ShortName": "D_Hit_01.wav",
-      "CachePath": "6C/{6CBFC654-5BA3-5B12-058F-37314B4FE9A9}.wem"
+      "CachePath": "1E/{1E517C08-B316-0B1C-C0E2-15762CA0900E}.wem"
      },
      {
       "Id": "80377827",
@@ -205,7 +205,7 @@
       "Streaming": "false",
       "Location": "Memory",
       "ShortName": "D_1_Theramin.wav",
-      "CachePath": "09/{094FF401-7EC6-5F98-177C-5BE1A5D7A930}.wem"
+      "CachePath": "1F/{1FAB99FC-4966-2B39-4276-EF3F63B6E5CB}.wem"
      },
      {
       "Id": "86779142",
@@ -213,7 +213,7 @@
       "Streaming": "false",
       "Location": "Memory",
       "ShortName": "D_1_MixedPerc.wav",
-      "CachePath": "60/{6003D05A-92A4-7876-7A16-ECE00E8C93D7}.wem"
+      "CachePath": "D8/{D89B17BD-D10A-4BF7-AEA7-4324D1AA81FA}.wem"
      },
      {
       "Id": "87366083",
@@ -221,7 +221,7 @@
       "Streaming": "false",
       "Location": "Memory",
       "ShortName": "D_Select_01.wav",
-      "CachePath": "08/{08AE225A-D6FF-FC20-C871-CDAA1A615E5A}.wem"
+      "CachePath": "B8/{B8B9516A-5FF6-436E-CE97-6BB0A33BAD1E}.wem"
      },
      {
       "Id": "95153162",
@@ -229,7 +229,7 @@
       "Streaming": "false",
       "Location": "Memory",
       "ShortName": "A_Attack_04.wav",
-      "CachePath": "45/{45F9DF6F-1908-F3D8-207A-9AD32573EC1E}.wem"
+      "CachePath": "DF/{DF502733-E096-B8DE-391B-7749B62FBFB3}.wem"
      },
      {
       "Id": "97531634",
@@ -237,7 +237,7 @@
       "Streaming": "false",
       "Location": "Memory",
       "ShortName": "ABCD_1_BassBombastic.wav",
-      "CachePath": "6F/{6F4A6524-5514-909E-1807-BCCEEC8007B8}.wem"
+      "CachePath": "13/{13F6C6CA-0B12-2D62-78F4-8FD0278395D3}.wem"
      },
      {
       "Id": "98692465",
@@ -245,7 +245,7 @@
       "Streaming": "false",
       "Location": "Memory",
       "ShortName": "A_Dash_02.wav",
-      "CachePath": "D6/{D69F0655-CE8B-A892-03E9-701AD703FE8F}.wem"
+      "CachePath": "A4/{A4530C9A-9891-CB1F-FA11-E5A4AAEC2910}.wem"
      },
      {
       "Id": "105804198",
@@ -253,7 +253,7 @@
       "Streaming": "false",
       "Location": "Memory",
       "ShortName": "BombExplosion_01.wav",
-      "CachePath": "7E/{7E29FE7B-993E-A101-A8C8-291096057219}.wem"
+      "CachePath": "BC/{BC968C93-C3FB-72C6-CB6C-67B1C489F22C}.wem"
      },
      {
       "Id": "120991060",
@@ -261,7 +261,7 @@
       "Streaming": "false",
       "Location": "Memory",
       "ShortName": "VO_B_Hack_01.wav",
-      "CachePath": "D8/{D8F8235B-989A-42F6-32EA-D287C0B88F97}.wem"
+      "CachePath": "CA/{CA9833AC-2C87-B6A8-B67A-E0C124E25A1F}.wem"
      },
      {
       "Id": "121023244",
@@ -269,7 +269,7 @@
       "Streaming": "false",
       "Location": "Memory",
       "ShortName": "D_HitHeavy_02.wav",
-      "CachePath": "2D/{2D2B3368-3CB2-B67D-DC32-17B45932296A}.wem"
+      "CachePath": "8F/{8F40F2A3-E0C4-8E86-563F-F03C2564F7F9}.wem"
      },
      {
       "Id": "121532258",
@@ -277,7 +277,7 @@
       "Streaming": "false",
       "Location": "Memory",
       "ShortName": "D_AttackQuip_02.wav",
-      "CachePath": "04/{0482DA4B-A4CF-FBD7-C39A-5D5E41A9383E}.wem"
+      "CachePath": "EF/{EF5117EE-FCBA-4014-C2E3-B94CB6F08E7D}.wem"
      },
      {
       "Id": "127032397",
@@ -285,7 +285,7 @@
       "Streaming": "false",
       "Location": "Memory",
       "ShortName": "A_2_CelloPulse.wav",
-      "CachePath": "BF/{BF627E45-80E2-D0F0-DF66-CF37C8CDB9B3}.wem"
+      "CachePath": "D8/{D82DA3F7-867E-3D4C-5D16-2080AA24AC7F}.wem"
      },
      {
       "Id": "136911883",
@@ -293,7 +293,7 @@
       "Streaming": "false",
       "Location": "Memory",
       "ShortName": "A_2_StompsClicks.wav",
-      "CachePath": "A4/{A4259060-F1E6-F26E-5278-78B8D0657278}.wem"
+      "CachePath": "CD/{CD163921-D45A-F47D-6118-4413C4FD064B}.wem"
      },
      {
       "Id": "141284948",
@@ -301,7 +301,7 @@
       "Streaming": "false",
       "Location": "Memory",
       "ShortName": "ABCD_3_DrumsRockF.wav",
-      "CachePath": "11/{113376D4-C9D4-7933-BAF9-7D09396BAB39}.wem"
+      "CachePath": "EF/{EF45CD23-044A-3D48-92EF-FCC1E2479854}.wem"
      },
      {
       "Id": "146835285",
@@ -309,7 +309,7 @@
       "Streaming": "false",
       "Location": "Memory",
       "ShortName": "A_Dash_04.wav",
-      "CachePath": "35/{35A85526-79B8-3EC9-490E-4E776EC3C881}.wem"
+      "CachePath": "B2/{B2481DD8-3A84-EF5B-9B2E-0A5B8B431A79}.wem"
      },
      {
       "Id": "149609054",
@@ -317,7 +317,7 @@
       "Streaming": "false",
       "Location": "Memory",
       "ShortName": "FootstepA_02_Tile.wav",
-      "CachePath": "46/{465B75C4-907E-F7E5-7B86-E59232EA5D15}.wem"
+      "CachePath": "8B/{8B4795B0-55F2-BF4F-9F41-A7EB35D896BC}.wem"
      },
      {
       "Id": "152056061",
@@ -325,7 +325,7 @@
       "Streaming": "false",
       "Location": "Memory",
       "ShortName": "VO_E_Impact_02.wav",
-      "CachePath": "3B/{3B84FC9E-2864-BBE1-91D6-47C588723410}.wem"
+      "CachePath": "D8/{D8C60F5B-8716-CD85-0B13-5FFA32D12D5D}.wem"
      },
      {
       "Id": "153022710",
@@ -333,7 +333,7 @@
       "Streaming": "false",
       "Location": "Memory",
       "ShortName": "C_2_GuitarVibe.wav",
-      "CachePath": "DD/{DDCA3FCD-28B1-E513-2144-F586A7CFE09D}.wem"
+      "CachePath": "EB/{EB05491C-6153-3F4B-6381-6BC51F60E32B}.wem"
      },
      {
       "Id": "158000122",
@@ -341,7 +341,7 @@
       "Streaming": "false",
       "Location": "Memory",
       "ShortName": "C_ThrowQuip_02.wav",
-      "CachePath": "1B/{1BF764D8-D178-F407-6BC9-714671ED44A8}.wem"
+      "CachePath": "3E/{3E6331B1-9FB8-1743-C1D0-336E280A3D79}.wem"
      },
      {
       "Id": "159229097",
@@ -349,7 +349,7 @@
       "Streaming": "false",
       "Location": "Memory",
       "ShortName": "C_Select_02.wav",
-      "CachePath": "C1/{C1F51623-0DBB-1009-E7BE-832E67DC2A29}.wem"
+      "CachePath": "D5/{D54C0A26-9C4E-89B8-3BF3-8401B6437B31}.wem"
      },
      {
       "Id": "163441454",
@@ -357,7 +357,7 @@
       "Streaming": "false",
       "Location": "Memory",
       "ShortName": "C_Dead_01.wav",
-      "CachePath": "C0/{C0EE2B2B-41B2-6C23-356F-F6A96D034069}.wem"
+      "CachePath": "61/{61D7F698-8EFE-C1F3-FBDF-F529A8A64EFB}.wem"
      },
      {
       "Id": "163993297",
@@ -365,7 +365,7 @@
       "Streaming": "false",
       "Location": "Memory",
       "ShortName": "C_HitHeavy_01.wav",
-      "CachePath": "3F/{3F869C3B-A29B-8A0B-550A-D8F97FB15A27}.wem"
+      "CachePath": "1D/{1D741D12-6FCC-8F5E-B8E1-F8487B24E3DC}.wem"
      },
      {
       "Id": "164772367",
@@ -373,7 +373,7 @@
       "Streaming": "false",
       "Location": "Memory",
       "ShortName": "FootstepB_03_Tile.wav",
-      "CachePath": "4D/{4DE9D462-1AB1-BEC3-085C-4604D46A84B7}.wem"
+      "CachePath": "65/{65FDC1B0-6B05-E1C9-A4CE-BC7681389E6B}.wem"
      },
      {
       "Id": "173793195",
@@ -381,7 +381,7 @@
       "Streaming": "false",
       "Location": "Memory",
       "ShortName": "VO_B_Win_05.wav",
-      "CachePath": "5E/{5E74085E-0498-0650-AC26-A383905CA281}.wem"
+      "CachePath": "CB/{CBD1B00C-9A11-D969-C8AE-67C3F0F56237}.wem"
      },
      {
       "Id": "174024542",
@@ -389,7 +389,7 @@
       "Streaming": "false",
       "Location": "Memory",
       "ShortName": "Rifle_01.wav",
-      "CachePath": "F2/{F2069A2D-D10E-9C3C-00D9-934A4118C17B}.wem"
+      "CachePath": "E1/{E106C38A-0554-A310-BA2C-2E9A22B451DD}.wem"
      },
      {
       "Id": "176081225",
@@ -397,7 +397,7 @@
       "Streaming": "false",
       "Location": "Memory",
       "ShortName": "B_1_MixedPerc.wav",
-      "CachePath": "B9/{B9A33643-F5B1-378E-2B6F-92F52EE9DF47}.wem"
+      "CachePath": "CB/{CBB2CD99-EF9E-574F-6E38-69080F309432}.wem"
      },
      {
       "Id": "176489451",
@@ -405,7 +405,7 @@
       "Streaming": "false",
       "Location": "Memory",
       "ShortName": "DoorSlideShut.wav",
-      "CachePath": "A2/{A20FF929-6D0F-C294-B22A-B3848B476B34}.wem"
+      "CachePath": "84/{84588F0D-F544-466D-8A17-B9CA8828A443}.wem"
      },
      {
       "Id": "178430245",
@@ -413,7 +413,7 @@
       "Streaming": "false",
       "Location": "Memory",
       "ShortName": "FootstepB_04_Concrete.wav",
-      "CachePath": "F3/{F35778EF-7E99-0537-E3AD-6684CA17729C}.wem"
+      "CachePath": "39/{394E8433-F998-3B07-8A7A-859D50A9DE83}.wem"
      },
      {
       "Id": "180084580",
@@ -421,7 +421,7 @@
       "Streaming": "false",
       "Location": "Memory",
       "ShortName": "UI_Hover.wav",
-      "CachePath": "71/{71F2C685-1F05-614E-3C2E-30529C71D559}.wem"
+      "CachePath": "3C/{3C9449B8-55D7-A76B-CB55-5332B444A2B1}.wem"
      },
      {
       "Id": "183621196",
@@ -429,7 +429,7 @@
       "Streaming": "false",
       "Location": "Memory",
       "ShortName": "ABCD_3_BassFunky.wav",
-      "CachePath": "09/{0993D7E8-5EEF-4B7E-3ABB-ACE6AE2E4DB4}.wem"
+      "CachePath": "7F/{7FB09322-E920-B473-9006-5C90A1EBE6E1}.wem"
      },
      {
       "Id": "184732188",
@@ -437,7 +437,7 @@
       "Streaming": "false",
       "Location": "Memory",
       "ShortName": "VO_B_Win_02.wav",
-      "CachePath": "81/{8193F8A9-04B7-B229-7DFD-48B5AF49AE4F}.wem"
+      "CachePath": "00/{00624F34-A3B0-9ABF-C688-BF104D69234E}.wem"
      },
      {
       "Id": "185087095",
@@ -445,7 +445,7 @@
       "Streaming": "false",
       "Location": "Memory",
       "ShortName": "Slowdown_01.wav",
-      "CachePath": "D5/{D5D2DB9C-9FE7-9A03-3847-34BB0DAB5A8F}.wem"
+      "CachePath": "EC/{EC257125-C7B0-7A8A-73E6-65968C6C8414}.wem"
      },
      {
       "Id": "186869576",
@@ -453,7 +453,7 @@
       "Streaming": "false",
       "Location": "Memory",
       "ShortName": "FootstepB_01_Tile.wav",
-      "CachePath": "AF/{AF839F4B-98AF-009B-A540-FDD740C4DE4B}.wem"
+      "CachePath": "B9/{B9E73FFC-B3C4-19D0-4590-EC98D91173FE}.wem"
      },
      {
       "Id": "190951719",
@@ -461,7 +461,7 @@
       "Streaming": "false",
       "Location": "Memory",
       "ShortName": "FootstepA_02.wav",
-      "CachePath": "29/{2978F84F-4B29-EAEF-0771-830DBF5A0D2F}.wem"
+      "CachePath": "6C/{6C617C9E-DD57-6B37-B31D-82FBC43B6C87}.wem"
      },
      {
       "Id": "197993965",
@@ -469,7 +469,7 @@
       "Streaming": "false",
       "Location": "Memory",
       "ShortName": "ActionMineDefuse_03.wav",
-      "CachePath": "DA/{DA18C670-76AC-60F7-05A5-8041506E8D02}.wem"
+      "CachePath": "23/{23D008FE-44A7-794C-C20D-7A26CA418855}.wem"
      },
      {
       "Id": "201331341",
@@ -477,7 +477,7 @@
       "Streaming": "false",
       "Location": "Memory",
       "ShortName": "FootstepD_03.wav",
-      "CachePath": "23/{2354A27F-E520-747E-9BA0-B961B7474518}.wem"
+      "CachePath": "3A/{3A9F21D3-D251-492E-929E-38BA42A8327B}.wem"
      },
      {
       "Id": "216779663",
@@ -485,7 +485,7 @@
       "Streaming": "false",
       "Location": "Memory",
       "ShortName": "D_HitHeavy_01.wav",
-      "CachePath": "F6/{F62E3E58-0381-9E99-C259-1EAE21ADDC25}.wem"
+      "CachePath": "AF/{AF91BEC3-596A-859A-E005-B181A1C98CA8}.wem"
      },
      {
       "Id": "216886389",
@@ -493,7 +493,7 @@
       "Streaming": "false",
       "Location": "Memory",
       "ShortName": "D_1_WW&G.wav",
-      "CachePath": "F1/{F177BE37-565D-9216-BC1D-E9B9506DB040}.wem"
+      "CachePath": "6A/{6A097CBE-A8DB-A5B4-DF29-6A1EDB1378E2}.wem"
      },
      {
       "Id": "231962521",
@@ -501,7 +501,7 @@
       "Streaming": "false",
       "Location": "Memory",
       "ShortName": "FootstepB_01_Concrete.wav",
-      "CachePath": "8F/{8FC05403-0C65-9064-43FF-80787C3B0FE5}.wem"
+      "CachePath": "DF/{DF39F5AB-89E2-A1CB-EDB4-9809AD80C2E0}.wem"
      },
      {
       "Id": "236178618",
@@ -509,7 +509,7 @@
       "Streaming": "false",
       "Location": "Memory",
       "ShortName": "FootstepC_02_Tile.wav",
-      "CachePath": "BC/{BC0E95B4-A232-0920-6B56-A6C2FE0C71D9}.wem"
+      "CachePath": "FC/{FCC8891A-117F-36AC-54D7-2956C78DF805}.wem"
      },
      {
       "Id": "241379826",
@@ -517,7 +517,7 @@
       "Streaming": "false",
       "Location": "Memory",
       "ShortName": "VO_B_Dodge_05.wav",
-      "CachePath": "A1/{A1A5402B-E65D-91BB-E4FC-C1A20DC605A2}.wem"
+      "CachePath": "B2/{B2888E0B-9013-C564-72DF-500229A0FAC4}.wem"
      },
      {
       "Id": "249038957",
@@ -525,7 +525,7 @@
       "Streaming": "false",
       "Location": "Memory",
       "ShortName": "VO_B_Hack_02.wav",
-      "CachePath": "1C/{1C7C70C0-66EE-D646-536F-4B7C03EF9E5A}.wem"
+      "CachePath": "F4/{F422434D-36CC-E224-C3F3-4CF3A7291F26}.wem"
      },
      {
       "Id": "260779212",
@@ -533,7 +533,7 @@
       "Streaming": "false",
       "Location": "Memory",
       "ShortName": "A_Attack_01.wav",
-      "CachePath": "B0/{B0C36D06-EDBF-43CB-2664-DE7841A261C0}.wem"
+      "CachePath": "5D/{5DF27BB6-F524-42F2-F257-E17FF1AB50AB}.wem"
      },
      {
       "Id": "266101686",
@@ -541,7 +541,7 @@
       "Streaming": "false",
       "Location": "Memory",
       "ShortName": "C_Select_03.wav",
-      "CachePath": "A8/{A85F1647-A7D4-6BC2-2279-CDC74C8D9172}.wem"
+      "CachePath": "AF/{AFA50F85-E277-52A1-BFF5-BBAC66A550F3}.wem"
      },
      {
       "Id": "267769419",
@@ -549,7 +549,7 @@
       "Streaming": "false",
       "Location": "Memory",
       "ShortName": "SFX_Crunch_03.wav",
-      "CachePath": "72/{729A443F-1C2C-C83E-0A09-8093E22452E9}.wem"
+      "CachePath": "73/{7331D9B9-DD47-E426-94D0-304B94236389}.wem"
      },
      {
       "Id": "268413720",
@@ -557,7 +557,7 @@
       "Streaming": "false",
       "Location": "Memory",
       "ShortName": "MUS_Pause_Intro.wav",
-      "CachePath": "B1/{B198F273-0541-9550-AC7E-1C2645F0A717}.wem"
+      "CachePath": "C4/{C4849F87-3F19-E727-BD94-D20CBF1EA449}.wem"
      },
      {
       "Id": "271100864",
@@ -565,7 +565,7 @@
       "Streaming": "false",
       "Location": "Memory",
       "ShortName": "C_HitHeavy_02.wav",
-      "CachePath": "64/{64FD9604-7199-9C0C-9F76-B6B726840533}.wem"
+      "CachePath": "AD/{ADA30D55-EB10-4485-3DC0-FCF3C4669DED}.wem"
      },
      {
       "Id": "278186006",
@@ -573,7 +573,7 @@
       "Streaming": "false",
       "Location": "Memory",
       "ShortName": "AttackHeavySlam_Carpet.wav",
-      "CachePath": "89/{8948EAFF-45BC-8C5C-31F5-D2DD09017A0F}.wem"
+      "CachePath": "4B/{4BF91961-D4D4-C890-E30B-1DE21262E955}.wem"
      },
      {
       "Id": "279610568",
@@ -581,7 +581,7 @@
       "Streaming": "false",
       "Location": "Memory",
       "ShortName": "A_Win_03.wav",
-      "CachePath": "C2/{C2E3A18E-D47C-28C7-0D1D-379A812599FF}.wem"
+      "CachePath": "BA/{BAF45F1D-2C78-FE14-6941-C36658611CD3}.wem"
      },
      {
       "Id": "284150746",
@@ -589,7 +589,7 @@
       "Streaming": "false",
       "Location": "Memory",
       "ShortName": "VO_B_Hit_01.wav",
-      "CachePath": "68/{683586B9-B42F-3A97-5984-5F75F711F1AC}.wem"
+      "CachePath": "F6/{F67C5827-50EC-CDCE-5F52-6A0EA30F9B76}.wem"
      },
      {
       "Id": "289669370",
@@ -597,7 +597,7 @@
       "Streaming": "false",
       "Location": "Memory",
       "ShortName": "Roar.wav",
-      "CachePath": "5F/{5F026DD3-2A04-7FB7-75EA-7D24F7185C54}.wem"
+      "CachePath": "54/{54DD349F-2AF2-A374-CDDA-8EFABA4713AB}.wem"
      },
      {
       "Id": "289985299",
@@ -605,7 +605,7 @@
       "Streaming": "false",
       "Location": "Memory",
       "ShortName": "D_2_GuitarDistorted.wav",
-      "CachePath": "A1/{A1493DA0-A69A-CFCA-5A45-4A5B792002D6}.wem"
+      "CachePath": "74/{743650AA-F12B-70BF-F204-7AC026A871FB}.wem"
      },
      {
       "Id": "300372930",
@@ -613,7 +613,7 @@
       "Streaming": "false",
       "Location": "Memory",
       "ShortName": "VO_B_Dodge_03.wav",
-      "CachePath": "C3/{C3F00F1F-BCAE-3267-81EB-EBA2A91400C7}.wem"
+      "CachePath": "D1/{D1102AEB-5C79-EC0D-09F2-ED3A2A7878B3}.wem"
      },
      {
       "Id": "302324581",
@@ -621,7 +621,7 @@
       "Streaming": "false",
       "Location": "Memory",
       "ShortName": "FootstepD_03_Concrete.wav",
-      "CachePath": "B8/{B8D62A5B-A971-350B-E502-973DD8A091AF}.wem"
+      "CachePath": "62/{62A838FE-9101-43C3-4C85-2EF74B09888E}.wem"
      },
      {
       "Id": "321535931",
@@ -629,7 +629,7 @@
       "Streaming": "false",
       "Location": "Memory",
       "ShortName": "D_HitHeavy_05.wav",
-      "CachePath": "14/{1405DBA9-E863-1A98-0389-29C35CABAD88}.wem"
+      "CachePath": "35/{3547FA71-C628-6158-58B0-C6F876EBB1CD}.wem"
      },
      {
       "Id": "332679464",
@@ -637,7 +637,7 @@
       "Streaming": "false",
       "Location": "Memory",
       "ShortName": "A_Master.wav",
-      "CachePath": "0E/{0ECD2D9E-8847-182A-B4C2-1280C31A179B}.wem"
+      "CachePath": "F7/{F78A4544-6798-B7C1-5241-ADF27CD8C84D}.wem"
      },
      {
       "Id": "333456175",
@@ -645,7 +645,7 @@
       "Streaming": "false",
       "Location": "Memory",
       "ShortName": "VO_B_Dodge_04.wav",
-      "CachePath": "D3/{D3BB047C-6260-27A2-5DF7-2C5F569E60DE}.wem"
+      "CachePath": "97/{973F1841-7FEA-04F3-902F-163B956772C7}.wem"
      },
      {
       "Id": "348368234",
@@ -653,7 +653,7 @@
       "Streaming": "false",
       "Location": "Memory",
       "ShortName": "AmbienceBackOfHouse_Loop.wav",
-      "CachePath": "7E/{7E0FDFE8-2B3B-1FBD-EBC0-780E61977F1E}.wem"
+      "CachePath": "FA/{FAB2F43E-A139-F661-E143-2983CFF02921}.wem"
      },
      {
       "Id": "359600873",
@@ -661,7 +661,7 @@
       "Streaming": "false",
       "Location": "Memory",
       "ShortName": "FootstepB_06.wav",
-      "CachePath": "67/{67DCC473-3921-7B9D-18F9-2832A805D56D}.wem"
+      "CachePath": "7A/{7A346862-75FA-D3DD-5076-578842827277}.wem"
      },
      {
       "Id": "359792775",
@@ -669,7 +669,7 @@
       "Streaming": "false",
       "Location": "Memory",
       "ShortName": "C_Win_01.wav",
-      "CachePath": "0F/{0F15CAF9-A0B4-5730-5636-372E7032D6CD}.wem"
+      "CachePath": "96/{96F7ABB6-0275-91C6-E32D-5821C851E5C1}.wem"
      },
      {
       "Id": "360860511",
@@ -677,7 +677,7 @@
       "Streaming": "false",
       "Location": "Memory",
       "ShortName": "D_Dead_01.wav",
-      "CachePath": "1E/{1E1BA6FC-E2D8-4C37-6A43-34BF53428478}.wem"
+      "CachePath": "66/{66BF1CD0-43FD-F5A3-9BA0-0095710AB11D}.wem"
      },
      {
       "Id": "362760604",
@@ -685,7 +685,7 @@
       "Streaming": "false",
       "Location": "Memory",
       "ShortName": "D_Hit_06.wav",
-      "CachePath": "5A/{5A7C3A2F-DAE7-7E14-C676-2E47546C8467}.wem"
+      "CachePath": "8F/{8F82C1CC-FD06-C1CA-3FAC-0ACEDFFFFE08}.wem"
      },
      {
       "Id": "366008783",
@@ -693,7 +693,7 @@
       "Streaming": "false",
       "Location": "Memory",
       "ShortName": "D_Select_04.wav",
-      "CachePath": "A1/{A1A522FC-37C1-5423-ABB6-CD835FEDA8DD}.wem"
+      "CachePath": "B4/{B488E3F6-7C4A-4463-5FB9-E42C091CD4AC}.wem"
      },
      {
       "Id": "369065416",
@@ -701,7 +701,7 @@
       "Streaming": "false",
       "Location": "Memory",
       "ShortName": "FootstepB_04_Tile.wav",
-      "CachePath": "A3/{A3EDF3BB-7028-A825-193E-785AC7499646}.wem"
+      "CachePath": "11/{11901F7D-A85E-2AA3-F453-952DDDD70876}.wem"
      },
      {
       "Id": "388256774",
@@ -709,7 +709,7 @@
       "Streaming": "false",
       "Location": "Memory",
       "ShortName": "VO_B_Dodge_01.wav",
-      "CachePath": "C1/{C1929C8B-F943-8633-6239-89A69EB49514}.wem"
+      "CachePath": "25/{25ABC0C4-9757-B969-C938-014C1ABFBD62}.wem"
      },
      {
       "Id": "388350766",
@@ -717,7 +717,7 @@
       "Streaming": "false",
       "Location": "Memory",
       "ShortName": "FootstepD_03_Tile.wav",
-      "CachePath": "11/{11C1AEB1-41D4-E6B3-88AB-820A7AFBD304}.wem"
+      "CachePath": "CA/{CA945791-C9F7-21AE-0F4D-EE39B8976409}.wem"
      },
      {
       "Id": "392282033",
@@ -725,7 +725,7 @@
       "Streaming": "false",
       "Location": "Memory",
       "ShortName": "A_AttackQuip_02.wav",
-      "CachePath": "4A/{4A220003-C679-9F45-2086-203D968CEEC5}.wem"
+      "CachePath": "1D/{1DAAF713-978E-9727-24DE-6F8DD7935262}.wem"
      },
      {
       "Id": "392981642",
@@ -733,7 +733,7 @@
       "Streaming": "false",
       "Location": "Memory",
       "ShortName": "A_HitHeavy_03.wav",
-      "CachePath": "9A/{9ADEA9A8-473F-21A7-3E16-32CFE157E548}.wem"
+      "CachePath": "81/{81B595CA-240D-578A-71A8-D5373C666900}.wem"
      },
      {
       "Id": "398642216",
@@ -741,7 +741,7 @@
       "Streaming": "false",
       "Location": "Memory",
       "ShortName": "FootstepB_06_Concrete.wav",
-      "CachePath": "07/{0722BBB5-D9B1-40C0-A25B-603F1B011B81}.wem"
+      "CachePath": "13/{13DCF411-6EAE-D00E-095A-F8FC0D14BC2D}.wem"
      },
      {
       "Id": "406484774",
@@ -749,7 +749,7 @@
       "Streaming": "false",
       "Location": "Memory",
       "ShortName": "D_HitHeavy_06.wav",
-      "CachePath": "F9/{F92D11E0-6DE7-3752-6CF9-134DF64A1F54}.wem"
+      "CachePath": "72/{7214D752-C6D5-9CDC-3A65-E28E6ABF6070}.wem"
      },
      {
       "Id": "406799164",
@@ -757,7 +757,7 @@
       "Streaming": "false",
       "Location": "Memory",
       "ShortName": "VO_E_Impact_04.wav",
-      "CachePath": "7E/{7EABC7F0-6514-9566-7660-A90EF9AE6CE5}.wem"
+      "CachePath": "0D/{0D9B140C-F732-7556-7215-48E83096EC4F}.wem"
      },
      {
       "Id": "406849610",
@@ -765,7 +765,7 @@
       "Streaming": "false",
       "Location": "Memory",
       "ShortName": "C_Win_02.wav",
-      "CachePath": "9E/{9E9F7117-936C-51DD-56B2-74DCD01C7621}.wem"
+      "CachePath": "82/{827B0B3E-3471-71FC-5064-272D19D56028}.wem"
      },
      {
       "Id": "410590335",
@@ -773,7 +773,7 @@
       "Streaming": "false",
       "Location": "Memory",
       "ShortName": "VO_B_Select_01.wav",
-      "CachePath": "05/{058D6365-B158-87F8-1F4A-869787A69ED3}.wem"
+      "CachePath": "8D/{8D015715-D0C9-6D3D-1D8B-1351017AFD52}.wem"
      },
      {
       "Id": "412846175",
@@ -781,7 +781,7 @@
       "Streaming": "false",
       "Location": "Memory",
       "ShortName": "FootstepC_03_Concrete.wav",
-      "CachePath": "B8/{B8D62A5B-A971-350B-E502-973DD8A091AF}.wem"
+      "CachePath": "62/{62A838FE-9101-43C3-4C85-2EF74B09888E}.wem"
      },
      {
       "Id": "415836073",
@@ -789,7 +789,7 @@
       "Streaming": "false",
       "Location": "Memory",
       "ShortName": "B_Synths2.wav",
-      "CachePath": "F5/{F5E57AF7-6128-A3C0-C07C-C2948934D979}.wem"
+      "CachePath": "CD/{CD9478AC-9956-C3A4-1284-FAE09603D509}.wem"
      },
      {
       "Id": "425018429",
@@ -797,7 +797,7 @@
       "Streaming": "false",
       "Location": "Memory",
       "ShortName": "MUS_SpacingOut_Intro.wav",
-      "CachePath": "C8/{C834F238-5D0D-1F1B-CD60-031DED409017}.wem"
+      "CachePath": "D3/{D38D6D73-D4FE-2B50-2D04-C8561C004CC0}.wem"
      },
      {
       "Id": "437476328",
@@ -805,7 +805,7 @@
       "Streaming": "false",
       "Location": "Memory",
       "ShortName": "UI_Select.wav",
-      "CachePath": "5F/{5F861DA6-2A47-CD19-E618-D2E7F139E740}.wem"
+      "CachePath": "4B/{4BB489F1-B9A2-149B-B9E6-79947785F4DF}.wem"
      },
      {
       "Id": "437602278",
@@ -813,7 +813,7 @@
       "Streaming": "false",
       "Location": "Memory",
       "ShortName": "Rifle_02.wav",
-      "CachePath": "53/{53D6A69C-846F-6387-B1FA-A49483CFC75C}.wem"
+      "CachePath": "AF/{AFECCCCF-F239-9F34-89FF-7410C9B995BE}.wem"
      },
      {
       "Id": "438843644",
@@ -821,7 +821,7 @@
       "Streaming": "false",
       "Location": "Memory",
       "ShortName": "A_Win_01.wav",
-      "CachePath": "D2/{D2173F2A-D29F-2399-5C3C-025D507517B1}.wem"
+      "CachePath": "59/{59420C63-0C90-F69C-0A8B-B2F0008EAC3F}.wem"
      },
      {
       "Id": "442356810",
@@ -829,7 +829,7 @@
       "Streaming": "false",
       "Location": "Memory",
       "ShortName": "VO_B_HitHeavy_03.wav",
-      "CachePath": "85/{85ED4D1C-C49B-268F-E868-FAE148F0AF4D}.wem"
+      "CachePath": "B6/{B61FDEB6-B249-D358-5B5C-DF1601F49788}.wem"
      },
      {
       "Id": "445542455",
@@ -837,7 +837,7 @@
       "Streaming": "false",
       "Location": "Memory",
       "ShortName": "FootstepA_02_Concrete.wav",
-      "CachePath": "6F/{6F9E1ADD-4BC6-295B-A148-E2F9724CDCC1}.wem"
+      "CachePath": "27/{278AEE3A-246B-3626-66E2-4BADFA254F82}.wem"
      },
      {
       "Id": "447459578",
@@ -845,7 +845,7 @@
       "Streaming": "false",
       "Location": "Memory",
       "ShortName": "FootstepA_01_Concrete.wav",
-      "CachePath": "4A/{4A683746-A97A-E1EF-2983-45D8711F98D0}.wem"
+      "CachePath": "C9/{C9A34E05-381F-7348-15B4-7F54DB787E37}.wem"
      },
      {
       "Id": "455626202",
@@ -853,7 +853,7 @@
       "Streaming": "false",
       "Location": "Memory",
       "ShortName": "VO_B_Hack_03.wav",
-      "CachePath": "40/{40FB35DB-3404-8A4B-F9BF-1C1A14FE12EB}.wem"
+      "CachePath": "9C/{9CB2C2AD-0D33-7A7A-91B8-141B1B914CC6}.wem"
      },
      {
       "Id": "456280109",
@@ -861,7 +861,7 @@
       "Streaming": "false",
       "Location": "Memory",
       "ShortName": "FootstepA_03.wav",
-      "CachePath": "34/{34393AF2-B56B-25B4-DF19-F7111C5C8676}.wem"
+      "CachePath": "78/{78E7DBB4-193E-EB9A-FF2E-B282DB899157}.wem"
      },
      {
       "Id": "462163115",
@@ -869,7 +869,7 @@
       "Streaming": "false",
       "Location": "Memory",
       "ShortName": "SFX_Crunch_02.wav",
-      "CachePath": "19/{19DA1DB7-FA6D-27A6-ADA8-9C58079A6FAB}.wem"
+      "CachePath": "20/{20A05E0F-A53C-9B7C-0CDF-678C5178C79D}.wem"
      },
      {
       "Id": "462396197",
@@ -877,7 +877,7 @@
       "Streaming": "false",
       "Location": "Memory",
       "ShortName": "C_Select_04.wav",
-      "CachePath": "BB/{BB98030E-D945-362D-2C65-77A7CEF52539}.wem"
+      "CachePath": "5B/{5BBF5E0F-1AEE-C5B6-CAC3-6B71A02FF442}.wem"
      },
      {
       "Id": "462440525",
@@ -885,7 +885,7 @@
       "Streaming": "false",
       "Location": "Memory",
       "ShortName": "AmbienceSpaceBar_Intro.wav",
-      "CachePath": "31/{3100C202-CD34-589F-A579-1CB83FF59A52}.wem"
+      "CachePath": "85/{858FBB54-883A-B2A1-7381-AFD3096953B1}.wem"
      },
      {
       "Id": "463930129",
@@ -893,7 +893,7 @@
       "Streaming": "false",
       "Location": "Memory",
       "ShortName": "D_Win_01.wav",
-      "CachePath": "2B/{2B133692-5152-DCED-1BFB-F5E1FE594394}.wem"
+      "CachePath": "C3/{C39BAEA8-2AEB-6BDE-E300-3B1C0429F896}.wem"
      },
      {
       "Id": "463990089",
@@ -901,7 +901,7 @@
       "Streaming": "false",
       "Location": "Memory",
       "ShortName": "Hack_Unlock.wav",
-      "CachePath": "8D/{8DBAC214-D36F-9C58-6E1A-E03BE1F8729C}.wem"
+      "CachePath": "29/{2948C4A6-321E-8484-67A9-913BD7AF841B}.wem"
      },
      {
       "Id": "483397239",
@@ -909,7 +909,7 @@
       "Streaming": "false",
       "Location": "Memory",
       "ShortName": "AmbienceBackOfHouse_Intro.wav",
-      "CachePath": "FC/{FCF7888B-3194-CE98-B7B2-BE79988E7756}.wem"
+      "CachePath": "DE/{DE1FB010-C6E9-FA4D-1088-A8CFFF95F5B6}.wem"
      },
      {
       "Id": "486628042",
@@ -917,7 +917,7 @@
       "Streaming": "false",
       "Location": "Memory",
       "ShortName": "Hack_Loop.wav",
-      "CachePath": "1A/{1A37677C-D201-48C4-90A2-3B4474DD10AA}.wem"
+      "CachePath": "7C/{7C848890-4382-BC56-A816-4E0CADF3E018}.wem"
      },
      {
       "Id": "494885781",
@@ -925,7 +925,7 @@
       "Streaming": "false",
       "Location": "Memory",
       "ShortName": "A_AttackQuip_03.wav",
-      "CachePath": "93/{933589EB-6EF1-F51A-76D6-F9B90403D533}.wem"
+      "CachePath": "E3/{E3D8421B-985B-A0F7-D3D9-C6F88893BDA4}.wem"
      },
      {
       "Id": "497004306",
@@ -933,7 +933,7 @@
       "Streaming": "false",
       "Location": "Memory",
       "ShortName": "C_Xylophone&Celeste.wav",
-      "CachePath": "E1/{E1466DF3-AFBB-300A-66DC-5F10AC99A71D}.wem"
+      "CachePath": "46/{46FA474F-AB87-3062-53F7-A173EF236A3E}.wem"
      },
      {
       "Id": "497766376",
@@ -941,7 +941,7 @@
       "Streaming": "false",
       "Location": "Memory",
       "ShortName": "VO_B_HitHeavy_02.wav",
-      "CachePath": "D6/{D6A59D1F-123C-387E-EF9D-3CC6D0737265}.wem"
+      "CachePath": "0C/{0CAAB152-ABFB-FC52-B4E1-9ED80D783508}.wem"
      },
      {
       "Id": "499693909",
@@ -949,7 +949,7 @@
       "Streaming": "false",
       "Location": "Memory",
       "ShortName": "FootstepB_05.wav",
-      "CachePath": "04/{04A7A507-0509-B991-F73E-9A5E36FC7B7E}.wem"
+      "CachePath": "7A/{7A324773-B2CB-2A01-B05F-1D1A4E106A38}.wem"
      },
      {
       "Id": "500043407",
@@ -957,7 +957,7 @@
       "Streaming": "false",
       "Location": "Memory",
       "ShortName": "D_Master.wav",
-      "CachePath": "6E/{6E8AEA43-A03E-3F06-39EC-09165BB896FB}.wem"
+      "CachePath": "85/{8502A014-3C80-367E-152D-01A399775D71}.wem"
      },
      {
       "Id": "502481671",
@@ -965,7 +965,7 @@
       "Streaming": "false",
       "Location": "Memory",
       "ShortName": "VO_E_Impact_05.wav",
-      "CachePath": "DC/{DC9EAD06-B47E-4497-D622-562B01C382FB}.wem"
+      "CachePath": "00/{00EAF62A-0C5D-A99C-078D-3A886CE87A77}.wem"
      },
      {
       "Id": "511505099",
@@ -973,7 +973,7 @@
       "Streaming": "false",
       "Location": "Memory",
       "ShortName": "A_AttackQuip_04.wav",
-      "CachePath": "40/{40EA4B07-52F2-CD95-9035-F75C5C3966C6}.wem"
+      "CachePath": "F0/{F03A2611-7CF6-63A2-0CC1-8F8B3BD13C66}.wem"
      },
      {
       "Id": "521326818",
@@ -981,7 +981,7 @@
       "Streaming": "false",
       "Location": "Memory",
       "ShortName": "D_Select_03.wav",
-      "CachePath": "C3/{C314EE44-936C-62BC-E9B2-685B1B79279B}.wem"
+      "CachePath": "3E/{3E7A2CD5-A761-76C4-BCC4-D1621E7EDF98}.wem"
      },
      {
       "Id": "521808120",
@@ -989,7 +989,7 @@
       "Streaming": "false",
       "Location": "Memory",
       "ShortName": "MUS_SpacingOut_Loop.wav",
-      "CachePath": "A1/{A1A39DF7-840E-9FB6-03B3-818E34458073}.wem"
+      "CachePath": "66/{665E7E2F-D106-2CDE-7A0A-B3A20E363164}.wem"
      },
      {
       "Id": "537429109",
@@ -997,7 +997,7 @@
       "Streaming": "false",
       "Location": "Memory",
       "ShortName": "ABCD_2_BassUpright.wav",
-      "CachePath": "5F/{5F12D4BF-CE77-B010-824E-55FF027F9DA6}.wem"
+      "CachePath": "7C/{7C3E123B-E90B-8480-9C0A-79DAE27EA418}.wem"
      },
      {
       "Id": "544387914",
@@ -1005,7 +1005,7 @@
       "Streaming": "false",
       "Location": "Memory",
       "ShortName": "VO_E_ImpactHeavy_01.wav",
-      "CachePath": "F0/{F0E71142-2EB2-8C65-8631-00E2961A1E27}.wem"
+      "CachePath": "88/{8839ED65-84FA-5A40-B9D7-1EA70B8E0269}.wem"
      },
      {
       "Id": "547594150",
@@ -1013,7 +1013,7 @@
       "Streaming": "false",
       "Location": "Memory",
       "ShortName": "VO_B_Win_04.wav",
-      "CachePath": "21/{216B6B49-C303-1C7A-040A-F3A73458DD44}.wem"
+      "CachePath": "8D/{8DBA33C7-276F-80BA-4E04-FC1380351143}.wem"
      },
      {
       "Id": "548048960",
@@ -1021,7 +1021,7 @@
       "Streaming": "false",
       "Location": "Memory",
       "ShortName": "C_Throw_04.wav",
-      "CachePath": "88/{8812EC1F-EEAF-D9DD-0BFD-B105C9AFDCF9}.wem"
+      "CachePath": "4B/{4B98A5DF-6E31-2FB0-1838-3DCDA72A5E97}.wem"
      },
      {
       "Id": "548377835",
@@ -1029,7 +1029,7 @@
       "Streaming": "false",
       "Location": "Memory",
       "ShortName": "C_ThrowQuip_05.wav",
-      "CachePath": "9D/{9DF6BD0E-7ECE-B436-AFAF-2EECC0D3BB1E}.wem"
+      "CachePath": "83/{83CBB689-0181-11E8-C90E-05498B784F5E}.wem"
      },
      {
       "Id": "555140878",
@@ -1037,7 +1037,7 @@
       "Streaming": "false",
       "Location": "Memory",
       "ShortName": "VO_B_Win_03.wav",
-      "CachePath": "16/{162EC88C-6993-4FCF-23CB-AE0A957398EE}.wem"
+      "CachePath": "C8/{C85920DB-BEFC-E551-AD86-A2D0658754B4}.wem"
      },
      {
       "Id": "565630250",
@@ -1045,7 +1045,7 @@
       "Streaming": "false",
       "Location": "Memory",
       "ShortName": "ABCD_1_DrumsHeist.wav",
-      "CachePath": "D0/{D018F2EC-D982-A68D-84D2-88D2BC7A696F}.wem"
+      "CachePath": "93/{9360ACBA-9625-0197-6763-78C8B00E51A8}.wem"
      },
      {
       "Id": "569719630",
@@ -1053,7 +1053,7 @@
       "Streaming": "false",
       "Location": "Memory",
       "ShortName": "B_Master.wav",
-      "CachePath": "59/{59B36FD3-4E97-F483-1880-D25E7FE3F053}.wem"
+      "CachePath": "2E/{2E9283B4-A0AD-FFB5-FC41-99ADDE796971}.wem"
      },
      {
       "Id": "582357738",
@@ -1061,7 +1061,7 @@
       "Streaming": "false",
       "Location": "Memory",
       "ShortName": "ABCD_2_DrumsRockS.wav",
-      "CachePath": "E4/{E4342D05-3F29-A019-DFE8-93A5F49FC216}.wem"
+      "CachePath": "F0/{F088F8EF-24EB-84F7-C7E9-CBEECBB2972F}.wem"
      },
      {
       "Id": "587627795",
@@ -1069,7 +1069,7 @@
       "Streaming": "false",
       "Location": "Memory",
       "ShortName": "A_Attack_03.wav",
-      "CachePath": "A3/{A36BB8AD-B3E6-3C09-C115-9F5AF9C7F936}.wem"
+      "CachePath": "53/{53B4BBB3-7D7D-4237-1BB9-8E7E55A0675E}.wem"
      },
      {
       "Id": "593952616",
@@ -1077,7 +1077,7 @@
       "Streaming": "false",
       "Location": "Memory",
       "ShortName": "FootstepC_02.wav",
-      "CachePath": "00/{00CD67D2-97DB-D848-9B1A-4D56CA831903}.wem"
+      "CachePath": "FA/{FA1A12AE-3983-F6F5-FCA0-EC153876ECE8}.wem"
      },
      {
       "Id": "598450474",
@@ -1085,7 +1085,7 @@
       "Streaming": "false",
       "Location": "Memory",
       "ShortName": "VO_E_ImpactHeavy_04.wav",
-      "CachePath": "81/{818C2069-89C0-55B5-60E1-02E627CCCA31}.wem"
+      "CachePath": "59/{599B4CEF-7FAF-3611-2485-07D43CE351DE}.wem"
      },
      {
       "Id": "600500171",
@@ -1093,7 +1093,7 @@
       "Streaming": "false",
       "Location": "Memory",
       "ShortName": "VO_B_Roll_02.wav",
-      "CachePath": "9E/{9E5763C2-3070-01E1-25D7-493A18B911DF}.wem"
+      "CachePath": "46/{46947D24-F506-21D2-90EC-B88221C40E6E}.wem"
      },
      {
       "Id": "603054030",
@@ -1101,7 +1101,7 @@
       "Streaming": "false",
       "Location": "Memory",
       "ShortName": "FootstepB_06_Tile.wav",
-      "CachePath": "F0/{F0B0F2B4-814C-B576-1F1F-ACF909F7ED9C}.wem"
+      "CachePath": "E7/{E7EF08CF-F65C-CEEF-7D48-7E7D34A5BAF6}.wem"
      },
      {
       "Id": "610646790",
@@ -1109,7 +1109,7 @@
       "Streaming": "false",
       "Location": "Memory",
       "ShortName": "Ending(FromD).wav",
-      "CachePath": "A0/{A08B26D3-E905-4AA9-9366-69BBFE929C4E}.wem"
+      "CachePath": "03/{032C66FC-216F-BC70-075E-944E817ACC73}.wem"
      },
      {
       "Id": "615590457",
@@ -1117,7 +1117,7 @@
       "Streaming": "false",
       "Location": "Memory",
       "ShortName": "D_Win_02.wav",
-      "CachePath": "89/{89B78EDE-3FEB-4C17-888B-8F7ED12DDAEE}.wem"
+      "CachePath": "6D/{6D35A663-4D9A-B583-B629-0F317D4F304C}.wem"
      },
      {
       "Id": "619518375",
@@ -1125,7 +1125,7 @@
       "Streaming": "false",
       "Location": "Memory",
       "ShortName": "Hack_Abort.wav",
-      "CachePath": "0A/{0A138AF6-C3A9-FBD9-1936-7BEBA4FEDCAB}.wem"
+      "CachePath": "47/{47AB8DBF-B5B9-D619-6A73-F9AC0C30E67D}.wem"
      },
      {
       "Id": "620156882",
@@ -1133,7 +1133,7 @@
       "Streaming": "false",
       "Location": "Memory",
       "ShortName": "D_HitHeavy_03.wav",
-      "CachePath": "A9/{A9913BC2-AF34-0B72-A7D3-1B87CF4FC1DC}.wem"
+      "CachePath": "12/{12010FD7-239B-AF8E-D8E9-EA4D7AF2A62E}.wem"
      },
      {
       "Id": "621743721",
@@ -1141,7 +1141,7 @@
       "Streaming": "false",
       "Location": "Memory",
       "ShortName": "FootstepD_01.wav",
-      "CachePath": "0A/{0A511FF8-BE67-1DF6-C665-7C0C10C9F717}.wem"
+      "CachePath": "DE/{DE305C14-D2AB-78ED-A1C4-779DE1DC0092}.wem"
      },
      {
       "Id": "631611705",
@@ -1149,7 +1149,7 @@
       "Streaming": "false",
       "Location": "Memory",
       "ShortName": "C_Hit_04.wav",
-      "CachePath": "FD/{FD482B0E-6BDE-6F3B-206E-B4BCCB7E6F67}.wem"
+      "CachePath": "B8/{B8CF2880-EC0E-2F4B-AD36-0FF502D90B30}.wem"
      },
      {
       "Id": "639789442",
@@ -1157,7 +1157,7 @@
       "Streaming": "false",
       "Location": "Memory",
       "ShortName": "ActionMineDefuse_01.wav",
-      "CachePath": "40/{40C498D3-3016-F633-9644-4DDAA87A2CD0}.wem"
+      "CachePath": "B5/{B5DBB2F0-408F-8B2A-FCC1-F413AAAA488C}.wem"
      },
      {
       "Id": "640195693",
@@ -1165,7 +1165,7 @@
       "Streaming": "false",
       "Location": "Memory",
       "ShortName": "C_ThrowQuip_04.wav",
-      "CachePath": "DD/{DD82EE8F-C3AD-4577-3805-BD7C846E5EE3}.wem"
+      "CachePath": "3C/{3C5B0DCB-8005-3AC8-C213-02EF0E28B035}.wem"
      },
      {
       "Id": "640272502",
@@ -1173,7 +1173,7 @@
       "Streaming": "false",
       "Location": "Memory",
       "ShortName": "FootstepA_03_Concrete.wav",
-      "CachePath": "32/{320966AE-53D7-485E-5E41-FF325B82D486}.wem"
+      "CachePath": "D9/{D963DBE2-AA2B-8559-1860-557684F31042}.wem"
      },
      {
       "Id": "646928954",
@@ -1181,7 +1181,7 @@
       "Streaming": "false",
       "Location": "Memory",
       "ShortName": "D_HitHeavy_07.wav",
-      "CachePath": "1C/{1C561AC6-CC56-238F-BC63-BD4AFE85BCB5}.wem"
+      "CachePath": "77/{77E97811-27A4-07D9-5D91-C3EA4F539579}.wem"
      },
      {
       "Id": "649226668",
@@ -1189,7 +1189,7 @@
       "Streaming": "false",
       "Location": "Memory",
       "ShortName": "FootstepC_01_Concrete.wav",
-      "CachePath": "55/{55F0F13F-D8D0-A7B1-D311-E1E7E09B0BA9}.wem"
+      "CachePath": "06/{06408230-156E-2474-3932-5B530066F054}.wem"
      },
      {
       "Id": "654255532",
@@ -1197,7 +1197,7 @@
       "Streaming": "false",
       "Location": "Memory",
       "ShortName": "FootstepD_01_Concrete.wav",
-      "CachePath": "CB/{CB6095F9-7CAF-E267-B824-B2633F2F878F}.wem"
+      "CachePath": "0B/{0B23BBDC-7A3A-9AAF-1C9C-8083F5C897C9}.wem"
      },
      {
       "Id": "654791911",
@@ -1205,7 +1205,7 @@
       "Streaming": "false",
       "Location": "Memory",
       "ShortName": "VO_E_Impact_07.wav",
-      "CachePath": "45/{45C7DE7A-2114-9E27-538B-8C3BF2453E46}.wem"
+      "CachePath": "BD/{BDE986C0-53EF-F2C2-D690-BD99F776009E}.wem"
      },
      {
       "Id": "654948405",
@@ -1213,7 +1213,7 @@
       "Streaming": "false",
       "Location": "Memory",
       "ShortName": "A_Win_04.wav",
-      "CachePath": "14/{140E1001-5C06-11E0-E682-4D126DFD603F}.wem"
+      "CachePath": "D3/{D33C0622-77E1-75B7-018B-70707271571F}.wem"
      },
      {
       "Id": "655132536",
@@ -1221,7 +1221,7 @@
       "Streaming": "false",
       "Location": "Memory",
       "ShortName": "A_Attack_02.wav",
-      "CachePath": "0A/{0A6DFEE3-2D74-F7A9-7D09-087A7F7D335A}.wem"
+      "CachePath": "AB/{ABEFC8EF-0DE4-F751-CFA5-518E8BDB4E66}.wem"
      },
      {
       "Id": "659334181",
@@ -1229,7 +1229,7 @@
       "Streaming": "false",
       "Location": "Memory",
       "ShortName": "VO_B_Select_06.wav",
-      "CachePath": "0A/{0AD12AF2-FA6D-906C-D93E-635F7F59D2EA}.wem"
+      "CachePath": "61/{61A65779-2CBC-5BC4-C93A-83DB65A492E7}.wem"
      },
      {
       "Id": "661821976",
@@ -1237,7 +1237,7 @@
       "Streaming": "false",
       "Location": "Memory",
       "ShortName": "AmbienceFrontOfHouse_Intro.wav",
-      "CachePath": "C2/{C22FF64A-976E-ACE2-4544-1347BF329121}.wem"
+      "CachePath": "4F/{4F07A8F6-8879-2B53-3C3F-09612D8016DC}.wem"
      },
      {
       "Id": "664748113",
@@ -1245,7 +1245,7 @@
       "Streaming": "false",
       "Location": "Memory",
       "ShortName": "B_Synths1.wav",
-      "CachePath": "7F/{7FA9753F-B2D9-5FF6-CA03-555520566C56}.wem"
+      "CachePath": "21/{219C59B7-D987-E13F-06A2-93339AABDEF4}.wem"
      },
      {
       "Id": "666776225",
@@ -1253,7 +1253,7 @@
       "Streaming": "false",
       "Location": "Memory",
       "ShortName": "FootstepC_01_Tile.wav",
-      "CachePath": "5D/{5D06395A-9C8D-C864-30EA-27C6582407F2}.wem"
+      "CachePath": "EC/{ECF219A5-7AA5-4E41-E374-2979F6C9652C}.wem"
      },
      {
       "Id": "668011906",
@@ -1261,7 +1261,7 @@
       "Streaming": "false",
       "Location": "Memory",
       "ShortName": "C_Throw_05.wav",
-      "CachePath": "0B/{0BEA2440-893A-63CD-CAE9-4A9F8E26C303}.wem"
+      "CachePath": "54/{5417BF04-4A00-3C79-5CD8-3E70B20418BF}.wem"
      },
      {
       "Id": "674111839",
@@ -1269,7 +1269,7 @@
       "Streaming": "false",
       "Location": "Memory",
       "ShortName": "A_Dash_01.wav",
-      "CachePath": "33/{33D6F2A0-F362-FC07-9B7F-94896DA56918}.wem"
+      "CachePath": "AD/{AD58BF36-A83A-9F3F-4AA1-2C07212CC1A3}.wem"
      },
      {
       "Id": "679635913",
@@ -1277,7 +1277,7 @@
       "Streaming": "false",
       "Location": "Memory",
       "ShortName": "D_Hit_04.wav",
-      "CachePath": "BE/{BEAA786E-4E22-7527-6529-70A87845D7CC}.wem"
+      "CachePath": "47/{47A94738-3781-1D3D-0A06-3C8C4ADA7F46}.wem"
      },
      {
       "Id": "679854016",
@@ -1285,7 +1285,7 @@
       "Streaming": "false",
       "Location": "Memory",
       "ShortName": "VO_B_HitHeavy_01.wav",
-      "CachePath": "1C/{1C2EBEAD-E3DB-33A4-ECD1-A69017D41160}.wem"
+      "CachePath": "9E/{9E89DA5B-5B99-7AAD-BE06-8044A7E360DC}.wem"
      },
      {
       "Id": "686355128",
@@ -1293,7 +1293,7 @@
       "Streaming": "false",
       "Location": "Memory",
       "ShortName": "FootstepB_01.wav",
-      "CachePath": "2C/{2CB1DA4C-3ABC-F453-BD1B-A8C4B3602A04}.wem"
+      "CachePath": "CD/{CD0CAFC2-DC34-0E1C-B8F7-2262D79E5440}.wem"
      },
      {
       "Id": "701481381",
@@ -1301,7 +1301,7 @@
       "Streaming": "false",
       "Location": "Memory",
       "ShortName": "AmbienceSpaceBar_Loop.wav",
-      "CachePath": "F9/{F9E40A31-6979-018D-382E-0548B9455F71}.wem"
+      "CachePath": "A0/{A07FA0DC-34B2-63E4-D2A2-ACC4ED11B08F}.wem"
      },
      {
       "Id": "715211921",
@@ -1309,7 +1309,7 @@
       "Streaming": "false",
       "Location": "Memory",
       "ShortName": "FootstepD_02_Tile.wav",
-      "CachePath": "2E/{2E805B5B-2FBE-75C7-3DF7-3AEAC3E66A0E}.wem"
+      "CachePath": "96/{96CFE34A-0A2E-1945-3AC4-B54E8C41E7B5}.wem"
      },
      {
       "Id": "718223803",
@@ -1317,7 +1317,7 @@
       "Streaming": "false",
       "Location": "Memory",
       "ShortName": "D_1_SpanishGuitar.wav",
-      "CachePath": "BD/{BD43D9F3-855C-1E9F-4CAE-9E8A08C8CCAB}.wem"
+      "CachePath": "38/{3831F3CB-199F-B19A-AA34-1A6F33CF50B2}.wem"
      },
      {
       "Id": "720365280",
@@ -1325,7 +1325,7 @@
       "Streaming": "false",
       "Location": "Memory",
       "ShortName": "VO_E_Impact_01.wav",
-      "CachePath": "E8/{E87F1540-67B2-E9E4-553F-65EE88E313EA}.wem"
+      "CachePath": "4E/{4E953EA6-B7F9-6DD3-46A0-596AA37FA7C2}.wem"
      },
      {
       "Id": "731044228",
@@ -1333,7 +1333,7 @@
       "Streaming": "false",
       "Location": "Memory",
       "ShortName": "FootstepD_02.wav",
-      "CachePath": "DD/{DD6A21BE-837E-DFEB-3119-FC857BB8A666}.wem"
+      "CachePath": "D5/{D5139D64-325F-07F0-A1BE-785887DF5125}.wem"
      },
      {
       "Id": "733891294",
@@ -1341,7 +1341,7 @@
       "Streaming": "false",
       "Location": "Memory",
       "ShortName": "AttackHeavy_02.wav",
-      "CachePath": "8F/{8F514BBB-D2C5-D979-7480-C53ABD3D52C0}.wem"
+      "CachePath": "F8/{F84E3FEE-F78E-A5FE-3DE8-97D3C9B518CF}.wem"
      },
      {
       "Id": "749289317",
@@ -1349,7 +1349,7 @@
       "Streaming": "false",
       "Location": "Memory",
       "ShortName": "CrunchHeavy_01.wav",
-      "CachePath": "D3/{D34C932E-6594-A92C-71F4-141A35CF714F}.wem"
+      "CachePath": "ED/{ED66DDCA-2CAB-A471-6A41-CC9BEFD245EF}.wem"
      },
      {
       "Id": "757443156",
@@ -1357,7 +1357,7 @@
       "Streaming": "false",
       "Location": "Memory",
       "ShortName": "C_1_Theramin.wav",
-      "CachePath": "CA/{CA88FED2-5F9B-7049-42EA-A12E21EB3D48}.wem"
+      "CachePath": "68/{68D42C2D-B6A4-1B95-9E99-6D4D09319127}.wem"
      },
      {
       "Id": "764516396",
@@ -1365,7 +1365,7 @@
       "Streaming": "false",
       "Location": "Memory",
       "ShortName": "FootstepA_03_Tile.wav",
-      "CachePath": "AA/{AA1EBC44-D53B-6D88-0324-07B6F9F37B73}.wem"
+      "CachePath": "EF/{EF183BEA-F088-2D35-55F1-CFE88F020492}.wem"
      },
      {
       "Id": "770089755",
@@ -1373,7 +1373,7 @@
       "Streaming": "false",
       "Location": "Memory",
       "ShortName": "AttackHeavySlam_Concrete.wav",
-      "CachePath": "94/{94A60615-FF79-E705-2E6A-761A3B4707CB}.wem"
+      "CachePath": "38/{38561406-F568-50C1-25B9-64ACDA3563E5}.wem"
      },
      {
       "Id": "774056064",
@@ -1381,7 +1381,7 @@
       "Streaming": "false",
       "Location": "Memory",
       "ShortName": "AttackHeavySlam_Carpet.wav",
-      "CachePath": "CD/{CD0D026A-6DD6-122F-7623-531BC4043107}.wem"
+      "CachePath": "F0/{F0C9ED8B-7A16-7A46-0BF4-6286BF8163C8}.wem"
      },
      {
       "Id": "779424892",
@@ -1389,7 +1389,7 @@
       "Streaming": "false",
       "Location": "Memory",
       "ShortName": "C_ThrowQuip_03.wav",
-      "CachePath": "C2/{C2E35A96-A407-2E8B-9606-CB6D805A81B9}.wem"
+      "CachePath": "E7/{E7F18A86-59C3-DB8B-F6DB-6DBB8F2FC152}.wem"
      },
      {
       "Id": "780423143",
@@ -1397,7 +1397,7 @@
       "Streaming": "false",
       "Location": "Memory",
       "ShortName": "C_Master.wav",
-      "CachePath": "B4/{B46C851B-DC41-1207-A89D-B8C9A6F43BE4}.wem"
+      "CachePath": "76/{76A97C26-ACEC-256F-CB75-1C46EE632B20}.wem"
      },
      {
       "Id": "792966004",
@@ -1405,7 +1405,7 @@
       "Streaming": "false",
       "Location": "Memory",
       "ShortName": "C_Select_01.wav",
-      "CachePath": "CF/{CF162388-D640-DDAB-AA1C-72526A6A6F07}.wem"
+      "CachePath": "91/{912629E1-EDEB-73AA-B266-35649D6E76C5}.wem"
      },
      {
       "Id": "793817075",
@@ -1413,7 +1413,7 @@
       "Streaming": "false",
       "Location": "Memory",
       "ShortName": "A_AttackHeavy_02.wav",
-      "CachePath": "ED/{ED0709CD-462F-2011-62FE-564977D975EA}.wem"
+      "CachePath": "FA/{FABD11D1-D7A3-FB1D-908F-5417DA03952B}.wem"
      },
      {
       "Id": "793956858",
@@ -1421,7 +1421,7 @@
       "Streaming": "false",
       "Location": "Memory",
       "ShortName": "FootstepB_02_Tile.wav",
-      "CachePath": "27/{2763DB58-CC5C-46F1-F333-51B89A549796}.wem"
+      "CachePath": "A4/{A46F9691-A7E2-808B-5216-3255F71A432B}.wem"
      },
      {
       "Id": "796238778",
@@ -1429,7 +1429,7 @@
       "Streaming": "false",
       "Location": "Memory",
       "ShortName": "DoorSlideOpen.wav",
-      "CachePath": "FF/{FFB772A2-EF1C-319F-5C39-2AE09A40E7C5}.wem"
+      "CachePath": "85/{853D7AA7-A93B-5A38-81EB-47632EB51429}.wem"
      },
      {
       "Id": "799796383",
@@ -1437,7 +1437,7 @@
       "Streaming": "false",
       "Location": "Memory",
       "ShortName": "D_Hit_05.wav",
-      "CachePath": "45/{458B2E9D-911A-C7C0-EDBD-BC132F827765}.wem"
+      "CachePath": "AC/{AC456084-3A1D-3E84-0EFD-4AAC7164E83E}.wem"
      },
      {
       "Id": "806950712",
@@ -1445,7 +1445,7 @@
       "Streaming": "false",
       "Location": "Memory",
       "ShortName": "D_Select_05.wav",
-      "CachePath": "B9/{B9385EBB-208A-86EC-A677-0989D61B42A6}.wem"
+      "CachePath": "AB/{ABF7268A-4888-2AE6-5329-B62E744FC953}.wem"
      },
      {
       "Id": "807765666",
@@ -1453,7 +1453,7 @@
       "Streaming": "false",
       "Location": "Memory",
       "ShortName": "VO_B_Hit_02.wav",
-      "CachePath": "AC/{AC763113-B1F6-27D0-B645-D0B560DB7745}.wem"
+      "CachePath": "C6/{C6FF3FD2-DF47-2680-AF4D-3E428751E7D0}.wem"
      },
      {
       "Id": "812890662",
@@ -1461,7 +1461,7 @@
       "Streaming": "false",
       "Location": "Memory",
       "ShortName": "A_AttackHeavy_04.wav",
-      "CachePath": "A7/{A7A2B278-75C6-2639-A1C7-10148B7FB1AB}.wem"
+      "CachePath": "A1/{A1C10F5B-3E4D-C0FD-D0F1-18E357CC4A6E}.wem"
      },
      {
       "Id": "814068947",
@@ -1469,7 +1469,7 @@
       "Streaming": "false",
       "Location": "Memory",
       "ShortName": "SFX_Crunch_01.wav",
-      "CachePath": "71/{71D9F3F3-E513-7708-5763-CE85258A4B03}.wem"
+      "CachePath": "60/{60529098-EE42-3643-63ED-4DBFF304AEE5}.wem"
      },
      {
       "Id": "817365904",
@@ -1477,7 +1477,7 @@
       "Streaming": "false",
       "Location": "Memory",
       "ShortName": "B_1_Brass.wav",
-      "CachePath": "CB/{CB0C53FC-4CAE-2476-DE88-1174DA22E639}.wem"
+      "CachePath": "20/{2014B69F-6017-AEB9-4404-4BD5E28D0DF7}.wem"
      },
      {
       "Id": "818446214",
@@ -1485,7 +1485,7 @@
       "Streaming": "false",
       "Location": "Memory",
       "ShortName": "C_ThrowQuip_06.wav",
-      "CachePath": "DA/{DA3707C2-C5CC-66C6-5523-CAAB04FDFDCB}.wem"
+      "CachePath": "07/{07902C55-2312-5B3A-F5BA-3B9F990B8C39}.wem"
      },
      {
       "Id": "828278725",
@@ -1493,7 +1493,7 @@
       "Streaming": "false",
       "Location": "Memory",
       "ShortName": "D_Hit_03.wav",
-      "CachePath": "27/{27FD848E-B75A-9200-1B71-CB5465C0B622}.wem"
+      "CachePath": "FA/{FA8F14B2-D6FF-B0AD-D38C-3B39F6AB6812}.wem"
      },
      {
       "Id": "828655390",
@@ -1501,7 +1501,7 @@
       "Streaming": "false",
       "Location": "Memory",
       "ShortName": "VO_B_Dodge_06.wav",
-      "CachePath": "27/{27DD4FA0-AFBA-6607-92EC-7051CDDE9B8E}.wem"
+      "CachePath": "E7/{E731FAEB-F096-3E3F-22EE-7D8BC0EB23C4}.wem"
      },
      {
       "Id": "831517448",
@@ -1509,7 +1509,7 @@
       "Streaming": "false",
       "Location": "Memory",
       "ShortName": "A_Hit_04.wav",
-      "CachePath": "17/{17A47A26-D277-A50E-A1B6-90DE66C8DEF2}.wem"
+      "CachePath": "06/{06B395C6-B082-BB1C-F9EA-CCDCF51CD61F}.wem"
      },
      {
       "Id": "831793489",
@@ -1517,7 +1517,7 @@
       "Streaming": "false",
       "Location": "Memory",
       "ShortName": "D_HitHeavy_04.wav",
-      "CachePath": "ED/{ED045268-13D6-C891-4ADF-B59207398C5F}.wem"
+      "CachePath": "CC/{CCD40EB4-1AAE-F9D2-0357-47265972ED35}.wem"
      },
      {
       "Id": "844233888",
@@ -1525,7 +1525,7 @@
       "Streaming": "false",
       "Location": "Memory",
       "ShortName": "C_Throw_03.wav",
-      "CachePath": "26/{267362EB-70DE-59F8-5B05-ED38BDB876E7}.wem"
+      "CachePath": "88/{88F2DB98-0A88-BEC5-C8D4-526C7CBB6E7F}.wem"
      },
      {
       "Id": "845711448",
@@ -1533,7 +1533,7 @@
       "Streaming": "false",
       "Location": "Memory",
       "ShortName": "A_Select_05.wav",
-      "CachePath": "6B/{6BA884EE-9566-62F8-D048-6C34F46252A0}.wem"
+      "CachePath": "09/{09885D96-D8B9-6EA2-7064-52346C892285}.wem"
      },
      {
       "Id": "845892068",
@@ -1541,7 +1541,7 @@
       "Streaming": "false",
       "Location": "Memory",
       "ShortName": "Slowdown_03.wav",
-      "CachePath": "3B/{3BA2C2DD-49DD-BA1D-FBAC-945FB542AC9D}.wem"
+      "CachePath": "EC/{EC743483-F526-F547-0099-FF2456519039}.wem"
      },
      {
       "Id": "846472196",
@@ -1549,7 +1549,7 @@
       "Streaming": "false",
       "Location": "Memory",
       "ShortName": "A_AttackHeavy_01.wav",
-      "CachePath": "07/{07BCFA5E-9BF4-9226-ED57-892771F6E5FE}.wem"
+      "CachePath": "53/{53BA0D44-6EE4-CDEF-DA5C-25B9A79C4C1B}.wem"
      },
      {
       "Id": "846871773",
@@ -1557,7 +1557,7 @@
       "Streaming": "false",
       "Location": "Memory",
       "ShortName": "Rifle_03.wav",
-      "CachePath": "0E/{0E565B79-1B9C-B29D-2F2E-123C5EA86DFE}.wem"
+      "CachePath": "D6/{D60F8147-BD90-0559-BD40-32940C89121E}.wem"
      },
      {
       "Id": "851917532",
@@ -1565,7 +1565,7 @@
       "Streaming": "false",
       "Location": "Memory",
       "ShortName": "VO_B_Win_01.wav",
-      "CachePath": "C9/{C919768A-381E-E137-C4C8-10F2B1EDA375}.wem"
+      "CachePath": "F3/{F3C91C28-D6E3-1A98-37F9-A53D52F4F130}.wem"
      },
      {
       "Id": "858110002",
@@ -1573,7 +1573,7 @@
       "Streaming": "false",
       "Location": "Memory",
       "ShortName": "A_HitHeavy_01.wav",
-      "CachePath": "35/{35881AB6-F1A8-A6C9-615F-EBAFA612CDE9}.wem"
+      "CachePath": "74/{74DCE528-6443-30B1-0029-2C38E8075384}.wem"
      },
      {
       "Id": "858358347",
@@ -1581,7 +1581,7 @@
       "Streaming": "false",
       "Location": "Memory",
       "ShortName": "ActionMineDefuse_02.wav",
-      "CachePath": "96/{96772F55-C9BD-0E3F-99E7-61181F437F2F}.wem"
+      "CachePath": "25/{255346EC-0806-DDBE-B937-9EB48311B915}.wem"
      },
      {
       "Id": "859905531",
@@ -1589,7 +1589,7 @@
       "Streaming": "false",
       "Location": "Memory",
       "ShortName": "CrunchHeavy_02.wav",
-      "CachePath": "49/{492FE86A-F98C-2309-9913-F10F3D6BE635}.wem"
+      "CachePath": "92/{9259FE2D-A43D-B8F9-D535-3A56A080F379}.wem"
      },
      {
       "Id": "861212766",
@@ -1597,7 +1597,7 @@
       "Streaming": "false",
       "Location": "Memory",
       "ShortName": "A_AttackQuip_01.wav",
-      "CachePath": "34/{3498DE95-4CD5-CF35-A715-ADE844FE27C6}.wem"
+      "CachePath": "AD/{AD3AB6E7-FDD9-F51F-F4B7-4ADB4A500B70}.wem"
      },
      {
       "Id": "863980540",
@@ -1605,7 +1605,7 @@
       "Streaming": "false",
       "Location": "Memory",
       "ShortName": "C_Hit_03.wav",
-      "CachePath": "D5/{D55040BF-8E66-66E2-370B-D3ECB23C1C82}.wem"
+      "CachePath": "81/{81FC8FD4-96EC-BBD6-3B4A-15B2973531E3}.wem"
      },
      {
       "Id": "869297126",
@@ -1613,7 +1613,7 @@
       "Streaming": "false",
       "Location": "Memory",
       "ShortName": "VO_B_Roll_04.wav",
-      "CachePath": "06/{06FBA5FD-3C57-A4CB-9FD1-C53F25B5513B}.wem"
+      "CachePath": "F2/{F27358C2-0345-C509-00AB-4C717F5E46F8}.wem"
      },
      {
       "Id": "871490212",
@@ -1621,7 +1621,7 @@
       "Streaming": "false",
       "Location": "Memory",
       "ShortName": "C_Hit_01.wav",
-      "CachePath": "94/{94003A51-843E-7BDC-BDE1-57911D6CF932}.wem"
+      "CachePath": "24/{24581A3F-3D93-5F64-564A-C4D3701F43D4}.wem"
      },
      {
       "Id": "883936672",
@@ -1629,7 +1629,7 @@
       "Streaming": "false",
       "Location": "Memory",
       "ShortName": "A_Hit_02.wav",
-      "CachePath": "0B/{0B53E3E1-2BCB-B7A9-1788-C0EB176C5B1E}.wem"
+      "CachePath": "75/{75F9AFEB-DD13-6B99-D6A1-9098E5C7FAC0}.wem"
      },
      {
       "Id": "884540179",
@@ -1637,7 +1637,7 @@
       "Streaming": "false",
       "Location": "Memory",
       "ShortName": "VO_B_Roll_03.wav",
-      "CachePath": "CD/{CD3D323A-9429-DB0B-27C7-210FB6B64785}.wem"
+      "CachePath": "7C/{7C565CB8-F582-9AD9-7EC7-62D19B3D460E}.wem"
      },
      {
       "Id": "888201016",
@@ -1645,7 +1645,7 @@
       "Streaming": "false",
       "Location": "Memory",
       "ShortName": "Intro_Master.wav",
-      "CachePath": "BC/{BC40BE27-A4A1-D489-1A79-A201B520CE7A}.wem"
+      "CachePath": "78/{78D96B41-84DA-110C-389F-8C207CFC96C4}.wem"
      },
      {
       "Id": "888812096",
@@ -1653,7 +1653,7 @@
       "Streaming": "false",
       "Location": "Memory",
       "ShortName": "FootstepD_01_Tile.wav",
-      "CachePath": "E2/{E283C7AD-A002-017F-B361-6BC84269C5FB}.wem"
+      "CachePath": "73/{73272DF4-3270-612F-835A-EA7EA62E3F77}.wem"
      },
      {
       "Id": "893136153",
@@ -1661,7 +1661,7 @@
       "Streaming": "false",
       "Location": "Memory",
       "ShortName": "A_Dead_01.wav",
-      "CachePath": "13/{132C1364-3766-E73E-7706-3465CB5D5B77}.wem"
+      "CachePath": "C2/{C2296EB3-9BD4-9AA0-54C3-3255BA64602F}.wem"
      },
      {
       "Id": "897976614",
@@ -1669,7 +1669,7 @@
       "Streaming": "false",
       "Location": "Memory",
       "ShortName": "FootstepD_02_Concrete.wav",
-      "CachePath": "A6/{A637FCA1-0263-3CD7-37D7-E46FF20EF535}.wem"
+      "CachePath": "67/{6758EEA9-C92D-D859-9FC0-B6E54B273841}.wem"
      },
      {
       "Id": "902322511",
@@ -1677,7 +1677,7 @@
       "Streaming": "false",
       "Location": "Memory",
       "ShortName": "AmbienceFrontOfHouse_Loop.wav",
-      "CachePath": "C3/{C3472DC5-0775-2673-B774-370934BED236}.wem"
+      "CachePath": "A4/{A4FF24E6-8EA0-4391-FFF3-0074F000D310}.wem"
      },
      {
       "Id": "908541921",
@@ -1685,7 +1685,7 @@
       "Streaming": "false",
       "Location": "Memory",
       "ShortName": "A_Dash_03.wav",
-      "CachePath": "39/{397EAE8D-D133-F7F5-E7F6-9C29FCC9BBDB}.wem"
+      "CachePath": "0B/{0B4ED586-B41F-8999-88E3-DA17E766EABD}.wem"
      },
      {
       "Id": "909455743",
@@ -1693,7 +1693,7 @@
       "Streaming": "false",
       "Location": "Memory",
       "ShortName": "C_Throw_02.wav",
-      "CachePath": "20/{20ED89E6-CCC4-6AA5-9627-DE50FBED5EB9}.wem"
+      "CachePath": "1A/{1A6D7888-8026-6859-595A-72C104A2BEB6}.wem"
      },
      {
       "Id": "910409534",
@@ -1701,7 +1701,7 @@
       "Streaming": "false",
       "Location": "Memory",
       "ShortName": "A_HitHeavy_02.wav",
-      "CachePath": "CC/{CC4C7E58-BB50-6B7B-31F4-2AA0D35A7B19}.wem"
+      "CachePath": "BF/{BF798680-9F19-98CB-91D5-B930C2736F79}.wem"
      },
      {
       "Id": "916965250",
@@ -1709,7 +1709,7 @@
       "Streaming": "false",
       "Location": "Memory",
       "ShortName": "C_1_MixedPerc.wav",
-      "CachePath": "81/{8132D7E5-539C-7E79-4C83-8246B5FE5F05}.wem"
+      "CachePath": "BC/{BCC1E4C7-0B79-84CD-F4F0-DB70106AA53E}.wem"
      },
      {
       "Id": "927294332",
@@ -1717,7 +1717,7 @@
       "Streaming": "false",
       "Location": "Memory",
       "ShortName": "DoorSmash.wav",
-      "CachePath": "8B/{8B20080F-FF75-3C7B-8DBD-0EA6656965C6}.wem"
+      "CachePath": "62/{62D609E5-4E2E-8D9C-CBA8-33EC9216EBDB}.wem"
      },
      {
       "Id": "932986248",
@@ -1725,7 +1725,7 @@
       "Streaming": "false",
       "Location": "Memory",
       "ShortName": "FootstepB_03.wav",
-      "CachePath": "DC/{DCC73A42-5DAD-0C1C-6163-10B0F1D11CE9}.wem"
+      "CachePath": "56/{56141108-DEE0-5F0B-398F-E56C3CF30472}.wem"
      },
      {
       "Id": "935062006",
@@ -1733,7 +1733,7 @@
       "Streaming": "false",
       "Location": "Memory",
       "ShortName": "FootstepC_01.wav",
-      "CachePath": "39/{39C9D0DD-6D07-30E7-2880-00EADD8BB705}.wem"
+      "CachePath": "02/{02C54F45-8312-016B-9AEF-44CE595147A9}.wem"
      },
      {
       "Id": "936072716",
@@ -1741,7 +1741,7 @@
       "Streaming": "false",
       "Location": "Memory",
       "ShortName": "Shift_01.wav",
-      "CachePath": "13/{13CA776A-41A5-9260-0102-71CCB1944CAB}.wem"
+      "CachePath": "F4/{F493A465-46F0-E401-E56E-AED224F8163B}.wem"
      },
      {
       "Id": "936875036",
@@ -1749,7 +1749,7 @@
       "Streaming": "false",
       "Location": "Memory",
       "ShortName": "VO_B_Select_05.wav",
-      "CachePath": "CA/{CAEB7C61-9C30-3EFB-676F-4BAA88B6A45E}.wem"
+      "CachePath": "F6/{F6094869-41A9-8753-1315-E3EBBBCFB8F4}.wem"
      },
      {
       "Id": "940281172",
@@ -1757,7 +1757,7 @@
       "Streaming": "false",
       "Location": "Memory",
       "ShortName": "BombExplosion_03.wav",
-      "CachePath": "B4/{B4CA8940-4505-37D3-6E8E-1B5E7A9F67C3}.wem"
+      "CachePath": "2D/{2DF82798-EABB-9E8F-2EC1-EBAB0778425E}.wem"
      },
      {
       "Id": "942004092",
@@ -1765,7 +1765,7 @@
       "Streaming": "false",
       "Location": "Memory",
       "ShortName": "FootstepC_02_Concrete.wav",
-      "CachePath": "0A/{0A578408-9596-9F64-5237-5DE5EA7F63F4}.wem"
+      "CachePath": "58/{5874AC0F-3558-49AB-2AC9-9CA54E772579}.wem"
      },
      {
       "Id": "953017544",
@@ -1773,7 +1773,7 @@
       "Streaming": "false",
       "Location": "Memory",
       "ShortName": "FootstepB_04.wav",
-      "CachePath": "86/{86F13B58-AD69-0539-5E5C-225E3848A342}.wem"
+      "CachePath": "25/{2515CEA7-2858-A99E-5A78-534126C37B03}.wem"
      },
      {
       "Id": "959829082",
@@ -1781,7 +1781,7 @@
       "Streaming": "false",
       "Location": "Memory",
       "ShortName": "FootstepC_03.wav",
-      "CachePath": "C6/{C64070C5-B142-A17C-DB41-25C5DA5759CC}.wem"
+      "CachePath": "E1/{E159ACFC-A4C8-E9D1-3590-30731037D3DC}.wem"
      },
      {
       "Id": "961369476",
@@ -1789,7 +1789,7 @@
       "Streaming": "false",
       "Location": "Memory",
       "ShortName": "Slowdown_02.wav",
-      "CachePath": "16/{1653B7A9-4ED2-E6CC-93FF-2EB9A870BBA5}.wem"
+      "CachePath": "12/{1230428C-C381-07E5-73CC-919E11D118E4}.wem"
      },
      {
       "Id": "962310616",
@@ -1797,7 +1797,7 @@
       "Streaming": "false",
       "Location": "Memory",
       "ShortName": "AttackHeavySlam_Tile.wav",
-      "CachePath": "D3/{D3B30BB7-0643-7629-791A-A9805D022E39}.wem"
+      "CachePath": "4B/{4B033575-6CEC-C39E-926F-9A856EF67DC5}.wem"
      },
      {
       "Id": "968564452",
@@ -1805,7 +1805,7 @@
       "Streaming": "false",
       "Location": "Memory",
       "ShortName": "C_ThrowQuip_01.wav",
-      "CachePath": "26/{264517F3-A68F-5DBE-E159-B396A74BF4E6}.wem"
+      "CachePath": "95/{952BE86B-7367-F72A-38C4-594FD80708A4}.wem"
      },
      {
       "Id": "977912169",
@@ -1813,7 +1813,7 @@
       "Streaming": "false",
       "Location": "Memory",
       "ShortName": "VO_B_Hit_03.wav",
-      "CachePath": "8E/{8E6CE3D6-360B-C8C0-6984-8DB41FE7DF79}.wem"
+      "CachePath": "67/{67D046EC-BF5B-D4C1-E894-6478471C0405}.wem"
      },
      {
       "Id": "982319769",
@@ -1821,7 +1821,7 @@
       "Streaming": "false",
       "Location": "Memory",
       "ShortName": "A_Win_02.wav",
-      "CachePath": "8C/{8C263909-B76A-EA92-AC29-D0949E0211FE}.wem"
+      "CachePath": "5D/{5D7FF947-3DBC-06F6-FFDD-0E69EF92C13A}.wem"
      },
      {
       "Id": "985736822",
@@ -1829,7 +1829,7 @@
       "Streaming": "false",
       "Location": "Memory",
       "ShortName": "A_Select_02.wav",
-      "CachePath": "3B/{3B9868C7-5B39-0A45-6CA6-6FE78266BA91}.wem"
+      "CachePath": "E4/{E4D0632D-7237-0492-2E41-43F26BBF9217}.wem"
      },
      {
       "Id": "990748102",
@@ -1837,7 +1837,7 @@
       "Streaming": "false",
       "Location": "Memory",
       "ShortName": "FootstepB_05_Concrete.wav",
-      "CachePath": "03/{03C06CE9-9444-7748-1670-098690E14E42}.wem"
+      "CachePath": "3C/{3C328D85-410F-026B-CEE9-ACAC489ED49E}.wem"
      },
      {
       "Id": "1006487176",
@@ -1845,7 +1845,7 @@
       "Streaming": "false",
       "Location": "Memory",
       "ShortName": "A_Select_03.wav",
-      "CachePath": "CF/{CF948694-D968-BBC7-287E-2FBDF77F8529}.wem"
+      "CachePath": "82/{8244EFC0-16FB-7CBD-D64B-C93944C94A3F}.wem"
      },
      {
       "Id": "1021562170",
@@ -1853,7 +1853,7 @@
       "Streaming": "false",
       "Location": "Memory",
       "ShortName": "BombExplosion_02.wav",
-      "CachePath": "E8/{E857D3C2-6FDC-9BF3-6EB1-22CE33341898}.wem"
+      "CachePath": "08/{080B8061-B738-5B78-6F07-6C7220526D7A}.wem"
      },
      {
       "Id": "1029566358",
@@ -1861,7 +1861,7 @@
       "Streaming": "false",
       "Location": "Memory",
       "ShortName": "C_Hit_02.wav",
-      "CachePath": "30/{308242F7-1043-E26A-C825-73C7B6E27561}.wem"
+      "CachePath": "F1/{F1F79378-B3C0-E6DC-8845-8D96F85AA312}.wem"
      },
      {
       "Id": "1030138113",
@@ -1869,7 +1869,7 @@
       "Streaming": "false",
       "Location": "Memory",
       "ShortName": "AttackHeavy_03.wav",
-      "CachePath": "6D/{6D373C80-A0D6-2099-98F4-D9459FFA9FE4}.wem"
+      "CachePath": "9A/{9A0EC291-2889-5852-DD32-BCAF1A30FAC4}.wem"
      },
      {
       "Id": "1030344162",
@@ -1877,7 +1877,7 @@
       "Streaming": "false",
       "Location": "Memory",
       "ShortName": "VO_E_Impact_03.wav",
-      "CachePath": "EA/{EA9233F6-0A55-BE42-9E2F-7455119B8220}.wem"
+      "CachePath": "5D/{5D0A590D-999C-0077-2BAC-40188825AE79}.wem"
      },
      {
       "Id": "1035172307",
@@ -1885,7 +1885,7 @@
       "Streaming": "false",
       "Location": "Memory",
       "ShortName": "A_Hit_03.wav",
-      "CachePath": "EF/{EF0F0F7B-FD14-9B59-E332-2E0D44F9AA9B}.wem"
+      "CachePath": "1C/{1CDD3732-0A95-C76E-162B-46EB19DE8F72}.wem"
      },
      {
       "Id": "1036251909",
@@ -1893,7 +1893,7 @@
       "Streaming": "false",
       "Location": "Memory",
       "ShortName": "A_2_Fast Horns.wav",
-      "CachePath": "2B/{2B509804-9B04-F7D7-B998-CD46FDC8042F}.wem"
+      "CachePath": "1F/{1F39B23E-D839-B5AB-458F-04C8FFFD73E4}.wem"
      },
      {
       "Id": "1038703182",
@@ -1901,7 +1901,7 @@
       "Streaming": "false",
       "Location": "Memory",
       "ShortName": "FootstepA_01_Tile.wav",
-      "CachePath": "DA/{DAFEB2E8-3378-0ADF-CC24-2E557AF61550}.wem"
+      "CachePath": "86/{86CA7B99-220F-504C-FD6A-4F56051A18CA}.wem"
      },
      {
       "Id": "1045731519",
@@ -1909,7 +1909,7 @@
       "Streaming": "false",
       "Location": "Memory",
       "ShortName": "D_Hit_02.wav",
-      "CachePath": "2A/{2A5B416D-2CA0-C907-CC37-4B4CCB1B70ED}.wem"
+      "CachePath": "28/{28FADEA4-9936-745E-3ECD-1FEF64AC5A98}.wem"
      },
      {
       "Id": "1046734891",
@@ -1917,7 +1917,7 @@
       "Streaming": "false",
       "Location": "Memory",
       "ShortName": "C_Throw_01.wav",
-      "CachePath": "11/{1181B55D-7BC7-4CE4-CAC3-7F5C88E01799}.wem"
+      "CachePath": "D5/{D529C4D7-7589-E7B9-1FD6-2A64EDA85149}.wem"
      },
      {
       "Id": "1047698713",
@@ -1925,7 +1925,7 @@
       "Streaming": "false",
       "Location": "Memory",
       "ShortName": "FootstepB_02_Concrete.wav",
-      "CachePath": "37/{379D8C6C-84A9-2650-7583-AF3154DA67A0}.wem"
+      "CachePath": "1A/{1AF87167-6EEB-9563-C071-F522DA7C8E5B}.wem"
      },
      {
       "Id": "1053093362",
@@ -1933,7 +1933,7 @@
       "Streaming": "false",
       "Location": "Memory",
       "ShortName": "FootstepA_01.wav",
-      "CachePath": "0D/{0D3AE7B7-3F23-8C04-CB41-79DC09F23CE0}.wem"
+      "CachePath": "18/{1833E8FE-6F2A-11BA-2E51-6B140D0B821C}.wem"
      },
      {
       "Id": "1055102690",
@@ -1941,7 +1941,7 @@
       "Streaming": "false",
       "Location": "Memory",
       "ShortName": "VO_B_Hit_04.wav",
-      "CachePath": "3F/{3FAFBDA3-CB95-8DB0-8151-06878BB28B46}.wem"
+      "CachePath": "70/{70DFE497-79F0-2540-FA08-4E742D69DDF5}.wem"
      },
      {
       "Id": "1062283916",
@@ -1949,7 +1949,7 @@
       "Streaming": "false",
       "Location": "Memory",
       "ShortName": "MUS_Pause_Loop.wav",
-      "CachePath": "25/{25C74FE6-F89B-B3B1-68F7-DE316F684A0F}.wem"
+      "CachePath": "71/{7172F5A5-CE0E-B6E2-2DB9-AA3DCA49B18C}.wem"
      },
      {
       "Id": "1067238736",
@@ -1957,7 +1957,7 @@
       "Streaming": "false",
       "Location": "Memory",
       "ShortName": "A_2_FancyTrumpets.wav",
-      "CachePath": "27/{2749EF45-FDA1-784E-ED4B-C2A412A48461}.wem"
+      "CachePath": "B7/{B7AC80A0-C4CB-18BD-4894-E9397ACAAFB0}.wem"
      },
      {
       "Id": "1071894219",
@@ -1965,7 +1965,7 @@
       "Streaming": "false",
       "Location": "Memory",
       "ShortName": "C_2_GuitarVibe.wav",
-      "CachePath": "A4/{A455B42E-4ACC-F1AC-16A2-90094049C0AC}.wem"
+      "CachePath": "40/{408AF715-3E0B-18B0-3CE1-920AF966A447}.wem"
      }
     ],
     "Plugins": {
@@ -4985,6 +4985,6 @@
     ]
    }
   ],
-  "FileHash": "{40FEB6D4-7420-518B-52CC-22CAE503B9A0}"
+  "FileHash": "{14F8BA1F-F1D7-E639-9ED9-C43FB5E8F5F2}"
  }
 }
