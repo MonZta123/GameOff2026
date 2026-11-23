@@ -54,6 +54,9 @@ namespace Actors
         [SerializeField]
         private AK.Wwise.Event[] heavyHitSounds;
 
+        [SerializeField]
+        private TrailRenderer heavyDashTrail;
+
         public void Init(ECS.Entities.Player entity)
         {
             transform.position = entity._position;
@@ -133,6 +136,15 @@ namespace Actors
             var isBlockingMovementChanged = _lastPrimaryBlockingMovementTo != _lastEntity._primaryBlockingMovementTo;
             _lastPrimaryBlockingMovementTo = _lastEntity._primaryBlockingMovementTo;
 
+            if (_lastEntity._type == ECS.Entities.PlayerType.Heavy && secondaryActive)
+            {
+                heavyDashTrail.emitting = true;
+            }
+            else
+            {
+                heavyDashTrail.emitting = false;
+            }
+            
             if (isDead)
             {
                 animator.Play("Dead");
@@ -300,6 +312,8 @@ namespace Actors
             _activePlayer = false;
             _stepIndex = 0;
             _footstepsActive = false;
+            heavyDashTrail.emitting = false;
+            heavyDashTrail.Clear();
 
             spriteRenderer.GetPropertyBlock(_materialPropertyBlock);
             _materialPropertyBlock.SetFloat(s_flashAmount, 0f);

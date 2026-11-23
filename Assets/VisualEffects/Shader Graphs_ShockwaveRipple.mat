@@ -42,8 +42,11 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
+    - _DistortionStrength: 2
+    - _Progress: 0
     - _QueueControl: 0
     - _QueueOffset: 0
+    - _WaveIntensity: 7
     - _distortionStrength: 10
     - _propSpeed: 1
     - _waveIntensity: 7

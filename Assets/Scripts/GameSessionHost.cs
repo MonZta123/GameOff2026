@@ -95,7 +95,7 @@ public class GameSessionHost : MonoBehaviour
     private void Awake()
     {
 #if UNITY_EDITOR
-        maxSeconds = 5;
+        maxSeconds = 30;
 #endif
 
         pools.Initialize();

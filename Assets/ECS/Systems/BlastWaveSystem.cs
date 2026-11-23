@@ -14,6 +14,11 @@ namespace ECS.Systems
             if (world._hasBlastWaveEvent)
             {
                 BlastWaveEvent(ref snapshot, world._blastWaveEvent);
+                snapshot._splosionNotificationPool.Add(new SplosionNotification()
+                {
+                    _position = world._blastWaveEvent._position,
+                    _type = SplosionType.Heavy
+                });
             }
 
             if (world._hasGranadeExplosionEvent)
