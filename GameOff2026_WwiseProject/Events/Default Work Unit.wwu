@@ -343,6 +343,7 @@
 								<Event Name="Play_SFX_BigExplosion" ID="{E02E6D0C-F676-4241-B29F-FCEFD60C8FD3}">
 									<PropertyList>
 										<Property Name="Color" Type="int16" Value="10"/>
+										<Property Name="Inclusion" Type="bool" Value="False"/>
 										<Property Name="OverrideColor" Type="bool" Value="True"/>
 									</PropertyList>
 									<ChildrenList>
@@ -356,6 +357,9 @@
 									</ChildrenList>
 								</Event>
 								<Event Name="Play_SFX_ChargeSet" ID="{0E5DE2F2-5313-45DA-8FA6-A3469A2C1DFD}">
+									<PropertyList>
+										<Property Name="Inclusion" Type="bool" Value="False"/>
+									</PropertyList>
 									<ChildrenList>
 										<Action Name="" ID="{7887F10C-3479-4B34-9B4C-51FAFE596E8A}" ShortID="615733899">
 											<ReferenceList>
@@ -426,6 +430,9 @@
 									</ChildrenList>
 								</Event>
 								<Event Name="Stop_SFX_ChargeSet" ID="{F1D77053-D09A-42C7-A653-B7669265A660}">
+									<PropertyList>
+										<Property Name="Inclusion" Type="bool" Value="False"/>
+									</PropertyList>
 									<ChildrenList>
 										<Action Name="" ID="{3CF4E9DC-CF0F-4FED-8227-AB2C0D7F8B61}" ShortID="241759646">
 											<PropertyList>
@@ -1070,7 +1077,7 @@
 										<Action Name="" ID="{B0FC761B-283A-4566-B947-2B0911AFCFEB}" ShortID="284583955">
 											<ReferenceList>
 												<Reference Name="Target">
-													<ObjectRef Name="Dodge" ID="{503510A6-6244-4C03-B579-3D9A2511F70F}" WorkUnitID="{AF633A36-6CC5-470E-AD72-3F76D6F661BF}"/>
+													<ObjectRef Name="Throw" ID="{139C46CE-4B3E-4703-A920-097566FBD575}" WorkUnitID="{AF633A36-6CC5-470E-AD72-3F76D6F661BF}"/>
 												</Reference>
 											</ReferenceList>
 										</Action>
@@ -1085,7 +1092,7 @@
 										<Action Name="" ID="{868DFC3D-F7A1-407F-8544-F08A04F12A03}" ShortID="779204428">
 											<ReferenceList>
 												<Reference Name="Target">
-													<ObjectRef Name="VO_B_Dead_01" ID="{26EA853B-8C7B-4645-ACEE-2E9D9A5C39A4}" WorkUnitID="{AF633A36-6CC5-470E-AD72-3F76D6F661BF}"/>
+													<ObjectRef Name="VO_C_Dead_01" ID="{B0522E6E-F6CC-46B2-BCB1-388F1A4E0FB3}" WorkUnitID="{AF633A36-6CC5-470E-AD72-3F76D6F661BF}"/>
 												</Reference>
 											</ReferenceList>
 										</Action>
@@ -1115,7 +1122,7 @@
 										<Action Name="" ID="{E81C8B09-1EEC-4D0B-A0B4-8990C91F8FA7}" ShortID="101100189">
 											<ReferenceList>
 												<Reference Name="Target">
-													<ObjectRef Name="Hit" ID="{6DCCADEE-7CAF-4E71-B13D-151C625D155D}" WorkUnitID="{AF633A36-6CC5-470E-AD72-3F76D6F661BF}"/>
+													<ObjectRef Name="Hit" ID="{75CEAA79-B08B-403F-BA07-E039D25BE280}" WorkUnitID="{AF633A36-6CC5-470E-AD72-3F76D6F661BF}"/>
 												</Reference>
 											</ReferenceList>
 										</Action>
@@ -1145,7 +1152,7 @@
 										<Action Name="" ID="{46942B71-5323-4862-AF9E-3DA713E69FC8}" ShortID="793204988">
 											<ReferenceList>
 												<Reference Name="Target">
-													<ObjectRef Name="Wind" ID="{72C68C4E-CE97-4011-9A57-FD96E22D4B15}" WorkUnitID="{AF633A36-6CC5-470E-AD72-3F76D6F661BF}"/>
+													<ObjectRef Name="Wind" ID="{18E475A1-9729-41BB-AB62-D4AF34C9C75C}" WorkUnitID="{AF633A36-6CC5-470E-AD72-3F76D6F661BF}"/>
 												</Reference>
 											</ReferenceList>
 										</Action>
