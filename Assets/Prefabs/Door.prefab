@@ -169,6 +169,7 @@ Transform:
   m_Children:
   - {fileID: 4911946497785212471}
   - {fileID: 9176852345698418808}
+  - {fileID: 1681802483914893710}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &8443806336917652463
@@ -186,6 +187,7 @@ MonoBehaviour:
   verticalSprite: {fileID: 11400000, guid: b98239b6cac22794ea6282acf3858bd6, type: 2}
   horizontalSprite: {fileID: 11400000, guid: f1a93274463679844905af4103ace94c, type: 2}
   doorRenderer: {fileID: 8138513174329295174}
+  marker: {fileID: 433445260717258560}
 --- !u!1 &5012291852129662827
 GameObject:
   m_ObjectHideFlags: 0
@@ -313,3 +315,82 @@ TilemapRenderer:
   m_SortOrder: 0
   m_Mode: 0
   m_DetectChunkCullingBounds: 0
+--- !u!1001 &4805979825251679247
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 6884456278061874291}
+    m_Modifications:
+    - target: {fileID: 5661481571930703423, guid: 3f8f7e9f8cdca80409b49625b17bc352, type: 3}
+      propertyPath: m_text
+      value: 'Olga can smash through with spacebar.
+
+        Trien can destroy it with left mouseclick.'
+      objectReference: {fileID: 0}
+    - target: {fileID: 5934449042042712427, guid: 3f8f7e9f8cdca80409b49625b17bc352, type: 3}
+      propertyPath: m_Name
+      value: Marker
+      objectReference: {fileID: 0}
+    - target: {fileID: 6189268887415821697, guid: 3f8f7e9f8cdca80409b49625b17bc352, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.4117
+      objectReference: {fileID: 0}
+    - target: {fileID: 6189268887415821697, guid: 3f8f7e9f8cdca80409b49625b17bc352, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 3.40017
+      objectReference: {fileID: 0}
+    - target: {fileID: 6189268887415821697, guid: 3f8f7e9f8cdca80409b49625b17bc352, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -38.32911
+      objectReference: {fileID: 0}
+    - target: {fileID: 6189268887415821697, guid: 3f8f7e9f8cdca80409b49625b17bc352, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6189268887415821697, guid: 3f8f7e9f8cdca80409b49625b17bc352, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6189268887415821697, guid: 3f8f7e9f8cdca80409b49625b17bc352, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6189268887415821697, guid: 3f8f7e9f8cdca80409b49625b17bc352, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6189268887415821697, guid: 3f8f7e9f8cdca80409b49625b17bc352, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6189268887415821697, guid: 3f8f7e9f8cdca80409b49625b17bc352, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6189268887415821697, guid: 3f8f7e9f8cdca80409b49625b17bc352, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 3f8f7e9f8cdca80409b49625b17bc352, type: 3}
+--- !u!114 &433445260717258560 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4949927797258783567, guid: 3f8f7e9f8cdca80409b49625b17bc352, type: 3}
+  m_PrefabInstance: {fileID: 4805979825251679247}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b2847cba016d85f4d9cece9d0f400dd1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: '::'
+--- !u!4 &1681802483914893710 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 6189268887415821697, guid: 3f8f7e9f8cdca80409b49625b17bc352, type: 3}
+  m_PrefabInstance: {fileID: 4805979825251679247}
+  m_PrefabAsset: {fileID: 0}

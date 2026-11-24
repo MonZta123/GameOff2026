@@ -26,7 +26,7 @@ namespace ECS.Systems
 
         private int _tickRate;
 
-        private float _secondsPrimaryCooldown = 0.25f;
+        private float _secondsPrimaryCooldown = Constants.DemolitionCooldown;
         private int _shootCooldownTicks;
 
         public void Execute(World world, int currentTick)
@@ -50,11 +50,10 @@ namespace ECS.Systems
                         _angle = moveEvt._angle,
                         _ttl = _tickRate
                     });
-                    
+
                     snapshot._soundNotificationPool.Add(new SoundNotification()
                     {
-                        _soundType = SoundType.DemolitionThrow,
-                        _position = player._position
+                        _soundType = SoundType.DemolitionThrow, _position = player._position
                     });
                 }
             }
@@ -70,11 +69,8 @@ namespace ECS.Systems
                     trigger._timer = 0;
                     snapshot._bombsLeft--;
                     snapshot._triggers.DespawnAt(i);
-                    
-                    snapshot._placedBombs.Spawn(new PlacedBomb()
-                    {
-                        _position = player._position
-                    });
+
+                    snapshot._placedBombs.Spawn(new PlacedBomb() { _position = player._position });
                 }
                 else if (trigger._triggerType == TriggerType.Mine &&
                          trigger.IsInCircle(player._position, 2f, 1f, out _) && moveEvt._action)
@@ -86,8 +82,7 @@ namespace ECS.Systems
                     {
                         snapshot._soundNotificationPool.Add(new SoundNotification()
                         {
-                            _soundType = SoundType.MineDefuse,
-                            _position = player._position
+                            _soundType = SoundType.MineDefuse, _position = player._position
                         });
                         snapshot._triggers.DespawnAt(i);
                     }

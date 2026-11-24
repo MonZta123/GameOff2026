@@ -19,6 +19,9 @@ public class PauseMenuScript : MonoBehaviour
     private Image blocker;
 
     [SerializeField]
+    private GameObject howToPlay;
+    
+    [SerializeField]
     private GameObject confirmQuitPanel;
 
     [SerializeField]
@@ -50,12 +53,45 @@ public class PauseMenuScript : MonoBehaviour
 
     public UnityEvent onMenuClose;
 
+    public void ShowHowToPlay()
+    {
+        blocker.gameObject.SetActive(true);
+        howToPlay.gameObject.SetActive(true);
+
+        howToPlay.transform.GetChild(0).gameObject.SetActive(true);
+    }
+
+    public void NextStep()
+    { 
+        for (var i = 0; i < howToPlay.transform.childCount; i++)
+        {
+            var child = howToPlay.transform.GetChild(i);
+            
+            if (child.gameObject.activeInHierarchy)
+            {
+                child.gameObject.SetActive(false);
+
+                if (i < howToPlay.transform.childCount - 1)
+                    howToPlay.transform.GetChild(i + 1).gameObject.SetActive(true);
+                else
+                    HideHowToPlayScreen();
+
+                return;
+            }
+        }
+    }
+
+    private void HideHowToPlayScreen()
+    {
+        blocker.gameObject.SetActive(false);
+        howToPlay.gameObject.SetActive(false);
+    }
+    
     public void ResumeGame()
     {
         onMenuClose?.Invoke();
     }
-
-  
+    
     private void Awake()
     {
         ResetVolume();
@@ -168,6 +204,9 @@ public class PauseMenuScript : MonoBehaviour
 
         if (confirmQuitPanel)
             confirmQuitPanel.gameObject.SetActive(false);
+        
+        if (howToPlay)
+            HideHowToPlayScreen();
 
         if (settingsPanel)
             CancelSettingsPanel();

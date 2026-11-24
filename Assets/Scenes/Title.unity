@@ -154,6 +154,7 @@ MonoBehaviour:
   confirmQuitPanel: {fileID: 1614011790}
   settingsPanel: {fileID: 202473277}
   creditsPanel: {fileID: 125316046}
+  howToPlay: {fileID: 1294308211}
   masterVolumeSlider: {fileID: 673761363}
   musicVolumeSlider: {fileID: 1680884250}
   sfxVolumeSlider: {fileID: 707583663}
@@ -431,6 +432,11 @@ MonoBehaviour:
   m_ShadowLayerMask: 1
   m_RenderingLayers: 1
   m_ShadowRenderingLayers: 1
+--- !u!1 &1294308211 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2383928074165684403, guid: 2d89fc92fb728fd189b9cd4b3745df22, type: 3}
+  m_PrefabInstance: {fileID: 1505617488}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1308291196
 GameObject:
   m_ObjectHideFlags: 0
@@ -571,9 +577,33 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1378447274380568681, guid: 2d89fc92fb728fd189b9cd4b3745df22, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1378447274380568681, guid: 2d89fc92fb728fd189b9cd4b3745df22, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1378447274380568681, guid: 2d89fc92fb728fd189b9cd4b3745df22, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1378447274380568681, guid: 2d89fc92fb728fd189b9cd4b3745df22, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1390450950440738066, guid: 2d89fc92fb728fd189b9cd4b3745df22, type: 3}
       propertyPath: m_Name
       value: CreditsText
+      objectReference: {fileID: 0}
+    - target: {fileID: 1534247123333515245, guid: 2d89fc92fb728fd189b9cd4b3745df22, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 27743982}
+    - target: {fileID: 1534247123333515245, guid: 2d89fc92fb728fd189b9cd4b3745df22, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: NextStep
       objectReference: {fileID: 0}
     - target: {fileID: 1575629148848205650, guid: 2d89fc92fb728fd189b9cd4b3745df22, type: 3}
       propertyPath: m_AnchorMax.x
@@ -601,7 +631,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1814119383824426665, guid: 2d89fc92fb728fd189b9cd4b3745df22, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1822034401962049897, guid: 2d89fc92fb728fd189b9cd4b3745df22, type: 3}
       propertyPath: m_AnchorMax.x
@@ -675,6 +705,10 @@ PrefabInstance:
       propertyPath: m_Color.r
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2395872127405252643, guid: 2d89fc92fb728fd189b9cd4b3745df22, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2401342632916614507, guid: 2d89fc92fb728fd189b9cd4b3745df22, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0
@@ -731,6 +765,22 @@ PrefabInstance:
       propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
       value: MainMenuManager, Assembly-CSharp
       objectReference: {fileID: 0}
+    - target: {fileID: 3578019579598287547, guid: 2d89fc92fb728fd189b9cd4b3745df22, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: -35.140022
+      objectReference: {fileID: 0}
+    - target: {fileID: 3578019579598287547, guid: 2d89fc92fb728fd189b9cd4b3745df22, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 17.569988
+      objectReference: {fileID: 0}
+    - target: {fileID: 3666052350051308029, guid: 2d89fc92fb728fd189b9cd4b3745df22, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 27743982}
+    - target: {fileID: 3666052350051308029, guid: 2d89fc92fb728fd189b9cd4b3745df22, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: NextStep
+      objectReference: {fileID: 0}
     - target: {fileID: 3703103432810060039, guid: 2d89fc92fb728fd189b9cd4b3745df22, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -754,6 +804,14 @@ PrefabInstance:
     - target: {fileID: 3755528812152491364, guid: 2d89fc92fb728fd189b9cd4b3745df22, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3856695274819337493, guid: 2d89fc92fb728fd189b9cd4b3745df22, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 27743982}
+    - target: {fileID: 3856695274819337493, guid: 2d89fc92fb728fd189b9cd4b3745df22, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: NextStep
       objectReference: {fileID: 0}
     - target: {fileID: 3938452912544062561, guid: 2d89fc92fb728fd189b9cd4b3745df22, type: 3}
       propertyPath: m_SizeDelta.x
@@ -858,6 +916,14 @@ PrefabInstance:
     - target: {fileID: 3966306238511370419, guid: 2d89fc92fb728fd189b9cd4b3745df22, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4267577673964198883, guid: 2d89fc92fb728fd189b9cd4b3745df22, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 27743982}
+    - target: {fileID: 4267577673964198883, guid: 2d89fc92fb728fd189b9cd4b3745df22, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: ShowHowToPlay
       objectReference: {fileID: 0}
     - target: {fileID: 4532913223872042500, guid: 2d89fc92fb728fd189b9cd4b3745df22, type: 3}
       propertyPath: m_AnchorMax.y
@@ -1003,6 +1069,86 @@ PrefabInstance:
       propertyPath: m_Color.a
       value: 0.8
       objectReference: {fileID: 0}
+    - target: {fileID: 6121429063405307646, guid: 2d89fc92fb728fd189b9cd4b3745df22, type: 3}
+      propertyPath: m_text
+      value: How to play
+      objectReference: {fileID: 0}
+    - target: {fileID: 6228978067054338390, guid: 2d89fc92fb728fd189b9cd4b3745df22, type: 3}
+      propertyPath: m_text
+      value: 'You play a squad of 4 TeamMembers in the following order:
+
+        1. Olga, 2. Dave, 3. TrieNT, 4 Renoir
+
+
+        Olga''s goal is to clear the path for the members and eliminate as much enemies as she can.
+
+        Dave has hacking objectives.
+
+        Trien has to blast the safe door and detect and defuse mines.
+
+        Renoir has to Spot and eliminate enemy snipers.
+
+
+        All Characters:
+
+        Mouse: Aim
+
+        WASD: Move
+
+        Left Mouseclick: Melee Attack (Olga), Shoot (Dave and Renoir), Throw Granade (Trien)
+
+        Spacebar: Olga Dash and Slam, Dave Dodge
+
+
+        E: Objective for Dave and Trien (Quick Press)
+
+
+        If you do any mistakes:
+
+        R: Rewind
+
+'
+      objectReference: {fileID: 0}
+    - target: {fileID: 6228978067054338390, guid: 2d89fc92fb728fd189b9cd4b3745df22, type: 3}
+      propertyPath: m_fontSize
+      value: 12.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 6228978067054338390, guid: 2d89fc92fb728fd189b9cd4b3745df22, type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: 4485a306f20aa4a04b7ad9f22443ab4e, type: 2}
+    - target: {fileID: 6228978067054338390, guid: 2d89fc92fb728fd189b9cd4b3745df22, type: 3}
+      propertyPath: m_fontColor.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6228978067054338390, guid: 2d89fc92fb728fd189b9cd4b3745df22, type: 3}
+      propertyPath: m_fontColor.g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6228978067054338390, guid: 2d89fc92fb728fd189b9cd4b3745df22, type: 3}
+      propertyPath: m_fontColor.r
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6228978067054338390, guid: 2d89fc92fb728fd189b9cd4b3745df22, type: 3}
+      propertyPath: m_fontSizeBase
+      value: 12.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 6228978067054338390, guid: 2d89fc92fb728fd189b9cd4b3745df22, type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: -8876081502632558886, guid: 4485a306f20aa4a04b7ad9f22443ab4e, type: 2}
+    - target: {fileID: 6228978067054338390, guid: 2d89fc92fb728fd189b9cd4b3745df22, type: 3}
+      propertyPath: m_fontColor32.rgba
+      value: 4278190080
+      objectReference: {fileID: 0}
+    - target: {fileID: 6228978067054338390, guid: 2d89fc92fb728fd189b9cd4b3745df22, type: 3}
+      propertyPath: m_HorizontalAlignment
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6228978067054338390, guid: 2d89fc92fb728fd189b9cd4b3745df22, type: 3}
+      propertyPath: m_hasFontAssetChanged
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6533440070218827171, guid: 2d89fc92fb728fd189b9cd4b3745df22, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -1119,6 +1265,10 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7759586015706884000, guid: 2d89fc92fb728fd189b9cd4b3745df22, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 27743982}
     - target: {fileID: 7893690030266441154, guid: 2d89fc92fb728fd189b9cd4b3745df22, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -1230,6 +1380,7 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects:
     - {fileID: 8418547672349543980, guid: 2d89fc92fb728fd189b9cd4b3745df22, type: 3}
+    - {fileID: -1675801922780174916, guid: 2d89fc92fb728fd189b9cd4b3745df22, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2d89fc92fb728fd189b9cd4b3745df22, type: 3}

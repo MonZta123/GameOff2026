@@ -15,13 +15,28 @@ namespace Actors
 
         [SerializeField]
         private Tilemap doorRenderer;
+        
+        [SerializeField]
+        private Marker marker;
+
+        public static bool ShowMarkers;
 
         public short Id { get; private set; }
 
         private bool _activePlayer;
 
+        public void HideMarkers()
+        {
+            ShowMarkers = false;
+
+            marker.gameObject.SetActive(false);
+        }
+        
         public void Init(ECS.Entities.Door entity)
         {
+            if (ShowMarkers)
+                marker.gameObject.SetActive(true);
+            
             transform.position = entity._leftBottom;
 
             if (entity._direction == Direction.Down)
@@ -48,6 +63,7 @@ namespace Actors
         public void Release()
         {
             doorRenderer.ClearAllTiles();
+            marker.gameObject.SetActive(false);
         }
 
 #if UNITY_EDITOR

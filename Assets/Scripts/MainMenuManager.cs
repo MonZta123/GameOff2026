@@ -1,4 +1,6 @@
 using System.Collections;
+using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -26,6 +28,9 @@ public class MainMenuManager : MonoBehaviour
 
     [SerializeField]
     private GameObject creditsPanel;
+
+    [SerializeField]
+    private GameObject howToPlay;
 
     [SerializeField]
     private Slider masterVolumeSlider;
@@ -62,6 +67,40 @@ public class MainMenuManager : MonoBehaviour
 
     [SerializeField]
     private AK.Wwise.Event stopEnvironmentMusic;
+
+    public void ShowHowToPlay()
+    {
+        blocker.gameObject.SetActive(true);
+        howToPlay.gameObject.SetActive(true);
+
+        howToPlay.transform.GetChild(0).gameObject.SetActive(true);
+    }
+
+    public void NextStep()
+    { 
+        for (var i = 0; i < howToPlay.transform.childCount; i++)
+        {
+            var child = howToPlay.transform.GetChild(i);
+            
+            if (child.gameObject.activeInHierarchy)
+            {
+                child.gameObject.SetActive(false);
+
+                if (i < howToPlay.transform.childCount - 1)
+                    howToPlay.transform.GetChild(i + 1).gameObject.SetActive(true);
+                else
+                    HideHowToPlayScreen();
+
+                return;
+            }
+        }
+    }
+
+    private void HideHowToPlayScreen()
+    {
+        blocker.gameObject.SetActive(false);
+        howToPlay.gameObject.SetActive(false);
+    }
 
     private void Awake()
     {

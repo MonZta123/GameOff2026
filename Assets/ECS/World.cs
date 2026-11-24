@@ -243,8 +243,8 @@ namespace ECS
 
                 var enemy = new Enemy()
                 {
-                    _health = 100,
-                    _maxHealth = 100,
+                    _health = Constants.PlayerHealth,
+                    _maxHealth = Constants.PlayerHealth,
                     _angle = 0,
                     _position = spawnZone[index],
                     _type = EnemyType.RedHairGuy,
@@ -605,14 +605,14 @@ namespace ECS
             for (var i = 0; i < totalPlayers; i++)
             {
                 ref var player = ref snapshot._players.GetEntityAt(i);
-                player._maxHealth = 200;
-                player._health = 200;
+                player._maxHealth = Constants.GhostHealth;
+                player._health = Constants.GhostHealth;
             }
 
             _currentPlayer = GetCharacter((PlayerType)(totalPlayers));
             _currentPlayer._position = _map._spawnPoints[totalPlayers];
-            _currentPlayer._health = 100;
-            _currentPlayer._maxHealth = 100;
+            _currentPlayer._health = Constants.PlayerHealth;
+            _currentPlayer._maxHealth = Constants.PlayerHealth;
             snapshot._players.Spawn(_currentPlayer);
 
             switch (totalPlayers)

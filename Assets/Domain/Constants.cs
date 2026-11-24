@@ -17,6 +17,9 @@ namespace Domain
         public const int PlacedBombCount = 10;
         public const int SplosionNotificationCount = 10;
 
+        public const int PlayerHealth = 150;
+        public const int GhostHealth = 300;
+
         public const float EnemyMoveSpeed = 0.5f;
 
         public const float HeavyDamageConeAngle = 45.0f;
@@ -31,14 +34,14 @@ namespace Domain
         public const float HackerColliderRadius = 1.0f;
         public const int HackerDamage = 30;
 
-        public const float DemolitionCooldown = 0.25f;
+        public const float DemolitionCooldown = 0.75f;
         public const float DemolitionProjectileTtl = 1f;
         public const float DemolitionProjectileSpeed = 5f;
         public const float DemolitionMoveSpeed = 7.5f;
         public const float DemolitionColliderRadius = 1.0f;
         public const int DemolitionDamage = 10;
 
-        public const float SniperCooldown = 0.25f;
+        public const float SniperCooldown = 1.5f;
         public const float SniperMoveSpeed = 7.5f;
         public const float SniperColliderRadius = 1.0f;
         public const float SniperRecoilForce = 16.0f;
