@@ -13,8 +13,8 @@ namespace AK
 {
     namespace EVENTS
     {
-        static const AkUniqueID PLAY_AMB_MISSION = 3798341745U;
         static const AkUniqueID PLAY_AMB_SPACEBAR = 320932064U;
+        static const AkUniqueID PLAY_MUS_BREAKINGIN = 767464592U;
         static const AkUniqueID PLAY_MUS_CHARACTER = 2232411947U;
         static const AkUniqueID PLAY_MUS_MAINMENU = 1043591872U;
         static const AkUniqueID PLAY_MUS_MISSIONENDING = 3049103921U;
@@ -60,9 +60,6 @@ namespace AK
         static const AkUniqueID PLAY_VO_D_HIT = 518999636U;
         static const AkUniqueID PLAY_VO_D_HITHEAVY = 688013969U;
         static const AkUniqueID STOP_AMB_ALL = 1051898308U;
-        static const AkUniqueID STOP_AMB_BACKOFHOUSE = 820384135U;
-        static const AkUniqueID STOP_AMB_FRONTOFHOUSE = 1408943389U;
-        static const AkUniqueID STOP_AMB_MISSION = 3080212395U;
         static const AkUniqueID STOP_AMB_SPACEBAR = 2448774054U;
         static const AkUniqueID STOP_MUS_ALL = 3649037401U;
         static const AkUniqueID STOP_MUS_CHARACTER = 1523744589U;

@@ -7,7 +7,6 @@
 					<ObjectInclusionList>
 						<ObjectRef Name="Play_VO_C_Dead" ID="{335EBBEB-523F-400E-AB8F-C5BA862AB40F}" WorkUnitID="{2B12C590-A22E-47AF-9697-251FEA2DB802}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="Play_MUS_MissionIntro" ID="{B8CD9CFA-133C-402C-B64E-0D292A6EB22D}" WorkUnitID="{2B12C590-A22E-47AF-9697-251FEA2DB802}" Origin="Manual" Filter="7"/>
-						<ObjectRef Name="Stop_AMB_Mission" ID="{CCB3003B-1FC1-4032-9334-2BD50CE62F34}" WorkUnitID="{2B12C590-A22E-47AF-9697-251FEA2DB802}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="Play_VO_D_Hit" ID="{C236B21F-27CA-40F4-B66C-A4942FADFDAE}" WorkUnitID="{2B12C590-A22E-47AF-9697-251FEA2DB802}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="Play_SFX_Attack_A_Slam" ID="{52A47EF3-BFA2-410A-A7F4-221BE57ABFC5}" WorkUnitID="{2B12C590-A22E-47AF-9697-251FEA2DB802}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="Play_SFX_UI_Select" ID="{B523CDC4-6928-410D-87A9-2A88A3221FD8}" WorkUnitID="{2B12C590-A22E-47AF-9697-251FEA2DB802}" Origin="Manual" Filter="7"/>
@@ -20,7 +19,6 @@
 						<ObjectRef Name="Play_VO_B_Dead" ID="{71D3AACC-0B82-43B1-870A-E80857458AB5}" WorkUnitID="{2B12C590-A22E-47AF-9697-251FEA2DB802}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="Play_SFX_UI_Hover" ID="{775AAA7A-5AD7-4404-96B6-EE23F9948E6A}" WorkUnitID="{2B12C590-A22E-47AF-9697-251FEA2DB802}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="Play_SFX_Footsteps_A" ID="{3ED77479-A148-44F9-817A-A296ABFBE50F}" WorkUnitID="{2B12C590-A22E-47AF-9697-251FEA2DB802}" Origin="Manual" Filter="7"/>
-						<ObjectRef Name="Stop_AMB_BackOfHouse" ID="{E980DD36-4E4A-455B-8CE4-A184BF85FBD0}" WorkUnitID="{2B12C590-A22E-47AF-9697-251FEA2DB802}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="Stop_AMB_All" ID="{EEAC5E1E-C457-45C6-A009-C9B36D62B1A5}" WorkUnitID="{2B12C590-A22E-47AF-9697-251FEA2DB802}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="Play_VO_A_HitHeavy" ID="{8EAD13E7-31B6-45D4-B5CD-8804AD23F0AF}" WorkUnitID="{2B12C590-A22E-47AF-9697-251FEA2DB802}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="Play_VO_A_Dead" ID="{95A352DD-B694-45E4-B9D6-F7A7C83982E8}" WorkUnitID="{2B12C590-A22E-47AF-9697-251FEA2DB802}" Origin="Manual" Filter="7"/>
@@ -53,14 +51,13 @@
 						<ObjectRef Name="Play_MUS_MissionPaused" ID="{5FB0A79F-8C17-4BBC-8B13-4FC195E511ED}" WorkUnitID="{2B12C590-A22E-47AF-9697-251FEA2DB802}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="Play_SFX_Action_C_Defuse" ID="{50C950DC-2033-4BD6-B0A2-22C4070A3229}" WorkUnitID="{2B12C590-A22E-47AF-9697-251FEA2DB802}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="Play_VO_D_HitHeavy" ID="{7C805774-2F8A-4D48-8746-FD718FDAF1CD}" WorkUnitID="{2B12C590-A22E-47AF-9697-251FEA2DB802}" Origin="Manual" Filter="7"/>
-						<ObjectRef Name="Play_AMB_Mission" ID="{1B7C0568-7406-4D4E-AEDA-EEFC3A2B70EE}" WorkUnitID="{2B12C590-A22E-47AF-9697-251FEA2DB802}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="Play_VO_D_Dead" ID="{B2C7AAFB-B802-4DE9-A20C-7D8C426F1C15}" WorkUnitID="{2B12C590-A22E-47AF-9697-251FEA2DB802}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="Stop_SFX_Action_B_Hack" ID="{C2AC2B4D-DC03-4E19-B71D-21F868930D35}" WorkUnitID="{2B12C590-A22E-47AF-9697-251FEA2DB802}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="Play_VO_B_HitHeavy" ID="{D77E0490-71FF-4E40-8DA3-4D5C12E56BE7}" WorkUnitID="{2B12C590-A22E-47AF-9697-251FEA2DB802}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="Play_SFX_DoorSlideOpen" ID="{388DF802-A380-4E4E-BD1C-F49CD5EE78A3}" WorkUnitID="{2B12C590-A22E-47AF-9697-251FEA2DB802}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="Play_MUS_BreakingIn" ID="{396C26E0-1712-4EB6-9737-BD0C4BC76B8B}" WorkUnitID="{2B12C590-A22E-47AF-9697-251FEA2DB802}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="Play_VO_C_HitHeavy" ID="{27B7546D-646F-4EF6-9C1F-9920CF11918B}" WorkUnitID="{2B12C590-A22E-47AF-9697-251FEA2DB802}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="Play_SFX_MineExplode" ID="{2E3C0A98-F559-4F88-94EA-9353FFFA4DB9}" WorkUnitID="{2B12C590-A22E-47AF-9697-251FEA2DB802}" Origin="Manual" Filter="7"/>
-						<ObjectRef Name="Stop_AMB_FrontOfHouse" ID="{3FEB6287-778C-4F8A-B91F-C2E9970CC07F}" WorkUnitID="{2B12C590-A22E-47AF-9697-251FEA2DB802}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="Play_SFX_Throw" ID="{D9547F96-937C-4F93-A9F3-81A4EDB89615}" WorkUnitID="{2B12C590-A22E-47AF-9697-251FEA2DB802}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="Play_SFX_DoorSlideShut" ID="{32135886-32E2-4FE4-B958-B416DF9B4299}" WorkUnitID="{2B12C590-A22E-47AF-9697-251FEA2DB802}" Origin="Manual" Filter="7"/>
 					</ObjectInclusionList>

@@ -8178,6 +8178,28 @@
 								</MusicPlaylistContainer>
 							</ChildrenList>
 						</Folder>
+						<Sound Name="MUS_BreakingAndEntering" ID="{8497AFC8-B887-47AC-81E7-86D7099CA56A}" ShortID="625736932">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{4ADFD3A0-A42B-432C-8502-1433439D5054}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{F8A65CB3-3EA6-47C9-8C5A-27068DB4C3FF}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="MUS_BreakingAndEntering" ID="{07E3DB17-76B3-4508-A964-31946BFBB90A}">
+									<Language>SFX</Language>
+									<AudioFile>MUS_BreakingAndEntering.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="290143922"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="MUS_BreakingAndEntering" ID="{07E3DB17-76B3-4508-A964-31946BFBB90A}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
 					</ChildrenList>
 				</Folder>
 				<Folder Name="VO" ID="{452A62C7-2FD4-4364-84CF-EA66DAA6D65B}" ShortID="128018124">
@@ -11405,6 +11427,13 @@
 								<RandomSequenceContainer Name="Throw" ID="{139C46CE-4B3E-4703-A920-097566FBD575}" ShortID="698678547">
 									<PropertyList>
 										<Property Name="3DSpatialization" Type="int16" Value="2"/>
+										<Property Name="Pitch" Type="int32">
+											<ModifierList>
+												<ModifierInfo>
+													<Modifier Name="" ID="{6702A2BD-8233-4246-9C7E-CCFCA61ADAFF}"/>
+												</ModifierInfo>
+											</ModifierList>
+										</Property>
 										<Property Name="PlayMechanismStepOrContinuous" Type="int16" Value="0"/>
 										<Property Name="RandomOrSequence" Type="int16" Value="0"/>
 										<Property Name="Volume" Type="Real64">
@@ -11628,6 +11657,13 @@
 										</RandomSequenceContainer>
 										<RandomSequenceContainer Name="Quip or Silence" ID="{31A952E8-1756-419D-884A-A4DA20C06515}" ShortID="656124170">
 											<PropertyList>
+												<Property Name="Pitch" Type="int32">
+													<ModifierList>
+														<ModifierInfo>
+															<Modifier Name="" ID="{BB41E8D7-250A-4005-8592-0310736DF383}"/>
+														</ModifierInfo>
+													</ModifierList>
+												</Property>
 												<Property Name="RandomAvoidRepeating" Type="bool" Value="False"/>
 											</PropertyList>
 											<ReferenceList>
@@ -11650,6 +11686,13 @@
 															</ValueList>
 														</Property>
 														<Property Name="NormalOrShuffle" Type="int16" Value="0"/>
+														<Property Name="Pitch" Type="int32">
+															<ModifierList>
+																<ModifierInfo>
+																	<Modifier Name="" ID="{9024745D-055E-48FF-AA10-08B203500415}"/>
+																</ModifierInfo>
+															</ModifierList>
+														</Property>
 														<Property Name="RandomAvoidRepeatingCount" Type="int32" Value="2"/>
 														<Property Name="UseMaxSoundPerInstance" Type="bool">
 															<ValueList>
@@ -11855,6 +11898,160 @@
 															</ChildrenList>
 															<ActiveSourceList>
 																<ActiveSource Name="C_ThrowQuip_06" ID="{1CB194E7-605C-4CD8-A406-336703C6BEA3}" Platform="Linked"/>
+															</ActiveSourceList>
+														</Sound>
+														<Sound Name="C_ThrowQuip_V01" ID="{9B005527-8BDA-4C9D-B288-FA384803C00B}" ShortID="326339210">
+															<ReferenceList>
+																<Reference Name="Conversion">
+																	<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{4ADFD3A0-A42B-432C-8502-1433439D5054}"/>
+																</Reference>
+																<Reference Name="OutputBus">
+																	<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{F8A65CB3-3EA6-47C9-8C5A-27068DB4C3FF}"/>
+																</Reference>
+															</ReferenceList>
+															<ChildrenList>
+																<AudioFileSource Name="C_ThrowQuip_V01" ID="{1E3AE2DB-DA6E-486D-94AE-1C6A3E90F2CC}">
+																	<Language>SFX</Language>
+																	<AudioFile>C_ThrowQuip_V01.wav</AudioFile>
+																	<MediaIDList>
+																		<MediaID ID="371017042"/>
+																	</MediaIDList>
+																</AudioFileSource>
+															</ChildrenList>
+															<ActiveSourceList>
+																<ActiveSource Name="C_ThrowQuip_V01" ID="{1E3AE2DB-DA6E-486D-94AE-1C6A3E90F2CC}" Platform="Linked"/>
+															</ActiveSourceList>
+														</Sound>
+														<Sound Name="C_ThrowQuip_V01a" ID="{E7C55100-FAA2-42C1-8A49-496D40967B00}" ShortID="864186874">
+															<ReferenceList>
+																<Reference Name="Conversion">
+																	<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{4ADFD3A0-A42B-432C-8502-1433439D5054}"/>
+																</Reference>
+																<Reference Name="OutputBus">
+																	<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{F8A65CB3-3EA6-47C9-8C5A-27068DB4C3FF}"/>
+																</Reference>
+															</ReferenceList>
+															<ChildrenList>
+																<AudioFileSource Name="C_ThrowQuip_V01a" ID="{BC94D566-D701-43AC-B814-CB1C2F457CAC}">
+																	<Language>SFX</Language>
+																	<AudioFile>C_ThrowQuip_V01a.wav</AudioFile>
+																	<MediaIDList>
+																		<MediaID ID="61636433"/>
+																	</MediaIDList>
+																</AudioFileSource>
+															</ChildrenList>
+															<ActiveSourceList>
+																<ActiveSource Name="C_ThrowQuip_V01a" ID="{BC94D566-D701-43AC-B814-CB1C2F457CAC}" Platform="Linked"/>
+															</ActiveSourceList>
+														</Sound>
+														<Sound Name="C_ThrowQuip_V02" ID="{D67AFCAE-124D-4872-986E-739128E38A90}" ShortID="348238146">
+															<ReferenceList>
+																<Reference Name="Conversion">
+																	<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{4ADFD3A0-A42B-432C-8502-1433439D5054}"/>
+																</Reference>
+																<Reference Name="OutputBus">
+																	<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{F8A65CB3-3EA6-47C9-8C5A-27068DB4C3FF}"/>
+																</Reference>
+															</ReferenceList>
+															<ChildrenList>
+																<AudioFileSource Name="C_ThrowQuip_V02" ID="{44DA3F2E-68CA-425A-A380-083BBC108A4B}">
+																	<Language>SFX</Language>
+																	<AudioFile>C_ThrowQuip_V02.wav</AudioFile>
+																	<MediaIDList>
+																		<MediaID ID="834463364"/>
+																	</MediaIDList>
+																</AudioFileSource>
+															</ChildrenList>
+															<ActiveSourceList>
+																<ActiveSource Name="C_ThrowQuip_V02" ID="{44DA3F2E-68CA-425A-A380-083BBC108A4B}" Platform="Linked"/>
+															</ActiveSourceList>
+														</Sound>
+														<Sound Name="C_ThrowQuip_V02a" ID="{04BD7AF4-01A7-4412-B5F2-3BCA171E9B0E}" ShortID="432113560">
+															<ReferenceList>
+																<Reference Name="Conversion">
+																	<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{4ADFD3A0-A42B-432C-8502-1433439D5054}"/>
+																</Reference>
+																<Reference Name="OutputBus">
+																	<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{F8A65CB3-3EA6-47C9-8C5A-27068DB4C3FF}"/>
+																</Reference>
+															</ReferenceList>
+															<ChildrenList>
+																<AudioFileSource Name="C_ThrowQuip_V02a" ID="{6D473C8A-C6AF-4CAF-9C65-8F3F12764B2D}">
+																	<Language>SFX</Language>
+																	<AudioFile>C_ThrowQuip_V02a.wav</AudioFile>
+																	<MediaIDList>
+																		<MediaID ID="1009343698"/>
+																	</MediaIDList>
+																</AudioFileSource>
+															</ChildrenList>
+															<ActiveSourceList>
+																<ActiveSource Name="C_ThrowQuip_V02a" ID="{6D473C8A-C6AF-4CAF-9C65-8F3F12764B2D}" Platform="Linked"/>
+															</ActiveSourceList>
+														</Sound>
+														<Sound Name="C_ThrowQuip_V03" ID="{3B4D8213-A86E-4DA8-B72A-324BF0830775}" ShortID="201697099">
+															<ReferenceList>
+																<Reference Name="Conversion">
+																	<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{4ADFD3A0-A42B-432C-8502-1433439D5054}"/>
+																</Reference>
+																<Reference Name="OutputBus">
+																	<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{F8A65CB3-3EA6-47C9-8C5A-27068DB4C3FF}"/>
+																</Reference>
+															</ReferenceList>
+															<ChildrenList>
+																<AudioFileSource Name="C_ThrowQuip_V03" ID="{6BA38737-A0AE-4BCB-9528-813833BA14FB}">
+																	<Language>SFX</Language>
+																	<AudioFile>C_ThrowQuip_V03.wav</AudioFile>
+																	<MediaIDList>
+																		<MediaID ID="811805299"/>
+																	</MediaIDList>
+																</AudioFileSource>
+															</ChildrenList>
+															<ActiveSourceList>
+																<ActiveSource Name="C_ThrowQuip_V03" ID="{6BA38737-A0AE-4BCB-9528-813833BA14FB}" Platform="Linked"/>
+															</ActiveSourceList>
+														</Sound>
+														<Sound Name="C_ThrowQuip_V03a" ID="{4A10713A-05B0-4F9C-AB48-FD557F32FDF0}" ShortID="1052685216">
+															<ReferenceList>
+																<Reference Name="Conversion">
+																	<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{4ADFD3A0-A42B-432C-8502-1433439D5054}"/>
+																</Reference>
+																<Reference Name="OutputBus">
+																	<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{F8A65CB3-3EA6-47C9-8C5A-27068DB4C3FF}"/>
+																</Reference>
+															</ReferenceList>
+															<ChildrenList>
+																<AudioFileSource Name="C_ThrowQuip_V03a" ID="{4DB868E0-8FB7-4BF3-9AFA-312535E39665}">
+																	<Language>SFX</Language>
+																	<AudioFile>C_ThrowQuip_V03a.wav</AudioFile>
+																	<MediaIDList>
+																		<MediaID ID="1039047058"/>
+																	</MediaIDList>
+																</AudioFileSource>
+															</ChildrenList>
+															<ActiveSourceList>
+																<ActiveSource Name="C_ThrowQuip_V03a" ID="{4DB868E0-8FB7-4BF3-9AFA-312535E39665}" Platform="Linked"/>
+															</ActiveSourceList>
+														</Sound>
+														<Sound Name="C_ThrowQuip_V05" ID="{A2D896E6-E595-4F92-9E59-5E5011CDB2FC}" ShortID="6545771">
+															<ReferenceList>
+																<Reference Name="Conversion">
+																	<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{4ADFD3A0-A42B-432C-8502-1433439D5054}"/>
+																</Reference>
+																<Reference Name="OutputBus">
+																	<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{F8A65CB3-3EA6-47C9-8C5A-27068DB4C3FF}"/>
+																</Reference>
+															</ReferenceList>
+															<ChildrenList>
+																<AudioFileSource Name="C_ThrowQuip_V05" ID="{7FAE81B0-3EB3-4AF8-AE57-F53EE630BE95}">
+																	<Language>SFX</Language>
+																	<AudioFile>C_ThrowQuip_V05.wav</AudioFile>
+																	<MediaIDList>
+																		<MediaID ID="623102745"/>
+																	</MediaIDList>
+																</AudioFileSource>
+															</ChildrenList>
+															<ActiveSourceList>
+																<ActiveSource Name="C_ThrowQuip_V05" ID="{7FAE81B0-3EB3-4AF8-AE57-F53EE630BE95}" Platform="Linked"/>
 															</ActiveSourceList>
 														</Sound>
 													</ChildrenList>
@@ -13841,33 +14038,6 @@
 										</Reference>
 									</ReferenceList>
 									<ChildrenList>
-										<Sound Name="VO_C_Select_01" ID="{EAB812A6-D1F7-4C23-830D-9BAB00688D73}" ShortID="395246475">
-											<ReferenceList>
-												<Reference Name="Conversion">
-													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{4ADFD3A0-A42B-432C-8502-1433439D5054}"/>
-												</Reference>
-												<Reference Name="OutputBus">
-													<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{F8A65CB3-3EA6-47C9-8C5A-27068DB4C3FF}"/>
-												</Reference>
-											</ReferenceList>
-											<ChildrenList>
-												<AudioFileSource Name="C_Select_01" ID="{B84848CD-C8B7-4024-A0BC-1C526B2EED1A}">
-													<ReferenceList>
-														<Reference Name="Conversion">
-															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{4ADFD3A0-A42B-432C-8502-1433439D5054}"/>
-														</Reference>
-													</ReferenceList>
-													<Language>SFX</Language>
-													<AudioFile>C_Select_01.wav</AudioFile>
-													<MediaIDList>
-														<MediaID ID="792966004"/>
-													</MediaIDList>
-												</AudioFileSource>
-											</ChildrenList>
-											<ActiveSourceList>
-												<ActiveSource Name="C_Select_01" ID="{B84848CD-C8B7-4024-A0BC-1C526B2EED1A}" Platform="Linked"/>
-											</ActiveSourceList>
-										</Sound>
 										<Sound Name="VO_C_Select_04" ID="{C4AE04C3-C411-42E0-AAAF-7777FF07E193}" ShortID="965489001">
 											<ReferenceList>
 												<Reference Name="Conversion">
@@ -13890,34 +14060,202 @@
 												<ActiveSource Name="C_Select_04" ID="{3582FCEE-D379-4CC5-8698-7C4FBD12077B}" Platform="Linked"/>
 											</ActiveSourceList>
 										</Sound>
-										<Sound Name="VO_C_Select_02" ID="{8BA950C0-47F6-4F64-B618-E3431248E587}" ShortID="905504986">
+										<Sound Name="C_Select_V01" ID="{A22CDBEF-AA26-4C01-9A1D-CAC6AB6AD6E2}" ShortID="48914437">
+											<PropertyList>
+												<Property Name="Inclusion" Type="bool">
+													<ValueList>
+														<Value>False</Value>
+													</ValueList>
+												</Property>
+											</PropertyList>
 											<ReferenceList>
 												<Reference Name="Conversion">
 													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{4ADFD3A0-A42B-432C-8502-1433439D5054}"/>
 												</Reference>
 												<Reference Name="OutputBus">
-													<ObjectRef Name="VO" ID="{832227F3-45D1-422A-8529-93517E731F5A}" WorkUnitID="{F8A65CB3-3EA6-47C9-8C5A-27068DB4C3FF}"/>
+													<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{F8A65CB3-3EA6-47C9-8C5A-27068DB4C3FF}"/>
 												</Reference>
 											</ReferenceList>
 											<ChildrenList>
-												<AudioFileSource Name="C_Select_02" ID="{5A3A5051-5C51-4D0F-A8D7-5C81E9F4B1DA}">
-													<ReferenceList>
-														<Reference Name="Conversion">
-															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{4ADFD3A0-A42B-432C-8502-1433439D5054}"/>
-														</Reference>
-													</ReferenceList>
+												<AudioFileSource Name="C_Select_V01" ID="{089A37D2-88A0-4697-9248-E9441B1423C5}">
 													<Language>SFX</Language>
-													<AudioFile>C_Select_02.wav</AudioFile>
+													<AudioFile>C_Select_V01.wav</AudioFile>
 													<MediaIDList>
-														<MediaID ID="159229097"/>
+														<MediaID ID="89082190"/>
 													</MediaIDList>
 												</AudioFileSource>
 											</ChildrenList>
 											<ActiveSourceList>
-												<ActiveSource Name="C_Select_02" ID="{5A3A5051-5C51-4D0F-A8D7-5C81E9F4B1DA}" Platform="Linked"/>
+												<ActiveSource Name="C_Select_V01" ID="{089A37D2-88A0-4697-9248-E9441B1423C5}" Platform="Linked"/>
 											</ActiveSourceList>
 										</Sound>
-										<Sound Name="VO_C_Select_03" ID="{339BE48D-948C-4D41-A49A-FCACC7028429}" ShortID="728369623">
+										<RandomSequenceContainer Name="C_Select_02" ID="{0F76E73E-7884-46A0-8BF3-87B87161A42C}" ShortID="744031001">
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{4ADFD3A0-A42B-432C-8502-1433439D5054}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{F8A65CB3-3EA6-47C9-8C5A-27068DB4C3FF}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<Sound Name="C_Select_V02a" ID="{C437A61A-039A-4455-A74D-885879FBC85C}" ShortID="181043558">
+													<ReferenceList>
+														<Reference Name="Conversion">
+															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{4ADFD3A0-A42B-432C-8502-1433439D5054}"/>
+														</Reference>
+														<Reference Name="OutputBus">
+															<ObjectRef Name="VO" ID="{832227F3-45D1-422A-8529-93517E731F5A}" WorkUnitID="{F8A65CB3-3EA6-47C9-8C5A-27068DB4C3FF}"/>
+														</Reference>
+													</ReferenceList>
+													<ChildrenList>
+														<AudioFileSource Name="C_Select_V02a" ID="{0E12A9A5-D183-47C5-9539-C4C590040451}">
+															<Language>SFX</Language>
+															<AudioFile>C_Select_V02a.wav</AudioFile>
+															<MediaIDList>
+																<MediaID ID="684297665"/>
+															</MediaIDList>
+														</AudioFileSource>
+													</ChildrenList>
+													<ActiveSourceList>
+														<ActiveSource Name="C_Select_V02a" ID="{0E12A9A5-D183-47C5-9539-C4C590040451}" Platform="Linked"/>
+													</ActiveSourceList>
+												</Sound>
+												<Sound Name="C_Select_V02" ID="{4DCC55ED-CDAD-4172-B365-73E16B34C0DA}" ShortID="925463220">
+													<ReferenceList>
+														<Reference Name="Conversion">
+															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{4ADFD3A0-A42B-432C-8502-1433439D5054}"/>
+														</Reference>
+														<Reference Name="OutputBus">
+															<ObjectRef Name="VO" ID="{832227F3-45D1-422A-8529-93517E731F5A}" WorkUnitID="{F8A65CB3-3EA6-47C9-8C5A-27068DB4C3FF}"/>
+														</Reference>
+													</ReferenceList>
+													<ChildrenList>
+														<AudioFileSource Name="C_Select_V02" ID="{B61196E3-03D8-46D3-BFF3-70906346AB99}">
+															<Language>SFX</Language>
+															<AudioFile>C_Select_V02.wav</AudioFile>
+															<MediaIDList>
+																<MediaID ID="25613350"/>
+															</MediaIDList>
+														</AudioFileSource>
+													</ChildrenList>
+													<ActiveSourceList>
+														<ActiveSource Name="C_Select_V02" ID="{B61196E3-03D8-46D3-BFF3-70906346AB99}" Platform="Linked"/>
+													</ActiveSourceList>
+												</Sound>
+												<Sound Name="VO_C_Select_02" ID="{8BA950C0-47F6-4F64-B618-E3431248E587}" ShortID="905504986">
+													<ReferenceList>
+														<Reference Name="Conversion">
+															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{4ADFD3A0-A42B-432C-8502-1433439D5054}"/>
+														</Reference>
+														<Reference Name="OutputBus">
+															<ObjectRef Name="VO" ID="{832227F3-45D1-422A-8529-93517E731F5A}" WorkUnitID="{F8A65CB3-3EA6-47C9-8C5A-27068DB4C3FF}"/>
+														</Reference>
+													</ReferenceList>
+													<ChildrenList>
+														<AudioFileSource Name="C_Select_02" ID="{5A3A5051-5C51-4D0F-A8D7-5C81E9F4B1DA}">
+															<ReferenceList>
+																<Reference Name="Conversion">
+																	<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{4ADFD3A0-A42B-432C-8502-1433439D5054}"/>
+																</Reference>
+															</ReferenceList>
+															<Language>SFX</Language>
+															<AudioFile>C_Select_02.wav</AudioFile>
+															<MediaIDList>
+																<MediaID ID="159229097"/>
+															</MediaIDList>
+														</AudioFileSource>
+													</ChildrenList>
+													<ActiveSourceList>
+														<ActiveSource Name="C_Select_02" ID="{5A3A5051-5C51-4D0F-A8D7-5C81E9F4B1DA}" Platform="Linked"/>
+													</ActiveSourceList>
+												</Sound>
+											</ChildrenList>
+										</RandomSequenceContainer>
+										<RandomSequenceContainer Name="C_Select_03" ID="{D8952363-F77F-4628-ABE2-0DDEF8214DE1}" ShortID="685649688">
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{4ADFD3A0-A42B-432C-8502-1433439D5054}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{F8A65CB3-3EA6-47C9-8C5A-27068DB4C3FF}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<Sound Name="C_Select_V02a" ID="{CBA02D5D-D1B8-44B7-A34D-9FD0C1CCBF5C}" ShortID="580378751">
+													<ReferenceList>
+														<Reference Name="Conversion">
+															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{4ADFD3A0-A42B-432C-8502-1433439D5054}"/>
+														</Reference>
+														<Reference Name="OutputBus">
+															<ObjectRef Name="VO" ID="{832227F3-45D1-422A-8529-93517E731F5A}" WorkUnitID="{F8A65CB3-3EA6-47C9-8C5A-27068DB4C3FF}"/>
+														</Reference>
+													</ReferenceList>
+													<ChildrenList>
+														<AudioFileSource Name="C_Select_V02a" ID="{DDFA2B60-112F-4FC0-9077-E75CD5C9BD9A}">
+															<Language>SFX</Language>
+															<AudioFile>C_Select_V02a.wav</AudioFile>
+															<MediaIDList>
+																<MediaID ID="684297665"/>
+															</MediaIDList>
+														</AudioFileSource>
+													</ChildrenList>
+													<ActiveSourceList>
+														<ActiveSource Name="C_Select_V02a" ID="{DDFA2B60-112F-4FC0-9077-E75CD5C9BD9A}" Platform="Linked"/>
+													</ActiveSourceList>
+												</Sound>
+												<Sound Name="C_Select_V02" ID="{9C30328F-A9E8-41E0-9722-B374B311A51A}" ShortID="527255125">
+													<ReferenceList>
+														<Reference Name="Conversion">
+															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{4ADFD3A0-A42B-432C-8502-1433439D5054}"/>
+														</Reference>
+														<Reference Name="OutputBus">
+															<ObjectRef Name="VO" ID="{832227F3-45D1-422A-8529-93517E731F5A}" WorkUnitID="{F8A65CB3-3EA6-47C9-8C5A-27068DB4C3FF}"/>
+														</Reference>
+													</ReferenceList>
+													<ChildrenList>
+														<AudioFileSource Name="C_Select_V02" ID="{7F05A01D-E984-4CFB-B4B4-9831E5C59311}">
+															<Language>SFX</Language>
+															<AudioFile>C_Select_V02.wav</AudioFile>
+															<MediaIDList>
+																<MediaID ID="25613350"/>
+															</MediaIDList>
+														</AudioFileSource>
+													</ChildrenList>
+													<ActiveSourceList>
+														<ActiveSource Name="C_Select_V02" ID="{7F05A01D-E984-4CFB-B4B4-9831E5C59311}" Platform="Linked"/>
+													</ActiveSourceList>
+												</Sound>
+												<Sound Name="VO_C_Select_03" ID="{339BE48D-948C-4D41-A49A-FCACC7028429}" ShortID="728369623">
+													<ReferenceList>
+														<Reference Name="Conversion">
+															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{4ADFD3A0-A42B-432C-8502-1433439D5054}"/>
+														</Reference>
+														<Reference Name="OutputBus">
+															<ObjectRef Name="VO" ID="{832227F3-45D1-422A-8529-93517E731F5A}" WorkUnitID="{F8A65CB3-3EA6-47C9-8C5A-27068DB4C3FF}"/>
+														</Reference>
+													</ReferenceList>
+													<ChildrenList>
+														<AudioFileSource Name="C_Select_03" ID="{1522681C-05C2-4A76-A7D3-5989168DE924}">
+															<ReferenceList>
+																<Reference Name="Conversion">
+																	<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{4ADFD3A0-A42B-432C-8502-1433439D5054}"/>
+																</Reference>
+															</ReferenceList>
+															<Language>SFX</Language>
+															<AudioFile>C_Select_03.wav</AudioFile>
+															<MediaIDList>
+																<MediaID ID="266101686"/>
+															</MediaIDList>
+														</AudioFileSource>
+													</ChildrenList>
+													<ActiveSourceList>
+														<ActiveSource Name="C_Select_03" ID="{1522681C-05C2-4A76-A7D3-5989168DE924}" Platform="Linked"/>
+													</ActiveSourceList>
+												</Sound>
+											</ChildrenList>
+										</RandomSequenceContainer>
+										<Sound Name="VO_C_Select_01" ID="{EAB812A6-D1F7-4C23-830D-9BAB00688D73}" ShortID="395246475">
 											<ReferenceList>
 												<Reference Name="Conversion">
 													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{4ADFD3A0-A42B-432C-8502-1433439D5054}"/>
@@ -13927,68 +14265,53 @@
 												</Reference>
 											</ReferenceList>
 											<ChildrenList>
-												<AudioFileSource Name="C_Select_03" ID="{1522681C-05C2-4A76-A7D3-5989168DE924}">
+												<AudioFileSource Name="C_Select_01" ID="{B84848CD-C8B7-4024-A0BC-1C526B2EED1A}">
 													<ReferenceList>
 														<Reference Name="Conversion">
 															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{4ADFD3A0-A42B-432C-8502-1433439D5054}"/>
 														</Reference>
 													</ReferenceList>
 													<Language>SFX</Language>
-													<AudioFile>C_Select_03.wav</AudioFile>
+													<AudioFile>C_Select_01.wav</AudioFile>
 													<MediaIDList>
-														<MediaID ID="266101686"/>
+														<MediaID ID="792966004"/>
 													</MediaIDList>
 												</AudioFileSource>
 											</ChildrenList>
 											<ActiveSourceList>
-												<ActiveSource Name="C_Select_03" ID="{1522681C-05C2-4A76-A7D3-5989168DE924}" Platform="Linked"/>
+												<ActiveSource Name="C_Select_01" ID="{B84848CD-C8B7-4024-A0BC-1C526B2EED1A}" Platform="Linked"/>
 											</ActiveSourceList>
 										</Sound>
 									</ChildrenList>
 									<GroupingInfo>
 										<GroupingBehaviorList>
 											<GroupingBehavior>
-												<ItemRef Name="VO_C_Select_03" ID="{339BE48D-948C-4D41-A49A-FCACC7028429}"/>
+												<ItemRef Name="C_Select_02" ID="{0F76E73E-7884-46A0-8BF3-87B87161A42C}"/>
+											</GroupingBehavior>
+											<GroupingBehavior>
+												<ItemRef Name="C_Select_03" ID="{D8952363-F77F-4628-ABE2-0DDEF8214DE1}"/>
 											</GroupingBehavior>
 											<GroupingBehavior>
 												<ItemRef Name="VO_C_Select_01" ID="{EAB812A6-D1F7-4C23-830D-9BAB00688D73}"/>
 											</GroupingBehavior>
 											<GroupingBehavior>
-												<ItemRef Name="VO_C_Select_02" ID="{8BA950C0-47F6-4F64-B618-E3431248E587}"/>
+												<ItemRef Name="VO_C_Select_04" ID="{C4AE04C3-C411-42E0-AAAF-7777FF07E193}"/>
 											</GroupingBehavior>
 											<GroupingBehavior>
-												<ItemRef Name="VO_C_Select_04" ID="{C4AE04C3-C411-42E0-AAAF-7777FF07E193}"/>
+												<ItemRef Name="C_Select_V01" ID="{A22CDBEF-AA26-4C01-9A1D-CAC6AB6AD6E2}"/>
 											</GroupingBehavior>
 										</GroupingBehaviorList>
 										<GroupingList>
 											<Grouping>
-												<SwitchRef Name="Round_1" ID="{75FB4324-C21A-4D82-B0CF-3542C815D862}"/>
-												<ItemList>
-													<ItemRef Name="VO_C_Select_01" ID="{EAB812A6-D1F7-4C23-830D-9BAB00688D73}"/>
-												</ItemList>
-											</Grouping>
-											<Grouping>
 												<SwitchRef Name="Round_2" ID="{F4CD4D35-CE3B-41B2-9E0B-6E004347776F}"/>
 												<ItemList>
-													<ItemRef Name="VO_C_Select_02" ID="{8BA950C0-47F6-4F64-B618-E3431248E587}"/>
+													<ItemRef Name="C_Select_02" ID="{0F76E73E-7884-46A0-8BF3-87B87161A42C}"/>
 												</ItemList>
 											</Grouping>
 											<Grouping>
 												<SwitchRef Name="Round_4" ID="{F39FE53F-3AF9-431B-AE26-DBF3E7967E58}"/>
 												<ItemList>
 													<ItemRef Name="VO_C_Select_04" ID="{C4AE04C3-C411-42E0-AAAF-7777FF07E193}"/>
-												</ItemList>
-											</Grouping>
-											<Grouping>
-												<SwitchRef Name="Round_3" ID="{368377C0-A9B4-4367-BFA6-2450D5E592E3}"/>
-												<ItemList>
-													<ItemRef Name="VO_C_Select_03" ID="{339BE48D-948C-4D41-A49A-FCACC7028429}"/>
-												</ItemList>
-											</Grouping>
-											<Grouping>
-												<SwitchRef Name="None" ID="{C9697BE0-1F92-4C7C-92D8-FFA9B02AB186}"/>
-												<ItemList>
-													<ItemRef Name="VO_C_Select_01" ID="{EAB812A6-D1F7-4C23-830D-9BAB00688D73}"/>
 												</ItemList>
 											</Grouping>
 										</GroupingList>
@@ -14310,6 +14633,13 @@
 							</ObjectLists>
 						</RandomSequenceContainer>
 						<SwitchContainer Name="AmbienceMission" ID="{228E1394-D116-4B12-8A60-F9F94CE90355}" ShortID="657829129">
+							<PropertyList>
+								<Property Name="Inclusion" Type="bool">
+									<ValueList>
+										<Value>False</Value>
+									</ValueList>
+								</Property>
+							</PropertyList>
 							<ReferenceList>
 								<Reference Name="Conversion">
 									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{4ADFD3A0-A42B-432C-8502-1433439D5054}"/>
