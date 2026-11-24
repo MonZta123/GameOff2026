@@ -237,7 +237,7 @@ namespace ECS
 
             var random = Unity.Mathematics.Random.CreateFromIndex((uint)_seed);
 
-            for (var i = 0; i < 30; i++)
+            for (var i = 0; i < 10; i++)
             {
                 var index = random.NextInt(0, spawnZone.Count);
 
@@ -254,7 +254,7 @@ namespace ECS
                 snapshot._enemies.Spawn(enemy);
             }
 
-            snapshot._damageProcess = 3;
+            snapshot._damageProcess = 10;
 #if UNITY_EDITOR
             snapshot._damageProcess = 0;
 #endif

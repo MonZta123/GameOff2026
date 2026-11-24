@@ -114,12 +114,14 @@ namespace ECS.Systems
             {
                 ref var trigger = ref snapshot._triggers.GetEntityAt(i);
 
-                if (trigger._triggerType == TriggerType.HackerZone &&
+                if (trigger._triggerType == TriggerType.HackerZone && snapshot._hackProcess > 0 &&
                     trigger.IsInBox(player._position, 1f, out var closestPoint) && moveEvt._action)
                 {
                     snapshot._hackProcess--;
 
                     player._isActionActive = true;
+                    
+                    player._velocity = Vector2.zero;
 
                     if (snapshot._hackProcess == 0)
                     {
