@@ -2257,6 +2257,115 @@
 										</RandomSequenceContainer>
 									</ChildrenList>
 								</Folder>
+								<Folder Name="Dave" ID="{E331F602-519A-473F-81AC-1A70289FBDA8}" ShortID="516865352">
+									<ChildrenList>
+										<RandomSequenceContainer Name="AttackPistol" ID="{53B920D6-BD84-45CB-AF91-596869D0CF06}" ShortID="292622615">
+											<PropertyList>
+												<Property Name="3DSpatialization" Type="int16" Value="2"/>
+												<Property Name="NormalOrShuffle" Type="int16" Value="0"/>
+												<Property Name="Pitch" Type="int32">
+													<ModifierList>
+														<ModifierInfo>
+															<Modifier Name="" ID="{87CE5BDE-76B2-4EED-B323-48B7BBEFB4A4}">
+																<PropertyList>
+																	<Property Name="Enabled" Type="bool" Value="True"/>
+																	<Property Name="Max" Type="Real64" Value="150"/>
+																	<Property Name="Min" Type="Real64" Value="-150"/>
+																</PropertyList>
+															</Modifier>
+														</ModifierInfo>
+													</ModifierList>
+												</Property>
+												<Property Name="RandomAvoidRepeating" Type="bool" Value="False"/>
+												<Property Name="RandomAvoidRepeatingCount" Type="int32" Value="2"/>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Attenuation">
+													<ObjectRef Name="ATT_ObjectDistance" ID="{561C61D3-69C0-414A-8BC5-DA941AF50071}" WorkUnitID="{096A0857-8B20-44A3-ADF2-07EE6756A01B}"/>
+												</Reference>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{4ADFD3A0-A42B-432C-8502-1433439D5054}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="SFX" ID="{282B1519-D877-4EF3-9048-C765F53AAF2A}" WorkUnitID="{F8A65CB3-3EA6-47C9-8C5A-27068DB4C3FF}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<Sound Name="Pistol_01" ID="{33325818-4D36-4027-9B3F-725093BB7454}" ShortID="367527609">
+													<ReferenceList>
+														<Reference Name="Conversion">
+															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{4ADFD3A0-A42B-432C-8502-1433439D5054}"/>
+														</Reference>
+														<Reference Name="OutputBus">
+															<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{F8A65CB3-3EA6-47C9-8C5A-27068DB4C3FF}"/>
+														</Reference>
+													</ReferenceList>
+													<ChildrenList>
+														<AudioFileSource Name="Pistol_01" ID="{6D97C760-1849-4D7A-8F19-FBA7D0271D5D}">
+															<PropertyList>
+																<Property Name="FadeOutDuration" Type="Real64" Value="0.06602"/>
+																<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+																<Property Name="TrimEnd" Type="Real64" Value="0.27451"/>
+															</PropertyList>
+															<Language>SFX</Language>
+															<AudioFile>Pistol_01.wav</AudioFile>
+															<MediaIDList>
+																<MediaID ID="277151770"/>
+															</MediaIDList>
+														</AudioFileSource>
+													</ChildrenList>
+													<ActiveSourceList>
+														<ActiveSource Name="Pistol_01" ID="{6D97C760-1849-4D7A-8F19-FBA7D0271D5D}" Platform="Linked"/>
+													</ActiveSourceList>
+												</Sound>
+												<Sound Name="Pistol_02" ID="{352AFC34-5404-43CF-B2D7-F29E76E20C31}" ShortID="46568948">
+													<ReferenceList>
+														<Reference Name="Conversion">
+															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{4ADFD3A0-A42B-432C-8502-1433439D5054}"/>
+														</Reference>
+														<Reference Name="OutputBus">
+															<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{F8A65CB3-3EA6-47C9-8C5A-27068DB4C3FF}"/>
+														</Reference>
+													</ReferenceList>
+													<ChildrenList>
+														<AudioFileSource Name="Pistol_02" ID="{734C798C-60C4-43F4-8166-29C73781E849}">
+															<Language>SFX</Language>
+															<AudioFile>Pistol_02.wav</AudioFile>
+															<MediaIDList>
+																<MediaID ID="135847324"/>
+															</MediaIDList>
+														</AudioFileSource>
+													</ChildrenList>
+													<ActiveSourceList>
+														<ActiveSource Name="Pistol_02" ID="{734C798C-60C4-43F4-8166-29C73781E849}" Platform="Linked"/>
+													</ActiveSourceList>
+												</Sound>
+												<Sound Name="Pistol_03" ID="{34A43C2D-18AE-47B3-9039-2D45C44CC3BE}" ShortID="95733315">
+													<ReferenceList>
+														<Reference Name="Conversion">
+															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{4ADFD3A0-A42B-432C-8502-1433439D5054}"/>
+														</Reference>
+														<Reference Name="OutputBus">
+															<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{F8A65CB3-3EA6-47C9-8C5A-27068DB4C3FF}"/>
+														</Reference>
+													</ReferenceList>
+													<ChildrenList>
+														<AudioFileSource Name="Pistol_03" ID="{BBE5DB45-23EB-499B-8178-1E7490E72532}">
+															<Language>SFX</Language>
+															<AudioFile>Pistol_03.wav</AudioFile>
+															<MediaIDList>
+																<MediaID ID="380654354"/>
+															</MediaIDList>
+														</AudioFileSource>
+													</ChildrenList>
+													<ActiveSourceList>
+														<ActiveSource Name="Pistol_03" ID="{BBE5DB45-23EB-499B-8178-1E7490E72532}" Platform="Linked"/>
+													</ActiveSourceList>
+												</Sound>
+											</ChildrenList>
+										</RandomSequenceContainer>
+									</ChildrenList>
+								</Folder>
 							</ChildrenList>
 						</Folder>
 						<Folder Name="Actions" ID="{52CEB8B5-65E7-4A45-AD9A-E666279B1A75}" ShortID="920632017">

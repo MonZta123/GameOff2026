@@ -473,6 +473,17 @@
 										</Action>
 									</ChildrenList>
 								</Event>
+								<Event Name="Play_SFX_Pistol" ID="{94EA36F4-1CB8-44B4-B222-E08464C698A3}">
+									<ChildrenList>
+										<Action Name="" ID="{2B4680CC-EF44-445C-8CA4-50416D917741}" ShortID="909554507">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="AttackPistol" ID="{53B920D6-BD84-45CB-AF91-596869D0CF06}" WorkUnitID="{AF633A36-6CC5-470E-AD72-3F76D6F661BF}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
 							</ChildrenList>
 						</Folder>
 						<Folder Name="Environment" ID="{5CA75071-56AB-4C59-832A-BA300731A667}" ShortID="893867293">

@@ -10,7 +10,7 @@
     "Type": "User",
     "GUID": "{3059A6CE-8152-4CD2-BEA9-69E98BB60D65}",
     "Language": "SFX",
-    "Hash": "{506A45C9-211B-D8E4-B55A-A2DFE50C907D}",
+    "Hash": "{37B7BFF9-D6F7-6E5B-D7D1-B353CB97EEA6}",
     "ObjectPath": "\\SoundBanks\\Default Work Unit\\Main",
     "ShortName": "Main",
     "Path": "Main.bnk",
@@ -304,6 +304,14 @@
       "CachePath": "D8/{D82DA3F7-867E-3D4C-5D16-2080AA24AC7F}.wem"
      },
      {
+      "Id": "135847324",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "Pistol_02.wav",
+      "CachePath": "E5/{E5272BBC-3112-CB93-38D1-BBF8BD368C2D}.wem"
+     },
+     {
       "Id": "136911883",
       "Language": "SFX",
       "Streaming": "false",
@@ -576,6 +584,14 @@
       "CachePath": "AD/{ADA30D55-EB10-4485-3DC0-FCF3C4669DED}.wem"
      },
      {
+      "Id": "277151770",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "Pistol_01.wav",
+      "CachePath": "69/{69456888-CC2E-1932-80BA-4281F5CDD46B}.wem"
+     },
+     {
       "Id": "278186006",
       "Language": "SFX",
       "Streaming": "false",
@@ -718,6 +734,14 @@
       "Location": "Memory",
       "ShortName": "C_ThrowQuip_V01.wav",
       "CachePath": "D9/{D961ACDB-C52D-4C30-504C-7EFE7CAB8D87}.wem"
+     },
+     {
+      "Id": "380654354",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "Pistol_03.wav",
+      "CachePath": "EA/{EA006C6C-2F77-0B10-25B7-9AB3A95FB1AC}.wem"
      },
      {
       "Id": "388256774",
@@ -3798,6 +3822,27 @@
       ]
      },
      {
+      "Id": "2920408515",
+      "Name": "Play_SFX_Pistol",
+      "ObjectPath": "\\Events\\Default Work Unit\\SFX\\Weapons\\Play_SFX_Pistol",
+      "GUID": "{94EA36F4-1CB8-44B4-B222-E08464C698A3}",
+      "MaxAttenuation": "100",
+      "DurationType": "OneShot",
+      "DurationMin": "0.25172678",
+      "DurationMax": "0.46056023",
+      "MediaRefs": [
+       {
+        "Id": "135847324"
+       },
+       {
+        "Id": "277151770"
+       },
+       {
+        "Id": "380654354"
+       }
+      ]
+     },
+     {
       "Id": "1078461092",
       "Name": "Play_SFX_Rifle",
       "ObjectPath": "\\Events\\Default Work Unit\\SFX\\Weapons\\Play_SFX_Rifle",
@@ -4976,6 +5021,6 @@
     ]
    }
   ],
-  "FileHash": "{98417E2C-5E57-3625-A96C-26CB6357A02C}"
+  "FileHash": "{C5B6D8D3-0CDA-A18F-0BE1-988A52F5158A}"
  }
 }
