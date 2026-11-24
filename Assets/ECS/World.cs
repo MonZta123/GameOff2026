@@ -266,7 +266,7 @@ namespace ECS
                 snapshot._hackProcess = (int)(5f / _deltaTime);
 
 #if UNITY_EDITOR
-            snapshot._hackProcess = 0;
+            snapshot._hackProcess = 64;
 #endif
         }
 
@@ -483,7 +483,6 @@ namespace ECS
         {
             return type switch
             {
-                ProjectileType.Heavy => Constants.HeavyProjectileSpeed,
                 ProjectileType.Hacker => Constants.HackerProjectileSpeed,
                 _ => 5.0f
             };

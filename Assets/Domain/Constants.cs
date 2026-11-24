@@ -22,15 +22,10 @@ namespace Domain
         public const float HeavyDamageConeAngle = 45.0f;
         public const float HeavyDamageConeRadius = 3.0f;
 
-        public const float HeavyCooldown = 0.25f;
-        public const float HeavyProjectileTtl = 1f;
-        public const float HeavyProjectileSpeed = 5f;
         public const float HeavyMoveSpeed = 7.5f;
         public const float HeavyColliderRadius = 0.5f;
-        public const int HeavyDamage = 10;
+        public const int HeavyDamage = 60;
 
-        public const float HackerCooldown = 0.25f;
-        public const float HackerProjectileTtl = 1f;
         public const float HackerProjectileSpeed = 50f;
         public const float HackerMoveSpeed = 7.5f;
         public const float HackerColliderRadius = 1.0f;

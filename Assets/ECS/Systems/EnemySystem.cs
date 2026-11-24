@@ -176,7 +176,7 @@ namespace ECS.Systems
 
                     if (distance < 0.1f)
                     {
-                        enemy._health -= 10;
+                        enemy._health -= Constants.HeavyDamage;
                         if (enemy._health <= 0f)
                         {
                             snapshot._damageProcess--;
@@ -205,7 +205,7 @@ namespace ECS.Systems
 
                         if (dot > _minDot)
                         {
-                            enemy._health -= 10;
+                            enemy._health -= Constants.HeavyDamage;
                             if (enemy._health <= 0f)
                             {
                                 snapshot._damageProcess--;
