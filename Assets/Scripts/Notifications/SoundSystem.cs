@@ -127,7 +127,7 @@ namespace Notifications
 
         public void StopPauseMusic()
         {
-            pauseMusic.Post(gameObject);
+            stopPauseMusic.Post(gameObject);
         }
 
         public void PlayDeadSound(int index)
