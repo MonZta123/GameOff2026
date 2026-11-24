@@ -14,5 +14,8 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/ThankYouScene.unity
     guid: 99ef0e5c9dd0cb5478c98a8707ecb0b2
+  - enabled: 1
+    path: Assets/CutScene/OpeningCutScene.unity
+    guid: 0f6818499e8c9b1fda0dec9ea668dfb9
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 052faaac586de48259a63d0c4782560b, type: 3}

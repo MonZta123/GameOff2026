@@ -152,7 +152,7 @@ public class MainMenuManager : MonoBehaviour
             yield return null;
         }
 
-        SceneManager.LoadScene("GameScene");
+        SceneManager.LoadScene("OpeningCutScene");
     }
 
     public void ShowCreditsPanel()
