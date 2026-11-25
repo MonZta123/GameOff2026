@@ -10,7 +10,7 @@
     "Type": "User",
     "GUID": "{3059A6CE-8152-4CD2-BEA9-69E98BB60D65}",
     "Language": "SFX",
-    "Hash": "{26DBF913-B23D-49BA-48F7-7C11AB399EFB}",
+    "Hash": "{7E471E60-160E-3DCC-9D92-12AF70C1C6A5}",
     "ObjectPath": "\\SoundBanks\\Default Work Unit\\Main",
     "ShortName": "Main",
     "Path": "Main.bnk",
@@ -637,7 +637,7 @@
       "Streaming": "false",
       "Location": "Memory",
       "ShortName": "MUS_BreakingAndEntering.wav",
-      "CachePath": "12/{12EE5D0F-90B0-5715-E7FA-0DF50ED35651}.wem"
+      "CachePath": "4E/{4EFE5397-EE4E-14B7-1362-460A39897197}.wem"
      },
      {
       "Id": "300372930",
@@ -5021,6 +5021,6 @@
     ]
    }
   ],
-  "FileHash": "{7261CB06-B3A7-A73F-3DAA-5178D903E479}"
+  "FileHash": "{77509E7E-7E02-5D9B-0DFE-B83813748B73}"
  }
 }

@@ -190,7 +190,7 @@ In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
 	284150746	VO_B_Hit_01	.cache\F6\{F67C5827-50EC-CDCE-5F52-6A0EA30F9B76}.wem		\Containers\Default Work Unit\VO\CharacterB\Hit\VO_B_Hit_01		5989
 	289669370	Roar	.cache\54\{54DD349F-2AF2-A374-CDDA-8EFABA4713AB}.wem		\Containers\Default Work Unit\SFX\Attacks\Olga\AttackHeavySlam\Roar		13864
 	289985299	D_2_GuitarDistorted	.cache\74\{743650AA-F12B-70BF-F204-7AC026A871FB}.wem		\Containers\Default Work Unit\MUSIC\MUS_Mission\MUS_Character\Character_D\Round_4\MUS_D_2\Other\D_2_GuitarDistorted		520076
-	290143922	MUS_BreakingAndEntering	.cache\12\{12EE5D0F-90B0-5715-E7FA-0DF50ED35651}.wem		\Containers\Default Work Unit\MUSIC\MUS_BreakingAndEntering		716922
+	290143922	MUS_BreakingAndEntering	.cache\4E\{4EFE5397-EE4E-14B7-1362-460A39897197}.wem		\Containers\Default Work Unit\MUSIC\MUS_BreakingAndEntering		729789
 	300372930	VO_B_Dodge_03	.cache\D1\{D1102AEB-5C79-EC0D-09F2-ED3A2A7878B3}.wem		\Containers\Default Work Unit\VO\CharacterB\Dodge\Quip or Silence\VO_B_Dodge_03		9223
 	302324581	FootstepD_03_Concrete	.cache\62\{62A838FE-9101-43C3-4C85-2EF74B09888E}.wem		\Containers\Default Work Unit\SFX\Movement\FootstepsD\Concrete\FootstepD_03_Concrete		6826
 	321535931	D_HitHeavy_05	.cache\35\{3547FA71-C628-6158-58B0-C6F876EBB1CD}.wem		\Containers\Default Work Unit\VO\CharacterD\Wind\D_HitHeavy_05		5529
