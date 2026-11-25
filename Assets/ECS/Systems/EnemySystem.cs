@@ -109,7 +109,7 @@ namespace ECS.Systems
             #region melee spawn
 
             // Spawning melee chicks
-            if (tick % (_tickRate * 4) == 0 && tick != 0)
+            if (tick % (_tickRate * 16) == 0 && tick != 0)
             {
                 if (snapshot._enemies.GetNumEntities() < snapshot._enemies.GetMaxLength()
                     && snapshot._players.GetNumEntities() > 1
@@ -138,8 +138,8 @@ namespace ECS.Systems
                             {
                                 _angle = 0,
                                 _colliderRadius = Constants.ChickColliderRadius,
-                                _health = 100,
-                                _maxHealth = 100,
+                                _health = Constants.EnemyHealth,
+                                _maxHealth =  Constants.EnemyHealth,
                                 _type = EnemyType.MeleeChick,
                                 _position = targetPos
                             };

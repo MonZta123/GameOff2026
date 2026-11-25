@@ -131,8 +131,8 @@ namespace ECS
 
             // First Player
             _currentPlayer = GetCharacter(PlayerType.Heavy);
-            _currentPlayer._health = 100;
-            _currentPlayer._maxHealth = 100;
+            _currentPlayer._health = Constants.PlayerHealth;
+            _currentPlayer._maxHealth = Constants.PlayerHealth;
             _currentPlayer._position = mapDefinition._spawnPoints[0];
 
             // Generate Doors
@@ -175,9 +175,7 @@ namespace ECS
 
                 var evt = new Trigger()
                 {
-                    _leftBottom = leftBottom,
-                    _rightTop = rightTop,
-                    _triggerType = TriggerType.HackerZone
+                    _leftBottom = leftBottom, _rightTop = rightTop, _triggerType = TriggerType.HackerZone
                 };
 
                 snapshot._triggers.Spawn(evt);
@@ -196,9 +194,7 @@ namespace ECS
 
                     var evt = new Trigger()
                     {
-                        _leftBottom = leftBottom,
-                        _rightTop = rightTop,
-                        _triggerType = TriggerType.DemolitionZone
+                        _leftBottom = leftBottom, _rightTop = rightTop, _triggerType = TriggerType.DemolitionZone
                     };
 
                     snapshot._bombsLeft++;
@@ -206,7 +202,7 @@ namespace ECS
                     snapshot._triggers.Spawn(evt);
                 }
             }
-            
+
             if (_map._exit.Length > 0)
             {
                 var evacuationTile = _map._exit.ToList();
@@ -220,9 +216,7 @@ namespace ECS
 
                     var evt = new Trigger()
                     {
-                        _leftBottom = leftBottom,
-                        _rightTop = rightTop,
-                        _triggerType = TriggerType.Exit
+                        _leftBottom = leftBottom, _rightTop = rightTop, _triggerType = TriggerType.Exit
                     };
 
                     snapshot._triggers.Spawn(evt);
@@ -243,8 +237,8 @@ namespace ECS
 
                 var enemy = new Enemy()
                 {
-                    _health = Constants.PlayerHealth,
-                    _maxHealth = Constants.PlayerHealth,
+                    _health = Constants.EnemyHealth,
+                    _maxHealth = Constants.EnemyHealth,
                     _angle = 0,
                     _position = spawnZone[index],
                     _type = EnemyType.RedHairGuy,
@@ -255,7 +249,7 @@ namespace ECS
             }
 
             snapshot._damageProcess = 10;
-            
+
 // #if UNITY_EDITOR
 //             snapshot._damageProcess = 0;
 // #endif
@@ -507,7 +501,7 @@ namespace ECS
 
                 if (IsBlocked(nextX, player._size.x / 2f))
                 {
-                    velocity.x = 0; 
+                    velocity.x = 0;
                     player._externalVelocity.x = 0;
                 }
 
@@ -605,7 +599,7 @@ namespace ECS
         {
             var totalPlayers = snapshot._players.GetNumEntities();
 
-        
+
             for (var i = 0; i < totalPlayers; i++)
             {
                 ref var player = ref snapshot._players.GetEntityAt(i);
@@ -644,15 +638,16 @@ namespace ECS
         private void AddCash(ref Snapshot snapshot, int amount)
         {
             var spawnZone = _map._enemySpawnZone.ToList();
-            
-            var random = Unity.Mathematics.Random.CreateFromIndex((uint)_seed + (uint)snapshot._players.GetNumEntities() + 800);
+
+            var random =
+                Unity.Mathematics.Random.CreateFromIndex((uint)_seed + (uint)snapshot._players.GetNumEntities() + 800);
 
             for (var i = 0; i < amount; i++)
             {
                 var index = random.NextInt(0, spawnZone.Count);
-                
+
                 snapshot._triggers.Spawn(new Trigger()
-                { 
+                {
                     _leftBottom = spawnZone[index],
                     _rightTop = new Vector2(spawnZone[index].x + 1, spawnZone[index].y + 1),
                     _triggerType = TriggerType.Money

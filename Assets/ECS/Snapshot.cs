@@ -69,6 +69,11 @@ namespace ECS
             _snipeShotNotificationPool =
                 new NotificationPool<SnipeShotNotification>(Constants.SnipeShotNotificationCount);
             _splosionNotificationPool = new NotificationPool<SplosionNotification>(Constants.SplosionNotificationCount);
+
+            _damageProcess = 0;
+            _hackProcess = 0;
+            _bombsLeft = 0;
+            _tickButtlerRespawnAt = 0;
         }
     }
 }

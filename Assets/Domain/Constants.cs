@@ -52,7 +52,7 @@
         public const float RedHairGuyMoveSpeed = 2.0f;
         public const int RedHairGuyDamage = 10;
 
-        public const float ChickCooldown = 1.0f;
+        public const float ChickCooldown = 3.0f;
         public const float ChickColliderRadius = 0.5f;
         public const float ChickMoveSpeed = 2.0f;
         public const int ChickDamage = 20;
@@ -70,5 +70,6 @@
         public const int ButtlerRespawnDistanceUnits = 20;
         public const float ButtlerRespawnCooldownSeconds = 3.0f;
         public const int ButtlerRespawnMinDistanceUnits = 10;
+        public const int EnemyHealth = 100;
     }
 }
