@@ -73,7 +73,7 @@ public class Timeline
 
     public void SetNextPlayer()
     {
-        _world.SetNextPlayer(ref _snapshots[0]);
+        _world.SetNextPlayer(ref _snapshots[0], _currentSegment);
     }
     
     public int SnapshotLength => _snapshots.Length;

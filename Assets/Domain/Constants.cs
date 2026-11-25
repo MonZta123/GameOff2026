@@ -45,12 +45,12 @@
         public const float SniperColliderRadius = 1.0f;
         public const float SniperRecoilForce = 16.0f;
 
-        public const float RedHairGuyCooldown = 1.0f;
+        public const float RedHairGuyCooldown = 3.0f;
         public const float RedHairGuyProjectileTtl = 5.0f;
         public const float RedHairGuyProjectileSpeed = 5.0f;
         public const float RedHairGuyColliderRadius = 0.5f;
         public const float RedHairGuyMoveSpeed = 2.0f;
-        public const int RedHairGuyDamage = 20;
+        public const int RedHairGuyDamage = 10;
 
         public const float ChickCooldown = 1.0f;
         public const float ChickColliderRadius = 0.5f;

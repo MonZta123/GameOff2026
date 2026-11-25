@@ -255,9 +255,10 @@ namespace ECS
             }
 
             snapshot._damageProcess = 10;
-#if UNITY_EDITOR
-            snapshot._damageProcess = 0;
-#endif
+            
+// #if UNITY_EDITOR
+//             snapshot._damageProcess = 0;
+// #endif
         }
 
         private void BuildHacker(ref Snapshot snapshot)
@@ -265,9 +266,9 @@ namespace ECS
             if (_map._hackerZone.Length > 0)
                 snapshot._hackProcess = (int)(5f / _deltaTime);
 
-#if UNITY_EDITOR
-            snapshot._hackProcess = 64;
-#endif
+// #if UNITY_EDITOR
+//             snapshot._hackProcess = 64;
+// #endif
         }
 
         private void BuildDemolition(ref Snapshot snapshot)
@@ -600,10 +601,11 @@ namespace ECS
 
         private Player _currentPlayer;
 
-        public void SetNextPlayer(ref Snapshot snapshot)
+        public void SetNextPlayer(ref Snapshot snapshot, int segment)
         {
             var totalPlayers = snapshot._players.GetNumEntities();
 
+        
             for (var i = 0; i < totalPlayers; i++)
             {
                 ref var player = ref snapshot._players.GetEntityAt(i);
@@ -631,6 +633,30 @@ namespace ECS
                 case 3:
                     BuildSniper(ref snapshot);
                     break;
+            }
+
+            if (segment == 2)
+            {
+                AddCash(ref snapshot, 5);
+            }
+        }
+
+        private void AddCash(ref Snapshot snapshot, int amount)
+        {
+            var spawnZone = _map._enemySpawnZone.ToList();
+            
+            var random = Unity.Mathematics.Random.CreateFromIndex((uint)_seed + (uint)snapshot._players.GetNumEntities() + 800);
+
+            for (var i = 0; i < amount; i++)
+            {
+                var index = random.NextInt(0, spawnZone.Count);
+                
+                snapshot._triggers.Spawn(new Trigger()
+                { 
+                    _leftBottom = spawnZone[index],
+                    _rightTop = new Vector2(spawnZone[index].x + 1, spawnZone[index].y + 1),
+                    _triggerType = TriggerType.Money
+                });
             }
         }
 

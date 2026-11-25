@@ -405,7 +405,6 @@ namespace ECS.Systems
 
                     if (i == snapshot._players.GetNumEntities() - 1)
                     {
-                        enemy._shootsAtTick = -1;
                         enemy._lockedOnAt = -1;
                     }
                 }
@@ -413,25 +412,40 @@ namespace ECS.Systems
 
             if (enemy._shootsAtTick == tick)
             {
-                enemy._toTickNoShoot = tick + (int)(_tickRate * Constants.ButtlerCooldown);
-                enemy._shootsAtTick = -1;
-
-                var player = snapshot._players.GetEntityAt(enemy._lockedOnAt);
-
-                var direction = (player._position - enemy._position).normalized;
-
-                var endPoint = ButtlerShoot(enemy._position, direction, world, ref snapshot);
-
-                snapshot._snipeShotNotificationPool.Add(new SnipeShotNotification()
+                if (enemy._lockedOnAt == -1)
                 {
-                    _from = enemy._position, _to = endPoint,
-                });
-                
-                snapshot._soundNotificationPool.Add(new SoundNotification()
+                    for (var j = snapshot._enemies.GetNumEntities() - 1; j >= 0; j--)
+                    {
+                        var enemy2 = snapshot._enemies.GetEntityAt(j);
+                        if (enemy2._type == EnemyType.Buttler)
+                        {
+                            snapshot._tickButtlerRespawnAt = tick + _tickRate;
+                            snapshot._enemies.DespawnAt(j);
+                            return;
+                        }
+                    }
+                }
+                else
                 {
-                    _position = enemy._position,
-                    _soundType = SoundType.EnemySnipeShot
-                });
+                    enemy._toTickNoShoot = tick + (int)(_tickRate * Constants.ButtlerCooldown);
+                    enemy._shootsAtTick = -1;
+
+                    var player = snapshot._players.GetEntityAt(enemy._lockedOnAt);
+
+                    var direction = (player._position - enemy._position).normalized;
+
+                    var endPoint = ButtlerShoot(enemy._position, direction, world, ref snapshot);
+
+                    snapshot._snipeShotNotificationPool.Add(new SnipeShotNotification()
+                    {
+                        _from = enemy._position, _to = endPoint,
+                    });
+
+                    snapshot._soundNotificationPool.Add(new SoundNotification()
+                    {
+                        _position = enemy._position, _soundType = SoundType.EnemySnipeShot
+                    });
+                }
             }
         }
 
