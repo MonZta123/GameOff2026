@@ -57,8 +57,6 @@ public class ThankYouScreenScript : MonoBehaviour
 
     private IEnumerator FadeOut(Action next = null)
     {
-        yield return new WaitForSeconds(0.5f);
-
         var elapsed = 0.0f;
 
         var duration = 1.0f;
