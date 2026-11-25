@@ -132,7 +132,7 @@ GameObject:
   - component: {fileID: 454157654}
   - component: {fileID: 454157653}
   - component: {fileID: 454157652}
-  m_Layer: 5
+  m_Layer: 8
   m_Name: TNTVisualObject
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -189,11 +189,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 454157650}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 430d3174da5ed70cbaa08def3cd83504, type: 3}
+  m_Script: {fileID: 11500000, guid: 0dbfc3d717aa5eb40818193a9576e771, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CutsceneBouncer
-  bounceSpeed: 2
-  bounceHeight: 0.2
+  bounceSpeed: 4
+  bounceHeight: 0.5
   bounceAngle: 11.25
 --- !u!114 &454157654
 MonoBehaviour:
@@ -244,7 +244,7 @@ GameObject:
   - component: {fileID: 605355629}
   - component: {fileID: 605355631}
   - component: {fileID: 605355630}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Inside
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -793,7 +793,7 @@ GameObject:
   - component: {fileID: 659818810}
   - component: {fileID: 659818809}
   - component: {fileID: 659818808}
-  m_Layer: 5
+  m_Layer: 8
   m_Name: RenoirVisualObject
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -850,11 +850,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 659818806}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 430d3174da5ed70cbaa08def3cd83504, type: 3}
+  m_Script: {fileID: 11500000, guid: 0dbfc3d717aa5eb40818193a9576e771, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CutsceneBouncer
-  bounceSpeed: 2
-  bounceHeight: 0.2
+  bounceSpeed: 4
+  bounceHeight: 0.5
   bounceAngle: 11.25
 --- !u!114 &659818810
 MonoBehaviour:
@@ -906,8 +906,7 @@ GameObject:
   - component: {fileID: 710591951}
   - component: {fileID: 710591950}
   - component: {fileID: 710591949}
-  - component: {fileID: 710591953}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Pixel Perfect Camera
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1017,11 +1016,11 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 5.625
+  orthographic size: 7.15625
   m_Depth: 0
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 256
   m_RenderingPath: -1
   m_TargetTexture: {fileID: 0}
   m_TargetDisplay: 0
@@ -1048,67 +1047,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!320 &710591953
-PlayableDirector:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 710591948}
-  m_Enabled: 1
-  serializedVersion: 3
-  m_PlayableAsset: {fileID: 11400000, guid: 8efa25b1ee10dc3708d43956c58481a4, type: 2}
-  m_InitialState: 1
-  m_WrapMode: 2
-  m_DirectorUpdateMode: 1
-  m_InitialTime: 0
-  m_SceneBindings:
-  - key: {fileID: -7941025973067184608, guid: 8efa25b1ee10dc3708d43956c58481a4, type: 2}
-    value: {fileID: 0}
-  - key: {fileID: 0}
-    value: {fileID: 0}
-  - key: {fileID: 0}
-    value: {fileID: 0}
-  - key: {fileID: 0}
-    value: {fileID: 0}
-  - key: {fileID: 0}
-    value: {fileID: 0}
-  - key: {fileID: 0}
-    value: {fileID: 0}
-  - key: {fileID: 0}
-    value: {fileID: 0}
-  - key: {fileID: 0}
-    value: {fileID: 0}
-  - key: {fileID: 0}
-    value: {fileID: 0}
-  - key: {fileID: 6164523369904409210, guid: 8efa25b1ee10dc3708d43956c58481a4, type: 2}
-    value: {fileID: 0}
-  - key: {fileID: 468749046206669642, guid: 8efa25b1ee10dc3708d43956c58481a4, type: 2}
-    value: {fileID: 0}
-  - key: {fileID: -6750707118470237419, guid: 8efa25b1ee10dc3708d43956c58481a4, type: 2}
-    value: {fileID: 0}
-  - key: {fileID: -7779269667606259940, guid: 8efa25b1ee10dc3708d43956c58481a4, type: 2}
-    value: {fileID: 0}
-  - key: {fileID: -126171065025200176, guid: 8efa25b1ee10dc3708d43956c58481a4, type: 2}
-    value: {fileID: 0}
-  - key: {fileID: 5743532477774835263, guid: 8efa25b1ee10dc3708d43956c58481a4, type: 2}
-    value: {fileID: 0}
-  - key: {fileID: -911367079021426673, guid: 8efa25b1ee10dc3708d43956c58481a4, type: 2}
-    value: {fileID: 0}
-  - key: {fileID: -5040680902260713787, guid: 8efa25b1ee10dc3708d43956c58481a4, type: 2}
-    value: {fileID: 0}
-  - key: {fileID: 8006319899944279921, guid: 8efa25b1ee10dc3708d43956c58481a4, type: 2}
-    value: {fileID: 0}
-  - key: {fileID: 7312381449978352309, guid: 8efa25b1ee10dc3708d43956c58481a4, type: 2}
-    value: {fileID: 0}
-  - key: {fileID: -6407823672172572439, guid: 8efa25b1ee10dc3708d43956c58481a4, type: 2}
-    value: {fileID: 0}
-  - key: {fileID: 401909132849167334, guid: 8efa25b1ee10dc3708d43956c58481a4, type: 2}
-    value: {fileID: 0}
-  - key: {fileID: -8836856210758893705, guid: 8efa25b1ee10dc3708d43956c58481a4, type: 2}
-    value: {fileID: 0}
-  m_ExposedReferences:
-    m_References: []
 --- !u!1 &725921499
 GameObject:
   m_ObjectHideFlags: 0
@@ -1121,7 +1059,7 @@ GameObject:
   - component: {fileID: 725921502}
   - component: {fileID: 725921501}
   - component: {fileID: 725921500}
-  m_Layer: 5
+  m_Layer: 8
   m_Name: Canvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1229,7 +1167,7 @@ GameObject:
   - component: {fileID: 794213408}
   - component: {fileID: 794213407}
   - component: {fileID: 794213406}
-  m_Layer: 5
+  m_Layer: 8
   m_Name: Fade
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1325,7 +1263,7 @@ GameObject:
   m_Component:
   - component: {fileID: 829688289}
   - component: {fileID: 829688290}
-  m_Layer: 5
+  m_Layer: 8
   m_Name: Dave
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1385,7 +1323,7 @@ GameObject:
   - component: {fileID: 976841428}
   - component: {fileID: 976841427}
   - component: {fileID: 976841426}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: EventSystem
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1463,7 +1401,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1088186663}
   - component: {fileID: 1088186664}
-  m_Layer: 5
+  m_Layer: 8
   m_Name: TNT
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1525,7 +1463,7 @@ GameObject:
   - component: {fileID: 1209704545}
   - component: {fileID: 1209704544}
   - component: {fileID: 1209704543}
-  m_Layer: 5
+  m_Layer: 8
   m_Name: OlgaVisualObject
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1582,11 +1520,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 1209704541}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 430d3174da5ed70cbaa08def3cd83504, type: 3}
+  m_Script: {fileID: 11500000, guid: 0dbfc3d717aa5eb40818193a9576e771, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CutsceneBouncer
-  bounceSpeed: 2
-  bounceHeight: 0.2
+  bounceSpeed: 4
+  bounceHeight: 0.5
   bounceAngle: 11.25
 --- !u!114 &1209704545
 MonoBehaviour:
@@ -1626,6 +1564,63 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1209704541}
   m_CullTransparentMesh: 1
+--- !u!1 &1217878677
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1217878679}
+  - component: {fileID: 1217878678}
+  m_Layer: 8
+  m_Name: WwiseGlobal
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1217878678
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1217878677}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a9c454356c426541a8bfb1ea5babaf8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: AK.Wwise.Unity.MonoBehaviour::AkInitializer
+  InitializationSettings: {fileID: 11400000, guid: 2518304bf06d6a94b9dab4277c5ba016, type: 2}
+  basePath: 
+  language: 
+  defaultPoolSize: 0
+  lowerPoolSize: 0
+  streamingPoolSize: 0
+  memoryCutoffThreshold: 0
+  monitorPoolSize: 0
+  monitorQueuePoolSize: 0
+  callbackManagerBufferSize: 0
+  spatialAudioPoolSize: 0
+  maxSoundPropagationDepth: 0
+  engineLogging: 0
+--- !u!4 &1217878679
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1217878677}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1287177393
 GameObject:
   m_ObjectHideFlags: 0
@@ -1636,7 +1631,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1287177394}
   - component: {fileID: 1287177395}
-  m_Layer: 5
+  m_Layer: 8
   m_Name: Olga
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1696,7 +1691,7 @@ GameObject:
   - component: {fileID: 1378377642}
   - component: {fileID: 1378377644}
   - component: {fileID: 1378377643}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Outside
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5183,7 +5178,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1435397046}
-  m_Layer: 0
+  - component: {fileID: 1435397047}
+  m_Layer: 8
   m_Name: CutSceneManager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5205,6 +5201,21 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1435397047
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1435397045}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a6ab74cfb5335494da20733e9806508f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::CutsceneManager
+  timeline: {fileID: 1529439836}
+  fade: {fileID: 794213407}
+  camAnimator: {fileID: 0}
 --- !u!1 &1529439835
 GameObject:
   m_ObjectHideFlags: 0
@@ -5215,7 +5226,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1529439837}
   - component: {fileID: 1529439836}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Segment1-2Timeline
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5292,7 +5303,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1531200408}
   - component: {fileID: 1531200409}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Grid
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5338,7 +5349,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1995971491}
   - component: {fileID: 1995971492}
-  m_Layer: 5
+  m_Layer: 8
   m_Name: Renoir
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5400,7 +5411,7 @@ GameObject:
   - component: {fileID: 2078373775}
   - component: {fileID: 2078373778}
   - component: {fileID: 2078373777}
-  m_Layer: 5
+  m_Layer: 8
   m_Name: DaveVisualObject
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5495,11 +5506,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 2078373773}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 430d3174da5ed70cbaa08def3cd83504, type: 3}
+  m_Script: {fileID: 11500000, guid: 0dbfc3d717aa5eb40818193a9576e771, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CutsceneBouncer
-  bounceSpeed: 2
-  bounceHeight: 0.2
+  bounceSpeed: 4
+  bounceHeight: 0.5
   bounceAngle: 11.25
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
@@ -5510,3 +5521,4 @@ SceneRoots:
   - {fileID: 725921503}
   - {fileID: 976841428}
   - {fileID: 1435397046}
+  - {fileID: 1217878679}

@@ -228,6 +228,10 @@ MonoBehaviour:
     WwiseObjectReference: {fileID: 11400000, guid: a83fd9b666168b748abb0cb936daa193, type: 2}
   credits: {fileID: 1357600775}
   flashingText: {fileID: 515974975}
+  cutsceneNames:
+  - Segment1-2
+  - Segment2-3
+  - Segment3-4
 --- !u!114 &13633226
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1715,7 +1719,7 @@ Camera:
   far clip plane: 5000
   field of view: 40
   orthographic: 1
-  orthographic size: 7.03125
+  orthographic size: 4.7708335
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2

@@ -129,7 +129,7 @@ GameObject:
   m_Component:
   - component: {fileID: 83952536}
   - component: {fileID: 83952537}
-  m_Layer: 5
+  m_Layer: 8
   m_Name: Graves
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -190,7 +190,7 @@ GameObject:
   - component: {fileID: 123426211}
   - component: {fileID: 123426210}
   - component: {fileID: 123426209}
-  m_Layer: 5
+  m_Layer: 8
   m_Name: Explosion
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -287,7 +287,7 @@ GameObject:
   - component: {fileID: 163142226}
   - component: {fileID: 163142228}
   - component: {fileID: 163142227}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Wall
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -454,7 +454,7 @@ GameObject:
   - component: {fileID: 163537432}
   - component: {fileID: 163537431}
   - component: {fileID: 163537434}
-  m_Layer: 5
+  m_Layer: 8
   m_Name: OlgaVisualObject
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -549,11 +549,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 163537429}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 430d3174da5ed70cbaa08def3cd83504, type: 3}
+  m_Script: {fileID: 11500000, guid: 0dbfc3d717aa5eb40818193a9576e771, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CutsceneBouncer
-  bounceSpeed: 2
-  bounceHeight: 0.2
+  bounceSpeed: 4
+  bounceHeight: 0.5
   bounceAngle: 11.25
 --- !u!1 &281312487
 GameObject:
@@ -565,7 +565,7 @@ GameObject:
   m_Component:
   - component: {fileID: 281312488}
   - component: {fileID: 281312489}
-  m_Layer: 5
+  m_Layer: 8
   m_Name: Renoir
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -627,7 +627,7 @@ GameObject:
   - component: {fileID: 366821674}
   - component: {fileID: 366821673}
   - component: {fileID: 366821676}
-  m_Layer: 5
+  m_Layer: 8
   m_Name: TNTVisualObject
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -722,11 +722,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 366821671}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 430d3174da5ed70cbaa08def3cd83504, type: 3}
+  m_Script: {fileID: 11500000, guid: 0dbfc3d717aa5eb40818193a9576e771, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CutsceneBouncer
-  bounceSpeed: 2
-  bounceHeight: 0.2
+  bounceSpeed: 4
+  bounceHeight: 0.5
   bounceAngle: 11.25
 --- !u!1 &492628637
 GameObject:
@@ -738,7 +738,7 @@ GameObject:
   m_Component:
   - component: {fileID: 492628638}
   - component: {fileID: 492628639}
-  m_Layer: 5
+  m_Layer: 8
   m_Name: Jared
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -800,7 +800,7 @@ GameObject:
   - component: {fileID: 632897102}
   - component: {fileID: 632897101}
   - component: {fileID: 632897104}
-  m_Layer: 5
+  m_Layer: 8
   m_Name: RenoirVisualObject
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -895,11 +895,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 632897099}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 430d3174da5ed70cbaa08def3cd83504, type: 3}
+  m_Script: {fileID: 11500000, guid: 0dbfc3d717aa5eb40818193a9576e771, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CutsceneBouncer
-  bounceSpeed: 2
-  bounceHeight: 0.2
+  bounceSpeed: 4
+  bounceHeight: 0.5
   bounceAngle: 11.25
 --- !u!1 &670100898
 GameObject:
@@ -913,7 +913,7 @@ GameObject:
   - component: {fileID: 670100902}
   - component: {fileID: 670100901}
   - component: {fileID: 670100900}
-  m_Layer: 5
+  m_Layer: 8
   m_Name: Dynamite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1009,7 +1009,7 @@ GameObject:
   m_Component:
   - component: {fileID: 741394690}
   - component: {fileID: 741394689}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Segment3-4Timeline
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1026,7 +1026,7 @@ PlayableDirector:
   m_Enabled: 1
   serializedVersion: 3
   m_PlayableAsset: {fileID: 11400000, guid: ff763c1d7de22a65894121078b694c4f, type: 2}
-  m_InitialState: 1
+  m_InitialState: 0
   m_WrapMode: 2
   m_DirectorUpdateMode: 1
   m_InitialTime: 0
@@ -1116,7 +1116,7 @@ GameObject:
   m_Component:
   - component: {fileID: 746169394}
   - component: {fileID: 746169395}
-  m_Layer: 5
+  m_Layer: 8
   m_Name: Dave
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1175,7 +1175,7 @@ GameObject:
   m_Component:
   - component: {fileID: 863122388}
   - component: {fileID: 863122387}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Grid
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1220,7 +1220,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 960845417}
-  m_Layer: 0
+  - component: {fileID: 960845418}
+  m_Layer: 8
   m_Name: CutSceneManager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1242,6 +1243,21 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &960845418
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 960845416}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a6ab74cfb5335494da20733e9806508f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::CutsceneManager
+  timeline: {fileID: 741394689}
+  fade: {fileID: 1436304351}
+  camAnimator: {fileID: 1095701056}
 --- !u!1 &1071669504
 GameObject:
   m_ObjectHideFlags: 0
@@ -1255,7 +1271,7 @@ GameObject:
   - component: {fileID: 1071669508}
   - component: {fileID: 1071669507}
   - component: {fileID: 1071669506}
-  m_Layer: 5
+  m_Layer: 8
   m_Name: DaveVisualObject
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1290,11 +1306,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 1071669504}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 430d3174da5ed70cbaa08def3cd83504, type: 3}
+  m_Script: {fileID: 11500000, guid: 0dbfc3d717aa5eb40818193a9576e771, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CutsceneBouncer
-  bounceSpeed: 2
-  bounceHeight: 0.2
+  bounceSpeed: 4
+  bounceHeight: 0.5
   bounceAngle: 11.25
 --- !u!95 &1071669507
 Animator:
@@ -1369,7 +1385,7 @@ GameObject:
   - component: {fileID: 1095701054}
   - component: {fileID: 1095701053}
   - component: {fileID: 1095701056}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Pixel Perfect Camera
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1411,11 +1427,11 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 5.625
+  orthographic size: 7.15625
   m_Depth: 0
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 256
   m_RenderingPath: -1
   m_TargetTexture: {fileID: 0}
   m_TargetDisplay: 0
@@ -1542,7 +1558,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1148973018}
   - component: {fileID: 1148973019}
-  m_Layer: 5
+  m_Layer: 8
   m_Name: Sven
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1601,7 +1617,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1177962337}
   - component: {fileID: 1177962338}
-  m_Layer: 5
+  m_Layer: 8
   m_Name: Liz
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1663,7 +1679,7 @@ GameObject:
   - component: {fileID: 1240158412}
   - component: {fileID: 1240158411}
   - component: {fileID: 1240158410}
-  m_Layer: 5
+  m_Layer: 8
   m_Name: SvenVisualObject
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1698,11 +1714,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 1240158408}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 430d3174da5ed70cbaa08def3cd83504, type: 3}
+  m_Script: {fileID: 11500000, guid: 0dbfc3d717aa5eb40818193a9576e771, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CutsceneBouncer
-  bounceSpeed: 2
-  bounceHeight: 0.2
+  bounceSpeed: 4
+  bounceHeight: 0.5
   bounceAngle: 11.25
 --- !u!95 &1240158411
 Animator:
@@ -1776,7 +1792,7 @@ GameObject:
   - component: {fileID: 1436304352}
   - component: {fileID: 1436304351}
   - component: {fileID: 1436304350}
-  m_Layer: 5
+  m_Layer: 8
   m_Name: Fade
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1875,7 +1891,7 @@ GameObject:
   - component: {fileID: 1442534695}
   - component: {fileID: 1442534694}
   - component: {fileID: 1442534693}
-  m_Layer: 5
+  m_Layer: 8
   m_Name: GravesVisualObject
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1910,11 +1926,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 1442534691}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 430d3174da5ed70cbaa08def3cd83504, type: 3}
+  m_Script: {fileID: 11500000, guid: 0dbfc3d717aa5eb40818193a9576e771, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CutsceneBouncer
-  bounceSpeed: 2
-  bounceHeight: 0.2
+  bounceSpeed: 4
+  bounceHeight: 0.5
   bounceAngle: 11.25
 --- !u!95 &1442534694
 Animator:
@@ -1989,7 +2005,7 @@ GameObject:
   - component: {fileID: 1462147741}
   - component: {fileID: 1462147740}
   - component: {fileID: 1462147739}
-  m_Layer: 5
+  m_Layer: 8
   m_Name: LizVisualObject
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2024,11 +2040,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 1462147737}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 430d3174da5ed70cbaa08def3cd83504, type: 3}
+  m_Script: {fileID: 11500000, guid: 0dbfc3d717aa5eb40818193a9576e771, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CutsceneBouncer
-  bounceSpeed: 2
-  bounceHeight: 0.2
+  bounceSpeed: 4
+  bounceHeight: 0.5
   bounceAngle: 11.25
 --- !u!95 &1462147740
 Animator:
@@ -2100,7 +2116,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1491029393}
   - component: {fileID: 1491029394}
-  m_Layer: 5
+  m_Layer: 8
   m_Name: Olga
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2160,7 +2176,7 @@ GameObject:
   - component: {fileID: 1575818636}
   - component: {fileID: 1575818635}
   - component: {fileID: 1575818634}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: EventSystem
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2179,25 +2195,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 01614664b831546d2ae94a42149d80ac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Unity.InputSystem::UnityEngine.InputSystem.UI.InputSystemUIInputModule
-  m_SendPointerHoverToParent: 1
-  m_MoveRepeatDelay: 0.5
-  m_MoveRepeatRate: 0.1
-  m_XRTrackingOrigin: {fileID: 0}
-  m_ActionsAsset: {fileID: -944628639613478452, guid: ca9f5fa95ffab41fb9a615ab714db018, type: 3}
-  m_PointAction: {fileID: -1654692200621890270, guid: ca9f5fa95ffab41fb9a615ab714db018, type: 3}
-  m_MoveAction: {fileID: -8784545083839296357, guid: ca9f5fa95ffab41fb9a615ab714db018, type: 3}
-  m_SubmitAction: {fileID: 392368643174621059, guid: ca9f5fa95ffab41fb9a615ab714db018, type: 3}
-  m_CancelAction: {fileID: 7727032971491509709, guid: ca9f5fa95ffab41fb9a615ab714db018, type: 3}
-  m_LeftClickAction: {fileID: 3001919216989983466, guid: ca9f5fa95ffab41fb9a615ab714db018, type: 3}
-  m_MiddleClickAction: {fileID: -2185481485913320682, guid: ca9f5fa95ffab41fb9a615ab714db018, type: 3}
-  m_RightClickAction: {fileID: -4090225696740746782, guid: ca9f5fa95ffab41fb9a615ab714db018, type: 3}
-  m_ScrollWheelAction: {fileID: 6240969308177333660, guid: ca9f5fa95ffab41fb9a615ab714db018, type: 3}
-  m_TrackedDevicePositionAction: {fileID: 6564999863303420839, guid: ca9f5fa95ffab41fb9a615ab714db018, type: 3}
-  m_TrackedDeviceOrientationAction: {fileID: 7970375526676320489, guid: ca9f5fa95ffab41fb9a615ab714db018, type: 3}
-  m_DeselectOnBackgroundClick: 1
-  m_PointerBehavior: 0
-  m_CursorLockBehavior: 0
-  m_ScrollDeltaPerTick: 6
 --- !u!114 &1575818635
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2240,7 +2237,7 @@ GameObject:
   - component: {fileID: 1661030701}
   - component: {fileID: 1661030700}
   - component: {fileID: 1661030699}
-  m_Layer: 5
+  m_Layer: 8
   m_Name: Canvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2352,7 +2349,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1708194422}
   - component: {fileID: 1708194423}
-  m_Layer: 5
+  m_Layer: 8
   m_Name: TNT
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2412,7 +2409,7 @@ GameObject:
   - component: {fileID: 1907285055}
   - component: {fileID: 1907285057}
   - component: {fileID: 1907285056}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Background
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -14180,6 +14177,63 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
+--- !u!1 &1944870930
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1944870932}
+  - component: {fileID: 1944870931}
+  m_Layer: 8
+  m_Name: WwiseGlobal
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1944870931
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1944870930}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a9c454356c426541a8bfb1ea5babaf8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: AK.Wwise.Unity.MonoBehaviour::AkInitializer
+  InitializationSettings: {fileID: 11400000, guid: 2518304bf06d6a94b9dab4277c5ba016, type: 2}
+  basePath: 
+  language: 
+  defaultPoolSize: 0
+  lowerPoolSize: 0
+  streamingPoolSize: 0
+  memoryCutoffThreshold: 0
+  monitorPoolSize: 0
+  monitorQueuePoolSize: 0
+  callbackManagerBufferSize: 0
+  spatialAudioPoolSize: 0
+  maxSoundPropagationDepth: 0
+  engineLogging: 0
+--- !u!4 &1944870932
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1944870930}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2007711573
 GameObject:
   m_ObjectHideFlags: 0
@@ -14193,7 +14247,7 @@ GameObject:
   - component: {fileID: 2007711577}
   - component: {fileID: 2007711576}
   - component: {fileID: 2007711575}
-  m_Layer: 5
+  m_Layer: 8
   m_Name: JaredVisualObject
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -14228,11 +14282,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 2007711573}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 430d3174da5ed70cbaa08def3cd83504, type: 3}
+  m_Script: {fileID: 11500000, guid: 0dbfc3d717aa5eb40818193a9576e771, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CutsceneBouncer
-  bounceSpeed: 2
-  bounceHeight: 0.2
+  bounceSpeed: 4
+  bounceHeight: 0.5
   bounceAngle: 11.25
 --- !u!95 &2007711576
 Animator:
@@ -14303,3 +14357,4 @@ SceneRoots:
   - {fileID: 1661030702}
   - {fileID: 1575818636}
   - {fileID: 960845417}
+  - {fileID: 1944870932}

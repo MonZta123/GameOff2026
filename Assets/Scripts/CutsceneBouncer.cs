@@ -4,10 +4,10 @@ using UnityEngine;
 public class CutsceneBouncer : MonoBehaviour
 {
     [SerializeField]
-    private float bounceSpeed = 2f;
+    private float bounceSpeed = 4f;
 
     [SerializeField]
-    private float bounceHeight = 0.2f;
+    private float bounceHeight = 0.5f;
 
     [SerializeField]
     private float bounceAngle = 11.25f;

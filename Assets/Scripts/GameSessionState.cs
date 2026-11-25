@@ -7,5 +7,6 @@
     ReplayMode,
     Rewinding,
     WaitingForR,
-    WaitingForRSuccess
+    WaitingForRSuccess,
+    Cutscene
 }

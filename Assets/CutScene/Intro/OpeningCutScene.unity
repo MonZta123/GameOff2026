@@ -276,6 +276,63 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!1 &240535803
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 240535805}
+  - component: {fileID: 240535804}
+  m_Layer: 0
+  m_Name: WwiseGlobal
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &240535804
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 240535803}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a9c454356c426541a8bfb1ea5babaf8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: AK.Wwise.Unity.MonoBehaviour::AkInitializer
+  InitializationSettings: {fileID: 11400000, guid: 2518304bf06d6a94b9dab4277c5ba016, type: 2}
+  basePath: 
+  language: 
+  defaultPoolSize: 0
+  lowerPoolSize: 0
+  streamingPoolSize: 0
+  memoryCutoffThreshold: 0
+  monitorPoolSize: 0
+  monitorQueuePoolSize: 0
+  callbackManagerBufferSize: 0
+  spatialAudioPoolSize: 0
+  maxSoundPropagationDepth: 0
+  engineLogging: 0
+--- !u!4 &240535805
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 240535803}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &436759977
 GameObject:
   m_ObjectHideFlags: 0
@@ -884,7 +941,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: -84.481}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -53, y: -23.7}
+  m_AnchoredPosition: {x: -55.2, y: -9.3}
   m_SizeDelta: {x: 100, y: 20}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &614770527
@@ -911,8 +968,8 @@ MonoBehaviour:
 
     TJ Codez'
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: a7e53afa6bd6706e5b0d2da0853311f8, type: 2}
+  m_sharedMaterial: {fileID: 2901303386791523614, guid: a7e53afa6bd6706e5b0d2da0853311f8, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -1057,6 +1114,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 771685794}
+  - component: {fileID: 771685795}
   m_Layer: 0
   m_Name: CutSceneManager
   m_TagString: Untagged
@@ -1079,6 +1137,21 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &771685795
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 771685793}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a6ab74cfb5335494da20733e9806508f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::CutsceneManager
+  timeline: {fileID: 862408699511315222}
+  fade: {fileID: 1359926066}
+  camAnimator: {fileID: 1275023937}
 --- !u!1 &808723827
 GameObject:
   m_ObjectHideFlags: 0
@@ -1140,8 +1213,8 @@ MonoBehaviour:
 
     20lux'
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: a7e53afa6bd6706e5b0d2da0853311f8, type: 2}
+  m_sharedMaterial: {fileID: 2901303386791523614, guid: a7e53afa6bd6706e5b0d2da0853311f8, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -1596,7 +1669,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 6.75
+  orthographic size: 7.15625
   m_Depth: 0
   m_CullingMask:
     serializedVersion: 2
@@ -1953,11 +2026,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 1472117548}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 430d3174da5ed70cbaa08def3cd83504, type: 3}
+  m_Script: {fileID: 11500000, guid: 0dbfc3d717aa5eb40818193a9576e771, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CutsceneBouncer
-  bounceSpeed: 2
-  bounceHeight: 0.2
+  bounceSpeed: 4
+  bounceHeight: 0.5
   bounceAngle: 11.25
 --- !u!1 &1496911700
 GameObject:
@@ -33029,11 +33102,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 1878674789}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 430d3174da5ed70cbaa08def3cd83504, type: 3}
+  m_Script: {fileID: 11500000, guid: 0dbfc3d717aa5eb40818193a9576e771, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CutsceneBouncer
-  bounceSpeed: 2
-  bounceHeight: 0.2
+  bounceSpeed: 4
+  bounceHeight: 0.5
   bounceAngle: 11.25
 --- !u!1 &1926726429
 GameObject:
@@ -33143,11 +33216,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 1926726429}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 430d3174da5ed70cbaa08def3cd83504, type: 3}
+  m_Script: {fileID: 11500000, guid: 0dbfc3d717aa5eb40818193a9576e771, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CutsceneBouncer
-  bounceSpeed: 2
-  bounceHeight: 0.2
+  bounceSpeed: 4
+  bounceHeight: 0.5
   bounceAngle: 11.25
 --- !u!1 &1942891831
 GameObject:
@@ -33257,11 +33330,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 1942891831}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 430d3174da5ed70cbaa08def3cd83504, type: 3}
+  m_Script: {fileID: 11500000, guid: 0dbfc3d717aa5eb40818193a9576e771, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CutsceneBouncer
-  bounceSpeed: 2
-  bounceHeight: 0.2
+  bounceSpeed: 4
+  bounceHeight: 0.5
   bounceAngle: 11.25
 --- !u!1 &2065738530
 GameObject:
@@ -33442,8 +33515,8 @@ MonoBehaviour:
 
     Andrew Latheron'
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: a7e53afa6bd6706e5b0d2da0853311f8, type: 2}
+  m_sharedMaterial: {fileID: 2901303386791523614, guid: a7e53afa6bd6706e5b0d2da0853311f8, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -33530,7 +33603,6 @@ GameObject:
   m_Component:
   - component: {fileID: 2102354309}
   - component: {fileID: 2102354308}
-  - component: {fileID: 2102354307}
   m_Layer: 0
   m_Name: EventSystem
   m_TagString: Untagged
@@ -33538,37 +33610,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &2102354307
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2102354306}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 01614664b831546d2ae94a42149d80ac, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Unity.InputSystem::UnityEngine.InputSystem.UI.InputSystemUIInputModule
-  m_SendPointerHoverToParent: 1
-  m_MoveRepeatDelay: 0.5
-  m_MoveRepeatRate: 0.1
-  m_XRTrackingOrigin: {fileID: 0}
-  m_ActionsAsset: {fileID: -944628639613478452, guid: ca9f5fa95ffab41fb9a615ab714db018, type: 3}
-  m_PointAction: {fileID: -1654692200621890270, guid: ca9f5fa95ffab41fb9a615ab714db018, type: 3}
-  m_MoveAction: {fileID: -8784545083839296357, guid: ca9f5fa95ffab41fb9a615ab714db018, type: 3}
-  m_SubmitAction: {fileID: 392368643174621059, guid: ca9f5fa95ffab41fb9a615ab714db018, type: 3}
-  m_CancelAction: {fileID: 7727032971491509709, guid: ca9f5fa95ffab41fb9a615ab714db018, type: 3}
-  m_LeftClickAction: {fileID: 3001919216989983466, guid: ca9f5fa95ffab41fb9a615ab714db018, type: 3}
-  m_MiddleClickAction: {fileID: -2185481485913320682, guid: ca9f5fa95ffab41fb9a615ab714db018, type: 3}
-  m_RightClickAction: {fileID: -4090225696740746782, guid: ca9f5fa95ffab41fb9a615ab714db018, type: 3}
-  m_ScrollWheelAction: {fileID: 6240969308177333660, guid: ca9f5fa95ffab41fb9a615ab714db018, type: 3}
-  m_TrackedDevicePositionAction: {fileID: 6564999863303420839, guid: ca9f5fa95ffab41fb9a615ab714db018, type: 3}
-  m_TrackedDeviceOrientationAction: {fileID: 7970375526676320489, guid: ca9f5fa95ffab41fb9a615ab714db018, type: 3}
-  m_DeselectOnBackgroundClick: 1
-  m_PointerBehavior: 0
-  m_CursorLockBehavior: 0
-  m_ScrollDeltaPerTick: 6
 --- !u!114 &2102354308
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -33737,3 +33778,4 @@ SceneRoots:
   - {fileID: 1496911704}
   - {fileID: 2102354309}
   - {fileID: 771685794}
+  - {fileID: 240535805}

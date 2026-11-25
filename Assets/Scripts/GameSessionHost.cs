@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections;
+using System.Linq;
 using Domain;
 using ECS;
 using ECS.Entities;
@@ -81,6 +82,9 @@ public class GameSessionHost : MonoBehaviour
 
     [SerializeField]
     private FlashingText flashingText;
+
+    [SerializeField]
+    private string[] cutsceneNames;
 
     private TickDriver _tickDriver;
     private Timeline _timeline;
@@ -236,8 +240,8 @@ public class GameSessionHost : MonoBehaviour
 
         _gameSessionState = GameSessionState.Playing;
         markerManager.SetVisible(true);
-        
-        
+
+
         var entityNum = snapshot._players.GetNumEntities() - 1;
         var state = _gameSessionState == GameSessionState.ReplayMode ? 4 : _timeline.GetCurrentSegment();
 
@@ -249,12 +253,11 @@ public class GameSessionHost : MonoBehaviour
         }
         else
         {
-            
             soundSystem.PlayCharacterMusic(entityNum, state);
             inputManager.ClearInput();
             _tickDriver.StartSim();
         }
-        
+
         soundSystem.AnnounceCharacter(entityNum, state);
 
         SetMarkers();
@@ -397,14 +400,17 @@ public class GameSessionHost : MonoBehaviour
         AkUnitySoundEngine.StopAll();
         _tickDriver.StopSim();
 
-        StartCoroutine(FadeOut(Action));
-        return;
-
-        void Action()
+        StartCoroutine(FadeOut(() =>
         {
             pools.ClearAllNotificationPools();
             pools.ClearAllObjectPools();
 
+            ShowCutscene(_timeline.GetCurrentSegment(), Action);
+        }));
+        return;
+
+        void Action()
+        {
             var mapDefinition =
                 TextureMapBuilder.BuildMap(maps[((_timeline.GetCurrentSegment() + 1) % maps.Length)]);
             SetObjectives(mapDefinition);
@@ -412,6 +418,93 @@ public class GameSessionHost : MonoBehaviour
             mapRenderer.GenerateMap(mapDefinition);
             positionComposer.VirtualCamera.PreviousStateIsValid = false;
             BuildNextCharacter(false, () => StartCoroutine(FadeIn()));
+        }
+    }
+
+    private void ShowCutscene(int index, Action next = null)
+    {
+        if (index == 3)
+        {
+            next?.Invoke();
+            return;
+        }
+
+        var op = SceneManager.LoadSceneAsync(cutsceneNames[index], LoadSceneMode.Additive);
+        if (op == null)
+        {
+            next?.Invoke();
+            return;
+        }
+
+        op.completed += OnLoaded;
+
+        return;
+
+        void OnLoaded(AsyncOperation _)
+        {
+            op.completed -= OnLoaded;
+            _gameSessionState = GameSessionState.Cutscene;
+            cam.enabled = false;
+            hud.gameObject.SetActive(false);
+            fade.enabled = false;
+            var gos = SceneManager.GetSceneByName(cutsceneNames[index]).GetRootGameObjects();
+            var go = gos.FirstOrDefault(go => go.GetComponent<CutsceneManager>());
+            if (!go)
+            {
+                cam.enabled = true;
+                hud.gameObject.SetActive(true);
+                fade.enabled = true;
+                
+                var op2 = SceneManager.UnloadSceneAsync(cutsceneNames[index]);
+                
+                if (op2 == null)
+                {
+                    _gameSessionState = GameSessionState.Playing;
+                    next?.Invoke();
+                    return;
+                }
+                
+                op2.completed += OnUnloaded;
+                return;
+
+                void OnUnloaded(AsyncOperation _)
+                {
+                    op2.completed -= OnUnloaded;
+                    _gameSessionState = GameSessionState.Playing;
+                    next?.Invoke();
+                }
+            }
+            
+            var csManager = go.GetComponent<CutsceneManager>();
+
+            csManager.OnCutsceneFinished += OnCutsceneFinished;
+            return;
+
+            void OnCutsceneFinished()
+            {
+                csManager.OnCutsceneFinished -= OnCutsceneFinished;
+                cam.enabled = true;
+                hud.gameObject.SetActive(true);
+                fade.enabled = true;
+
+                var op2 = SceneManager.UnloadSceneAsync(cutsceneNames[index]);
+                if (op2 == null)
+                {
+                    _gameSessionState = GameSessionState.Playing;
+                    next?.Invoke();
+                    return;
+                }
+
+                op2.completed += OnUnloaded;
+                return;
+
+                void OnUnloaded(AsyncOperation _)
+                {
+                    op2.completed -= OnUnloaded;
+                    _gameSessionState = GameSessionState.Playing;
+                    next?.Invoke();
+                }
+            }
         }
     }
 
@@ -646,7 +739,7 @@ public class GameSessionHost : MonoBehaviour
                 hud.SetSuccessState(snapshot._damageProcess == 0);
 
                 hud.HideThreatMeter();
-                
+
                 break;
 
             case PlayerType.Hacker:
@@ -720,7 +813,6 @@ public class GameSessionHost : MonoBehaviour
 
     private IEnumerator PlayRewindAnimation(Action next = null)
     {
-        
         flashingText.SetState(FlashingTextState.Rewinding);
         scriptableRendererData.rendererFeatures[0].SetActive(true);
         SetAllFootsteps(false);
@@ -793,14 +885,14 @@ public class GameSessionHost : MonoBehaviour
         inputManager.ClearInput();
 
         var snapshot = _timeline.GetSnapshot(0);
-        
+
         var entityNum = snapshot._players.GetNumEntities() - 1;
         var state = _gameSessionState == GameSessionState.ReplayMode ? 4 : _timeline.GetCurrentSegment();
-        
+
         soundSystem.PlayCharacterMusic(entityNum, state);
-        
+
         _tickDriver.StartSim();
-        
+
         _currentCoroutine = null;
     }
 
