@@ -589,14 +589,14 @@ namespace ECS.Systems
 
             if (enemy._toTickNoShoot <= tick)
             {
-                enemy._toTickNoShoot = tick + _tickRate * 4;
+                enemy._toTickNoShoot = tick + (int)(_tickRate * Constants.RedHairGuyCooldown);
 
                 world.AddShootEvent(new ShootEvent()
                 {
                     _angle = enemy._angle,
                     _position = enemy._position,
                     _type = ProjectileType.RedHairGuy,
-                    _ttl = _tickRate * 5
+                    _ttl = (int)(_tickRate * Constants.RedHairGuyProjectileTtl)
                 });
             }
         }

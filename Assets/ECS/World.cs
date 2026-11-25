@@ -484,6 +484,8 @@ namespace ECS
             return type switch
             {
                 ProjectileType.Hacker => Constants.HackerProjectileSpeed,
+                ProjectileType.RedHairGuy => Constants.RedHairGuyProjectileSpeed,
+                ProjectileType.Demolition => Constants.DemolitionProjectileSpeed,
                 _ => 5.0f
             };
         }

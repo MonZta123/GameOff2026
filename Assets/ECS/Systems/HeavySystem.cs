@@ -98,7 +98,10 @@ namespace ECS.Systems
 
                 world.AddBlastWaveEvent(new BlastWaveEvent()
                 {
-                    _position = player._position, _radius = 2f, _ignoreHeavy = true
+                    _position = player._position,
+                    _radius = Constants.HeavyBlastRadius,
+                    _ignoreHeavy = true,
+                    _damage = Constants.HeavyBlastDamage
                 });
             }
 

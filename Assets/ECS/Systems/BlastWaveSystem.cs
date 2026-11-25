@@ -43,7 +43,7 @@ namespace ECS.Systems
                 var distance = Vector2.Distance(enemy._position, evt._position);
                 if (distance < evt._radius)
                 {
-                    enemy._health -= 100;
+                    enemy._health -= evt._damage;
                     if (enemy._health <= 0)
                     {
                         snapshot._damageProcess--;

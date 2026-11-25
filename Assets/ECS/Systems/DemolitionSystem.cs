@@ -48,7 +48,7 @@ namespace ECS.Systems
                         _type = ProjectileType.Demolition,
                         _position = player._position,
                         _angle = moveEvt._angle,
-                        _ttl = _tickRate
+                        _ttl = (int)(_tickRate * Constants.DemolitionProjectileTtl)
                     });
 
                     snapshot._soundNotificationPool.Add(new SoundNotification()

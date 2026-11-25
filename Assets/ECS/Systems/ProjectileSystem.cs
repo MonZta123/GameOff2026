@@ -1,5 +1,7 @@
-﻿using ECS.Entities;
+﻿using Domain;
+using ECS.Entities;
 using ECS.Events;
+using UnityEngine;
 
 namespace ECS.Systems
 {
@@ -31,10 +33,7 @@ namespace ECS.Systems
                 {
                     if (projectile._type == ProjectileType.Demolition)
                     {
-                        world.AddGranadeExplosionEvent(new BlastWaveEvent()
-                        {
-                            _position = projectile._position, _radius = 3
-                        });
+                        AddDemolitionBlastwave(world, projectile._position);
                     }
 
                     snapshot._projectiles.DespawnAt(i);
@@ -50,10 +49,7 @@ namespace ECS.Systems
                         projectile._position.x >= door._leftBottom.x && projectile._position.x <= door._rightTop.x &&
                         projectile._position.y >= door._leftBottom.y && projectile._position.y <= door._rightTop.y)
                     {
-                        world.AddGranadeExplosionEvent(new BlastWaveEvent()
-                        {
-                            _position = projectile._position, _radius = 3
-                        });
+                        AddDemolitionBlastwave(world, projectile._position);
                         
                         snapshot._projectiles.DespawnAt(i);
                         
@@ -71,15 +67,20 @@ namespace ECS.Systems
                 {
                     if (projectile._type == ProjectileType.Demolition)
                     {
-                        world.AddGranadeExplosionEvent(new BlastWaveEvent()
-                        {
-                            _position = projectile._position, _radius = 3
-                        });
+                        AddDemolitionBlastwave(world, projectile._position);
                     }
 
                     snapshot._projectiles.DespawnAt(i);
                 }
             }
+        }
+
+        private void AddDemolitionBlastwave(World world, Vector2 position)
+        {
+            world.AddGranadeExplosionEvent(new BlastWaveEvent()
+            {
+                _position = position, _radius = Constants.DemolitionBlastRadius, _damage = Constants.DemolitionDamage
+            });
         }
     }
 }
