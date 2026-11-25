@@ -351,10 +351,8 @@ public class GameSessionHost : MonoBehaviour
 
         positionComposer.VirtualCamera.Follow = pools._playerPool.Active[index].transform;
 
-        var snapshot = _timeline.GetSnapshot(_tickDriver.CurrentTick);
-
         soundSystem.PlayFailMusic();
-        soundSystem.PlayDeadSound(snapshot._players.GetNumEntities() - 1);
+        soundSystem.PlayDeadSound(index);
 
         _tickDriver.StopSim();
         StopCharacterBouncing();

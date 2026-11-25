@@ -499,7 +499,7 @@ namespace ECS
 
                 var nextX = new Vector2(nextPos.x, player._position.y);
 
-                if (IsBlocked(nextX, player._size.x / 2f))
+                if (IsBlocked(nextX, player._colliderRadius / 2f))
                 {
                     velocity.x = 0;
                     player._externalVelocity.x = 0;
@@ -507,7 +507,7 @@ namespace ECS
 
                 var nextY = new Vector2(player._position.x, nextPos.y);
 
-                if (IsBlocked(nextY, player._size.y / 2f))
+                if (IsBlocked(nextY, player._colliderRadius / 2f))
                 {
                     velocity.y = 0;
                     player._externalVelocity.y = 0;

@@ -447,12 +447,12 @@ MonoBehaviour:
     value:
       idInternal: 0
       valueGuidInternal: 
-      WwiseObjectReference: {fileID: 11400000, guid: d4aad5e59a767834ab00639d5abd1cf8, type: 2}
+      WwiseObjectReference: {fileID: 11400000, guid: 42841af195aa94f46a29c8cb9ceb7bc5, type: 2}
   - key: 14
     value:
       idInternal: 0
       valueGuidInternal: 
-      WwiseObjectReference: {fileID: 11400000, guid: 42841af195aa94f46a29c8cb9ceb7bc5, type: 2}
+      WwiseObjectReference: {fileID: 11400000, guid: d4aad5e59a767834ab00639d5abd1cf8, type: 2}
   - key: 16
     value:
       idInternal: 0
