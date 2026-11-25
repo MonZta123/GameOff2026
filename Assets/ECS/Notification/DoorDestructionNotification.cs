@@ -1,5 +1,5 @@
-﻿using ECS.Entities;
-using UnityEngine;
+﻿using UnityEngine;
+using Door = ECS.Entities.Door;
 
 namespace ECS.Notification
 {
@@ -7,5 +7,6 @@ namespace ECS.Notification
     {
         public Door _door;
         public Vector2 _direction;
+        public int _player;
     }
 }

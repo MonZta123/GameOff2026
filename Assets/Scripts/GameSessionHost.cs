@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Linq;
+using Actors;
 using Domain;
 using ECS;
 using ECS.Entities;
@@ -11,6 +12,7 @@ using UnityEngine;
 using UnityEngine.Rendering.Universal;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using Door = Actors.Door;
 using Player = Actors.Player;
 
 [Serializable]
@@ -115,6 +117,8 @@ public class GameSessionHost : MonoBehaviour
         _timeline = new Timeline(stepsPerSecond, _segmentTicks, (int)(Time.realtimeSinceStartup * 100), maps.Length);
         _timeline.InitNextSegment(mapDefinition);
         mapRenderer.GenerateMap(mapDefinition);
+
+        Actors.Door.ShowMarkersFor = ShowMarkerFor.Heavy;
 
         taskTextManager.SetText("");
         _gameFlowManager = new GameFlowManager(_segmentTicks, stepsPerSecond);
@@ -261,6 +265,11 @@ public class GameSessionHost : MonoBehaviour
         soundSystem.AnnounceCharacter(entityNum, state);
 
         SetMarkers();
+
+        if (_timeline.GetCurrentSegment() == 0 && snapshot._players.GetNumEntities() == 3)
+        {
+            Actors.Door.ShowMarkersFor = ShowMarkerFor.Demolition;
+        }
     }
 
     private void SetMarkers()
@@ -383,6 +392,7 @@ public class GameSessionHost : MonoBehaviour
 
     private void InitReplay()
     {
+        Door.ShowMarkersFor = ShowMarkerFor.None;
         flashingText.SetState(FlashingTextState.Playing);
         soundSystem.WinCharacter();
         credits.RunCredits(maxSeconds * 4);
@@ -452,16 +462,16 @@ public class GameSessionHost : MonoBehaviour
                 cam.enabled = true;
                 hud.gameObject.SetActive(true);
                 fade.enabled = true;
-                
+
                 var op2 = SceneManager.UnloadSceneAsync(cutsceneNames[index]);
-                
+
                 if (op2 == null)
                 {
                     _gameSessionState = GameSessionState.Playing;
                     next?.Invoke();
                     return;
                 }
-                
+
                 op2.completed += OnUnloaded;
                 return;
 
@@ -472,7 +482,7 @@ public class GameSessionHost : MonoBehaviour
                     next?.Invoke();
                 }
             }
-            
+
             var csManager = go.GetComponent<CutsceneManager>();
 
             csManager.OnCutsceneFinished += OnCutsceneFinished;

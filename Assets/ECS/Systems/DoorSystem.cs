@@ -31,7 +31,7 @@ namespace ECS.Systems
                             {
                                 snapshot._doorDestructionNotificationPool.Add(new DoorDestructionNotification()
                                 {
-                                    _door = door, _direction = (hitpoint - player._position).normalized
+                                    _door = door, _direction = (hitpoint - player._position).normalized, _player = i
                                 });
 
                                 snapshot._soundNotificationPool.Add(new SoundNotification()
@@ -46,10 +46,10 @@ namespace ECS.Systems
             }
 
             if (world._hasBlastWaveEvent)
-                HandleBlastWaveEvent(ref snapshot, world._blastWaveEvent);
+                HandleBlastWaveEvent(ref snapshot, world._blastWaveEvent, 0);
 
             if (world._hasGranadeExplosionEvent)
-                HandleBlastWaveEvent(ref snapshot, world._granadeExplosionEvent);
+                HandleBlastWaveEvent(ref snapshot, world._granadeExplosionEvent, 2);
 
             if (world._hasHeavyDamageCone)
             {
@@ -78,7 +78,7 @@ namespace ECS.Systems
                         {
                             snapshot._doorDestructionNotificationPool.Add(new DoorDestructionNotification()
                             {
-                                _door = door, _direction = hitDirection
+                                _door = door, _direction = hitDirection, _player = 0
                             });
                             snapshot._soundNotificationPool.Add(new SoundNotification()
                             {
@@ -91,7 +91,7 @@ namespace ECS.Systems
             }
         }
 
-        private void HandleBlastWaveEvent(ref Snapshot snapshot, BlastWaveEvent evt)
+        private void HandleBlastWaveEvent(ref Snapshot snapshot, BlastWaveEvent evt, int player)
         {
             for (var j = snapshot._doors.GetNumEntities() - 1; j >= 0; j--)
             {
@@ -102,7 +102,7 @@ namespace ECS.Systems
                     door._health = 0;
                     snapshot._doorDestructionNotificationPool.Add(new DoorDestructionNotification()
                     {
-                        _door = door, _direction = (hitPoint - evt._position).normalized
+                        _door = door, _direction = (hitPoint - evt._position).normalized, _player = player
                     });
                     snapshot._soundNotificationPool.Add(new SoundNotification()
                     {

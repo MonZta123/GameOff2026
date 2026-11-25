@@ -323,27 +323,49 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 6884456278061874291}
     m_Modifications:
+    - target: {fileID: 60968987693388749, guid: 3f8f7e9f8cdca80409b49625b17bc352, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 60968987693388749, guid: 3f8f7e9f8cdca80409b49625b17bc352, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5661481571930703423, guid: 3f8f7e9f8cdca80409b49625b17bc352, type: 3}
       propertyPath: m_text
-      value: 'Olga can smash through with spacebar.
-
-        Trien can destroy it with left mouseclick.'
+      value: <Put Text here>
+      objectReference: {fileID: 0}
+    - target: {fileID: 5661481571930703423, guid: 3f8f7e9f8cdca80409b49625b17bc352, type: 3}
+      propertyPath: m_margin.w
+      value: -0.34931532
+      objectReference: {fileID: 0}
+    - target: {fileID: 5661481571930703423, guid: 3f8f7e9f8cdca80409b49625b17bc352, type: 3}
+      propertyPath: m_margin.y
+      value: -0.576249
+      objectReference: {fileID: 0}
+    - target: {fileID: 5802985692695441412, guid: 3f8f7e9f8cdca80409b49625b17bc352, type: 3}
+      propertyPath: m_Size.y
+      value: 1.97
       objectReference: {fileID: 0}
     - target: {fileID: 5934449042042712427, guid: 3f8f7e9f8cdca80409b49625b17bc352, type: 3}
       propertyPath: m_Name
       value: Marker
       objectReference: {fileID: 0}
+    - target: {fileID: 5934449042042712427, guid: 3f8f7e9f8cdca80409b49625b17bc352, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6189268887415821697, guid: 3f8f7e9f8cdca80409b49625b17bc352, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.4117
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6189268887415821697, guid: 3f8f7e9f8cdca80409b49625b17bc352, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 3.40017
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6189268887415821697, guid: 3f8f7e9f8cdca80409b49625b17bc352, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -38.32911
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6189268887415821697, guid: 3f8f7e9f8cdca80409b49625b17bc352, type: 3}
       propertyPath: m_LocalRotation.w
@@ -371,6 +393,14 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6189268887415821697, guid: 3f8f7e9f8cdca80409b49625b17bc352, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7205711851226838307, guid: 3f8f7e9f8cdca80409b49625b17bc352, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7493120372625251109, guid: 3f8f7e9f8cdca80409b49625b17bc352, type: 3}
+      propertyPath: m_LocalPosition.y
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
