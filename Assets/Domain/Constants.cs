@@ -14,6 +14,7 @@
         public const int DoorDestructionNotificationCount = 10;
         public const int PlacedBombCount = 10;
         public const int SplosionNotificationCount = 10;
+        public const int TriggerRemoveNotificationCount = 10;
 
         public const int PlayerHealth = 150;
         public const int GhostHealth = 300;

@@ -27,6 +27,7 @@ public class SnapshotRenderer : MonoBehaviour
         RunNotification(snapshot._snipeShotNotificationPool, pools._snipeShotNotificationPool);
         RunNotification(snapshot._doorDestructionNotificationPool, pools._doorDestructionNotificationPool);
         RunNotification(snapshot._splosionNotificationPool, pools._splosionNotificationPool);
+        RunNotification(snapshot._triggerRemoveNotificationPool, pools._triggerRemoveNotificationPool);
     }
 
     public void RunSounds(Snapshot snapshot)

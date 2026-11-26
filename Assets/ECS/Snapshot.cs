@@ -27,6 +27,7 @@ namespace ECS
         public NotificationPool<EnemyDiedNotification> _enemyDiedNotificationPool;
         public NotificationPool<SnipeShotNotification> _snipeShotNotificationPool;
         public NotificationPool<SplosionNotification> _splosionNotificationPool;
+        public NotificationPool<TriggerRemoveNotification> _triggerRemoveNotificationPool;
 
         public void BuildFrom(Snapshot snapshot)
         {
@@ -51,6 +52,7 @@ namespace ECS
             snapshot._enemyDiedNotificationPool.CopyTo(ref _enemyDiedNotificationPool);
             snapshot._snipeShotNotificationPool.CopyTo(ref _snipeShotNotificationPool);
             snapshot._splosionNotificationPool.CopyTo(ref _splosionNotificationPool);
+            snapshot._triggerRemoveNotificationPool.CopyTo(ref _triggerRemoveNotificationPool);
         }
 
         public void Initialize()
@@ -69,6 +71,8 @@ namespace ECS
             _snipeShotNotificationPool =
                 new NotificationPool<SnipeShotNotification>(Constants.SnipeShotNotificationCount);
             _splosionNotificationPool = new NotificationPool<SplosionNotification>(Constants.SplosionNotificationCount);
+            _triggerRemoveNotificationPool =
+                new NotificationPool<TriggerRemoveNotification>(Constants.TriggerRemoveNotificationCount);
 
             _damageProcess = 0;
             _hackProcess = 0;

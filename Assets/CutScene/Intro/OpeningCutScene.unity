@@ -1115,6 +1115,7 @@ GameObject:
   m_Component:
   - component: {fileID: 771685794}
   - component: {fileID: 771685795}
+  - component: {fileID: 771685796}
   m_Layer: 0
   m_Name: CutSceneManager
   m_TagString: Untagged
@@ -1152,6 +1153,35 @@ MonoBehaviour:
   timeline: {fileID: 862408699511315222}
   fade: {fileID: 1359926066}
   camAnimator: {fileID: 1275023937}
+  onCutsceneStart:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: 5e11ef5108308f54a920c23af747f82c, type: 2}
+--- !u!114 &771685796
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 771685793}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 554e974a9f3d07443aa25bf3214e6bed, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: AK.Wwise.Unity.MonoBehaviour::AkBank
+  triggerList: f7e1664ci
+  useOtherObject: 0
+  data:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: 8349a046a8c02e644b537823cd9c401f, type: 2}
+  decodeBank: 0
+  overrideLoadSetting: 0
+  loadAsynchronous: 0
+  saveDecodedBank: 0
+  unloadTriggerList: 958ca0eai
+  bankNameInternal: 
+  valueGuidInternal: 
 --- !u!1 &808723827
 GameObject:
   m_ObjectHideFlags: 0
@@ -1661,15 +1691,15 @@ Camera:
   m_LensShift: {x: 0, y: 0}
   m_NormalizedViewPortRect:
     serializedVersion: 2
-    x: 0.0012285012
-    y: 0.0021834061
-    width: 0.997543
-    height: 0.9956332
+    x: 0.0012048193
+    y: 0.0021413276
+    width: 0.99759036
+    height: 0.993576
   near clip plane: 0.3
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 7.125
+  orthographic size: 7.25
   m_Depth: 0
   m_CullingMask:
     serializedVersion: 2

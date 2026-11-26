@@ -73,10 +73,10 @@ namespace ECS.Systems
                     snapshot._placedBombs.Spawn(new PlacedBomb() { _position = player._position });
                 }
                 else if (trigger._triggerType == TriggerType.Mine &&
-                         trigger.IsInCircle(player._position, Constants.DemolitionMineReach, 1f, out _) && moveEvt._action)
+                         trigger.IsInCircle(player._position, Constants.DemolitionMineReach, 1f, out _) &&
+                         moveEvt._action)
                 {
                     player._isActionActive = true;
-
                     trigger._timer -= _deltaTime;
                     if (trigger._timer <= 0)
                     {
@@ -84,8 +84,17 @@ namespace ECS.Systems
                         {
                             _soundType = SoundType.MineDefuse, _position = player._position
                         });
+
+                        snapshot._triggerRemoveNotificationPool.Add(new TriggerRemoveNotification()
+                        {
+                            _type = TriggerType.Mine
+                        });
+
                         snapshot._triggers.DespawnAt(i);
                     }
+
+                    player._velocity = Vector2.zero;
+                    player._angle = moveEvt._angle;
                 }
             }
 

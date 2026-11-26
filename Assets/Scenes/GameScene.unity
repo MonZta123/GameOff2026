@@ -166,6 +166,7 @@ MonoBehaviour:
   doorDestructionNotification: {fileID: 8812971169499925501, guid: ff7c7d3e53ef17842881e9f38dd523ef, type: 3}
   placedBomb: {fileID: 5673399217549167104, guid: cf6a54144b4513d4c8fa35d02b3600c1, type: 3}
   splosionNotification: {fileID: 5935553856862079927, guid: 5a41ed5ed93badd408c8ca3eccfc0544, type: 3}
+  triggerRemoveNotification: {fileID: 7149079759986199436, guid: 2d7af9319c31a764eac8a44ca44ff7a0, type: 3}
 --- !u!4 &13633224
 Transform:
   m_ObjectHideFlags: 0
@@ -1724,7 +1725,7 @@ Camera:
   far clip plane: 5000
   field of view: 40
   orthographic: 1
-  orthographic size: 5.4375
+  orthographic size: 4.8645835
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2

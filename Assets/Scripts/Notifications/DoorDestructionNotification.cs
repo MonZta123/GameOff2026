@@ -28,6 +28,12 @@ namespace Notifications
                 Door.ShowMarkersFor == ShowMarkerFor.Demolition && notification._player == 2)
                 Door.ShowMarkersFor = ShowMarkerFor.None;
 
+            if (notification._player == 2)
+                Door.DemolitionDestroyedDoor = true;
+
+            if (notification._player == 0)
+                Door.HeavyDestroyedDoor = true;
+
             Invoke(nameof(ReturnThatStuff), 12f);
         }
 

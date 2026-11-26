@@ -41,6 +41,12 @@ public class Marker : MonoBehaviour
         visualObject.color = inputColor;
         MarkerColor = inputColor;
     }
+     
+    public void SetColor(Color inputColor)
+    {
+        visualObject.color = inputColor;
+        MarkerColor = inputColor;
+    }
 
     private float _bubbleHeight;
 

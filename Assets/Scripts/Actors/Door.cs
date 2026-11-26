@@ -27,6 +27,10 @@ namespace Actors
 
         public static ShowMarkerFor ShowMarkersFor = ShowMarkerFor.None;
 
+        public static bool HeavyDestroyedDoor = false;
+
+        public static bool DemolitionDestroyedDoor = false;
+
         private bool _activePlayer;
 
         private ShowMarkerFor _appliedState;
@@ -35,7 +39,7 @@ namespace Actors
         {
             marker.gameObject.SetActive(false);
             _appliedState = ShowMarkerFor.None;
-            
+
             SetBubble();
 
             var markerPos = new Vector2((entity._rightTop.x - entity._leftBottom.x) / 2f,
@@ -70,14 +74,15 @@ namespace Actors
                 _appliedState = ShowMarkerFor.None;
             }
 
-            if (ShowMarkersFor == ShowMarkerFor.Demolition && _appliedState != ShowMarkerFor.Demolition)
+            if (ShowMarkersFor == ShowMarkerFor.Demolition && _appliedState != ShowMarkerFor.Demolition &&
+                !DemolitionDestroyedDoor)
             {
                 marker.SetText(string.Empty, "Trien can destroy doors with leftclick!");
                 marker.gameObject.SetActive(true);
                 _appliedState = ShowMarkerFor.Demolition;
             }
 
-            if (ShowMarkersFor == ShowMarkerFor.Heavy && _appliedState != ShowMarkerFor.Heavy)
+            if (ShowMarkersFor == ShowMarkerFor.Heavy && _appliedState != ShowMarkerFor.Heavy && !HeavyDestroyedDoor)
             {
                 marker.SetText(string.Empty, "Olga can smash through with spacebar!");
                 marker.gameObject.SetActive(true);

@@ -7,6 +7,7 @@ using DoorDestructionNotification = Notifications.DoorDestructionNotification;
 using EnemyDiedNotification = Notifications.EnemyDiedNotification;
 using PlacedBomb = Actors.PlacedBomb;
 using SplosionNotification = Notifications.SplosionNotification;
+using TriggerRemoveNotification = Notifications.TriggerRemoveNotification;
 
 public class Pools : MonoBehaviour
 {
@@ -39,6 +40,9 @@ public class Pools : MonoBehaviour
 
     [SerializeField]
     private SplosionNotification splosionNotification;
+    
+    [SerializeField]
+    private TriggerRemoveNotification triggerRemoveNotification;
 
     public GameObjectPool<Enemy, ECS.Entities.Enemy> _enemyPool;
     public GameObjectPool<Projectile, ECS.Entities.Projectile> _projectilePool;
@@ -60,6 +64,8 @@ public class Pools : MonoBehaviour
     public GameNotificationPool<SplosionNotification, ECS.Notification.SplosionNotification>
         _splosionNotificationPool;
 
+    public GameNotificationPool<TriggerRemoveNotification, ECS.Notification.TriggerRemoveNotification>
+        _triggerRemoveNotificationPool;
 
     public void ClearAllNotificationPools()
     {
@@ -67,6 +73,7 @@ public class Pools : MonoBehaviour
         _snipeShotNotificationPool.ReturnAll();
         _doorDestructionNotificationPool.ReturnAll();
         _splosionNotificationPool.ReturnAll();
+        _triggerRemoveNotificationPool.ReturnAll();
     }
 
     public void ClearAllObjectPools()
@@ -104,6 +111,11 @@ public class Pools : MonoBehaviour
             new GameNotificationPool<SplosionNotification, ECS.Notification.SplosionNotification>(Constants
                 .SplosionNotificationCount);
 
+        _triggerRemoveNotificationPool =
+            new GameNotificationPool<TriggerRemoveNotification, ECS.Notification.TriggerRemoveNotification>(
+                Constants
+                    .TriggerRemoveNotificationCount);
+
         for (var i = 0; i < Constants.PlayerCount; i++)
             _playerPool.Add(Instantiate(player));
 
@@ -133,5 +145,8 @@ public class Pools : MonoBehaviour
 
         for (var i = 0; i < Constants.SplosionNotificationCount; i++)
             _splosionNotificationPool.Add(Instantiate(splosionNotification));
+        
+        for (var i = 0; i < Constants.TriggerRemoveNotificationCount; i++)
+            _triggerRemoveNotificationPool.Add(Instantiate(triggerRemoveNotification));
     }
 }

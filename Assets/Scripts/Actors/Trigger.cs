@@ -40,8 +40,15 @@ namespace Actors
         [SerializeField]
         private Animator triggerAnimator;
 
+        public static PlayerType? PlayerTypeHere;
+
+        public static bool MineDefused = false;
+
+        public static bool MoneyCollected = false;
+
         public void SetCurrentPlayerType(PlayerType value)
         {
+            marker.gameObject.SetActive(true);
             marker.SetUsesArrow(false);
             _playerType = value;
             var color = Color.white;
@@ -52,6 +59,10 @@ namespace Actors
                 {
                     marker.SetText("Hold E to hack Computer!", "Hold E to hack!");
                     marker.SetUsesArrow(true);
+                }
+                else
+                {
+                    marker.gameObject.SetActive(false);
                 }
 
                 color = Color.blue;
@@ -64,6 +75,10 @@ namespace Actors
                     marker.SetText("Press E to place TNT!", "Press E to plant!");
                     marker.SetUsesArrow(true);
                 }
+                else
+                {
+                    marker.gameObject.SetActive(false);
+                }
 
                 color = Color.red;
             }
@@ -73,11 +88,6 @@ namespace Actors
                 marker.SetText("Wait here to evacuate!", "Evacuationzone!");
                 marker.SetUsesArrow(true);
                 color = Color.green;
-            }
-
-            if (_entity._triggerType == TriggerType.Mine && _playerType == PlayerType.Demolition)
-            {
-                color = Color.red;
             }
 
             var size = Math.Max(_entity._rightTop.x - _entity._leftBottom.x,
@@ -116,17 +126,20 @@ namespace Actors
             {
                 spriteRenderer.sprite = mine;
                 transform.position = (entity._leftBottom + entity._rightTop) / 2f;
-                marker.SetText("Optional: E to defuse!");
             }
             else if (entity._triggerType == TriggerType.Money)
             {
                 spriteRenderer.sprite = money;
                 _oscillate = true;
                 transform.position = (entity._leftBottom + entity._rightTop) / 2f;
-                marker.SetText("Collect Money!");
             }
 
             _entity = entity;
+
+            if (PlayerTypeHere != null)
+                SetCurrentPlayerType(PlayerTypeHere.Value);
+            else
+                marker.gameObject.SetActive(false);
         }
 
         private ECS.Entities.Trigger _entity;
@@ -143,7 +156,36 @@ namespace Actors
 
         public void SetState(ECS.Entities.Trigger entity, int tick)
         {
+            if (entity._triggerType == TriggerType.Mine && MineDefused)
+            {
+                marker.SetText(string.Empty);
+            }
+            else if (entity._triggerType == TriggerType.Mine && !MineDefused)
+            {
+                marker.SetText(string.Empty, "E to defuse!");
+            }
+
+            if (entity._triggerType == TriggerType.Money && MoneyCollected)
+            {
+                marker.SetText(string.Empty);
+            }
+            else if (entity._triggerType == TriggerType.Money && !MoneyCollected)
+            {
+                marker.SetText(string.Empty, "Collect Money!");
+            }
+
+            if (entity._triggerType == TriggerType.Money)
+            {
+                marker.SetColor(_moneyColor);
+            }
+            else if (entity._triggerType == TriggerType.Mine)
+            {
+                marker.SetColor(_mineColor);
+            }
         }
+
+        private Color _moneyColor = Color.green;
+        private Color _mineColor = Color.red;
 
         public void Release()
         {

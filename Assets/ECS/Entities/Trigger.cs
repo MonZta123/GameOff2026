@@ -9,6 +9,7 @@ namespace ECS.Entities
         public TriggerType _triggerType;
 
         public float _timer;
+        public int _player;
 
         // public int _playerFilter;
 

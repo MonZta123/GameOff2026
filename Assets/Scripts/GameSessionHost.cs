@@ -14,6 +14,7 @@ using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using Door = Actors.Door;
 using Player = Actors.Player;
+using Trigger = Actors.Trigger;
 
 [Serializable]
 public struct Map
@@ -117,8 +118,6 @@ public class GameSessionHost : MonoBehaviour
         _timeline = new Timeline(stepsPerSecond, _segmentTicks, (int)(Time.realtimeSinceStartup * 100), maps.Length);
         _timeline.InitNextSegment(mapDefinition);
         mapRenderer.GenerateMap(mapDefinition);
-
-        Actors.Door.ShowMarkersFor = ShowMarkerFor.Heavy;
 
         taskTextManager.SetText("");
         _gameFlowManager = new GameFlowManager(_segmentTicks, stepsPerSecond);
@@ -264,11 +263,20 @@ public class GameSessionHost : MonoBehaviour
 
         soundSystem.AnnounceCharacter(entityNum, state);
 
+        Trigger.PlayerTypeHere = (PlayerType)(snapshot._players.GetNumEntities() - 1);
         SetMarkers();
 
-        if (_timeline.GetCurrentSegment() == 0 && snapshot._players.GetNumEntities() == 3)
+        if (snapshot._players.GetNumEntities() == 1 && !Door.HeavyDestroyedDoor)
         {
-            Actors.Door.ShowMarkersFor = ShowMarkerFor.Demolition;
+            Door.ShowMarkersFor = ShowMarkerFor.Heavy;
+        }
+        else if (snapshot._players.GetNumEntities() == 3 && !Door.DemolitionDestroyedDoor)
+        {
+            Door.ShowMarkersFor = ShowMarkerFor.Demolition;
+        }
+        else
+        {
+            Door.ShowMarkersFor = ShowMarkerFor.None;
         }
     }
 
@@ -397,6 +405,7 @@ public class GameSessionHost : MonoBehaviour
         soundSystem.WinCharacter();
         credits.RunCredits(maxSeconds * 4);
         _gameSessionState = GameSessionState.ReplayMode;
+        Trigger.PlayerTypeHere = null;
         markerManager.SetVisible(false);
         if (_activePlayerObject)
             _activePlayerObject.SetActivePlayer(false);
@@ -896,9 +905,9 @@ public class GameSessionHost : MonoBehaviour
 
         var entityNum = snapshot._players.GetNumEntities() - 1;
         var state = _gameSessionState == GameSessionState.ReplayMode ? 4 : _timeline.GetCurrentSegment();
-        
+
         var musicIndex = _gameSessionState == GameSessionState.ReplayMode ? _timeline.GetCurrentSegment() : entityNum;
-        
+
         soundSystem.PlayCharacterMusic(musicIndex, state);
 
         _tickDriver.StartSim();

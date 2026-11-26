@@ -21,9 +21,14 @@ namespace ECS.Systems
                     
                     if (trigger.IsInCircle(player._position, 0.5f, player._colliderRadius, out _))
                     {
-                        snapshot._soundNotificationPool.Add(new SoundNotification()
+                        snapshot._soundNotificationPool.Add(new SoundNotification
                         {
                             _position = player._position, _soundType = SoundType.CashIn
+                        });
+                        
+                        snapshot._triggerRemoveNotificationPool.Add(new TriggerRemoveNotification
+                        {
+                            _type = TriggerType.Money
                         });
                         
                         snapshot._triggers.DespawnAt(i);

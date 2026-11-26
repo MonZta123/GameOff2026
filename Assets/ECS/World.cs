@@ -175,7 +175,10 @@ namespace ECS
 
                 var evt = new Trigger()
                 {
-                    _leftBottom = leftBottom, _rightTop = rightTop, _triggerType = TriggerType.HackerZone
+                    _leftBottom = leftBottom,
+                    _rightTop = rightTop,
+                    _triggerType = TriggerType.HackerZone,
+                    _player = (int)PlayerType.Hacker
                 };
 
                 snapshot._triggers.Spawn(evt);
@@ -194,7 +197,10 @@ namespace ECS
 
                     var evt = new Trigger()
                     {
-                        _leftBottom = leftBottom, _rightTop = rightTop, _triggerType = TriggerType.DemolitionZone
+                        _leftBottom = leftBottom,
+                        _rightTop = rightTop,
+                        _triggerType = TriggerType.DemolitionZone,
+                        _player = (int)PlayerType.Demolition
                     };
 
                     snapshot._bombsLeft++;
@@ -231,7 +237,9 @@ namespace ECS
 
             var random = Unity.Mathematics.Random.CreateFromIndex((uint)_seed);
 
-            for (var i = 0; i < 10; i++)
+            var numEnemies = 13;
+            
+            for (var i = 0; i < numEnemies; i++)
             {
                 var index = random.NextInt(0, spawnZone.Count);
 
@@ -248,7 +256,7 @@ namespace ECS
                 snapshot._enemies.Spawn(enemy);
             }
 
-            snapshot._damageProcess = 10;
+            snapshot._damageProcess = numEnemies;
 
 // #if UNITY_EDITOR
 //             snapshot._damageProcess = 0;
@@ -280,7 +288,8 @@ namespace ECS
                     _leftBottom = spawnZone[index],
                     _rightTop = new Vector2(spawnZone[index].x + 1, spawnZone[index].y + 1),
                     _triggerType = TriggerType.Mine,
-                    _timer = 1.0f
+                    _timer = 1.0f,
+                    _player = (int)PlayerType.Demolition
                 };
 
                 snapshot._triggers.Spawn(trigger);
@@ -406,6 +415,7 @@ namespace ECS
             _workspace._enemyDiedNotificationPool.Clear();
             _workspace._snipeShotNotificationPool.Clear();
             _workspace._splosionNotificationPool.Clear();
+            _workspace._triggerRemoveNotificationPool.Clear();
         }
 
         public void DoStep(ReadOnlySpan<Intent> intents, int tick)
