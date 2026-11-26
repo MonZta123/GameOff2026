@@ -20,6 +20,7 @@ namespace AK
         static const AkUniqueID PLAY_MUS_MISSIONENDING = 3049103921U;
         static const AkUniqueID PLAY_MUS_MISSIONINTRO = 2318470590U;
         static const AkUniqueID PLAY_MUS_MISSIONPAUSED = 680738558U;
+        static const AkUniqueID PLAY_PICKUP_MONEY = 2236435535U;
         static const AkUniqueID PLAY_SFX_ACTION_B_HACK = 1724459581U;
         static const AkUniqueID PLAY_SFX_ACTION_C_DEFUSE = 2770407763U;
         static const AkUniqueID PLAY_SFX_ATTACK_A_SLAM = 41955962U;

@@ -10,7 +10,7 @@
     "Type": "User",
     "GUID": "{3059A6CE-8152-4CD2-BEA9-69E98BB60D65}",
     "Language": "SFX",
-    "Hash": "{7E471E60-160E-3DCC-9D92-12AF70C1C6A5}",
+    "Hash": "{70459F64-8130-5BBF-6B48-37B5AFE6014F}",
     "ObjectPath": "\\SoundBanks\\Default Work Unit\\Main",
     "ShortName": "Main",
     "Path": "Main.bnk",
@@ -480,6 +480,14 @@
       "CachePath": "B9/{B9E73FFC-B3C4-19D0-4590-EC98D91173FE}.wem"
      },
      {
+      "Id": "188525812",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "PickUp_Money_01.wav",
+      "CachePath": "D1/{D14A81FD-5414-F6C8-ED48-A9B298101CB9}.wem"
+     },
+     {
       "Id": "190951719",
       "Language": "SFX",
       "Streaming": "false",
@@ -744,6 +752,14 @@
       "CachePath": "EA/{EA006C6C-2F77-0B10-25B7-9AB3A95FB1AC}.wem"
      },
      {
+      "Id": "384635705",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "PickUp_Money_02.wav",
+      "CachePath": "25/{25673EC4-F7A0-9007-B1EA-9291181BFFC7}.wem"
+     },
+     {
       "Id": "388256774",
       "Language": "SFX",
       "Streaming": "false",
@@ -1006,6 +1022,14 @@
       "Location": "Memory",
       "ShortName": "A_AttackQuip_04.wav",
       "CachePath": "F0/{F03A2611-7CF6-63A2-0CC1-8F8B3BD13C66}.wem"
+     },
+     {
+      "Id": "518410701",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "PickUp_Money_03.wav",
+      "CachePath": "E1/{E168A679-9A7E-0A91-335E-CEC9B3E03EC2}.wem"
      },
      {
       "Id": "521326818",
@@ -3027,6 +3051,26 @@
       ]
      },
      {
+      "Id": "2236435535",
+      "Name": "Play_PickUp_Money",
+      "ObjectPath": "\\Events\\Default Work Unit\\SFX\\Actions\\Play_PickUp_Money",
+      "GUID": "{BACE8BB0-2B9C-4ED4-9C4A-48C500A6A776}",
+      "DurationType": "OneShot",
+      "DurationMin": "0.9141137",
+      "DurationMax": "1.8434774",
+      "MediaRefs": [
+       {
+        "Id": "188525812"
+       },
+       {
+        "Id": "384635705"
+       },
+       {
+        "Id": "518410701"
+       }
+      ]
+     },
+     {
       "Id": "1724459581",
       "Name": "Play_SFX_Action_B_Hack",
       "ObjectPath": "\\Events\\Default Work Unit\\SFX\\Actions\\Play_SFX_Action_B_Hack",
@@ -5021,6 +5065,6 @@
     ]
    }
   ],
-  "FileHash": "{803A2F58-EA86-E649-9AFB-D8571AC001AB}"
+  "FileHash": "{317DEA16-212D-0A1A-ABD2-D5D5CFF445F8}"
  }
 }

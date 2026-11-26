@@ -57,6 +57,7 @@
 						<ObjectRef Name="Play_VO_B_HitHeavy" ID="{D77E0490-71FF-4E40-8DA3-4D5C12E56BE7}" WorkUnitID="{2B12C590-A22E-47AF-9697-251FEA2DB802}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="Play_SFX_DoorSlideOpen" ID="{388DF802-A380-4E4E-BD1C-F49CD5EE78A3}" WorkUnitID="{2B12C590-A22E-47AF-9697-251FEA2DB802}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="Play_MUS_BreakingIn" ID="{396C26E0-1712-4EB6-9737-BD0C4BC76B8B}" WorkUnitID="{2B12C590-A22E-47AF-9697-251FEA2DB802}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="Play_PickUp_Money" ID="{BACE8BB0-2B9C-4ED4-9C4A-48C500A6A776}" WorkUnitID="{2B12C590-A22E-47AF-9697-251FEA2DB802}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="Play_VO_C_HitHeavy" ID="{27B7546D-646F-4EF6-9C1F-9920CF11918B}" WorkUnitID="{2B12C590-A22E-47AF-9697-251FEA2DB802}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="Play_SFX_MineExplode" ID="{2E3C0A98-F559-4F88-94EA-9353FFFA4DB9}" WorkUnitID="{2B12C590-A22E-47AF-9697-251FEA2DB802}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="Play_SFX_Throw" ID="{D9547F96-937C-4F93-A9F3-81A4EDB89615}" WorkUnitID="{2B12C590-A22E-47AF-9697-251FEA2DB802}" Origin="Manual" Filter="7"/>
