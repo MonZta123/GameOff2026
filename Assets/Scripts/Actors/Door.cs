@@ -1,5 +1,4 @@
 ﻿using ECS;
-using UnityEditor;
 using UnityEngine;
 using UnityEngine.Tilemaps;
 
@@ -27,8 +26,6 @@ namespace Actors
         private Marker marker;
 
         public static ShowMarkerFor ShowMarkersFor = ShowMarkerFor.None;
-
-        public short Id { get; private set; }
 
         private bool _activePlayer;
 
@@ -99,12 +96,5 @@ namespace Actors
             marker.gameObject.SetActive(false);
             _appliedState = ShowMarkerFor.None;
         }
-
-#if UNITY_EDITOR
-        private void OnDrawGizmos()
-        {
-            Handles.Label(transform.position + Vector3.up * 2.5f, Id.ToString());
-        }
-#endif
     }
 }
