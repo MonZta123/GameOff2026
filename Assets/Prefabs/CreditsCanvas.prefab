@@ -262,12 +262,22 @@ MonoBehaviour:
   - {fileID: 6282814674106629877}
   - {fileID: 5393767029338789425}
   credits:
-  - _name: TJ
-    _role: Code & Design
-  - _name: 20Lux
-    _role: Design & Arts
-  - _name: Andrew Latheron
-    _role: Music & SFX
+  - _name: Music & SFX
+    _role: Andrew Latheron
+  - _name: Game Mechanics & Graphics
+    _role: Anne Truong
+  - _name: Game Mechanics & Gameplay Design
+    _role: Martin Gerstenmaier
+  - _name: Vietnamese Translation
+    _role: Tien Tran
+  - _name: Olga. the Tank
+    _role: Tammy King
+  - _name: Dave. the Hacker
+    _role: Mark Evans
+  - _name: Tien, Demolition Expert
+    _role: Anna Tran
+  - _name: Additional Voices
+    _role: Andrew Latheron
   target: {fileID: 671056075515391194}
   visibleDuration: 6
   waitBeginning: 1
