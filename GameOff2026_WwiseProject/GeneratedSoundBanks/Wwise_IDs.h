@@ -20,7 +20,6 @@ namespace AK
         static const AkUniqueID PLAY_MUS_MISSIONENDING = 3049103921U;
         static const AkUniqueID PLAY_MUS_MISSIONINTRO = 2318470590U;
         static const AkUniqueID PLAY_MUS_MISSIONPAUSED = 680738558U;
-        static const AkUniqueID PLAY_PICKUP_MONEY = 2236435535U;
         static const AkUniqueID PLAY_SFX_ACTION_B_HACK = 1724459581U;
         static const AkUniqueID PLAY_SFX_ACTION_C_DEFUSE = 2770407763U;
         static const AkUniqueID PLAY_SFX_ATTACK_A_SLAM = 41955962U;
@@ -37,6 +36,7 @@ namespace AK
         static const AkUniqueID PLAY_SFX_FOOTSTEPS_C = 1953576305U;
         static const AkUniqueID PLAY_SFX_FOOTSTEPS_D = 1953576310U;
         static const AkUniqueID PLAY_SFX_MINEEXPLODE = 1561061870U;
+        static const AkUniqueID PLAY_SFX_PICKUP_MONEY = 3737616595U;
         static const AkUniqueID PLAY_SFX_PISTOL = 2920408515U;
         static const AkUniqueID PLAY_SFX_RIFLE = 1078461092U;
         static const AkUniqueID PLAY_SFX_RIFLEENEMY = 3696050016U;

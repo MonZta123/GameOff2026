@@ -681,7 +681,7 @@
 										</Action>
 									</ChildrenList>
 								</Event>
-								<Event Name="Play_PickUp_Money" ID="{BACE8BB0-2B9C-4ED4-9C4A-48C500A6A776}">
+								<Event Name="Play_SFX_PickUp_Money" ID="{BACE8BB0-2B9C-4ED4-9C4A-48C500A6A776}">
 									<ChildrenList>
 										<Action Name="" ID="{D3FB8AEF-3EDB-405C-9204-2C3DD0C7A499}" ShortID="237148418">
 											<ReferenceList>

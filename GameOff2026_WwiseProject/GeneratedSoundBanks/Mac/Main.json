@@ -10,7 +10,7 @@
     "Type": "User",
     "GUID": "{3059A6CE-8152-4CD2-BEA9-69E98BB60D65}",
     "Language": "SFX",
-    "Hash": "{70459F64-8130-5BBF-6B48-37B5AFE6014F}",
+    "Hash": "{B8E26337-EC58-2F2A-9955-FE936AC1CB85}",
     "ObjectPath": "\\SoundBanks\\Default Work Unit\\Main",
     "ShortName": "Main",
     "Path": "Main.bnk",
@@ -3051,26 +3051,6 @@
       ]
      },
      {
-      "Id": "2236435535",
-      "Name": "Play_PickUp_Money",
-      "ObjectPath": "\\Events\\Default Work Unit\\SFX\\Actions\\Play_PickUp_Money",
-      "GUID": "{BACE8BB0-2B9C-4ED4-9C4A-48C500A6A776}",
-      "DurationType": "OneShot",
-      "DurationMin": "0.9141137",
-      "DurationMax": "1.8434774",
-      "MediaRefs": [
-       {
-        "Id": "188525812"
-       },
-       {
-        "Id": "384635705"
-       },
-       {
-        "Id": "518410701"
-       }
-      ]
-     },
-     {
       "Id": "1724459581",
       "Name": "Play_SFX_Action_B_Hack",
       "ObjectPath": "\\Events\\Default Work Unit\\SFX\\Actions\\Play_SFX_Action_B_Hack",
@@ -3862,6 +3842,26 @@
        },
        {
         "Id": "1021562170"
+       }
+      ]
+     },
+     {
+      "Id": "3737616595",
+      "Name": "Play_SFX_PickUp_Money",
+      "ObjectPath": "\\Events\\Default Work Unit\\SFX\\Actions\\Play_SFX_PickUp_Money",
+      "GUID": "{BACE8BB0-2B9C-4ED4-9C4A-48C500A6A776}",
+      "DurationType": "OneShot",
+      "DurationMin": "0.9141137",
+      "DurationMax": "1.8434774",
+      "MediaRefs": [
+       {
+        "Id": "188525812"
+       },
+       {
+        "Id": "384635705"
+       },
+       {
+        "Id": "518410701"
        }
       ]
      },
@@ -5065,6 +5065,6 @@
     ]
    }
   ],
-  "FileHash": "{317DEA16-212D-0A1A-ABD2-D5D5CFF445F8}"
+  "FileHash": "{8F490290-1B42-CBFE-D400-72441E1DC020}"
  }
 }

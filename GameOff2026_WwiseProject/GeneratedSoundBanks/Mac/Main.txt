@@ -32,7 +32,6 @@ Event	ID	Name			Wwise Object Path	Notes
 	2058610914	Stop_MUS_CharacterSlowdown			\Default Work Unit\MUSIC\Stop_MUS_CharacterSlowdown	
 	2154578732	Play_SFX_E_Impact			\Default Work Unit\SFX\Impacts\Play_SFX_E_Impact	
 	2232411947	Play_MUS_Character			\Default Work Unit\MUSIC\Play_MUS_Character	
-	2236435535	Play_PickUp_Money			\Default Work Unit\SFX\Actions\Play_PickUp_Money	
 	2318470590	Play_MUS_MissionIntro			\Default Work Unit\MUSIC\Play_MUS_MissionIntro	
 	2324079728	Play_VO_C_HitHeavy			\Default Work Unit\VO\C\Play_VO_C_HitHeavy	
 	2417158132	Stop_SFX_Action_B_HackSuccess			\Default Work Unit\SFX\Actions\Stop_SFX_Action_B_HackSuccess	
@@ -50,6 +49,7 @@ Event	ID	Name			Wwise Object Path	Notes
 	3401867411	Play_SFX_BombExplosion			\Default Work Unit\SFX\Weapons\Play_SFX_BombExplosion	
 	3649037401	Stop_MUS_All			\Default Work Unit\MUSIC\Stop_MUS_All	
 	3696050016	Play_SFX_RifleEnemy			\Default Work Unit\SFX\Weapons\Play_SFX_RifleEnemy	
+	3737616595	Play_SFX_PickUp_Money			\Default Work Unit\SFX\Actions\Play_SFX_PickUp_Money	
 	3987225948	Play_VO_B_Dodge			\Default Work Unit\VO\B\Play_VO_B_Dodge	
 	3997635366	Play_VO_A_HitHeavy			\Default Work Unit\VO\A\Play_VO_A_HitHeavy	
 	4118679155	Stop_SFX_Action_B_Hack			\Default Work Unit\SFX\Actions\Stop_SFX_Action_B_Hack	
