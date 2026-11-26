@@ -39,6 +39,7 @@
         public const float DemolitionColliderRadius = 1.0f;
         public const int DemolitionDamage = 100;
         public const float DemolitionBlastRadius = 3f;
+        public const float DemolitionMineReach = 1f;
 
         public const float SniperCooldown = 1.5f;
         public const float SniperMoveSpeed = 7.5f;

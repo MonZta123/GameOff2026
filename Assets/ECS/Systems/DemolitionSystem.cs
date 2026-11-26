@@ -73,7 +73,7 @@ namespace ECS.Systems
                     snapshot._placedBombs.Spawn(new PlacedBomb() { _position = player._position });
                 }
                 else if (trigger._triggerType == TriggerType.Mine &&
-                         trigger.IsInCircle(player._position, 2f, 1f, out _) && moveEvt._action)
+                         trigger.IsInCircle(player._position, Constants.DemolitionMineReach, 1f, out _) && moveEvt._action)
                 {
                     player._isActionActive = true;
 
