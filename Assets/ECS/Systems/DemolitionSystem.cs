@@ -37,27 +37,6 @@ namespace ECS.Systems
 
             player._isActionActive = false;
 
-            if (player._primaryReadyAt <= currentTick)
-            {
-                if (moveEvt._primary)
-                {
-                    player._primaryReadyAt = currentTick + _shootCooldownTicks;
-
-                    world.AddShootEvent(new ShootEvent
-                    {
-                        _type = ProjectileType.Demolition,
-                        _position = player._position,
-                        _angle = moveEvt._angle,
-                        _ttl = (int)(_tickRate * Constants.DemolitionProjectileTtl)
-                    });
-
-                    snapshot._soundNotificationPool.Add(new SoundNotification()
-                    {
-                        _soundType = SoundType.DemolitionThrow, _position = player._position
-                    });
-                }
-            }
-
             for (var i = snapshot._triggers.GetNumEntities() - 1; i >= 0; i--)
             {
                 ref var trigger = ref snapshot._triggers.GetEntityAt(i);
@@ -92,17 +71,35 @@ namespace ECS.Systems
 
                         snapshot._triggers.DespawnAt(i);
                     }
-
-                    player._velocity = Vector2.zero;
-                    player._angle = moveEvt._angle;
                 }
             }
 
-            if (player._isBlockedTo >= currentTick)
+            if (player._isActionActive)
             {
                 player._velocity = Vector2.zero;
                 player._angle = moveEvt._angle;
                 return;
+            }
+            
+            if (player._primaryReadyAt <= currentTick)
+            {
+                if (moveEvt._primary)
+                {
+                    player._primaryReadyAt = currentTick + _shootCooldownTicks;
+
+                    world.AddShootEvent(new ShootEvent
+                    {
+                        _type = ProjectileType.Demolition,
+                        _position = player._position,
+                        _angle = moveEvt._angle,
+                        _ttl = (int)(_tickRate * Constants.DemolitionProjectileTtl)
+                    });
+
+                    snapshot._soundNotificationPool.Add(new SoundNotification()
+                    {
+                        _soundType = SoundType.DemolitionThrow, _position = player._position
+                    });
+                }
             }
 
             player._velocity = moveEvt._movement * _speed;

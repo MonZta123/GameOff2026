@@ -1,4 +1,6 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
+using Domain;
 using ECS.Entities;
 using UnityEditor;
 using UnityEngine;
@@ -36,9 +38,15 @@ namespace Actors
 
         [SerializeField]
         private LineRenderer lineRenderer;
-        
+
         [SerializeField]
         private AK.Wwise.Event enemyDamageSound;
+
+        [SerializeField]
+        private SpriteRenderer coneRenderer;
+
+        [SerializeField]
+        private float maxConeAngle = 25f;
 
         public void Init(ECS.Entities.Enemy entity)
         {
@@ -76,6 +84,7 @@ namespace Actors
             {
                 animator.Play("Dead");
                 lineRenderer.enabled = false;
+                coneRenderer.enabled = false;
                 return;
             }
 
@@ -84,30 +93,49 @@ namespace Actors
                 if (!lineRenderer.enabled)
                     lineRenderer.enabled = true;
 
-                var offset = (_incomingEntity._lockedOnPosition -
-                              new Vector2(transform.position.x, transform.position.y)).normalized;
+                if (!coneRenderer.enabled)
+                    coneRenderer.enabled = true;
+
+                var timeLeft = (_incomingEntity._shootsAtTick - _tick) / 64f;
+
+                var coneVector = (_incomingEntity._lockedOnPosition -
+                                  new Vector2(transform.position.x, transform.position.y));
+
+                var offset = coneVector.normalized;
+
+                var angle2 = Mathf.Atan2(offset.y, offset.x) * Mathf.Rad2Deg;
+
+                var halfAngle = maxConeAngle * Mathf.Pow(Mathf.Clamp01(timeLeft / Constants.ButtlerLockOnSeconds), 2f);
+
+                var yValue = 2f * Mathf.Tan(halfAngle * Mathf.Deg2Rad) * coneVector.magnitude;
+
+                coneRenderer.transform.rotation = Quaternion.Euler(0, 0, angle2);
+                coneRenderer.transform.localScale = new Vector3(coneVector.magnitude, yValue, 1);
 
                 lineRenderer.SetPosition(0, transform.position + new Vector3(offset.x, offset.y, 0));
                 lineRenderer.SetPosition(1, _incomingEntity._lockedOnPosition);
-
-                var timeLeft = (_incomingEntity._shootsAtTick - _tick) / 64f;
 
                 if (timeLeft > 1f)
                 {
                     lineRenderer.startColor = new Color(1, 0, 0);
                     lineRenderer.endColor = new Color(1, 0, 0);
+                    coneRenderer.color = new Color(1, 0, 0, coneRenderer.color.a);
                 }
                 else
                 {
                     var val = Color.Lerp(Color.red, Color.white, (Mathf.Sin(_tick * 0.5f) + 1f) / 2f);
                     lineRenderer.startColor = val;
                     lineRenderer.endColor = val;
+                    coneRenderer.color = new Color(val.r, val.g, val.b, coneRenderer.color.a);
                 }
             }
             else
             {
                 if (lineRenderer.enabled)
                     lineRenderer.enabled = false;
+
+                if (coneRenderer.enabled)
+                    coneRenderer.enabled = false;
             }
 
             var prefix = "Idle_";
@@ -222,6 +250,7 @@ namespace Actors
             _lastPosition = Vector2.zero;
             lineRenderer.enabled = false;
             gunRenderer.sprite = null;
+            coneRenderer.enabled = false;
 
             spriteRenderer.GetPropertyBlock(_materialPropertyBlock);
             _materialPropertyBlock.SetFloat(s_flashAmount, 0f);
