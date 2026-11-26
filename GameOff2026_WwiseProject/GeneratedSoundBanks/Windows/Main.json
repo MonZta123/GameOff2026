@@ -10,7 +10,7 @@
     "Type": "User",
     "GUID": "{3059A6CE-8152-4CD2-BEA9-69E98BB60D65}",
     "Language": "SFX",
-    "Hash": "{3BE64413-F3A9-D816-4B56-ACC6B648D81D}",
+    "Hash": "{25FB8784-7DCD-F26F-9B85-C5D361106468}",
     "ObjectPath": "\\SoundBanks\\Default Work Unit\\Main",
     "ShortName": "Main",
     "Path": "Main.bnk",
@@ -2344,8 +2344,8 @@
       "ObjectPath": "\\Events\\Default Work Unit\\MUSIC\\Play_MUS_BreakingIn",
       "GUID": "{396C26E0-1712-4EB6-9737-BD0C4BC76B8B}",
       "DurationType": "OneShot",
-      "DurationMin": "39.652176",
-      "DurationMax": "39.652176",
+      "DurationMin": "40.852177",
+      "DurationMax": "40.852177",
       "MediaRefs": [
        {
         "Id": "290143922"
@@ -5065,6 +5065,6 @@
     ]
    }
   ],
-  "FileHash": "{042DA925-8E8E-9296-6D86-CBA5EFFB0610}"
+  "FileHash": "{DAEAD3F9-42D0-710C-9BC4-7493BA612956}"
  }
 }

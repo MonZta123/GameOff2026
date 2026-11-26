@@ -8385,6 +8385,13 @@
 							</ChildrenList>
 						</Folder>
 						<Sound Name="MUS_BreakingAndEntering" ID="{8497AFC8-B887-47AC-81E7-86D7099CA56A}" ShortID="625736932">
+							<PropertyList>
+								<Property Name="InitialDelay" Type="Real64">
+									<ValueList>
+										<Value>1.2</Value>
+									</ValueList>
+								</Property>
+							</PropertyList>
 							<ReferenceList>
 								<Reference Name="Conversion">
 									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{4ADFD3A0-A42B-432C-8502-1433439D5054}"/>
