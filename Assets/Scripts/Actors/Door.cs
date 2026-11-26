@@ -77,7 +77,7 @@ namespace Actors
             if (ShowMarkersFor == ShowMarkerFor.Demolition && _appliedState != ShowMarkerFor.Demolition &&
                 !DemolitionDestroyedDoor)
             {
-                marker.SetText(string.Empty, "Trien can destroy doors with leftclick!");
+                marker.SetText(string.Empty, "Tien can destroy doors with leftclick!");
                 marker.gameObject.SetActive(true);
                 _appliedState = ShowMarkerFor.Demolition;
             }
