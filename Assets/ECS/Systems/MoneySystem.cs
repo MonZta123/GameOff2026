@@ -17,10 +17,6 @@ namespace ECS.Systems
 
                 for (var j = 0; j < snapshot._players.GetNumEntities(); j++)
                 {
-                    // if (trigger._playerFilter != j)
-                    //     continue;
-
-
                     var player = snapshot._players.GetEntityAt(j);
                     snapshot._soundNotificationPool.Add(new SoundNotification()
                     {

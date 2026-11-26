@@ -896,8 +896,10 @@ public class GameSessionHost : MonoBehaviour
 
         var entityNum = snapshot._players.GetNumEntities() - 1;
         var state = _gameSessionState == GameSessionState.ReplayMode ? 4 : _timeline.GetCurrentSegment();
-
-        soundSystem.PlayCharacterMusic(entityNum, state);
+        
+        var musicIndex = _gameSessionState == GameSessionState.ReplayMode ? _timeline.GetCurrentSegment() : entityNum;
+        
+        soundSystem.PlayCharacterMusic(musicIndex, state);
 
         _tickDriver.StartSim();
 
