@@ -274,8 +274,10 @@ MonoBehaviour:
     _role: Tammy King
   - _name: Dave. the Hacker
     _role: Mark Evans
-  - _name: Tien, Demolition Expert
+  - _name: Tien, the Demolition Expert
     _role: Anna Tran
+  - _name: Renoir, the Sniper
+    _role: Emmett Clementine
   - _name: Additional Voices
     _role: Andrew Latheron
   target: {fileID: 671056075515391194}

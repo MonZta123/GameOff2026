@@ -1725,7 +1725,7 @@ Camera:
   far clip plane: 5000
   field of view: 40
   orthographic: 1
-  orthographic size: 4.8645835
+  orthographic size: 6.2916665
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -7837,6 +7837,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4645532002942066275, guid: 442d1b963fd56cb488db83c62d86ccea, type: 3}
+      propertyPath: credits.Array.data[6]._name
+      value: Tien, the Demolition Expert
+      objectReference: {fileID: 0}
     - target: {fileID: 5088488861345330862, guid: 442d1b963fd56cb488db83c62d86ccea, type: 3}
       propertyPath: m_Pivot.x
       value: 0
