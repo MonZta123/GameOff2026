@@ -266,10 +266,10 @@ MonoBehaviour:
     _role: Andrew Latheron
     _image: {fileID: -3614931751823013910, guid: eed60cb087b9fdce4b9b2646a8dde6c8, type: 3}
   - _name: Game Design & Graphics
-    _role: Anne Truong
+    _role: Anne Truong (20Lux)
     _image: {fileID: 7079860398518955628, guid: 4fe79c48e413dd498b59305efd68b7f1, type: 3}
   - _name: Game Mechanics & Gameplay Design
-    _role: Martin Gerstenmaier
+    _role: Martin Gerstenmaier (TJ)
     _image: {fileID: -3314907430006149494, guid: a156a80d40960adad9181f452a8bf779, type: 3}
   - _name: Vietnamese Translation
     _role: Tien Tran
