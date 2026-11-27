@@ -18,6 +18,7 @@
 						<ObjectRef Name="Stop_MUS_Character" ID="{DFC3BA48-0CDF-43A9-9F8B-55C6534D0545}" WorkUnitID="{2B12C590-A22E-47AF-9697-251FEA2DB802}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="Play_VO_B_Dead" ID="{71D3AACC-0B82-43B1-870A-E80857458AB5}" WorkUnitID="{2B12C590-A22E-47AF-9697-251FEA2DB802}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="Play_SFX_UI_Hover" ID="{775AAA7A-5AD7-4404-96B6-EE23F9948E6A}" WorkUnitID="{2B12C590-A22E-47AF-9697-251FEA2DB802}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="Play_MUS_MissionTransitions" ID="{A5169195-1C77-4408-8E6F-0F48E134807A}" WorkUnitID="{2B12C590-A22E-47AF-9697-251FEA2DB802}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="Play_SFX_Pistol" ID="{94EA36F4-1CB8-44B4-B222-E08464C698A3}" WorkUnitID="{2B12C590-A22E-47AF-9697-251FEA2DB802}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="Play_SFX_Footsteps_A" ID="{3ED77479-A148-44F9-817A-A296ABFBE50F}" WorkUnitID="{2B12C590-A22E-47AF-9697-251FEA2DB802}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="Stop_AMB_All" ID="{EEAC5E1E-C457-45C6-A009-C9B36D62B1A5}" WorkUnitID="{2B12C590-A22E-47AF-9697-251FEA2DB802}" Origin="Manual" Filter="7"/>
@@ -51,6 +52,7 @@
 						<ObjectRef Name="Play_SFX_RifleEnemy" ID="{214485B7-449F-4BAC-BD61-B7C36B271B46}" WorkUnitID="{2B12C590-A22E-47AF-9697-251FEA2DB802}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="Play_MUS_MissionPaused" ID="{5FB0A79F-8C17-4BBC-8B13-4FC195E511ED}" WorkUnitID="{2B12C590-A22E-47AF-9697-251FEA2DB802}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="Play_SFX_Action_C_Defuse" ID="{50C950DC-2033-4BD6-B0A2-22C4070A3229}" WorkUnitID="{2B12C590-A22E-47AF-9697-251FEA2DB802}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="Stop_MUS_MissionTransitions" ID="{48731ECE-B7EC-4CDE-A595-66F7AD8C15CA}" WorkUnitID="{2B12C590-A22E-47AF-9697-251FEA2DB802}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="Play_VO_D_HitHeavy" ID="{7C805774-2F8A-4D48-8746-FD718FDAF1CD}" WorkUnitID="{2B12C590-A22E-47AF-9697-251FEA2DB802}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="Play_VO_D_Dead" ID="{B2C7AAFB-B802-4DE9-A20C-7D8C426F1C15}" WorkUnitID="{2B12C590-A22E-47AF-9697-251FEA2DB802}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="Stop_SFX_Action_B_Hack" ID="{C2AC2B4D-DC03-4E19-B71D-21F868930D35}" WorkUnitID="{2B12C590-A22E-47AF-9697-251FEA2DB802}" Origin="Manual" Filter="7"/>

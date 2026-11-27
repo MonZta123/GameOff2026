@@ -10,7 +10,7 @@
     "Type": "User",
     "GUID": "{3059A6CE-8152-4CD2-BEA9-69E98BB60D65}",
     "Language": "SFX",
-    "Hash": "{1E15123F-A076-0355-4F52-F4AFE0720451}",
+    "Hash": "{C99BAE89-7161-5D8E-A4B1-79C0770C6086}",
     "ObjectPath": "\\SoundBanks\\Default Work Unit\\Main",
     "ShortName": "Main",
     "Path": "Main.bnk",
@@ -686,6 +686,14 @@
       "Location": "Memory",
       "ShortName": "VO_B_Dodge_04.wav",
       "CachePath": "97/{973F1841-7FEA-04F3-902F-163B956772C7}.wem"
+     },
+     {
+      "Id": "348444549",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "Cutscene_HelicopterExtraction.wav",
+      "CachePath": "0B/{0B0046AC-DBF2-34E1-4AE8-9E04AF63887D}.wem"
      },
      {
       "Id": "359600873",
@@ -3017,6 +3025,9 @@
       "DurationMax": "11.368413",
       "MediaRefs": [
        {
+        "Id": "348444549"
+       },
+       {
         "Id": "610646790"
        }
       ]
@@ -3040,6 +3051,21 @@
       "Name": "Play_MUS_MissionPaused",
       "ObjectPath": "\\Events\\Default Work Unit\\MUSIC\\Play_MUS_MissionPaused",
       "GUID": "{5FB0A79F-8C17-4BBC-8B13-4FC195E511ED}",
+      "DurationType": "Infinite",
+      "MediaRefs": [
+       {
+        "Id": "268413720"
+       },
+       {
+        "Id": "1062283916"
+       }
+      ]
+     },
+     {
+      "Id": "3828475576",
+      "Name": "Play_MUS_MissionTransitions",
+      "ObjectPath": "\\Events\\Default Work Unit\\MUSIC\\Play_MUS_MissionTransitions",
+      "GUID": "{A5169195-1C77-4408-8E6F-0F48E134807A}",
       "DurationType": "Infinite",
       "MediaRefs": [
        {
@@ -4919,6 +4945,16 @@
       "DurationMax": "0"
      },
      {
+      "Id": "2931902702",
+      "Name": "Stop_MUS_MissionTransitions",
+      "ObjectPath": "\\Events\\Default Work Unit\\MUSIC\\Stop_MUS_MissionTransitions",
+      "GUID": "{48731ECE-B7EC-4CDE-A595-66F7AD8C15CA}",
+      "MaxAttenuation": "0",
+      "DurationType": "OneShot",
+      "DurationMin": "0",
+      "DurationMax": "0"
+     },
+     {
       "Id": "4118679155",
       "Name": "Stop_SFX_Action_B_Hack",
       "ObjectPath": "\\Events\\Default Work Unit\\SFX\\Actions\\Stop_SFX_Action_B_Hack",
@@ -5066,6 +5102,6 @@
     ]
    }
   ],
-  "FileHash": "{CE4EABFD-D586-C946-184A-CB71E4818B26}"
+  "FileHash": "{13EC7FEB-5EE2-272C-3C07-D979B3077C3E}"
  }
 }

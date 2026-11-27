@@ -84,6 +84,13 @@
 										</Reference>
 									</ReferenceList>
 								</Action>
+								<Action Name="" ID="{2E05E531-E773-4C66-A396-229B381DE47D}" ShortID="646307038">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="Cutscene_HelicopterExtraction" ID="{2B40B889-A46D-4954-917E-965DCF2CB83F}" WorkUnitID="{AF633A36-6CC5-470E-AD72-3F76D6F661BF}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
 							</ChildrenList>
 						</Event>
 						<Event Name="Stop_MUS_All" ID="{F664C197-2CFA-4703-BBB5-AD81AD6313A2}">
@@ -199,6 +206,37 @@
 									<ReferenceList>
 										<Reference Name="Target">
 											<ObjectRef Name="MUS_BreakingAndEntering" ID="{8497AFC8-B887-47AC-81E7-86D7099CA56A}" WorkUnitID="{AF633A36-6CC5-470E-AD72-3F76D6F661BF}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+						<Event Name="Play_MUS_MissionTransitions" ID="{A5169195-1C77-4408-8E6F-0F48E134807A}">
+							<PropertyList>
+								<Property Name="Color" Type="int16" Value="10"/>
+							</PropertyList>
+							<ChildrenList>
+								<Action Name="" ID="{80A009B1-8579-49CA-B698-ED755A13E9BB}" ShortID="727079737">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="MUS_MissionTransitions" ID="{DAC555B9-6328-4592-944D-19B2B2189494}" WorkUnitID="{AF633A36-6CC5-470E-AD72-3F76D6F661BF}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+						<Event Name="Stop_MUS_MissionTransitions" ID="{48731ECE-B7EC-4CDE-A595-66F7AD8C15CA}">
+							<PropertyList>
+								<Property Name="Color" Type="int16" Value="10"/>
+							</PropertyList>
+							<ChildrenList>
+								<Action Name="" ID="{573A91F9-3591-4979-B632-62D70BCB6492}" ShortID="458055182">
+									<PropertyList>
+										<Property Name="ActionType" Type="int16" Value="2"/>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="MUS_MissionTransitions" ID="{DAC555B9-6328-4592-944D-19B2B2189494}" WorkUnitID="{AF633A36-6CC5-470E-AD72-3F76D6F661BF}"/>
 										</Reference>
 									</ReferenceList>
 								</Action>

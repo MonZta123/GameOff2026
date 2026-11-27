@@ -42,6 +42,7 @@ Event	ID	Name			Wwise Object Path	Notes
 	2632977701	Play_SFX_DoorSlideOpen			\Default Work Unit\SFX\Environment\Play_SFX_DoorSlideOpen	
 	2770407763	Play_SFX_Action_C_Defuse			\Default Work Unit\SFX\Actions\Play_SFX_Action_C_Defuse	
 	2920408515	Play_SFX_Pistol			\Default Work Unit\SFX\Weapons\Play_SFX_Pistol	
+	2931902702	Stop_MUS_MissionTransitions			\Default Work Unit\MUSIC\Stop_MUS_MissionTransitions	
 	3049103921	Play_MUS_MissionEnding			\Default Work Unit\MUSIC\Play_MUS_MissionEnding	
 	3272234049	Play_SFX_Attack_A_Swing			\Default Work Unit\SFX\Attacks\Play_SFX_Attack_A_Swing	
 	3287225507	Play_SFX_DoorSlideShut			\Default Work Unit\SFX\Environment\Play_SFX_DoorSlideShut	
@@ -50,6 +51,7 @@ Event	ID	Name			Wwise Object Path	Notes
 	3649037401	Stop_MUS_All			\Default Work Unit\MUSIC\Stop_MUS_All	
 	3696050016	Play_SFX_RifleEnemy			\Default Work Unit\SFX\Weapons\Play_SFX_RifleEnemy	
 	3737616595	Play_SFX_PickUp_Money			\Default Work Unit\SFX\Actions\Play_SFX_PickUp_Money	
+	3828475576	Play_MUS_MissionTransitions			\Default Work Unit\MUSIC\Play_MUS_MissionTransitions	
 	3987225948	Play_VO_B_Dodge			\Default Work Unit\VO\B\Play_VO_B_Dodge	
 	3997635366	Play_VO_A_HitHeavy			\Default Work Unit\VO\A\Play_VO_A_HitHeavy	
 	4118679155	Stop_SFX_Action_B_Hack			\Default Work Unit\SFX\Actions\Stop_SFX_Action_B_Hack	
@@ -184,7 +186,7 @@ In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
 	249038957	VO_B_Hack_02	.cache\F4\{F422434D-36CC-E224-C3F3-4CF3A7291F26}.wem		\Containers\Default Work Unit\VO\CharacterB\Hack\VO_B_Hack_02		33717
 	260779212	A_Attack_01	.cache\5D\{5DF27BB6-F524-42F2-F257-E17FF1AB50AB}.wem		\Containers\Default Work Unit\VO\CharacterA\AttackQuip\Attack\A_Attack_01		3649
 	267769419	Crunch_03	.cache\73\{7331D9B9-DD47-E426-94D0-304B94236389}.wem		\Containers\Default Work Unit\SFX\Impacts\Crunch\Crunch_03		6966
-	268413720	MUS_Pause_Intro	.cache\C4\{C4849F87-3F19-E727-BD94-D20CBF1EA449}.wem		\Containers\Default Work Unit\MUSIC\MUS_Mission\MUS_MissionPaused\MUS_Pause_Intro\MUS_Pause_Intro		64601
+	268413720	MUS_Pause_Intro	.cache\C4\{C4849F87-3F19-E727-BD94-D20CBF1EA449}.wem		\Containers\Default Work Unit\MUSIC\MUS_Mission\MUS_MissionTransitions\MUS_Pause_Intro\MUS_Pause_Intro		64601
 	271100864	C_HitHeavy_02	.cache\AD\{ADA30D55-EB10-4485-3DC0-FCF3C4669DED}.wem		\Containers\Default Work Unit\VO\CharacterC\Wind\C_HitHeavy_02		8393
 	277151770	Pistol_01	.cache\69\{69456888-CC2E-1932-80BA-4281F5CDD46B}.wem		\Containers\Default Work Unit\SFX\Attacks\Dave\AttackPistol\Pistol_01		5139
 	278186006	Dash	.cache\4B\{4BF91961-D4D4-C890-E30B-1DE21262E955}.wem		\Containers\Default Work Unit\SFX\Movement\Dash\Dash		3417
@@ -198,6 +200,7 @@ In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
 	321535931	D_HitHeavy_05	.cache\35\{3547FA71-C628-6158-58B0-C6F876EBB1CD}.wem		\Containers\Default Work Unit\VO\CharacterD\Wind\D_HitHeavy_05		5529
 	332679464	MUS_A_1	.cache\F7\{F78A4544-6798-B7C1-5241-ADF27CD8C84D}.wem		\Containers\Default Work Unit\MUSIC\MUS_Mission\MUS_Character\Character_A\Round_1\MUS_A_1		578370
 	333456175	VO_B_Dodge_04	.cache\97\{973F1841-7FEA-04F3-902F-163B956772C7}.wem		\Containers\Default Work Unit\VO\CharacterB\Dodge\Quip or Silence\VO_B_Dodge_04		11829
+	348444549	Cutscene_HelicopterExtraction	.cache\0B\{0B0046AC-DBF2-34E1-4AE8-9E04AF63887D}.wem		\Containers\Default Work Unit\SFX\Environment\Cutscene_HelicopterExtraction		109334
 	359600873	FootstepB_06	.cache\7A\{7A346862-75FA-D3DD-5076-578842827277}.wem		\Containers\Default Work Unit\SFX\Movement\FootstepsB\Carpet\FootstepB_06		8104
 	359792775	C_Win_01	.cache\96\{96F7ABB6-0275-91C6-E32D-5821C851E5C1}.wem		\Containers\Default Work Unit\VO\CharacterC\Win\C_Win_01		15157
 	360860511	VO_D_Dead_01	.cache\66\{66BF1CD0-43FD-F5A3-9BA0-0095710AB11D}.wem		\Containers\Default Work Unit\VO\CharacterD\VO_D_Dead_01		18331
