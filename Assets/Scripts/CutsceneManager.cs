@@ -16,9 +16,15 @@ public class CutsceneManager : MonoBehaviour
     [SerializeField]
     private Animator camAnimator;
 
+    [SerializeField]
+    private AK.Wwise.Event onCutsceneStart;
+
     public Action OnCutsceneFinished;
-    
-    public AK.Wwise.Event onCutsceneStart;
+
+    public void PlayCutsceneSound()
+    {
+        onCutsceneStart.Post(gameObject);
+    }
 
     private void Awake()
     {
@@ -26,13 +32,8 @@ public class CutsceneManager : MonoBehaviour
         timeline.stopped += TimeLineFinished;
         if (camAnimator)
             camAnimator.enabled = false;
-        
-        Invoke(nameof(PlayCutsceneSound), 0.2f);
-    }
 
-    private void PlayCutsceneSound()
-    {
-        onCutsceneStart.Post(gameObject);
+        Invoke(nameof(PlayCutsceneSound), 0.2f);
     }
 
     private void TimeLineFinished(PlayableDirector director)
@@ -44,7 +45,7 @@ public class CutsceneManager : MonoBehaviour
 
         if (camAnimator)
             camAnimator.enabled = false;
-        
+
         if (OnCutsceneFinished != null)
         {
             _fadeCoroutine = StartCoroutine(FadeOut(() => OnCutsceneFinished?.Invoke()));
@@ -61,7 +62,7 @@ public class CutsceneManager : MonoBehaviour
     {
         timeline.time = 0;
         timeline.Evaluate();
-        
+
         if (_fadeCoroutine != null)
         {
             StopCoroutine(_fadeCoroutine);

@@ -43,10 +43,34 @@ namespace Notifications
         [SerializeField]
         private AK.Wwise.Event win;
 
-        private List<GameObject> _soundChannels = new();
+        [SerializeField]
+        private AK.Wwise.Event startCutsceneSound;
+    
+        [SerializeField]
+        private AK.Wwise.Event stopCutsceneSound;
+    
+        [SerializeField]
+        private AK.Wwise.Event helicopterEnding;
+        
+        private readonly List<GameObject> _soundChannels = new();
 
         private int _nextSoundChannel;
 
+        public void PlayCutsceneSound()
+        {
+            startCutsceneSound.Post(gameObject);
+        }
+        
+        public void StopCutsceneSound()
+        {
+            stopCutsceneSound.Post(gameObject);
+        }
+        
+        public void PlayHelicopterEnding()
+        {
+            helicopterEnding.Post(gameObject);
+        }
+        
         private void Awake()
         {
             for (var i = 0; i < 16; i++)
