@@ -10,7 +10,7 @@
     "Type": "User",
     "GUID": "{3059A6CE-8152-4CD2-BEA9-69E98BB60D65}",
     "Language": "SFX",
-    "Hash": "{25FB8784-7DCD-F26F-9B85-C5D361106468}",
+    "Hash": "{1E15123F-A076-0355-4F52-F4AFE0720451}",
     "ObjectPath": "\\SoundBanks\\Default Work Unit\\Main",
     "ShortName": "Main",
     "Path": "Main.bnk",
@@ -3850,6 +3850,7 @@
       "Name": "Play_SFX_PickUp_Money",
       "ObjectPath": "\\Events\\Default Work Unit\\SFX\\Actions\\Play_SFX_PickUp_Money",
       "GUID": "{BACE8BB0-2B9C-4ED4-9C4A-48C500A6A776}",
+      "MaxAttenuation": "100",
       "DurationType": "OneShot",
       "DurationMin": "0.9141137",
       "DurationMax": "1.8434774",
@@ -5065,6 +5066,6 @@
     ]
    }
   ],
-  "FileHash": "{53BD0B29-E827-E2D1-A9F4-8787F7EDA123}"
+  "FileHash": "{AC16A712-1A81-6711-D7EB-0A2CFEECBF9B}"
  }
 }

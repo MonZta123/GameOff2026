@@ -2560,6 +2560,7 @@
 									<ChildrenList>
 										<RandomSequenceContainer Name="Money" ID="{27B8D372-1F5B-40A3-9CF0-7BE959ABDE72}" ShortID="967612783">
 											<PropertyList>
+												<Property Name="3DSpatialization" Type="int16" Value="2"/>
 												<Property Name="Pitch" Type="int32">
 													<ModifierList>
 														<ModifierInfo>
@@ -2575,6 +2576,9 @@
 												</Property>
 											</PropertyList>
 											<ReferenceList>
+												<Reference Name="Attenuation">
+													<ObjectRef Name="ATT_ObjectDistance" ID="{561C61D3-69C0-414A-8BC5-DA941AF50071}" WorkUnitID="{096A0857-8B20-44A3-ADF2-07EE6756A01B}"/>
+												</Reference>
 												<Reference Name="Conversion">
 													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{4ADFD3A0-A42B-432C-8502-1433439D5054}"/>
 												</Reference>
