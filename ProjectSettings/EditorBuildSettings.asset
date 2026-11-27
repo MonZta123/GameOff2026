@@ -26,5 +26,8 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/CutScene/Segment3-4/Segment3-4.unity
     guid: 86cbde25339d3a91aa3a4e652f18cb38
+  - enabled: 1
+    path: Assets/CutScene/Outro/Outro.unity
+    guid: da0fd831ef3efb327aee8fd0305640b8
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 052faaac586de48259a63d0c4782560b, type: 3}

@@ -98,7 +98,6 @@ public class GameSessionHost : MonoBehaviour
 
     private GameSessionState _gameSessionState;
 
-
     private void Awake()
     {
 #if UNITY_EDITOR
@@ -440,18 +439,17 @@ public class GameSessionHost : MonoBehaviour
 
     private void ShowCutscene(int index, Action next = null)
     {
-        if (index == 3)
-        {
-            next?.Invoke();
-            return;
-        }
-
         var op = SceneManager.LoadSceneAsync(cutsceneNames[index], LoadSceneMode.Additive);
         if (op == null)
         {
             next?.Invoke();
             return;
         }
+
+        if (index != 3)
+            soundSystem.PlayCutsceneSound();
+        else
+            soundSystem.PlayHelicopterEnding();
 
         op.completed += OnLoaded;
 
@@ -466,6 +464,7 @@ public class GameSessionHost : MonoBehaviour
             fade.enabled = false;
             var gos = SceneManager.GetSceneByName(cutsceneNames[index]).GetRootGameObjects();
             var go = gos.FirstOrDefault(go => go.GetComponent<CutsceneManager>());
+            
             if (!go)
             {
                 cam.enabled = true;
@@ -476,6 +475,7 @@ public class GameSessionHost : MonoBehaviour
 
                 if (op2 == null)
                 {
+                    soundSystem.StopCutsceneSound();
                     _gameSessionState = GameSessionState.Playing;
                     next?.Invoke();
                     return;
@@ -486,6 +486,7 @@ public class GameSessionHost : MonoBehaviour
 
                 void OnUnloaded(AsyncOperation _)
                 {
+                    soundSystem.StopCutsceneSound();
                     op2.completed -= OnUnloaded;
                     _gameSessionState = GameSessionState.Playing;
                     next?.Invoke();
@@ -499,6 +500,7 @@ public class GameSessionHost : MonoBehaviour
 
             void OnCutsceneFinished()
             {
+                soundSystem.StopCutsceneSound();
                 csManager.OnCutsceneFinished -= OnCutsceneFinished;
                 cam.enabled = true;
                 hud.gameObject.SetActive(true);

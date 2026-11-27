@@ -1270,6 +1270,10 @@ MonoBehaviour:
   timeline: {fileID: 0}
   fade: {fileID: 1436304351}
   camAnimator: {fileID: 0}
+  onCutsceneStart:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 0}
 --- !u!1 &1071669504
 GameObject:
   m_ObjectHideFlags: 0
@@ -25594,7 +25598,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1575818636}
   - component: {fileID: 1575818635}
-  - component: {fileID: 1575818634}
   m_Layer: 8
   m_Name: EventSystem
   m_TagString: Untagged
@@ -25602,18 +25605,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1575818634
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1575818633}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 01614664b831546d2ae94a42149d80ac, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Unity.InputSystem::UnityEngine.InputSystem.UI.InputSystemUIInputModule
 --- !u!114 &1575818635
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -26014,7 +26005,7 @@ MonoBehaviour:
   m_RefResolutionX: 320
   m_RefResolutionY: 180
   m_CropFrame: 0
-  m_GridSnapping: 1
+  m_GridSnapping: 2
   m_FilterMode: 0
   m_UpscaleRT: 0
   m_PixelSnapping: 0
@@ -26030,8 +26021,8 @@ Camera:
   m_GameObject: {fileID: 2004717661}
   m_Enabled: 1
   serializedVersion: 2
-  m_ClearFlags: 1
-  m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
+  m_ClearFlags: 2
+  m_BackGroundColor: {r: 0.10980392, g: 0.15294118, b: 0.19607843, a: 1}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0
@@ -26056,7 +26047,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 5.625
+  orthographic size: 8.1875
   m_Depth: 0
   m_CullingMask:
     serializedVersion: 2

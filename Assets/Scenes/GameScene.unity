@@ -216,7 +216,7 @@ MonoBehaviour:
     _mapType: 2
   - _area: {fileID: 2800000, guid: f1c2b373e6c602bd29570ed2b8e376d4, type: 3}
     _enemyMap: {fileID: 2800000, guid: ce8b2d3a4e3f94b7ab35d25527caac12, type: 3}
-    _mapType: 1
+    _mapType: 0
   snipeTarget: {fileID: 1672110092}
   fade: {fileID: 1477212882}
   soundSystem: {fileID: 13633231}
@@ -233,6 +233,7 @@ MonoBehaviour:
   - Segment1-2
   - Segment2-3
   - Segment3-4
+  - Outro
 --- !u!114 &13633226
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -561,6 +562,18 @@ MonoBehaviour:
     idInternal: 0
     valueGuidInternal: 
     WwiseObjectReference: {fileID: 11400000, guid: 2b96275c8d18d35438ffd2e393620fe8, type: 2}
+  startCutsceneSound:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: 946f43780625a0448b128fe95a583d9a, type: 2}
+  stopCutsceneSound:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: 7ce1ac4dec8dd5a4dac47fd67fc359da, type: 2}
+  helicopterEnding:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: 2a33daa494084184a8e6146f20015fbe, type: 2}
 --- !u!114 &13633232
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1725,7 +1738,7 @@ Camera:
   far clip plane: 5000
   field of view: 40
   orthographic: 1
-  orthographic size: 5.7291665
+  orthographic size: 5.4583335
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
