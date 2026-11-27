@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class CreditText : MonoBehaviour
 {
@@ -10,10 +11,16 @@ public class CreditText : MonoBehaviour
     [SerializeField]
     private TextMeshProUGUI namee;
 
-    public void SetText(string creditName, string creditRole)
+    [SerializeField]
+    private Image image;
+
+    public void SetText(string creditName, string creditRole, Sprite sprite = null)
     {
         role.text = creditRole;
         namee.text = creditName;
+        image.sprite = sprite;
+
+        image.color = sprite ? new Color(1f, 1f, 1f, 1f) : new Color(1f, 1f, 1f, 0f);
     }
 
     private Coroutine _fadeCoroutine;
@@ -39,24 +46,27 @@ public class CreditText : MonoBehaviour
 
             role.color = new Color(role.color.r, role.color.g, role.color.b, alpha);
             namee.color = new Color(namee.color.r, namee.color.g, namee.color.b, alpha);
+            image.color = image.sprite ? new Color(1f, 1f, 1f, alpha) : new Color(1f, 1f, 1f, 0f);
 
             yield return null;
         }
 
         role.color = new Color(role.color.r, role.color.g, role.color.b, 1.0f);
         namee.color = new Color(namee.color.r, namee.color.g, namee.color.b, 1.0f);
+        image.color = image.sprite ? new Color(1f, 1f, 1f, 1f) : new Color(1f, 1f, 1f, 0f);
     }
 
     public void Hide()
     {
         if (_fadeCoroutine != null)
             StopCoroutine(_fadeCoroutine);
-        
+
         _fadeCoroutine = null;
         role.color = new Color(role.color.r, role.color.g, role.color.b, 0);
         namee.color = new Color(namee.color.r, namee.color.g, namee.color.b, 0);
+        image.color = new Color(1f, 1f, 1f, 0f);
     }
-    
+
     public void FadeOut(float fadeTime)
     {
         if (_fadeCoroutine != null)
@@ -78,11 +88,13 @@ public class CreditText : MonoBehaviour
 
             role.color = new Color(role.color.r, role.color.g, role.color.b, alpha);
             namee.color = new Color(namee.color.r, namee.color.g, namee.color.b, alpha);
+            image.color = image.sprite ? new Color(1f, 1f, 1f, alpha) : new Color(1f, 1f, 1f, 0f);
 
             yield return null;
         }
 
         role.color = new Color(role.color.r, role.color.g, role.color.b, 0.0f);
         namee.color = new Color(namee.color.r, namee.color.g, namee.color.b, 0.0f);
+        image.color = new Color(1f, 1f, 1f, 0f);
     }
 }

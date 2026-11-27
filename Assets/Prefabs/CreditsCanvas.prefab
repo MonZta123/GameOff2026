@@ -264,22 +264,31 @@ MonoBehaviour:
   credits:
   - _name: Music & SFX
     _role: Andrew Latheron
+    _image: {fileID: -3614931751823013910, guid: eed60cb087b9fdce4b9b2646a8dde6c8, type: 3}
   - _name: Game Design & Graphics
     _role: Anne Truong
+    _image: {fileID: 7079860398518955628, guid: 4fe79c48e413dd498b59305efd68b7f1, type: 3}
   - _name: Game Mechanics & Gameplay Design
     _role: Martin Gerstenmaier
+    _image: {fileID: -3314907430006149494, guid: a156a80d40960adad9181f452a8bf779, type: 3}
   - _name: Vietnamese Translation
     _role: Tien Tran
+    _image: {fileID: 0}
   - _name: Olga, the Tank
     _role: Tammy King
+    _image: {fileID: 3728967715729355881, guid: bd703df920a4a2ff98bde05f6ca3dab0, type: 3}
   - _name: Dave, the Hacker
     _role: Mark Evans
+    _image: {fileID: -1843158029, guid: 6b9b9b3a95a294eafa5edc79e0548708, type: 3}
   - _name: Tien, the Demolition Expert
     _role: Anna Tran
+    _image: {fileID: -1942403881, guid: db7ea9cd401203a9a8c5ab161001acc3, type: 3}
   - _name: Renoir, the Sniper
     _role: Emmett Clementine
+    _image: {fileID: -4761031608955501879, guid: b80a59472eeb1ff5a9e2bca88dab005f, type: 3}
   - _name: Additional Voices
     _role: Andrew Latheron
+    _image: {fileID: -3614931751823013910, guid: eed60cb087b9fdce4b9b2646a8dde6c8, type: 3}
   target: {fileID: 671056075515391194}
   visibleDuration: 6
   waitBeginning: 1

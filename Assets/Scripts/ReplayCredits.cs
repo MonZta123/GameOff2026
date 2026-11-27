@@ -8,6 +8,7 @@ public struct CreditSlot
 {
     public string _name;
     public string _role;
+    public Sprite _image;
 }
 
 public class ReplayCredits : MonoBehaviour
@@ -84,7 +85,7 @@ public class ReplayCredits : MonoBehaviour
             _creditText.transform.rotation = spot.transform.rotation;
 
             _creditText.gameObject.SetActive(true);
-            _creditText.SetText(credit._name, credit._role);
+            _creditText.SetText(credit._name, credit._role, credit._image);
 
             _creditText.FadeIn(FadeTime);
 
