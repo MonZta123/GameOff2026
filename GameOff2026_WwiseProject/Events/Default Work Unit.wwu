@@ -242,6 +242,79 @@
 								</Action>
 							</ChildrenList>
 						</Event>
+						<Event Name="Play_MUS_ThankYou" ID="{C02A6700-2723-4A4C-A180-3716F9B64575}">
+							<PropertyList>
+								<Property Name="Color" Type="int16" Value="25"/>
+								<Property Name="OverrideColor" Type="bool" Value="True"/>
+							</PropertyList>
+							<ChildrenList>
+								<Action Name="" ID="{7EE4FF64-3251-41C6-9A52-85451510B693}" ShortID="912798938">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="MUS_ThankYou" ID="{068E8556-ADD6-43D7-98A9-0B952D22CCB8}" WorkUnitID="{AF633A36-6CC5-470E-AD72-3F76D6F661BF}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+								<Action Name="" ID="{6E9206BE-59A3-4BA4-8484-03CC1D046F64}" ShortID="200840548">
+									<PropertyList>
+										<Property Name="Delay" Type="Real64" Value="1"/>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="Win" ID="{74E9D423-1340-421B-A47C-59BC4A742716}" WorkUnitID="{AF633A36-6CC5-470E-AD72-3F76D6F661BF}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+								<Action Name="" ID="{8CDA00CC-DEFD-44EC-B943-71435DAE81DC}" ShortID="854208775">
+									<PropertyList>
+										<Property Name="Delay" Type="Real64" Value="1"/>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="Win" ID="{B0A4A53D-0FDE-4FF6-9930-8284F41F86A6}" WorkUnitID="{AF633A36-6CC5-470E-AD72-3F76D6F661BF}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+								<Action Name="" ID="{BB859BAC-1518-4527-802B-0F714142E474}" ShortID="1055838676">
+									<PropertyList>
+										<Property Name="Delay" Type="Real64" Value="1"/>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="Win" ID="{30C9CFB1-4D57-4C61-A846-F374C05A5893}" WorkUnitID="{AF633A36-6CC5-470E-AD72-3F76D6F661BF}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+								<Action Name="" ID="{0E4B2A48-64EB-4706-BEA8-77CDDF8EDD52}" ShortID="229720027">
+									<PropertyList>
+										<Property Name="Delay" Type="Real64" Value="1"/>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="Win" ID="{7588B003-B50F-4BFD-B304-B14D31B3C0C6}" WorkUnitID="{AF633A36-6CC5-470E-AD72-3F76D6F661BF}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+						<Event Name="Stop_MUS_ThankYou" ID="{C4783E0A-A262-48B9-A55F-C7528CC93E10}">
+							<PropertyList>
+								<Property Name="Color" Type="int16" Value="25"/>
+								<Property Name="OverrideColor" Type="bool" Value="True"/>
+							</PropertyList>
+							<ChildrenList>
+								<Action Name="" ID="{68BB0B65-03DC-44AB-9ABB-171BC57BCAAE}" ShortID="432974610">
+									<PropertyList>
+										<Property Name="ActionType" Type="int16" Value="2"/>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="MUS_ThankYou" ID="{068E8556-ADD6-43D7-98A9-0B952D22CCB8}" WorkUnitID="{AF633A36-6CC5-470E-AD72-3F76D6F661BF}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
 					</ChildrenList>
 				</Folder>
 				<Folder Name="SFX" ID="{F60444EA-C359-4820-A24A-BB45EB6FDF94}" ShortID="373921432">

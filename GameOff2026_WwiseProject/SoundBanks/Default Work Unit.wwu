@@ -39,12 +39,14 @@
 						<ObjectRef Name="Play_MUS_MainMenu" ID="{5D3A0225-7ABD-4859-81CA-ADE23BFF2392}" WorkUnitID="{2B12C590-A22E-47AF-9697-251FEA2DB802}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="Play_SFX_Footsteps_C" ID="{76CCE283-0B61-485F-84F2-96637B943C4D}" WorkUnitID="{2B12C590-A22E-47AF-9697-251FEA2DB802}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="Play_AMB_SpaceBar" ID="{0D969937-733A-4893-8CA6-04ABFCDC1782}" WorkUnitID="{2B12C590-A22E-47AF-9697-251FEA2DB802}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="Stop_MUS_ThankYou" ID="{C4783E0A-A262-48B9-A55F-C7528CC93E10}" WorkUnitID="{2B12C590-A22E-47AF-9697-251FEA2DB802}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="Stop_MUS_MissionPaused" ID="{7683046E-CF5C-48C0-BC43-C9AF4F4E7512}" WorkUnitID="{2B12C590-A22E-47AF-9697-251FEA2DB802}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="Play_SFX_BombExplosion" ID="{30F644E1-4A6B-491A-B312-78F56222651D}" WorkUnitID="{2B12C590-A22E-47AF-9697-251FEA2DB802}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="Play_MUS_Character" ID="{44E5D87C-C9EE-4925-8962-FA761B8D15F0}" WorkUnitID="{2B12C590-A22E-47AF-9697-251FEA2DB802}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="Stop_AMB_SpaceBar" ID="{54044E00-E195-493B-8AA9-9AEDA7A82144}" WorkUnitID="{2B12C590-A22E-47AF-9697-251FEA2DB802}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="Play_SFX_Action_B_Hack" ID="{470A4D75-AAC0-4981-AEA8-A0F6959DB48D}" WorkUnitID="{2B12C590-A22E-47AF-9697-251FEA2DB802}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="Play_VO_ABCD_CharacterSelect" ID="{7BD38E24-5B74-49EA-A6C6-8B3F37FE1D9B}" WorkUnitID="{2B12C590-A22E-47AF-9697-251FEA2DB802}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="Play_MUS_ThankYou" ID="{C02A6700-2723-4A4C-A180-3716F9B64575}" WorkUnitID="{2B12C590-A22E-47AF-9697-251FEA2DB802}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="Play_SFX_Dash" ID="{7E19B84C-C838-4A91-89DA-BB94F3FE01E9}" WorkUnitID="{2B12C590-A22E-47AF-9697-251FEA2DB802}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="Play_SFX_E_Impact" ID="{A671DCAC-9993-4AC3-B194-BF98779E356E}" WorkUnitID="{2B12C590-A22E-47AF-9697-251FEA2DB802}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="Play_SFX_DoorSmash" ID="{666ACBC8-30A5-4B03-853D-52CF84ADE9CF}" WorkUnitID="{2B12C590-A22E-47AF-9697-251FEA2DB802}" Origin="Manual" Filter="7"/>

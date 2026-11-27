@@ -21,6 +21,7 @@ namespace AK
         static const AkUniqueID PLAY_MUS_MISSIONINTRO = 2318470590U;
         static const AkUniqueID PLAY_MUS_MISSIONPAUSED = 680738558U;
         static const AkUniqueID PLAY_MUS_MISSIONTRANSITIONS = 3828475576U;
+        static const AkUniqueID PLAY_MUS_THANKYOU = 2461317983U;
         static const AkUniqueID PLAY_SFX_ACTION_B_HACK = 1724459581U;
         static const AkUniqueID PLAY_SFX_ACTION_C_DEFUSE = 2770407763U;
         static const AkUniqueID PLAY_SFX_ATTACK_A_SLAM = 41955962U;
@@ -70,6 +71,7 @@ namespace AK
         static const AkUniqueID STOP_MUS_MAINMENU = 4243441902U;
         static const AkUniqueID STOP_MUS_MISSIONPAUSED = 1909315380U;
         static const AkUniqueID STOP_MUS_MISSIONTRANSITIONS = 2931902702U;
+        static const AkUniqueID STOP_MUS_THANKYOU = 1532515905U;
         static const AkUniqueID STOP_SFX_ACTION_B_HACK = 4118679155U;
         static const AkUniqueID STOP_SFX_ACTION_B_HACKSUCCESS = 2417158132U;
     } // namespace EVENTS
