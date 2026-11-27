@@ -399,16 +399,25 @@ public class GameSessionHost : MonoBehaviour
 
     private void InitReplay()
     {
-        Door.ShowMarkersFor = ShowMarkerFor.None;
-        flashingText.SetState(FlashingTextState.Playing);
-        soundSystem.WinCharacter();
-        credits.RunCredits(maxSeconds * 4);
-        _gameSessionState = GameSessionState.ReplayMode;
-        Trigger.PlayerTypeHere = null;
-        markerManager.SetVisible(false);
-        if (_activePlayerObject)
-            _activePlayerObject.SetActivePlayer(false);
-        InitNextReplaySegment();
+        AkUnitySoundEngine.StopAll();
+        _tickDriver.StopSim();
+        
+        StartCoroutine(FadeOut(() => ShowCutscene(3, FinallyDoTheReplay)));
+        return;
+
+        void FinallyDoTheReplay()
+        {
+            Door.ShowMarkersFor = ShowMarkerFor.None;
+            flashingText.SetState(FlashingTextState.Playing);
+            soundSystem.WinCharacter();
+            credits.RunCredits(maxSeconds * 4);
+            _gameSessionState = GameSessionState.ReplayMode;
+            Trigger.PlayerTypeHere = null;
+            markerManager.SetVisible(false);
+            if (_activePlayerObject)
+                _activePlayerObject.SetActivePlayer(false);
+            InitNextReplaySegment();
+        }
     }
 
     private void NextSegment()

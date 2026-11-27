@@ -166,10 +166,6 @@ MonoBehaviour:
   timeline: {fileID: 826125410}
   fade: {fileID: 736545221}
   camAnimator: {fileID: 0}
-  onCutsceneStart:
-    idInternal: 0
-    valueGuidInternal: 
-    WwiseObjectReference: {fileID: 0}
 --- !u!1 &123426207
 GameObject:
   m_ObjectHideFlags: 0
@@ -687,7 +683,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &736545219
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1300,10 +1296,10 @@ Camera:
   m_LensShift: {x: 0, y: 0}
   m_NormalizedViewPortRect:
     serializedVersion: 2
-    x: 0.0010729614
-    y: 0.003816794
-    width: 0.99785405
-    height: 0.99236643
+    x: 0.0021413276
+    y: 0.0038095238
+    width: 0.99571735
+    height: 0.9904762
   near clip plane: 0.3
   far clip plane: 1000
   field of view: 60
