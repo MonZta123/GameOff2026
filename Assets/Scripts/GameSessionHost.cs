@@ -100,9 +100,9 @@ public class GameSessionHost : MonoBehaviour
 
     private void Awake()
     {
-#if UNITY_EDITOR
-        maxSeconds = 30;
-#endif
+// #if UNITY_EDITOR
+//         maxSeconds = 5;
+// #endif
 
         pools.Initialize();
         _segmentTicks = maxSeconds * stepsPerSecond;
@@ -399,6 +399,9 @@ public class GameSessionHost : MonoBehaviour
 
     private void InitReplay()
     {
+        pools.ClearAllNotificationPools();
+        pools.ClearAllObjectPools();
+        
         AkUnitySoundEngine.StopAll();
         _tickDriver.StopSim();
         

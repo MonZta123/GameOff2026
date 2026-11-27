@@ -1267,9 +1267,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a6ab74cfb5335494da20733e9806508f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CutsceneManager
-  timeline: {fileID: 0}
+  timeline: {fileID: 581370159}
   fade: {fileID: 1436304351}
-  camAnimator: {fileID: 0}
+  camAnimator: {fileID: 2004717666}
 --- !u!1 &1071669504
 GameObject:
   m_ObjectHideFlags: 0
@@ -26035,15 +26035,15 @@ Camera:
   m_LensShift: {x: 0, y: 0}
   m_NormalizedViewPortRect:
     serializedVersion: 2
-    x: 0.0010706638
-    y: 0
-    width: 0.99785864
-    height: 0.9980952
+    x: 0
+    y: 0.0019157088
+    width: 1
+    height: 0.99616855
   near clip plane: 0.3
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 8.1875
+  orthographic size: 8.125
   m_Depth: 0
   m_CullingMask:
     serializedVersion: 2
@@ -26068,7 +26068,7 @@ Transform:
   m_GameObject: {fileID: 2004717661}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 8.51, y: 7.98, z: -1}
+  m_LocalPosition: {x: 8.48, y: 0.17, z: -1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
