@@ -215,7 +215,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: -1564140297003816623, guid: 4c54122dbb245d90eb7e634315023698, type: 3}
+  m_Sprite: {fileID: -1564140297003816623, guid: db7ea9cd401203a9a8c5ab161001acc3, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -876,7 +876,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: -4761031608955501879, guid: 4c4b943290a7ff025825e4f400920acb, type: 3}
+  m_Sprite: {fileID: -4761031608955501879, guid: b80a59472eeb1ff5a9e2bca88dab005f, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -970,7 +970,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Unity.RenderPipelines.Universal.2D.Runtime::UnityEngine.Rendering.Universal.PixelPerfectCamera
   m_ComponentVersion: 1
-  m_AssetsPPU: 32
+  m_AssetsPPU: 16
   m_RefResolutionX: 320
   m_RefResolutionY: 180
   m_CropFrame: 0
@@ -1016,7 +1016,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 4.0625
+  orthographic size: 5.625
   m_Depth: 0
   m_CullingMask:
     serializedVersion: 2
@@ -1173,7 +1173,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &794213405
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1546,7 +1546,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 3728967715729355881, guid: cbf0e4babd7ab8e51aaf900238771a8f, type: 3}
+  m_Sprite: {fileID: 3728967715729355881, guid: bd703df920a4a2ff98bde05f6ca3dab0, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -5457,7 +5457,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: -8577190761773121312, guid: 0c1cee4e3859c911182aeeb0a992c393, type: 3}
+  m_Sprite: {fileID: -8577190761773121312, guid: 6b9b9b3a95a294eafa5edc79e0548708, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
