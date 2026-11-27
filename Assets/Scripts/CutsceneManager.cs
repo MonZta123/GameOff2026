@@ -16,7 +16,15 @@ public class CutsceneManager : MonoBehaviour
     [SerializeField]
     private Animator camAnimator;
 
+    [SerializeField]
+    private AK.Wwise.Event onCutsceneStart;
+
     public Action OnCutsceneFinished;
+
+    public void PlayCutsceneSound()
+    {
+        onCutsceneStart.Post(gameObject);
+    }
 
     private void Awake()
     {
@@ -24,6 +32,8 @@ public class CutsceneManager : MonoBehaviour
         timeline.stopped += TimeLineFinished;
         if (camAnimator)
             camAnimator.enabled = false;
+
+        Invoke(nameof(PlayCutsceneSound), 0.2f);
     }
 
     private void TimeLineFinished(PlayableDirector director)
