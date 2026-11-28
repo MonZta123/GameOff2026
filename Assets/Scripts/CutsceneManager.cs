@@ -100,6 +100,11 @@ public class CutsceneManager : MonoBehaviour
         next?.Invoke();
     }
 
+    private void OnDestroy()
+    {
+        timeline.stopped -= TimeLineFinished;
+    }
+
     private IEnumerator FadeIn(Action next = null)
     {
         fade.color = new Color(0, 0, 0, 1);

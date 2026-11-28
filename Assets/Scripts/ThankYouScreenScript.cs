@@ -11,12 +11,30 @@ public class ThankYouScreenScript : MonoBehaviour
 
     [SerializeField]
     private Button button;
+    
+    [SerializeField]
+    private AK.Wwise.Event startThankYouMusic;
+    
+    [SerializeField]
+    private AK.Wwise.Event stopThankYouMusic;
 
     private void Awake()
     {
         fadeImage.color = new Color(0, 0, 0, 1);
         _fadeCoroutine = StartCoroutine(FadeIn());
         button.gameObject.SetActive(true);
+        
+        Invoke(nameof(StartMusic), 0.2f);
+    }
+    
+    private void StartMusic()
+    {
+        startThankYouMusic.Post(gameObject);
+    }
+    
+    private void StopMusic()
+    {
+        stopThankYouMusic.Post(gameObject);
     }
 
     private Coroutine _fadeCoroutine;
@@ -73,6 +91,7 @@ public class ThankYouScreenScript : MonoBehaviour
 
         fadeImage.color = new Color(0, 0, 0, 1);
         _fadeCoroutine = null;
+        StopMusic();
 
         next?.Invoke();
     }

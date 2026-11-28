@@ -21,6 +21,14 @@
 							<ObjectRef Name="MUS_MissionEnding" ID="{3A19AB97-7F51-4258-8EC9-657F03D0765A}" WorkUnitID="{AF633A36-6CC5-470E-AD72-3F76D6F661BF}"/>
 							<Position X="1" Y="2"/>
 						</Module>
+						<Module>
+							<ObjectRef Name="Play_MUS_ThankYou" ID="{C02A6700-2723-4A4C-A180-3716F9B64575}" WorkUnitID="{2B12C590-A22E-47AF-9697-251FEA2DB802}"/>
+							<Position X="2" Y="1"/>
+						</Module>
+						<Module>
+							<ObjectRef Name="Stop_MUS_ThankYou" ID="{C4783E0A-A262-48B9-A55F-C7528CC93E10}" WorkUnitID="{2B12C590-A22E-47AF-9697-251FEA2DB802}"/>
+							<Position X="3" Y="1"/>
+						</Module>
 					</ModuleList>
 				</SoundcasterSession>
 				<SoundcasterSession Name="Mission music selections" ID="{C9827C43-7731-49A7-937D-2ED06B4537CA}">

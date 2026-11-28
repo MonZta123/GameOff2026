@@ -26,34 +26,7 @@ public class HUD : MonoBehaviour
     private GameObject briefingPanel;
 
     [SerializeField]
-    private GameObject missionPanel;
-
-    [SerializeField]
-    private GameObject objectivePanel;
-
-    // [SerializeField]
-    // private GameObject targetPanel;
-
-    [SerializeField]
-    private GameObject threatMeter;
-
-    [SerializeField]
-    private TextMeshProUGUI threatMeterText;
-
-    [SerializeField]
-    private TextMeshProUGUI missionText;
-
-    [SerializeField]
     private TextMeshProUGUI rewindText;
-
-    [SerializeField]
-    private TextMeshProUGUI missionCount;
-
-    [SerializeField]
-    private TextMeshProUGUI objectiveText;
-
-    [SerializeField]
-    private TextMeshProUGUI objectiveCount;
 
     [SerializeField]
     private TextMeshProUGUI briefingText;
@@ -65,6 +38,9 @@ public class HUD : MonoBehaviour
     private Image shiftSquadText;
 
     private const float LogoSidePx = 1200;
+
+    [SerializeField]
+    private ObjectiveScript objectiveScript;
 
     public void InitLogoAnimation()
     {
@@ -122,107 +98,77 @@ public class HUD : MonoBehaviour
         }
     }
 
-    public void SetThreatMeterText(string text, bool isDangerous = false)
-    {
-        if (!threatMeter.activeInHierarchy)
-        {
-            threatMeter.SetActive(true);
-        }
-
-        if (threatMeterText.text != text)
-            threatMeterText.text = text;
-
-        var color = isDangerous ? Color.red : Color.white;
-        if (threatMeterText.color != color)
-            threatMeterText.color = color;
-
-        if (isDangerous)
-        {
-            if (_threatMeterCoroutine == null)
-                _threatMeterCoroutine = StartCoroutine(DoFlash());
-        }
-        else
-        {
-            if (_threatMeterCoroutine != null)
-                StopCoroutine(_threatMeterCoroutine);
-
-            _threatMeterCoroutine = null;
-
-            threatMeterText.gameObject.SetActive(true);
-        }
-    }
-
-    private Coroutine _threatMeterCoroutine;
+    private bool _flash;
 
     private IEnumerator DoFlash()
     {
         yield return null;
 
-        while (threatMeter.activeInHierarchy)
+        bool color = true;
+
+        while (_flash)
         {
-            threatMeterText.gameObject.SetActive(!threatMeterText.gameObject.activeInHierarchy);
+            color = !color;
+
+            objectiveScript.SetDangerousState(color);
+
+            if (!_flash)
+                yield break;
 
             yield return new WaitForSeconds(0.5f);
         }
 
-        threatMeterText.gameObject.SetActive(true);
         _threatMeterCoroutine = null;
     }
 
-    public void HideThreatMeter()
+    private Coroutine _threatMeterCoroutine;
+
+    public void FlashThreatMeter()
     {
-        if (threatMeter.activeInHierarchy)
-            threatMeter.SetActive(false);
+        if (_flash)
+            return;
+
+        _flash = true;
+        if (_threatMeterCoroutine != null)
+            StopCoroutine(_threatMeterCoroutine);
+
+        _threatMeterCoroutine = StartCoroutine(DoFlash());
+    }
+
+    public void StopFlashing()
+    {
+        if (!_flash)
+            return;
+        
+        _flash = false;
 
         if (_threatMeterCoroutine != null)
         {
             StopCoroutine(_threatMeterCoroutine);
-            _threatMeterCoroutine = null;
         }
 
-        threatMeterText.gameObject.SetActive(true);
+        objectiveScript.SetDangerousState(false);
+        _threatMeterCoroutine = null;
     }
 
-    public void SetMissionText(string text)
+    public void SetMainText(string text)
     {
-        if (!missionPanel.gameObject.activeInHierarchy)
-            missionPanel.SetActive(true);
-
-        missionText.text = text;
+        objectiveScript.SetMain(text);
     }
 
-    public void SetMissionCount(string count)
+    public void SetOptionalText(string text)
     {
-        if (!missionPanel.gameObject.activeInHierarchy)
-            missionPanel.SetActive(true);
-
-        missionCount.text = count;
+        objectiveScript.SetOptional(text);
     }
 
-    public void HideMissionPanel()
+    public void SetTaskText(string text)
     {
-        missionPanel.SetActive(false);
+        objectiveScript.SetSub(text);
     }
 
-    public void HideObjectivePanel()
+    public void SetTaskCount(string count)
     {
-        objectivePanel.SetActive(false);
-    }
-
-    public void SetObjectiveText(string text)
-    {
-        if (!objectivePanel.gameObject.activeInHierarchy)
-            objectivePanel.SetActive(true);
-
-        objectiveText.text = text;
-    }
-
-    public void SetObjectiveCount(string count)
-    {
-        if (!objectivePanel.gameObject.activeInHierarchy)
-            objectivePanel.SetActive(true);
-
-        objectiveCount.text = count;
+        objectiveScript.SetSubCount(count);
     }
 
     public void ShowRewindMessage(string text)
@@ -336,16 +282,24 @@ public class HUD : MonoBehaviour
         briefingPanel.SetActive(false);
     }
 
-    [SerializeField]
-    private Color successColor =
-        Color.green;
-
-    [SerializeField]
-    private Color normalColor =
-        Color.red;
 
     public void SetSuccessState(bool p0)
     {
-        objectiveCount.color = p0 ? successColor : normalColor;
+        objectiveScript.SetSuccessState(p0);
+    }
+
+    public void HideTaskPanel()
+    {
+        objectiveScript.HideTaskPanel();
+    }
+
+    public void ShowTaskPanel()
+    {
+        objectiveScript.ShowTaskPanel();
+    }
+
+    public void SetTimer(string time)
+    {
+        objectiveScript.SetTime(time);
     }
 }
