@@ -1754,15 +1754,15 @@ Camera:
   m_LensShift: {x: 0, y: 0}
   m_NormalizedViewPortRect:
     serializedVersion: 2
-    x: 0.0012285012
-    y: 0.0021834061
-    width: 0.997543
-    height: 0.9956332
+    x: 0
+    y: 0
+    width: 1
+    height: 1
   near clip plane: 0.3
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 7.125
+  orthographic size: 11.59375
   m_Depth: 0
   m_CullingMask:
     serializedVersion: 2
@@ -33639,7 +33639,7 @@ SpriteRenderer:
   m_MaskInteraction: 0
   m_Sprite: {fileID: -1847985227, guid: db7ea9cd401203a9a8c5ab161001acc3, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_FlipX: 0
+  m_FlipX: 1
   m_FlipY: 0
   m_DrawMode: 0
   m_Size: {x: 1.125, y: 1.125}
