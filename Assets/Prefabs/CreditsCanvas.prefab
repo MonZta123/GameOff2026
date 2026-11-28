@@ -291,7 +291,7 @@ MonoBehaviour:
     _image: {fileID: -3614931751823013910, guid: eed60cb087b9fdce4b9b2646a8dde6c8, type: 3}
   - _name: "\xA9 2006 \u2013 2026 Audiokinetic Inc. All rights reserved."
     _role: Powered by Wwise
-    _image: {fileID: 21300000, guid: 4817c2ff8f0105840975a037a577f656, type: 3}
+    _image: {fileID: -8976901754769755895, guid: d1083212d4b2c365b869679f08e873d6, type: 3}
   target: {fileID: 671056075515391194}
   visibleDuration: 6
   waitBeginning: 1
