@@ -65,7 +65,7 @@ namespace Actors
                     marker.gameObject.SetActive(false);
                 }
 
-                color = Color.blue;
+                color = new Color32(70, 220, 205, 255);
             }
 
             if (_entity._triggerType == TriggerType.DemolitionZone)
@@ -80,14 +80,14 @@ namespace Actors
                     marker.gameObject.SetActive(false);
                 }
 
-                color = Color.red;
+                color = new Color32(206, 59, 38, 255);
             }
 
             if (_entity._triggerType == TriggerType.Exit)
             {
                 marker.SetText("Wait here to evacuate!", "Evacuationzone!");
                 marker.SetUsesArrow(true);
-                color = Color.green;
+                color = Color.yellow;
             }
 
             var size = Math.Max(_entity._rightTop.x - _entity._leftBottom.x,

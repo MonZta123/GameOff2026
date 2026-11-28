@@ -331,7 +331,7 @@ SpriteRenderer:
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1.125, y: 1.125}
+  m_Size: {x: 1, y: 1}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -1754,15 +1754,15 @@ Camera:
   m_LensShift: {x: 0, y: 0}
   m_NormalizedViewPortRect:
     serializedVersion: 2
-    x: 0.0012285012
-    y: 0.0021834061
-    width: 0.997543
-    height: 0.9956332
+    x: 0
+    y: 0
+    width: 1
+    height: 1
   near clip plane: 0.3
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 7.125
+  orthographic size: 6.75
   m_Depth: 0
   m_CullingMask:
     serializedVersion: 2
@@ -33087,7 +33087,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 40731777417189628, guid: 368a1fb595ec3da9294fab84eeb1369c, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 8c58e69e0ebffb2688109341f5178edb, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -33915,8 +33915,6 @@ PlayableDirector:
     value: {fileID: 495161744}
   - key: {fileID: 4996821061611188644, guid: bf1c461b1dc995b088a165df5a5d9f7d, type: 2}
     value: {fileID: 1472117550}
-  - key: {fileID: -5610116489241864809, guid: bf1c461b1dc995b088a165df5a5d9f7d, type: 2}
-    value: {fileID: 1774321436}
   - key: {fileID: 5958514203364489724, guid: bf1c461b1dc995b088a165df5a5d9f7d, type: 2}
     value: {fileID: 2065738530}
   - key: {fileID: -468591810122037326, guid: bf1c461b1dc995b088a165df5a5d9f7d, type: 2}
