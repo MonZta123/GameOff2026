@@ -8643,9 +8643,19 @@
 						</Sound>
 						<MusicPlaylistContainer Name="MUS_ThankYou" ID="{068E8556-ADD6-43D7-98A9-0B952D22CCB8}" ShortID="902205253">
 							<PropertyList>
-								<Property Name="Volume" Type="Real64">
+								<Property Name="Highpass" Type="int16">
 									<ValueList>
-										<Value>2</Value>
+										<Value>34</Value>
+									</ValueList>
+								</Property>
+								<Property Name="Lowpass" Type="int16">
+									<ValueList>
+										<Value>22</Value>
+									</ValueList>
+								</Property>
+								<Property Name="MakeUpGain" Type="Real64">
+									<ValueList>
+										<Value>5</Value>
 									</ValueList>
 								</Property>
 							</PropertyList>
@@ -8705,16 +8715,6 @@
 								<MusicSegment Name="MUS_EnterHomeEnd_Intro" ID="{92B4CFFC-4A92-4431-9790-4B0FBA226F03}" ShortID="282478571">
 									<PropertyList>
 										<Property Name="EndPosition" Type="Real64" Value="81882.358276644"/>
-										<Property Name="Highpass" Type="int16">
-											<ValueList>
-												<Value>34</Value>
-											</ValueList>
-										</Property>
-										<Property Name="Lowpass" Type="int16">
-											<ValueList>
-												<Value>27</Value>
-											</ValueList>
-										</Property>
 									</PropertyList>
 									<ReferenceList>
 										<Reference Name="Conversion">
@@ -8785,16 +8785,6 @@
 								<MusicSegment Name="MUS_EnterHomeEnd_Loop" ID="{D2372AF8-63E3-4904-B954-CB1185858458}" ShortID="223329480">
 									<PropertyList>
 										<Property Name="EndPosition" Type="Real64" Value="81882.358276644"/>
-										<Property Name="Highpass" Type="int16">
-											<ValueList>
-												<Value>34</Value>
-											</ValueList>
-										</Property>
-										<Property Name="Lowpass" Type="int16">
-											<ValueList>
-												<Value>27</Value>
-											</ValueList>
-										</Property>
 									</PropertyList>
 									<ReferenceList>
 										<Reference Name="Conversion">
