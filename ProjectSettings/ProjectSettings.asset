@@ -40,9 +40,9 @@ PlayerSettings:
     width: 1
     height: 1
   m_SplashScreenLogos:
-  - logo: {fileID: -8976901754769755895, guid: d1083212d4b2c365b869679f08e873d6, type: 3}
-    duration: 2.5
   - logo: {fileID: 5924452444973935927, guid: b44d3a3e655780847bfdff41196f15c0, type: 3}
+    duration: 2.5
+  - logo: {fileID: -8976901754769755895, guid: d1083212d4b2c365b869679f08e873d6, type: 3}
     duration: 2.5
   m_VirtualRealitySplashScreen: {fileID: 0}
   defaultScreenWidth: 1024
@@ -91,7 +91,7 @@ PlayerSettings:
   androidApplicationEntry: 2
   defaultIsNativeResolution: 1
   macRetinaSupport: 1
-  runInBackground: 1
+  runInBackground: 0
   callOnDisableOnAssetBundleUnload: 1
   muteOtherAudioSources: 0
   Prepare IOS For Recording: 0

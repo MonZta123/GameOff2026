@@ -99,6 +99,19 @@ public class GameSessionHost : MonoBehaviour
 
     private GameSessionState _gameSessionState;
 
+
+    private void OnApplicationPause(bool pauseStatus)
+    {
+        if (_gameSessionState
+                is GameSessionState.ReplayMode
+                or GameSessionState.Playing
+                or GameSessionState.Intro && pauseStatus && !_pauseActive)
+        {
+            PauseGame();
+        }
+    }
+
+
     private void Awake()
     {
 // #if UNITY_EDITOR
