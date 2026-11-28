@@ -8645,17 +8645,17 @@
 							<PropertyList>
 								<Property Name="Highpass" Type="int16">
 									<ValueList>
-										<Value>34</Value>
+										<Value>8</Value>
 									</ValueList>
 								</Property>
 								<Property Name="Lowpass" Type="int16">
 									<ValueList>
-										<Value>22</Value>
+										<Value>9</Value>
 									</ValueList>
 								</Property>
-								<Property Name="MakeUpGain" Type="Real64">
+								<Property Name="Volume" Type="Real64">
 									<ValueList>
-										<Value>5</Value>
+										<Value>-2</Value>
 									</ValueList>
 								</Property>
 							</PropertyList>
