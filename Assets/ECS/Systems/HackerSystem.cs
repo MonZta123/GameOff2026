@@ -43,7 +43,7 @@ namespace ECS.Systems
 
             player._isActionActive = false;
 
-            if (player._primaryReadyAt <= currentTick)
+            if (player._primaryReadyAt <= currentTick && !wasHacking)
             {
                 if (moveEvt._primary)
                 {

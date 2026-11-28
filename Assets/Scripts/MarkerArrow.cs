@@ -7,7 +7,10 @@ public class MarkerArrow : MonoBehaviour
     private TextMeshPro arrowText;
 
     [SerializeField]
-    private SpriteRenderer arrowGameObject;
+    private SpriteRenderer arrowRenderer;
+
+    [SerializeField]
+    private GameObject arrowObject;
     
     public void SetText(string text)
     {
@@ -18,7 +21,7 @@ public class MarkerArrow : MonoBehaviour
     { 
         var zRotation = Mathf.Atan2(vector.y, vector.x);
         
-        arrowGameObject.transform.rotation = Quaternion.Euler(0, 0, zRotation * Mathf.Rad2Deg);
+        arrowObject.transform.rotation = Quaternion.Euler(0, 0, zRotation * Mathf.Rad2Deg);
     }
 
     public void SetTextPosition(Vector2 newTextPos)
@@ -28,11 +31,11 @@ public class MarkerArrow : MonoBehaviour
 
     public void SetPosition(Vector2 viewPortVec)
     {
-        arrowGameObject.transform.position = viewPortVec;
+        arrowObject.transform.position = viewPortVec;
     }
 
     public void SetColor(Color color)
     {
-        arrowGameObject.color = (Color)color;
+        arrowRenderer.color = (Color)color;
     }
 }
