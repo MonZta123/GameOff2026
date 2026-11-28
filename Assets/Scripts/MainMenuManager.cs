@@ -76,6 +76,28 @@ public class MainMenuManager : MonoBehaviour
         howToPlay.transform.GetChild(0).gameObject.SetActive(true);
     }
 
+    [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.BeforeSceneLoad)]
+    public static void ForceScreenResolution()
+    {
+        var standardResolution = 16f / 9f;
+        
+        var width = (float)Display.main.systemWidth;
+        var height = (float)Display.main.systemHeight;
+
+        var isBroad = (width / height) > standardResolution;
+
+        if (isBroad)
+        {
+            var newWidth = height * standardResolution;
+            Screen.SetResolution((int)newWidth, (int)height, FullScreenMode.FullScreenWindow);
+        }
+        else
+        {
+            var newHeight = width / standardResolution;
+            Screen.SetResolution((int)width, (int)newHeight, FullScreenMode.FullScreenWindow);
+        }
+    }
+    
     public void NextStep()
     { 
         for (var i = 0; i < howToPlay.transform.childCount; i++)
