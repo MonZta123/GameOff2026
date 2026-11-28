@@ -8187,7 +8187,7 @@
 									<ChildrenList>
 										<AudioFileSource Name="Ending(FromD)" ID="{0657C237-ED4E-4B7F-9A8F-9ED355201969}">
 											<PropertyList>
-												<Property Name="FadeInDuration" Type="Real64" Value="0.85118"/>
+												<Property Name="FadeInDuration" Type="Real64" Value="0.04814"/>
 												<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
 											</PropertyList>
 											<Language>SFX</Language>

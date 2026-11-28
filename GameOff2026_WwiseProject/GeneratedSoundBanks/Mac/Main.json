@@ -10,7 +10,7 @@
     "Type": "User",
     "GUID": "{3059A6CE-8152-4CD2-BEA9-69E98BB60D65}",
     "Language": "SFX",
-    "Hash": "{F3666E2C-0DA0-4B05-4F0C-312118771B3C}",
+    "Hash": "{04C5B5CF-024B-8919-B3ED-A4ED54984269}",
     "ObjectPath": "\\SoundBanks\\Default Work Unit\\Main",
     "ShortName": "Main",
     "Path": "Main.bnk",
@@ -1181,7 +1181,7 @@
       "Streaming": "false",
       "Location": "Memory",
       "ShortName": "Ending(FromD).wav",
-      "CachePath": "03/{032C66FC-216F-BC70-075E-944E817ACC73}.wem"
+      "CachePath": "F0/{F0C92067-E25D-023F-C5A3-9CCEC371A125}.wem"
      },
      {
       "Id": "615590457",
@@ -5206,6 +5206,6 @@
     ]
    }
   ],
-  "FileHash": "{7B18D922-9B95-3EA6-647C-AA6079057CB4}"
+  "FileHash": "{428F7224-3D4A-C218-F0CF-8497132EDBED}"
  }
 }

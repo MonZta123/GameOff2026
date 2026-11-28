@@ -263,7 +263,7 @@ In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
 	598450474	VO_E_ImpactHeavy_04	.cache\59\{599B4CEF-7FAF-3611-2485-07D43CE351DE}.wem		\Containers\Default Work Unit\VO\CharacterE\ImpactHeavy\VO_E_ImpactHeavy_04		6893
 	600500171	VO_B_Roll_02	.cache\46\{46947D24-F506-21D2-90EC-B88221C40E6E}.wem		\Containers\Default Work Unit\VO\CharacterB\Dodge\Dodge\VO_B_Roll_02		7397
 	603054030	FootstepB_06_Tile	.cache\E7\{E7EF08CF-F65C-CEEF-7D48-7E7D34A5BAF6}.wem		\Containers\Default Work Unit\SFX\Movement\FootstepsB\Tile\FootstepB_06_Tile		6257
-	610646790	MUS_MissionEnding	.cache\03\{032C66FC-216F-BC70-075E-944E817ACC73}.wem		\Containers\Default Work Unit\MUSIC\MUS_Mission\MUS_MissionEnding		181090
+	610646790	MUS_MissionEnding	.cache\F0\{F0C92067-E25D-023F-C5A3-9CCEC371A125}.wem		\Containers\Default Work Unit\MUSIC\MUS_Mission\MUS_MissionEnding		181367
 	615590457	D_Win_02	.cache\6D\{6D35A663-4D9A-B583-B629-0F317D4F304C}.wem		\Containers\Default Work Unit\VO\CharacterD\Win\D_Win_02		8838
 	619518375	Hack_Abort	.cache\47\{47AB8DBF-B5B9-D619-6A73-F9AC0C30E67D}.wem		\Containers\Default Work Unit\SFX\Actions\Dave\Hack_Abort		10451
 	620156882	D_HitHeavy_03	.cache\12\{12010FD7-239B-AF8E-D8E9-EA4D7AF2A62E}.wem		\Containers\Default Work Unit\VO\CharacterD\Wind\D_HitHeavy_03		4720
